@@ -79,3 +79,22 @@ __Part II: Literature Reviews__ (35%)
 HW X 4 (10%, 15%, 15% 20%)
 Literature Review (35%)
 Questions in class or office hour (5%)
+
+
+
+
+
+	
+
+
+
+
+
+ 
+And here is a code block:
+
+```
+e = mc^2
+```
+
+Check out the content pages bundled with this sample book to see more.
