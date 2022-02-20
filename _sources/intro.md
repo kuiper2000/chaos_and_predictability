@@ -13,7 +13,7 @@ __Part I: Lecturing__
 	* Climatological distribution vs forecast distribution 
     * State-dependent predictability and the mathematical assumptions 
     * Where the uncertainty comes from?
-    * Ensemble forecast in weather and climate
+    * Introduction to ensemble forecast in weather and climate
     * HW1: Lorenz 63 model (testing state-dependent predictability) (10%)    
 * Week 2: __Predictability Source in atmosphere__
 	* The origins of predictability (Scale Seperation)
@@ -27,7 +27,7 @@ __Part I: Lecturing__
 	* Single Scale
 	* Multi-scale interations
 	* Layapunov Exponent
-	* The early and late stages of error growth in multi-scale flow. 
+	* The early and late stages of error growth in a multi-scale flow. 
 	* HW2: Lorenz 96 model (calculating the Layapynov exponent) (15%)
 * Week 5: __The connection between statistical mechanics and ensemble forecasts I: theory__
 	* Introduction to Liouville equation 
@@ -41,9 +41,9 @@ __Part I: Lecturing__
 	* Challengs of applying Liouville Equation to weather forecast
 	* HW3: Derivation of Liouville equation + 1st-order ODE case simulation (15%)
 * Week 7: __The stability theorem__
-	* Stability in Geophysical Fluid Dynamics 
 	* von Neumann method
 	* Energy Method
+	* Stability in Geophysical Fluid Dynamics (Shear instability and Eady problem)
 * Week 8: __The generalized stability theorem__
 	* Generalized stability theorem
 	* Modal vs non-modal systems
@@ -52,28 +52,25 @@ __Part I: Lecturing__
 	* The connection between Layapunov exponent and perfect model experiments
 	* Average Predictability Time
 	* Predictable Components
-	* HW4: Identifying the predictable components in a barotropic flow(20%)
-* Week 10: __Ensemble forecast and data assimilation__
-	* Ensemble forecast and data assimilation, the same problem or not?
-	* Ensemble Kalman Filter 
-* Week 11: __Future projection problems__
+	* HW4: Identifying the predictable components in full-physics operational forecast systems (20%)
+* Week 10: __Future projection problems__
 	* Initial value problems vs boundary value problems
-	* Generalized stability in a non-linear/boundary value problem
+	* Generalized stability and Predictable Components in a non-linear/boundary value problem
 	* Thompson et al. (2015) and Large-ensemble simulations 
 
 
 
 __Part II: Literature Reviews__ (35%)
-* Week 12: __The predictability of a flow which possesses many scales of motions (Lorenz 1969)__
+* Week 11: __The predictability of a flow which possesses many scales of motions (Lorenz 1969)__
 	* Key Lecture: Week 8	
-* Week 13: __Stochastic Forcing of ENSO by the Intraseasonal Oscillation (Moore and Kleeman 1999)__
+* Week 12: __Stochastic Forcing of ENSO by the Intraseasonal Oscillation (Moore and Kleeman 1999)__
 	* Key Lecture: Week 9
-* Week 14: __Ensemble-based sensitivity analysis (Hakim and Torn 2008)__
+* Week 13: __Ensemble-based sensitivity analysis (Hakim and Torn 2008)__
 	* Key Lecture: Week 9
-* Week 15: __The Critical Role of Non-Normality in Partitioning Tropical and Extratropical Contributions to PNA Growth (Henderson et al. 2020)__
+* Week 14: __The Critical Role of Non-Normality in Partitioning Tropical and Extratropical Contributions to PNA Growth (Henderson et al. 2020)__
 	* Key Lecture: Week 9
-* Week 16: __Physically Interpretable Neural Networks for the Geosciences: Applications to Earth System Variability (Toms et al. 2020)__
-	* Key Lecture: Week 11
+* Week 15: __Physically Interpretable Neural Networks for the Geosciences: Applications to Earth System Variability (Toms et al. 2020)__
+	* Key Lecture: Week 10
 
 ## Grading
 HW X 4 (10%, 15%, 15% 20%)
