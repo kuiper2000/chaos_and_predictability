@@ -64,15 +64,15 @@ __Part I: Lecturing__
 
 
 __Part II: Literature Reviews__ (35%)
-* Week 10: __The predictability of a flow which possesses many scales of motions (Lorenz 1969)__
+* Week 12: __The predictability of a flow which possesses many scales of motions (Lorenz 1969)__
 	* Key Lecture: Week 8	
-* Week 11: __Stochastic Forcing of ENSO by the Intraseasonal Oscillation (Moore and Kleeman 1999)__
+* Week 13: __Stochastic Forcing of ENSO by the Intraseasonal Oscillation (Moore and Kleeman 1999)__
 	* Key Lecture: Week 9
-* Week 12: __Ensemble-based sensitivity analysis (Hakim and Torn 2008)__
+* Week 14: __Ensemble-based sensitivity analysis (Hakim and Torn 2008)__
 	* Key Lecture: Week 9
-* Week 13: __The Critical Role of Non-Normality in Partitioning Tropical and Extratropical Contributions to PNA Growth (Henderson et al. 2020)__
+* Week 15: __The Critical Role of Non-Normality in Partitioning Tropical and Extratropical Contributions to PNA Growth (Henderson et al. 2020)__
 	* Key Lecture: Week 9
-* Week 14: __Physically Interpretable Neural Networks for the Geosciences: Applications to Earth System Variability (Toms et al. 2020)__
+* Week 16: __Physically Interpretable Neural Networks for the Geosciences: Applications to Earth System Variability (Toms et al. 2020)__
 	* Key Lecture: Week 11
 
 ## Grading
