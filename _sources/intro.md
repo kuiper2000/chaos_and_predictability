@@ -1,6 +1,6 @@
 # Syllabus 
 
-This graduate-level course will help you walk through some fundamental ideas in chaos (a.k.a. Butterfly effect), predictability and information theory. The goal is to learn how to (1) qualitatively and quantatively describe "predictability", (2) physically interpret a dynamical systems and (3) find the optimal patterns favoring model error growth in various systems. Prerequisites for this course including: applied math (ODE, PDE and linear algebra), numerical analysis (Python or Julia), statistics and atmospheric dynamics.   
+This graduate-level course will help you walk through some fundamental ideas in chaos (a.k.a. Butterfly effect), predictability and information theory. The goal is to learn how to (1) qualitatively and quantatively describe "predictability", (2) physically interpret dynamical systems and (3) find the optimal patterns favoring model error growth in various systems. Prerequisites for this course including: applied math (ODE, PDE and linear algebra), numerical analysis (Python or Julia), statistics and atmospheric dynamics.   
 
 
 :::{note}
