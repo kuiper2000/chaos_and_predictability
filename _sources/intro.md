@@ -16,7 +16,7 @@ __Part I: Lecturing__
     * Introduction to ensemble forecast in weather and climate
     * HW1: Lorenz 63 model (testing state-dependent predictability) (10%)    
 * Week 2: __Predictability Source in atmosphere__
-	* The origins of predictability (Scale Seperation)
+	* The origins of predictability (Scale Separation)
 	* Brief introduction to balanced dynamics (Rossby wave dynamics)
 	* Teleconnections 
 * Week 3: __The minimalist models for studying chaos and predictability I: Lorenz 63__  
