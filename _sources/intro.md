@@ -40,15 +40,15 @@ __Part I: Lecturing__
 	* Liouville equation and Singular Value Decomposition
 	* Challengs of applying Liouville Equation to weather forecast
 	* HW3: Derivation of Liouville equation + 1st-order ODE case simulation (15%)
-* Week 7: __The stability theorem__
+* Week 7: __The stability theory__
 	* von Neumann method
 	* Energy Method
 	* Stability in Geophysical Fluid Dynamics (Shear instability and Eady problem)
-* Week 8: __The generalized stability theorem__
+* Week 8: __The generalized stability theory__
 	* Generalized stability theorem
 	* Modal vs non-modal systems
     * Reduced-dimension problems
-* Week 9: __Information theorem__
+* Week 9: __Information theory__
 	* The connection between Layapunov exponent and perfect model experiments
 	* Average Predictability Time
 	* Predictable Components
