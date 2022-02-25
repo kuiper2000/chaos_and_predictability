@@ -1,3 +1,4 @@
+(week1)=
 # Week 1: Predictability of Weather and Climate
 
 In this section, we will walk through a few fundamental concepts of predictability, including how does it connect to statistics, differential equations and linear algebra. You will find out the definition of predictability is relatively straightforward. 
@@ -135,8 +136,9 @@ A simple example is
 We can find the original space spanned by vectors [1,0] and [0,1] is enlarged where the final vectors are [1,0] and [0,2]. The $\mathrm{det}{(\begin{bmatrix}
 1 & 0 \\
 0 & 2 
-\end{bmatrix})}$ equals 2 indicating the area will be twice bigger after linear transformation. In {eq}`eq5`, we know the area spanned by $\delta\mathbf{X}$ will increase by a factor of $\mathbf{M}(t,t_0)$ indicating the ensemble density (i.e., $\rho(\mathbf{X},t)$) will decrease by the same factor due to the conservation law (i.e., total number of ensemble members won't change). {eq}`eq6` is a powerful equation since it predicts the forecast PDF and you will see it multiple times in the future. Now, there is only one question left. If we would like to generate reliable ensemble forecast, what kind initial states $\mathbf{X}$ should be used for forecast? Practically, we want an ensemble forecast which can cover as many scenarios as possible. Thus, the initial states which can generate the most reliable forecast are usually the states with the largest error growth rate. On the other hand, high error growth rate can also lead the low forecast confidence. Therefore, reaching a balance between the two is important topic in _Data Assimilation_.  
+\end{bmatrix})}$ equals 2 indicating the area will be twice bigger after linear transformation. In {eq}`eq5`, we know the area spanned by $\delta\mathbf{X}$ will increase by a factor of $\mathbf{M}(t,t_0)$ indicating the ensemble density (i.e., $\rho(\mathbf{X},t)$) will decrease by the same factor due to the conservation law (i.e., total number of ensemble members won't change). {eq}`eq6` is a powerful equation since it predicts the forecast PDF and you will see it multiple times in the future. Now, there is only one question left. If we would like to generate reliable ensemble forecast, what kind of initial states $\mathbf{X}$ should be used for forecast? Practically, we want an ensemble forecast which can cover as many scenarios as possible. Thus, the initial states which can generate the most reliable forecast are usually the states with the largest error growth rate. On the other hand, high error growth rate can also lead the low forecast confidence. Therefore, reaching a balance between the two is important topic in _Data Assimilation_.  
 
 ## References
 ```{bibliography} ../references.bib
+:filter: docname in docnames
 ```

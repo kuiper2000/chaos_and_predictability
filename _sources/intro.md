@@ -1,6 +1,6 @@
 # Syllabus 
 
-This graduate-level course will help you walk through some fundamental ideas in chaos (a.k.a. Butterfly effect), predictability and information theory. The goal is to learn how to (1) qualitatively and quantatively describe "predictability", (2) physically interpret dynamical systems and (3) find the optimal patterns favoring model error growth in various systems. Prerequisites for this course including: applied math (ODE, PDE and linear algebra), numerical analysis (Python or Julia), statistics and atmospheric dynamics.   
+This graduate-level course based on the book "Predictability of Weather and Climate"{cite:p}`palmer2006predictability` will help you walk through some fundamental ideas in chaos (a.k.a. Butterfly effect), predictability and information theory. The goal is to learn how to (1) qualitatively and quantatively describe "predictability", (2) physically interpret dynamical systems and (3) find the optimal patterns favoring model error growth in various systems. Prerequisites for this course including: applied math (ODE, PDE and linear algebra), numerical analysis (Python or Julia), statistics and atmospheric dynamics.   
 
 
 :::{note}
@@ -9,7 +9,7 @@ This is the v1.0 handout of the course "Chaos and Predictability" taught in the 
 
 ## Course Outlines
 __Part I: Lecturing__
-* Week 1: __Predictability of Weather and Climate__
+* {ref}`week1`
 	* Climatological distribution vs forecast distribution 
     * State-dependent predictability and the mathematical assumptions 
     * Where the uncertainty comes from?
@@ -76,3 +76,9 @@ __Part II: Literature Reviews__ (35%)
 HW X 4 (10%, 15%, 15% 20%)
 Literature Review (35%)
 Questions in class or office hour (5%)
+
+
+## Book
+```{bibliography} references.bib
+:filter: docname in docnames
+```
