@@ -114,7 +114,7 @@ By observing {eq}`eq5`, we can find the initial error (i.e., the difference betw
 \rho(\mathbf{X},t)=\rho(\mathbf{X'},t_0)/|\mathrm{det}{(\mathbf{M}(t,t_0))}|
 \end{align*}
 ```  
-where $\rho(\mathbf{X},t)$ is the forecast PDF at given $\mathbf{X}$ and $t$ and $\mathrm{det}{(\mathbf{M}(t,t_0))}$ is the determinant of $\mathbf{M}(t,t_0)$. We will have more in-depth discussion in week 4&5 about {eq}`eq6`. Back to the formular, mathematically, a determinant indicates how the area spanned by vectors $\delta\mathbf{X}$ is scaled after linear transformation. (also check out the awesome video by [3Blue1Brown](https://www.youtube.com/watch?v=Ip3X9LOh2dk&list=PL0-GT3co4r2y2YErbmuJw2L5tW4Ew2O5B&index=7&ab_channel=3Blue1Brown) !!) 
+where $\rho(\mathbf{X},t)$ is the forecast PDF at given $\mathbf{X}$ and $t$ and $\mathrm{det}{(\mathbf{M}(t,t_0))}$ is the determinant of $\mathbf{M}(t,t_0)$. Mathematically, a determinant indicates how the area spanned by vectors $\delta\mathbf{X}$ is scaled after linear transformation. (we will have more discussion in weeks 3-6, also check out the awesome video by [3Blue1Brown](https://www.youtube.com/watch?v=Ip3X9LOh2dk&list=PL0-GT3co4r2y2YErbmuJw2L5tW4Ew2O5B&index=7&ab_channel=3Blue1Brown) !!) 
 
 A simple example is 
 ```{math}
