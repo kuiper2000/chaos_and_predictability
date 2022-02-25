@@ -185,6 +185,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -197,6 +210,19 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -306,8 +332,9 @@ and
 <p>We can find the original space spanned by vectors [1,0] and [0,1] is enlarged where the final vectors are [1,0] and [0,2]. The <span class="math notranslate nohighlight">\(\mathrm{det}{(\begin{bmatrix}
 1 &amp; 0 \\
 0 &amp; 2 
-\end{bmatrix})}\)</span> equals 2 indicating the area will be twice bigger after linear transformation. In <a class="reference internal" href="#equation-eq5">(5)</a>, we know the area spanned by <span class="math notranslate nohighlight">\(\delta\mathbf{X}\)</span> will increase by a factor of <span class="math notranslate nohighlight">\(\mathbf{M}(t,t_0)\)</span> indicating the ensemble density (i.e., <span class="math notranslate nohighlight">\(\rho(\mathbf{X},t)\)</span>) will decrease by the same factor due to the conservation law (i.e., total number of ensemble members won’t change). <a class="reference internal" href="#equation-eq6">(6)</a> is a powerful equation since it predicts the forecast PDF and you will see it multiple times in the future. Now, there is only one question left. If we would like to generate reliable ensemble forecast, what kind initial states <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> should be used for forecast? Practically, we want an ensemble forecast which can cover as many scenarios as possible. Thus, the initial states which can generate the most reliable forecast are usually the states with the largest error growth rate. On the other hand, high error growth rate can also lead the low forecast confidence. Therefore, reaching a balance between the two is important topic in <em>Data Assimilation</em>.<br />
-\</p>
+\end{bmatrix})}\)</span> equals 2 indicating the area will be twice bigger after linear transformation. In <a class="reference internal" href="#equation-eq5">(5)</a>, we know the area spanned by <span class="math notranslate nohighlight">\(\delta\mathbf{X}\)</span> will increase by a factor of <span class="math notranslate nohighlight">\(\mathbf{M}(t,t_0)\)</span> indicating the ensemble density (i.e., <span class="math notranslate nohighlight">\(\rho(\mathbf{X},t)\)</span>) will decrease by the same factor due to the conservation law (i.e., total number of ensemble members won’t change). <a class="reference internal" href="#equation-eq6">(6)</a> is a powerful equation since it predicts the forecast PDF and you will see it multiple times in the future. Now, there is only one question left. If we would like to generate reliable ensemble forecast, what kind initial states <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> should be used for forecast? Practically, we want an ensemble forecast which can cover as many scenarios as possible. Thus, the initial states which can generate the most reliable forecast are usually the states with the largest error growth rate. On the other hand, high error growth rate can also lead the low forecast confidence. Therefore, reaching a balance between the two is important topic in <em>Data Assimilation</em>.</p>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="id4"><dl class="citation">
 <dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">HMPDuben20</a></span></dt>
 <dd><p>Sam Hatfield, Andrew McRae, Tim Palmer, and Peter Düben. Single-precision in the tangent-linear and adjoint models of incremental 4d-var. <em>Monthly Weather Review</em>, 148(4):1541–1552, 2020.</p>
@@ -320,6 +347,7 @@ and
 </dd>
 </dl>
 </p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
