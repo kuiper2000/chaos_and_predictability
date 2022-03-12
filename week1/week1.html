@@ -53,6 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 2: Predictability source in atmosphere" href="../week2/week2.html" />
     <link rel="prev" title="Syllabus" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -101,6 +102,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Week 1: Predictability of Weather and Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week2/week2.html">
+   Week 2: Predictability source in atmosphere
   </a>
  </li>
 </ul>
@@ -234,10 +240,10 @@
 <p>In this section, we will walk through a few fundamental concepts of predictability, including how does it connect to statistics, differential equations and linear algebra. You will find out the definition of predictability is relatively straightforward.</p>
 <p><strong>Climatological distribution and forecast distribution</strong>
 <br />
-When we say something (let’s say <span class="math notranslate nohighlight">\(x(t)\)</span> in our case) is predictable, that means we can somewhat track its time evolution. However, in most cases, our confidence about what <span class="math notranslate nohighlight">\(x(t)\)</span> should be will decrease with the increase of forecast lead time (defined as the time difference between initial state and the final state). Thus, it is physically more reasonable to use a probability density function (PDF <span class="math notranslate nohighlight">\(p(x(t))\)</span>) to describe <span class="math notranslate nohighlight">\(x(t)\)</span> since we are talking about how “confident” we are.
+When we say something (let’s say <span class="math notranslate nohighlight">\(x(t)\)</span>) is predictable, that means we can somewhat track its time evolution. However, in most cases, our confidence about what <span class="math notranslate nohighlight">\(x(t)\)</span> should be will decrease with the increase of forecast lead time (defined as the time difference between initial state and the final state). Thus, it is physically more reasonable to use a probability density function (PDF <span class="math notranslate nohighlight">\(p(x(t))\)</span>) to describe <span class="math notranslate nohighlight">\(x(t)\)</span> since we are talking about how “confident” we are.
 <br />
 <br />
-Now, let’s imagine two very extreme cases. The first case is <span class="math notranslate nohighlight">\(t\rightarrow 0\)</span>. In this case, we are very certain what <span class="math notranslate nohighlight">\(x(t)\)</span> should be because it is literally the current states or so-called <em>nowcasting</em>. Thus, it’s not hard to find <span class="math notranslate nohighlight">\(p(x(0))\)</span> should be narrow and almost like a delta function (<a class="reference internal" href="#fig1"><span class="std std-ref">FIG1</span></a>, solid line). The second case is that <span class="math notranslate nohighlight">\(t\rightarrow \infty\)</span>. In this case, we don’t have any confidence. Thus, the best way to estimate <span class="math notranslate nohighlight">\(x(t)\)</span> is by randomly sampling from its historical values (Fig. 1, dashed line, a.k.a. guessing). Thus, from <span class="math notranslate nohighlight">\(t=0\)</span> to <span class="math notranslate nohighlight">\(t\rightarrow \infty\)</span>, we can see <span class="math notranslate nohighlight">\(p(x(t))\)</span> is evolving from one PDF to the other. Here we give these two distribution different names. For the one which we use to describe how confident we are is called <em>forecast distribution</em> and the one when forecast lead time approaches infinity is called <em>climatological distribution</em> (it’s also called “population” in statistics).</p>
+Now, let’s imagine two very extreme cases. The first case is <span class="math notranslate nohighlight">\(t\rightarrow 0\)</span>. In this case, we are very certain what <span class="math notranslate nohighlight">\(x(t)\)</span> should be because it is literally the current states or so-called <em>nowcasting</em>. Thus, it’s not hard to find <span class="math notranslate nohighlight">\(p(x(0))\)</span> should be narrow and almost like a delta function (<a class="reference internal" href="#fig1"><span class="std std-ref">FIG1</span></a>, solid line). The second case is that <span class="math notranslate nohighlight">\(t\rightarrow \infty\)</span>. In this case, we don’t have any confidence. Thus, the best way to estimate <span class="math notranslate nohighlight">\(x(t)\)</span> is by randomly sampling from its historical values (Fig. 1, dashed line, a.k.a. guessing). Thus, from <span class="math notranslate nohighlight">\(t=0\)</span> to <span class="math notranslate nohighlight">\(t\rightarrow \infty\)</span>, we can see <span class="math notranslate nohighlight">\(p(x(t))\)</span> is evolving from one PDF to the other. Here we give these two distribution different names. For the one which we use to describe how confident we are is called <em>forecast distribution</em> and the one when forecast lead time approaches infinity is called <em>climatological distribution</em> (also called “population” in statistics).</p>
 <div class="figure align-default" id="fig1">
 <img alt="../_images/FIG1.png" src="../_images/FIG1.png" />
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">An example of forecast probability density function and climatological probability density function.</span><a class="headerlink" href="#fig1" title="Permalink to this image">¶</a></p>
@@ -256,7 +262,7 @@ Another interesting thing you might have noticed…when we talk about predictabi
 One interesting fact about predictability is that there is no universal value. You might think…OK that sounds weird and counter-intuitive. For example, we know for typical numerical weather forecast, we will say the predictability limit is around 10 days to 2 weeks. After that, we can no longer trust the model output. However, we will soon realize “10 days to 2 weeks” is only <em>rule of thumb</em>. In some cases, we can even struggle with the low prediction confidence at a forecast lead time of 3 days! Sounds crazy right? Here, let me use the famous Lorenz 63 model to demonstrate what it means.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Lorenz 63 model <span id="id1">[<a class="reference internal" href="#id6">Lor63</a>]</span> can be considered as the minimalist model for studying chaos and predictability and it only contains 3 prognostic variables. Indeed, to generate chaotic behavior, the minimum size of independent variables is 3. Smaller than 3, we won’t have chaotic behavior in a dynamical system. We will cover more details about Lorenz model in week 3.</p>
+<p>Lorenz 63 model <span id="id1">[<a class="reference internal" href="#id9">Lor63</a>]</span> can be considered as the minimalist model for studying chaos and predictability and it only contains 3 prognostic variables. Indeed, to generate chaotic behavior, the minimum size of independent variables is 3. Smaller than 3, we won’t have chaotic behavior in a dynamical system. We will cover more details about Lorenz model in week 3.</p>
 </div>
 <div class="math notranslate nohighlight" id="equation-eq2">
 <span class="eqno">(2)<a class="headerlink" href="#equation-eq2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
@@ -283,20 +289,20 @@ At the end of previous section, we talk about the potential uncertainties can co
 <br />
 The second error source is from the imperfect model physics. Specifically, the physical parameterizations used to approximate the bulk effect of subgrid-scale processes (i.e., the scales smaller than the model grid) are the major uncertainty source. The details of parameterizations will be discussed in other class and we will briefly walk through the main concept. One main reason of using physical parameterizations is due to the limited computational power. For example, to accurately predict the time evolution of an extratorpical storm, we also need to predict the convection embedded in the frontal structures since the latent heat release by these convections is not negligible. However, explicitly resolving this small-scale thunderstorms is not computationally feasible for the purpose of synoptic weather forecast. Thus, in most NWP systems, we use so-called cumulus parameterizations to approximate the bulk effect of convective cloud. The reason that cumulus parameterization works is that the large-scale environment usually reaches an quasi-equilibrium state with the small scale convection (i.e., coherence exists). Therefore, we can approximate the net convective activity by using the large-scale information. However, similar to the first uncertainty (observational uncertainty), the observational error exists in all spatial scales and thus a PDF (stochastic parameterization) is required to describe the subgrid-scale statistics. While stochastic parameterization seems necessary, it’s not the case in most prevailing NWP systems. In addition to the cumulus parameterization, similar problems also exist in boundary layer parameterizations.<br />
 <br />
-The last uncertainty is the rounding error. Comparing with the former two uncertainties, rounding error has the least impacts to the weather and climate predictions. Sometimes we can even have some trade-off… i.e., allowing for certain rounding error to save computational time. The main reason we can do that is because the uncertainties from observation and model physics are way bigger (<span class="math notranslate nohighlight">\(&gt;\mathcal{O}(5)\)</span>) than the uncertainty caused by rounding error. More details can be found <span id="id2">[<a class="reference internal" href="#id5">HMPDuben20</a>]</span>.</p>
+The last uncertainty is the rounding error. Comparing with the former two uncertainties, rounding error has the least impacts to the weather and climate predictions. Sometimes we can even have some trade-off… i.e., allowing for certain rounding error to save computational time. The main reason we can do that is because the uncertainties from observation and model physics are way bigger (<span class="math notranslate nohighlight">\(&gt;\mathcal{O}(5)\)</span>) than the uncertainty caused by rounding error. More details can be found in <span id="id2">[<a class="reference internal" href="#id6">HMPDuben20</a>]</span> and the leading author, Sam Hatfield’s website <a class="reference external" href="https://samhatfield.co.uk/">link</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Lorenz 96 <span id="id3">[<a class="reference internal" href="#id7">Lor96</a>]</span> is one of the simplest models attemping to deal with the underpinning theory of subgrid-scale processes, and we will talk about more details in Week 4.</p>
+<p>Lorenz 96 <span id="id3">[<a class="reference internal" href="#id10">Lor96</a>]</span> is one of the simplest models attemping to deal with the underpinning theory of subgrid-scale processes, and we will talk about more details in Week 4.</p>
 </div>
 <p><br />
 <strong>Introduction to ensemble forecast in weather and climate</strong>
 <br />
-Given the discussion about, we know two facts: (1) ensemble forecast is necessary when talking about predictability and (2) predictability limit is state-dependent. We also use Lorenz 63 model to reaffirm these facts. Now, let’s try to include both conclusions in a single formula. First, we can write down the prognostic equations in a more generalized form.</p>
+Given the discussion about, we know two facts: (1) ensemble forecast is necessary when talking about predictability and (2) predictability limit is state-dependent. We also use Lorenz 63 model to justify these statements. Now, let’s try to describe both facts in a single formula. First, we can write down the prognostic equations in a more generalized form.</p>
 <div class="math notranslate nohighlight" id="equation-eq3">
 <span class="eqno">(3)<a class="headerlink" href="#equation-eq3" title="Permalink to this equation">¶</a></span>\[\begin{align*}
 \dot{\mathbf{X}} = F[\mathbf{X}]
 \end{align*}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is the state vector (i.e., [x,y,z]) and F is a nonlinear operator. Here we assume the initial uncertainty is small and the F is differentiable. Then <a class="reference internal" href="#equation-eq3">(3)</a> leads to <a class="reference internal" href="#equation-eq4">(4)</a> and <a class="reference internal" href="#equation-eq5">(5)</a>.</p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is the state vector (i.e., [x,y,z]) and F is a nonlinear operator. Here we assume the initial uncertainty is small and F is differentiable. Then <a class="reference internal" href="#equation-eq3">(3)</a> leads to <a class="reference internal" href="#equation-eq4">(4)</a> and <a class="reference internal" href="#equation-eq5">(5)</a>.</p>
 <div class="math notranslate nohighlight" id="equation-eq4">
 <span class="eqno">(4)<a class="headerlink" href="#equation-eq4" title="Permalink to this equation">¶</a></span>\[\begin{align*}
 \frac{d\delta \mathbf{X}}{dt}= \frac{dF}{d\mathbf{X}}\delta\mathbf{X}
@@ -332,17 +338,20 @@ and
 <p>We can find the original space spanned by vectors [1,0] and [0,1] is enlarged where the final vectors are [1,0] and [0,2]. The <span class="math notranslate nohighlight">\(\mathrm{det}{(\begin{bmatrix}
 1 &amp; 0 \\
 0 &amp; 2 
-\end{bmatrix})}\)</span> equals 2 indicating the area will be twice bigger after linear transformation. In <a class="reference internal" href="#equation-eq5">(5)</a>, we know the area spanned by <span class="math notranslate nohighlight">\(\delta\mathbf{X}\)</span> will increase by a factor of <span class="math notranslate nohighlight">\(\mathbf{M}(t,t_0)\)</span> indicating the ensemble density (i.e., <span class="math notranslate nohighlight">\(\rho(\mathbf{X},t)\)</span>) will decrease by the same factor due to the conservation law (i.e., total number of ensemble members won’t change). <a class="reference internal" href="#equation-eq6">(6)</a> is a powerful equation since it predicts the forecast PDF and you will see it multiple times in the future. Now, there is only one question left. If we would like to generate reliable ensemble forecast, what kind of initial states <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> should be used for forecast? Practically, we want an ensemble forecast which can cover as many scenarios as possible. Thus, the initial states which can generate the most reliable forecast are usually the states with the largest error growth rate. On the other hand, high error growth rate can also lead the low forecast confidence. Therefore, reaching a balance between the two is important topic in <em>Data Assimilation</em>.</p>
+\end{bmatrix})}\)</span> equals 2 indicating the area spanned by <span class="math notranslate nohighlight">\(\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1 
+\end{bmatrix}\)</span> will be scaled by 2 after linear transformation. Following a similar vein, from <a class="reference internal" href="#equation-eq5">(5)</a>, we know the area spanned by <span class="math notranslate nohighlight">\(\delta\mathbf{X}\)</span> will increase by a factor of <span class="math notranslate nohighlight">\(\mathbf{M}(t,t_0)\)</span> indicating the ensemble density (i.e., <span class="math notranslate nohighlight">\(\rho(\mathbf{X},t)\)</span>) will decrease by the same factor due to the conservation law (i.e., total number of ensemble members won’t change). This will lead to equation <a class="reference internal" href="#equation-eq6">(6)</a>. <a class="reference internal" href="#equation-eq6">(6)</a> is a powerful equation since it predicts the forecast PDF and you will see it multiple times in the future. Now, there is only one question left. If we would like to generate reliable ensemble forecast, what kind of initial states <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> should be used for forecast? Practically, we want an ensemble forecast which can cover as many scenarios as possible. Thus, the initial states which can generate the most reliable forecast are usually the states with the largest error growth rate. On the other hand, high error growth rate can also lead the low forecast confidence. Therefore, reaching a balance between the two is important topic in <em>Data Assimilation</em>.</p>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="id4"><dl class="citation">
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">HMPDuben20</a></span></dt>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">HMPDuben20</a></span></dt>
 <dd><p>Sam Hatfield, Andrew McRae, Tim Palmer, and Peter Düben. Single-precision in the tangent-linear and adjoint models of incremental 4d-var. <em>Monthly Weather Review</em>, 148(4):1541–1552, 2020.</p>
 </dd>
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">Lor63</a></span></dt>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id1">Lor63</a></span></dt>
 <dd><p>Edward N Lorenz. Deterministic nonperiodic flow. <em>Journal of atmospheric sciences</em>, 20(2):130–141, 1963.</p>
 </dd>
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">Lor96</a></span></dt>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id3">Lor96</a></span></dt>
 <dd><p>Edward N Lorenz. Predictability: a problem partly solved. In <em>Proc. Seminar on predictability</em>, volume 1. 1996.</p>
 </dd>
 </dl>
@@ -381,6 +390,13 @@ and
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Syllabus</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../week2/week2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 2: Predictability source in atmosphere</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

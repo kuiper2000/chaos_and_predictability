@@ -15,10 +15,11 @@ __Part I: Lecturing__
     * Where the uncertainty comes from?
     * Introduction to ensemble forecast in weather and climate
     * HW1: Lorenz 63 model (testing state-dependent predictability) (10%)    
-* Week 2: __Predictability Source in atmosphere__
+* {ref}`week2`
 	* The origins of predictability (Scale Separation)
 	* Brief introduction to balanced dynamics (Rossby wave dynamics)
 	* Teleconnections 
+	* HW2: Baroclinic instability and Predictability (15%)
 * Week 3: __The minimalist models for studying chaos and predictability I: Lorenz 63__  
   	* The physical and mathematical background
     * Perfect model experitment
@@ -28,7 +29,7 @@ __Part I: Lecturing__
 	* Multi-scale interations
 	* Layapunov Exponent
 	* The early and late stages of error growth in a multi-scale flow. 
-	* HW2: Lorenz 96 model (calculating the Layapynov exponent) (15%)
+	* HW3: Lorenz 96 model (calculating the Layapynov exponent) (15%)
 * Week 5: __The connection between statistical mechanics and ensemble forecasts I: theory__
 	* Introduction to Liouville equation 
 	* Liouville equation as a function of initial state vs current state 
@@ -39,7 +40,7 @@ __Part I: Lecturing__
 	* Liouville equation in Lorenz 63 model
 	* Liouville equation and Singular Value Decomposition
 	* Challengs of applying Liouville Equation to weather forecast
-	* HW3: Derivation of Liouville equation + 1st-order ODE case simulation (15%)
+	* HW4: Derivation of Liouville equation + 1st-order ODE case simulation (15%)
 * Week 7: __The stability theory__
 	* von Neumann method
 	* Energy Method
@@ -52,7 +53,7 @@ __Part I: Lecturing__
 	* The connection between Layapunov exponent and perfect model experiments
 	* Average Predictability Time
 	* Predictable Components
-	* HW4: Identifying the predictable components in full-physics operational forecast systems (20%)
+	* HW5: Identifying the predictable components in full-physics operational forecast systems (20%)
 * Week 10: __Future projection problems__
 	* Initial value problems vs boundary value problems
 	* Generalized stability and Predictable Components in a non-linear/boundary value problem
@@ -73,9 +74,8 @@ __Part II: Literature Reviews__ (35%)
 	* Key Lecture: Week 10
 
 ## Grading
-HW X 4 (10%, 15%, 15% 20%)
-Literature Review (35%)
-Questions in class or office hour (5%)
+HW X 5 (10%, 15%, 15%, 15% 20%)
+Literature Review (25%)
 
 
 ## Book

@@ -5,10 +5,10 @@ In this section, we will walk through a few fundamental concepts of predictabili
 
 __Climatological distribution and forecast distribution__
 \
-When we say something (let's say $x(t)$ in our case) is predictable, that means we can somewhat track its time evolution. However, in most cases, our confidence about what $x(t)$ should be will decrease with the increase of forecast lead time (defined as the time difference between initial state and the final state). Thus, it is physically more reasonable to use a probability density function (PDF $p(x(t))$) to describe $x(t)$ since we are talking about how "confident" we are. 
+When we say something (let's say $x(t)$) is predictable, that means we can somewhat track its time evolution. However, in most cases, our confidence about what $x(t)$ should be will decrease with the increase of forecast lead time (defined as the time difference between initial state and the final state). Thus, it is physically more reasonable to use a probability density function (PDF $p(x(t))$) to describe $x(t)$ since we are talking about how "confident" we are. 
 \
 \
-Now, let's imagine two very extreme cases. The first case is $t\rightarrow 0$. In this case, we are very certain what $x(t)$ should be because it is literally the current states or so-called _nowcasting_. Thus, it's not hard to find $p(x(0))$ should be narrow and almost like a delta function ([FIG1](FIG1), solid line). The second case is that $t\rightarrow \infty$. In this case, we don't have any confidence. Thus, the best way to estimate $x(t)$ is by randomly sampling from its historical values (Fig. 1, dashed line, a.k.a. guessing). Thus, from $t=0$ to $t\rightarrow \infty$, we can see $p(x(t))$ is evolving from one PDF to the other. Here we give these two distribution different names. For the one which we use to describe how confident we are is called _forecast distribution_ and the one when forecast lead time approaches infinity is called _climatological distribution_ (it's also called "population" in statistics). 
+Now, let's imagine two very extreme cases. The first case is $t\rightarrow 0$. In this case, we are very certain what $x(t)$ should be because it is literally the current states or so-called _nowcasting_. Thus, it's not hard to find $p(x(0))$ should be narrow and almost like a delta function ([FIG1](FIG1), solid line). The second case is that $t\rightarrow \infty$. In this case, we don't have any confidence. Thus, the best way to estimate $x(t)$ is by randomly sampling from its historical values (Fig. 1, dashed line, a.k.a. guessing). Thus, from $t=0$ to $t\rightarrow \infty$, we can see $p(x(t))$ is evolving from one PDF to the other. Here we give these two distribution different names. For the one which we use to describe how confident we are is called _forecast distribution_ and the one when forecast lead time approaches infinity is called _climatological distribution_ (also called "population" in statistics). 
 
 ```{figure} FIG1.png
 ---
@@ -71,7 +71,7 @@ At the end of previous section, we talk about the potential uncertainties can co
 \
 The second error source is from the imperfect model physics. Specifically, the physical parameterizations used to approximate the bulk effect of subgrid-scale processes (i.e., the scales smaller than the model grid) are the major uncertainty source. The details of parameterizations will be discussed in other class and we will briefly walk through the main concept. One main reason of using physical parameterizations is due to the limited computational power. For example, to accurately predict the time evolution of an extratorpical storm, we also need to predict the convection embedded in the frontal structures since the latent heat release by these convections is not negligible. However, explicitly resolving this small-scale thunderstorms is not computationally feasible for the purpose of synoptic weather forecast. Thus, in most NWP systems, we use so-called cumulus parameterizations to approximate the bulk effect of convective cloud. The reason that cumulus parameterization works is that the large-scale environment usually reaches an quasi-equilibrium state with the small scale convection (i.e., coherence exists). Therefore, we can approximate the net convective activity by using the large-scale information. However, similar to the first uncertainty (observational uncertainty), the observational error exists in all spatial scales and thus a PDF (stochastic parameterization) is required to describe the subgrid-scale statistics. While stochastic parameterization seems necessary, it's not the case in most prevailing NWP systems. In addition to the cumulus parameterization, similar problems also exist in boundary layer parameterizations.      
 \
-The last uncertainty is the rounding error. Comparing with the former two uncertainties, rounding error has the least impacts to the weather and climate predictions. Sometimes we can even have some trade-off... i.e., allowing for certain rounding error to save computational time. The main reason we can do that is because the uncertainties from observation and model physics are way bigger ($>\mathcal{O}(5)$) than the uncertainty caused by rounding error. More details can be found {cite}`hatfield2020single`.
+The last uncertainty is the rounding error. Comparing with the former two uncertainties, rounding error has the least impacts to the weather and climate predictions. Sometimes we can even have some trade-off... i.e., allowing for certain rounding error to save computational time. The main reason we can do that is because the uncertainties from observation and model physics are way bigger ($>\mathcal{O}(5)$) than the uncertainty caused by rounding error. More details can be found in {cite}`hatfield2020single` and the leading author, Sam Hatfield's website [link](https://samhatfield.co.uk/).
 
 :::{note}
 Lorenz 96 {cite}`lorenz1996predictability` is one of the simplest models attemping to deal with the underpinning theory of subgrid-scale processes, and we will talk about more details in Week 4.  
@@ -79,7 +79,7 @@ Lorenz 96 {cite}`lorenz1996predictability` is one of the simplest models attempi
 \
 __Introduction to ensemble forecast in weather and climate__ 
 \
-Given the discussion about, we know two facts: (1) ensemble forecast is necessary when talking about predictability and (2) predictability limit is state-dependent. We also use Lorenz 63 model to reaffirm these facts. Now, let's try to include both conclusions in a single formula. First, we can write down the prognostic equations in a more generalized form. 
+Given the discussion about, we know two facts: (1) ensemble forecast is necessary when talking about predictability and (2) predictability limit is state-dependent. We also use Lorenz 63 model to justify these statements. Now, let's try to describe both facts in a single formula. First, we can write down the prognostic equations in a more generalized form. 
 
 ```{math}
 :label: eq3
@@ -87,7 +87,7 @@ Given the discussion about, we know two facts: (1) ensemble forecast is necessar
 \dot{\mathbf{X}} = F[\mathbf{X}]
 \end{align*}
 ``` 
-where $\mathbf{X}$ is the state vector (i.e., [x,y,z]) and F is a nonlinear operator. Here we assume the initial uncertainty is small and the F is differentiable. Then {eq}`eq3` leads to {eq}`eq4` and {eq}`eq5`.
+where $\mathbf{X}$ is the state vector (i.e., [x,y,z]) and F is a nonlinear operator. Here we assume the initial uncertainty is small and F is differentiable. Then {eq}`eq3` leads to {eq}`eq4` and {eq}`eq5`.
 
 ```{math}
 :label: eq4
@@ -136,7 +136,10 @@ A simple example is
 We can find the original space spanned by vectors [1,0] and [0,1] is enlarged where the final vectors are [1,0] and [0,2]. The $\mathrm{det}{(\begin{bmatrix}
 1 & 0 \\
 0 & 2 
-\end{bmatrix})}$ equals 2 indicating the area will be twice bigger after linear transformation. In {eq}`eq5`, we know the area spanned by $\delta\mathbf{X}$ will increase by a factor of $\mathbf{M}(t,t_0)$ indicating the ensemble density (i.e., $\rho(\mathbf{X},t)$) will decrease by the same factor due to the conservation law (i.e., total number of ensemble members won't change). {eq}`eq6` is a powerful equation since it predicts the forecast PDF and you will see it multiple times in the future. Now, there is only one question left. If we would like to generate reliable ensemble forecast, what kind of initial states $\mathbf{X}$ should be used for forecast? Practically, we want an ensemble forecast which can cover as many scenarios as possible. Thus, the initial states which can generate the most reliable forecast are usually the states with the largest error growth rate. On the other hand, high error growth rate can also lead the low forecast confidence. Therefore, reaching a balance between the two is important topic in _Data Assimilation_.  
+\end{bmatrix})}$ equals 2 indicating the area spanned by $\begin{bmatrix}
+1 & 0 \\
+0 & 1 
+\end{bmatrix}$ will be scaled by 2 after linear transformation. Following a similar vein, from {eq}`eq5`, we know the area spanned by $\delta\mathbf{X}$ will increase by a factor of $\mathbf{M}(t,t_0)$ indicating the ensemble density (i.e., $\rho(\mathbf{X},t)$) will decrease by the same factor due to the conservation law (i.e., total number of ensemble members won't change). This will lead to equation {eq}`eq6`. {eq}`eq6` is a powerful equation since it predicts the forecast PDF and you will see it multiple times in the future. Now, there is only one question left. If we would like to generate reliable ensemble forecast, what kind of initial states $\mathbf{X}$ should be used for forecast? Practically, we want an ensemble forecast which can cover as many scenarios as possible. Thus, the initial states which can generate the most reliable forecast are usually the states with the largest error growth rate. On the other hand, high error growth rate can also lead the low forecast confidence. Therefore, reaching a balance between the two is important topic in _Data Assimilation_.  
 
 ## References
 ```{bibliography} ../references.bib
