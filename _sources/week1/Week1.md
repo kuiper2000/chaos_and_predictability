@@ -28,7 +28,7 @@ H_o: p(x(t))\neq p(x(\infty))
 {eq}`eq1` tells us that the moment we can no longer tell the difference between $p(x(t))$ and $p(x(\infty))$ is also the moment we hit the predictability limit because the best estimation of $p(x(t))$ is not better than random guess! Now, we can see how predictability connects to statistical test. 
 \
 Another interesting thing you might have noticed...when we talk about predictability, we don't use the ground truth, i.e., the observed $x(t)$. Yes, because the measurement of predictability doesn't rely on ground truth or observation. Instead, it only relis on the forecast states. This is so-called _perfect model assumption_ and we will have more detailed discussion in week 3.   
-\
+
 ## State-dependent predictability and mathematical assumptions
 \
 One interesting fact about predictability is that there is no universal value. You might think...OK that sounds weird and counter-intuitive. For example, we know for typical numerical weather forecast, we will say the predictability limit is around 10 days to 2 weeks. After that, we can no longer trust the model output. However, we will soon realize "10 days to 2 weeks" is only _rule of thumb_. In some cases, we can even struggle with the low prediction confidence at a forecast lead time of 3 days! Sounds crazy right? Here, let me use the famous Lorenz 63 model to demonstrate what it means. 

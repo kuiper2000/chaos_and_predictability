@@ -28,7 +28,7 @@ where $\mathbf{u}$ is momentum in vector form, $p$ is pressure, $\rho$ is densit
 \frac{Db'}{Dt}+N^2\omega &=0
 \end{align*}
 ```
-The first equation of {eq}`eq9` is quasi-geostrophic vorticity equation, where $\zeta=\nabla\times\mathbf{u}$, $v_g$ is the meridional component of the geostrophic wind, $f_o$ is the Coriolis acceleration at the reference latitude, $\beta$ is the meridional gradient of Coriolis acceleration $\frac{df}{dy}$ and $\nabla\cdot \mathbf{u_a}$ is the convergence/divergence of ageostrophic wind. The second equation is the thermodynamics equation with the hydrostatic assumption. We drop the diabatic term for simplification. From the last equation of {eq}`eq9`, we can easily find that the vertical motion is always balanced by the horizontal temperature advection. 
+The first equation of {eq}`eq9` is quasi-geostrophic vorticity equation, where $\zeta=\nabla\times\mathbf{u}$, $v_g$ is the meridional component of the geostrophic wind, $f_o$ is the Coriolis acceleration at the reference latitude, $\beta$ is the meridional gradient of Coriolis acceleration $\frac{df}{dy}$ and $\nabla\cdot \mathbf{u_a}$ is the convergence/divergence of ageostrophic wind. The second equation is the thermodynamics equation with the hydrostatic assumption. We drop the diabatic term for simplification. From the last equation of {eq}`eq9`, we can easily find that the adiabatic cooling/heating by vertical motion ($N^2\omega$) is always balanced by the horizontal temperature advection ($\mathbf{u_g}\cdot\nabla b'$). 
 
 By combining the two equations in {eq}`eq9` with continuity equation, we can have quasi-geostrophic potential vorticity equation (QG-PV).      
 
