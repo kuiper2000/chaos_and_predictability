@@ -110,7 +110,7 @@ In the first case, the characteristic timescales of $\dot{Q}$ in {eq}`eq8` is mu
 In this case, the balance happens within horizontal temperature advection, vertical motion and external forcing. From a climate perspective, the external forcing is dominated by the radiative forcing. Thus, this balance is also called "radiative-advective-convective equilibrium" (RACE). In general, the whole process of RACE (instability adjustment) happens within 2 weeks. For longer timescales, we can only have their equilibrium statistics (i.e., given any two components, we can derive the third). 
 \
 \
-The second case is that the characteristic timescales of $Q$ in {eq}`eq8` is much longer than the Rossby wave timescales. In this case, the internal dynamics of PV can be considered as a dissipative process, which is always balanced by the external forcing {eq}`eq15` (also see {cite}`hoskins1981steady` for details).  
+The second case is that the characteristic timescales of $\dot{Q}$ in {eq}`eq8` is much longer than the Rossby wave timescales. In this case, the internal dynamics of PV can be considered as a dissipative process, which is always balanced by the external forcing {eq}`eq15` (also see {cite}`hoskins1981steady` for details).  
 ```{math}
 :label: eq15
 \begin{align*}
