@@ -197,6 +197,16 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#climatological-distribution-and-forecast-distribution">
+   Climatological distribution and forecast distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#state-dependent-predictability-and-mathematical-assumptions">
+   State-dependent predictability and mathematical assumptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -222,6 +232,16 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#climatological-distribution-and-forecast-distribution">
+   Climatological distribution and forecast distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#state-dependent-predictability-and-mathematical-assumptions">
+   State-dependent predictability and mathematical assumptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -238,8 +258,9 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="week-1-predictability-of-weather-and-climate">
 <span id="week1"></span><h1>Week 1: Predictability of Weather and Climate<a class="headerlink" href="#week-1-predictability-of-weather-and-climate" title="Permalink to this headline">¶</a></h1>
 <p>In this section, we will walk through a few fundamental concepts of predictability, including how does it connect to statistics, differential equations and linear algebra. You will find out the definition of predictability is relatively straightforward.</p>
-<p><strong>Climatological distribution and forecast distribution</strong>
-<br />
+<div class="section" id="climatological-distribution-and-forecast-distribution">
+<h2>Climatological distribution and forecast distribution<a class="headerlink" href="#climatological-distribution-and-forecast-distribution" title="Permalink to this headline">¶</a></h2>
+<p><br />
 When we say something (let’s say <span class="math notranslate nohighlight">\(x(t)\)</span>) is predictable, that means we can somewhat track its time evolution. However, in most cases, our confidence about what <span class="math notranslate nohighlight">\(x(t)\)</span> should be will decrease with the increase of forecast lead time (defined as the time difference between initial state and the final state). Thus, it is physically more reasonable to use a probability density function (PDF <span class="math notranslate nohighlight">\(p(x(t))\)</span>) to describe <span class="math notranslate nohighlight">\(x(t)\)</span> since we are talking about how “confident” we are.
 <br />
 <br />
@@ -256,9 +277,11 @@ Here we can formulate our mathematical definition of “time of predictability l
 <a class="reference internal" href="#equation-eq1">(1)</a> tells us that the moment we can no longer tell the difference between <span class="math notranslate nohighlight">\(p(x(t))\)</span> and <span class="math notranslate nohighlight">\(p(x(\infty))\)</span> is also the moment we hit the predictability limit because the best estimation of <span class="math notranslate nohighlight">\(p(x(t))\)</span> is not better than random guess! Now, we can see how predictability connects to statistical test.
 <br />
 Another interesting thing you might have noticed…when we talk about predictability, we don’t use the ground truth, i.e., the observed <span class="math notranslate nohighlight">\(x(t)\)</span>. Yes, because the measurement of predictability doesn’t rely on ground truth or observation. Instead, it only relis on the forecast states. This is so-called <em>perfect model assumption</em> and we will have more detailed discussion in week 3.<br />
-<br />
-<strong>State-dependent predictability and mathematical assumptions</strong>
-<br />
+\</p>
+</div>
+<div class="section" id="state-dependent-predictability-and-mathematical-assumptions">
+<h2>State-dependent predictability and mathematical assumptions<a class="headerlink" href="#state-dependent-predictability-and-mathematical-assumptions" title="Permalink to this headline">¶</a></h2>
+<p><br />
 One interesting fact about predictability is that there is no universal value. You might think…OK that sounds weird and counter-intuitive. For example, we know for typical numerical weather forecast, we will say the predictability limit is around 10 days to 2 weeks. After that, we can no longer trust the model output. However, we will soon realize “10 days to 2 weeks” is only <em>rule of thumb</em>. In some cases, we can even struggle with the low prediction confidence at a forecast lead time of 3 days! Sounds crazy right? Here, let me use the famous Lorenz 63 model to demonstrate what it means.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -342,6 +365,7 @@ and
 1 &amp; 0 \\
 0 &amp; 1 
 \end{bmatrix}\)</span> will be scaled by 2 after linear transformation. Following a similar vein, from <a class="reference internal" href="#equation-eq5">(5)</a>, we know the area spanned by <span class="math notranslate nohighlight">\(\delta\mathbf{X}\)</span> will increase by a factor of <span class="math notranslate nohighlight">\(\mathbf{M}(t,t_0)\)</span> indicating the ensemble density (i.e., <span class="math notranslate nohighlight">\(\rho(\mathbf{X},t)\)</span>) will decrease by the same factor due to the conservation law (i.e., total number of ensemble members won’t change). This will lead to equation <a class="reference internal" href="#equation-eq6">(6)</a>. <a class="reference internal" href="#equation-eq6">(6)</a> is a powerful equation since it predicts the forecast PDF and you will see it multiple times in the future. Now, there is only one question left. If we would like to generate reliable ensemble forecast, what kind of initial states <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> should be used for forecast? Practically, we want an ensemble forecast which can cover as many scenarios as possible. Thus, the initial states which can generate the most reliable forecast are usually the states with the largest error growth rate. On the other hand, high error growth rate can also lead the low forecast confidence. Therefore, reaching a balance between the two is important topic in <em>Data Assimilation</em>.</p>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="id4"><dl class="citation">

@@ -3,7 +3,7 @@
 
 In this week, we will talk about the potential predictability source in the atmosphere. Before we dig right in, let's quickly recap what we learned last week. We know the predictability is defined as "when" we can no longer differentiate the forecast distributions and the climatological distribution (i.e., {eq}`eq1`). We also know the error growth, which can be formulated as $\mathrm{exp} \int_{t_0}^{t} \frac{dF}{d\mathbf{X}} dt'$ {eq}`eq5`, strongly depends on where the integration starts and where it has been through (just like our life!). Thus, the most predictable components are usually those components with the longest memory (i.e., $\int_{t_0}^{t} \frac{dF}{d\mathbf{X}} dt'$ is small). 
 
-__The origins of predictability (Scale Separation) and balanced dynamics__
+## The origins of predictability (Scale Separation) and balanced dynamics
 \
 In a dynamical system, we can use scale analysis to identify the phenomenon with the longest memory and our Earth atmosphere is no exception. The atmosphere can be described by the equations of motion of a fluid. 
 
@@ -62,10 +62,10 @@ A schematic diagram showing how the counter-propagating waves over different ver
 ```
 The other key process for the growth of PV is the barotropic instability. In barotropic instability, the counter-propagating wave happens in meridional direction rather than the vertical direction. Thus, the necessary condition for barotropic instability is the horizontal wind shear. Both barotropic and baroclinic instabilities will lead to the exponential growth of PV anomaly, i.e., $\frac{Dq'}{Dt}\sim \mathrm{exp}(\sigma t)$, where $\sigma$ is the growth rate of this system. 
 
-Now, some of you might have noticed the connection between {eq}`eq10` and {eq}`eq5`. If we linearize the QG-PV equation by assuming $\mathbf{\bar{u}}\approx U_m$, i.e., the mean flow is dominated by the zonal mean wind, we will find the growth of PV perturbation strongly depends on the existence of wind shear. We will walk through the whole derivation in the homework assignment by using Philips two-layer.  
+Now, some of you might have noticed the connection between {eq}`eq10` and {eq}`eq5`. If we linearize the QG-PV equation by assuming $\mathbf{\bar{u}}\approx U_m$, i.e., the mean flow is dominated by the zonal mean wind, we will find the growth of PV perturbation strongly depends on the existence of wind shear. We will walk through the whole derivation in the homework assignment by using Philips two-layer model.  
 
 :::{note}
-Here are a few useful physical connections between the first and the second laws of thermodynamics equation, where potential temperature is the key ingredient. From the first law of thermodynamics equation, we know there are two ways to change the internal energy of ideal gas, "heat" and "work" {eq}`eq12`
+Here are a few useful physical connections between the first and the second laws of thermodynamics equation, where potential temperature is the key ingredient. From the first law of thermodynamics equation, we know there are two ways to change the internal energy, either through "heat" or "work" {eq}`eq12`
 
 ```{math}
 :label: eq12
@@ -86,7 +86,7 @@ Then, divide the whole equation by $T$ and adopt the ideal gas law, we can find 
 From {eq}`eq8` to {eq}`eq9`, we can simply use the definition of buoyancy, i.e., $b'=-\frac{\rho'}{\bar{\rho_0}}g=\frac{\theta'}{\bar{\theta}}g$ and the hydrostatic approximation (i.e., $b_0=-g\rho_0$ You will need to finish the last step in the homework assignment) to get the hydrostatic thermodynamics equation.   
 :::
 
-__Atmospheric Blocking__
+## Atmospheric Blocking
 \
 A key process that can provide additional predictability is the occurrence of atmospheric blocking. Blocking is a process where the negative PV anomaly cuts off from its adjacent ridge and forms a region with closed PV contour. Different from the elongated feature of trough and ridge, the shape of blocking is relatively round. Due to the inverse cascade of large-scale kinetic energy (more concentrated to the large-scale feature), a round PV is less likely to dissipate until either it is eroded by diabatic process or move back into low PV regions. Thus blocking usually sustains longer than an elongated PV feature. 
 \
@@ -94,7 +94,7 @@ A key process that can provide additional predictability is the occurrence of at
 While blocking is an important predictability source, it is still an unsolved problem. To the best of our knowledge, there are a few processes such as wave activity and teleconnection can change the occurrence frequency of blocking {cite}`henderson2016influence`. In numerical experiments, the models with higher spatial resolution tend to simulate more reasonable blocking frequency suggesting the importance of upscale cascade of small-scale wave energy. There are a few interesting mechanisms proposed by Dr. Nakamura at U Chicago, who used a traffic jam model to describe the potential mechanisms of atmospheric blocking. {cite}`nakamura2018atmospheric` 
 
 
-__Teleconnections__
+## Teleconnections
 \
 While the discussion above focuses on the internal dynamics of PV, the external forcing can play important roles for timescales longer than 2 weeks. In equation {eq}`eq9`, we omit the external forcing. Thus, the vertical motion-induced adiabatic cooling/warming is always balanced by the horizontal temperature advection. However, with the existence of diabatic term, the balance can change. Here, we provide two different cases to demonstrate how the timescales of external forcing determines the predictability of mid-latitude weather. 
 
