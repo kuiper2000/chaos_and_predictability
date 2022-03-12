@@ -133,7 +133,7 @@ A simple example is
 \end{bmatrix}. 
 ```  
 
-We can find the original space spanned by vectors [1,0] and [0,1] is enlarged where the final vectors are [1,0] and [0,2]. The $\mathrm{det}{(\begin{bmatrix}
+In this case, the $\mathrm{det}{(\begin{bmatrix}
 1 & 0 \\
 0 & 2 
 \end{bmatrix})}$ equals 2 indicating the area spanned by $\begin{bmatrix}

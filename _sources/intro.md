@@ -63,7 +63,7 @@ __Part I: Lecturing__
 
 
 
-__Part II: Literature Reviews__ (35%)
+__Part II: Literature Reviews__ (25%)
 * Week 11: __The predictability of a flow which possesses many scales of motions (Lorenz 1969)__
 	* Key Lecture: Week 8	
 * Week 12: __Stochastic Forcing of ENSO by the Intraseasonal Oscillation (Moore and Kleeman 1999)__
