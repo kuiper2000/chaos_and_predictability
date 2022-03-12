@@ -97,7 +97,7 @@ where $\mathbf{X}$ is the state vector (i.e., [x,y,z]) and F is a nonlinear oper
 ``` 
 \
 and 
-\
+
 ```{math}
 :label: eq5
 \begin{align*}
@@ -105,7 +105,7 @@ and
 \delta\mathbf{X}(t) &= \mathbf{M}(t,t_0) \delta\mathbf{X}(t_0)
 \end{align*}
 ```
-{eq}`eq4` is so-called linear-tagent function of {eq}`eq3` and $\mathbf{M}(t,t_0)$ in {eq}`eq5` is a progagator operator (and $\frac{dF}{d\mathbf{X}}$ is a Jacobian matrix) which maps the initial state of $\delta\mathbf{X}(t_0)$ to the final state $\delta\mathbf{X}(t)$. It is important that $\mathbf{M}(t,t_0)$ is both function of $t$ and $t_0$. That means the time evolution of $\delta\mathbf{X}(t)$ is not only determined by where $\mathbf{X}$ starts but also depends on where it has been through! You might have noticed this is our fact (2).
+{eq}`eq4` is a linear-tagent function of {eq}`eq3` and $\mathbf{M}(t,t_0)$ in {eq}`eq5` is a progagator operator (and $\frac{dF}{d\mathbf{X}}$ is a Jacobian matrix) which maps the initial state of $\delta\mathbf{X}(t_0)$ to the final state $\delta\mathbf{X}(t)$. It is important that $\mathbf{M}(t,t_0)$ is both function of $t$ and $t_0$. That means the time evolution of $\delta\mathbf{X}(t)$ is not only determined by where $\mathbf{X}$ starts but also depends on where it has been through! You might have noticed this is our fact (2).
 
 By observing {eq}`eq5`, we can find the initial error (i.e., the difference between each member) will grow rapidly if $\int_{t_0}^{t} \frac{dF}{d\mathbf{X}} dt'>0$. An alternative way to describe this phenomena is the prognostic equation of forecast PDF
 
