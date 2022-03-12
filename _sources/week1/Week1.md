@@ -64,7 +64,7 @@ The final states' probability density function of three ensemble forecast shown 
 ```
 One take-home message in [FIG2](FIG2) and [FIG3](FIG3) is, the predictability is a function of state rather than an universal number. Now, we can imagine why the most experienced forecasters and the state-of-art NWP systems can still struggle sometimes...(Thus, be kind to them). There are also a few things to keep in mind. First, we only consider the uncertainty in model initial states but have ignored the uncertainty in model structures (e.g., if the model is correct) or the rounding error. This _perfect model assumption_ is one of the most important assumption in the enrire course (and probably the entire field) since it tells us the _upper limit_ of predictability. It also tells us, as long as we have infinitesimal error in model initial states, the predictability limit is inevitable. Second, _predictability_ has no meaning unless the ensemble simulations are used since its definition is based on how fast one ensemble member can diverge from the other. Third, to reject the null hypothesis in {eq}`eq1`, we need to choose a significance level. This indicates that we can always use a very low significance level (e.g., $1\%$ or $0.1\%$) to say we haven't reached the predictability limit. Thus, clearly define what threshold we are using for testing the null hypothesis is very important. 
 
-__Where the uncertainties come from?__ 
+## Where the uncertainties come from?
 \
 At the end of previous section, we talk about the potential uncertainties can come from three different places (or at least we can attribute any kind of forecast uncertainty to these three). Of course they can happen at the same time and be indistinguishable in some cases but we will first scrutinize them individually for the purpose of discussion. The first uncertainty is the initial state error or the observational error. In a perfect observation, the spatial and temporal resolution should go all the way down to the smallest scale (molecular scales). Because as long as we have missing observation, the upscale growth of initial error from those regions will ultimately lead to an unpredictable future (if the underlying dynamics is chaotic). 
 \
@@ -77,7 +77,7 @@ The last uncertainty is the rounding error. Comparing with the former two uncert
 Lorenz 96 {cite}`lorenz1996predictability` is one of the simplest models attemping to deal with the underpinning theory of subgrid-scale processes, and we will talk about more details in Week 4.  
 :::
 \
-__Introduction to ensemble forecast in weather and climate__ 
+## Introduction to ensemble forecast in weather and climate
 \
 Given the discussion about, we know two facts: (1) ensemble forecast is necessary when talking about predictability and (2) predictability limit is state-dependent. We also use Lorenz 63 model to justify these statements. Now, let's try to describe both facts in a single formula. First, we can write down the prognostic equations in a more generalized form. 
 
