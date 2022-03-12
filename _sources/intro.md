@@ -57,7 +57,9 @@ __Part I: Lecturing__
 * Week 10: __Future projection problems__
 	* Initial value problems vs boundary value problems
 	* Generalized stability and Predictable Components in a non-linear/boundary value problem
-	* Thompson et al. (2015) and Large-ensemble simulations 
+	* Hasselmann (1993) Optimal fingerprints for the detection of time-dependent climate change
+	* Thompson et al. (2015) Quantifying the Role of Internal Climate Variability in Future Climate Trends
+
 
 
 
