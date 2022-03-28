@@ -21,8 +21,10 @@ __Part I: Lecturing__
 	* Teleconnections 
 	* HW2: Baroclinic instability and Predictability (15%)
 * {ref}`week3` 
-  	* The physical and mathematical background
-    * Perfect model experitment
+  	* The origins of the story
+    * Rayleigh-Barnard Convection 
+    * Lorenz 63 model I (solutions) 
+    * Lorenz 63 model II (stability analysis)
 * Week 4: __The minimalist models for studying chaos and predictability II: Lorenz 96__
 	* The physical and mathematical background
 	* Single Scale

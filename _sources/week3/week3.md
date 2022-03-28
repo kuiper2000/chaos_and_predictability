@@ -111,7 +111,7 @@ where $a$ is the aspect ratio of domain (i.e., d/l) and $X(t)$, $Y(t)$ and $Z(t)
 ```  
 where $\sigma$ is Prandlt number, defined as $\nu/\kappa$, r is the ratio between $R$ (Rayleigh number) and $Rc$ (critical Rayleigh number, defined as $\pi^4 a^{-2}(1+a^2)^{3}$) and $b$ is $4(1+a^2)^{-1}$ (see more details in {cite}`rayleigh1916lix` and {cite}`saltzman1962finite`). $Rc$ provides a mean of estimating if the flow is dominated by buoyancy forcing or turbulent diffusion. When $R$ is much bigger than $Rc$, the diffusion is small compared to other terms in {eq}`eq16`, thus the small-scale features will take longer to decay (this is the reason why we are more likely to see a turbulent system). In a domain with $a^2=\frac{1}{2}$, the critical value of $R$ happens at $\frac{27\pi^4}{4}$. 
 
-From {eq}`eq19` to {eq}`eq22`, we can find the Lorenz 63 was originally from a heavily truncated Rayleigh-Barnard problem, where the three variables, $X(t),Y(t)$ and $Z(t)$ represent the first three Fourier modes.  
+From {eq}`eq19` to {eq}`eq22`, we can find the Lorenz 63 originated from a heavily truncated Rayleigh-Barnard problem, where the three variables, $X(t),Y(t)$ and $Z(t)$ represent the first three Fourier modes.  
 
 ## Lorenz 63 model II (stability analysis and perfect model experiment)
 
