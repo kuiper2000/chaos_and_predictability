@@ -20,7 +20,7 @@ __Part I: Lecturing__
 	* Atmospheric Blocking
 	* Teleconnections 
 	* HW2: Baroclinic instability and Predictability (15%)
-* Week 3: __The minimalist models for studying chaos and predictability I: Lorenz 63__  
+* {ref}`week3` 
   	* The physical and mathematical background
     * Perfect model experitment
 * Week 4: __The minimalist models for studying chaos and predictability II: Lorenz 96__

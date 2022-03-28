@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -51,6 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Week 2: Predictability source in atmosphere" href="../week2/week2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -94,7 +97,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week1/week1.html">
    Week 1: Predictability of Weather and Climate
@@ -103,6 +106,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../week2/week2.html">
    Week 2: Predictability source in atmosphere
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
   </a>
  </li>
 </ul>
@@ -187,6 +195,39 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-origins-of-the-story">
+   The origins of the story
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rayleigh-barnard-convection">
+   Rayleigh-Barnard Convection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lorenz-63-model-i-solutions">
+   Lorenz 63 model I (solutions)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lorenz-63-model-ii-stability-analysis-and-perfect-model-experiment">
+   Lorenz 63 model II (stability analysis and perfect model experiment)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -199,6 +240,39 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-origins-of-the-story">
+   The origins of the story
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rayleigh-barnard-convection">
+   Rayleigh-Barnard Convection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lorenz-63-model-i-solutions">
+   Lorenz 63 model I (solutions)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lorenz-63-model-ii-stability-analysis-and-perfect-model-experiment">
+   Lorenz 63 model II (stability analysis and perfect model experiment)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -207,7 +281,132 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="week-3-the-minimalist-models-for-studying-chaos-and-predictability-i-lorenz-63">
 <span id="week3"></span><h1>Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63<a class="headerlink" href="#week-3-the-minimalist-models-for-studying-chaos-and-predictability-i-lorenz-63" title="Permalink to this headline">¶</a></h1>
-<p>In weeks 1 and 2, we introduced how to define predictability and some potential predictability sources in Earth atmosphere. This week, we will talk about the origins of predictability or chaos. Next to relativity and statistical mechanics, chaos is probably one of the most groundbreaking discoveries in theoretical physics.</p>
+<p>In weeks 1 and 2, we learned how to define predictability and explore the potential predictability sources in Earth atmosphere. This week, we will talk about the origins of the studies of predictability and chaos.</p>
+<p>Next to relativity and statistical mechanics, chaos is probably one of the most groundbreaking discoveries in theoretical physics in 20th century. Although Edward Lorenz is not “the” father of chaos theory (some fundamental work had been done by <a class="reference external" href="https://en.wikipedia.org/wiki/Henri_Poincar%C3%A9">Henri Poincare</a>), he was definitely one of a few pioneers who systematically unraveled this field. This week, we will walk through the details of his legendary 63 paper: “Deterministic non-periodic flow”<span id="id1">[<a class="reference internal" href="#id13">Lor63</a>]</span>.</p>
+<div class="section" id="the-origins-of-the-story">
+<h2>The origins of the story<a class="headerlink" href="#the-origins-of-the-story" title="Permalink to this headline">¶</a></h2>
+<p>Some of you might have heard of the story that Edward Lorenz (Ed hereafter) accidentally found “chaos” when he was dealing with the rounding error problem. Specifically, when he tried to save the simulation output for the next experiments (while he was taking a break for a cup of coffee), he unpurposefully truncated the data which leads a totally different simulated result at the end. He then realized that for a non-linear chaotic system, even an infinite error in the initial state can ultimately lead to an unpredictable future i.e., the relation between aperiodicity and the loss of prediction skills.</p>
+<p>To better understand how the small initial error leads to an chaotic future, Ed needed a system, which is both chaotic but also simple enough for understanding (also see this <a class="reference external" href="https://eapsweb.mit.edu/news/2018/celebration-two-pioneers-modern-meteorology">workshop</a>  in honor of Lorenz and Charney). At the very beginning, Ed was working on a set of equation with 12 variables mimicking the state-of-art forecast system</p>
+<div class="math notranslate nohighlight" id="equation-eq16">
+<span class="eqno">(16)<a class="headerlink" href="#equation-eq16" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+\frac{dX_i}{dt}=\sum_{m,n}a_{imn}X_mX_n+\sum_{m}b_{im}X_m+c
+\end{align*}\]</div>
+<p>With the chosen parameters, he found some non-periodic behaviors for this set of equations. However, it is too complicated to boil down (and later in his career, he found it’s impossible to simplify this equation). So…Ed continued searching for a much simpler system. His effort bore fruits, when he visited Barry Saltzman in 1961 <span id="id2">[<a class="reference internal" href="#id19">Sal62</a>]</span>. Barry showed him 7 equations representing the convective system, where most of them showed periodic behavior except one refused to settle down. This is the famous Rayleigh-Bernard convection<span id="id3">[<a class="reference internal" href="#id18">Ray16</a>]</span>, also the starting point of the famous Lorenz 63 model.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Equation <a class="reference internal" href="#equation-eq16">(16)</a> is so-called Lorenz 96 model<span id="id4">[<a class="reference internal" href="#id14">Lor96</a>]</span>, which describes non-linear waves propagating in a single zonal band. More details will be provided next week. One reason making it impossible to simplify is that when we try to solve the linearnized <a class="reference internal" href="#equation-eq16">(16)</a> (stability test, see week 7), it will lead a polynomial equation with orders higher than 5 (i.e., <span class="math notranslate nohighlight">\(\sum_{n=1}^{N} a_n x^n\)</span> where N<span class="math notranslate nohighlight">\(\geq 5\)</span>. According to <a class="reference external" href="https://en.wikipedia.org/wiki/Galois_theory">Galois theory</a>, there is no analytical solution for a polynomial equation with order higher than 5 (or can’t be represented with the existing math symbols such as +,-, X, / or <span class="math notranslate nohighlight">\(()^{\frac{1}{n}}\)</span> (<span class="math notranslate nohighlight">\(\forall n\in N\)</span>) without introducing the concept of infinity).</p>
+</div>
+</div>
+<div class="section" id="rayleigh-barnard-convection">
+<h2>Rayleigh-Barnard Convection<a class="headerlink" href="#rayleigh-barnard-convection" title="Permalink to this headline">¶</a></h2>
+<p>Rayleigh-Barnard problem is a set of equation describing the convective-driven/diffusion-driven flow. Obviously, there are two competing forces of mass transport in this kind of flow (1) buoyancy and (2) drag. So we need momentum and thermodynamics equations in Rayleigh-Barnard problem.</p>
+<div class="math notranslate nohighlight" id="equation-eq17">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eq17" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\frac{\partial \mathbf{u}}{\partial t}+(\mathbf{u}\cdot\nabla)\mathbf{u} &amp;=\nu\Delta\mathbf{u}-\frac{\nabla_h p}{\rho_0}+(\alpha T)g \\
+\frac{\partial T}{\partial t}-u_z\Gamma+ (\mathbf{u}\cdot\nabla_h)T &amp;=\kappa\Delta T \\
+\nabla\cdot \mathbf{u} &amp;= 0
+\end{align*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> is 3-dimensional momentum in vector form, g is the gravitational acceleration, T is the departure of temperature from a reference temperature profile (or potential temperature since we will introduce Boussinesq approximation later). <span class="math notranslate nohighlight">\(\alpha\)</span> is the coefficient of thermal expansion (not specific volume), which is define as <span class="math notranslate nohighlight">\(\frac{1}{A}\frac{dA}{dT}\)</span> (A is volume and T is the temperature). The last term in first equation of <a class="reference internal" href="#equation-eq17">(17)</a> is so-called reduced gravity or buoyancy. <span class="math notranslate nohighlight">\(u_z\)</span> is the vertical velocity and <span class="math notranslate nohighlight">\(\Gamma\)</span> is the lapse rate, defined as <span class="math notranslate nohighlight">\(-\frac{(T_L-T_H)}{d}\)</span> (d is the vertical depth of fluid) and <span class="math notranslate nohighlight">\(\kappa\Delta T\)</span> is the thermal diffusion. The last equation of <a class="reference internal" href="#equation-eq17">(17)</a> is the mass continuity with Boussinesq approximation. To simplify the problem, we further implement two boundary conditions: (1) <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> = 0 at z=0,d and (2) <span class="math notranslate nohighlight">\(T\)</span> = 0 at z=0,d. In addition, we assume <span class="math notranslate nohighlight">\(\mathbf{u}=(u_x,0,u_z\)</span>). These implemented conditions simplify the Rayleigh-Benard convection to problem of a bounded (at d=0 and z), 2D convection.</p>
+<p>We further introduce a few non-dimensional parameters to rescale the equation (,which can be done with Buckingham <span class="math notranslate nohighlight">\(\pi\)</span> theorem as well).</p>
+<div class="math notranslate nohighlight" id="equation-eq18">
+<span class="eqno">(18)<a class="headerlink" href="#equation-eq18" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+x^* &amp;= \frac{x}{d} \\
+z^* &amp;= \frac{z}{d} \\
+t^* &amp;= \frac{t}{(d^2/\kappa)} \\
+u_x^* &amp;= \frac{u_x}{\kappa/d} \\
+u_z^* &amp;= \frac{u_z}{\kappa/d} \\
+T^*   &amp;= \frac{T}{(\kappa\nu/g\alpha d^3)} \\
+\end{align*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\kappa/d\)</span> is the characteristic velocity and <span class="math notranslate nohighlight">\(t_c\)</span> is the characteristic timescales defined as <span class="math notranslate nohighlight">\((d^2/\kappa)\)</span> (dissipation timescale). With this non-dimensional scaling, <a class="reference internal" href="#equation-eq17">(17)</a> is reduced to a set of equations with only two free parameters. In addition, since the solution is 2D and bounded, we can use mass continuity to find the relation between mass stream function and momentum, i.e., <span class="math notranslate nohighlight">\(\mathbf{u}=(u_x,0,u_z)=(-\frac{\partial \psi}{\partial z},0,\frac{\partial \psi}{\partial x})\)</span>.  This one-on-one relation is so-called invertibility, which is similar to the concept of PV inversion (i.e., <a class="reference internal" href="../week2/week2.html#equation-eq11">(11)</a>).</p>
+<p>The x component of <a class="reference internal" href="#equation-eq17">(17)</a> contains <span class="math notranslate nohighlight">\(\partial_x p\)</span>, and the z component contains <span class="math notranslate nohighlight">\(\partial_z p\)</span>. Hence by differentiating the former with respect to z and the latter with respect to x, we have two equations containing a <span class="math notranslate nohighlight">\(\partial_x\partial_z\)</span> term, which drops out on subtraction. Substituting the stream function into this equation results in</p>
+<div class="math notranslate nohighlight" id="equation-eq19">
+<span class="eqno">(19)<a class="headerlink" href="#equation-eq19" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\partial_{t^*} \Delta^* \psi^*-\partial_{z^*} \psi^* \partial_{x^*} \Delta^* \psi^*+\partial_{x^*} \psi^*\partial_{z^*}\Delta^* \psi^* &amp;= \sigma\Delta^{*2} \psi^*+\sigma\partial_{x^*} T^* \\
+\partial_{t^*} T^* -\partial_{z^*} \psi^* \partial_{x^*} T^*+\partial_{x^*} \psi^*\partial_{z^*}T^* &amp;= \Delta^* T^* -R \partial_{x^*} \psi^* 
+\end{align*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is Prandlt number, defined as <span class="math notranslate nohighlight">\(\frac{\nu}{\kappa}\)</span>, and <span class="math notranslate nohighlight">\(R\)</span> is Rayleigh number, defined as <span class="math notranslate nohighlight">\(\frac{g\alpha d^3 (T_H-T_L)}{\kappa\nu}\)</span>. By varying <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(R\)</span>, we can acquire the statistics of Rayleigh-Bernard convection in different parameter spaces. The animation below is based on a simulation of <span class="math notranslate nohighlight">\((\sigma/R)=\frac{1}{10^8}\)</span> .</p>
+<div class="figure align-default" id="fig6">
+<img alt="../_images/image.gif" src="../_images/image.gif" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">An example of buoyancy-driven Rayleigh-Barnard convection with <span class="math notranslate nohighlight">\((\sigma/R)=\frac{1}{10^8}\)</span> and an aspect ration of 16:9. (favoring the generation of zonal wave number 2 convection). The shading shows the temperature anomaly.</span><a class="headerlink" href="#fig6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="lorenz-63-model-i-solutions">
+<h2>Lorenz 63 model I (solutions)<a class="headerlink" href="#lorenz-63-model-i-solutions" title="Permalink to this headline">¶</a></h2>
+<p>To see if equation <a class="reference internal" href="#equation-eq19">(19)</a> can be boiled down to the simplest form but still maintains its chaotic nature, we apply Fourier decomposition to <a class="reference internal" href="#equation-eq19">(19)</a> to simplify the problem. Since the solution is periodic in zonal direction but bounded in vertical direction, we assume it has the following form.</p>
+<div class="math notranslate nohighlight" id="equation-eq20">
+<span class="eqno">(20)<a class="headerlink" href="#equation-eq20" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+T^*(x^*,z^*)    &amp; = \sum_{k1=-\infty}^{\infty}\sum_{k2=1}^{\infty} \hat{T}_{k1,k2}e^{ik_1\pi x/l} \mathrm{sin}(ik_2\pi z/d)\\
+\psi^*(x^*,z^*) &amp; = \sum_{k1=-\infty}^{\infty}\sum_{k2=1}^{\infty} \hat{\psi}_{k1,k2}e^{ik_1\pi x/l} \mathrm{sin}(ik_2\pi z/d)
+\end{align*}\end{split}\]</div>
+<p>Before we dive right in <a class="reference internal" href="#equation-eq19">(19)</a>, a simple math trick we should know is that the interaction of flow with different scales (i.e., wave number) can yield new scales or new wave number. i.e., <span class="math notranslate nohighlight">\(\psi_{k_1} \psi_{k_2} = \hat{\psi_{k_1}}\hat{\psi_{k_2}}e^{k_1 x}e^{k_2 x}=\hat{\psi_{k_1}}\hat{\psi_{k_1}} e^{(k_1+k_2) x}\)</span>. Therefore, to predict <span class="math notranslate nohighlight">\(\psi_{k_1}\)</span> or <span class="math notranslate nohighlight">\(T_{k_1}\)</span> in of <a class="reference internal" href="#equation-eq19">(19)</a>, we need at least one source term (e.g., advection) which has the same wave number after the nonlinear interaction.  Otherwise, we will never be able to predict <span class="math notranslate nohighlight">\(\psi_{k_1}\)</span> or <span class="math notranslate nohighlight">\(T_{k_1}\)</span> due to the orthogonality of Fourier modes (this also leads to another very interesting math problem: <a class="reference external" href="https://en.wikipedia.org/wiki/Partition_(number_theory)">Partition</a>, where <a class="reference external" href="https://en.wikipedia.org/wiki/Srinivasa_Ramanujan">Srinivasa Ramanujan</a> made some groundbreaking contributions.)</p>
+<p>Back to <a class="reference internal" href="#equation-eq19">(19)</a>, by inspecting <a class="reference internal" href="#equation-eq19">(19)</a>, the minimum way of sustaining the nonlinearity is to keep the advection term with the least amount of wave numbers. Here we choose the imaginary part of <span class="math notranslate nohighlight">\(\psi_{k_1=1}\)</span> as the starting point. If we drop the advection term in the prognostic equation of <span class="math notranslate nohighlight">\(\psi\)</span> to simplify the equation, the only way to keep its nonlinearity is through <span class="math notranslate nohighlight">\(T\)</span> (since <span class="math notranslate nohighlight">\(\Delta^2 \psi\)</span> is a damping term). Thus, we must have a prognostic equation for <span class="math notranslate nohighlight">\(\hat{T_{k1=1}}\)</span>. On the other hand, due to the form of <span class="math notranslate nohighlight">\(\sigma\partial_{x}T\)</span> in <a class="reference internal" href="#equation-eq19">(19)</a>, the prognostic equation for <span class="math notranslate nohighlight">\(\hat{T_{k1=1}}\)</span> must predict its real part (I will let you think about why).</p>
+<p>Because we have dropped the advection term in the prognostic equation of <span class="math notranslate nohighlight">\(\psi\)</span>, we must keep the advection term in the prognostic equation of <span class="math notranslate nohighlight">\(T\)</span> to ensure the nonlinearity of the whole dynamical system. According to our previous discussion, as long as the difference in wave number between two scales equals 1 i.e., <span class="math notranslate nohighlight">\(k_1+k_2=1\)</span> or <span class="math notranslate nohighlight">\(k_1-k_2=1\)</span>, the nonlinear interaction between <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(k_2\)</span> can always generate wave number 1 flow. Thus, the simplest way to include the forcing term for <span class="math notranslate nohighlight">\(\hat{T_{k_1=1}}\)</span> without introducing too many new scales is to have <span class="math notranslate nohighlight">\(\hat{T_{k_1=0}}\)</span> since we already have <span class="math notranslate nohighlight">\(\hat{\psi_{k_1=1}}\)</span>. (i.e., wave number 1 wind field interacts with the mean temperature). This will bring us the third variable <span class="math notranslate nohighlight">\(\hat{T_{k_1=0}}\)</span>.</p>
+<p>Briefly summarize what we have so far: the real part of <span class="math notranslate nohighlight">\(\hat{\psi_{k1=1}}\)</span>, the imaginary part of <span class="math notranslate nohighlight">\(\hat{T_{k_1=1}}\)</span> and <span class="math notranslate nohighlight">\(\hat{T_{k_1=0}}\)</span>. To see if we can close the loop (i.e., enough forcing terms for all included wave numbers), we can substitute <span class="math notranslate nohighlight">\(T\)</span> in <a class="reference internal" href="#equation-eq19">(19)</a> with <span class="math notranslate nohighlight">\(\hat{T_{k_1=0}}\)</span> and check if there is any term can be used as the forcing to generate <span class="math notranslate nohighlight">\(\hat{T_{k_1=0}}\)</span>. It turned the nonlinear interaction between <span class="math notranslate nohighlight">\(\hat{\psi_{k_1=1}}\)</span> and <span class="math notranslate nohighlight">\(\hat{T_{k_1=1}}\)</span> can yield <span class="math notranslate nohighlight">\(\hat{T_{k_1=0}}\)</span>. Thus, we have officially closed the loop!! (Woohoo)</p>
+<p>Repeat the same practice, we can find the necessary meridional wave numbers (I will let readers explore this part). Therefore, the solution of <a class="reference internal" href="#equation-eq19">(19)</a> is boiled down to</p>
+<div class="math notranslate nohighlight" id="equation-eq21">
+<span class="eqno">(21)<a class="headerlink" href="#equation-eq21" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\psi^*(x^*,z^*)    &amp; = X(t)\mathrm{sin}(\pi ax^*)\mathrm{sin}(\pi z^*) \\
+T^*(x^*,z^*)       &amp; = Y(t)\mathrm{cos}(\pi ax^*)\mathrm{sin}(\pi z^*)-Z(t)\mathrm{sin}(2\pi z^*)
+\end{align*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is the aspect ratio of domain (i.e., d/l) and <span class="math notranslate nohighlight">\(X(t)\)</span>, <span class="math notranslate nohighlight">\(Y(t)\)</span> and <span class="math notranslate nohighlight">\(Z(t)\)</span> correspond to the real part of <span class="math notranslate nohighlight">\(\hat{\psi_{k_1=1,k_2=1}}\)</span>, the imaginary part of <span class="math notranslate nohighlight">\(\hat{T_{k_1=1,k_2=1}}\)</span> and <span class="math notranslate nohighlight">\(\hat{T_{k_1=0,k_2=2}}\)</span> respectively. By substituting <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(\psi\)</span> in <a class="reference internal" href="#equation-eq19">(19)</a> with the definition in <a class="reference internal" href="#equation-eq21">(21)</a> and removing the constant. We can have the famous Lorenz 63 model</p>
+<div class="math notranslate nohighlight" id="equation-eq22">
+<span class="eqno">(22)<a class="headerlink" href="#equation-eq22" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\dot{X} &amp;= -\sigma X+ \sigma Y \\
+\dot{Y} &amp;= -XZ+ rX- Y \\
+\dot{Z} &amp;= XY- bZ \\
+\end{align*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is Prandlt number, defined as <span class="math notranslate nohighlight">\(\nu/\kappa\)</span>, r is the ratio between <span class="math notranslate nohighlight">\(R\)</span> (Rayleigh number) and <span class="math notranslate nohighlight">\(Rc\)</span> (critical Rayleigh number, defined as <span class="math notranslate nohighlight">\(\pi^4 a^{-2}(1+a^2)^{3}\)</span>) and <span class="math notranslate nohighlight">\(b\)</span> is <span class="math notranslate nohighlight">\(4(1+a^2)^{-1}\)</span> (see more details in <span id="id5">[<a class="reference internal" href="#id18">Ray16</a>]</span> and <span id="id6">[<a class="reference internal" href="#id19">Sal62</a>]</span>). <span class="math notranslate nohighlight">\(Rc\)</span> provides a mean of estimating if the flow is dominated by buoyancy forcing or turbulent diffusion. When <span class="math notranslate nohighlight">\(R\)</span> is much bigger than <span class="math notranslate nohighlight">\(Rc\)</span>, the diffusion is small compared to other terms in <a class="reference internal" href="#equation-eq16">(16)</a>, thus the small-scale features will take longer to decay (this is the reason why we are more likely to see a turbulent system). In a domain with <span class="math notranslate nohighlight">\(a^2=\frac{1}{2}\)</span>, the critical value of <span class="math notranslate nohighlight">\(R\)</span> happens at <span class="math notranslate nohighlight">\(\frac{27\pi^4}{4}\)</span>.</p>
+<p>From <a class="reference internal" href="#equation-eq19">(19)</a> to <a class="reference internal" href="#equation-eq22">(22)</a>, we can find the Lorenz 63 was originally from a heavily truncated Rayleigh-Barnard problem, where the three variables, <span class="math notranslate nohighlight">\(X(t),Y(t)\)</span> and <span class="math notranslate nohighlight">\(Z(t)\)</span> represent the first three Fourier modes.</p>
+</div>
+<div class="section" id="lorenz-63-model-ii-stability-analysis-and-perfect-model-experiment">
+<h2>Lorenz 63 model II (stability analysis and perfect model experiment)<a class="headerlink" href="#lorenz-63-model-ii-stability-analysis-and-perfect-model-experiment" title="Permalink to this headline">¶</a></h2>
+<p>An easy way to visualize how the chosen parameters affect the dynamical behavior in Lorenz 63 model is through the stability analysis. While some basic ideas are provided here, we will cover more details in week 7. The basic concept of linear stability analysis is examining the linear error growth rate and testing if the system is linearly stable or unstable (e.g., <span class="math notranslate nohighlight">\(\psi \sim e^{\lambda t}\)</span>, where <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> for unstable case and vice versa). If the given system is linearly unstable, it will deviate from linear regimes and become unpredictable in finite simulation time.</p>
+<p>The linearized Lorenz 63 model can be written as:</p>
+<div class="math notranslate nohighlight" id="equation-eq23">
+<span class="eqno">(23)<a class="headerlink" href="#equation-eq23" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+\dot{X}  \\
+\dot{Y}  \\
+\dot{Z} 
+\end{bmatrix} = 
+\begin{bmatrix}
+-\sigma &amp; \sigma &amp; 0 \\
+r &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; b
+\end{bmatrix}
+\begin{bmatrix}
+X  \\
+Y  \\
+Z 
+\end{bmatrix}
+=\mathbf{L}\begin{bmatrix}
+X  \\
+Y  \\
+Z 
+\end{bmatrix}\end{split}\]</div>
+<p>It’s not hard to find that <span class="math notranslate nohighlight">\(Z(t)\)</span> is now decoupled with <span class="math notranslate nohighlight">\(X(t)\)</span> and <span class="math notranslate nohighlight">\(Y(t)\)</span>. Interestingly, <span class="math notranslate nohighlight">\(Z(t)\)</span> also represents mean state (wave number 0) in the original Rayleigh-Barnard equation. Physically, linearization also assumes that the mean state doesn’t interact with the transient states.</p>
+<p>By calculating the eigen value of <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> in <a class="reference internal" href="#equation-eq23">(23)</a>, we can estimate the growth rate/frequency of linearized Lorenz 63 model. Since we are looking for a chaotic system, that means we are interested in the case when <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> (roots are not only real but positive) in <a class="reference internal" href="#equation-eq24">(24)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq24">
+<span class="eqno">(24)<a class="headerlink" href="#equation-eq24" title="Permalink to this equation">¶</a></span>\[[\lambda+b][\lambda^2+(\sigma+1)\lambda+\sigma(1-r)]=0\]</div>
+<p><a class="reference internal" href="#equation-eq24">(24)</a> has three real roots when <span class="math notranslate nohighlight">\(r&gt;0\)</span>; all negative when <span class="math notranslate nohighlight">\(r&lt;1\)</span> and all positive when <span class="math notranslate nohighlight">\(r&gt;1\)</span>, which is consistent with the finding in Rayleigh 1912 <span id="id7">[<a class="reference internal" href="#id18">Ray16</a>]</span>. (i.e., the convection only happens when <span class="math notranslate nohighlight">\(R&gt;Rc\)</span>). Another way to visualize the linear instability on a phase space is by estimating the divergence of physical states or the trace of the linear operator in <a class="reference internal" href="#equation-eq23">(23)</a>. i.e., <span class="math notranslate nohighlight">\(\frac{\partial\dot{X}}{\partial X}+\frac{\partial\dot{Y}}{\partial Y}+\frac{\partial\dot{Z}}{\partial Z}=\mathrm{Tr}(\mathbf{L})=-(\sigma+b+1)\)</span> (see discussion in <a class="reference internal" href="../week1/week1.html#week1"><span class="std std-ref">Week 1: Predictability of Weather and Climate</span></a>). If <span class="math notranslate nohighlight">\(\mathrm{Tr}(\mathbf{L})&gt;0\)</span>, it indicates the volume spanned by different ensemble members will increase with the increase of forecast lead time. However, a value of <span class="math notranslate nohighlight">\(\mathrm{Tr}(\mathbf{L})&lt;0\)</span> doesn’t mean this system will shrink to a single point. Instead, it may simply flatten to a plate. In most cases, <a class="reference internal" href="#equation-eq24">(24)</a> is not valid due to the non-stationary basic states. A more reasonable way to linearize the Lorenz 63 model will be discussed in week 5 when we talk about its connections with statistical mechanics.</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="id8"><dl class="citation">
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id1">Lor63</a></span></dt>
+<dd><p>Edward N Lorenz. Deterministic nonperiodic flow. <em>Journal of atmospheric sciences</em>, 20(2):130–141, 1963.</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id4">Lor96</a></span></dt>
+<dd><p>Edward N Lorenz. Predictability: a problem partly solved. In <em>Proc. Seminar on predictability</em>, volume 1. 1996.</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets">Ray16</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id5">2</a>,<a href="#id7">3</a>)</span></dt>
+<dd><p>Lord Rayleigh. Lix. on convection currents in a horizontal layer of fluid, when the higher temperature is on the under side. <em>The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science</em>, 32(192):529–546, 1916.</p>
+</dd>
+<dt class="label" id="id19"><span class="brackets">Sal62</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id6">2</a>)</span></dt>
+<dd><p>Barry Saltzman. Finite amplitude free convection as an initial value problem—i. <em>Journal of atmospheric sciences</em>, 19(4):329–341, 1962.</p>
+</dd>
+</dl>
+</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -234,7 +433,14 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../week2/week2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 2: Predictability source in atmosphere</p>
+        </div>
+    </a>
 </div>
             
         </div>
