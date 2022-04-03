@@ -8,9 +8,9 @@ Next to relativity and statistical mechanics, chaos is probably one of the most 
 
 ## The origins of the story
 
-Some of you might have heard of the story that Edward Lorenz (Ed hereafter) accidentally found "chaos" when he was dealing with the rounding error problem. Specifically, when he tried to save the simulation output for the next experiments (while he was taking a break for a cup of coffee), he unpurposefully truncated the data which leads a totally different simulated result at the end. He then realized that for a non-linear chaotic system, even an infinite error in the initial state can ultimately lead to an unpredictable future i.e., the relation between aperiodicity and the loss of prediction skills.   
+Some of you might have heard of the story that Edward Lorenz (Ed hereafter) accidentally found "chaos" when he was dealing with the rounding error problem. Specifically, when he tried to save the simulation output for the next experiments (while he was taking a break for a cup of coffee), he unpurposefully truncated the data which led a totally different simulated result at the end. He then realized that for a non-linear chaotic system, even an infinite error in the initial state can ultimately lead to an unpredictable future i.e., the relation between aperiodicity and the loss of prediction skills.   
 
-To better understand how the small initial error leads to an chaotic future, Ed needed a system, which is both chaotic but also simple enough for understanding (also see this [workshop](https://eapsweb.mit.edu/news/2018/celebration-two-pioneers-modern-meteorology)  in honor of Lorenz and Charney). At the very beginning, Ed was working on a set of equation with 12 variables mimicking the state-of-art forecast system 
+To better understand how the small initial error led to an chaotic future, Ed needed a system, which was both chaotic but also simple enough for understanding (also see this [workshop](https://eapsweb.mit.edu/news/2018/celebration-two-pioneers-modern-meteorology)  in honor of Lorenz and Charney). At the very beginning, Ed was working on a set of equation with 12 variables mimicking the state-of-art forecast system 
 
 ```{math}
 :label: eq16
@@ -18,7 +18,7 @@ To better understand how the small initial error leads to an chaotic future, Ed 
 \frac{dX_i}{dt}=\sum_{m,n}a_{imn}X_mX_n+\sum_{m}b_{im}X_m+c
 \end{align*}
 ```  
-With the chosen parameters, he found some non-periodic behaviors for this set of equations. However, it is too complicated to boil down (and later in his career, he found it's impossible to simplify this equation). So...Ed continued searching for a much simpler system. His effort bore fruits, when he visited Barry Saltzman in 1961 {cite}`saltzman1962finite`. Barry showed him 7 equations representing the convective system, where most of them showed periodic behavior except one refused to settle down. This is the famous Rayleigh-Bernard convection{cite}`rayleigh1916lix`, also the starting point of the famous Lorenz 63 model. 
+With the chosen parameters, he found some non-periodic behaviors for this set of equations. However, it was too complicated to boil down (and later in his career, he found it's impossible to simplify this equation). So...Ed continued searching for a much simpler system. His effort bore fruits when he visited Barry Saltzman in 1961 {cite}`saltzman1962finite`. Barry showed him 7 equations representing the convective system, where most of them showed periodic behavior except one refused to settle down. This was the famous Rayleigh-Bernard convection{cite}`rayleigh1916lix`, also the starting point of the famous Lorenz 63 model. 
 
 :::{note}
 Equation {eq}`eq16` is so-called Lorenz 96 model{cite}`lorenz1996predictability`, which describes non-linear waves propagating in a single zonal band. More details will be provided next week. One reason making it impossible to simplify is that when we try to solve the linearnized {eq}`eq16` (stability test, see week 7), it will lead a polynomial equation with orders higher than 5 (i.e., $\sum_{n=1}^{N} a_n x^n$ where N$\geq 5$. According to [Galois theory](https://en.wikipedia.org/wiki/Galois_theory), there is no analytical solution for a polynomial equation with order higher than 5 (or can't be represented with the existing math symbols such as +,-, X, / or $()^{\frac{1}{n}}$ ($\forall n\in N$) without introducing the concept of infinity).  
@@ -88,7 +88,7 @@ Back to {eq}`eq19`, by inspecting {eq}`eq19`, the minimum way of sustaining the 
 
 Because we have dropped the advection term in the prognostic equation of $\psi$, we must keep the advection term in the prognostic equation of $T$ to ensure the nonlinearity of the whole dynamical system. According to our previous discussion, as long as the difference in wave number between two scales equals 1 i.e., $k_1+k_2=1$ or $k_1-k_2=1$, the nonlinear interaction between $k_1$ and $k_2$ can always generate wave number 1 flow. Thus, the simplest way to include the forcing term for $\hat{T_{k_1=1}}$ without introducing too many new scales is to have $\hat{T_{k_1=0}}$ since we already have $\hat{\psi_{k_1=1}}$. (i.e., wave number 1 wind field interacts with the mean temperature). This will bring us the third variable $\hat{T_{k_1=0}}$. 
 
-Briefly summarize what we have so far: the real part of $\hat{\psi_{k1=1}}$, the imaginary part of $\hat{T_{k_1=1}}$ and $\hat{T_{k_1=0}}$. To see if we can close the loop (i.e., enough forcing terms for all included wave numbers), we can substitute $T$ in {eq}`eq19` with $\hat{T_{k_1=0}}$ and check if there is any term can be used as the forcing to generate $\hat{T_{k_1=0}}$. It turned the nonlinear interaction between $\hat{\psi_{k_1=1}}$ and $\hat{T_{k_1=1}}$ can yield $\hat{T_{k_1=0}}$. Thus, we have officially closed the loop!! (Woohoo)
+Let's take a quick look at what we have so far: the real part of $\hat{\psi_{k1=1}}$, the imaginary part of $\hat{T_{k_1=1}}$ and $\hat{T_{k_1=0}}$. To see if we can close the loop (i.e., enough forcing terms for all included wave numbers), we can substitute $T$ in {eq}`eq19` with $\hat{T_{k_1=0}}$ and check if there is any term can be used as the forcing to generate $\hat{T_{k_1=0}}$. It turned the nonlinear interaction between $\hat{\psi_{k_1=1}}$ and $\hat{T_{k_1=1}}$ can yield $\hat{T_{k_1=0}}$. Thus, we have officially closed the loop!! (Woohoo)
 
 Repeat the same practice, we can find the necessary meridional wave numbers (I will let readers explore this part). Therefore, the solution of {eq}`eq19` is boiled down to 
 
@@ -113,7 +113,7 @@ where $\sigma$ is Prandlt number, defined as $\nu/\kappa$, r is the ratio betwee
 
 From {eq}`eq19` to {eq}`eq22`, we can find the Lorenz 63 originated from a heavily truncated Rayleigh-Barnard problem, where the three variables, $X(t),Y(t)$ and $Z(t)$ represent the first three Fourier modes.  
 
-## Lorenz 63 model II (stability analysis and perfect model experiment)
+## Lorenz 63 model II (stability analysis)
 
 An easy way to visualize how the chosen parameters affect the dynamical behavior in Lorenz 63 model is through the stability analysis. While some basic ideas are provided here, we will cover more details in week 7. The basic concept of linear stability analysis is examining the linear error growth rate and testing if the system is linearly stable or unstable (e.g., $\psi \sim e^{\lambda t}$, where $\lambda>0$ for unstable case and vice versa). If the given system is linearly unstable, it will deviate from linear regimes and become unpredictable in finite simulation time.
 
