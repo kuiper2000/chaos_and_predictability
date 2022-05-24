@@ -35,6 +35,7 @@ os.environ['FFTW_LIBRARY_PATH'] = "/usr/lib/x86_64-linux-gnu"
 
 #Importing necessary modules
 import numpy as np
+import h5py
 import matplotlib.pyplot as plt
 import matplotlib.animation as ani
 import dedalus.public as de
@@ -53,11 +54,11 @@ logger = logging.getLogger('2D RB Convection')
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
 Input [0;32mIn [1][0m, in [0;36m<module>[0;34m[0m
-[1;32m     19[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[1;32m     20[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01manimation[39;00m [38;5;28;01mas[39;00m [38;5;21;01mani[39;00m
-[0;32m---> 21[0m [38;5;28;01mimport[39;00m [38;5;21;01mdedalus[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpublic[39;00m [38;5;28;01mas[39;00m [38;5;21;01mde[39;00m
-[1;32m     22[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdedalus[39;00m[38;5;21;01m.[39;00m[38;5;21;01mextras[39;00m [38;5;28;01mimport[39;00m flow_tools
-[1;32m     23[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdedalus[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtools[39;00m [38;5;28;01mimport[39;00m post
+[1;32m     20[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m     21[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01manimation[39;00m [38;5;28;01mas[39;00m [38;5;21;01mani[39;00m
+[0;32m---> 22[0m [38;5;28;01mimport[39;00m [38;5;21;01mdedalus[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpublic[39;00m [38;5;28;01mas[39;00m [38;5;21;01mde[39;00m
+[1;32m     23[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdedalus[39;00m[38;5;21;01m.[39;00m[38;5;21;01mextras[39;00m [38;5;28;01mimport[39;00m flow_tools
+[1;32m     24[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdedalus[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtools[39;00m [38;5;28;01mimport[39;00m post
 
 [0;31mModuleNotFoundError[0m: No module named 'dedalus'
 ModuleNotFoundError: No module named 'dedalus'

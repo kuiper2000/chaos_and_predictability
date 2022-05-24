@@ -110,6 +110,11 @@
    Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -295,62 +300,26 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Complete output from command python setup.py egg_info:
     Traceback (most recent call last):
       File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
-      File &quot;/private/var/folders/qf/dfz088fn4_g4gpgm95zbg7x8000219/T/pip-build-44trfxp6/dedalus/setup.py&quot;, line 17, in &lt;module&gt;
+      File &quot;/private/var/folders/qf/dfz088fn4_g4gpgm95zbg7x8000219/T/pip-build-y6_ie7mp/dedalus/setup.py&quot;, line 17, in &lt;module&gt;
         from Cython.Build import cythonize
     ModuleNotFoundError: No module named &#39;Cython&#39;
     
     ----------------------------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Command &quot;python setup.py egg_info&quot; failed with error code 1 in /private/var/folders/qf/dfz088fn4_g4gpgm95zbg7x8000219/T/pip-build-44trfxp6/dedalus/</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">You are using pip version 9.0.1, however version 22.0.4 is available.</span>
+<span class=" -Color -Color-Red">Command &quot;python setup.py egg_info&quot; failed with error code 1 in /private/var/folders/qf/dfz088fn4_g4gpgm95zbg7x8000219/T/pip-build-y6_ie7mp/dedalus/</span>
+<span class=" -Color -Color-Yellow">You are using pip version 9.0.1, however version 22.1.1 is available.</span>
 <span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;pip install --upgrade pip&#39; command.</span>
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;pip3 install dedalus&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1">#2D Rayleigh-Bernard convection in Boussineq approximation</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> 
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="c1">#Importing necessary modules</span>
-<span class="ne">---&gt; </span><span class="mi">18</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">ani</span>
+<span class="ne">---&gt; </span><span class="mi">21</span> <span class="kn">import</span> <span class="nn">dedalus.public</span> <span class="k">as</span> <span class="nn">de</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">dedalus.extras</span> <span class="kn">import</span> <span class="n">flow_tools</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="kn">from</span> <span class="nn">dedalus.tools</span> <span class="kn">import</span> <span class="n">post</span>
 
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">py38</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">144</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span> <span class="c1"># Allow distributors to run custom init code</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_distributor_init</span>
-<span class="ne">--&gt; </span><span class="mi">144</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">core</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span> <span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">compat</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">py38</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="sd"> Contains the core of NumPy: ndarray, ufuncs, dtypes, etc.</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="sd"> </span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">numpy.version</span> <span class="kn">import</span> <span class="n">version</span> <span class="k">as</span> <span class="n">__version__</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">import</span> <span class="nn">warnings</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:991,</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:975,</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:671,</span> in <span class="ni">_load_unlocked</span><span class="nt">(spec)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:839,</span> in <span class="ni">exec_module</span><span class="nt">(self, module)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:934,</span> in <span class="ni">get_code</span><span class="nt">(self, fullname)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:1033,</span> in <span class="ni">get_data</span><span class="nt">(self, path)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;dedalus&#39;
 </pre></div>
 </div>
 </div>

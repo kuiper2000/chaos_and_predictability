@@ -25,12 +25,10 @@ __Part I: Lecturing__
     * Rayleigh-Barnard Convection 
     * Lorenz 63 model I (solutions) 
     * Lorenz 63 model II (stability analysis)
-* Week 4: __The minimalist models for studying chaos and predictability II: Lorenz 96__
+* {ref}`week4` 
 	* The physical and mathematical background
 	* Single Scale
 	* Multi-scale interations
-	* Layapunov Exponent
-	* The early and late stages of error growth in a multi-scale flow. 
 	* HW3: Lorenz 96 model (calculating the Layapynov exponent) (15%)
 * Week 5: __The connection between statistical mechanics and ensemble forecasts I: theory__
 	* Introduction to Liouville equation 

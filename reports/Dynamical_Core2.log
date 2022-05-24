@@ -1,0 +1,179 @@
+Traceback (most recent call last):
+  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+"""
+Dedalus script simulating the viscous shallow water equations on a sphere. This
+script demonstrates solving an initial value problem on the sphere. It can be
+ran serially or in parallel, and uses the built-in analysis framework to save
+data snapshots to HDF5 files. The `plot_sphere.py` script can be used to produce
+plots from the saved data. The simulation should a few cpu-minutes to run.
+
+The script implements the test case of a barotropically unstable mid-latitude
+jet from Galewsky et al. 2004 (https://doi.org/10.3402/tellusa.v56i5.14436).
+The initial height field balanced the imposed jet is solved with an LBVP.
+A perturbation is then added and the solution is evolved as an IVP.
+
+To run and plot using e.g. 4 processes:
+    $ mpiexec -n 4 python3 shallow_water.py
+    $ mpiexec -n 4 python3 plot_sphere.py snapshots/*.h5
+"""
+
+import numpy as np
+import dedalus.public as d3
+import logging
+logger = logging.getLogger(__name__)
+
+
+# Simulation units
+meter = 1 / 6.37122e6
+hour = 1
+second = hour / 3600
+
+# Parameters
+Nphi = 256*4
+Ntheta = 128*4
+dealias = 3/2
+R = 6.37122e6 * meter
+Omega = 7.292e-5 / second
+nu = 1e5 * meter**2 / second / 32**2 # Hyperdiffusion matched at ell=32
+g = 9.80616 * meter / second**2
+H = 1e4 * meter
+timestep = 600 * second
+stop_sim_time = 360 * hour
+dtype = np.float64
+
+# Bases
+coords = d3.S2Coordinates('phi', 'theta')
+dist = d3.Distributor(coords, dtype=dtype)
+basis = d3.SphereBasis(coords, (Nphi, Ntheta), radius=R, dealias=dealias, dtype=dtype)
+
+# Fields
+u      = dist.VectorField(coords, name='u', bases=basis)
+du_dt  = dist.VectorField(coords, name='du_dt', bases=basis)
+u_init = dist.VectorField(coords, name='u_init', bases=basis)
+h_init = dist.Field(name='h_init', bases=basis)
+h      = dist.Field(name='h', bases=basis)
+vor    = dist.Field(name='vor', bases=basis)
+sin_theta = dist.Field(name='sin_theta', bases=basis)
+
+
+# Substitutions
+zcross = lambda A: d3.MulCosine(d3.skew(A))
+
+# Initial conditions: zonal jet
+phi, theta = dist.local_grids(basis)
+lat = np.pi / 2 - theta + 0*phi
+umax = 80 * meter / second
+lat0 = np.pi / 7
+lat1 = np.pi / 2 - lat0
+en = np.exp(-4 / (lat1 - lat0)**2)
+jet  = (lat0 <= lat) * (lat <= lat1)
+jet2 = (-lat0 >= lat) * (lat >= -lat1)
+u_jet = umax / en * np.exp(1 / (lat[jet] - lat0) / (lat[jet] - lat1))
+u_jet2 = umax / en * np.exp(1 / (lat[jet2] + lat0) / (lat[jet2] + lat1))
+u['g'][0][jet]  = u_jet
+u['g'][0][jet2]  = u_jet2
+u_init['g'][0][jet]  = u_jet
+u_init['g'][0][jet2]  = u_jet2
+sin_theta['g'] = np.sin(lat)
+
+
+# Initial conditions: balanced height
+c = dist.Field(name='c')
+problem = d3.LBVP([h, c], namespace=locals())
+problem.add_equation("g*lap(h) + c = - div( 2*Omega*zcross(u))")
+problem.add_equation("ave(h) = 0")
+solver = problem.build_solver()
+solver.solve()
+
+c = dist.Field(name='c')
+problem = d3.LBVP([h_init, c], namespace=locals())
+problem.add_equation("g*lap(h_init) + c = - div(2*Omega*zcross(u_init))")
+problem.add_equation("ave(h_init) = 0")
+solver = problem.build_solver()
+solver.solve()
+
+
+#
+
+# Initial conditions: perturbation
+lat2 = np.pi / 4
+lon2 = np.pi / 2
+hpert = 120 * meter
+alpha = 1 / 3
+beta  = 1 / 5
+h['g'] += hpert * np.cos(lat) * np.exp(-((phi-lon2)/alpha)**2) * np.exp(-((lat2-lat)/beta)**2)
+h['g'] += hpert * np.cos(lat) * np.exp(-((phi-lon2)/alpha)**2) * np.exp(-((-lat2-lat)/beta)**2)
+#h_init['g'] += hpert * np.cos(lat) * np.exp(-(phi/alpha)**2) * np.exp(-((lat2-lat)/beta)**2)
+
+tan_theta       = dist.Field(name='tan_theta', bases=basis)
+cos_theta       = dist.Field(name='cos_theta', bases=basis)
+zonal_unit      = dist.VectorField(coords, name='zonal_unit', bases=basis) # zonal direction unit vector
+meridional_unit = dist.VectorField(coords, name='zonal_unit', bases=basis) # zonal direction unit vector
+tan_theta['g']          = np.tan(lat)
+cos_theta['g']          = np.cos(lat)
+zonal_unit['g'][0]      = 1
+zonal_unit['g'][1]      = 0
+meridional_unit['g'][0] = 0
+meridional_unit['g'][1] = 1
+
+
+u['g']                  = g*d3.skew(d3.grad(h)/(2*Omega*sin_theta)).evaluate()['g']
+#u_init['g']             = g*d3.skew(d3.grad(h_init)/(2*Omega*sin_theta)).evaluate()['g']
+# vorticity initial condition 
+#vor['g'] = g*d3.lap(h).evaluate()['g']
+
+# Problem
+#c       = dist.Field(name='c')
+problem = d3.IVP([h, c, u, u_init, h_init], namespace=locals())
+problem.add_equation("dt(u)    + nu*lap(lap(u))   + g*grad(h)      + 2*Omega*zcross(u)  = - dot(u, grad(u)) -(u-u_init)/(24*hour*200)")
+problem.add_equation("g*lap(h) + c = - div(dot(u, grad(u))+2*Omega*zcross(u))")
+problem.add_equation("ave(h)       = 0")
+problem.add_equation("u_init       = u_init + 0")
+problem.add_equation("h_init       = h_init + 0")
+
+
+#problem = d3.IVP([h, u, c], namespace=locals())
+#c       = dist.Field(name='c')
+#problem.add_equation("dt(u)         = - dot(u, grad(u)) - nu*lap(lap(u))      - g*grad(h)      - 2*Omega*zcross(u) ")
+#problem.add_equation("dt(vor)       = 2*Omega*cos_theta/R*dot(meridional_unit,u) + div(skew(du_dt)) ")
+#problem.add_equation("g*lap(h)  +c  = - div(2*Omega*zcross(u))")
+#problem.add_equation("ave(h)        = 0")
+#problem.add_equation("u             = g*skew(grad(h)/(2*Omega*sin_theta))")
+#problem.add_equation("u_init        = u_init + 0")
+#problem.add_equation("h_init        = h_init + 0")
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [0;32mIn [2][0m, in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [38;5;124;03m"""[39;00m
+[1;32m      2[0m [38;5;124;03mDedalus script simulating the viscous shallow water equations on a sphere. This[39;00m
+[1;32m      3[0m [38;5;124;03mscript demonstrates solving an initial value problem on the sphere. It can be[39;00m
+[0;32m   (...)[0m
+[1;32m     15[0m [38;5;124;03m    $ mpiexec -n 4 python3 plot_sphere.py snapshots/*.h5[39;00m
+[1;32m     16[0m [38;5;124;03m"""[39;00m
+[1;32m     18[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;32m---> 19[0m [38;5;28;01mimport[39;00m [38;5;21;01mdedalus[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpublic[39;00m [38;5;28;01mas[39;00m [38;5;21;01md3[39;00m
+[1;32m     20[0m [38;5;28;01mimport[39;00m [38;5;21;01mlogging[39;00m
+[1;32m     21[0m logger [38;5;241m=[39m logging[38;5;241m.[39mgetLogger([38;5;18m__name__[39m)
+
+[0;31mModuleNotFoundError[0m: No module named 'dedalus'
+ModuleNotFoundError: No module named 'dedalus'
+

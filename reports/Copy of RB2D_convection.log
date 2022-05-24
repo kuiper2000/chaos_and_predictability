@@ -1,15 +1,4 @@
 Traceback (most recent call last):
-  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/client.py", line 730, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/util.py", line 96, in ensure_async
-    result = await obj
-  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/jupyter_client/channels.py", line 230, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
   File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/client.py", line 1204, in execute
@@ -22,18 +11,54 @@ Traceback (most recent call last):
     return future.result()
   File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/client.py", line 949, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/client.py", line 754, in _async_poll_for_reply
-    await self._async_handle_timeout(timeout, cell)
-  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/client.py", line 801, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-['# Step 1: Install FFTW', '!apt-get install libfftw3-dev', '!apt-get install libfftw3-mpi-dev', '', '# Step 2: Set paths for Dedalus installation']
-...
-['import h5py', 'import pathlib', 'import logging', '', "logger = logging.getLogger('2D RB Convection')"]
--------------------
+  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/ktseng/anaconda3/envs/py38/lib/python3.8/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Step 1: Install FFTW
+!apt-get install libfftw3-dev
+!apt-get install libfftw3-mpi-dev
+
+# Step 2: Set paths for Dedalus installation
+import os
+os.environ['MPI_INCLUDE_PATH'] = "/usr/lib/x86_64-linux-gnu/openmpi/include"
+os.environ['MPI_LIBRARY_PATH'] = "/usr/lib/x86_64-linux-gnu"
+os.environ['FFTW_INCLUDE_PATH'] = "/usr/include"
+os.environ['FFTW_LIBRARY_PATH'] = "/usr/lib/x86_64-linux-gnu"
+
+# Step 3: Install Dedalus using pip
+!pip3 install dedalus
+
+#2D Rayleigh-Bernard convection in Boussineq approximation
+
+#Importing necessary modules
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.animation as ani
+import dedalus.public as de
+from dedalus.extras import flow_tools
+from dedalus.tools import post
+import shutil
+import random
+import time
+import h5py
+import pathlib
+import logging
+
+logger = logging.getLogger('2D RB Convection')
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [0;32mIn [1][0m, in [0;36m<module>[0;34m[0m
+[1;32m     19[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m     20[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01manimation[39;00m [38;5;28;01mas[39;00m [38;5;21;01mani[39;00m
+[0;32m---> 21[0m [38;5;28;01mimport[39;00m [38;5;21;01mdedalus[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpublic[39;00m [38;5;28;01mas[39;00m [38;5;21;01mde[39;00m
+[1;32m     22[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdedalus[39;00m[38;5;21;01m.[39;00m[38;5;21;01mextras[39;00m [38;5;28;01mimport[39;00m flow_tools
+[1;32m     23[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdedalus[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtools[39;00m [38;5;28;01mimport[39;00m post
+
+[0;31mModuleNotFoundError[0m: No module named 'dedalus'
+ModuleNotFoundError: No module named 'dedalus'
 

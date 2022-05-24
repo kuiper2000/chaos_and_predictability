@@ -53,6 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96" href="../week4/week4.html" />
     <link rel="prev" title="Week 2: Predictability source in atmosphere" href="../week2/week2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -111,6 +112,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
   </a>
  </li>
 </ul>
@@ -291,7 +297,7 @@
 <span class="eqno">(16)<a class="headerlink" href="#equation-eq16" title="Permalink to this equation">¶</a></span>\[\begin{align*}
 \frac{dX_i}{dt}=\sum_{m,n}a_{imn}X_mX_n+\sum_{m}b_{im}X_m+c
 \end{align*}\]</div>
-<p>With the chosen parameters, he found some non-periodic behaviors for this set of equations. However, it was too complicated to boil down (and later in his career, he found it’s impossible to simplify this equation). So…Ed continued searching for a much simpler system. His effort bore fruits when he visited Barry Saltzman in 1961 <span id="id2">[<a class="reference internal" href="#id19">Sal62</a>]</span>. Barry showed him 7 equations representing the convective system, where most of them showed periodic behavior except one refused to settle down. This was the famous Rayleigh-Bernard convection<span id="id3">[<a class="reference internal" href="#id18">Ray16</a>]</span>, also the starting point of the famous Lorenz 63 model.</p>
+<p>With the chosen parameters, he found some non-periodic behaviors for this set of equations. However, it was too complicated to boil down (and later in his career, he found it’s impossible to simplify this equation). So…Ed continued searching for a much simpler system. His effort bore fruits when he visited Barry Saltzman in 1961 <span id="id2">[<a class="reference internal" href="#id21">Sal62</a>]</span>. Barry showed him 7 equations representing the convective system, where most of them showed periodic behavior except one refused to settle down. This was the famous Rayleigh-Bernard convection<span id="id3">[<a class="reference internal" href="#id19">Ray16</a>]</span>, also the starting point of the famous Lorenz 63 model.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Equation <a class="reference internal" href="#equation-eq16">(16)</a> is so-called Lorenz 96 model<span id="id4">[<a class="reference internal" href="#id14">Lor96</a>]</span>, which describes non-linear waves propagating in a single zonal band. More details will be provided next week. One reason making it impossible to simplify is that when we try to solve the linearnized <a class="reference internal" href="#equation-eq16">(16)</a> (stability test, see week 7), it will lead a polynomial equation with orders higher than 5 (i.e., <span class="math notranslate nohighlight">\(\sum_{n=1}^{N} a_n x^n\)</span> where N<span class="math notranslate nohighlight">\(\geq 5\)</span>. According to <a class="reference external" href="https://en.wikipedia.org/wiki/Galois_theory">Galois theory</a>, there is no analytical solution for a polynomial equation with order higher than 5 (or can’t be represented with the existing math symbols such as +,-, X, / or <span class="math notranslate nohighlight">\(()^{\frac{1}{n}}\)</span> (<span class="math notranslate nohighlight">\(\forall n\in N\)</span>) without introducing the concept of infinity).</p>
@@ -355,7 +361,7 @@ T^*(x^*,z^*)       &amp; = Y(t)\mathrm{cos}(\pi ax^*)\mathrm{sin}(\pi z^*)-Z(t)\
 \dot{Y} &amp;= -XZ+ rX- Y \\
 \dot{Z} &amp;= XY- bZ \\
 \end{align*}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is Prandlt number, defined as <span class="math notranslate nohighlight">\(\nu/\kappa\)</span>, r is the ratio between <span class="math notranslate nohighlight">\(R\)</span> (Rayleigh number) and <span class="math notranslate nohighlight">\(Rc\)</span> (critical Rayleigh number, defined as <span class="math notranslate nohighlight">\(\pi^4 a^{-2}(1+a^2)^{3}\)</span>) and <span class="math notranslate nohighlight">\(b\)</span> is <span class="math notranslate nohighlight">\(4(1+a^2)^{-1}\)</span> (see more details in <span id="id5">[<a class="reference internal" href="#id18">Ray16</a>]</span> and <span id="id6">[<a class="reference internal" href="#id19">Sal62</a>]</span>). <span class="math notranslate nohighlight">\(Rc\)</span> provides a mean of estimating if the flow is dominated by buoyancy forcing or turbulent diffusion. When <span class="math notranslate nohighlight">\(R\)</span> is much bigger than <span class="math notranslate nohighlight">\(Rc\)</span>, the diffusion is small compared to other terms in <a class="reference internal" href="#equation-eq16">(16)</a>, thus the small-scale features will take longer to decay (this is the reason why we are more likely to see a turbulent system). In a domain with <span class="math notranslate nohighlight">\(a^2=\frac{1}{2}\)</span>, the critical value of <span class="math notranslate nohighlight">\(R\)</span> happens at <span class="math notranslate nohighlight">\(\frac{27\pi^4}{4}\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is Prandlt number, defined as <span class="math notranslate nohighlight">\(\nu/\kappa\)</span>, r is the ratio between <span class="math notranslate nohighlight">\(R\)</span> (Rayleigh number) and <span class="math notranslate nohighlight">\(Rc\)</span> (critical Rayleigh number, defined as <span class="math notranslate nohighlight">\(\pi^4 a^{-2}(1+a^2)^{3}\)</span>) and <span class="math notranslate nohighlight">\(b\)</span> is <span class="math notranslate nohighlight">\(4(1+a^2)^{-1}\)</span> (see more details in <span id="id5">[<a class="reference internal" href="#id19">Ray16</a>]</span> and <span id="id6">[<a class="reference internal" href="#id21">Sal62</a>]</span>). <span class="math notranslate nohighlight">\(Rc\)</span> provides a mean of estimating if the flow is dominated by buoyancy forcing or turbulent diffusion. When <span class="math notranslate nohighlight">\(R\)</span> is much bigger than <span class="math notranslate nohighlight">\(Rc\)</span>, the diffusion is small compared to other terms in <a class="reference internal" href="#equation-eq16">(16)</a>, thus the small-scale features will take longer to decay (this is the reason why we are more likely to see a turbulent system). In a domain with <span class="math notranslate nohighlight">\(a^2=\frac{1}{2}\)</span>, the critical value of <span class="math notranslate nohighlight">\(R\)</span> happens at <span class="math notranslate nohighlight">\(\frac{27\pi^4}{4}\)</span>.</p>
 <p>From <a class="reference internal" href="#equation-eq19">(19)</a> to <a class="reference internal" href="#equation-eq22">(22)</a>, we can find the Lorenz 63 originated from a heavily truncated Rayleigh-Barnard problem, where the three variables, <span class="math notranslate nohighlight">\(X(t),Y(t)\)</span> and <span class="math notranslate nohighlight">\(Z(t)\)</span> represent the first three Fourier modes.</p>
 </div>
 <div class="section" id="lorenz-63-model-ii-stability-analysis">
@@ -387,7 +393,7 @@ Z
 <p>By calculating the eigen value of <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> in <a class="reference internal" href="#equation-eq23">(23)</a>, we can estimate the growth rate/frequency of linearized Lorenz 63 model. Since we are looking for a chaotic system, that means we are interested in the case when <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> (roots are not only real but positive) in <a class="reference internal" href="#equation-eq24">(24)</a>.</p>
 <div class="math notranslate nohighlight" id="equation-eq24">
 <span class="eqno">(24)<a class="headerlink" href="#equation-eq24" title="Permalink to this equation">¶</a></span>\[[\lambda+b][\lambda^2+(\sigma+1)\lambda+\sigma(1-r)]=0\]</div>
-<p><a class="reference internal" href="#equation-eq24">(24)</a> has three real roots when <span class="math notranslate nohighlight">\(r&gt;0\)</span>; all negative when <span class="math notranslate nohighlight">\(r&lt;1\)</span> and all positive when <span class="math notranslate nohighlight">\(r&gt;1\)</span>, which is consistent with the finding in Rayleigh 1912 <span id="id7">[<a class="reference internal" href="#id18">Ray16</a>]</span>. (i.e., the convection only happens when <span class="math notranslate nohighlight">\(R&gt;Rc\)</span>). Another way to visualize the linear instability on a phase space is by estimating the divergence of physical states or the trace of the linear operator in <a class="reference internal" href="#equation-eq23">(23)</a>. i.e., <span class="math notranslate nohighlight">\(\frac{\partial\dot{X}}{\partial X}+\frac{\partial\dot{Y}}{\partial Y}+\frac{\partial\dot{Z}}{\partial Z}=\mathrm{Tr}(\mathbf{L})=-(\sigma+b+1)\)</span> (see discussion in <a class="reference internal" href="../week1/week1.html#week1"><span class="std std-ref">Week 1: Predictability of Weather and Climate</span></a>). If <span class="math notranslate nohighlight">\(\mathrm{Tr}(\mathbf{L})&gt;0\)</span>, it indicates the volume spanned by different ensemble members will increase with the increase of forecast lead time. However, a value of <span class="math notranslate nohighlight">\(\mathrm{Tr}(\mathbf{L})&lt;0\)</span> doesn’t mean this system will shrink to a single point. Instead, it may simply flatten to a plate. In most cases, <a class="reference internal" href="#equation-eq24">(24)</a> is not valid due to the non-stationary basic states. A more reasonable way to linearize the Lorenz 63 model will be discussed in week 5 when we talk about its connections with statistical mechanics.</p>
+<p><a class="reference internal" href="#equation-eq24">(24)</a> has three real roots when <span class="math notranslate nohighlight">\(r&gt;0\)</span>; all negative when <span class="math notranslate nohighlight">\(r&lt;1\)</span> and all positive when <span class="math notranslate nohighlight">\(r&gt;1\)</span>, which is consistent with the finding in Rayleigh 1912 <span id="id7">[<a class="reference internal" href="#id19">Ray16</a>]</span>. (i.e., the convection only happens when <span class="math notranslate nohighlight">\(R&gt;Rc\)</span>). Another way to visualize the linear instability on a phase space is by estimating the divergence of physical states or the trace of the linear operator in <a class="reference internal" href="#equation-eq23">(23)</a>. i.e., <span class="math notranslate nohighlight">\(\frac{\partial\dot{X}}{\partial X}+\frac{\partial\dot{Y}}{\partial Y}+\frac{\partial\dot{Z}}{\partial Z}=\mathrm{Tr}(\mathbf{L})=-(\sigma+b+1)\)</span> (see discussion in <a class="reference internal" href="../week1/week1.html#week1"><span class="std std-ref">Week 1: Predictability of Weather and Climate</span></a>). If <span class="math notranslate nohighlight">\(\mathrm{Tr}(\mathbf{L})&gt;0\)</span>, it indicates the volume spanned by different ensemble members will increase with the increase of forecast lead time. However, a value of <span class="math notranslate nohighlight">\(\mathrm{Tr}(\mathbf{L})&lt;0\)</span> doesn’t mean this system will shrink to a single point. Instead, it may simply flatten to a plate. In most cases, <a class="reference internal" href="#equation-eq24">(24)</a> is not valid due to the non-stationary basic states. A more reasonable way to linearize the Lorenz 63 model will be discussed in week 5 when we talk about its connections with statistical mechanics.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
@@ -398,10 +404,10 @@ Z
 <dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id4">Lor96</a></span></dt>
 <dd><p>Edward N Lorenz. Predictability: a problem partly solved. In <em>Proc. Seminar on predictability</em>, volume 1. 1996.</p>
 </dd>
-<dt class="label" id="id18"><span class="brackets">Ray16</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id5">2</a>,<a href="#id7">3</a>)</span></dt>
+<dt class="label" id="id19"><span class="brackets">Ray16</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id5">2</a>,<a href="#id7">3</a>)</span></dt>
 <dd><p>Lord Rayleigh. Lix. on convection currents in a horizontal layer of fluid, when the higher temperature is on the under side. <em>The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science</em>, 32(192):529–546, 1916.</p>
 </dd>
-<dt class="label" id="id19"><span class="brackets">Sal62</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id6">2</a>)</span></dt>
+<dt class="label" id="id21"><span class="brackets">Sal62</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id6">2</a>)</span></dt>
 <dd><p>Barry Saltzman. Finite amplitude free convection as an initial value problem—i. <em>Journal of atmospheric sciences</em>, 19(4):329–341, 1962.</p>
 </dd>
 </dl>
@@ -440,6 +446,13 @@ Z
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Week 2: Predictability source in atmosphere</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../week4/week4.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

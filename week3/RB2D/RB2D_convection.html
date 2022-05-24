@@ -110,6 +110,11 @@
    Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -263,6 +268,7 @@
 
 <span class="c1">#Importing necessary modules</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">ani</span>
 <span class="kn">import</span> <span class="nn">dedalus.public</span> <span class="k">as</span> <span class="nn">de</span>
@@ -295,26 +301,24 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Complete output from command python setup.py egg_info:
     Traceback (most recent call last):
       File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
-      File &quot;/private/var/folders/qf/dfz088fn4_g4gpgm95zbg7x8000219/T/pip-build-cowxmsbg/dedalus/setup.py&quot;, line 17, in &lt;module&gt;
+      File &quot;/private/var/folders/qf/dfz088fn4_g4gpgm95zbg7x8000219/T/pip-build-k7djq0bm/dedalus/setup.py&quot;, line 17, in &lt;module&gt;
         from Cython.Build import cythonize
     ModuleNotFoundError: No module named &#39;Cython&#39;
     
     ----------------------------------------
-<span class=" -Color -Color-Red">Command &quot;python setup.py egg_info&quot; failed with error code 1 in /private/var/folders/qf/dfz088fn4_g4gpgm95zbg7x8000219/T/pip-build-cowxmsbg/dedalus/</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">You are using pip version 9.0.1, however version 22.0.4 is available.</span>
+<span class=" -Color -Color-Red">Command &quot;python setup.py egg_info&quot; failed with error code 1 in /private/var/folders/qf/dfz088fn4_g4gpgm95zbg7x8000219/T/pip-build-k7djq0bm/dedalus/</span>
+<span class=" -Color -Color-Yellow">You are using pip version 9.0.1, however version 22.1.1 is available.</span>
 <span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;pip install --upgrade pip&#39; command.</span>
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">ani</span>
-<span class="ne">---&gt; </span><span class="mi">21</span> <span class="kn">import</span> <span class="nn">dedalus.public</span> <span class="k">as</span> <span class="nn">de</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">dedalus.extras</span> <span class="kn">import</span> <span class="n">flow_tools</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="kn">from</span> <span class="nn">dedalus.tools</span> <span class="kn">import</span> <span class="n">post</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">ani</span>
+<span class="ne">---&gt; </span><span class="mi">22</span> <span class="kn">import</span> <span class="nn">dedalus.public</span> <span class="k">as</span> <span class="nn">de</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="kn">from</span> <span class="nn">dedalus.extras</span> <span class="kn">import</span> <span class="n">flow_tools</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="kn">from</span> <span class="nn">dedalus.tools</span> <span class="kn">import</span> <span class="n">post</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;dedalus&#39;
 </pre></div>

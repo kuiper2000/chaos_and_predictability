@@ -1,0 +1,3636 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Chaos and Predictability</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Chaos and Predictability</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Syllabus
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week1/week1.html">
+   Week 1: Predictability of Weather and Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week2/week2.html">
+   Week 2: Predictability source in atmosphere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week3.html">
+   Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/week3/RB2D/Dynamical_Core2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2Fweek3/RB2D/Dynamical_Core2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/kuiper2000/chaos_and_predictability/master?urlpath=tree/docs/week3/RB2D/Dynamical_Core2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><no title></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Install FFTW</span>
+<span class="o">!</span>apt-get install libfftw3-dev
+<span class="o">!</span>apt-get install libfftw3-mpi-dev
+
+<span class="c1"># Step 2: Set paths for Dedalus installation</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MPI_INCLUDE_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/x86_64-linux-gnu/openmpi/include&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MPI_LIBRARY_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/x86_64-linux-gnu&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;FFTW_INCLUDE_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/include&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;FFTW_LIBRARY_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/x86_64-linux-gnu&quot;</span>
+
+<span class="c1"># Step 3: Install Dedalus using pip</span>
+<span class="o">!</span>pip3 install --no-cache http://github.com/dedalusproject/dedalus/zipball/d3/
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: apt-get: command not found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: apt-get: command not found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting http://github.com/dedalusproject/dedalus/zipball/d3/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading http://github.com/dedalusproject/dedalus/zipball/d3/
+
+     - 10kB 22.2MB/s
+     \ 20kB 33.5MB/s
+     | 30kB 43.0MB/s
+     / 40kB 49.4MB/s
+     - 51kB 56.1MB/s
+     \ 61kB 62.5MB/s
+     | 71kB 64.1MB/s
+     / 81kB 68.1MB/s
+     - 92kB 68.6MB/s
+     \ 102kB 71.1MB/s
+     | 112kB 96.6MB/s
+     / 122kB 103.2MB/s
+     - 133kB 102.6MB/s
+     \ 143kB 104.7MB/s
+     | 153kB 106.5MB/s
+     / 163kB 106.8MB/s
+     - 174kB 100.9MB/s
+     \ 184kB 103.3MB/s
+     | 194kB 102.2MB/s
+     / 204kB 91.5MB/s
+     - 215kB 85.3MB/s
+     \ 225kB 77.2MB/s
+     | 235kB 74.8MB/s
+     / 245kB 73.8MB/s
+     - 256kB 71.3MB/s
+     \ 266kB 63.5MB/s
+     | 276kB 69.2MB/s
+     / 286kB 66.9MB/s
+     - 296kB 65.4MB/s
+     \ 307kB 63.4MB/s
+     | 317kB 61.3MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 327kB 6.8MB/s
+     - 337kB 6.7MB/s
+     \ 348kB 6.7MB/s
+     | 358kB 6.7MB/s
+     / 368kB 6.2MB/s
+     - 378kB 6.1MB/s
+     \ 389kB 6.1MB/s
+     | 399kB 6.1MB/s
+     / 409kB 6.1MB/s
+     - 419kB 6.2MB/s
+     \ 430kB 33.8MB/s
+     | 440kB 35.7MB/s
+     / 450kB 35.4MB/s
+     - 460kB 36.2MB/s
+     \ 471kB 70.4MB/s
+     | 481kB 75.6MB/s
+     / 491kB 81.8MB/s
+     - 501kB 79.6MB/s
+     \ 512kB 75.3MB/s
+     | 522kB 74.4MB/s
+     / 532kB 74.3MB/s
+     - 542kB 67.8MB/s
+     \ 552kB 67.4MB/s
+     | 563kB 66.9MB/s
+     / 573kB 68.2MB/s
+     - 583kB 69.8MB/s
+     \ 593kB 6.4MB/s
+     | 604kB 6.3MB/s
+     / 614kB 6.3MB/s
+     - 624kB 6.4MB/s
+     \ 634kB 6.4MB/s
+     | 645kB 6.4MB/s
+     / 655kB 6.4MB/s
+     - 665kB 6.4MB/s
+     \ 675kB 6.3MB/s
+     | 686kB 6.0MB/s
+     / 696kB 26.0MB/s
+     - 706kB 26.7MB/s
+     \ 716kB 26.5MB/s
+     | 727kB 24.9MB/s
+     / 737kB 24.1MB/s
+     - 747kB 23.5MB/s
+     \ 757kB 6.3MB/s
+     | 768kB 6.3MB/s
+     / 778kB 6.4MB/s
+     - 788kB 6.6MB/s
+     \ 798kB 7.4MB/s
+     | 808kB 7.5MB/s
+     / 819kB 7.1MB/s
+     - 829kB 7.0MB/s
+     \ 839kB 7.0MB/s
+     | 849kB 7.0MB/s
+     / 860kB 37.5MB/s
+     - 870kB 37.4MB/s
+     \ 880kB 38.2MB/s
+     | 890kB 38.8MB/s
+     / 901kB 38.9MB/s
+     - 911kB 37.3MB/s
+     \ 921kB 56.8MB/s
+     | 931kB 67.9MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 942kB 38.2MB/s
+     - 952kB 40.0MB/s
+     \ 962kB 39.3MB/s
+     | 972kB 39.9MB/s
+     / 983kB 40.4MB/s
+     - 993kB 31.7MB/s
+     \ 1.0MB 31.4MB/s
+     | 1.0MB 31.9MB/s
+     / 1.0MB 6.2MB/s
+     - 1.0MB 6.2MB/s
+     \ 1.0MB 6.8MB/s
+     | 1.1MB 6.8MB/s
+     / 1.1MB 6.9MB/s
+     - 1.1MB 6.9MB/s
+     \ 1.1MB 6.4MB/s
+     | 1.1MB 6.6MB/s
+     / 1.1MB 6.6MB/s
+     - 1.1MB 6.7MB/s
+     \ 1.1MB 47.2MB/s
+     | 1.1MB 48.2MB/s
+     / 1.1MB 49.8MB/s
+     - 1.2MB 35.2MB/s
+     \ 1.2MB 34.3MB/s
+     | 1.2MB 33.4MB/s
+     / 1.2MB 49.4MB/s
+     - 1.2MB 48.3MB/s
+     \ 1.2MB 49.0MB/s
+     | 1.2MB 51.1MB/s
+     / 1.2MB 36.6MB/s
+     - 1.2MB 36.0MB/s
+     \ 1.2MB 35.0MB/s
+     | 1.3MB 49.8MB/s
+     / 1.3MB 47.8MB/s
+     - 1.3MB 48.6MB/s
+     \ 1.3MB 56.5MB/s
+     | 1.3MB 41.8MB/s
+     / 1.3MB 9.2MB/s
+     - 1.3MB 9.1MB/s
+     \ 1.3MB 9.8MB/s
+     | 1.3MB 9.3MB/s
+     / 1.4MB 9.3MB/s
+     - 1.4MB 9.3MB/s
+     \ 1.4MB 9.4MB/s
+     | 1.4MB 9.2MB/s
+     / 1.4MB 9.0MB/s
+     - 1.4MB 9.6MB/s
+     \ 1.4MB 49.0MB/s
+     | 1.4MB 49.2MB/s
+     / 1.4MB 50.3MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 1.4MB 4.7MB/s
+     \ 1.5MB 3.8MB/s
+     | 1.5MB 3.8MB/s
+     / 1.5MB 3.8MB/s
+     - 1.5MB 3.8MB/s
+     \ 1.5MB 3.8MB/s
+     | 1.5MB 3.9MB/s
+     / 1.5MB 3.9MB/s
+     - 1.5MB 3.9MB/s
+     \ 1.5MB 3.8MB/s
+     | 1.5MB 16.8MB/s
+     / 1.6MB 40.5MB/s
+     - 1.6MB 23.5MB/s
+     \ 1.6MB 23.7MB/s
+     | 1.6MB 24.6MB/s
+     / 1.6MB 24.2MB/s
+     - 1.6MB 23.9MB/s
+     \ 1.6MB 23.8MB/s
+     | 1.6MB 24.1MB/s
+     / 1.6MB 25.0MB/s
+     - 1.6MB 25.2MB/s
+     \ 1.7MB 36.9MB/s
+     | 1.7MB 113.8MB/s
+     / 1.7MB 120.2MB/s
+     - 1.7MB 118.4MB/s
+     \ 1.7MB 114.7MB/s
+     | 1.7MB 114.0MB/s
+     / 1.7MB 114.0MB/s
+     - 1.7MB 115.2MB/s
+     \ 1.7MB 106.9MB/s
+     | 1.8MB 104.8MB/s
+     / 1.8MB 103.9MB/s
+     - 1.8MB 111.9MB/s
+     \ 1.8MB 35.1MB/s
+     | 1.8MB 33.9MB/s
+     / 1.8MB 35.7MB/s
+     - 1.8MB 36.0MB/s
+     \ 1.8MB 16.1MB/s
+     | 1.8MB 16.1MB/s
+     / 1.8MB 16.2MB/s
+     - 1.9MB 16.2MB/s
+     \ 1.9MB 16.2MB/s
+     | 1.9MB 16.3MB/s
+     / 1.9MB 23.6MB/s
+     - 1.9MB 24.1MB/s
+     \ 1.9MB 24.2MB/s
+     | 1.9MB 24.1MB/s
+     / 1.9MB 137.1MB/s
+     - 1.9MB 142.2MB/s
+     \ 1.9MB 153.1MB/s
+     | 2.0MB 150.3MB/s
+     / 2.0MB 137.7MB/s
+     - 2.0MB 127.5MB/s
+     \ 2.0MB 136.5MB/s
+     | 2.0MB 65.4MB/s
+     / 2.0MB 64.2MB/s
+     - 2.0MB 66.9MB/s
+     \ 2.0MB 10.6MB/s
+     | 2.0MB 10.4MB/s
+     / 2.0MB 10.4MB/s
+     - 2.1MB 10.3MB/s
+     \ 2.1MB 10.3MB/s
+     | 2.1MB 10.3MB/s
+     / 2.1MB 10.4MB/s
+     - 2.1MB 11.2MB/s
+     \ 2.1MB 11.1MB/s
+     | 2.1MB 11.0MB/s
+     / 2.1MB 20.3MB/s
+     - 2.1MB 20.3MB/s
+     \ 2.2MB 20.4MB/s
+     | 2.2MB 20.6MB/s
+     / 2.2MB 20.6MB/s
+     - 2.2MB 20.6MB/s
+     \ 2.2MB 20.5MB/s
+     | 2.2MB 20.7MB/s
+     / 2.2MB 19.1MB/s
+     - 2.2MB 18.9MB/s
+     \ 2.2MB 66.2MB/s
+     | 2.2MB 65.0MB/s
+     / 2.3MB 58.5MB/s
+     - 2.3MB 57.1MB/s
+     \ 2.3MB 57.8MB/s
+     | 2.3MB 57.3MB/s
+     / 2.3MB 56.4MB/s
+     - 2.3MB 57.6MB/s
+     \ 2.3MB 79.4MB/s
+     | 2.3MB 75.9MB/s
+     / 2.3MB 71.6MB/s
+     - 2.3MB 75.3MB/s
+     \ 2.4MB 82.6MB/s
+     | 2.4MB 74.6MB/s
+     / 2.4MB 79.6MB/s
+     - 2.4MB 78.3MB/s
+     \ 2.4MB 78.8MB/s
+     | 2.4MB 77.8MB/s
+     / 2.4MB 77.3MB/s
+     - 2.4MB 62.5MB/s
+     \ 2.4MB 60.4MB/s
+     | 2.4MB 64.5MB/s
+     / 2.5MB 66.4MB/s
+     - 2.5MB 27.7MB/s
+     \ 2.5MB 27.6MB/s
+     | 2.5MB 26.7MB/s
+     / 2.5MB 25.9MB/s
+     - 2.5MB 25.9MB/s
+     \ 2.5MB 26.5MB/s
+     | 2.5MB 30.1MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 2.5MB 3.7MB/s
+     - 2.5MB 3.7MB/s
+     \ 2.6MB 3.7MB/s
+     | 2.6MB 4.0MB/s
+     / 2.6MB 4.0MB/s
+     - 2.6MB 4.0MB/s
+     \ 2.6MB 4.0MB/s
+     | 2.6MB 4.0MB/s
+     / 2.6MB 4.0MB/s
+     - 2.6MB 4.0MB/s
+     \ 2.6MB 92.7MB/s
+     | 2.7MB 105.4MB/s
+     / 2.7MB 116.7MB/s
+     - 2.7MB 107.5MB/s
+     \ 2.7MB 116.6MB/s
+     | 2.7MB 112.3MB/s
+     / 2.7MB 118.9MB/s
+     - 2.7MB 112.9MB/s
+     \ 2.7MB 108.1MB/s
+     | 2.7MB 112.6MB/s
+     / 2.7MB 107.0MB/s
+     - 2.8MB 102.3MB/s
+     \ 2.8MB 100.1MB/s
+     | 2.8MB 113.0MB/s
+     / 2.8MB 116.1MB/s
+     - 2.8MB 119.9MB/s
+     \ 2.8MB 136.0MB/s
+     | 2.8MB 145.6MB/s
+     / 2.8MB 150.4MB/s
+     - 2.8MB 145.7MB/s
+     \ 2.8MB 163.3MB/s
+     | 2.9MB 163.9MB/s
+     / 2.9MB 6.8MB/s
+     - 2.9MB 6.7MB/s
+     \ 2.9MB 6.7MB/s
+     | 2.9MB 6.7MB/s
+     / 2.9MB 6.6MB/s
+     - 2.9MB 6.6MB/s
+     \ 2.9MB 6.6MB/s
+     | 2.9MB 4.6MB/s
+     / 2.9MB 4.6MB/s
+     - 3.0MB 4.6MB/s
+     \ 3.0MB 12.3MB/s
+     | 3.0MB 12.0MB/s
+     / 3.0MB 12.0MB/s
+     - 3.0MB 12.0MB/s
+     \ 3.0MB 11.3MB/s
+     | 3.0MB 11.2MB/s
+     / 3.0MB 11.2MB/s
+     - 3.0MB 43.0MB/s
+     \ 3.1MB 42.5MB/s
+     | 3.1MB 41.4MB/s
+     / 3.1MB 47.2MB/s
+     - 3.1MB 55.3MB/s
+     \ 3.1MB 58.9MB/s
+     | 3.1MB 63.3MB/s
+     / 3.1MB 90.1MB/s
+     - 3.1MB 99.4MB/s
+     \ 3.1MB 90.8MB/s
+     | 3.1MB 93.8MB/s
+     / 3.2MB 94.3MB/s
+     - 3.2MB 96.1MB/s
+     \ 3.2MB 104.7MB/s
+     | 3.2MB 106.4MB/s
+     / 3.2MB 16.1MB/s
+     - 3.2MB 15.9MB/s
+     \ 3.2MB 16.0MB/s
+     | 3.2MB 16.0MB/s
+     / 3.2MB 16.2MB/s
+     - 3.2MB 16.5MB/s
+     \ 3.3MB 16.5MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     | 3.3MB 11.2MB/s
+     / 3.3MB 11.1MB/s
+     - 3.3MB 11.0MB/s
+     \ 3.3MB 25.3MB/s
+     | 3.3MB 25.2MB/s
+     / 3.3MB 25.6MB/s
+     - 3.3MB 4.0MB/s
+     \ 3.3MB 4.0MB/s
+     | 3.3MB 4.0MB/s
+     / 3.4MB 4.0MB/s
+     - 3.4MB 4.5MB/s
+     \ 3.4MB 4.5MB/s
+     | 3.4MB 4.5MB/s
+     / 3.4MB 3.9MB/s
+     - 3.4MB 3.9MB/s
+     \ 3.4MB 3.9MB/s
+     | 3.4MB 21.3MB/s
+     / 3.4MB 21.8MB/s
+     - 3.5MB 21.9MB/s
+     \ 3.5MB 22.1MB/s
+     | 3.5MB 21.6MB/s
+     / 3.5MB 21.5MB/s
+     - 3.5MB 21.2MB/s
+     \ 3.5MB 69.3MB/s
+     | 3.5MB 70.6MB/s
+     / 3.5MB 75.0MB/s
+     - 3.5MB 90.8MB/s
+     \ 3.5MB 82.9MB/s
+     | 3.6MB 79.7MB/s
+     / 3.6MB 80.8MB/s
+     - 3.6MB 86.9MB/s
+     \ 3.6MB 84.4MB/s
+     | 3.6MB 85.6MB/s
+     / 3.6MB 88.5MB/s
+     - 3.6MB 89.2MB/s
+     \ 3.6MB 89.6MB/s
+     | 3.6MB 85.5MB/s
+     / 3.6MB 96.5MB/s
+     - 3.7MB 88.5MB/s
+     \ 3.7MB 84.3MB/s
+     | 3.7MB 87.7MB/s
+     / 3.7MB 88.4MB/s
+     - 3.7MB 88.5MB/s
+     \ 3.7MB 91.6MB/s
+     | 3.7MB 92.7MB/s
+     / 3.7MB 94.8MB/s
+     - 3.7MB 98.3MB/s
+     \ 3.7MB 110.3MB/s
+     | 3.8MB 119.2MB/s
+     / 3.8MB 116.0MB/s
+     - 3.8MB 118.0MB/s
+     \ 3.8MB 115.3MB/s
+     | 3.8MB 107.0MB/s
+     / 3.8MB 103.4MB/s
+     - 3.8MB 107.8MB/s
+     \ 3.8MB 99.7MB/s
+     | 3.8MB 97.7MB/s
+     / 3.9MB 96.0MB/s
+     - 3.9MB 100.3MB/s
+     \ 3.9MB 14.3MB/s
+     | 3.9MB 14.3MB/s
+     / 3.9MB 14.5MB/s
+     - 3.9MB 10.8MB/s
+     \ 3.9MB 10.8MB/s
+     | 3.9MB 10.7MB/s
+     / 3.9MB 10.8MB/s
+     - 3.9MB 10.8MB/s
+     \ 4.0MB 9.9MB/s
+     | 4.0MB 9.9MB/s
+     / 4.0MB 23.6MB/s
+     - 4.0MB 23.1MB/s
+     \ 4.0MB 22.9MB/s
+     | 4.0MB 51.1MB/s
+     / 4.0MB 20.1MB/s
+     - 4.0MB 20.0MB/s
+     \ 4.0MB 20.0MB/s
+     | 4.0MB 19.5MB/s
+     / 4.1MB 23.0MB/s
+     - 4.1MB 23.1MB/s
+     \ 4.1MB 23.6MB/s
+     | 4.1MB 20.8MB/s
+     / 4.1MB 20.6MB/s
+     - 4.1MB 20.5MB/s
+     \ 4.1MB 51.6MB/s
+     | 4.1MB 54.6MB/s
+     / 4.1MB 53.5MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 4.1MB 52.5MB/s
+     \ 4.2MB 52.5MB/s
+     | 4.2MB 51.7MB/s
+     / 4.2MB 56.0MB/s
+     - 4.2MB 2.4MB/s
+     \ 4.2MB 2.4MB/s
+     | 4.2MB 2.4MB/s
+     / 4.2MB 2.4MB/s
+     - 4.2MB 2.4MB/s
+     \ 4.2MB 2.4MB/s
+     | 4.2MB 2.5MB/s
+     / 4.3MB 2.5MB/s
+     - 4.3MB 2.5MB/s
+     \ 4.3MB 2.5MB/s
+     | 4.3MB 145.2MB/s
+     / 4.3MB 157.6MB/s
+     - 4.3MB 158.5MB/s
+     \ 4.3MB 171.5MB/s
+     | 4.3MB 164.1MB/s
+     / 4.3MB 159.2MB/s
+     - 4.4MB 154.4MB/s
+     \ 4.4MB 157.8MB/s
+     | 4.4MB 157.6MB/s
+     / 4.4MB 157.1MB/s
+     - 4.4MB 168.2MB/s
+     \ 4.4MB 164.6MB/s
+     | 4.4MB 161.0MB/s
+     / 4.4MB 150.2MB/s
+     - 4.4MB 149.7MB/s
+     \ 4.4MB 149.9MB/s
+     | 4.5MB 149.7MB/s
+     / 4.5MB 160.8MB/s
+     - 4.5MB 157.0MB/s
+     \ 4.5MB 151.0MB/s
+     | 4.5MB 137.3MB/s
+     / 4.5MB 47.3MB/s
+     - 4.5MB 45.9MB/s
+     \ 4.5MB 45.6MB/s
+     | 4.5MB 47.0MB/s
+     / 4.5MB 46.3MB/s
+     - 4.6MB 44.7MB/s
+     \ 4.6MB 43.4MB/s
+     | 4.6MB 43.5MB/s
+     / 4.6MB 43.2MB/s
+     - 4.6MB 43.3MB/s
+     \ 4.6MB 109.6MB/s
+     | 4.6MB 115.7MB/s
+     / 4.6MB 113.9MB/s
+     - 4.6MB 110.2MB/s
+     \ 4.6MB 103.0MB/s
+     | 4.7MB 110.0MB/s
+     / 4.7MB 112.3MB/s
+     - 4.7MB 115.5MB/s
+     \ 4.7MB 100.6MB/s
+     | 4.7MB 94.3MB/s
+     / 4.7MB 88.2MB/s
+     - 4.7MB 81.7MB/s
+     \ 4.7MB 28.4MB/s
+     | 4.7MB 28.0MB/s
+     / 4.8MB 28.8MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 4.8MB 20.6MB/s
+     \ 4.8MB 20.4MB/s
+     | 4.8MB 20.2MB/s
+     / 4.8MB 7.9MB/s
+     - 4.8MB 7.9MB/s
+     \ 4.8MB 7.9MB/s
+     | 4.8MB 8.0MB/s
+     / 4.8MB 8.5MB/s
+     - 4.8MB 8.3MB/s
+     \ 4.9MB 8.3MB/s
+     | 4.9MB 9.4MB/s
+     / 4.9MB 9.2MB/s
+     - 4.9MB 9.2MB/s
+     \ 4.9MB 33.7MB/s
+     | 4.9MB 35.4MB/s
+     / 4.9MB 35.3MB/s
+     - 4.9MB 35.0MB/s
+     \ 4.9MB 71.7MB/s
+     | 4.9MB 15.0MB/s
+     / 5.0MB 14.9MB/s
+     - 5.0MB 14.9MB/s
+     \ 5.0MB 15.4MB/s
+     | 5.0MB 6.9MB/s
+     / 5.0MB 6.9MB/s
+     - 5.0MB 6.0MB/s
+     \ 5.0MB 6.0MB/s
+     | 5.0MB 6.0MB/s
+     / 5.0MB 6.0MB/s
+     - 5.0MB 8.2MB/s
+     \ 5.1MB 8.2MB/s
+     | 5.1MB 8.1MB/s
+     / 5.1MB 8.0MB/s
+     - 5.1MB 22.1MB/s
+     \ 5.1MB 22.4MB/s
+     | 5.1MB 41.2MB/s
+     / 5.1MB 16.3MB/s
+     - 5.1MB 15.7MB/s
+     \ 5.1MB 15.6MB/s
+     | 5.2MB 8.4MB/s
+     / 5.2MB 6.5MB/s
+     - 5.2MB 6.5MB/s
+     \ 5.2MB 6.6MB/s
+     | 5.2MB 6.6MB/s
+     / 5.2MB 6.0MB/s
+     - 5.2MB 6.0MB/s
+     \ 5.2MB 7.7MB/s
+     | 5.2MB 7.9MB/s
+     / 5.2MB 7.9MB/s
+     - 5.3MB 17.1MB/s
+     \ 5.3MB 33.0MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     | 5.3MB 14.6MB/s
+     / 5.3MB 14.4MB/s
+     - 5.3MB 14.5MB/s
+     \ 5.3MB 9.2MB/s
+     | 5.3MB 9.2MB/s
+     / 5.3MB 9.2MB/s
+     - 5.3MB 6.8MB/s
+     \ 5.3MB 6.8MB/s
+     | 5.4MB 6.7MB/s
+     / 5.4MB 6.3MB/s
+     - 5.4MB 8.3MB/s
+     \ 5.4MB 8.3MB/s
+     | 5.4MB 8.3MB/s
+     / 5.4MB 12.9MB/s
+     - 5.4MB 12.9MB/s
+     \ 5.4MB 12.8MB/s
+     | 5.4MB 15.0MB/s
+     / 5.4MB 15.1MB/s
+     - 5.5MB 15.1MB/s
+     \ 5.5MB 20.8MB/s
+     | 5.5MB 9.9MB/s
+     / 5.5MB 7.2MB/s
+     - 5.5MB 7.1MB/s
+     \ 5.5MB 7.0MB/s
+     | 5.5MB 6.9MB/s
+     / 5.5MB 6.9MB/s
+     - 5.5MB 8.5MB/s
+     \ 5.6MB 7.6MB/s
+     | 5.6MB 5.5MB/s
+     / 5.6MB 5.5MB/s
+     - 5.6MB 7.8MB/s
+     \ 5.6MB 10.8MB/s
+     | 5.6MB 10.8MB/s
+     / 5.6MB 13.0MB/s
+     - 5.6MB 13.1MB/s
+     \ 5.6MB 9.9MB/s
+     | 5.6MB 9.9MB/s
+     / 5.7MB 7.7MB/s
+     - 5.7MB 12.3MB/s
+     \ 5.7MB 12.3MB/s
+     | 5.7MB 12.5MB/s
+     / 5.7MB 10.5MB/s
+     - 5.7MB 8.9MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 5.7MB 8.9MB/s
+     | 5.7MB 6.2MB/s
+     / 5.7MB 7.3MB/s
+     - 5.7MB 7.3MB/s
+     \ 5.8MB 10.8MB/s
+     | 5.8MB 10.8MB/s
+     / 5.8MB 10.7MB/s
+     - 5.8MB 10.6MB/s
+     \ 5.8MB 6.9MB/s
+     | 5.8MB 7.8MB/s
+     / 5.8MB 7.8MB/s
+     - 5.8MB 12.8MB/s
+     \ 5.8MB 10.5MB/s
+     | 5.8MB 10.5MB/s
+     / 5.9MB 10.4MB/s
+     - 5.9MB 9.2MB/s
+     \ 5.9MB 6.0MB/s
+     | 5.9MB 6.0MB/s
+     / 5.9MB 10.1MB/s
+     - 5.9MB 10.1MB/s
+     \ 5.9MB 10.1MB/s
+     | 5.9MB 10.0MB/s
+     / 5.9MB 12.1MB/s
+     - 5.9MB 7.0MB/s
+     \ 6.0MB 7.0MB/s
+     | 6.0MB 7.7MB/s
+     / 6.0MB 14.1MB/s
+     - 6.0MB 11.0MB/s
+     \ 6.0MB 10.9MB/s
+     | 6.0MB 10.9MB/s
+     / 6.0MB 11.0MB/s
+     - 6.0MB 11.0MB/s
+     \ 6.0MB 11.1MB/s
+     | 6.1MB 9.4MB/s
+     / 6.1MB 9.4MB/s
+     - 6.1MB 9.3MB/s
+     \ 6.1MB 9.3MB/s
+     | 6.1MB 6.9MB/s
+     / 6.1MB 6.9MB/s
+     - 6.1MB 6.9MB/s
+     \ 6.1MB 6.8MB/s
+     | 6.1MB 6.8MB/s
+     / 6.1MB 6.8MB/s
+     - 6.2MB 11.2MB/s
+     \ 6.2MB 11.1MB/s
+     | 6.2MB 11.2MB/s
+     / 6.2MB 11.3MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 6.2MB 15.2MB/s
+     \ 6.2MB 9.7MB/s
+     | 6.2MB 9.6MB/s
+     / 6.2MB 9.6MB/s
+     - 6.2MB 9.6MB/s
+     \ 6.2MB 9.6MB/s
+     | 6.3MB 11.8MB/s
+     / 6.3MB 6.4MB/s
+     - 6.3MB 6.4MB/s
+     \ 6.3MB 6.4MB/s
+     | 6.3MB 8.3MB/s
+     / 6.3MB 12.1MB/s
+     - 6.3MB 12.1MB/s
+     \ 6.3MB 12.4MB/s
+     | 6.3MB 12.3MB/s
+     / 6.3MB 6.2MB/s
+     - 6.4MB 6.2MB/s
+     \ 6.4MB 11.1MB/s
+     | 6.4MB 11.1MB/s
+     / 6.4MB 11.1MB/s
+     - 6.4MB 11.2MB/s
+     \ 6.4MB 6.0MB/s
+     | 6.4MB 6.0MB/s
+     / 6.4MB 6.0MB/s
+     - 6.4MB 6.0MB/s
+     \ 6.5MB 11.3MB/s
+     | 6.5MB 11.3MB/s
+     / 6.5MB 11.4MB/s
+     - 6.5MB 10.4MB/s
+     \ 6.5MB 10.3MB/s
+     | 6.5MB 10.2MB/s
+     / 6.5MB 48.7MB/s
+     - 6.5MB 11.1MB/s
+     \ 6.5MB 11.1MB/s
+     | 6.5MB 11.2MB/s
+     / 6.6MB 11.2MB/s
+     - 6.6MB 5.9MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 6.6MB 5.9MB/s
+     | 6.6MB 6.2MB/s
+     / 6.6MB 6.2MB/s
+     - 6.6MB 6.2MB/s
+     \ 6.6MB 6.3MB/s
+     | 6.6MB 11.1MB/s
+     / 6.6MB 10.0MB/s
+     - 6.6MB 9.9MB/s
+     \ 6.7MB 9.9MB/s
+     | 6.7MB 49.2MB/s
+     / 6.7MB 50.2MB/s
+     - 6.7MB 51.1MB/s
+     \ 6.7MB 12.7MB/s
+     | 6.7MB 12.7MB/s
+     / 6.7MB 12.6MB/s
+     - 6.7MB 6.2MB/s
+     \ 6.7MB 6.5MB/s
+     | 6.7MB 6.5MB/s
+     / 6.8MB 6.6MB/s
+     - 6.8MB 6.0MB/s
+     \ 6.8MB 5.9MB/s
+     | 6.8MB 5.9MB/s
+     / 6.8MB 9.1MB/s
+     - 6.8MB 8.4MB/s
+     \ 6.8MB 8.4MB/s
+     | 6.8MB 28.1MB/s
+     / 6.8MB 28.7MB/s
+     - 6.9MB 10.3MB/s
+     \ 6.9MB 10.3MB/s
+     | 6.9MB 12.2MB/s
+     / 6.9MB 6.9MB/s
+     - 6.9MB 6.9MB/s
+     \ 6.9MB 6.9MB/s
+     | 6.9MB 6.3MB/s
+     / 6.9MB 6.3MB/s
+     - 6.9MB 6.3MB/s
+     \ 6.9MB 6.2MB/s
+     | 7.0MB 10.0MB/s
+     / 7.0MB 10.0MB/s
+     - 7.0MB 10.1MB/s
+     \ 7.0MB 27.8MB/s
+     | 7.0MB 24.2MB/s
+     / 7.0MB 23.9MB/s
+     - 7.0MB 13.8MB/s
+     \ 7.0MB 14.0MB/s
+     | 7.0MB 14.0MB/s
+     / 7.0MB 14.5MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 7.1MB 7.4MB/s
+     \ 7.1MB 6.0MB/s
+     | 7.1MB 5.9MB/s
+     / 7.1MB 6.0MB/s
+     - 7.1MB 6.2MB/s
+     \ 7.1MB 6.2MB/s
+     | 7.1MB 9.4MB/s
+     / 7.1MB 9.3MB/s
+     - 7.1MB 8.5MB/s
+     \ 7.1MB 8.5MB/s
+     | 7.2MB 19.3MB/s
+     / 7.2MB 13.9MB/s
+     - 7.2MB 13.8MB/s
+     \ 7.2MB 13.8MB/s
+     | 7.2MB 13.6MB/s
+     / 7.2MB 7.3MB/s
+     - 7.2MB 7.3MB/s
+     \ 7.2MB 5.7MB/s
+     | 7.2MB 6.0MB/s
+     / 7.2MB 6.0MB/s
+     - 7.3MB 6.0MB/s
+     \ 7.3MB 8.7MB/s
+     | 7.3MB 8.8MB/s
+     / 7.3MB 8.7MB/s
+     - 7.3MB 7.9MB/s
+     \ 7.3MB 16.0MB/s
+     | 7.3MB 15.9MB/s
+     / 7.3MB 45.6MB/s
+     - 7.3MB 18.0MB/s
+     \ 7.4MB 17.6MB/s
+     | 7.4MB 17.5MB/s
+     / 7.4MB 8.6MB/s
+     - 7.4MB 5.9MB/s
+     \ 7.4MB 5.9MB/s
+     | 7.4MB 6.4MB/s
+     / 7.4MB 6.4MB/s
+     - 7.4MB 6.4MB/s
+     \ 7.4MB 6.4MB/s
+     | 7.4MB 8.2MB/s
+     / 7.5MB 7.6MB/s
+     - 7.5MB 7.6MB/s
+     \ 7.5MB 14.0MB/s
+     | 7.5MB 58.3MB/s
+     / 7.5MB 53.0MB/s
+     - 7.5MB 52.0MB/s
+     \ 7.5MB 51.8MB/s
+     | 7.5MB 20.9MB/s
+     / 7.5MB 18.0MB/s
+     - 7.5MB 17.9MB/s
+     \ 7.6MB 22.3MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     | 7.6MB 6.3MB/s
+     / 7.6MB 6.3MB/s
+     - 7.6MB 6.2MB/s
+     \ 7.6MB 6.3MB/s
+     | 7.6MB 6.3MB/s
+     / 7.6MB 6.3MB/s
+     - 7.6MB 7.7MB/s
+     \ 7.6MB 7.5MB/s
+     | 7.6MB 7.5MB/s
+     / 7.7MB 7.4MB/s
+     - 7.7MB 47.3MB/s
+     \ 7.7MB 19.9MB/s
+     | 7.7MB 19.8MB/s
+     / 7.7MB 20.3MB/s
+     - 7.7MB 20.1MB/s
+     \ 7.7MB 6.1MB/s
+     | 7.7MB 6.1MB/s
+     / 7.7MB 6.5MB/s
+     - 7.8MB 6.5MB/s
+     \ 7.8MB 6.5MB/s
+     | 7.8MB 6.6MB/s
+     / 7.8MB 8.0MB/s
+     - 7.8MB 7.5MB/s
+     \ 7.8MB 7.4MB/s
+     | 7.8MB 7.4MB/s
+     / 7.8MB 43.7MB/s
+     - 7.8MB 43.8MB/s
+     \ 7.8MB 44.6MB/s
+     | 7.9MB 22.2MB/s
+     / 7.9MB 21.3MB/s
+     - 7.9MB 21.0MB/s
+     \ 7.9MB 6.0MB/s
+     | 7.9MB 6.3MB/s
+     / 7.9MB 6.3MB/s
+     - 7.9MB 6.3MB/s
+     \ 7.9MB 6.3MB/s
+     | 7.9MB 6.3MB/s
+     / 7.9MB 6.3MB/s
+     - 8.0MB 7.4MB/s
+     \ 8.0MB 6.9MB/s
+     | 8.0MB 6.9MB/s
+     / 8.0MB 44.6MB/s
+     - 8.0MB 46.0MB/s
+     \ 8.0MB 23.7MB/s
+     | 8.0MB 23.1MB/s
+     / 8.0MB 22.7MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 8.0MB 6.1MB/s
+     \ 8.0MB 6.1MB/s
+     | 8.1MB 6.1MB/s
+     / 8.1MB 5.9MB/s
+     - 8.1MB 5.9MB/s
+     \ 8.1MB 5.9MB/s
+     | 8.1MB 5.9MB/s
+     / 8.1MB 6.8MB/s
+     - 8.1MB 6.8MB/s
+     \ 8.1MB 6.9MB/s
+     | 8.1MB 39.0MB/s
+     / 8.2MB 32.6MB/s
+     - 8.2MB 31.5MB/s
+     \ 8.2MB 57.8MB/s
+     | 8.2MB 32.2MB/s
+     / 8.2MB 32.1MB/s
+     - 8.2MB 33.2MB/s
+     \ 8.2MB 6.9MB/s
+     | 8.2MB 5.6MB/s
+     / 8.2MB 5.5MB/s
+     - 8.2MB 5.5MB/s
+     \ 8.3MB 5.7MB/s
+     | 8.3MB 5.7MB/s
+     / 8.3MB 5.7MB/s
+     - 8.3MB 6.2MB/s
+     \ 8.3MB 6.2MB/s
+     | 8.3MB 6.2MB/s
+     / 8.3MB 19.4MB/s
+     - 8.3MB 53.5MB/s
+     \ 8.3MB 56.6MB/s
+     | 8.3MB 60.0MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 8.4MB 3.4MB/s
+     - 8.4MB 3.4MB/s
+     \ 8.4MB 3.3MB/s
+     | 8.4MB 3.3MB/s
+     / 8.4MB 3.3MB/s
+     - 8.4MB 3.3MB/s
+     \ 8.4MB 3.4MB/s
+     | 8.4MB 3.4MB/s
+     / 8.4MB 3.4MB/s
+     - 8.4MB 3.4MB/s
+     \ 8.5MB 91.2MB/s
+     | 8.5MB 103.1MB/s
+     / 8.5MB 117.4MB/s
+     - 8.5MB 128.8MB/s
+     \ 8.5MB 131.5MB/s
+     | 8.5MB 124.8MB/s
+     / 8.5MB 123.5MB/s
+     - 8.5MB 124.6MB/s
+     \ 8.5MB 27.2MB/s
+     | 8.6MB 26.3MB/s
+     / 8.6MB 26.6MB/s
+     - 8.6MB 20.1MB/s
+     \ 8.6MB 19.5MB/s
+     | 8.6MB 19.3MB/s
+     / 8.6MB 15.1MB/s
+     - 8.6MB 14.9MB/s
+     \ 8.6MB 14.9MB/s
+     | 8.6MB 15.1MB/s
+     / 8.6MB 7.9MB/s
+     - 8.7MB 8.0MB/s
+     \ 8.7MB 8.0MB/s
+     | 8.7MB 6.1MB/s
+     / 8.7MB 6.1MB/s
+     - 8.7MB 6.1MB/s
+     \ 8.7MB 6.7MB/s
+     | 8.7MB 6.6MB/s
+     / 8.7MB 6.5MB/s
+     - 8.7MB 6.5MB/s
+     \ 8.7MB 13.0MB/s
+     | 8.8MB 6.2MB/s
+     / 8.8MB 6.1MB/s
+     - 8.8MB 8.9MB/s
+     \ 8.8MB 6.2MB/s
+     | 8.8MB 5.7MB/s
+     / 8.8MB 5.6MB/s
+     - 8.8MB 5.8MB/s
+     \ 8.8MB 5.8MB/s
+     | 8.8MB 5.8MB/s
+     / 8.8MB 6.3MB/s
+     - 8.9MB 13.4MB/s
+     \ 8.9MB 11.1MB/s
+     | 8.9MB 11.0MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 8.9MB 8.4MB/s
+     - 8.9MB 6.6MB/s
+     \ 8.9MB 6.6MB/s
+     | 8.9MB 6.5MB/s
+     / 8.9MB 6.5MB/s
+     - 8.9MB 5.7MB/s
+     \ 8.9MB 5.6MB/s
+     | 9.0MB 5.6MB/s
+     / 9.0MB 6.2MB/s
+     - 9.0MB 6.2MB/s
+     \ 9.0MB 12.0MB/s
+     | 9.0MB 22.5MB/s
+     / 9.0MB 8.6MB/s
+     - 9.0MB 8.6MB/s
+     \ 9.0MB 6.4MB/s
+     | 9.0MB 7.4MB/s
+     / 9.1MB 7.5MB/s
+     - 9.1MB 7.6MB/s
+     \ 9.1MB 5.9MB/s
+     | 9.1MB 5.9MB/s
+     / 9.1MB 5.9MB/s
+     - 9.1MB 6.1MB/s
+     \ 9.1MB 11.1MB/s
+     | 9.1MB 11.2MB/s
+     / 9.1MB 20.8MB/s
+     - 9.1MB 7.7MB/s
+     \ 9.2MB 6.0MB/s
+     | 9.2MB 6.0MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 9.2MB 5.8MB/s
+     - 9.2MB 5.8MB/s
+     \ 9.2MB 5.8MB/s
+     | 9.2MB 5.8MB/s
+     / 9.2MB 5.8MB/s
+     - 9.2MB 5.2MB/s
+     \ 9.2MB 5.2MB/s
+     | 9.2MB 9.1MB/s
+     / 9.3MB 7.0MB/s
+     - 9.3MB 7.0MB/s
+     \ 9.3MB 10.3MB/s
+     | 9.3MB 8.5MB/s
+     / 9.3MB 5.8MB/s
+     - 9.3MB 5.7MB/s
+     \ 9.3MB 5.8MB/s
+     | 9.3MB 6.4MB/s
+     / 9.3MB 6.4MB/s
+     - 9.3MB 6.5MB/s
+     \ 9.4MB 9.8MB/s
+     | 9.4MB 9.7MB/s
+     / 9.4MB 9.6MB/s
+     - 9.4MB 7.1MB/s
+     \ 9.4MB 9.1MB/s
+     | 9.4MB 9.2MB/s
+     / 9.4MB 9.3MB/s
+     - 9.4MB 5.2MB/s
+     \ 9.4MB 5.2MB/s
+     | 9.5MB 5.2MB/s
+     / 9.5MB 5.7MB/s
+     - 9.5MB 5.4MB/s
+     \ 9.5MB 5.4MB/s
+     | 9.5MB 7.9MB/s
+     / 9.5MB 9.6MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 9.5MB 1.0MB/s
+     \ 9.5MB 1.0MB/s
+     | 9.5MB 1.1MB/s
+     / 9.5MB 1.1MB/s
+     - 9.6MB 1.1MB/s
+     \ 9.6MB 1.1MB/s
+     | 9.6MB 1.1MB/s
+     / 9.6MB 1.1MB/s
+     - 9.6MB 1.1MB/s
+     \ 9.6MB 1.1MB/s
+     | 9.6MB 129.2MB/s
+     / 9.6MB 153.3MB/s
+     - 9.6MB 170.4MB/s
+     \ 9.6MB 150.8MB/s
+     | 9.7MB 138.0MB/s
+     / 9.7MB 132.4MB/s
+     - 9.7MB 133.1MB/s
+     \ 9.7MB 124.0MB/s
+     | 9.7MB 118.7MB/s
+     / 9.7MB 121.9MB/s
+     - 9.7MB 122.0MB/s
+     \ 9.7MB 124.3MB/s
+     | 9.7MB 121.2MB/s
+     / 9.7MB 136.3MB/s
+     - 9.8MB 143.8MB/s
+     \ 9.8MB 144.0MB/s
+     | 9.8MB 154.9MB/s
+     / 9.8MB 159.7MB/s
+     - 9.8MB 156.6MB/s
+     \ 9.8MB 145.7MB/s
+     | 9.8MB 142.6MB/s
+     / 9.8MB 142.4MB/s
+     - 9.8MB 139.7MB/s
+     \ 9.9MB 143.4MB/s
+     | 9.9MB 145.2MB/s
+     / 9.9MB 145.4MB/s
+     - 9.9MB 141.4MB/s
+     \ 9.9MB 148.7MB/s
+     | 9.9MB 158.0MB/s
+     / 9.9MB 169.3MB/s
+     - 9.9MB 193.2MB/s
+     \ 9.9MB 189.0MB/s
+     | 9.9MB 188.2MB/s
+     / 10.0MB 178.1MB/s
+     - 10.0MB 178.7MB/s
+     \ 10.0MB 179.0MB/s
+     | 10.0MB 179.1MB/s
+     / 10.0MB 190.6MB/s
+     - 10.0MB 186.2MB/s
+     \ 10.0MB 181.8MB/s
+     | 10.0MB 175.7MB/s
+     / 10.0MB 179.3MB/s
+     - 10.0MB 181.9MB/s
+     \ 10.1MB 191.0MB/s
+     | 10.1MB 204.4MB/s
+     / 10.1MB 198.9MB/s
+     - 10.1MB 194.3MB/s
+     \ 10.1MB 187.6MB/s
+     | 10.1MB 189.0MB/s
+     / 10.1MB 189.0MB/s
+     - 10.1MB 189.0MB/s
+     \ 10.1MB 201.5MB/s
+     | 10.1MB 8.0MB/s
+     / 10.2MB 7.9MB/s
+     - 10.2MB 7.9MB/s
+     \ 10.2MB 7.1MB/s
+     | 10.2MB 7.1MB/s
+     / 10.2MB 7.1MB/s
+     - 10.2MB 7.1MB/s
+     \ 10.2MB 7.1MB/s
+     | 10.2MB 6.9MB/s
+     / 10.2MB 6.9MB/s
+     - 10.3MB 28.6MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 10.3MB 5.9MB/s
+     | 10.3MB 5.9MB/s
+     / 10.3MB 6.4MB/s
+     - 10.3MB 5.9MB/s
+     \ 10.3MB 5.8MB/s
+     | 10.3MB 5.8MB/s
+     / 10.3MB 5.8MB/s
+     - 10.3MB 5.9MB/s
+     \ 10.3MB 5.9MB/s
+     | 10.4MB 6.3MB/s
+     / 10.4MB 42.2MB/s
+     - 10.4MB 32.2MB/s
+     \ 10.4MB 31.5MB/s
+     | 10.4MB 6.3MB/s
+     / 10.4MB 6.3MB/s
+     - 10.4MB 6.3MB/s
+     \ 10.4MB 6.4MB/s
+     | 10.4MB 5.9MB/s
+     / 10.4MB 5.9MB/s
+     - 10.5MB 5.9MB/s
+     \ 10.5MB 5.8MB/s
+     | 10.5MB 6.1MB/s
+     / 10.5MB 6.1MB/s
+     - 10.5MB 47.2MB/s
+     \ 10.5MB 46.2MB/s
+     | 10.5MB 6.1MB/s
+     / 10.5MB 6.0MB/s
+     - 10.5MB 6.5MB/s
+     \ 10.5MB 5.6MB/s
+     | 10.6MB 5.6MB/s
+     / 10.6MB 5.7MB/s
+     - 10.6MB 5.7MB/s
+     \ 10.6MB 5.6MB/s
+     | 10.6MB 5.6MB/s
+     / 10.6MB 5.6MB/s
+     - 10.6MB 28.0MB/s
+     \ 10.6MB 29.1MB/s
+     | 10.6MB 29.8MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 10.6MB 7.0MB/s
+     - 10.7MB 7.0MB/s
+     \ 10.7MB 7.0MB/s
+     | 10.7MB 5.8MB/s
+     / 10.7MB 5.8MB/s
+     - 10.7MB 5.8MB/s
+     \ 10.7MB 5.8MB/s
+     | 10.7MB 5.8MB/s
+     / 10.7MB 5.8MB/s
+     - 10.7MB 5.8MB/s
+     \ 10.8MB 24.9MB/s
+     | 10.8MB 5.9MB/s
+     / 10.8MB 5.9MB/s
+     - 10.8MB 7.1MB/s
+     \ 10.8MB 7.2MB/s
+     | 10.8MB 4.5MB/s
+     / 10.8MB 4.5MB/s
+     - 10.8MB 4.5MB/s
+     \ 10.8MB 4.5MB/s
+     | 10.8MB 4.5MB/s
+     / 10.9MB 4.5MB/s
+     - 10.9MB 10.2MB/s
+     \ 10.9MB 9.8MB/s
+     | 10.9MB 9.8MB/s
+     / 10.9MB 5.8MB/s
+     - 10.9MB 10.9MB/s
+     \ 10.9MB 11.1MB/s
+     | 10.9MB 11.1MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 10.9MB 5.9MB/s
+     - 10.9MB 5.9MB/s
+     \ 11.0MB 5.9MB/s
+     | 11.0MB 6.1MB/s
+     / 11.0MB 5.8MB/s
+     - 11.0MB 5.8MB/s
+     \ 11.0MB 9.9MB/s
+     | 11.0MB 9.9MB/s
+     / 11.0MB 6.6MB/s
+     - 11.0MB 6.6MB/s
+     \ 11.0MB 10.9MB/s
+     | 11.0MB 5.9MB/s
+     / 11.1MB 5.9MB/s
+     - 11.1MB 5.9MB/s
+     \ 11.1MB 6.3MB/s
+     | 11.1MB 6.3MB/s
+     / 11.1MB 6.3MB/s
+     - 11.1MB 5.7MB/s
+     \ 11.1MB 8.1MB/s
+     | 11.1MB 8.1MB/s
+     / 11.1MB 9.7MB/s
+     - 11.2MB 16.3MB/s
+     \ 11.2MB 12.2MB/s
+     | 11.2MB 12.3MB/s
+     / 11.2MB 6.2MB/s
+     - 11.2MB 6.2MB/s
+     \ 11.2MB 6.2MB/s
+     | 11.2MB 7.0MB/s
+     / 11.2MB 7.0MB/s
+     - 11.2MB 6.4MB/s
+     \ 11.2MB 6.4MB/s
+     | 11.3MB 8.3MB/s
+     / 11.3MB 6.4MB/s
+     - 11.3MB 6.3MB/s
+     \ 11.3MB 12.9MB/s
+     | 11.3MB 12.8MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 11.3MB 5.9MB/s
+     - 11.3MB 5.9MB/s
+     \ 11.3MB 5.9MB/s
+     | 11.3MB 6.4MB/s
+     / 11.3MB 6.4MB/s
+     - 11.4MB 6.4MB/s
+     \ 11.4MB 8.7MB/s
+     | 11.4MB 8.7MB/s
+     / 11.4MB 8.7MB/s
+     - 11.4MB 8.7MB/s
+     \ 11.4MB 13.3MB/s
+     | 11.4MB 13.2MB/s
+     / 11.4MB 13.3MB/s
+     - 11.4MB 5.9MB/s
+     \ 11.4MB 5.8MB/s
+     | 11.5MB 5.8MB/s
+     / 11.5MB 6.4MB/s
+     - 11.5MB 6.4MB/s
+     \ 11.5MB 6.4MB/s
+     | 11.5MB 6.5MB/s
+     / 11.5MB 8.7MB/s
+     - 11.5MB 8.8MB/s
+     \ 11.5MB 8.8MB/s
+     | 11.5MB 15.2MB/s
+     / 11.6MB 6.1MB/s
+     - 11.6MB 6.0MB/s
+     \ 11.6MB 6.0MB/s
+     | 11.6MB 6.0MB/s
+     / 11.6MB 6.0MB/s
+     - 11.6MB 6.0MB/s
+     \ 11.6MB 6.4MB/s
+     | 11.6MB 5.9MB/s
+     / 11.6MB 5.9MB/s
+     - 11.6MB 8.1MB/s
+     \ 11.7MB 43.4MB/s
+     | 11.7MB 15.7MB/s
+     / 11.7MB 15.7MB/s
+     - 11.7MB 15.8MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 11.7MB 6.2MB/s
+     | 11.7MB 6.1MB/s
+     / 11.7MB 6.1MB/s
+     - 11.7MB 6.6MB/s
+     \ 11.7MB 6.6MB/s
+     | 11.7MB 6.6MB/s
+     / 11.8MB 6.0MB/s
+     - 11.8MB 8.1MB/s
+     \ 11.8MB 8.1MB/s
+     | 11.8MB 8.1MB/s
+     / 11.8MB 14.5MB/s
+     - 11.8MB 14.5MB/s
+     \ 11.8MB 14.5MB/s
+     | 11.8MB 14.6MB/s
+     / 11.8MB 5.9MB/s
+     - 11.8MB 5.9MB/s
+     \ 11.9MB 6.5MB/s
+     | 11.9MB 6.5MB/s
+     / 11.9MB 6.4MB/s
+     - 11.9MB 6.4MB/s
+     \ 11.9MB 9.0MB/s
+     | 11.9MB 9.0MB/s
+     / 11.9MB 6.3MB/s
+     - 11.9MB 6.3MB/s
+     \ 11.9MB 17.1MB/s
+     | 12.0MB 17.2MB/s
+     / 12.0MB 17.1MB/s
+     - 12.0MB 16.9MB/s
+     \ 12.0MB 5.9MB/s
+     | 12.0MB 5.9MB/s
+     / 12.0MB 5.9MB/s
+     - 12.0MB 6.0MB/s
+     \ 12.0MB 8.2MB/s
+     | 12.0MB 8.3MB/s
+     / 12.0MB 8.3MB/s
+     - 12.1MB 5.8MB/s
+     \ 12.1MB 5.7MB/s
+     | 12.1MB 5.7MB/s
+     / 12.1MB 15.8MB/s
+     - 12.1MB 15.9MB/s
+     \ 12.1MB 15.7MB/s
+     | 12.1MB 15.6MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 12.1MB 5.5MB/s
+     - 12.1MB 5.5MB/s
+     \ 12.1MB 5.4MB/s
+     | 12.2MB 7.6MB/s
+     / 12.2MB 7.7MB/s
+     - 12.2MB 7.1MB/s
+     \ 12.2MB 7.1MB/s
+     | 12.2MB 5.9MB/s
+     / 12.2MB 5.9MB/s
+     - 12.2MB 5.9MB/s
+     \ 12.2MB 19.7MB/s
+     | 12.2MB 20.5MB/s
+     / 12.2MB 6.3MB/s
+     - 12.3MB 6.3MB/s
+     \ 12.3MB 5.8MB/s
+     | 12.3MB 6.1MB/s
+     / 12.3MB 6.1MB/s
+     - 12.3MB 7.5MB/s
+     \ 12.3MB 7.5MB/s
+     | 12.3MB 5.9MB/s
+     / 12.3MB 5.9MB/s
+     - 12.3MB 5.9MB/s
+     \ 12.3MB 16.6MB/s
+     | 12.4MB 16.7MB/s
+     / 12.4MB 22.5MB/s
+     - 12.4MB 22.6MB/s
+     \ 12.4MB 6.6MB/s
+     | 12.4MB 6.6MB/s
+     / 12.4MB 5.9MB/s
+     - 12.4MB 7.5MB/s
+     \ 12.4MB 7.5MB/s
+     | 12.4MB 7.6MB/s
+     / 12.5MB 7.6MB/s
+     - 12.5MB 6.0MB/s
+     \ 12.5MB 6.0MB/s
+     | 12.5MB 6.0MB/s
+     / 12.5MB 15.9MB/s
+     - 12.5MB 16.2MB/s
+     \ 12.5MB 22.9MB/s
+     | 12.5MB 23.3MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 12.5MB 6.8MB/s
+     - 12.5MB 6.8MB/s
+     \ 12.6MB 5.8MB/s
+     | 12.6MB 7.1MB/s
+     / 12.6MB 7.1MB/s
+     - 12.6MB 7.1MB/s
+     \ 12.6MB 7.1MB/s
+     | 12.6MB 5.9MB/s
+     / 12.6MB 5.9MB/s
+     - 12.6MB 5.9MB/s
+     \ 12.6MB 14.9MB/s
+     | 12.6MB 14.9MB/s
+     / 12.7MB 25.8MB/s
+     - 12.7MB 6.5MB/s
+     \ 12.7MB 6.0MB/s
+     | 12.7MB 5.9MB/s
+     / 12.7MB 5.9MB/s
+     - 12.7MB 7.1MB/s
+     \ 12.7MB 7.1MB/s
+     | 12.7MB 7.2MB/s
+     / 12.7MB 5.8MB/s
+     - 12.7MB 5.8MB/s
+     \ 12.8MB 5.7MB/s
+     | 12.8MB 17.2MB/s
+     / 12.8MB 21.0MB/s
+     - 12.8MB 21.6MB/s
+     \ 12.8MB 22.1MB/s
+     | 12.8MB 7.0MB/s
+     / 12.8MB 6.0MB/s
+     - 12.8MB 6.0MB/s
+     \ 12.8MB 7.4MB/s
+     | 12.9MB 7.5MB/s
+     / 12.9MB 7.5MB/s
+     - 12.9MB 7.5MB/s
+     \ 12.9MB 6.1MB/s
+     | 12.9MB 6.1MB/s
+     / 12.9MB 6.1MB/s
+     - 12.9MB 14.9MB/s
+     \ 12.9MB 17.8MB/s
+     | 12.9MB 18.0MB/s
+     / 12.9MB 18.2MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 13.0MB 7.1MB/s
+     \ 13.0MB 6.0MB/s
+     | 13.0MB 5.9MB/s
+     / 13.0MB 7.3MB/s
+     - 13.0MB 7.3MB/s
+     \ 13.0MB 7.3MB/s
+     | 13.0MB 7.4MB/s
+     / 13.0MB 5.9MB/s
+     - 13.0MB 5.8MB/s
+     \ 13.0MB 5.8MB/s
+     | 13.1MB 11.4MB/s
+     / 13.1MB 7.3MB/s
+     - 13.1MB 7.4MB/s
+     \ 13.1MB 7.5MB/s
+     | 13.1MB 7.5MB/s
+     / 13.1MB 6.0MB/s
+     - 13.1MB 6.0MB/s
+     \ 13.1MB 8.2MB/s
+     | 13.1MB 8.3MB/s
+     / 13.1MB 8.4MB/s
+     - 13.2MB 8.5MB/s
+     \ 13.2MB 10.9MB/s
+     | 13.2MB 10.8MB/s
+     / 13.2MB 10.6MB/s
+     - 13.2MB 10.6MB/s
+     \ 13.2MB 7.9MB/s
+     | 13.2MB 8.0MB/s
+     / 13.2MB 8.0MB/s
+     - 13.2MB 6.4MB/s
+     \ 13.3MB 5.9MB/s
+     | 13.3MB 5.8MB/s
+     / 13.3MB 8.2MB/s
+     - 13.3MB 6.0MB/s
+     \ 13.3MB 6.0MB/s
+     | 13.3MB 6.0MB/s
+     / 13.3MB 9.8MB/s
+     - 13.3MB 9.8MB/s
+     \ 13.3MB 9.8MB/s
+     | 13.3MB 13.9MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 13.4MB 6.7MB/s
+     - 13.4MB 6.8MB/s
+     \ 13.4MB 6.8MB/s
+     | 13.4MB 8.3MB/s
+     / 13.4MB 8.3MB/s
+     - 13.4MB 8.3MB/s
+     \ 13.4MB 8.4MB/s
+     | 13.4MB 5.9MB/s
+     / 13.4MB 5.9MB/s
+     - 13.4MB 5.8MB/s
+     \ 13.5MB 12.5MB/s
+     | 13.5MB 12.6MB/s
+     / 13.5MB 12.5MB/s
+     - 13.5MB 16.5MB/s
+     \ 13.5MB 7.0MB/s
+     | 13.5MB 7.0MB/s
+     / 13.5MB 7.0MB/s
+     - 13.5MB 10.9MB/s
+     \ 13.5MB 9.2MB/s
+     | 13.5MB 9.1MB/s
+     / 13.6MB 9.1MB/s
+     - 13.6MB 5.9MB/s
+     \ 13.6MB 5.9MB/s
+     | 13.6MB 5.9MB/s
+     / 13.6MB 11.5MB/s
+     - 13.6MB 11.3MB/s
+     \ 13.6MB 11.3MB/s
+     | 13.6MB 11.3MB/s
+     / 13.6MB 6.9MB/s
+     - 13.6MB 6.9MB/s
+     \ 13.7MB 7.0MB/s
+     | 13.7MB 9.7MB/s
+     / 13.7MB 7.2MB/s
+     - 13.7MB 7.2MB/s
+     \ 13.7MB 7.3MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     | 13.7MB 6.0MB/s
+     / 13.7MB 6.0MB/s
+     - 13.7MB 6.0MB/s
+     \ 13.7MB 10.7MB/s
+     | 13.8MB 10.6MB/s
+     / 13.8MB 10.6MB/s
+     - 13.8MB 13.4MB/s
+     \ 13.8MB 9.4MB/s
+     | 13.8MB 9.3MB/s
+     / 13.8MB 9.3MB/s
+     - 13.8MB 10.2MB/s
+     \ 13.8MB 7.3MB/s
+     | 13.8MB 7.3MB/s
+     / 13.8MB 6.0MB/s
+     - 13.9MB 6.0MB/s
+     \ 13.9MB 6.0MB/s
+     | 13.9MB 6.0MB/s
+     / 13.9MB 9.9MB/s
+     - 13.9MB 9.9MB/s
+     \ 13.9MB 9.9MB/s
+     | 13.9MB 12.4MB/s
+     / 13.9MB 23.8MB/s
+     - 13.9MB 9.9MB/s
+     \ 13.9MB 14.2MB/s
+     | 14.0MB 14.5MB/s
+     / 14.0MB 10.5MB/s
+     - 14.0MB 7.8MB/s
+     \ 14.0MB 7.8MB/s
+     | 14.0MB 6.1MB/s
+     / 14.0MB 6.1MB/s
+     - 14.0MB 6.1MB/s
+     \ 14.0MB 6.2MB/s
+     | 14.0MB 9.7MB/s
+     / 14.0MB 8.3MB/s
+     - 14.1MB 8.3MB/s
+     \ 14.1MB 10.5MB/s
+     | 14.1MB 8.8MB/s
+     / 14.1MB 8.8MB/s
+     - 14.1MB 13.0MB/s
+     \ 14.1MB 13.1MB/s
+     | 14.1MB 8.1MB/s
+     / 14.1MB 8.0MB/s
+     - 14.1MB 8.0MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 14.2MB 5.6MB/s
+     | 14.2MB 5.6MB/s
+     / 14.2MB 5.6MB/s
+     - 14.2MB 7.9MB/s
+     \ 14.2MB 7.2MB/s
+     | 14.2MB 7.2MB/s
+     / 14.2MB 7.2MB/s
+     - 14.2MB 10.8MB/s
+     \ 14.2MB 10.9MB/s
+     | 14.2MB 10.9MB/s
+     / 14.3MB 20.6MB/s
+     - 14.3MB 9.7MB/s
+     \ 14.3MB 9.6MB/s
+     | 14.3MB 9.6MB/s
+     / 14.3MB 6.6MB/s
+     - 14.3MB 6.6MB/s
+     \ 14.3MB 6.6MB/s
+     | 14.3MB 6.6MB/s
+     / 14.3MB 5.9MB/s
+     - 14.3MB 5.9MB/s
+     \ 14.4MB 7.0MB/s
+     | 14.4MB 11.4MB/s
+     / 14.4MB 11.4MB/s
+     - 14.4MB 11.5MB/s
+     \ 14.4MB 22.7MB/s
+     | 14.4MB 9.7MB/s
+     / 14.4MB 9.7MB/s
+     - 14.4MB 9.7MB/s
+     \ 14.4MB 11.8MB/s
+     | 14.4MB 11.9MB/s
+     / 14.5MB 12.0MB/s
+     - 14.5MB 7.1MB/s
+     \ 14.5MB 6.7MB/s
+     | 14.5MB 6.7MB/s
+     / 14.5MB 6.6MB/s
+     - 14.5MB 10.6MB/s
+     \ 14.5MB 10.6MB/s
+     | 14.5MB 10.6MB/s
+     / 14.5MB 10.5MB/s
+     - 14.6MB 9.5MB/s
+     \ 14.6MB 9.5MB/s
+     | 14.6MB 7.5MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 14.6MB 8.0MB/s
+     - 14.6MB 8.0MB/s
+     \ 14.6MB 9.4MB/s
+     | 14.6MB 7.2MB/s
+     / 14.6MB 7.2MB/s
+     - 14.6MB 7.1MB/s
+     \ 14.6MB 3.2MB/s
+     | 14.7MB 3.3MB/s
+     / 14.7MB 3.3MB/s
+     - 14.7MB 4.7MB/s
+     \ 14.7MB 4.7MB/s
+     | 14.7MB 4.7MB/s
+     / 14.7MB 4.7MB/s
+     - 14.7MB 5.0MB/s
+     \ 14.7MB 5.0MB/s
+     | 14.7MB 5.0MB/s
+     / 14.7MB 32.5MB/s
+     - 14.8MB 32.5MB/s
+     \ 14.8MB 31.7MB/s
+     | 14.8MB 31.4MB/s
+     / 14.8MB 31.5MB/s
+     - 14.8MB 5.1MB/s
+     \ 14.8MB 5.1MB/s
+     | 14.8MB 5.7MB/s
+     / 14.8MB 5.7MB/s
+     - 14.8MB 5.2MB/s
+     \ 14.8MB 5.2MB/s
+     | 14.9MB 5.2MB/s
+     / 14.9MB 5.2MB/s
+     - 14.9MB 5.1MB/s
+     \ 14.9MB 5.2MB/s
+     | 14.9MB 33.0MB/s
+     / 14.9MB 32.4MB/s
+     - 14.9MB 32.3MB/s
+     \ 14.9MB 25.2MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     | 14.9MB 6.9MB/s
+     / 15.0MB 6.8MB/s
+     - 15.0MB 6.8MB/s
+     \ 15.0MB 6.9MB/s
+     | 15.0MB 5.9MB/s
+     / 15.0MB 5.9MB/s
+     - 15.0MB 5.9MB/s
+     \ 15.0MB 5.2MB/s
+     | 15.0MB 5.2MB/s
+     / 15.0MB 5.4MB/s
+     - 15.0MB 16.1MB/s
+     \ 15.1MB 16.1MB/s
+     | 15.1MB 16.1MB/s
+     / 15.1MB 16.3MB/s
+     - 15.1MB 22.4MB/s
+     \ 15.1MB 22.8MB/s
+     | 15.1MB 23.3MB/s
+     / 15.1MB 6.9MB/s
+     - 15.1MB 6.9MB/s
+     \ 15.1MB 6.9MB/s
+     | 15.1MB 6.9MB/s
+     / 15.2MB 6.2MB/s
+     - 15.2MB 6.1MB/s
+     \ 15.2MB 6.1MB/s
+     | 15.2MB 6.5MB/s
+     / 15.2MB 6.5MB/s
+     - 15.2MB 6.5MB/s
+     \ 15.2MB 34.4MB/s
+     | 15.2MB 35.1MB/s
+     / 15.2MB 35.5MB/s
+     - 15.2MB 36.1MB/s
+     \ 15.3MB 6.3MB/s
+     | 15.3MB 6.3MB/s
+     / 15.3MB 6.2MB/s
+     - 15.3MB 6.2MB/s
+     \ 15.3MB 6.2MB/s
+     | 15.3MB 6.2MB/s
+     / 15.3MB 6.2MB/s
+     - 15.3MB 6.0MB/s
+     \ 15.3MB 6.0MB/s
+     | 15.3MB 6.0MB/s
+     / 15.4MB 60.0MB/s
+     - 15.4MB 54.1MB/s
+     \ 15.4MB 57.3MB/s
+     | 15.4MB 61.1MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 15.4MB 8.9MB/s
+     - 15.4MB 6.1MB/s
+     \ 15.4MB 6.1MB/s
+     | 15.4MB 6.3MB/s
+     / 15.4MB 5.9MB/s
+     - 15.5MB 5.8MB/s
+     \ 15.5MB 5.8MB/s
+     | 15.5MB 5.8MB/s
+     / 15.5MB 5.5MB/s
+     - 15.5MB 5.5MB/s
+     \ 15.5MB 11.5MB/s
+     | 15.5MB 27.8MB/s
+     / 15.5MB 28.1MB/s
+     - 15.5MB 28.2MB/s
+     \ 15.5MB 10.7MB/s
+     | 15.6MB 10.8MB/s
+     / 15.6MB 10.9MB/s
+     - 15.6MB 6.2MB/s
+     \ 15.6MB 6.4MB/s
+     | 15.6MB 6.4MB/s
+     / 15.6MB 6.4MB/s
+     - 15.6MB 6.3MB/s
+     \ 15.6MB 6.3MB/s
+     | 15.6MB 6.3MB/s
+     / 15.6MB 10.1MB/s
+     - 15.7MB 10.0MB/s
+     \ 15.7MB 10.0MB/s
+     | 15.7MB 35.6MB/s
+     / 15.7MB 22.5MB/s
+     - 15.7MB 11.6MB/s
+     \ 15.7MB 11.5MB/s
+     | 15.7MB 6.3MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 15.7MB 5.8MB/s
+     - 15.7MB 5.8MB/s
+     \ 15.7MB 6.2MB/s
+     | 15.8MB 6.3MB/s
+     / 15.8MB 6.3MB/s
+     - 15.8MB 6.3MB/s
+     \ 15.8MB 7.2MB/s
+     | 15.8MB 9.1MB/s
+     / 15.8MB 9.1MB/s
+     - 15.8MB 28.0MB/s
+     \ 15.8MB 46.2MB/s
+     | 15.8MB 13.8MB/s
+     / 15.9MB 13.7MB/s
+     - 15.9MB 13.6MB/s
+     \ 15.9MB 6.8MB/s
+     | 15.9MB 6.8MB/s
+     / 15.9MB 6.8MB/s
+     - 15.9MB 6.8MB/s
+     \ 15.9MB 6.8MB/s
+     | 15.9MB 6.8MB/s
+     / 15.9MB 6.8MB/s
+     - 15.9MB 10.5MB/s
+     \ 16.0MB 9.2MB/s
+     | 16.0MB 9.1MB/s
+     / 16.0MB 27.0MB/s
+     - 16.0MB 26.9MB/s
+     \ 16.0MB 26.8MB/s
+     | 16.0MB 13.1MB/s
+     / 16.0MB 12.9MB/s
+     - 16.0MB 12.9MB/s
+     \ 16.0MB 13.0MB/s
+     | 16.0MB 12.9MB/s
+     / 16.1MB 6.4MB/s
+     - 16.1MB 6.5MB/s
+     \ 16.1MB 6.5MB/s
+     | 16.1MB 6.4MB/s
+     / 16.1MB 6.4MB/s
+     - 16.1MB 9.8MB/s
+     \ 16.1MB 7.5MB/s
+     | 16.1MB 7.3MB/s
+     / 16.1MB 7.2MB/s
+     - 16.1MB 7.2MB/s
+     \ 16.2MB 13.6MB/s
+     | 16.2MB 13.4MB/s
+     / 16.2MB 13.5MB/s
+     - 16.2MB 13.8MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 16.2MB 5.7MB/s
+     | 16.2MB 5.7MB/s
+     / 16.2MB 6.9MB/s
+     - 16.2MB 6.3MB/s
+     \ 16.2MB 6.4MB/s
+     | 16.3MB 6.5MB/s
+     / 16.3MB 7.2MB/s
+     - 16.3MB 7.3MB/s
+     \ 16.3MB 7.2MB/s
+     | 16.3MB 7.2MB/s
+     / 16.3MB 28.1MB/s
+     - 16.3MB 27.8MB/s
+     \ 16.3MB 28.3MB/s
+     | 16.3MB 54.5MB/s
+     / 16.3MB 26.6MB/s
+     - 16.4MB 26.4MB/s
+     \ 16.4MB 6.8MB/s
+     | 16.4MB 6.8MB/s
+     / 16.4MB 6.9MB/s
+     - 16.4MB 6.9MB/s
+     \ 16.4MB 6.9MB/s
+     | 16.4MB 6.3MB/s
+     / 16.4MB 6.2MB/s
+     - 16.4MB 6.2MB/s
+     \ 16.4MB 7.1MB/s
+     | 16.5MB 7.1MB/s
+     / 16.5MB 43.4MB/s
+     - 16.5MB 29.6MB/s
+     \ 16.5MB 29.3MB/s
+     | 16.5MB 29.4MB/s
+     / 16.5MB 18.5MB/s
+     - 16.5MB 5.3MB/s
+     \ 16.5MB 5.4MB/s
+     | 16.5MB 5.4MB/s
+     / 16.5MB 5.4MB/s
+     - 16.6MB 5.3MB/s
+     \ 16.6MB 5.3MB/s
+     | 16.6MB 5.7MB/s
+     / 16.6MB 5.1MB/s
+     - 16.6MB 5.1MB/s
+     \ 16.6MB 5.7MB/s
+     | 16.6MB 35.3MB/s
+     / 16.6MB 35.3MB/s
+     - 16.6MB 34.9MB/s
+     \ 16.7MB 28.5MB/s
+     | 16.7MB 28.4MB/s
+     / 16.7MB 28.7MB/s
+     - 16.7MB 28.9MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 16.7MB 6.8MB/s
+     | 16.7MB 6.8MB/s
+     / 16.7MB 6.8MB/s
+     - 16.7MB 5.9MB/s
+     \ 16.7MB 5.9MB/s
+     | 16.7MB 5.9MB/s
+     / 16.8MB 6.2MB/s
+     - 16.8MB 6.2MB/s
+     \ 16.8MB 5.8MB/s
+     | 16.8MB 5.7MB/s
+     / 16.8MB 22.1MB/s
+     - 16.8MB 22.6MB/s
+     \ 16.8MB 22.4MB/s
+     | 16.8MB 45.6MB/s
+     / 16.8MB 28.4MB/s
+     - 16.8MB 6.9MB/s
+     \ 16.9MB 6.9MB/s
+     | 16.9MB 6.8MB/s
+     / 16.9MB 6.6MB/s
+     - 16.9MB 6.7MB/s
+     \ 16.9MB 6.7MB/s
+     | 16.9MB 6.7MB/s
+     / 16.9MB 6.7MB/s
+     - 16.9MB 6.6MB/s
+     \ 16.9MB 5.5MB/s
+     | 16.9MB 13.2MB/s
+     / 17.0MB 13.1MB/s
+     - 17.0MB 13.3MB/s
+     \ 17.0MB 17.2MB/s
+     | 17.0MB 13.7MB/s
+     / 17.0MB 13.5MB/s
+     - 17.0MB 6.7MB/s
+     \ 17.0MB 6.7MB/s
+     | 17.0MB 6.7MB/s
+     / 17.0MB 9.5MB/s
+     - 17.0MB 6.7MB/s
+     \ 17.1MB 6.8MB/s
+     | 17.1MB 6.8MB/s
+     / 17.1MB 6.8MB/s
+     - 17.1MB 6.8MB/s
+     \ 17.1MB 6.8MB/s
+     | 17.1MB 14.3MB/s
+     / 17.1MB 14.3MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 17.1MB 11.2MB/s
+     \ 17.1MB 11.1MB/s
+     | 17.2MB 23.5MB/s
+     / 17.2MB 23.4MB/s
+     - 17.2MB 23.4MB/s
+     \ 17.2MB 23.5MB/s
+     | 17.2MB 10.1MB/s
+     / 17.2MB 10.1MB/s
+     - 17.2MB 10.1MB/s
+     \ 17.2MB 6.8MB/s
+     | 17.2MB 7.7MB/s
+     / 17.2MB 7.7MB/s
+     - 17.3MB 7.7MB/s
+     \ 17.3MB 7.7MB/s
+     | 17.3MB 6.9MB/s
+     / 17.3MB 6.9MB/s
+     - 17.3MB 13.3MB/s
+     \ 17.3MB 10.4MB/s
+     | 17.3MB 10.3MB/s
+     / 17.3MB 21.1MB/s
+     - 17.3MB 9.2MB/s
+     \ 17.3MB 9.1MB/s
+     | 17.4MB 9.1MB/s
+     / 17.4MB 9.1MB/s
+     - 17.4MB 6.7MB/s
+     \ 17.4MB 6.6MB/s
+     | 17.4MB 6.6MB/s
+     / 17.4MB 7.7MB/s
+     - 17.4MB 7.7MB/s
+     \ 17.4MB 7.7MB/s
+     | 17.4MB 11.6MB/s
+     / 17.4MB 10.1MB/s
+     - 17.5MB 10.1MB/s
+     \ 17.5MB 10.3MB/s
+     | 17.5MB 16.8MB/s
+     / 17.5MB 9.6MB/s
+     - 17.5MB 9.5MB/s
+     \ 17.5MB 9.6MB/s
+     | 17.5MB 8.5MB/s
+     / 17.5MB 8.4MB/s
+     - 17.5MB 10.2MB/s
+     \ 17.6MB 7.4MB/s
+     | 17.6MB 7.4MB/s
+     / 17.6MB 7.3MB/s
+     - 17.6MB 8.3MB/s
+     \ 17.6MB 10.7MB/s
+     | 17.6MB 10.9MB/s
+     / 17.6MB 10.9MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 17.6MB 12.4MB/s
+     \ 17.6MB 9.8MB/s
+     | 17.6MB 9.7MB/s
+     / 17.7MB 18.8MB/s
+     - 17.7MB 9.9MB/s
+     \ 17.7MB 9.9MB/s
+     | 17.7MB 10.0MB/s
+     / 17.7MB 6.9MB/s
+     - 17.7MB 6.8MB/s
+     \ 17.7MB 6.7MB/s
+     | 17.7MB 6.8MB/s
+     / 17.7MB 7.4MB/s
+     - 17.7MB 7.3MB/s
+     \ 17.8MB 7.3MB/s
+     | 17.8MB 11.5MB/s
+     / 17.8MB 10.1MB/s
+     - 17.8MB 10.1MB/s
+     \ 17.8MB 28.7MB/s
+     | 17.8MB 8.4MB/s
+     / 17.8MB 8.4MB/s
+     - 17.8MB 8.5MB/s
+     \ 17.8MB 9.3MB/s
+     | 17.8MB 8.0MB/s
+     / 17.9MB 8.0MB/s
+     - 17.9MB 6.8MB/s
+     \ 17.9MB 7.3MB/s
+     | 17.9MB 7.3MB/s
+     / 17.9MB 7.3MB/s
+     - 17.9MB 19.7MB/s
+     \ 17.9MB 16.6MB/s
+     | 17.9MB 16.1MB/s
+     / 17.9MB 16.0MB/s
+     - 18.0MB 22.7MB/s
+     \ 18.0MB 17.1MB/s
+     | 18.0MB 28.2MB/s
+     / 18.0MB 9.9MB/s
+     - 18.0MB 8.6MB/s
+     \ 18.0MB 8.6MB/s
+     | 18.0MB 6.8MB/s
+     / 18.0MB 7.2MB/s
+     - 18.0MB 7.2MB/s
+     \ 18.0MB 7.3MB/s
+     | 18.1MB 6.1MB/s
+     / 18.1MB 6.6MB/s
+     - 18.1MB 6.6MB/s
+     \ 18.1MB 11.8MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     | 18.1MB 14.4MB/s
+     / 18.1MB 14.4MB/s
+     - 18.1MB 26.4MB/s
+     \ 18.1MB 27.0MB/s
+     | 18.1MB 16.2MB/s
+     / 18.1MB 16.2MB/s
+     - 18.2MB 7.0MB/s
+     \ 18.2MB 7.1MB/s
+     | 18.2MB 7.2MB/s
+     / 18.2MB 7.2MB/s
+     - 18.2MB 7.2MB/s
+     \ 18.2MB 5.9MB/s
+     | 18.2MB 5.8MB/s
+     / 18.2MB 5.9MB/s
+     - 18.2MB 6.8MB/s
+     \ 18.2MB 6.8MB/s
+     | 18.3MB 24.5MB/s
+     / 18.3MB 24.0MB/s
+     - 18.3MB 20.2MB/s
+     \ 18.3MB 19.8MB/s
+     | 18.3MB 20.1MB/s
+     / 18.3MB 7.5MB/s
+     - 18.3MB 7.4MB/s
+     \ 18.3MB 7.5MB/s
+     | 18.3MB 7.5MB/s
+     / 18.4MB 7.5MB/s
+     - 18.4MB 7.5MB/s
+     \ 18.4MB 7.1MB/s
+     | 18.4MB 6.4MB/s
+     / 18.4MB 6.4MB/s
+     - 18.4MB 6.4MB/s
+     \ 18.4MB 24.0MB/s
+     | 18.4MB 19.2MB/s
+     / 18.4MB 18.8MB/s
+     - 18.4MB 18.9MB/s
+     \ 18.5MB 18.6MB/s
+     | 18.5MB 18.9MB/s
+     / 18.5MB 22.6MB/s
+     - 18.5MB 7.8MB/s
+     \ 18.5MB 7.8MB/s
+     | 18.5MB 7.8MB/s
+     / 18.5MB 7.8MB/s
+     - 18.5MB 7.6MB/s
+     \ 18.5MB 7.6MB/s
+     | 18.5MB 7.6MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 18.6MB 7.0MB/s
+     - 18.6MB 6.9MB/s
+     \ 18.6MB 6.9MB/s
+     | 18.6MB 25.6MB/s
+     / 18.6MB 20.1MB/s
+     - 18.6MB 19.9MB/s
+     \ 18.6MB 20.2MB/s
+     | 18.6MB 13.9MB/s
+     / 18.6MB 14.0MB/s
+     - 18.6MB 14.0MB/s
+     \ 18.7MB 7.3MB/s
+     | 18.7MB 7.3MB/s
+     / 18.7MB 7.3MB/s
+     - 18.7MB 7.3MB/s
+     \ 18.7MB 7.3MB/s
+     | 18.7MB 7.4MB/s
+     / 18.7MB 7.3MB/s
+     - 18.7MB 8.9MB/s
+     \ 18.7MB 8.6MB/s
+     | 18.7MB 8.5MB/s
+     / 18.8MB 26.2MB/s
+     - 18.8MB 20.2MB/s
+     \ 18.8MB 12.8MB/s
+     | 18.8MB 12.8MB/s
+     / 18.8MB 15.0MB/s
+     - 18.8MB 6.8MB/s
+     \ 18.8MB 6.8MB/s
+     | 18.8MB 7.5MB/s
+     / 18.8MB 7.7MB/s
+     - 18.9MB 6.4MB/s
+     \ 18.9MB 6.4MB/s
+     | 18.9MB 6.9MB/s
+     / 18.9MB 7.9MB/s
+     - 18.9MB 7.8MB/s
+     \ 18.9MB 7.9MB/s
+     | 18.9MB 20.9MB/s
+     / 18.9MB 17.2MB/s
+     - 18.9MB 16.8MB/s
+     \ 18.9MB 16.9MB/s
+     | 19.0MB 18.2MB/s
+     / 19.0MB 18.4MB/s
+     - 19.0MB 18.6MB/s
+     \ 19.0MB 8.1MB/s
+     | 19.0MB 8.1MB/s
+     / 19.0MB 8.1MB/s
+     - 19.0MB 8.1MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 19.0MB 7.3MB/s
+     | 19.0MB 7.4MB/s
+     / 19.0MB 7.4MB/s
+     - 19.1MB 8.7MB/s
+     \ 19.1MB 7.1MB/s
+     | 19.1MB 7.0MB/s
+     / 19.1MB 15.9MB/s
+     - 19.1MB 16.2MB/s
+     \ 19.1MB 16.3MB/s
+     | 19.1MB 16.3MB/s
+     / 19.1MB 26.2MB/s
+     - 19.1MB 13.2MB/s
+     \ 19.1MB 13.1MB/s
+     | 19.2MB 7.0MB/s
+     / 19.2MB 8.6MB/s
+     - 19.2MB 8.7MB/s
+     \ 19.2MB 8.8MB/s
+     | 19.2MB 8.8MB/s
+     / 19.2MB 7.7MB/s
+     - 19.2MB 7.7MB/s
+     \ 19.2MB 6.9MB/s
+     | 19.2MB 8.0MB/s
+     / 19.3MB 8.0MB/s
+     - 19.3MB 17.8MB/s
+     \ 19.3MB 17.9MB/s
+     | 19.3MB 17.4MB/s
+     / 19.3MB 17.3MB/s
+     - 19.3MB 17.3MB/s
+     \ 19.3MB 10.9MB/s
+     | 19.3MB 10.9MB/s
+     / 19.3MB 13.4MB/s
+     - 19.3MB 5.3MB/s
+     \ 19.4MB 5.3MB/s
+     | 19.4MB 5.3MB/s
+     / 19.4MB 5.3MB/s
+     - 19.4MB 5.3MB/s
+     \ 19.4MB 5.3MB/s
+     | 19.4MB 5.3MB/s
+     / 19.4MB 6.0MB/s
+     - 19.4MB 6.0MB/s
+     \ 19.4MB 6.0MB/s
+     | 19.4MB 26.1MB/s
+     / 19.5MB 26.4MB/s
+     - 19.5MB 26.8MB/s
+     \ 19.5MB 27.1MB/s
+     | 19.5MB 26.3MB/s
+     / 19.5MB 26.3MB/s
+     - 19.5MB 26.2MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 19.5MB 7.4MB/s
+     | 19.5MB 7.3MB/s
+     / 19.5MB 7.3MB/s
+     - 19.5MB 7.4MB/s
+     \ 19.6MB 7.4MB/s
+     | 19.6MB 5.6MB/s
+     / 19.6MB 5.5MB/s
+     - 19.6MB 5.5MB/s
+     \ 19.6MB 5.2MB/s
+     | 19.6MB 5.1MB/s
+     / 19.6MB 14.5MB/s
+     - 19.6MB 14.7MB/s
+     \ 19.6MB 14.6MB/s
+     | 19.7MB 14.6MB/s
+     / 19.7MB 14.7MB/s
+     - 19.7MB 8.2MB/s
+     \ 19.7MB 8.3MB/s
+     | 19.7MB 8.3MB/s
+     / 19.7MB 9.3MB/s
+     - 19.7MB 9.3MB/s
+     \ 19.7MB 9.3MB/s
+     | 19.7MB 9.4MB/s
+     / 19.7MB 6.2MB/s
+     - 19.8MB 6.2MB/s
+     \ 19.8MB 6.2MB/s
+     | 19.8MB 15.9MB/s
+     / 19.8MB 12.0MB/s
+     - 19.8MB 12.0MB/s
+     \ 19.8MB 11.8MB/s
+     | 19.8MB 11.6MB/s
+     / 19.8MB 11.6MB/s
+     - 19.8MB 11.6MB/s
+     \ 19.8MB 31.8MB/s
+     | 19.9MB 8.4MB/s
+     / 19.9MB 8.3MB/s
+     - 19.9MB 8.2MB/s
+     \ 19.9MB 9.8MB/s
+     | 19.9MB 9.9MB/s
+     / 19.9MB 10.1MB/s
+     - 19.9MB 10.1MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 19.9MB 5.5MB/s
+     | 19.9MB 5.5MB/s
+     / 19.9MB 5.5MB/s
+     - 20.0MB 8.8MB/s
+     \ 20.0MB 8.8MB/s
+     | 20.0MB 9.0MB/s
+     / 20.0MB 9.0MB/s
+     - 20.0MB 9.0MB/s
+     \ 20.0MB 8.9MB/s
+     | 20.0MB 9.1MB/s
+     / 20.0MB 34.5MB/s
+     - 20.0MB 12.8MB/s
+     \ 20.0MB 12.6MB/s
+     | 20.1MB 16.8MB/s
+     / 20.1MB 16.8MB/s
+     - 20.1MB 16.8MB/s
+     \ 20.1MB 16.8MB/s
+     | 20.1MB 10.0MB/s
+     / 20.1MB 7.3MB/s
+     - 20.1MB 7.3MB/s
+     \ 20.1MB 7.3MB/s
+     | 20.1MB 8.6MB/s
+     / 20.2MB 8.7MB/s
+     - 20.2MB 8.7MB/s
+     \ 20.2MB 7.8MB/s
+     | 20.2MB 7.7MB/s
+     / 20.2MB 7.7MB/s
+     - 20.2MB 11.1MB/s
+     \ 20.2MB 18.8MB/s
+     | 20.2MB 12.2MB/s
+     / 20.2MB 12.0MB/s
+     - 20.2MB 18.0MB/s
+     \ 20.3MB 18.0MB/s
+     | 20.3MB 18.3MB/s
+     / 20.3MB 25.0MB/s
+     - 20.3MB 13.0MB/s
+     \ 20.3MB 8.4MB/s
+     | 20.3MB 8.4MB/s
+     / 20.3MB 6.8MB/s
+     - 20.3MB 8.4MB/s
+     \ 20.3MB 8.5MB/s
+     | 20.3MB 8.6MB/s
+     / 20.4MB 7.7MB/s
+     - 20.4MB 7.6MB/s
+     \ 20.4MB 7.6MB/s
+     | 20.4MB 7.7MB/s
+     / 20.4MB 11.4MB/s
+     - 20.4MB 11.4MB/s
+     \ 20.4MB 16.7MB/s
+     | 20.4MB 16.5MB/s
+     / 20.4MB 16.4MB/s
+     - 20.4MB 16.4MB/s
+     \ 20.5MB 8.8MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     | 20.5MB 7.9MB/s
+     / 20.5MB 7.9MB/s
+     - 20.5MB 11.1MB/s
+     \ 20.5MB 8.5MB/s
+     | 20.5MB 8.4MB/s
+     / 20.5MB 8.5MB/s
+     - 20.5MB 7.8MB/s
+     \ 20.5MB 7.7MB/s
+     | 20.6MB 7.7MB/s
+     / 20.6MB 16.0MB/s
+     - 20.6MB 8.9MB/s
+     \ 20.6MB 8.9MB/s
+     | 20.6MB 8.9MB/s
+     / 20.6MB 12.0MB/s
+     - 20.6MB 12.0MB/s
+     \ 20.6MB 12.0MB/s
+     | 20.6MB 14.1MB/s
+     / 20.6MB 9.8MB/s
+     - 20.7MB 9.7MB/s
+     \ 20.7MB 9.6MB/s
+     | 20.7MB 11.1MB/s
+     / 20.7MB 11.1MB/s
+     - 20.7MB 11.1MB/s
+     \ 20.7MB 11.1MB/s
+     | 20.7MB 11.2MB/s
+     / 20.7MB 9.8MB/s
+     - 20.7MB 9.8MB/s
+     \ 20.7MB 7.3MB/s
+     | 20.8MB 7.3MB/s
+     / 20.8MB 7.3MB/s
+     - 20.8MB 11.4MB/s
+     \ 20.8MB 11.3MB/s
+     | 20.8MB 11.3MB/s
+     / 20.8MB 11.3MB/s
+     - 20.8MB 8.5MB/s
+     \ 20.8MB 6.3MB/s
+     | 20.8MB 6.3MB/s
+     / 20.8MB 10.7MB/s
+     - 20.9MB 10.7MB/s
+     \ 20.9MB 10.8MB/s
+     | 20.9MB 10.8MB/s
+     / 20.9MB 10.9MB/s
+     - 20.9MB 10.8MB/s
+     \ 20.9MB 10.9MB/s
+     | 20.9MB 16.1MB/s
+     / 20.9MB 12.4MB/s
+     - 20.9MB 12.5MB/s
+     \ 21.0MB 12.6MB/s
+     | 21.0MB 12.6MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 21.0MB 9.3MB/s
+     - 21.0MB 9.3MB/s
+     \ 21.0MB 9.3MB/s
+     | 21.0MB 9.3MB/s
+     / 21.0MB 9.3MB/s
+     - 21.0MB 9.3MB/s
+     \ 21.0MB 9.3MB/s
+     | 21.0MB 9.4MB/s
+     / 21.1MB 9.4MB/s
+     - 21.1MB 9.5MB/s
+     \ 21.1MB 13.0MB/s
+     | 21.1MB 12.9MB/s
+     / 21.1MB 12.9MB/s
+     - 21.1MB 7.6MB/s
+     \ 21.1MB 7.5MB/s
+     | 21.1MB 7.5MB/s
+     / 21.1MB 15.6MB/s
+     - 21.1MB 15.5MB/s
+     \ 21.2MB 13.1MB/s
+     | 21.2MB 13.1MB/s
+     / 21.2MB 11.2MB/s
+     - 21.2MB 9.6MB/s
+     \ 21.2MB 9.6MB/s
+     | 21.2MB 19.9MB/s
+     / 21.2MB 9.7MB/s
+     - 21.2MB 9.6MB/s
+     \ 21.2MB 9.6MB/s
+     | 21.2MB 9.6MB/s
+     / 21.3MB 10.6MB/s
+     - 21.3MB 10.6MB/s
+     \ 21.3MB 12.3MB/s
+     | 21.3MB 8.0MB/s
+     / 21.3MB 7.9MB/s
+     - 21.3MB 7.9MB/s
+     \ 21.3MB 13.7MB/s
+     | 21.3MB 13.6MB/s
+     / 21.3MB 13.6MB/s
+     - 21.4MB 13.8MB/s
+     \ 21.4MB 12.7MB/s
+     | 21.4MB 12.6MB/s
+     / 21.4MB 12.5MB/s
+     - 21.4MB 9.1MB/s
+     \ 21.4MB 9.1MB/s
+     | 21.4MB 9.2MB/s
+     / 21.4MB 9.3MB/s
+     - 21.4MB 9.4MB/s
+     \ 21.4MB 8.0MB/s
+     | 21.5MB 8.0MB/s
+     / 21.5MB 8.4MB/s
+     - 21.5MB 6.5MB/s
+     \ 21.5MB 6.5MB/s
+     | 21.5MB 15.6MB/s
+     / 21.5MB 15.6MB/s
+     - 21.5MB 15.5MB/s
+     \ 21.5MB 15.2MB/s
+     | 21.5MB 13.4MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 21.5MB 17.2MB/s
+     - 21.6MB 17.3MB/s
+     \ 21.6MB 17.9MB/s
+     | 21.6MB 7.9MB/s
+     / 21.6MB 7.9MB/s
+     - 21.6MB 7.9MB/s
+     \ 21.6MB 7.9MB/s
+     | 21.6MB 7.9MB/s
+     / 21.6MB 7.9MB/s
+     - 21.6MB 8.6MB/s
+     \ 21.6MB 7.9MB/s
+     | 21.7MB 7.0MB/s
+     / 21.7MB 6.9MB/s
+     - 21.7MB 26.8MB/s
+     \ 21.7MB 16.8MB/s
+     | 21.7MB 16.7MB/s
+     / 21.7MB 16.6MB/s
+     - 21.7MB 16.5MB/s
+     \ 21.7MB 16.4MB/s
+     | 21.7MB 16.4MB/s
+     / 21.7MB 6.4MB/s
+     - 21.8MB 7.1MB/s
+     \ 21.8MB 7.1MB/s
+     | 21.8MB 7.2MB/s
+     / 21.8MB 8.6MB/s
+     - 21.8MB 8.4MB/s
+     \ 21.8MB 8.4MB/s
+     | 21.8MB 8.4MB/s
+     / 21.8MB 7.7MB/s
+     - 21.8MB 7.7MB/s
+     \ 21.9MB 43.9MB/s
+     | 21.9MB 27.6MB/s
+     / 21.9MB 17.8MB/s
+     - 21.9MB 17.6MB/s
+     \ 21.9MB 17.5MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     | 21.9MB 1.2MB/s
+     / 21.9MB 1.2MB/s
+     - 21.9MB 1.2MB/s
+     \ 21.9MB 1.2MB/s
+     | 21.9MB 1.2MB/s
+     / 22.0MB 1.2MB/s
+     - 22.0MB 1.3MB/s
+     \ 22.0MB 1.3MB/s
+     | 22.0MB 1.3MB/s
+     / 22.0MB 1.3MB/s
+     - 22.0MB 166.0MB/s
+     \ 22.0MB 195.8MB/s
+     | 22.0MB 184.5MB/s
+     / 22.0MB 192.5MB/s
+     - 22.0MB 203.2MB/s
+     \ 22.1MB 203.2MB/s
+     | 22.1MB 205.6MB/s
+     / 22.1MB 204.0MB/s
+     - 22.1MB 184.7MB/s
+     \ 22.1MB 180.9MB/s
+     | 22.1MB 178.1MB/s
+     / 22.1MB 176.5MB/s
+     - 22.1MB 185.5MB/s
+     \ 22.1MB 194.3MB/s
+     | 22.1MB 183.2MB/s
+     / 22.2MB 183.5MB/s
+     - 22.2MB 183.2MB/s
+     \ 22.2MB 6.1MB/s
+     | 22.2MB 6.1MB/s
+     / 22.2MB 6.1MB/s
+     - 22.2MB 6.1MB/s
+     \ 22.2MB 6.1MB/s
+     | 22.2MB 6.1MB/s
+     / 22.2MB 6.0MB/s
+     - 22.3MB 6.1MB/s
+     \ 22.3MB 6.0MB/s
+     | 22.3MB 6.0MB/s
+     / 22.3MB 126.9MB/s
+     - 22.3MB 136.3MB/s
+     \ 22.3MB 137.3MB/s
+     | 22.3MB 146.3MB/s
+     / 22.3MB 162.3MB/s
+     - 22.3MB 156.6MB/s
+     \ 22.3MB 148.5MB/s
+     | 22.4MB 152.0MB/s
+     / 22.4MB 159.2MB/s
+     - 22.4MB 152.8MB/s
+     \ 22.4MB 143.2MB/s
+     | 22.4MB 143.8MB/s
+     / 22.4MB 139.1MB/s
+     - 22.4MB 134.2MB/s
+     \ 22.4MB 145.2MB/s
+     | 22.4MB 156.8MB/s
+     / 22.4MB 167.5MB/s
+     - 22.5MB 168.4MB/s
+     \ 22.5MB 174.0MB/s
+     | 22.5MB 182.8MB/s
+     / 22.5MB 195.5MB/s
+     - 22.5MB 212.5MB/s
+     \ 22.5MB 225.0MB/s
+     | 22.5MB 232.7MB/s
+     / 22.5MB 227.0MB/s
+     - 22.5MB 229.6MB/s
+     \ 22.5MB 231.3MB/s
+     | 22.6MB 224.4MB/s
+     / 22.6MB 238.6MB/s
+     - 22.6MB 217.8MB/s
+     \ 22.6MB 196.5MB/s
+     | 22.6MB 192.9MB/s
+     / 22.6MB 195.0MB/s
+     - 22.6MB 195.8MB/s
+     \ 22.6MB 195.8MB/s
+     | 22.6MB 206.6MB/s
+     / 22.7MB 77.5MB/s
+     - 22.7MB 57.6MB/s
+     \ 22.7MB 55.5MB/s
+     | 22.7MB 4.1MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 22.7MB 3.2MB/s
+     - 22.7MB 3.2MB/s
+     \ 22.7MB 3.2MB/s
+     | 22.7MB 3.0MB/s
+     / 22.7MB 3.0MB/s
+     - 22.7MB 3.0MB/s
+     \ 22.8MB 3.1MB/s
+     | 22.8MB 3.1MB/s
+     / 22.8MB 3.1MB/s
+     - 22.8MB 10.9MB/s
+     \ 22.8MB 43.2MB/s
+     | 22.8MB 43.3MB/s
+     / 22.8MB 42.5MB/s
+     - 22.8MB 113.3MB/s
+     \ 22.8MB 116.2MB/s
+     | 22.8MB 123.6MB/s
+     / 22.9MB 143.8MB/s
+     - 22.9MB 143.0MB/s
+     \ 22.9MB 142.0MB/s
+     | 22.9MB 134.6MB/s
+     / 22.9MB 23.3MB/s
+     - 22.9MB 23.1MB/s
+     \ 22.9MB 23.2MB/s
+     | 22.9MB 23.4MB/s
+     / 22.9MB 15.1MB/s
+     - 22.9MB 13.7MB/s
+     \ 23.0MB 13.5MB/s
+     | 23.0MB 11.8MB/s
+     / 23.0MB 11.6MB/s
+     - 23.0MB 11.6MB/s
+     \ 23.0MB 20.0MB/s
+     | 23.0MB 10.2MB/s
+     / 23.0MB 6.6MB/s
+     - 23.0MB 6.6MB/s
+     \ 23.0MB 5.9MB/s
+     | 23.1MB 5.2MB/s
+     / 23.1MB 5.2MB/s
+     - 23.1MB 5.5MB/s
+     \ 23.1MB 5.5MB/s
+     | 23.1MB 5.2MB/s
+     / 23.1MB 5.2MB/s
+     - 23.1MB 6.8MB/s
+     \ 23.1MB 9.8MB/s
+     | 23.1MB 9.8MB/s
+     / 23.1MB 16.6MB/s
+     - 23.2MB 16.9MB/s
+     \ 23.2MB 8.0MB/s
+     | 23.2MB 7.9MB/s
+     / 23.2MB 7.8MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 23.2MB 4.6MB/s
+     \ 23.2MB 4.6MB/s
+     | 23.2MB 4.6MB/s
+     / 23.2MB 4.8MB/s
+     - 23.2MB 4.8MB/s
+     \ 23.2MB 4.8MB/s
+     | 23.3MB 5.5MB/s
+     / 23.3MB 7.9MB/s
+     - 23.3MB 8.0MB/s
+     \ 23.3MB 8.0MB/s
+     | 23.3MB 42.8MB/s
+     / 23.3MB 15.0MB/s
+     - 23.3MB 14.8MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 23.3MB 1.1MB/s
+     | 23.3MB 1.1MB/s
+     / 23.3MB 1.1MB/s
+     - 23.4MB 1.1MB/s
+     \ 23.4MB 1.1MB/s
+     | 23.4MB 1.1MB/s
+     / 23.4MB 1.1MB/s
+     - 23.4MB 1.1MB/s
+     \ 23.4MB 1.2MB/s
+     | 23.4MB 1.2MB/s
+     / 23.4MB 110.2MB/s
+     - 23.4MB 137.3MB/s
+     \ 23.4MB 134.9MB/s
+     | 23.5MB 133.5MB/s
+     / 23.5MB 136.0MB/s
+     - 23.5MB 130.1MB/s
+     \ 23.5MB 120.2MB/s
+     | 23.5MB 123.5MB/s
+     / 23.5MB 129.6MB/s
+     - 23.5MB 130.0MB/s
+     \ 23.5MB 130.6MB/s
+     | 23.5MB 126.4MB/s
+     / 23.6MB 126.4MB/s
+     - 23.6MB 122.0MB/s
+     \ 23.6MB 116.9MB/s
+     | 23.6MB 119.1MB/s
+     / 23.6MB 123.8MB/s
+     - 23.6MB 129.1MB/s
+     \ 23.6MB 142.2MB/s
+     | 23.6MB 146.5MB/s
+     / 23.6MB 137.4MB/s
+     - 23.6MB 144.0MB/s
+     \ 23.7MB 145.1MB/s
+     | 23.7MB 148.4MB/s
+     / 23.7MB 153.9MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 23.7MB 154.7MB/s
+     \ 23.7MB 147.3MB/s
+     | 23.7MB 145.0MB/s
+     / 23.7MB 151.5MB/s
+     - 23.7MB 144.0MB/s
+     \ 23.7MB 139.5MB/s
+     | 23.7MB 142.2MB/s
+     / 23.8MB 138.4MB/s
+     - 23.8MB 135.5MB/s
+     \ 23.8MB 138.2MB/s
+     | 23.8MB 138.4MB/s
+     / 23.8MB 131.8MB/s
+     - 23.8MB 130.3MB/s
+     \ 23.8MB 127.7MB/s
+     | 23.8MB 125.7MB/s
+     / 23.8MB 132.5MB/s
+     - 23.8MB 131.0MB/s
+     \ 23.9MB 138.4MB/s
+     | 23.9MB 137.0MB/s
+     / 23.9MB 135.4MB/s
+     - 23.9MB 143.2MB/s
+     \ 23.9MB 162.3MB/s
+     | 23.9MB 164.3MB/s
+     / 23.9MB 163.1MB/s
+     - 23.9MB 180.9MB/s
+     \ 23.9MB 181.3MB/s
+     | 24.0MB 7.0MB/s
+     / 24.0MB 7.0MB/s
+     - 24.0MB 6.9MB/s
+     \ 24.0MB 6.9MB/s
+     | 24.0MB 6.8MB/s
+     / 24.0MB 6.8MB/s
+     - 24.0MB 6.8MB/s
+     \ 24.0MB 6.8MB/s
+     | 24.0MB 6.7MB/s
+     / 24.0MB 6.7MB/s
+     - 24.1MB 82.5MB/s
+     \ 24.1MB 16.5MB/s
+     | 24.1MB 16.5MB/s
+     / 24.1MB 12.4MB/s
+     - 24.1MB 5.9MB/s
+     \ 24.1MB 5.9MB/s
+     | 24.1MB 5.9MB/s
+     / 24.1MB 5.8MB/s
+     - 24.1MB 5.8MB/s
+     \ 24.1MB 5.8MB/s
+     | 24.2MB 5.8MB/s
+     / 24.2MB 8.0MB/s
+     - 24.2MB 8.0MB/s
+     \ 24.2MB 9.3MB/s
+     | 24.2MB 13.3MB/s
+     / 24.2MB 13.3MB/s
+     - 24.2MB 13.3MB/s
+     \ 24.2MB 6.0MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     | 24.2MB 6.0MB/s
+     / 24.2MB 6.0MB/s
+     - 24.3MB 5.1MB/s
+     \ 24.3MB 5.1MB/s
+     | 24.3MB 5.1MB/s
+     / 24.3MB 5.2MB/s
+     - 24.3MB 7.5MB/s
+     \ 24.3MB 7.4MB/s
+     | 24.3MB 7.4MB/s
+     / 24.3MB 24.1MB/s
+     - 24.3MB 14.7MB/s
+     \ 24.4MB 14.7MB/s
+     | 24.4MB 27.1MB/s
+     / 24.4MB 7.6MB/s
+     - 24.4MB 6.7MB/s
+     \ 24.4MB 6.6MB/s
+     | 24.4MB 6.0MB/s
+     / 24.4MB 5.9MB/s
+     - 24.4MB 5.9MB/s
+     \ 24.4MB 6.0MB/s
+     | 24.4MB 7.1MB/s
+     / 24.5MB 6.6MB/s
+     - 24.5MB 6.5MB/s
+     \ 24.5MB 16.4MB/s
+     | 24.5MB 6.9MB/s
+     / 24.5MB 6.9MB/s
+     - 24.5MB 7.8MB/s
+     \ 24.5MB 7.9MB/s
+     | 24.5MB 7.3MB/s
+     / 24.5MB 7.3MB/s
+     - 24.5MB 5.8MB/s
+     \ 24.6MB 6.1MB/s
+     | 24.6MB 6.2MB/s
+     / 24.6MB 6.3MB/s
+     - 24.6MB 17.9MB/s
+     \ 24.6MB 16.9MB/s
+     | 24.6MB 16.6MB/s
+     / 24.6MB 16.6MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     - 24.6MB 5.8MB/s
+     \ 24.6MB 5.8MB/s
+     | 24.6MB 7.4MB/s
+     / 24.7MB 7.4MB/s
+     - 24.7MB 6.1MB/s
+     \ 24.7MB 6.1MB/s
+     | 24.7MB 6.1MB/s
+     / 24.7MB 6.2MB/s
+     - 24.7MB 6.2MB/s
+     \ 24.7MB 6.2MB/s
+     | 24.7MB 27.1MB/s
+     / 24.7MB 22.4MB/s
+     - 24.8MB 21.8MB/s
+     \ 24.8MB 21.7MB/s
+     | 24.8MB 7.6MB/s
+     / 24.8MB 7.6MB/s
+     - 24.8MB 7.7MB/s
+     \ 24.8MB 7.6MB/s
+     | 24.8MB 6.0MB/s
+     / 24.8MB 6.0MB/s
+     - 24.8MB 5.9MB/s
+     \ 24.8MB 6.2MB/s
+     | 24.9MB 6.2MB/s
+     / 24.9MB 6.3MB/s
+     - 24.9MB 22.3MB/s
+     \ 24.9MB 17.0MB/s
+     | 24.9MB 16.8MB/s
+     / 24.9MB 5.1MB/s
+     - 24.9MB 6.2MB/s
+     \ 24.9MB 6.2MB/s
+     | 24.9MB 6.2MB/s
+     / 24.9MB 6.2MB/s
+     - 25.0MB 5.7MB/s
+     \ 25.0MB 5.7MB/s
+     | 25.0MB 5.7MB/s
+     / 25.0MB 5.4MB/s
+     - 25.0MB 5.4MB/s
+     \ 25.0MB 21.0MB/s
+     | 25.0MB 21.2MB/s
+     / 25.0MB 20.9MB/s
+     - 25.0MB 20.8MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 25.0MB 6.0MB/s
+     | 25.1MB 6.4MB/s
+     / 25.1MB 6.4MB/s
+     - 25.1MB 6.5MB/s
+     \ 25.1MB 7.5MB/s
+     | 25.1MB 6.8MB/s
+     / 25.1MB 6.8MB/s
+     - 25.1MB 6.9MB/s
+     \ 25.1MB 6.0MB/s
+     | 25.1MB 6.0MB/s
+     / 25.1MB 21.4MB/s
+     - 25.2MB 22.1MB/s
+     \ 25.2MB 21.4MB/s
+     | 25.2MB 21.2MB/s
+     / 25.2MB 6.0MB/s
+     - 25.2MB 6.5MB/s
+     \ 25.2MB 6.5MB/s
+     | 25.2MB 6.5MB/s
+     / 25.2MB 7.6MB/s
+     - 25.2MB 5.6MB/s
+     \ 25.3MB 5.6MB/s
+     | 25.3MB 5.6MB/s
+     / 25.3MB 5.6MB/s
+     - 25.3MB 5.6MB/s
+     \ 25.3MB 17.0MB/s
+     | 25.3MB 17.0MB/s
+     / 25.3MB 17.0MB/s
+     - 25.3MB 16.9MB/s
+     \ 25.3MB 5.7MB/s
+     | 25.3MB 7.7MB/s
+     / 25.4MB 7.8MB/s
+     - 25.4MB 7.8MB/s
+     \ 25.4MB 7.3MB/s
+     | 25.4MB 5.8MB/s
+     / 25.4MB 5.8MB/s
+     - 25.4MB 5.8MB/s
+     \ 25.4MB 5.8MB/s
+     | 25.4MB 5.8MB/s
+     / 25.4MB 18.1MB/s
+     - 25.4MB 18.3MB/s
+     \ 25.5MB 15.8MB/s
+     | 25.5MB 15.7MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     / 25.5MB 6.6MB/s
+     - 25.5MB 8.6MB/s
+     \ 25.5MB 8.6MB/s
+     | 25.5MB 8.7MB/s
+     / 25.5MB 7.9MB/s
+     - 25.5MB 5.5MB/s
+     \ 25.5MB 5.4MB/s
+     | 25.5MB 5.4MB/s
+     / 25.6MB 5.7MB/s
+     - 25.6MB 5.7MB/s
+     \ 25.6MB 12.8MB/s
+     | 25.6MB 12.9MB/s
+     / 25.6MB 12.9MB/s
+     - 25.6MB 12.9MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     \ 25.6MB 802kB/s
+     | 25.6MB 839kB/s
+     / 25.6MB 839kB/s
+     - 25.7MB 840kB/s
+     \ 25.7MB 840kB/s
+     | 25.7MB 839kB/s
+     / 25.7MB 839kB/s
+     - 25.7MB 839kB/s
+     \ 25.7MB 838kB/s
+     | 25.7MB 838kB/s
+     / 25.7MB 89.7MB/s
+     - 25.7MB 108.3MB/s
+     \ 25.7MB 100.9MB/s
+     | 25.8MB 99.0MB/s
+     / 25.8MB 105.9MB/s
+     - 25.8MB 114.4MB/s
+     \ 25.8MB 107.1MB/s
+     | 25.8MB 110.1MB/s
+     / 25.8MB 112.2MB/s
+     - 25.8MB 107.2MB/s
+     \ 25.8MB 106.3MB/s
+     | 25.8MB 108.7MB/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Complete output from command python setup.py egg_info:
+    Traceback (most recent call last):
+      File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+      File &quot;/private/var/folders/qf/dfz088fn4_g4gpgm95zbg7x8000219/T/pip-trn573xo-build/setup.py&quot;, line 17, in &lt;module&gt;
+        from Cython.Build import cythonize
+    ModuleNotFoundError: No module named &#39;Cython&#39;
+    
+    ----------------------------------------
+<span class=" -Color -Color-Red">Command &quot;python setup.py egg_info&quot; failed with error code 1 in /private/var/folders/qf/dfz088fn4_g4gpgm95zbg7x8000219/T/pip-trn573xo-build/</span>
+<span class=" -Color -Color-Yellow">You are using pip version 9.0.1, however version 22.1.1 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;pip install --upgrade pip&#39; command.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Dedalus script simulating the viscous shallow water equations on a sphere. This</span>
+<span class="sd">script demonstrates solving an initial value problem on the sphere. It can be</span>
+<span class="sd">ran serially or in parallel, and uses the built-in analysis framework to save</span>
+<span class="sd">data snapshots to HDF5 files. The `plot_sphere.py` script can be used to produce</span>
+<span class="sd">plots from the saved data. The simulation should a few cpu-minutes to run.</span>
+
+<span class="sd">The script implements the test case of a barotropically unstable mid-latitude</span>
+<span class="sd">jet from Galewsky et al. 2004 (https://doi.org/10.3402/tellusa.v56i5.14436).</span>
+<span class="sd">The initial height field balanced the imposed jet is solved with an LBVP.</span>
+<span class="sd">A perturbation is then added and the solution is evolved as an IVP.</span>
+
+<span class="sd">To run and plot using e.g. 4 processes:</span>
+<span class="sd">    $ mpiexec -n 4 python3 shallow_water.py</span>
+<span class="sd">    $ mpiexec -n 4 python3 plot_sphere.py snapshots/*.h5</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">dedalus.public</span> <span class="k">as</span> <span class="nn">d3</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="c1"># Simulation units</span>
+<span class="n">meter</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">6.37122e6</span>
+<span class="n">hour</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">second</span> <span class="o">=</span> <span class="n">hour</span> <span class="o">/</span> <span class="mi">3600</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">Nphi</span> <span class="o">=</span> <span class="mi">256</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">Ntheta</span> <span class="o">=</span> <span class="mi">128</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">dealias</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">6.37122e6</span> <span class="o">*</span> <span class="n">meter</span>
+<span class="n">Omega</span> <span class="o">=</span> <span class="mf">7.292e-5</span> <span class="o">/</span> <span class="n">second</span>
+<span class="n">nu</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">*</span> <span class="n">meter</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">second</span> <span class="o">/</span> <span class="mi">32</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># Hyperdiffusion matched at ell=32</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.80616</span> <span class="o">*</span> <span class="n">meter</span> <span class="o">/</span> <span class="n">second</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">H</span> <span class="o">=</span> <span class="mf">1e4</span> <span class="o">*</span> <span class="n">meter</span>
+<span class="n">timestep</span> <span class="o">=</span> <span class="mi">600</span> <span class="o">*</span> <span class="n">second</span>
+<span class="n">stop_sim_time</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">*</span> <span class="n">hour</span>
+<span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span>
+
+<span class="c1"># Bases</span>
+<span class="n">coords</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">S2Coordinates</span><span class="p">(</span><span class="s1">&#39;phi&#39;</span><span class="p">,</span> <span class="s1">&#39;theta&#39;</span><span class="p">)</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">Distributor</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">SphereBasis</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="p">(</span><span class="n">Nphi</span><span class="p">,</span> <span class="n">Ntheta</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="n">R</span><span class="p">,</span> <span class="n">dealias</span><span class="o">=</span><span class="n">dealias</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+<span class="c1"># Fields</span>
+<span class="n">u</span>      <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">VectorField</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
+<span class="n">du_dt</span>  <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">VectorField</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;du_dt&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
+<span class="n">u_init</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">VectorField</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;u_init&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
+<span class="n">h_init</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;h_init&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
+<span class="n">h</span>      <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
+<span class="n">vor</span>    <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;vor&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
+<span class="n">sin_theta</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;sin_theta&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
+
+
+<span class="c1"># Substitutions</span>
+<span class="n">zcross</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">A</span><span class="p">:</span> <span class="n">d3</span><span class="o">.</span><span class="n">MulCosine</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+
+<span class="c1"># Initial conditions: zonal jet</span>
+<span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">local_grids</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">theta</span> <span class="o">+</span> <span class="mi">0</span><span class="o">*</span><span class="n">phi</span>
+<span class="n">umax</span> <span class="o">=</span> <span class="mi">80</span> <span class="o">*</span> <span class="n">meter</span> <span class="o">/</span> <span class="n">second</span>
+<span class="n">lat0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">7</span>
+<span class="n">lat1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">lat0</span>
+<span class="n">en</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span> <span class="o">/</span> <span class="p">(</span><span class="n">lat1</span> <span class="o">-</span> <span class="n">lat0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">jet</span>  <span class="o">=</span> <span class="p">(</span><span class="n">lat0</span> <span class="o">&lt;=</span> <span class="n">lat</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">lat</span> <span class="o">&lt;=</span> <span class="n">lat1</span><span class="p">)</span>
+<span class="n">jet2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">lat0</span> <span class="o">&gt;=</span> <span class="n">lat</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">lat</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="n">lat1</span><span class="p">)</span>
+<span class="n">u_jet</span> <span class="o">=</span> <span class="n">umax</span> <span class="o">/</span> <span class="n">en</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">jet</span><span class="p">]</span> <span class="o">-</span> <span class="n">lat0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">jet</span><span class="p">]</span> <span class="o">-</span> <span class="n">lat1</span><span class="p">))</span>
+<span class="n">u_jet2</span> <span class="o">=</span> <span class="n">umax</span> <span class="o">/</span> <span class="n">en</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">jet2</span><span class="p">]</span> <span class="o">+</span> <span class="n">lat0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">jet2</span><span class="p">]</span> <span class="o">+</span> <span class="n">lat1</span><span class="p">))</span>
+<span class="n">u</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">jet</span><span class="p">]</span>  <span class="o">=</span> <span class="n">u_jet</span>
+<span class="n">u</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">jet2</span><span class="p">]</span>  <span class="o">=</span> <span class="n">u_jet2</span>
+<span class="n">u_init</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">jet</span><span class="p">]</span>  <span class="o">=</span> <span class="n">u_jet</span>
+<span class="n">u_init</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">jet2</span><span class="p">]</span>  <span class="o">=</span> <span class="n">u_jet2</span>
+<span class="n">sin_theta</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
+
+
+<span class="c1"># Initial conditions: balanced height</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">LBVP</span><span class="p">([</span><span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="n">namespace</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
+<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;g*lap(h) + c = - div( 2*Omega*zcross(u))&quot;</span><span class="p">)</span>
+<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;ave(h) = 0&quot;</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">build_solver</span><span class="p">()</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">LBVP</span><span class="p">([</span><span class="n">h_init</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="n">namespace</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
+<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;g*lap(h_init) + c = - div(2*Omega*zcross(u_init))&quot;</span><span class="p">)</span>
+<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;ave(h_init) = 0&quot;</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">build_solver</span><span class="p">()</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+
+<span class="c1">#</span>
+
+<span class="c1"># Initial conditions: perturbation</span>
+<span class="n">lat2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="n">lon2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">hpert</span> <span class="o">=</span> <span class="mi">120</span> <span class="o">*</span> <span class="n">meter</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="n">beta</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">5</span>
+<span class="n">h</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">hpert</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">phi</span><span class="o">-</span><span class="n">lon2</span><span class="p">)</span><span class="o">/</span><span class="n">alpha</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">lat2</span><span class="o">-</span><span class="n">lat</span><span class="p">)</span><span class="o">/</span><span class="n">beta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">h</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">hpert</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">phi</span><span class="o">-</span><span class="n">lon2</span><span class="p">)</span><span class="o">/</span><span class="n">alpha</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="o">-</span><span class="n">lat2</span><span class="o">-</span><span class="n">lat</span><span class="p">)</span><span class="o">/</span><span class="n">beta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#h_init[&#39;g&#39;] += hpert * np.cos(lat) * np.exp(-(phi/alpha)**2) * np.exp(-((lat2-lat)/beta)**2)</span>
+
+<span class="n">tan_theta</span>       <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;tan_theta&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
+<span class="n">cos_theta</span>       <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cos_theta&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
+<span class="n">zonal_unit</span>      <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">VectorField</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;zonal_unit&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span> <span class="c1"># zonal direction unit vector</span>
+<span class="n">meridional_unit</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">VectorField</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;zonal_unit&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span> <span class="c1"># zonal direction unit vector</span>
+<span class="n">tan_theta</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span>          <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
+<span class="n">cos_theta</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span>          <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
+<span class="n">zonal_unit</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>      <span class="o">=</span> <span class="mi">1</span>
+<span class="n">zonal_unit</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>      <span class="o">=</span> <span class="mi">0</span>
+<span class="n">meridional_unit</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">meridional_unit</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+<span class="n">u</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span>                  <span class="o">=</span> <span class="n">g</span><span class="o">*</span><span class="n">d3</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">Omega</span><span class="o">*</span><span class="n">sin_theta</span><span class="p">))</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span>
+<span class="c1">#u_init[&#39;g&#39;]             = g*d3.skew(d3.grad(h_init)/(2*Omega*sin_theta)).evaluate()[&#39;g&#39;]</span>
+<span class="c1"># vorticity initial condition </span>
+<span class="c1">#vor[&#39;g&#39;] = g*d3.lap(h).evaluate()[&#39;g&#39;]</span>
+
+<span class="c1"># Problem</span>
+<span class="c1">#c       = dist.Field(name=&#39;c&#39;)</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">IVP</span><span class="p">([</span><span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">u_init</span><span class="p">,</span> <span class="n">h_init</span><span class="p">],</span> <span class="n">namespace</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
+<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;dt(u)    + nu*lap(lap(u))   + g*grad(h)      + 2*Omega*zcross(u)  = - dot(u, grad(u)) -(u-u_init)/(24*hour*200)&quot;</span><span class="p">)</span>
+<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;g*lap(h) + c = - div(dot(u, grad(u))+2*Omega*zcross(u))&quot;</span><span class="p">)</span>
+<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;ave(h)       = 0&quot;</span><span class="p">)</span>
+<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;u_init       = u_init + 0&quot;</span><span class="p">)</span>
+<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;h_init       = h_init + 0&quot;</span><span class="p">)</span>
+
+
+<span class="c1">#problem = d3.IVP([h, u, c], namespace=locals())</span>
+<span class="c1">#c       = dist.Field(name=&#39;c&#39;)</span>
+<span class="c1">#problem.add_equation(&quot;dt(u)         = - dot(u, grad(u)) - nu*lap(lap(u))      - g*grad(h)      - 2*Omega*zcross(u) &quot;)</span>
+<span class="c1">#problem.add_equation(&quot;dt(vor)       = 2*Omega*cos_theta/R*dot(meridional_unit,u) + div(skew(du_dt)) &quot;)</span>
+<span class="c1">#problem.add_equation(&quot;g*lap(h)  +c  = - div(2*Omega*zcross(u))&quot;)</span>
+<span class="c1">#problem.add_equation(&quot;ave(h)        = 0&quot;)</span>
+<span class="c1">#problem.add_equation(&quot;u             = g*skew(grad(h)/(2*Omega*sin_theta))&quot;)</span>
+<span class="c1">#problem.add_equation(&quot;u_init        = u_init + 0&quot;)</span>
+<span class="c1">#problem.add_equation(&quot;h_init        = h_init + 0&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="sd"> Dedalus script simulating the viscous shallow water equations on a sphere. This</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> script demonstrates solving an initial value problem on the sphere. It can be</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="sd">     $ mpiexec -n 4 python3 plot_sphere.py snapshots/*.h5</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">---&gt; </span><span class="mi">19</span> <span class="kn">import</span> <span class="nn">dedalus.public</span> <span class="k">as</span> <span class="nn">d3</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">import</span> <span class="nn">logging</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;dedalus&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">field</span> <span class="o">=</span> <span class="p">(</span><span class="n">u</span><span class="o">-</span><span class="n">u_init</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="n">hour</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fda31ed0e90&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Dynamical_Core2_2_1.png" src="../../_images/Dynamical_Core2_2_1.png" />
+<img alt="../../_images/Dynamical_Core2_2_2.png" src="../../_images/Dynamical_Core2_2_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">field</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">d3</span><span class="o">.</span><span class="n">lap</span><span class="p">(</span><span class="n">h_init</span><span class="p">))</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+
+
+<span class="n">field2</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">d3</span><span class="o">.</span><span class="n">lap</span><span class="p">(</span><span class="n">h</span><span class="p">))</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">field2</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+
+<span class="n">field3</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">d3</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">h</span><span class="p">)))</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">field3</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+
+<span class="n">field4</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">))</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">Omega</span><span class="o">*</span><span class="n">zcross</span><span class="p">(</span><span class="n">u</span><span class="p">))</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="o">-</span><span class="n">field4</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+
+
+<span class="n">field5</span> <span class="o">=</span> <span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">zonal_unit</span><span class="p">,</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">cos_theta</span><span class="p">)</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">field5</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fda380a4990&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Dynamical_Core2_3_1.png" src="../../_images/Dynamical_Core2_3_1.png" />
+<img alt="../../_images/Dynamical_Core2_3_2.png" src="../../_images/Dynamical_Core2_3_2.png" />
+<img alt="../../_images/Dynamical_Core2_3_3.png" src="../../_images/Dynamical_Core2_3_3.png" />
+<img alt="../../_images/Dynamical_Core2_3_4.png" src="../../_images/Dynamical_Core2_3_4.png" />
+<img alt="../../_images/Dynamical_Core2_3_5.png" src="../../_images/Dynamical_Core2_3_5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">d3</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">h_init</span><span class="p">))</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">d3</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">h</span><span class="p">))</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+
+<span class="n">field</span> <span class="o">=</span> <span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fda2efbec50&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Dynamical_Core2_4_1.png" src="../../_images/Dynamical_Core2_4_1.png" />
+<img alt="../../_images/Dynamical_Core2_4_2.png" src="../../_images/Dynamical_Core2_4_2.png" />
+<img alt="../../_images/Dynamical_Core2_4_3.png" src="../../_images/Dynamical_Core2_4_3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa</span>  <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">VectorField</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
+<span class="n">aa</span>  <span class="o">=</span> <span class="p">(</span><span class="o">-</span> <span class="n">d3</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>            <span class="o">-</span> <span class="n">nu</span><span class="o">*</span><span class="n">d3</span><span class="o">.</span><span class="n">lap</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">lap</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>      <span class="o">-</span> <span class="n">g</span><span class="o">*</span><span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">h_init2</span><span class="p">)</span>      <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">Omega</span><span class="o">*</span><span class="n">zcross</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> \
+       <span class="o">+</span> <span class="n">d3</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">u_init</span><span class="p">,</span> <span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">))</span> \
+       <span class="o">+</span> <span class="n">d3</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u_init</span><span class="p">))</span> \
+       <span class="o">-</span> <span class="n">d3</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">u_init</span><span class="p">,</span> <span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">u_init</span><span class="p">))</span> <span class="o">+</span> <span class="n">nu</span><span class="o">*</span><span class="n">d3</span><span class="o">.</span><span class="n">lap</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">lap</span><span class="p">(</span><span class="n">u_init</span><span class="p">))</span> <span class="o">+</span> <span class="n">g</span><span class="o">*</span><span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">h_init</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">Omega</span><span class="o">*</span><span class="n">zcross</span><span class="p">(</span><span class="n">u_init</span><span class="p">))</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">aa</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>      
+
+<span class="n">h_init2</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;h_init2&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">LBVP</span><span class="p">([</span><span class="n">h_init2</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="n">namespace</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
+<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;g*lap(h_init2) + c = - div(dot(aa+u, grad(aa+u)) + 2*Omega*zcross(aa+u))&quot;</span><span class="p">)</span>
+<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;ave(h_init2) = 0&quot;</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">build_solver</span><span class="p">()</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">h_init2</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>     
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">((</span><span class="n">h_init2</span><span class="o">-</span><span class="n">h</span><span class="p">)</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()[</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>     
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="p">(</span><span class="n">h_init2</span><span class="o">-</span><span class="n">h_init</span><span class="p">))</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>     
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">u_init</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-05-06 14:11:56,273 subsystems 0/1 INFO :: Building subproblem matrices 1/127 (~1%) Elapsed: 0s, Remaining: 1s, Rate: 8.7e+01/s
+2022-05-06 14:11:56,340 subsystems 0/1 INFO :: Building subproblem matrices 13/127 (~10%) Elapsed: 0s, Remaining: 1s, Rate: 1.7e+02/s
+2022-05-06 14:11:56,411 subsystems 0/1 INFO :: Building subproblem matrices 26/127 (~20%) Elapsed: 0s, Remaining: 1s, Rate: 1.7e+02/s
+2022-05-06 14:11:56,486 subsystems 0/1 INFO :: Building subproblem matrices 39/127 (~31%) Elapsed: 0s, Remaining: 1s, Rate: 1.7e+02/s
+2022-05-06 14:11:56,548 subsystems 0/1 INFO :: Building subproblem matrices 52/127 (~41%) Elapsed: 0s, Remaining: 0s, Rate: 1.8e+02/s
+2022-05-06 14:11:56,614 subsystems 0/1 INFO :: Building subproblem matrices 65/127 (~51%) Elapsed: 0s, Remaining: 0s, Rate: 1.8e+02/s
+2022-05-06 14:11:56,682 subsystems 0/1 INFO :: Building subproblem matrices 78/127 (~61%) Elapsed: 0s, Remaining: 0s, Rate: 1.9e+02/s
+2022-05-06 14:11:56,748 subsystems 0/1 INFO :: Building subproblem matrices 91/127 (~72%) Elapsed: 0s, Remaining: 0s, Rate: 1.9e+02/s
+2022-05-06 14:11:56,813 subsystems 0/1 INFO :: Building subproblem matrices 104/127 (~82%) Elapsed: 1s, Remaining: 0s, Rate: 1.9e+02/s
+2022-05-06 14:11:56,883 subsystems 0/1 INFO :: Building subproblem matrices 117/127 (~92%) Elapsed: 1s, Remaining: 0s, Rate: 1.9e+02/s
+2022-05-06 14:11:56,939 subsystems 0/1 INFO :: Building subproblem matrices 127/127 (~100%) Elapsed: 1s, Remaining: 0s, Rate: 1.9e+02/s
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f762d4941d0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Dynamical_Core2_5_2.png" src="../../_images/Dynamical_Core2_5_2.png" />
+<img alt="../../_images/Dynamical_Core2_5_3.png" src="../../_images/Dynamical_Core2_5_3.png" />
+<img alt="../../_images/Dynamical_Core2_5_4.png" src="../../_images/Dynamical_Core2_5_4.png" />
+<img alt="../../_images/Dynamical_Core2_5_5.png" src="../../_images/Dynamical_Core2_5_5.png" />
+<img alt="../../_images/Dynamical_Core2_5_6.png" src="../../_images/Dynamical_Core2_5_6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solver</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">build_solver</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">RK222</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">stop_sim_time</span> <span class="o">=</span> <span class="n">stop_sim_time</span>
+
+<span class="c1"># Analysis</span>
+<span class="n">snapshots</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">evaluator</span><span class="o">.</span><span class="n">add_file_handler</span><span class="p">(</span><span class="s1">&#39;snapshots&#39;</span><span class="p">,</span> <span class="n">sim_dt</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="n">hour</span><span class="p">,</span> <span class="n">max_writes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">snapshots</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">)</span>
+<span class="n">snapshots</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="o">-</span><span class="n">d3</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;vorticity&#39;</span><span class="p">)</span>
+
+<span class="c1"># Main loop</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Starting main loop&#39;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">solver</span><span class="o">.</span><span class="n">proceed</span><span class="p">:</span>
+        <span class="n">solver</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">iteration</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Iteration=</span><span class="si">%i</span><span class="s1">, Time=</span><span class="si">%e</span><span class="s1">, dt=</span><span class="si">%e</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">iteration</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">sim_time</span><span class="p">,</span> <span class="n">timestep</span><span class="p">))</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Exception raised, triggering end of main loop.&#39;</span><span class="p">)</span>
+    <span class="k">raise</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">log_stats</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-edb4ef88a67d&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Solver</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">solver</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">build_solver</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">RK222</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">solver</span><span class="o">.</span><span class="n">stop_sim_time</span> <span class="o">=</span> <span class="n">stop_sim_time</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Analysis</span>
+
+<span class="ne">NameError</span>: name &#39;problem&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/gdrive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mounted at /content/gdrive
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>rm list.txt
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">37</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;ls /content/snapshots/snapshots_s&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.h5 &gt;&gt; list.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> 
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+
+<span class="k">def</span> <span class="nf">build_s2_coord_vertices</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">phi_vert</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">phi</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">]])</span>
+    <span class="n">phi_vert</span> <span class="o">-=</span> <span class="n">phi_vert</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">theta</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">theta_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">theta</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">theta_vert</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">],</span> <span class="n">theta_mid</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">phi_vert</span><span class="p">,</span> <span class="n">theta_vert</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s1">&#39;ij&#39;</span><span class="p">)</span>
+
+<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;list.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+          <span class="n">newstr</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+          <span class="nb">print</span><span class="p">(</span><span class="n">newstr</span><span class="p">)</span>
+          <span class="n">f</span>   <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">newstr</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+          <span class="n">h</span>   <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;tasks&#39;</span><span class="p">][</span><span class="s1">&#39;height&#39;</span><span class="p">]</span>
+          <span class="n">dim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+          <span class="c1"># Plot settings</span>
+          <span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;height&#39;</span>
+          <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">seismic</span>
+          <span class="n">dpi</span> <span class="o">=</span> <span class="mi">300</span>
+          <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+          <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+          
+          <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+          <span class="c1">#plt.contourf(vor[0,:,:].T)</span>
+          <span class="n">phi</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">dims</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][:]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+          <span class="n">theta</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">dims</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">][:]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+          <span class="n">phi_vert</span><span class="p">,</span> <span class="n">theta_vert</span> <span class="o">=</span> <span class="n">build_s2_coord_vertices</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+          <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_vert</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi_vert</span><span class="p">)</span>
+          <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_vert</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi_vert</span><span class="p">)</span>
+          <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta_vert</span><span class="p">)</span>
+          <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+              <span class="n">data_slices</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
+              <span class="n">data</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">data_slices</span><span class="p">]</span>
+              <span class="n">clim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+              <span class="n">norm</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="o">-</span><span class="n">clim</span><span class="p">,</span> <span class="n">clim</span><span class="p">)</span>
+              <span class="n">fc</span> <span class="o">=</span> <span class="n">cmap</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+              <span class="c1">#fc[:, theta.size//2, :] = [0,0,0,1]  # black equator</span>
+              <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                  <span class="n">surf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="n">fc</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">antialiased</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+                  <span class="c1">#ax.contour(x,y,z,[0],colors=&#39;k&#39;,linewidths=3)</span>
+                  <span class="c1">#ax.set_box_aspect((1,1,1))</span>
+                  <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>
+                  <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>
+                  <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>
+                  <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+              <span class="k">else</span><span class="p">:</span>
+                  <span class="n">surf</span><span class="o">.</span><span class="n">set_facecolors</span><span class="p">(</span><span class="n">fc</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">fc</span><span class="o">.</span><span class="n">size</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+              <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span>
+              <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/content/gdrive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/figures/Height_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">)</span>
+          <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content/snapshots/snapshots_s1.h5
+/content/snapshots/snapshots_s2.h5
+/content/snapshots/snapshots_s3.h5
+/content/snapshots/snapshots_s4.h5
+/content/snapshots/snapshots_s5.h5
+/content/snapshots/snapshots_s6.h5
+/content/snapshots/snapshots_s7.h5
+/content/snapshots/snapshots_s8.h5
+/content/snapshots/snapshots_s9.h5
+/content/snapshots/snapshots_s10.h5
+/content/snapshots/snapshots_s11.h5
+/content/snapshots/snapshots_s12.h5
+/content/snapshots/snapshots_s13.h5
+/content/snapshots/snapshots_s14.h5
+/content/snapshots/snapshots_s15.h5
+/content/snapshots/snapshots_s16.h5
+/content/snapshots/snapshots_s17.h5
+/content/snapshots/snapshots_s18.h5
+/content/snapshots/snapshots_s19.h5
+/content/snapshots/snapshots_s20.h5
+/content/snapshots/snapshots_s21.h5
+/content/snapshots/snapshots_s22.h5
+/content/snapshots/snapshots_s23.h5
+/content/snapshots/snapshots_s24.h5
+/content/snapshots/snapshots_s25.h5
+/content/snapshots/snapshots_s26.h5
+/content/snapshots/snapshots_s27.h5
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-6-6bed7241fbe1&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>           <span class="n">newstr</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>           <span class="nb">print</span><span class="p">(</span><span class="n">newstr</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">21</span>           <span class="n">f</span>   <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">newstr</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>           <span class="n">h</span>   <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;tasks&#39;</span><span class="p">][</span><span class="s1">&#39;height&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>           <span class="n">dim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py</span> in <span class="ni">__init__</span><span class="nt">(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, fs_strategy, fs_persist, fs_threshold, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span>                                <span class="n">fapl</span><span class="p">,</span> <span class="n">fcpl</span><span class="o">=</span><span class="n">make_fcpl</span><span class="p">(</span><span class="n">track_order</span><span class="o">=</span><span class="n">track_order</span><span class="p">,</span> <span class="n">fs_strategy</span><span class="o">=</span><span class="n">fs_strategy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span>                                <span class="n">fs_persist</span><span class="o">=</span><span class="n">fs_persist</span><span class="p">,</span> <span class="n">fs_threshold</span><span class="o">=</span><span class="n">fs_threshold</span><span class="p">),</span>
+<span class="ne">--&gt; </span><span class="mi">427</span>                                <span class="n">swmr</span><span class="o">=</span><span class="n">swmr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span> 
+<span class="g g-Whitespace">    </span><span class="mi">429</span>             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">libver</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/h5py/_hl/files.py</span> in <span class="ni">make_fid</span><span class="nt">(name, mode, userblock_size, fapl, fcpl, swmr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>         <span class="k">if</span> <span class="n">swmr</span> <span class="ow">and</span> <span class="n">swmr_support</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>             <span class="n">flags</span> <span class="o">|=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_SWMR_READ</span>
+<span class="ne">--&gt; </span><span class="mi">190</span>         <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span>     <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r+&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span>         <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_RDWR</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
+
+<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">h5py/h5f.pyx</span> in <span class="ni">h5py.h5f.open</span><span class="nt">()</span>
+
+<span class="ne">OSError</span>: Unable to open file (unable to open file: name = &#39;/content/snapshots/snapshots_s27.h5&#39;, errno = 2, error message = &#39;No such file or directory&#39;, flags = 0, o_flags = 0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> 
+
+
+<span class="k">def</span> <span class="nf">build_s2_coord_vertices</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">phi_vert</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">phi</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">]])</span>
+    <span class="n">phi_vert</span> <span class="o">-=</span> <span class="n">phi_vert</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">theta</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">theta_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">theta</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">theta_vert</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">],</span> <span class="n">theta_mid</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">phi_vert</span><span class="p">,</span> <span class="n">theta_vert</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s1">&#39;ij&#39;</span><span class="p">)</span>
+
+<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;list.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+          <span class="n">newstr</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+          <span class="nb">print</span><span class="p">(</span><span class="n">newstr</span><span class="p">)</span>
+          <span class="n">f</span>   <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">newstr</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+          <span class="n">vor</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;tasks&#39;</span><span class="p">][</span><span class="s1">&#39;vorticity&#39;</span><span class="p">]</span>
+          <span class="n">height</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;tasks&#39;</span><span class="p">][</span><span class="s1">&#39;height&#39;</span><span class="p">]</span>
+          <span class="n">pv</span>  <span class="o">=</span> <span class="p">(</span><span class="n">vor</span><span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">Omega</span><span class="o">*</span><span class="n">sin_theta</span><span class="p">)</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()[</span><span class="s1">&#39;g&#39;</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">height</span><span class="o">+</span><span class="n">h_init</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()[</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+          <span class="n">dim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">vor</span><span class="p">)</span>
+          <span class="c1"># Plot settings</span>
+          <span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;vorticity&#39;</span>
+          <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">afmhot_r</span>
+          <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span>
+          <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+          <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+          <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+          <span class="c1">#plt.contourf(vor[0,:,:].T)</span>
+          <span class="n">phi</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">dims</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][:]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+          <span class="n">theta</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">dims</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">][:]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+          <span class="n">phi_vert</span><span class="p">,</span> <span class="n">theta_vert</span> <span class="o">=</span> <span class="n">build_s2_coord_vertices</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+          <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_vert</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi_vert</span><span class="p">)</span>
+          <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_vert</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi_vert</span><span class="p">)</span>
+          <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta_vert</span><span class="p">)</span>
+          <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+              <span class="n">data_slices</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
+              <span class="n">data</span> <span class="o">=</span> <span class="n">pv</span><span class="p">[</span><span class="n">data_slices</span><span class="p">]</span>
+              <span class="n">clim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+              <span class="n">norm</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="o">-</span><span class="n">clim</span><span class="p">,</span> <span class="n">clim</span><span class="p">)</span>
+              <span class="n">fc</span> <span class="o">=</span> <span class="n">cmap</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+              <span class="c1">#fc[:, theta.size//2, :] = [0,0,0,1]  # black equator</span>
+              <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                  <span class="n">surf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="n">fc</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">antialiased</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+                  <span class="c1">#ax.set_box_aspect((1,1,1))</span>
+                  <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>
+                  <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>
+                  <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>
+                  <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+              <span class="k">else</span><span class="p">:</span>
+                  <span class="n">surf</span><span class="o">.</span><span class="n">set_facecolors</span><span class="p">(</span><span class="n">fc</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">fc</span><span class="o">.</span><span class="n">size</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+              <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span>
+              <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/content/gdrive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/figures/PV_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">)</span>
+          <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content/snapshots/snapshots_s1.h5
+/content/snapshots/snapshots_s2.h5
+/content/snapshots/snapshots_s3.h5
+/content/snapshots/snapshots_s4.h5
+/content/snapshots/snapshots_s5.h5
+/content/snapshots/snapshots_s6.h5
+/content/snapshots/snapshots_s7.h5
+/content/snapshots/snapshots_s8.h5
+/content/snapshots/snapshots_s9.h5
+/content/snapshots/snapshots_s10.h5
+/content/snapshots/snapshots_s11.h5
+/content/snapshots/snapshots_s12.h5
+/content/snapshots/snapshots_s13.h5
+/content/snapshots/snapshots_s14.h5
+/content/snapshots/snapshots_s15.h5
+/content/snapshots/snapshots_s16.h5
+/content/snapshots/snapshots_s17.h5
+/content/snapshots/snapshots_s18.h5
+/content/snapshots/snapshots_s19.h5
+/content/snapshots/snapshots_s20.h5
+/content/snapshots/snapshots_s21.h5
+/content/snapshots/snapshots_s22.h5
+/content/snapshots/snapshots_s23.h5
+/content/snapshots/snapshots_s24.h5
+/content/snapshots/snapshots_s25.h5
+/content/snapshots/snapshots_s26.h5
+/content/snapshots/snapshots_s27.h5
+/content/snapshots/snapshots_s28.h5
+/content/snapshots/snapshots_s29.h5
+/content/snapshots/snapshots_s30.h5
+/content/snapshots/snapshots_s31.h5
+/content/snapshots/snapshots_s32.h5
+/content/snapshots/snapshots_s33.h5
+/content/snapshots/snapshots_s34.h5
+/content/snapshots/snapshots_s35.h5
+/content/snapshots/snapshots_s36.h5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="c1"># filepaths</span>
+<span class="n">fp_in</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/figures/*.png&quot;</span>
+<span class="n">fp_out</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/figures/image2.gif&quot;</span>
+
+<span class="c1"># https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html#gif</span>
+<span class="n">imgs</span> <span class="o">=</span> <span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">fp_in</span><span class="p">)))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">imgs</span><span class="p">)</span>  <span class="c1"># extract first image from iterator</span>
+<span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fp</span><span class="o">=</span><span class="n">fp_out</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;GIF&#39;</span><span class="p">,</span> <span class="n">append_images</span><span class="o">=</span><span class="n">imgs</span><span class="p">,</span>
+         <span class="n">save_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StopIteration</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-66-498073f91a65&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html#gif</span>
+<span class="nn">      9 imgs = (Image.open(f) for f</span> in <span class="ni">sorted(glob.glob</span><span class="nt">(fp_in)))</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">img</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">imgs</span><span class="p">)</span>  <span class="c1"># extract first image from iterator</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fp</span><span class="o">=</span><span class="n">fp_out</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;GIF&#39;</span><span class="p">,</span> <span class="n">append_images</span><span class="o">=</span><span class="n">imgs</span><span class="p">,</span><span class="n">save_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="ne">StopIteration</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls /content/gdrive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/figures
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access &#39;/content/drive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/figures/&#39;: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week3/RB2D"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kai-Chih Tseng<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
