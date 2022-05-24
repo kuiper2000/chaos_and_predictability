@@ -53,7 +53,7 @@ In the case above, the error doubling time is around $t=13$, indicating that the
 By perturbing the initial condition with infinitesimal error and inspecting the error growth of a given dynamical system, this is so-called perfect model experiment, which was first proposed in a conference at Boulder, Colorado, organized by World Meteorological Organization in 1966, where Jule Charney was the head committee. Since then, it has become a rule of thumb for estimating the predictability limit across different dynamical systems. 
 
 :::{note}
-In 1966, the numerical modeling of the complete global circulation was just leaving its infancy according to Lorenz's words. The conference held in Boulder collected the three state-of-art climate models at that time: Leith (1965), Arakawa-Mintz (1965) and Smagorinsky (1965). During the break the session, Charney persuaded the developers of the three forecast models to do something similar to what we showed in [FIG8](FIG8). At that given period, the estimated error doubling time is around 5 days. However, as time passed by and more sophisticated models were developed, the estimated Lyapunov time is getting shorter and shorter. (e.g., 3 days in Smagorinsky 1969) (Can you answer why?)
+In 1966, the numerical modeling of the complete global circulation was just leaving its infancy according to Lorenz's words. The conference held in Boulder collected the three state-of-art climate models at that time: Leith (1965), Arakawa-Mintz (1965) and Smagorinsky (1965). During the break between sessions, Charney persuaded the developers of the three forecast models to do something similar to what we showed in [FIG8](FIG8). At that given period, the estimated error doubling time is around 5 days. However, as time passed by and more sophisticated models were developed, the estimated Lyapunov time is getting shorter and shorter. (e.g., 3 days in Smagorinsky 1969) (Can you answer why?)
 :::
 
 
@@ -66,11 +66,11 @@ In real atmosphere, the nonlinear interaction usually involved the energy cascad
 :label: eq27
 \begin{align*}
 \frac{dX_i}{dt}   &=-X_{i-1}X_{i-2}+X_{i-1}X_{i+1}-X_{i}-\frac{hc}{b}\sum_{j=1}^{J}Y_{j,i}+F \\
-\frac{dY_j,i}{dt} &=-cbY_{j+1,i}Y_{j+2,i}+cbY_{j-1,i}Y_{j+1,i}-cY_{j,i}+\frac{hc}{b}X_i 
+\frac{dY_{j,i}}{dt} &=-cbY_{j+1,i}Y_{j+2,i}+cbY_{j-1,i}Y_{j+1,i}-cY_{j,i}+\frac{hc}{b}X_i 
 \end{align*}
 ```  
 
-The system in {eq}`eq27` can be visualized as [FIG9](FIG9), which is from {cite}`russell2017`. In a similar narrow latitudinal band, we implement ten additional small grids $Y_j,i$ where their accumulated effect can feedback to the large grids(i.e., $-\frac{hc}{b}\sum_{j=1}^{J}Y_{j,i}$ in {eq}`eq27`). At the same time, the large grids can modulate the small scale variability (i.e., $\frac{hc}{b}X_i $ in {eq}`eq27`). There are three controlling parameters in this dynamical system: c,b and h. $c=b=10$ indicating the interaction within small grid is 10 times faster than the interaction within large grids. h is the coupling parameter, which represent the coupling strength between two different scales. In the real world, the small grid can be considered as the convective process while the large grids represent the resolved synoptic process. 
+T{eq}`eq27` can be visualized as [FIG9](FIG9), which is from {cite}`russell2017`. In a similar narrow latitudinal band, we implement ten additional small grids $Y_{j,i}$ where their accumulated effect can feedback to the large grids(i.e., $-\frac{hc}{b}\sum_{j=1}^{J}Y_{j,i}$ in {eq}`eq27`). At the same time, the large grids can modulate the small scale variability (i.e., $\frac{hc}{b}X_i $ in {eq}`eq27`). There are three controlling parameters in this dynamical system: c,b and h. $c=b=10$ indicating the interaction within small grid is 10 times faster than the interaction within large grids. h is the coupling parameter, which represent the coupling strength between two different scales. In the real world, the small grid can be considered as the convective process while the large grids represent the resolved synoptic process. 
 
 ```{figure} Lorenz_96_2_scale_schematic.png
 ---
@@ -88,7 +88,7 @@ name: FIG10
 A cross section (x-fixed) of LR96 2-scale model. 
 ```
 
-With {eq}`eq27`, we repeat the same perfect model experiment and estimate the error growth rate for both small and large scales. The result is shown in [FIG11](FIG11). After introducing the small-scale to the system, we find the error doubling time is about an half of the error doubling time shown previously. It's because the 2-scale version of LR96 model is more likely to resolve the small scale process. Thus, the early stage of error is dominated by the error growth in small scales. We can also see the error accumulated in large scales. The error growth in large scale goes through a nearly linear regime before $t=50$, which is associated with the error growth in small scales. After $t=50$, the error in large scale keeps growing even surpasses the climatological error of small scales. This feature is similar to the multi-scale forecast in the real world, where the predictability of convection diminishes in a few hours but the SST or other low-frequency variability are still highly predictable at monthly or even longer time scales. 
+With {eq}`eq27`, we repeat the same perfect model experiment and estimate the error growth rate for both small and large scales. The result is shown in [FIG11](FIG11). After introducing the small-scale to the system, we find the error doubling time is about an half of the error doubling time shown previously. It's because the 2-scale version of LR96 model is more likely to resolve the small scale process. Thus, the early stage of error is dominated by the error growth in small scales. We can also see the error accumulated in large scales. The error growth in large scale goes through a linear regime before $t=50$, which is associated with the error growth in small scales. After $t=50$, the error in large scale keeps growing and even surpasses the climatological error of small scales. This feature is similar to the multi-scale forecast in the real world, where the predictability of convection diminishes in a few hours but the SST or other low-frequency variability are still highly predictable at monthly or even longer time scales. 
 
 ```{figure} LR96_2scale_error.png
 ---
@@ -115,7 +115,7 @@ where $E^{\times}$ is the saturated error and $\lambda_1$ is the error growth ra
 E = E^* (1+\mathrm{tanh}(\lambda_1,t))/2
 \end{align*}
 ```  
-By observing {eq}`eq28` and {eq}`eq29`, one can find that $E$ is simply a linear function of t when $E$ is small (early stage). However, when $E$ is big enough, the $\frac{dE}{dt}$ will approach 0 (and will ultimately be 0). This special characteristic of hyperbolic-tangent curve is similar to the overall error growth shown in [FIG11](FIG11). One can probably imagine applying similar approach to a more complicated state-of-art forecast system. Indeed, in {cite}`lorenz1982atmospheric`, Lorenz applied similar analysis to the most sophisticated model at that given time and estimated the corresponding solutions as what we showed above. More details can be found in the reading assignment. 
+By observing {eq}`eq28` and {eq}`eq29`, one can find that $E$ is simply a linear function of t when $E$ is small (early stage). However, when $E$ is big enough, the $\frac{dE}{dt}$ will approach 0 (and will ultimately be 0). This special characteristic of hyperbolic-tangent curve is consistent with the overall error growth shown in [FIG11](FIG11). One can probably imagine applying similar approach to a more complicated state-of-art forecast system. Indeed, in {cite}`lorenz1982atmospheric`, Lorenz applied similar analysis to the most sophisticated model at that given time and estimated the corresponding solutions as what we showed above. More details can be found in the reading assignment. 
 
 ## References
 ```{bibliography} ../references.bib
