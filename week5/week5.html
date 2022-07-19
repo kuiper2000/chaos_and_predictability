@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 5: The connection between statistical mechanics and ensemble forecast I: Theory &#8212; Chaos and Predictability</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 6: The connection between statistical mechanics and ensemble forecast I: Applications" href="../week6/week6.html" />
+    <link rel="prev" title="Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96" href="../week4/week4.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Chaos and Predictability</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Syllabus
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/week1.html">
+   Week 1: Predictability of Weather and Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week2/week2.html">
+   Week 2: Predictability source in atmosphere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week3/week3.html">
+   Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 5: The connection between statistical mechanics and ensemble forecast I: Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week6/week6.html">
+   Week 6: The connection between statistical mechanics and ensemble forecast I: Applications
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/week5/week5.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2Fweek5/week5.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-liouville-equation">
+   Introduction to Liouville equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jacobian-matrix-and-determinant">
+   Jacobian Matrix and determinant
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connections-between-liouville-equation-and-ensemble-forecasts">
+   Connections between Liouville equation and ensemble forecasts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 5: The connection between statistical mechanics and ensemble forecast I: Theory</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-liouville-equation">
+   Introduction to Liouville equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jacobian-matrix-and-determinant">
+   Jacobian Matrix and determinant
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connections-between-liouville-equation-and-ensemble-forecasts">
+   Connections between Liouville equation and ensemble forecasts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="week-5-the-connection-between-statistical-mechanics-and-ensemble-forecast-i-theory">
+<span id="week5"></span><h1>Week 5: The connection between statistical mechanics and ensemble forecast I: Theory<a class="headerlink" href="#week-5-the-connection-between-statistical-mechanics-and-ensemble-forecast-i-theory" title="Permalink to this headline">¶</a></h1>
+<p>In the following two weeks, we will go through some fundamental theory behind the <em>chaos and predictability</em>. As we know, the forecast uncertainty arises from two components (1) imperfect model physics and (2) imperfect observation in the initial condition. While most of the studies discussed from week 1 to week 4
+were focusing on the intrinsic predictability limit (i.e., the upper limit of prediction), some efforts have been dedicated to the quantification/prediction of forecast error via statistical mechanics. In the context of predicting the forecast error, the Liouville equation arises as the general framework to describe the time evolution of ensemble density (i.e., the number of ensemble member in a finite phase space).</p>
+<div class="section" id="introduction-to-liouville-equation">
+<h2>Introduction to Liouville equation<a class="headerlink" href="#introduction-to-liouville-equation" title="Permalink to this headline">¶</a></h2>
+<p>Liouville equation carries the name of a French mathematician, Joseph Liouville. You might have heard his name in the applied math course, when we introduced the Sturm-Liouville theory. and yes, these two “Liouville” are the same person. Liouville equation was first proposed by Joseph Liouville in 1838, which was about 100-year later after Euler proposed the Euler equation of fluid dynamics (1752,1757). While these two equations are highly similar, Liouville and Euler did carry out the formulas separately. Liouville equation (LE hereafter) can be considered as a more general form in Hamiltonian mechanics, which can be applied to not only fluid mechanics but also “any” dynamical system which is continuous in time and phase space.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One should notice that we have a very strong assumption here, which is the continuity of a dynamical system. Whether such assumption holds in Navier-Stoke equation is still a million-dollar question (see <a class="reference external" href="https://www.claymath.org/millennium-problems">Millennium questions</a> by Clay Institute of Mathematics .</p>
+</div>
+</div>
+<div class="section" id="jacobian-matrix-and-determinant">
+<h2>Jacobian Matrix and determinant<a class="headerlink" href="#jacobian-matrix-and-determinant" title="Permalink to this headline">¶</a></h2>
+<p>Before diving right in the Liouville equation, we will start with something simple, which will enable us to better understand the physical meaning behind. Two major ingredients in Liouville equation are (1) Jacobian matrix and (2) determinant.</p>
+<p>Mathematically, Jacobian matrix represents mapping one matrix to the other with a simple linear transformation. For example, when we manage to convert Polar coordinate to Cartesian coordinate, we can use the following formula,</p>
+<div class="math notranslate nohighlight" id="equation-eq30">
+<span class="eqno">(30)<a class="headerlink" href="#equation-eq30" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+x  \\
+y   
+\end{bmatrix} = 
+\begin{bmatrix}
+X(r,\theta) \\
+Y(r,\theta) 
+\end{bmatrix}
+=
+\begin{bmatrix}
+r\mathrm{cos}(\theta)  \\
+r\mathrm{sin}(\theta)   
+\end{bmatrix}\end{split}\]</div>
+<p>However, if the transformation is too complicated, we might want to find an easier way to approach the problem. One way to do that is through a simple linear transformation. So… how does it work? Let’s start from a nonlinear function <span class="math notranslate nohighlight">\(y=f(x)\)</span>, which maps <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> or <span class="math notranslate nohighlight">\(f(x)\)</span>. If we only focus on a small range (let’s say…centering around <span class="math notranslate nohighlight">\(p\)</span>) and assume a linear function <span class="math notranslate nohighlight">\(T(x)\)</span> can well approximate the more complicated function <span class="math notranslate nohighlight">\(f(x)\)</span>, i.e., <span class="math notranslate nohighlight">\(T(x) = Ax+b\)</span>. This will give us</p>
+<div class="math notranslate nohighlight" id="equation-eq31">
+<span class="eqno">(31)<a class="headerlink" href="#equation-eq31" title="Permalink to this equation">¶</a></span>\[T(x) = f(x) =Ax+b\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight" id="equation-eq32">
+<span class="eqno">(32)<a class="headerlink" href="#equation-eq32" title="Permalink to this equation">¶</a></span>\[T(x) = A(x-p)+f(p)\]</div>
+<p>One way to test if the linear assumption holds is by examining whether the <span class="math notranslate nohighlight">\(f(x)\)</span> will approach <span class="math notranslate nohighlight">\(T(x)\)</span> when <span class="math notranslate nohighlight">\(x\rightarrow p\)</span>, i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq33">
+<span class="eqno">(33)<a class="headerlink" href="#equation-eq33" title="Permalink to this equation">¶</a></span>\[\mathbf{lim}_{x\rightarrow p} \frac{f(x)-T(p)-A(x-p)}{||x-p||} = 0\]</div>
+<p><a class="reference internal" href="#equation-eq33">(33)</a> can be read as “if the difference between <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(T(x)\)</span> is well approximated by linear function <span class="math notranslate nohighlight">\(A(x-p)\)</span> and differentiable at point <span class="math notranslate nohighlight">\(p\)</span>”.</p>
+<p>Now, we can extend the formula in <a class="reference internal" href="#equation-eq33">(33)</a> to higher dimensions. Let’s first assume that <span class="math notranslate nohighlight">\(x\)</span> has matrix form <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> with <span class="math notranslate nohighlight">\(n\)</span> dimensions. In addition, we introduce another matrix <span class="math notranslate nohighlight">\(\mathbf{e}=[e_1,e_2,e_3...,e_j,...e_n]\)</span>, which is an n-dimension basis. We further assume that <span class="math notranslate nohighlight">\(\mathbf{e}=0\)</span> except that its <span class="math notranslate nohighlight">\(j\)</span>th element equals 1 (i.e.,<span class="math notranslate nohighlight">\(e_{j}=1\)</span>) and include a small (nearly 0) constant, <span class="math notranslate nohighlight">\(h\)</span>. If <span class="math notranslate nohighlight">\(f(x)\)</span> is differentiable at any given dimension, then we can rewrite <a class="reference internal" href="#equation-eq33">(33)</a> as</p>
+<div class="math notranslate nohighlight" id="equation-eq34">
+<span class="eqno">(34)<a class="headerlink" href="#equation-eq34" title="Permalink to this equation">¶</a></span>\[\mathbf{lim}_{\mathbf{x}\rightarrow \mathbf{p}} \frac{f(\mathbf{p}+h\mathbf{e_j})-f(\mathbf{p})-A(h \mathbf{e}_j)}{||h\mathbf{e}_j||} = 0\]</div>
+<p>and because <span class="math notranslate nohighlight">\(A(h \mathbf{e_j})\)</span> = <span class="math notranslate nohighlight">\(hA(\mathbf{e_j})\)</span>. <a class="reference internal" href="#equation-eq34">(34)</a> will lead to</p>
+<div class="math notranslate nohighlight" id="equation-eq35">
+<span class="eqno">(35)<a class="headerlink" href="#equation-eq35" title="Permalink to this equation">¶</a></span>\[\mathbf{lim}_{h\rightarrow 0} \frac{f(\mathbf{p}+h\mathbf{e_j})-f(\mathbf{p})}{||h\mathbf{e}_j||} =A \mathbf{e}_j\]</div>
+<p>On the left-hand-side of <a class="reference internal" href="#equation-eq35">(35)</a> is the partial derivative of <span class="math notranslate nohighlight">\(f\)</span> at point <span class="math notranslate nohighlight">\(\mathbf{p}\)</span>. Therefore, taking the derivative at <span class="math notranslate nohighlight">\(j\)</span>th dimension can be written as…</p>
+<div class="math notranslate nohighlight" id="equation-eq36">
+<span class="eqno">(36)<a class="headerlink" href="#equation-eq36" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{\partial f}{\partial x_j} = 
+\begin{bmatrix}
+\frac{\partial f_1}{\partial x_j}  \\
+\frac{\partial f_2}{\partial x_j}  \\
+\frac{\partial f_3}{\partial x_j}  \\
+\vdots \\
+\frac{\partial f_m}{\partial x_j}   
+\end{bmatrix}\end{split}\]</div>
+<p>The full <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> matrix can be derived by taking the partial derivative of every component in <span class="math notranslate nohighlight">\(f\)</span>, i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq37">
+<span class="eqno">(37)<a class="headerlink" href="#equation-eq37" title="Permalink to this equation">¶</a></span>\[\begin{split}\mathbf{A} = 
+\begin{bmatrix}
+\frac{\partial f_1}{\partial x_1} &amp; \frac{\partial f_1}{\partial x_2} &amp; \cdots  &amp; \frac{\partial f_1}{\partial x_j} \\
+\frac{\partial f_2}{\partial x_1} &amp; \frac{\partial f_2}{\partial x_2} &amp; \cdots  &amp; \frac{\partial f_2}{\partial x_j}  \\
+\frac{\partial f_3}{\partial x_1} &amp; \frac{\partial f_3}{\partial x_2} &amp; \cdots  &amp; \frac{\partial f_3}{\partial x_j}  \\
+\vdots \\
+\frac{\partial f_m}{\partial x_1} &amp; \frac{\partial f_m}{\partial x_2} &amp; \cdots  &amp; \frac{\partial f_m}{\partial x_j}
+\end{bmatrix}\end{split}\]</div>
+<p>Now, we can go back to our original question: converting the polar coordinate to Cartesian coordinate. We can find the <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> matrix for this problem is</p>
+<div class="math notranslate nohighlight" id="equation-eq38">
+<span class="eqno">(38)<a class="headerlink" href="#equation-eq38" title="Permalink to this equation">¶</a></span>\[\begin{split}\mathbf{A} = 
+\begin{bmatrix}
+\frac{\partial r\mathrm{cos}(\theta)}{\partial r}  &amp; \frac{\partial  r\mathrm{cos}(\theta)}{\partial \theta}\\
+\frac{\partial r\mathrm{sin}(\theta)}{\partial r}  &amp; \frac{\partial  r\mathrm{sin}(\theta)}{\partial \theta}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathrm{cos(\theta)}   &amp; -r\mathrm{sin(\theta)}\\
+\mathrm{sin(\theta)}  &amp; r\mathrm{cos(\theta)}
+\end{bmatrix}\end{split}\]</div>
+<p>Jacobian matrix is widely used in Geoscience and Geophysical Fluid Dynamics. One example is estimating the contribution of regional warming to the climate sensitivity, i.e., how much the earth should warm when we double the CO2 concentration. The role of Jacobian matrix in climate sensitivity studies is that we can consider the final coordinate as “the overall radiative forcing by greenhouse gases” and the initial coordinate (r.h.s) is the warming in SST over different regions. Thus, the yielded Jacobian matrix can tell us the relative importance of warming over different regions. In climate sensitivity study, it has an alternative name, Green’s function. Some of the most updated studies about climate sensitivity can check this <a class="reference external" href="https://usclivar.org/meetings/pattern-effect-workshop">workshop</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While pattern effect (or patching method) is a useful tool to identify the key regions responsible for global warming, its linear assumption is usually dubbed because the change in global temperature by CO2 forcing is not necessary small. Thus, there is a growing community turning their focus on the nonlinear effect of equilibrium climate sensitivity as well as it’s local maximum (i.e., when global temperature is warm enough, the positive feedback from CO2 will get weaker (bell-like curve))</p>
+</div>
+<p>The other key ingredient we need to learn is “determinant”. Determinant evaluates how much the area spanned by the eigen basis has changed after the linear transformation. For example, in week 1, we have used the following case as an example,</p>
+<div class="math notranslate nohighlight" id="equation-eq39">
+<span class="eqno">(39)<a class="headerlink" href="#equation-eq39" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 2 
+\end{bmatrix} =
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 2 
+\end{bmatrix} \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1 
+\end{bmatrix}. \end{split}\]</div>
+<p>where the original basis, <span class="math notranslate nohighlight">\([1,0]\)</span> and <span class="math notranslate nohighlight">\([0,1]\)</span> (x-axis and y-axis respectively), is moved to <span class="math notranslate nohighlight">\([1,0]\)</span> and <span class="math notranslate nohighlight">\([0,2]\)</span> after transformation. We can easily find that the area originally spanned by <span class="math notranslate nohighlight">\([1,0]\)</span> and <span class="math notranslate nohighlight">\([0,1]\)</span> has grown twice bigger (from 1 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 4). The change in area size is equivalent to the determinant of the linear operator. i.e.,
+<span class="math notranslate nohighlight">\(\mathrm{det}{(\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 2 
+\end{bmatrix})}\)</span></p>
+<p>Now, both ingredients are ready, the only question left is what is the connection among Jacobian matrix, determinant and Liouville equation? We can take a look of the example below. If today, we would like to convert a vector <span class="math notranslate nohighlight">\(\begin{bmatrix}
+u  \\
+v 
+\end{bmatrix}\)</span> to a vector <span class="math notranslate nohighlight">\(\begin{bmatrix}
+x  \\
+y 
+\end{bmatrix}\)</span>
+the corresponding linear transformation can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq40">
+<span class="eqno">(40)<a class="headerlink" href="#equation-eq40" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+x  \\
+y  
+\end{bmatrix} =
+\begin{bmatrix}
+\frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\
+\frac{\partial y}{\partial u} &amp; \frac{\partial x}{\partial v} 
+\end{bmatrix} \begin{bmatrix}
+u  \\
+v  
+\end{bmatrix}. \end{split}\]</div>
+<p>if we are using <span class="math notranslate nohighlight">\(du\)</span> and <span class="math notranslate nohighlight">\(dv\)</span> to represent the unit vectors in the original coordinate, then the unit vector in the final coordinates will be…</p>
+<div class="math notranslate nohighlight" id="equation-eq41">
+<span class="eqno">(41)<a class="headerlink" href="#equation-eq41" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+dx  \\
+dy  
+\end{bmatrix} =
+\begin{bmatrix}
+\frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\
+\frac{\partial y}{\partial u} &amp; \frac{\partial x}{\partial v} 
+\end{bmatrix} \begin{bmatrix}
+du  \\
+dv  
+\end{bmatrix}. \end{split}\]</div>
+<p>for the area spanned by <span class="math notranslate nohighlight">\(dx\)</span> and <span class="math notranslate nohighlight">\(dy\)</span> in the final coordinate, it can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq42">
+<span class="eqno">(42)<a class="headerlink" href="#equation-eq42" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+&amp; dxdy 
+\\
+&amp; =||\mathrm{det}\begin{bmatrix}
+dx &amp; 0 \\
+0  &amp; dy  
+\end{bmatrix}|| 
+\\
+&amp;= ||\mathrm{det}
+\begin{bmatrix}
+\frac{\partial x}{\partial u}du &amp; \frac{\partial x}{\partial v}dv \\
+\frac{\partial y}{\partial u}du &amp; \frac{\partial x}{\partial v}dv 
+\end{bmatrix} || 
+\\
+&amp;= 
+||\mathrm{det}
+\begin{bmatrix}
+\frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\
+\frac{\partial y}{\partial u} &amp; \frac{\partial x}{\partial v} 
+\end{bmatrix} || dudv
+\\
+&amp;=
+||\mathrm{det} J(u,v)||dudv
+\end{align*}\end{split}\]</div>
+<p>from <a class="reference internal" href="#equation-eq42">(42)</a>, we can easily observe that the area spanned by unit vector has expanded (shrunk) by a factor of <span class="math notranslate nohighlight">\(||\mathrm{det}J(u,v)||\)</span>.</p>
+</div>
+<div class="section" id="connections-between-liouville-equation-and-ensemble-forecasts">
+<h2>Connections between Liouville equation and ensemble forecasts<a class="headerlink" href="#connections-between-liouville-equation-and-ensemble-forecasts" title="Permalink to this headline">¶</a></h2>
+<p>OK, now we know the mathematical meaning (geometric meaning) of a Jacobian matrix and determinant. To further understand the their roles in Liouville equation, let’s first take a what Joseph Liouville found in 1838. For a dynamical system with third order differential terms</p>
+<div class="math notranslate nohighlight" id="equation-eq43">
+<span class="eqno">(43)<a class="headerlink" href="#equation-eq43" title="Permalink to this equation">¶</a></span>\[x^{'''}=\mathbf{\Phi}(t,x,x^{''},x^{'''})\]</div>
+<p>he subsequently assumed that the solution has a form of</p>
+<div class="math notranslate nohighlight" id="equation-eq44">
+<span class="eqno">(44)<a class="headerlink" href="#equation-eq44" title="Permalink to this equation">¶</a></span>\[x = x(t,a,b,c)\]</div>
+<p>where a, b and c are the initial state of this system.
+He further defined a Jacobian matrix, which maps the initial state to the final state, i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq45">
+<span class="eqno">(45)<a class="headerlink" href="#equation-eq45" title="Permalink to this equation">¶</a></span>\[x(t=n_t,...) = J(a,b,c)x(t=0,a,b,c)\]</div>
+<p>the determinant of this Jacobian matrix can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq46">
+<span class="eqno">(46)<a class="headerlink" href="#equation-eq46" title="Permalink to this equation">¶</a></span>\[\begin{split}\rho(a,b,c,t)  
+=||\mathrm{det}
+\begin{bmatrix}
+\frac{\partial x}{\partial a}      &amp; \frac{\partial x}{\partial b} &amp; \frac{\partial x}{\partial c} \\
+\frac{\partial x^{'}}{\partial a}  &amp; \frac{\partial x^{'}}{\partial b} &amp; \frac{\partial x^{'}}{\partial c} \\  
+\frac{\partial x^{''}}{\partial a} &amp; \frac{\partial x^{''}}{\partial b} &amp; \frac{\partial x^{''}}{\partial c}
+\end{bmatrix} ||\end{split}\]</div>
+<p>He then proved that</p>
+<div class="math notranslate nohighlight" id="equation-eq47">
+<span class="eqno">(47)<a class="headerlink" href="#equation-eq47" title="Permalink to this equation">¶</a></span>\[\frac{\partial \rho}{\partial t}=\rho\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#equation-eq47">(47)</a> can be proved by using the chain rule i.e.,
+<span class="math notranslate nohighlight">\(\frac{\partial x^{'''}}{\partial a}=\frac{\partial P}{\partial a} 
+= \frac{\partial P}{\partial x}\frac{\partial x}{\partial a} + \frac{\partial P}{\partial x^{''}}\frac{\partial x^{''}}{\partial a}+\frac{\partial P}{\partial x^{'''}}\frac{\partial x^{'''}}{\partial a}\)</span>  (HW)</p>
+</div>
+<p>Let’s take a look what <a class="reference internal" href="#equation-eq47">(47)</a> tells us. First, <a class="reference internal" href="#equation-eq44">(44)</a> describes how the dynamical system gonna evolve with time. If <span class="math notranslate nohighlight">\(x\)</span> represents the forecast uncertainty or forecast error (i.e., the distance between any given ensemble member to the ensemble mean), then <a class="reference internal" href="#equation-eq44">(44)</a> is a “prognostic equation of model uncertainty”. Second, the determinant tells us the how the volume spanned by eigen basis changes after the linear transformation. Physically, the volume spanned by different ensemble members is so-called ensemble spread. Thus, <a class="reference internal" href="#equation-eq47">(47)</a> is a “prognostic equation for ensemble spread” (i.e., forecast the entire PDF). In addition, it also tells us the time tendency of ensemble spread is only related to the highest-order differentiation i.e., <span class="math notranslate nohighlight">\(\frac{\partial }{\partial x^{'''}}\)</span>.</p>
+<p><a class="reference internal" href="#equation-eq47">(47)</a> also has some very interesting applications in the information theory. If we rewrite <a class="reference internal" href="#equation-eq47">(47)</a> by dividing both side with <span class="math notranslate nohighlight">\(\rho\)</span>, we can have</p>
+<div class="math notranslate nohighlight" id="equation-eq48">
+<span class="eqno">(48)<a class="headerlink" href="#equation-eq48" title="Permalink to this equation">¶</a></span>\[\frac{\partial \mathrm{ln}\rho}{\partial t}=\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\]</div>
+<p>we further integrate both sides over the entire phase space. Note that <span class="math notranslate nohighlight">\(\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\)</span> is a potential function suggesting its integration over the whole domain will be 0. Thus, <a class="reference internal" href="#equation-eq48">(48)</a> is also equivalent to</p>
+<div class="math notranslate nohighlight" id="equation-eq49">
+<span class="eqno">(49)<a class="headerlink" href="#equation-eq49" title="Permalink to this equation">¶</a></span>\[\int\frac{\partial \mathrm{ln}\rho}{\partial t}dx^{''}=\int\frac{\partial \mathbf{\Phi}}{\partial x^{''}} dx^{''}=0\]</div>
+<p>One can find that the integration of right-hand-side of <a class="reference internal" href="#equation-eq49">(49)</a> is always 0, which also gives us <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t} \int\mathrm{ln}\rho dx^{''}\)</span> (by swapping the linear operator). This is so-called the “conservation of information”. In <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)#Definition">information theory</a>, the definition of “information” is very similar to the left-hand-side of <a class="reference internal" href="#equation-eq49">(49)</a>, where the information provided by <span class="math notranslate nohighlight">\(i\)</span>th element is <span class="math notranslate nohighlight">\(\mathrm{ln}\rho(x_{i})\)</span>.</p>
+<p>Now, we can imagine how powerful <a class="reference internal" href="#equation-eq47">(47)</a> is since it forecasts} the entire probability density. Different from the traditional method, which estimates the ensemble spread by generating tens of hundreds of ensemble simulations, the Liouville equation is a more powerful tool. However, there is no free meal. Implementing Liouville equation in real operational forecast is extremely challenging since we need to find the analytical solution of a dynamical system first (i.e., <a class="reference internal" href="#equation-eq44">(44)</a>) and then calculate its derivative over all possible dimensions (i.e., the right-hand-side of <a class="reference internal" href="#equation-eq47">(47)</a>). This is only possible when the dynamical system is simple enough.</p>
+<p>Next week, we will walk through a few cases where we can analytical implement the Liouville equation in the forecast of the PDF.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Nobel prize winner, Roger Penrose (Penrose (1989)), who is also Stephan Hawkins’ Ph.D., committee, referred to Liouville equation as a very beautiful formula since it describes that the volume of any region of phase spaces must remain the same. Penrose also proposed that a black hole can destroy information (i.e., <span class="math notranslate nohighlight">\(\rho\)</span> in <a class="reference internal" href="#equation-eq47">(47)</a> is not conserved) and thus the statistical mechanics might break down at the space-time singularity.</p>
+<p>In addition to his achievement in theoretical physics, Penrose is also an artist who is famous for his 3D Penrose tiling. An award-winning app (mobile game), <a class="reference external" href="https://en.wikipedia.org/wiki/Monument_Valley_(video_game)">monument valley</a> is inspired by his arts. NYC has a National Mathematics Museum where you can find some of Penrose’s work.</p>
+</div>
+<div class="figure align-default" id="fig12">
+<img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/RogerPenroseTileTAMU2010.jpg/220px-RogerPenroseTileTAMU2010.jpg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/RogerPenroseTileTAMU2010.jpg/220px-RogerPenroseTileTAMU2010.jpg" />
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Roger Penrose and Penrose tiling</span><a class="headerlink" href="#fig12" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id1"></span></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../week4/week4.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../week6/week6.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 6: The connection between statistical mechanics and ensemble forecast I: Applications</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kai-Chih Tseng<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

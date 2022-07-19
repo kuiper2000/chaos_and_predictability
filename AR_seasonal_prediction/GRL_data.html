@@ -1,0 +1,900 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRL2021 &#8212; Chaos and Predictability</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Chaos and Predictability</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Syllabus
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/week1.html">
+   Week 1: Predictability of Weather and Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week2/week2.html">
+   Week 2: Predictability source in atmosphere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week3/week3.html">
+   Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week5/week5.html">
+   Week 5: The connection between statistical mechanics and ensemble forecast I: Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week6/week6.html">
+   Week 6: The connection between statistical mechanics and ensemble forecast I: Applications
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/AR_seasonal_prediction/GRL_data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2FAR_seasonal_prediction/GRL_data.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/kuiper2000/chaos_and_predictability/master?urlpath=tree/docs/AR_seasonal_prediction/GRL_data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-setup-environment">
+   Step 1: Setup environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-retrieve-data-from-github">
+   Step 2: retrieve data from Github
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-data-visualization">
+   Step 3: Data Visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-content-for-visualization">
+   Additional Content for visualization
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>GRL2021</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-setup-environment">
+   Step 1: Setup environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-retrieve-data-from-github">
+   Step 2: retrieve data from Github
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-data-visualization">
+   Step 3: Data Visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-content-for-visualization">
+   Additional Content for visualization
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="grl2021">
+<h1><strong>GRL2021</strong><a class="headerlink" href="#grl2021" title="Permalink to this headline">¶</a></h1>
+<p>This script is an example file showing how to import atmospheric river data (semi-raw) from Github used in the paper: ***Are multiseasonal forecasts of atmospheric rivers possible? ***. One should notice that due to the storage limitation of Github and policy of GFDL, all files are saved with a post-process form (i.e., AR). If you are interested in the raw data for detecting ARs (e.g., u, v and q), please contact corresponding author <strong>Kai-Chih Tseng</strong>: <a class="reference external" href="mailto:kaichiht&#37;&#52;&#48;princeton&#46;edu">kaichiht<span>&#64;</span>princeton<span>&#46;</span>edu</a></p>
+<p>Code instruction:</p>
+<ol class="simple">
+<li><p>Please copy this file to your googledrive (or local machine) before using it</p></li>
+<li><p>ram for analyzing this data can’t be less than 25GB</p></li>
+</ol>
+<div class="section" id="step-1-setup-environment">
+<h2>Step 1: Setup environment<a class="headerlink" href="#step-1-setup-environment" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># environment setup</span>
+<span class="o">!</span>pip install netcdf4
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">netCDF4</span> <span class="kn">import</span> <span class="n">Dataset</span> <span class="k">as</span> <span class="n">NetCDFFile</span>
+<span class="kn">import</span> <span class="nn">random</span> 
+<span class="kn">import</span> <span class="nn">timeit</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="o">!</span>pip install wget
+<span class="kn">import</span> <span class="nn">wget</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: netcdf4 in /Users/ktseng/anaconda3/lib/python3.6/site-packages
+Requirement already satisfied: numpy&gt;=1.7 in /Users/ktseng/anaconda3/lib/python3.6/site-packages (from netcdf4)
+Requirement already satisfied: cftime in /Users/ktseng/anaconda3/lib/python3.6/site-packages (from netcdf4)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">You are using pip version 9.0.1, however version 22.1.2 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;pip install --upgrade pip&#39; command.</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wget in /Users/ktseng/anaconda3/lib/python3.6/site-packages
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">You are using pip version 9.0.1, however version 22.1.2 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;pip install --upgrade pip&#39; command.</span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;pip install wget&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="kn">import</span> <span class="nn">wget</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;wget&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-2-retrieve-data-from-github">
+<h2>Step 2: retrieve data from Github<a class="headerlink" href="#step-2-retrieve-data-from-github" title="Permalink to this headline">¶</a></h2>
+<p>after executing the following 2 cells, you should have four variables</p>
+<p>(1) “AR_anomaly_model” (unit=day/day) from SPEAR with dimension</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>season = Jan, Apr, Jul, Oct</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>ens    = 15 ensemble members</p></li>
+<li><p>initial year  = 1995-2017</p></li>
+<li><p>forecast time = 0-11 months</p></li>
+<li><p>lat           = 20.25N-89.25N (0.5 degree)</p></li>
+<li><p>lon           = 100E-60W   (0.625 degree)</p></li>
+</ul>
+<p>(2) “AR_anomaly_obs” (unit=day/day) from ERA5 with dimension</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>time  = Jan 1995 - Dec 2017 (monthly)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>lat           = 20.25N-89.25N (0.5 degree)</p></li>
+<li><p>lon           = 100E-60W   (0.625 degree)</p></li>
+</ul>
+<p>(3) “sst_anomaly_model” (unit=K) from SPEAR with dimension</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>season = Jan, Apr, Jul, Oct</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>ens    = 15 ensemble members</p></li>
+<li><p>initial year  = 1995-2017</p></li>
+<li><p>forecast time = 0-11 months</p></li>
+<li><p>lat           = 79.75S-79.75N  (0.5 degree)</p></li>
+<li><p>lon           = 0E -2.5W   (0.625 degree)</p></li>
+</ul>
+<p>(4) “sst_anomaly_obs” (unit=K) from ERA5 with dimension</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>time  = Jan 1995 - Dec 2017  (monthly)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>lat           = 79.75S-79.75N  (0.5 degree)</p></li>
+<li><p>lon           = 0E -2.5W   (0.625 degree)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># clear current folder</span>
+<span class="kn">import</span> <span class="nn">glob</span><span class="o">,</span> <span class="nn">os</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.npz&quot;</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="s1">&#39;AR_anomaly_model&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+    <span class="k">del</span> <span class="n">AR_anomaly_model</span>
+<span class="k">if</span> <span class="s1">&#39;AR_anomaly_obs&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+    <span class="k">del</span> <span class="n">AR_anomaly_obs</span>
+<span class="k">if</span> <span class="s1">&#39;sst_anomaly_model&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+    <span class="k">del</span> <span class="n">sst_anomaly_model</span>
+<span class="k">if</span> <span class="s1">&#39;sst_anomaly_obs&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+    <span class="k">del</span> <span class="n">sst_anomaly_obs</span>
+
+
+<span class="n">pcs</span>        <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1000</span><span class="p">,</span><span class="mi">16560</span><span class="p">))</span>
+<span class="n">EOF</span>        <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1000</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">319</span><span class="p">))</span>
+
+<span class="c1"># downloading data from Github</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/model_EOF&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.npz&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">filename</span>         <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">data</span>             <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/model_EOF&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.npz&#39;</span><span class="p">)</span>
+    <span class="n">EOF</span><span class="p">[</span><span class="mi">250</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span><span class="mi">250</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">250</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;EOF&#39;</span><span class="p">]</span>
+<span class="n">EOF</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">EOF</span><span class="p">,[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">139</span><span class="o">*</span><span class="mi">319</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/model_pcs&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.npz&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">filename</span>         <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">data</span>             <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/model_pcs&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.npz&#39;</span><span class="p">)</span>
+    <span class="n">pcs</span><span class="p">[</span><span class="mi">500</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span><span class="mi">500</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">500</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;pcs_ar&#39;</span><span class="p">]</span>
+
+<span class="n">AR_anomaly_model</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">pcs</span><span class="p">),</span><span class="n">EOF</span><span class="p">)</span>
+<span class="n">AR_anomaly_model</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">AR_anomaly_model</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">319</span><span class="p">])</span>
+
+
+<span class="n">url</span>             <span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/obs.npz&#39;</span>
+<span class="n">filename</span>        <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span>            <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/obs.npz&#39;</span><span class="p">)</span>
+<span class="n">pcs_obs_ar</span>      <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;pcs_obs_ar&#39;</span><span class="p">]</span>
+<span class="n">EOF</span>             <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;EOF&#39;</span><span class="p">]</span>
+<span class="n">EOF</span>             <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">EOF</span><span class="p">,[</span><span class="mi">276</span><span class="p">,</span><span class="mi">139</span><span class="o">*</span><span class="mi">319</span><span class="p">])</span>
+<span class="n">AR_anomaly_obs</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">pcs_obs_ar</span><span class="p">),</span><span class="n">EOF</span><span class="p">)</span>
+<span class="n">AR_anomaly_obs</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">AR_anomaly_obs</span><span class="p">,[</span><span class="mi">276</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">319</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/model_EOF1.npz
+https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/model_EOF2.npz
+https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/model_EOF3.npz
+https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/model_EOF4.npz
+https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/model_pcs1.npz
+https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/model_pcs2.npz
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">AR_anomaly_obs</span>
+<span class="n">url</span>             <span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/obs_sst.npz&#39;</span>
+<span class="n">filename</span>        <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span>            <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/obs_sst.npz&#39;</span><span class="p">)</span>
+<span class="n">pcs_obs_sst</span>     <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;pcs_obs_sst&#39;</span><span class="p">]</span>
+<span class="n">EOF</span>             <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;EOF&#39;</span><span class="p">][:,</span><span class="mi">20</span><span class="p">:</span><span class="mi">340</span><span class="p">,:]</span>
+<span class="n">EOF</span>             <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">EOF</span><span class="p">,[</span><span class="mi">20</span><span class="p">,</span><span class="mi">320</span><span class="o">*</span><span class="mi">574</span><span class="p">])</span>
+<span class="n">sst_anomaly_obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">pcs_obs_sst</span><span class="p">),</span><span class="n">EOF</span><span class="p">)</span>
+<span class="n">sst_anomaly_obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">sst_anomaly_obs</span><span class="p">,[</span><span class="mi">276</span><span class="p">,</span><span class="mi">320</span><span class="p">,</span><span class="mi">574</span><span class="p">])</span>
+
+<span class="n">url</span>             <span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/model_pcs_sst.npz&#39;</span>
+<span class="n">filename</span>        <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span>            <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/model_pcs_sst.npz&#39;</span><span class="p">)</span>
+<span class="n">pcs_sst</span>         <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;pcs_sst&#39;</span><span class="p">]</span>
+
+<span class="n">url</span>             <span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/model_EOF_sst.npz&#39;</span>
+<span class="n">filename</span>        <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span>            <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/model_EOF_sst.npz&#39;</span><span class="p">)</span>
+<span class="n">EOF</span>             <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;EOF&#39;</span><span class="p">][:,</span><span class="mi">20</span><span class="p">:</span><span class="mi">340</span><span class="p">,:]</span>
+<span class="n">EOF</span>             <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">EOF</span><span class="p">,[</span><span class="mi">20</span><span class="p">,</span><span class="mi">320</span><span class="o">*</span><span class="mi">574</span><span class="p">])</span>
+<span class="n">sst_anomaly_model</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">pcs_sst</span><span class="p">),</span><span class="n">EOF</span><span class="p">)</span>
+<span class="n">sst_anomaly_model</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">sst_anomaly_model</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">320</span><span class="p">,</span><span class="mi">574</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20, 359, 574)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-3-data-visualization">
+<h2>Step 3: Data Visualization<a class="headerlink" href="#step-3-data-visualization" title="Permalink to this headline">¶</a></h2>
+<p>The example here shows the ensemble mean of AR frequency for the forecast made in Jan 1995 with target month: Jan 1995.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualize the model AR anomaly</span>
+<span class="n">clevs</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.24</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">y</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mf">89.75</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">x</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">300</span><span class="o">-</span><span class="mf">0.625</span><span class="p">,</span><span class="mf">0.625</span><span class="p">)</span>
+<span class="n">lat</span><span class="p">,</span><span class="n">lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">AR_anomaly_model</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,:,:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="n">clevs</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;BrBG&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">120</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">210</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">270</span><span class="p">],</span> <span class="p">[],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;$20^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$40^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$60^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$80^oN$&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">120</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">210</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">270</span><span class="p">,</span><span class="mi">300</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;$120^oE$&#39;</span><span class="p">,</span> <span class="s1">&#39;$150^oE$&#39;</span><span class="p">,</span> <span class="s1">&#39;$180^oE$&#39;</span><span class="p">,</span> <span class="s1">&#39;$150^oW$&#39;</span><span class="p">,</span> <span class="s1">&#39;$120^oW$&#39;</span><span class="p">,</span><span class="s1">&#39;$90^oW$&#39;</span><span class="p">,</span><span class="s1">&#39;$60^oW$&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># visualize the EAR5 AR anomaly    </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([&lt;matplotlib.axis.XTick at 0x7f163b41a240&gt;,
+  &lt;matplotlib.axis.XTick at 0x7f163b41a438&gt;,
+  &lt;matplotlib.axis.XTick at 0x7f162bf32b38&gt;,
+  &lt;matplotlib.axis.XTick at 0x7f1625cc2470&gt;,
+  &lt;matplotlib.axis.XTick at 0x7f1625cc2908&gt;,
+  &lt;matplotlib.axis.XTick at 0x7f1625cc2da0&gt;,
+  &lt;matplotlib.axis.XTick at 0x7f16275ef828&gt;],
+ [Text(0, 0, &#39;$120^oE$&#39;),
+  Text(0, 0, &#39;$150^oE$&#39;),
+  Text(0, 0, &#39;$180^oE$&#39;),
+  Text(0, 0, &#39;$150^oW$&#39;),
+  Text(0, 0, &#39;$120^oW$&#39;),
+  Text(0, 0, &#39;$90^oW$&#39;),
+  Text(0, 0, &#39;$60^oW$&#39;)])
+</pre></div>
+</div>
+<img alt="../_images/GRL_data_8_1.png" src="../_images/GRL_data_8_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="additional-content-for-visualization">
+<h2>Additional Content for visualization<a class="headerlink" href="#additional-content-for-visualization" title="Permalink to this headline">¶</a></h2>
+<p>Previously codes shows how load the (semi-raw) data used in the main text.
+For convience, we also organize the data that has been directly used in the figures. This part of code is for visualization purpose.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load file for FIG1</span>
+<span class="n">url</span>             <span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/FIG1.npz&#39;</span>
+<span class="n">filename</span>        <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span>            <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/FIG1.npz&#39;</span><span class="p">)</span>
+<span class="n">Jan_obs_clim</span>    <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Jan_obs_clim&#39;</span><span class="p">]</span>
+<span class="n">Apr_obs_clim</span>    <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Apr_obs_clim&#39;</span><span class="p">]</span>
+<span class="n">Jul_obs_clim</span>    <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Jul_obs_clim&#39;</span><span class="p">]</span>
+<span class="n">Oct_obs_clim</span>    <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Oct_obs_clim&#39;</span><span class="p">]</span>
+<span class="n">Jan_clim</span>        <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Jan_clim&#39;</span><span class="p">]</span>
+<span class="n">Apr_clim</span>        <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Apr_clim&#39;</span><span class="p">]</span>
+<span class="n">Jul_clim</span>        <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Jul_clim&#39;</span><span class="p">]</span>
+<span class="n">Oct_clim</span>        <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Oct_clim&#39;</span><span class="p">]</span>
+<span class="n">xx</span>              <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;xx&#39;</span><span class="p">]</span>
+<span class="n">yy</span>              <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;yy&#39;</span><span class="p">]</span>
+
+
+<span class="c1"># for map plotting </span>
+<span class="n">url</span>             <span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/lat.bin&#39;</span>
+<span class="n">filename</span>        <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">f</span>               <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/content/lat.bin&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">costal_lat</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">url</span>             <span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/lon.bin&#39;</span>
+<span class="n">filename</span>        <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">f</span>               <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/content/lon.bin&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">costal_lon</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>  
+
+
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">clevs</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.24</span><span class="p">,</span><span class="mf">0.04</span><span class="p">)</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">Jan_clim</span><span class="p">,</span><span class="n">clevs</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span><span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">costal_lon</span><span class="p">,</span><span class="n">costal_lat</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">Jan_obs_clim</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.04</span><span class="p">,</span><span class="mf">0.08</span><span class="p">,</span><span class="mf">0.12</span><span class="p">,</span><span class="mf">0.16</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.24</span><span class="p">,</span><span class="mf">0.28</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">330</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">120</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">210</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">270</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">330</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;$120^oE$&#39;</span><span class="p">,</span> <span class="s1">&#39;$150^oE$&#39;</span><span class="p">,</span> <span class="s1">&#39;$180^oE$&#39;</span><span class="p">,</span> <span class="s1">&#39;$150^oW$&#39;</span><span class="p">,</span> <span class="s1">&#39;$120^oW$&#39;</span><span class="p">,</span><span class="s1">&#39;$90^oW$&#39;</span><span class="p">,</span><span class="s1">&#39;$60^oW$&#39;</span><span class="p">,</span><span class="s1">&#39;$30^oW$&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;$20^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$40^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$60^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$80^oN$&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;(a) January Initialization (target month=Jan-Mar)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">15.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">)</span>
+<span class="n">cbar_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">])</span>   
+<span class="c1">#cbar = fig.colorbar(cs, cax=cbar_ax, orientation=&#39;horizontal&#39;)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cbar_ax</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">],</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;0%&#39;</span><span class="p">,</span> <span class="s1">&#39;4%&#39;</span><span class="p">,</span> <span class="s1">&#39;8%&#39;</span><span class="p">,</span><span class="s1">&#39;12%&#39;</span><span class="p">,</span><span class="s1">&#39;16%&#39;</span><span class="p">,</span><span class="s1">&#39;20%&#39;</span><span class="p">])</span>  <span class="c1"># horizontal colorbar</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;(AR day)/day&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>  <span class="c1"># horizontal colorbar</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;(AR day)/day&#39;)
+</pre></div>
+</div>
+<img alt="../_images/GRL_data_10_1.png" src="../_images/GRL_data_10_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#load file for Figure 2</span>
+<span class="n">url</span>             <span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/FIG2.npz&#39;</span>
+<span class="n">filename</span>        <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span>            <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/FIG2.npz&#39;</span><span class="p">)</span>
+<span class="n">Jan_skill</span>       <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Jan_skill&#39;</span><span class="p">]</span>
+<span class="n">Apr_skill</span>       <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Apr_skill&#39;</span><span class="p">]</span>
+<span class="n">Jul_skill</span>       <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Jul_skill&#39;</span><span class="p">]</span>
+<span class="n">Oct_skill</span>       <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Oct_skill&#39;</span><span class="p">]</span>
+
+<span class="n">x_axis</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>        
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">lower_bound</span> <span class="o">=</span> <span class="n">Jan_skill</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">Jan_skill</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">upper_bound</span> <span class="o">=</span> <span class="n">Jan_skill</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">Jan_skill</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x_axis</span><span class="p">,</span> <span class="n">Jan_skill</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">14</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">yerr</span><span class="o">=</span><span class="p">[</span><span class="n">lower_bound</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">],</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;--o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_axis</span><span class="p">,</span><span class="n">Jan_skill</span><span class="p">[:,</span><span class="mi">15</span><span class="p">],</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Ensemble mean&#39;</span><span class="p">,</span><span class="s1">&#39;mean skills of each member&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_axis</span><span class="p">,</span><span class="n">x_axis</span><span class="o">*</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Jan-Mar&#39;</span><span class="p">,</span><span class="s1">&#39;Mar-May&#39;</span><span class="p">,</span><span class="s1">&#39;May-Jul&#39;</span><span class="p">,</span><span class="s1">&#39;Jul-Sep&#39;</span><span class="p">,</span><span class="s1">&#39;Sep-Nov&#39;</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>    
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;pattern correlation&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;(a) Jan Initialization&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;(a) Jan Initialization&#39;)
+</pre></div>
+</div>
+<img alt="../_images/GRL_data_11_1.png" src="../_images/GRL_data_11_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#load file for Figure 3</span>
+<span class="n">url</span>             <span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/FIG3.npz&#39;</span>
+<span class="n">filename</span>        <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span>            <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/FIG3.npz&#39;</span><span class="p">)</span>
+<span class="n">Jan_map</span>         <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Jan_map&#39;</span><span class="p">]</span>
+<span class="n">Apr_map</span>         <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Apr_map&#39;</span><span class="p">]</span>
+<span class="n">Jul_map</span>         <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Jul_map&#39;</span><span class="p">]</span>
+<span class="n">Oct_map</span>         <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Oct_map&#39;</span><span class="p">]</span>
+<span class="n">ACC</span>             <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;ACC&#39;</span><span class="p">]</span>
+<span class="n">my_map</span>          <span class="o">=</span> <span class="s1">&#39;afmhot_r&#39;</span>
+
+<span class="n">clevs</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">Jan_map</span><span class="p">,</span><span class="n">clevs</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">my_map</span><span class="p">,</span><span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">costal_lon</span><span class="p">,</span><span class="n">costal_lat</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">330</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">120</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">210</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">270</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">330</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;$20^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$40^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$60^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$80^oN$&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;(a) Jan initialization (target month=Jan-Mar)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">15.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">)</span>
+
+<span class="n">title_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;(e) Alaska&#39;</span><span class="p">,</span><span class="s1">&#39;(f) British Columbia&#39;</span><span class="p">,</span><span class="s1">&#39;(g) Washington/Oregon&#39;</span><span class="p">,</span><span class="s1">&#39;(h) California&#39;</span><span class="p">]</span>
+<span class="n">fig</span>        <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">grid</span>       <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">score</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="o">+</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">score</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="n">ACC</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">,:]</span>
+    <span class="n">score</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">score</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span>
+    <span class="n">score</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="n">score</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">pcolor</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">my_map</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">score</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">23</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">score</span><span class="o">*</span><span class="n">score</span><span class="p">)</span>
+    <span class="n">x_location</span><span class="p">,</span><span class="n">y_location</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="mf">2.07</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_location</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="n">x_location</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+    <span class="c1">#plt.colorbar(cs)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Oct&#39;</span><span class="p">,</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span><span class="s1">&#39;Apr&#39;</span><span class="p">,</span><span class="s1">&#39;Jul&#39;</span><span class="p">,</span><span class="s1">&#39;Oct&#39;</span><span class="p">,</span><span class="s1">&#39;Jan&#39;</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="s1">&#39;0-2&#39;</span><span class="p">,</span><span class="s1">&#39;1-3&#39;</span><span class="p">,</span><span class="s1">&#39;2-4&#39;</span><span class="p">,</span><span class="s1">&#39;3-5&#39;</span><span class="p">,</span><span class="s1">&#39;4-6&#39;</span><span class="p">,</span><span class="s1">&#39;5-7&#39;</span><span class="p">,</span><span class="s1">&#39;6-8&#39;</span><span class="p">,</span><span class="s1">&#39;7-9&#39;</span><span class="p">,</span><span class="s1">&#39;8-10&#39;</span><span class="p">,</span><span class="s1">&#39;9-11&#39;</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title_list</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Forecast Lead (months)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="o">+</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">score</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="n">ACC</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">,:]</span>
+    <span class="n">score</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">score</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span>
+    <span class="n">score</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="n">score</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">pcolor</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">my_map</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">score</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">23</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">score</span><span class="o">*</span><span class="n">score</span><span class="p">)</span>
+    <span class="n">x_location</span><span class="p">,</span><span class="n">y_location</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="mf">2.07</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_location</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="n">x_location</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+    <span class="c1">#plt.colorbar(cs)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Oct&#39;</span><span class="p">,</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span><span class="s1">&#39;Apr&#39;</span><span class="p">,</span><span class="s1">&#39;Jul&#39;</span><span class="p">,</span><span class="s1">&#39;Oct&#39;</span><span class="p">,</span><span class="s1">&#39;Jan&#39;</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="s1">&#39;0-2&#39;</span><span class="p">,</span><span class="s1">&#39;1-3&#39;</span><span class="p">,</span><span class="s1">&#39;2-4&#39;</span><span class="p">,</span><span class="s1">&#39;3-5&#39;</span><span class="p">,</span><span class="s1">&#39;4-6&#39;</span><span class="p">,</span><span class="s1">&#39;5-7&#39;</span><span class="p">,</span><span class="s1">&#39;6-8&#39;</span><span class="p">,</span><span class="s1">&#39;7-9&#39;</span><span class="p">,</span><span class="s1">&#39;8-10&#39;</span><span class="p">,</span><span class="s1">&#39;9-11&#39;</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title_list</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Forecast Lead (months)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">10.5</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/GRL_data_12_0.png" src="../_images/GRL_data_12_0.png" />
+<img alt="../_images/GRL_data_12_1.png" src="../_images/GRL_data_12_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#load file for Figure 4</span>
+<span class="n">url</span>             <span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/FIG4.npz&#39;</span>
+<span class="n">filename</span>        <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span>            <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/FIG4.npz&#39;</span><span class="p">)</span>
+<span class="n">SST1_obs</span>        <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;SST1_obs&#39;</span><span class="p">]</span>    <span class="c1"># lag 0-2</span>
+<span class="n">SST1_model</span>      <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;SST1_model&#39;</span><span class="p">]</span>  <span class="c1"># lag 0-2</span>
+<span class="n">SST2_obs</span>        <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;SST2_obs&#39;</span><span class="p">]</span>    <span class="c1"># lag 3-5</span>
+<span class="n">SST2_model</span>      <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;SST2_model&#39;</span><span class="p">]</span>  <span class="c1"># lag 3-5</span>
+<span class="n">SST3_obs</span>        <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;SST3_obs&#39;</span><span class="p">]</span>    <span class="c1"># lag 6-8</span>
+<span class="n">SST3_model</span>      <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;SST3_model&#39;</span><span class="p">]</span>  <span class="c1"># lag 6-8</span>
+<span class="n">EOF_obs_ar</span>      <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;EOF_obs_ar&#39;</span><span class="p">]</span>  <span class="c1"># lag 0</span>
+<span class="n">EOF_ar</span>          <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;EOF_ar&#39;</span><span class="p">]</span>      <span class="c1"># lag 0</span>
+<span class="n">u_composite</span>     <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;u_composite&#39;</span><span class="p">]</span>
+<span class="n">v_composite</span>     <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;v_composite&#39;</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">clevs2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.06</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>    
+<span class="n">cs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">EOF_obs_ar</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:],</span><span class="n">clevs2</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;BrBG&#39;</span><span class="p">,</span><span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">costal_lon</span><span class="p">,</span><span class="n">costal_lat</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">15.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">120</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">210</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">270</span><span class="p">],</span> <span class="p">[],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;$20^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$40^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$60^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$80^oN$&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">120</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">210</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">270</span><span class="p">,</span><span class="mi">300</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;$120^oE$&#39;</span><span class="p">,</span> <span class="s1">&#39;$150^oE$&#39;</span><span class="p">,</span> <span class="s1">&#39;$180^oE$&#39;</span><span class="p">,</span> <span class="s1">&#39;$150^oW$&#39;</span><span class="p">,</span> <span class="s1">&#39;$120^oW$&#39;</span><span class="p">,</span><span class="s1">&#39;$90^oW$&#39;</span><span class="p">,</span><span class="s1">&#39;$60^oW$&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+
+<span class="n">clevs</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.31</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">SST1_obs</span><span class="p">,</span><span class="n">clevs</span><span class="p">,</span><span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">costal_lon</span><span class="p">,</span><span class="n">costal_lat</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">360</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;$80^oS$&#39;</span><span class="p">,</span> <span class="s1">&#39;$60^oS$&#39;</span><span class="p">,</span> <span class="s1">&#39;$40^oS$&#39;</span><span class="p">,</span> <span class="s1">&#39;$20^oS$&#39;</span><span class="p">,</span> <span class="s1">&#39;$Eq$&#39;</span><span class="p">,</span> <span class="s1">&#39;$20^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$40^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$60^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$80^oN$&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;ERA5 SST</span><span class="se">\n</span><span class="s1"> (c) Lag=0 to -2&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">360</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">15.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/GRL_data_13_0.png" src="../_images/GRL_data_13_0.png" />
+<img alt="../_images/GRL_data_13_1.png" src="../_images/GRL_data_13_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># FIG5</span>
+<span class="n">url</span>             <span class="o">=</span><span class="s1">&#39;https://github.com/kuiper2000/kuiper2000.github.io/raw/master/publication/AR_seasonal_prediction/FIG5.npz&#39;</span>
+<span class="n">filename</span>        <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span>            <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/FIG5.npz&#39;</span><span class="p">)</span>
+<span class="n">above_before_calibration</span>    <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;above_before&#39;</span><span class="p">]</span>    
+<span class="n">near_before_calibration</span>     <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;near_before&#39;</span><span class="p">]</span>  
+<span class="n">below_before_calibration</span>    <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;below_before&#39;</span><span class="p">]</span>  
+<span class="n">above_after_calibration</span>     <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;above_after&#39;</span><span class="p">]</span>  
+<span class="n">near_after_calibration</span>      <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;near_after&#39;</span><span class="p">]</span>  
+<span class="n">below_after_calibration</span>     <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;below_after&#39;</span><span class="p">]</span> 
+
+<span class="n">above_map</span>                   <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;above_map&#39;</span><span class="p">]</span>  
+<span class="n">below_map</span>                   <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;below_map&#39;</span><span class="p">]</span> 
+
+<span class="n">grid</span>   <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&lt;5%&#39;</span><span class="p">,</span><span class="s1">&#39;5</span><span class="si">%-15%</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;15</span><span class="si">%-25%</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;25</span><span class="si">%-35%</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;35</span><span class="si">%-45%</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;45</span><span class="si">%-55%</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;55</span><span class="si">%-65%</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;65</span><span class="si">%-75%</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;75</span><span class="si">%-85%</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;85</span><span class="si">%-95%</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&gt;95%&#39;</span><span class="p">]</span>
+<span class="n">x2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">above_before_calibration</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">near_before_calibration</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">below_before_calibration</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Above Normal&#39;</span><span class="p">,</span><span class="s1">&#39;Near Normal&#39;</span><span class="p">,</span><span class="s1">&#39;Below Normal&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Observed Frequency&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Forecast Probability&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">x2</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;(a) Before Calibration&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">x2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">above_after_calibration</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">near_after_calibration</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">below_after_calibration</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Above Normal&#39;</span><span class="p">,</span><span class="s1">&#39;Near Normal&#39;</span><span class="p">,</span><span class="s1">&#39;Below Normal&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Forecast Probability&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">x2</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">15.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;(b) After Calibration&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">clevs</span><span class="o">=</span><span class="p">[</span><span class="mf">0.33</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.9</span><span class="p">]</span>
+<span class="n">above_map</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">above_map</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0.33</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">cs1</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">above_map</span><span class="p">,</span><span class="n">clevs</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greens&#39;</span><span class="p">)</span>
+
+<span class="n">clevs</span><span class="o">=</span><span class="p">[</span><span class="mf">0.33</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.9</span><span class="p">]</span>
+<span class="n">below_map</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">below_map</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0.33</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">cs2</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">below_map</span><span class="p">,</span><span class="n">clevs</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;YlOrBr&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;(c) Probabilistic Forecast of AR (target season:Jan-Mar 1995)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">costal_lon</span><span class="p">,</span><span class="n">costal_lat</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;$80^oS$&#39;</span><span class="p">,</span> <span class="s1">&#39;$60^oS$&#39;</span><span class="p">,</span> <span class="s1">&#39;$40^oS$&#39;</span><span class="p">,</span> <span class="s1">&#39;$20^oS$&#39;</span><span class="p">,</span> <span class="s1">&#39;$Eq$&#39;</span><span class="p">,</span> <span class="s1">&#39;$20^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$40^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$60^oN$&#39;</span><span class="p">,</span> <span class="s1">&#39;$80^oN$&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">360</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;$0^oE$&#39;</span><span class="p">,</span> <span class="s1">&#39;$60^oE$&#39;</span><span class="p">,</span><span class="s1">&#39;$120^oE$&#39;</span><span class="p">,</span> <span class="s1">&#39;$180^oE$&#39;</span><span class="p">,</span> <span class="s1">&#39;$120^oW$&#39;</span><span class="p">,</span> <span class="s1">&#39;$60^oW$&#39;</span><span class="p">,</span> <span class="s1">&#39;$0^oW$&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">360</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">10.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">)</span>
+
+<span class="n">cbar_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">])</span>
+<span class="n">clevs</span><span class="o">=</span><span class="p">[</span><span class="mf">0.33</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.9</span><span class="p">]</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs2</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cbar_ax</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="n">clevs</span><span class="p">,</span><span class="n">boundaries</span><span class="o">=</span><span class="n">clevs</span><span class="p">,</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;33%&#39;</span><span class="p">,</span><span class="s1">&#39;50%&#39;</span><span class="p">,</span><span class="s1">&#39;70%&#39;</span><span class="p">,</span><span class="s1">&#39;90%&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>  <span class="c1"># horizontal colorbar</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Less AR activity&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>  <span class="c1"># horizontal colorbar</span>
+
+
+<span class="n">cbar_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">])</span>
+<span class="n">clevs</span><span class="o">=</span><span class="p">[</span><span class="mf">0.33</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.9</span><span class="p">]</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs1</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cbar_ax</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="n">clevs</span><span class="p">,</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;33%&#39;</span><span class="p">,</span><span class="s1">&#39;50%&#39;</span><span class="p">,</span><span class="s1">&#39;70%&#39;</span><span class="p">,</span><span class="s1">&#39;90%&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>  <span class="c1"># horizontal colorbar</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;More AR activity&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>              <span class="c1"># horizontal colorbar</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">15.5</span><span class="p">,</span> <span class="mf">15.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/GRL_data_14_0.png" src="../_images/GRL_data_14_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./AR_seasonal_prediction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kai-Chih Tseng<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

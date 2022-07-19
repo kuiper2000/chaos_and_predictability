@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96 &#8212; Chaos and Predictability</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Chaos and Predictability</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Syllabus
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week1/week1.html">
+   Week 1: Predictability of Weather and Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week2/week2.html">
+   Week 2: Predictability source in atmosphere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week3/week3.html">
+   Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week5/week5.html">
+   Week 5: The connection between statistical mechanics and ensemble forecast I: Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week6/week6.html">
+   Week 6: The connection between statistical mechanics and ensemble forecast I: Applications
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chaos_and_predictability/week4/week4.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2Fchaos_and_predictability/week4/week4.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-physical-and-mathematical-background">
+   The physical and mathematical background
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-scale">
+   Single scale
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multi-scale-interactions">
+   Multi-scale interactions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-early-and-late-stages-of-error-growth-in-a-multi-scale-flow">
+   The early and late stages of error growth in a multi-scale flow.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-physical-and-mathematical-background">
+   The physical and mathematical background
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-scale">
+   Single scale
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multi-scale-interactions">
+   Multi-scale interactions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-early-and-late-stages-of-error-growth-in-a-multi-scale-flow">
+   The early and late stages of error growth in a multi-scale flow.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="week-4-the-minimalist-models-for-studying-chaos-and-predictability-ii-lorenz-96">
+<span id="week4"></span><h1>Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96<a class="headerlink" href="#week-4-the-minimalist-models-for-studying-chaos-and-predictability-ii-lorenz-96" title="Permalink to this headline">¶</a></h1>
+<p>Following previous week, this week we will walk through the Lorenz 96 model, which is another widely used toy model in data assimilation and chaos studies. It is one of the first few models mimicking the nonlinear wave propagation in a narrow latitudinal band. A fun fact about Lorenz 96 model is that it was never published in a peer-reviewed scientific journal. Instead, this model was only presented by Ed. Lorenz at a conference in 1995 and was documented by Tim Palmer in a textbook later on in 2004. The story behind the model can be found in week 3.</p>
+<div class="section" id="the-physical-and-mathematical-background">
+<h2>The physical and mathematical background<a class="headerlink" href="#the-physical-and-mathematical-background" title="Permalink to this headline">¶</a></h2>
+<p>The formula of Lorenz 96 model <a class="reference internal" href="../../week4/week4.html#equation-eq25">(25)</a> is a set of prognostic equations which predicts the evolution of <span class="math notranslate nohighlight">\(X_i\)</span>. <span class="math notranslate nohighlight">\(X_i\)</span> represents the variable of interest at the longitude of <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq25">
+<span class="eqno">()<a class="headerlink" href="#equation-eq25" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+\frac{dX_i}{dt}=-X_{i-1}X_{i-2}+X_{i-1}X_{i+1}-X_{i}+F
+\end{align*}\]</div>
+<p>One can easily find that two nonlinear terms, <span class="math notranslate nohighlight">\(-X_{i-1}X_{i-2}\)</span> and <span class="math notranslate nohighlight">\(X_{i-1}X_{i+1}\)</span> lead to the chaotic features in Lorenz 96 model while the last two terms on the right hand side are linear damping and constant forcing respectively. The first two terms represent the nonlinear advection of <span class="math notranslate nohighlight">\(X_i\)</span> from one grid to another. We can prove that the total energy is conserved when forcing <span class="math notranslate nohighlight">\(F\)</span> and damping <span class="math notranslate nohighlight">\(-X_{i}\)</span> are absent and domain is periodic (i.e., <span class="math notranslate nohighlight">\(X_{i-K}=X_{i+K}\)</span>). (HW)</p>
+<p>The figure below shows a simulation from Lorenz 96 model with <span class="math notranslate nohighlight">\(F\)</span> = 8 and <span class="math notranslate nohighlight">\(K\)</span>=100. We can clearly observe nonlinear wave propagating in both directions after the system is fully established.</p>
+<div class="figure align-default" id="fig7">
+<img alt="chaos_and_predictability/week4/LR96.png" src="chaos_and_predictability/week4/LR96.png" />
+<p class="caption"><span class="caption-text">An example of LR 96 model. The initial condition is spatially autocorrelated with <span class="math notranslate nohighlight">\(r=0.9\)</span> and <span class="math notranslate nohighlight">\(\epsilon=\mathcal{N}(\mu=0,\sigma^{2}=0.01)\)</span> (random white noise).</span><a class="headerlink" href="#fig7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="single-scale">
+<h2>Single scale<a class="headerlink" href="#single-scale" title="Permalink to this headline">¶</a></h2>
+<p>Now we can go a step further by generating large ensemble simulations (e.g., 250 different members) and see when the error across different members starts to saturate. Here we define the error as the averaged variance of simulated <span class="math notranslate nohighlight">\(X\)</span>. Here we choose <span class="math notranslate nohighlight">\(X(t=300)\)</span> in Figure 7 as the new initial state since it’s the time when the signal is fully developed. We add random white noise <span class="math notranslate nohighlight">\(\epsilon=\mathcal{N}(\mu=0,\sigma^{2}=10^{-4})\)</span> to each grid point at the initial states and re-run the model all over again.</p>
+<div class="figure align-default" id="fig8">
+<img alt="../../_images/LR96_error.png" src="../../_images/LR96_error.png" />
+<p class="caption"><span class="caption-text">The error growth of LR96 model. The error is defined as the averaged variance across all ensemble members.</span><a class="headerlink" href="#fig8" title="Permalink to this image">¶</a></p>
+</div>
+<p>From <a class="reference internal" href="../../week4/week4.html#fig8"><span class="std std-ref">FIG8</span></a>, we can find the error almost grows linearly at the very beginning and start to saturate around <span class="math notranslate nohighlight">\(t&gt;400\)</span>. A good reason for plotting model error in log scale is that the error growth at the initial stage is a function of <span class="math notranslate nohighlight">\(exp(\alpha\tau)\)</span> (where <span class="math notranslate nohighlight">\(\frac{1}{\alpha}\)</span> is characteristic timescale of error growth and the <span class="math notranslate nohighlight">\(\tau\)</span> is the time of integration). Therefore, a log-scale error is nearly linear and it’s slope is the leading Lyapunov exponent. The Lyapunov time (<span class="math notranslate nohighlight">\(\frac{1}{\alpha}\)</span>) is then defined as the error doubling time (i.e., <a class="reference internal" href="../../week4/week4.html#equation-eq26">(26)</a>)</p>
+<div class="math notranslate nohighlight" id="equation-eq26">
+<span class="eqno">()<a class="headerlink" href="#equation-eq26" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+log(\frac{E(t)}{E(0)})=log(2)=\alpha \tau
+\end{align*}\]</div>
+<p>In the case above, the error doubling time is around <span class="math notranslate nohighlight">\(t=13\)</span>, indicating that the amplitude of initial error doubles for every 13 time steps of integration. The error saturates when it is indistinguishable from the climatological variance.</p>
+<p>By perturbing the initial condition with infinitesimal error and inspecting the error growth of a given dynamical system, this is so-called perfect model experiment, which was first proposed in a conference at Boulder, Colorado, organized by World Meteorological Organization in 1966, where Jule Charney was the head committee. Since then, it has become a rule of thumb for estimating the predictability limit across different dynamical systems.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In 1966, the numerical modeling of the complete global circulation was just leaving its infancy according to Lorenz’s words. The conference held in Boulder collected the three state-of-art climate models at that time: Leith (1965), Arakawa-Mintz (1965) and Smagorinsky (1965). During the break between sessions, Charney persuaded the developers of the three forecast models to do something similar to what we showed in <a class="reference internal" href="../../week4/week4.html#fig8"><span class="std std-ref">FIG8</span></a>. At that given period, the estimated error doubling time is around 5 days. However, as time passed by and more sophisticated models were developed, the estimated Lyapunov time is getting shorter and shorter. (e.g., 3 days in Smagorinsky 1969) (Can you answer why?)</p>
+</div>
+</div>
+<div class="section" id="multi-scale-interactions">
+<h2>Multi-scale interactions<a class="headerlink" href="#multi-scale-interactions" title="Permalink to this headline">¶</a></h2>
+<p>In real atmosphere, the nonlinear interaction usually involved the energy cascade over different scales. Thus, Lorenz proposed another model, which involves the interaction between two scales.</p>
+<div class="math notranslate nohighlight" id="equation-eq27">
+<span class="eqno">()<a class="headerlink" href="#equation-eq27" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\frac{dX_i}{dt}   &amp;=-X_{i-1}X_{i-2}+X_{i-1}X_{i+1}-X_{i}-\frac{hc}{b}\sum_{j=1}^{J}Y_{j,i}+F \\
+\frac{dY_{j,i}}{dt} &amp;=-cbY_{j+1,i}Y_{j+2,i}+cbY_{j-1,i}Y_{j+1,i}-cY_{j,i}+\frac{hc}{b}X_i 
+\end{align*}\end{split}\]</div>
+<p><a class="reference internal" href="../../week4/week4.html#equation-eq27">(27)</a> can be visualized as <a class="reference internal" href="../../week4/week4.html#fig9"><span class="std std-ref">FIG9</span></a>, which is from <span id="id1">[<a class="reference internal" href="../../week4/week4.html#id15">RDubenN+17</a>]</span>. In a similar narrow latitudinal band, we implement ten additional small grids, <span class="math notranslate nohighlight">\(Y_{j,i}\)</span>, for each <span class="math notranslate nohighlight">\(X_{i}\)</span>, where their accumulated effect can feedback to the large grids(i.e., <span class="math notranslate nohighlight">\(-\frac{hc}{b}\sum_{j=1}^{J}Y_{j,i}\)</span> in <a class="reference internal" href="../../week4/week4.html#equation-eq27">(27)</a>). At the same time, the large grids can modulate the small scale variability (i.e., <span class="math notranslate nohighlight">\(\frac{hc}{b}X_i \)</span> in <a class="reference internal" href="../../week4/week4.html#equation-eq27">(27)</a>). In this model, there are three controlling parameters: c,b and h. <span class="math notranslate nohighlight">\(c=b=10\)</span> indicating the interaction within small grid is 10 times faster than the interaction within large grids. h is the coupling parameter, which represent the coupling strength between two different scales. In the real world, the small grid can be considered as the convective process while the large grids represent the resolved synoptic process.</p>
+<div class="figure align-default" id="fig9">
+<img alt="../../_images/Lorenz_96_2_scale_schematic.png" src="../../_images/Lorenz_96_2_scale_schematic.png" />
+<p class="caption"><span class="caption-text">A schematic diagram of 2-scale Lorenz 96 model from Russell et al. (2017)</span><a class="headerlink" href="#fig9" title="Permalink to this image">¶</a></p>
+</div>
+<p>Another way to visualize the connection between large and small scales is making a cross section (either with time or space fixed) such as the one shown below (<a class="reference internal" href="../../week4/week4.html#fig10"><span class="std std-ref">FIG10</span></a>). From Fig. 10, we can see that when <span class="math notranslate nohighlight">\(X_i\)</span> shows above normal activity, <span class="math notranslate nohighlight">\(Y_{j,i}\)</span> is more positive and with a bigger amplitude. It is similar to how the synoptic weather modulates the small scale convective activity.</p>
+<div class="figure align-default" id="fig10">
+<img alt="../../_images/LR96_2scale_cross_section.png" src="../../_images/LR96_2scale_cross_section.png" />
+<p class="caption"><span class="caption-text">A cross section (x-fixed) of LR96 2-scale model.</span><a class="headerlink" href="#fig10" title="Permalink to this image">¶</a></p>
+</div>
+<p>With <a class="reference internal" href="../../week4/week4.html#equation-eq27">(27)</a>, we repeat the same perfect model experiment and estimate the error growth rate for both small and large scales. The result is shown in <a class="reference internal" href="../../week4/week4.html#fig11"><span class="std std-ref">FIG11</span></a>. After introducing the small-scale to the system, we find the error doubling time is about an half of the error doubling time shown previously. It’s because the 2-scale version of LR96 model is more likely to resolve the small scale process. Thus, the early stage of error is dominated by the error growth in small scales. We can also see the error accumulated in large scales. The error growth in large scale goes through a linear regime before <span class="math notranslate nohighlight">\(t=50\)</span>, which is associated with the error growth in small scales. After <span class="math notranslate nohighlight">\(t=50\)</span>, the error in large scale keeps growing and even surpasses the climatological error of small scales. This feature is similar to the multi-scale forecast in the real world, where the predictability of convection diminishes in a few hours but SST or other low-frequency variability are still highly predictable at monthly or even longer time scales.</p>
+<div class="figure align-default" id="fig11">
+<img alt="../../_images/LR96_2scale_error.png" src="../../_images/LR96_2scale_error.png" />
+<p class="caption"><span class="caption-text">Similar to Fig. 8, except for the 2-scale LR96 model. The chosen parameters are c=b=10, h=1, K=100, and J=1000.</span><a class="headerlink" href="#fig11" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="the-early-and-late-stages-of-error-growth-in-a-multi-scale-flow">
+<h2>The early and late stages of error growth in a multi-scale flow.<a class="headerlink" href="#the-early-and-late-stages-of-error-growth-in-a-multi-scale-flow" title="Permalink to this headline">¶</a></h2>
+<p>From <a class="reference internal" href="../../week4/week4.html#fig11"><span class="std std-ref">FIG11</span></a>, we can find that the error growth in large scale goes through two stages. At the very beginning , <span class="math notranslate nohighlight">\(log(E)\)</span> is almost a linear function of time. However, as <span class="math notranslate nohighlight">\(log(E)\)</span> is getting closer to the saturated error (i.e., the horizontal line in <a class="reference internal" href="../../week4/week4.html#fig8"><span class="std std-ref">FIG8</span></a>), its increase is getting slower. Thus, we can formulate a simple equation to describe the error growth across different stages, where the error growth rate depends on how close we are to the saturated regime.</p>
+<div class="math notranslate nohighlight" id="equation-eq28">
+<span class="eqno">()<a class="headerlink" href="#equation-eq28" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+\frac{1}{E}\frac{dE}{dt}=\lambda_1 \frac{E^*-E}{E^*} 
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(E^{\times}\)</span> is the saturated error and <span class="math notranslate nohighlight">\(\lambda_1\)</span> is the error growth rate or the leading Lyapunov exponent. <a class="reference internal" href="../../week4/week4.html#equation-eq28">(28)</a> has an analytical solution (<a class="reference internal" href="../../week4/week4.html#equation-eq29">(29)</a>)</p>
+<div class="math notranslate nohighlight" id="equation-eq29">
+<span class="eqno">()<a class="headerlink" href="#equation-eq29" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+E = E^* (1+\mathrm{tanh}(\lambda_1,t))/2
+\end{align*}\]</div>
+<p>By observing <a class="reference internal" href="../../week4/week4.html#equation-eq28">(28)</a> and <a class="reference internal" href="../../week4/week4.html#equation-eq29">(29)</a>, one can find that <span class="math notranslate nohighlight">\(E\)</span> is simply a linear function of t when <span class="math notranslate nohighlight">\(E\)</span> is small (early stage). However, when <span class="math notranslate nohighlight">\(E\)</span> is big enough, the <span class="math notranslate nohighlight">\(\frac{dE}{dt}\)</span> will approach 0 (and will ultimately be 0). This special characteristic of hyperbolic-tangent curve is consistent with the overall error growth shown in <a class="reference internal" href="../../week4/week4.html#fig11"><span class="std std-ref">FIG11</span></a>. One can probably imagine applying similar approach to a more complicated state-of-art forecast system. Indeed, in <span id="id2">[<a class="reference internal" href="../../week4/week4.html#id11">Lor82</a>]</span>, Lorenz applied similar analysis to the most sophisticated model at that given time and estimated the corresponding solutions as what we showed above. More details can be found in the reading assignment.</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id3"></span></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chaos_and_predictability/week4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kai-Chih Tseng<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

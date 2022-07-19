@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 1: Predictability of Weather and Climate &#8212; Chaos and Predictability</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Chaos and Predictability</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Syllabus
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week1/week1.html">
+   Week 1: Predictability of Weather and Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week2/week2.html">
+   Week 2: Predictability source in atmosphere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week3/week3.html">
+   Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week5/week5.html">
+   Week 5: The connection between statistical mechanics and ensemble forecast I: Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week6/week6.html">
+   Week 6: The connection between statistical mechanics and ensemble forecast I: Applications
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chaos_and_predictability/week1/week1.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2Fchaos_and_predictability/week1/week1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#climatological-distribution-and-forecast-distribution">
+   Climatological distribution and forecast distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#state-dependent-predictability-and-mathematical-assumptions">
+   State-dependent predictability and mathematical assumptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-the-uncertainties-come-from">
+   Where the uncertainties come from?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-ensemble-forecast-in-weather-and-climate">
+   Introduction to ensemble forecast in weather and climate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 1: Predictability of Weather and Climate</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#climatological-distribution-and-forecast-distribution">
+   Climatological distribution and forecast distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#state-dependent-predictability-and-mathematical-assumptions">
+   State-dependent predictability and mathematical assumptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-the-uncertainties-come-from">
+   Where the uncertainties come from?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-ensemble-forecast-in-weather-and-climate">
+   Introduction to ensemble forecast in weather and climate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="week-1-predictability-of-weather-and-climate">
+<span id="week1"></span><h1>Week 1: Predictability of Weather and Climate<a class="headerlink" href="#week-1-predictability-of-weather-and-climate" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we will walk through a few fundamental concepts of predictability, including how does it connect to statistics, differential equations and linear algebra. You will find out the definition of predictability is relatively straightforward.</p>
+<div class="section" id="climatological-distribution-and-forecast-distribution">
+<h2>Climatological distribution and forecast distribution<a class="headerlink" href="#climatological-distribution-and-forecast-distribution" title="Permalink to this headline">¶</a></h2>
+<p><br />
+When we say something (let’s say <span class="math notranslate nohighlight">\(x(t)\)</span>) is predictable, that means we can somewhat track its time evolution. However, in most cases, our confidence about what <span class="math notranslate nohighlight">\(x(t)\)</span> should be will decrease with the increase of forecast lead time (defined as the time difference between initial state and the final state). Thus, it is physically more reasonable to use a probability density function (PDF <span class="math notranslate nohighlight">\(p(x(t))\)</span>) to describe <span class="math notranslate nohighlight">\(x(t)\)</span> since we are talking about how “confident” we are.
+<br />
+<br />
+Now, let’s imagine two very extreme cases. The first case is <span class="math notranslate nohighlight">\(t\rightarrow 0\)</span>. In this case, we are very certain what <span class="math notranslate nohighlight">\(x(t)\)</span> should be because it is literally the current states or so-called <em>nowcasting</em>. Thus, it’s not hard to find <span class="math notranslate nohighlight">\(p(x(0))\)</span> should be narrow and almost like a delta function (<a class="reference internal" href="../../week1/week1.html#fig1"><span class="std std-ref">FIG1</span></a>, solid line). The second case is that <span class="math notranslate nohighlight">\(t\rightarrow \infty\)</span>. In this case, we don’t have any confidence. Thus, the best way to estimate <span class="math notranslate nohighlight">\(x(t)\)</span> is by randomly sampling from its historical values (Fig. 1, dashed line, a.k.a. guessing). Thus, from <span class="math notranslate nohighlight">\(t=0\)</span> to <span class="math notranslate nohighlight">\(t\rightarrow \infty\)</span>, we can see <span class="math notranslate nohighlight">\(p(x(t))\)</span> is evolving from one PDF to the other. Here we give these two distribution different names. For the one which we use to describe how confident we are is called <em>forecast distribution</em> and the one when forecast lead time approaches infinity is called <em>climatological distribution</em> (also called “population” in statistics).</p>
+<div class="figure align-default" id="fig1">
+<img alt="../../_images/FIG1.png" src="../../_images/FIG1.png" />
+<p class="caption"><span class="caption-text">An example of forecast probability density function and climatological probability density function.</span><a class="headerlink" href="#fig1" title="Permalink to this image">¶</a></p>
+</div>
+<p><br />
+Here we can formulate our mathematical definition of “time of predictability limit”. It is defined as the “moment” that the following null hypothesis is rejected.</p>
+<div class="math notranslate nohighlight" id="equation-eq1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq1" title="Permalink to this equation">¶</a></span>\[H_o: p(x(t))\neq p(x(\infty)) \]</div>
+<p><br />
+<a class="reference internal" href="../../week1/week1.html#equation-eq1">(1)</a> tells us that the moment we can no longer tell the difference between <span class="math notranslate nohighlight">\(p(x(t))\)</span> and <span class="math notranslate nohighlight">\(p(x(\infty))\)</span> is also the moment we hit the predictability limit because the best estimation of <span class="math notranslate nohighlight">\(p(x(t))\)</span> is not better than random guess! Now, we can see how predictability connects to statistical test.
+<br />
+Another interesting thing you might have noticed…when we talk about predictability, we don’t use the ground truth, i.e., the observed <span class="math notranslate nohighlight">\(x(t)\)</span>. Yes, because the measurement of predictability doesn’t rely on ground truth or observation. Instead, it only relis on the forecast states. This is so-called <em>perfect model assumption</em> and we will have more detailed discussion in week 3.</p>
+</div>
+<div class="section" id="state-dependent-predictability-and-mathematical-assumptions">
+<h2>State-dependent predictability and mathematical assumptions<a class="headerlink" href="#state-dependent-predictability-and-mathematical-assumptions" title="Permalink to this headline">¶</a></h2>
+<p><br />
+One interesting fact about predictability is that there is no universal value. You might think…OK that sounds weird and counter-intuitive. For example, we know for typical numerical weather forecast, we will say the predictability limit is around 10 days to 2 weeks. After that, we can no longer trust the model output. However, we will soon realize “10 days to 2 weeks” is only <em>rule of thumb</em>. In some cases, we can even struggle with the low prediction confidence at a forecast lead time of 3 days! Sounds crazy right? Here, let me use the famous Lorenz 63 model to demonstrate what it means.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lorenz 63 model <span id="id1">[<a class="reference internal" href="../../week3/week3.html#id13">Lor63</a>]</span> can be considered as the minimalist model for studying chaos and predictability and it only contains 3 prognostic variables. Indeed, to generate chaotic behavior, the minimum size of independent variables is 3. Smaller than 3, we won’t have chaotic behavior in a dynamical system. We will cover more details about Lorenz model in week 3.</p>
+</div>
+<div class="math notranslate nohighlight" id="equation-eq2">
+<span class="eqno">()<a class="headerlink" href="#equation-eq2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\frac{dx}{dt} &amp;= \sigma (y-x) \\
+\frac{dy}{dt} &amp;= x(\rho-z)-y  \\
+\frac{dz}{dt} &amp;= xy-\beta z 
+\end{align*}\end{split}\]</div>
+<p><br />
+<a class="reference internal" href="../../week1/week1.html#equation-eq2">(2)</a> is the Lorenz 63 model with the selected parameters of <span class="math notranslate nohighlight">\(\rho=28\)</span>, <span class="math notranslate nohighlight">\(\sigma=10\)</span> and <span class="math notranslate nohighlight">\(\beta=\frac{8}{3}\)</span>. This parameter selection makes sure Lorenz 63 model has a chaotic behavior. (The homework assignment will let you test different parameters and see how the dynamical behavior changes.) In this model, we select three different initial states and generate the ensemble simulations by slightly perturbing the initial x,y and z. The result is shown in Fig. 2. We can find in <a class="reference internal" href="../../week1/week1.html#fig2"><span class="std std-ref">FIG2(a)</span></a> case, the model spread grows relatively fast and soon diverge into two groups (<span class="math notranslate nohighlight">\(\sim 50\%\)</span> on the right/left). In the second scenario (i.e., <a class="reference internal" href="../../week1/week1.html#fig2"><span class="std std-ref">FIG2(b)</span></a>), the difference among ensemble members is small at the very beginning but start to bifurcate later. In the last case (<a class="reference internal" href="../../week1/week1.html#fig2"><span class="std std-ref">FIG2(c)</span></a>), different members stay close even at the end of simulation suggesting a relatively small error growth rate.</p>
+<div class="figure align-default" id="fig2">
+<img alt="../../_images/FIG2.png" src="../../_images/FIG2.png" />
+<p class="caption"><span class="caption-text">The three scenarios of ensemble forecasts based on L63 model (a) fast error growth (b) average error growth (c) slow error growth</span><a class="headerlink" href="#fig2" title="Permalink to this image">¶</a></p>
+</div>
+<p>We can go one step further and plot the forecast PDF (x component) at the final state from three scenarios and the result is shown in <a class="reference internal" href="../../week1/week1.html#fig3"><span class="std std-ref">FIG3</span></a>. We also include the climatological PDF as a reference, which is generated by a long-term simulation with 50000 time steps (non-dimensional time). If you still remember what we discuss at the very beginning, the predictability limit is defined by “when” we can reject the null-hypothesis in <a class="reference internal" href="../../week1/week1.html#equation-eq1">(1)</a>. Thus, by comparing how similar the two distributions are can inform us how predictable the given dynamical system is. In <a class="reference internal" href="../../week1/week1.html#fig3"><span class="std std-ref">FIG3</span></a>, we can easily find the forecast PDF in (a) and the climatological PDF are quite similar. However, for cases in (b) and (c), we can still distinguish the forecast PDFs from the climatological PDF indicating we haven’t reached the predictability limit yet.</p>
+<div class="figure align-default" id="fig3">
+<img alt="../../_images/FIG3.png" src="../../_images/FIG3.png" />
+<p class="caption"><span class="caption-text">The final states’ probability density function of three ensemble forecast shown in Fig. 2</span><a class="headerlink" href="#fig3" title="Permalink to this image">¶</a></p>
+</div>
+<p>One take-home message in <a class="reference internal" href="../../week1/week1.html#fig2"><span class="std std-ref">FIG2</span></a> and <a class="reference internal" href="../../week1/week1.html#fig3"><span class="std std-ref">FIG3</span></a> is, the predictability is a function of state rather than an universal number. Now, we can imagine why the most experienced forecasters and the state-of-art NWP systems can still struggle sometimes…(Thus, be kind to them). There are also a few things to keep in mind. First, we only consider the uncertainty in model initial states but have ignored the uncertainty in model structures (e.g., if the model is correct) or the rounding error. This <em>perfect model assumption</em> is one of the most important assumption in the enrire course (and probably the entire field) since it tells us the <em>upper limit</em> of predictability. It also tells us, as long as we have infinitesimal error in model initial states, the predictability limit is inevitable. Second, <em>predictability</em> has no meaning unless the ensemble simulations are used since its definition is based on how fast one ensemble member can diverge from the other. Third, to reject the null hypothesis in <a class="reference internal" href="../../week1/week1.html#equation-eq1">(1)</a>, we need to choose a significance level. This indicates that we can always use a very low significance level (e.g., <span class="math notranslate nohighlight">\(1\%\)</span> or <span class="math notranslate nohighlight">\(0.1\%\)</span>) to say we haven’t reached the predictability limit. Thus, clearly define what threshold we are using for testing the null hypothesis is very important.</p>
+</div>
+<div class="section" id="where-the-uncertainties-come-from">
+<h2>Where the uncertainties come from?<a class="headerlink" href="#where-the-uncertainties-come-from" title="Permalink to this headline">¶</a></h2>
+<p><br />
+At the end of previous section, we talk about the potential uncertainties can come from three different places (or at least we can attribute any kind of forecast uncertainty to these three). Of course they can happen at the same time and be indistinguishable in some cases but we will first scrutinize them individually for the purpose of discussion. The first uncertainty is the initial state error or the observational error. In a perfect observation, the spatial and temporal resolution should go all the way down to the smallest scale (molecular scales). Because as long as we have missing observation, the upscale growth of initial error from those regions will ultimately lead to an unpredictable future (if the underlying dynamics is chaotic).
+<br />
+<br />
+The second error source is from the imperfect model physics. Specifically, the physical parameterizations used to approximate the bulk effect of subgrid-scale processes (i.e., the scales smaller than the model grid) are the major uncertainty source. The details of parameterizations will be discussed in other class and we will briefly walk through the main concept. One main reason of using physical parameterizations is due to the limited computational power. For example, to accurately predict the time evolution of an extratorpical storm, we also need to predict the convection embedded in the frontal structures since the latent heat release by these convections is not negligible. However, explicitly resolving this small-scale thunderstorms is not computationally feasible for the purpose of synoptic weather forecast. Thus, in most NWP systems, we use so-called cumulus parameterizations to approximate the bulk effect of convective cloud. The reason that cumulus parameterization works is that the large-scale environment usually reaches an quasi-equilibrium state with the small scale convection (i.e., coherence exists). Therefore, we can approximate the net convective activity by using the large-scale information. However, similar to the first uncertainty (observational uncertainty), the observational error exists in all spatial scales and thus a PDF (stochastic parameterization) is required to describe the subgrid-scale statistics. While stochastic parameterization seems necessary, it’s not the case in most prevailing NWP systems. In addition to the cumulus parameterization, similar problems also exist in other physical parameterizations.<br />
+<br />
+The last uncertainty is the rounding error. Comparing with the former two uncertainties, rounding error has the least impacts to the weather and climate predictions. Sometimes we can even have some trade-off… i.e., allowing for certain rounding error to save computational time. The main reason we can do that is because the uncertainties from observation and model physics are way bigger (<span class="math notranslate nohighlight">\(&gt;\mathcal{O}(5)\)</span>) than the uncertainty caused by rounding error. More details can be found in <span id="id2">[<a class="reference internal" href="../../week1/week1.html#id6">HMPDuben20</a>]</span> and the leading author, Sam Hatfield’s website <a class="reference external" href="https://samhatfield.co.uk/">link</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lorenz 96 <span id="id3">[<a class="reference internal" href="../../week3/week3.html#id14">Lor96</a>]</span> is one of the simplest models attemping to deal with the underpinning theory of subgrid-scale processes, and we will talk about more details in Week 4.</p>
+</div>
+<p>\</p>
+</div>
+<div class="section" id="introduction-to-ensemble-forecast-in-weather-and-climate">
+<h2>Introduction to ensemble forecast in weather and climate<a class="headerlink" href="#introduction-to-ensemble-forecast-in-weather-and-climate" title="Permalink to this headline">¶</a></h2>
+<p><br />
+Given the discussion about, we know two facts: (1) ensemble forecast is necessary when talking about predictability and (2) predictability limit is state-dependent. We also use Lorenz 63 model to justify these statements. Now, let’s try to describe both facts in a single formula. First, we can write down the prognostic equations in a more generalized form.</p>
+<div class="math notranslate nohighlight" id="equation-eq3">
+<span class="eqno">()<a class="headerlink" href="#equation-eq3" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+\dot{\mathbf{X}} = F[\mathbf{X}]
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is the state vector (i.e., [x,y,z]) and F is a nonlinear operator. Here we assume the initial uncertainty is small and F is differentiable. Then <a class="reference internal" href="../../week1/week1.html#equation-eq3">(3)</a> leads to <a class="reference internal" href="../../week1/week1.html#equation-eq4">(4)</a> and <a class="reference internal" href="../../week1/week1.html#equation-eq5">(5)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq4">
+<span class="eqno">()<a class="headerlink" href="#equation-eq4" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+\frac{d\delta \mathbf{X}}{dt}= \frac{dF}{d\mathbf{X}}\delta\mathbf{X}
+\end{align*}\]</div>
+<p><br />
+and</p>
+<div class="math notranslate nohighlight" id="equation-eq5">
+<span class="eqno">()<a class="headerlink" href="#equation-eq5" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\mathbf{M}(t,t_0) &amp;= \mathrm{exp} \int_{t_0}^{t} \frac{dF}{d\mathbf{X}} dt' \\
+\delta\mathbf{X}(t) &amp;= \mathbf{M}(t,t_0) \delta\mathbf{X}(t_0)
+\end{align*}\end{split}\]</div>
+<p><a class="reference internal" href="../../week1/week1.html#equation-eq4">(4)</a> is a linear-tagent function of <a class="reference internal" href="../../week1/week1.html#equation-eq3">(3)</a> and <span class="math notranslate nohighlight">\(\mathbf{M}(t,t_0)\)</span> in <a class="reference internal" href="../../week1/week1.html#equation-eq5">(5)</a> is a progagator operator (and <span class="math notranslate nohighlight">\(\frac{dF}{d\mathbf{X}}\)</span> is a Jacobian matrix) which maps the initial state of <span class="math notranslate nohighlight">\(\delta\mathbf{X}(t_0)\)</span> to the final state <span class="math notranslate nohighlight">\(\delta\mathbf{X}(t)\)</span>. It is important that <span class="math notranslate nohighlight">\(\mathbf{M}(t,t_0)\)</span> is both function of <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t_0\)</span>. That means the time evolution of <span class="math notranslate nohighlight">\(\delta\mathbf{X}(t)\)</span> is not only determined by where <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> starts but also depends on where it has been through! You might have noticed this is our fact (2).</p>
+<p>By observing <a class="reference internal" href="../../week1/week1.html#equation-eq5">(5)</a>, we can find the initial error (i.e., the difference between each member) will grow rapidly if <span class="math notranslate nohighlight">\(\int_{t_0}^{t} \frac{dF}{d\mathbf{X}} dt'&gt;0\)</span>. An alternative way to describe this phenomena is the prognostic equation of forecast PDF</p>
+<div class="math notranslate nohighlight" id="equation-eq6">
+<span class="eqno">()<a class="headerlink" href="#equation-eq6" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+\rho(\mathbf{X},t)=\rho(\mathbf{X'},t_0)/|\mathrm{det}{(\mathbf{M}(t,t_0))}|
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho(\mathbf{X},t)\)</span> is the forecast PDF at given <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> and <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(\mathrm{det}{(\mathbf{M}(t,t_0))}\)</span> is the determinant of <span class="math notranslate nohighlight">\(\mathbf{M}(t,t_0)\)</span>. Mathematically, a determinant indicates how the area spanned by vectors <span class="math notranslate nohighlight">\(\delta\mathbf{X}\)</span> is scaled after linear transformation. (we will have more discussion in weeks 3-6, also check out the awesome video by <a class="reference external" href="https://www.youtube.com/watch?v=Ip3X9LOh2dk&amp;list=PL0-GT3co4r2y2YErbmuJw2L5tW4Ew2O5B&amp;index=7&amp;ab_channel=3Blue1Brown">3Blue1Brown</a> !!)</p>
+<p>A simple example is</p>
+<div class="math notranslate nohighlight" id="equation-eq7">
+<span class="eqno">()<a class="headerlink" href="#equation-eq7" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 2 
+\end{bmatrix} =
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 2 
+\end{bmatrix} \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1 
+\end{bmatrix}. \end{split}\]</div>
+<p>In this case, the <span class="math notranslate nohighlight">\(\mathrm{det}{(\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 2 
+\end{bmatrix})}\)</span> equals 2 indicating the area spanned by <span class="math notranslate nohighlight">\(\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1 
+\end{bmatrix}\)</span> will be scaled by 2 after linear transformation. Following a similar vein, from <a class="reference internal" href="../../week1/week1.html#equation-eq5">(5)</a>, we know the area spanned by <span class="math notranslate nohighlight">\(\delta\mathbf{X}\)</span> will increase by a factor of <span class="math notranslate nohighlight">\(\mathbf{M}(t,t_0)\)</span> indicating the ensemble density (i.e., <span class="math notranslate nohighlight">\(\rho(\mathbf{X},t)\)</span>) will decrease by the same factor due to the conservation law (i.e., total number of ensemble members won’t change). This will lead to equation <a class="reference internal" href="../../week1/week1.html#equation-eq6">(6)</a>. <a class="reference internal" href="../../week1/week1.html#equation-eq6">(6)</a> is a powerful equation since it predicts the forecast PDF and you will see it multiple times in the future. Now, there is only one question left. If we would like to generate reliable ensemble forecast, what kind of initial states <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> should be used for forecast? Practically, we want an ensemble forecast which can cover as many scenarios as possible. Thus, the initial states which can generate the most reliable forecast are usually the states with the largest error growth rate. On the other hand, high error growth rate can also lead the low forecast confidence. Therefore, reaching a balance between the two is important topic in <em>Data Assimilation</em>.</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id4"></span></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chaos_and_predictability/week1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kai-Chih Tseng<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

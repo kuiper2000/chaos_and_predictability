@@ -53,6 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 5: The connection between statistical mechanics and ensemble forecast I: Theory" href="../week5/week5.html" />
     <link rel="prev" title="Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63" href="../week3/week3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -116,6 +117,16 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week5/week5.html">
+   Week 5: The connection between statistical mechanics and ensemble forecast I: Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week6/week6.html">
+   Week 6: The connection between statistical mechanics and ensemble forecast I: Applications
   </a>
  </li>
 </ul>
@@ -305,7 +316,7 @@
 <h2>Single scale<a class="headerlink" href="#single-scale" title="Permalink to this headline">¶</a></h2>
 <p>Now we can go a step further by generating large ensemble simulations (e.g., 250 different members) and see when the error across different members starts to saturate. Here we define the error as the averaged variance of simulated <span class="math notranslate nohighlight">\(X\)</span>. Here we choose <span class="math notranslate nohighlight">\(X(t=300)\)</span> in Figure 7 as the new initial state since it’s the time when the signal is fully developed. We add random white noise <span class="math notranslate nohighlight">\(\epsilon=\mathcal{N}(\mu=0,\sigma^{2}=10^{-4})\)</span> to each grid point at the initial states and re-run the model all over again.</p>
 <div class="figure align-default" id="fig8">
-<img alt="../_images/LR96_error.png" src="../_images/LR96_error.png" />
+<img alt="../_images/LR96_error1.png" src="../_images/LR96_error1.png" />
 <p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The error growth of LR96 model. The error is defined as the averaged variance across all ensemble members.</span><a class="headerlink" href="#fig8" title="Permalink to this image">¶</a></p>
 </div>
 <p>From <a class="reference internal" href="#fig8"><span class="std std-ref">FIG8</span></a>, we can find the error almost grows linearly at the very beginning and start to saturate around <span class="math notranslate nohighlight">\(t&gt;400\)</span>. A good reason for plotting model error in log scale is that the error growth at the initial stage is a function of <span class="math notranslate nohighlight">\(exp(\alpha\tau)\)</span> (where <span class="math notranslate nohighlight">\(\frac{1}{\alpha}\)</span> is characteristic timescale of error growth and the <span class="math notranslate nohighlight">\(\tau\)</span> is the time of integration). Therefore, a log-scale error is nearly linear and it’s slope is the leading Lyapunov exponent. The Lyapunov time (<span class="math notranslate nohighlight">\(\frac{1}{\alpha}\)</span>) is then defined as the error doubling time (i.e., <a class="reference internal" href="#equation-eq26">(26)</a>)</p>
@@ -330,17 +341,17 @@ log(\frac{E(t)}{E(0)})=log(2)=\alpha \tau
 \end{align*}\end{split}\]</div>
 <p><a class="reference internal" href="#equation-eq27">(27)</a> can be visualized as <a class="reference internal" href="#fig9"><span class="std std-ref">FIG9</span></a>, which is from <span id="id1">[<a class="reference internal" href="#id15">RDubenN+17</a>]</span>. In a similar narrow latitudinal band, we implement ten additional small grids, <span class="math notranslate nohighlight">\(Y_{j,i}\)</span>, for each <span class="math notranslate nohighlight">\(X_{i}\)</span>, where their accumulated effect can feedback to the large grids(i.e., <span class="math notranslate nohighlight">\(-\frac{hc}{b}\sum_{j=1}^{J}Y_{j,i}\)</span> in <a class="reference internal" href="#equation-eq27">(27)</a>). At the same time, the large grids can modulate the small scale variability (i.e., <span class="math notranslate nohighlight">\(\frac{hc}{b}X_i \)</span> in <a class="reference internal" href="#equation-eq27">(27)</a>). In this model, there are three controlling parameters: c,b and h. <span class="math notranslate nohighlight">\(c=b=10\)</span> indicating the interaction within small grid is 10 times faster than the interaction within large grids. h is the coupling parameter, which represent the coupling strength between two different scales. In the real world, the small grid can be considered as the convective process while the large grids represent the resolved synoptic process.</p>
 <div class="figure align-default" id="fig9">
-<img alt="../_images/Lorenz_96_2_scale_schematic.png" src="../_images/Lorenz_96_2_scale_schematic.png" />
+<img alt="../_images/Lorenz_96_2_scale_schematic1.png" src="../_images/Lorenz_96_2_scale_schematic1.png" />
 <p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">A schematic diagram of 2-scale Lorenz 96 model from Russell et al. (2017)</span><a class="headerlink" href="#fig9" title="Permalink to this image">¶</a></p>
 </div>
 <p>Another way to visualize the connection between large and small scales is making a cross section (either with time or space fixed) such as the one shown below (<a class="reference internal" href="#fig10"><span class="std std-ref">FIG10</span></a>). From Fig. 10, we can see that when <span class="math notranslate nohighlight">\(X_i\)</span> shows above normal activity, <span class="math notranslate nohighlight">\(Y_{j,i}\)</span> is more positive and with a bigger amplitude. It is similar to how the synoptic weather modulates the small scale convective activity.</p>
 <div class="figure align-default" id="fig10">
-<img alt="../_images/LR96_2scale_cross_section.png" src="../_images/LR96_2scale_cross_section.png" />
+<img alt="../_images/LR96_2scale_cross_section1.png" src="../_images/LR96_2scale_cross_section1.png" />
 <p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">A cross section (x-fixed) of LR96 2-scale model.</span><a class="headerlink" href="#fig10" title="Permalink to this image">¶</a></p>
 </div>
 <p>With <a class="reference internal" href="#equation-eq27">(27)</a>, we repeat the same perfect model experiment and estimate the error growth rate for both small and large scales. The result is shown in <a class="reference internal" href="#fig11"><span class="std std-ref">FIG11</span></a>. After introducing the small-scale to the system, we find the error doubling time is about an half of the error doubling time shown previously. It’s because the 2-scale version of LR96 model is more likely to resolve the small scale process. Thus, the early stage of error is dominated by the error growth in small scales. We can also see the error accumulated in large scales. The error growth in large scale goes through a linear regime before <span class="math notranslate nohighlight">\(t=50\)</span>, which is associated with the error growth in small scales. After <span class="math notranslate nohighlight">\(t=50\)</span>, the error in large scale keeps growing and even surpasses the climatological error of small scales. This feature is similar to the multi-scale forecast in the real world, where the predictability of convection diminishes in a few hours but SST or other low-frequency variability are still highly predictable at monthly or even longer time scales.</p>
 <div class="figure align-default" id="fig11">
-<img alt="../_images/LR96_2scale_error.png" src="../_images/LR96_2scale_error.png" />
+<img alt="../_images/LR96_2scale_error1.png" src="../_images/LR96_2scale_error1.png" />
 <p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Similar to Fig. 8, except for the 2-scale LR96 model. The chosen parameters are c=b=10, h=1, K=100, and J=1000.</span><a class="headerlink" href="#fig11" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -403,6 +414,13 @@ E = E^* (1+\mathrm{tanh}(\lambda_1,t))/2
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../week5/week5.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 5: The connection between statistical mechanics and ensemble forecast I: Theory</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

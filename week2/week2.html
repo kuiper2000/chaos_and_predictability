@@ -119,6 +119,16 @@
    Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week5/week5.html">
+   Week 5: The connection between statistical mechanics and ensemble forecast I: Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week6/week6.html">
+   Week 6: The connection between statistical mechanics and ensemble forecast I: Applications
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -309,7 +319,7 @@ In a dynamical system, we can use scale analysis to identify the phenomenon with
 <p>The reason why we can implement these physical assumptions (no acoustic wave, hydrostatic and geostrophic balances) is that the corresponding phenomena have relatively short characteristic timescales (decorrelation time) compared to the timescales of weather (or the Rossby wave). For example, a normal acoustic wave can travel a few hundred meters to a few kilometers before its amplitude decays to the e-folding scale and the whole process only happens within a few seconds. For a gravity wave, it can travel over 100 kilometers to a few thousand kilometers before reaching the e-folding scales. However, the gravity wave speed can be much higher than the Rossby wave, which enables it to travel across the world within a few days. One should notice that the gravity wave is non-dispersive. This indicates that all gravity waves travel in a similar speed regardless of the wave length. The Rossby wave, on the other hand, is a dispersive wave and thus its timescales depends on the wave length. Due to the earth rotation, only a small portion of energy can be converted to the eddy kinetic energy, while most of the energy is trapped in the zonal mean structure <span id="id1">[<a class="reference internal" href="#id14">Lor55</a>]</span>. In the regions away from tropics, the so-called “eddy” is dominated by the Rossby wave dynamics <a class="reference internal" href="#equation-eq10">(10)</a>. In (dry) Rossby wave dynamics, the only prognostic variable is PV while other fields (e.g., horizontal wind and vertical motion) can be diagnosed by giving the PV field. Because of this 1-on-1 relation among wind, stream function and PV field, the Rossby wave dynamics is also called balanced dynamics. “Balance” implies that the phenomena with timescales shorter than Rossby wave have reached a dynamical equilibrium state and thus their time tendency can be omitted.</p>
 <p>By observing the <a class="reference internal" href="#equation-eq11">(11)</a>, one can find there are two components in PV, the barotropic vorticity (<span class="math notranslate nohighlight">\(\nabla^2\psi+\beta\)</span>, i.e., vorticity in a single layer or vorticity over different layers with the same sign) and baroclinic vorticity (<span class="math notranslate nohighlight">\(\frac{\partial }{\partial z}(\frac{f^2}{N^2}\frac{\partial\psi}{\partial z})\)</span>, i.e., vorticity difference in vertical direction). Thus, for the growth of PV, there are two different pathways, either through the generation of barotropic component or through the generation of baroclinic component. While both processes can happen at the same time, one is usually more dominant than the other and which one is more important depends on the regions of interest. In most cases, the mid-latitude frontal geneses (weather scales) are associated with the baroclinic instability, where the counter-propagating wave over different vertical layers advected by the vertical wind shear leads to the growth of baroclinic components <a class="reference internal" href="#fig4"><span class="std std-ref">FIG4</span></a>.</p>
 <div class="figure align-default" id="fig4">
-<img alt="../_images/FIG4.png" src="../_images/FIG4.png" />
+<img alt="../_images/FIG41.png" src="../_images/FIG41.png" />
 <p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">A schematic diagram showing how the counter-propagating waves over different vertical layers amplify each other. When t=0, the upper-level trough is delayed the lower-level trough by more than 0.25 wave length. However, due to the existence of vertical wind shear, the upper-level trough propagates faster than the lower level trough. In addition, we also know the geopotential height above the near-surface cold advection will decrease with time according to the hydrostatic balance. Thus, when the upper-level trough is spatially collocated with the near surface cold advection, it will be strengthened by the cold advection. This vertical coupling process can increase the amplitude PV, where vertical wind shear and counter-propagating waves are necessary criteria for baroclinic instability.</span><a class="headerlink" href="#fig4" title="Permalink to this image">¶</a></p>
 </div>
 <p>The other key process for the growth of PV is the barotropic instability. In barotropic instability, the counter-propagating wave happens in meridional direction rather than the vertical direction. Thus, the necessary condition for barotropic instability is the horizontal wind shear. Both barotropic and baroclinic instabilities will lead to the exponential growth of PV anomaly, i.e., <span class="math notranslate nohighlight">\(\frac{Dq'}{Dt}\sim \mathrm{exp}(\sigma t)\)</span>, where <span class="math notranslate nohighlight">\(\sigma\)</span> is the growth rate of this system.</p>
@@ -363,7 +373,7 @@ The second case is that the characteristic timescales of <span class="math notra
 <br />
 The animation below is an example of tropical-extratropical teleconnection in a barotropic model, where we force the model with a constant divergence forcing (i.e., <span class="math notranslate nohighlight">\(\sigma\sim 0\)</span>). We can find in the later period of integration, the forced response gradually reach a equilibrium state. Similar large-scale patterns can also be found over the extratropical regions if we take the monthly average of 500hPa geopotential height.</p>
 <div class="figure align-default" id="fig5">
-<img alt="../_images/solid_body_rotation.gif" src="../_images/solid_body_rotation.gif" />
+<img alt="../_images/solid_body_rotation1.gif" src="../_images/solid_body_rotation1.gif" />
 <p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">An example of tropical-extratropical teleconnection in a barotropic model. The model is forced by a constant divergence flow (dashed line). The shading shows the vorticity field.</span><a class="headerlink" href="#fig5" title="Permalink to this image">¶</a></p>
 </div>
 <p>\</p>

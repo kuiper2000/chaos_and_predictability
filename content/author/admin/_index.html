@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display name &#8212; Chaos and Predictability</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Chaos and Predictability</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Syllabus
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../week1/week1.html">
+   Week 1: Predictability of Weather and Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../week2/week2.html">
+   Week 2: Predictability source in atmosphere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../week3/week3.html">
+   Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../week5/week5.html">
+   Week 5: The connection between statistical mechanics and ensemble forecast I: Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../week6/week6.html">
+   Week 6: The connection between statistical mechanics and ensemble forecast I: Applications
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/author/admin/_index.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2Fcontent/author/admin/_index.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Display name
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#username-this-should-match-the-folder-name">
+   Username (this should match the folder name)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#is-this-the-primary-user-of-the-site">
+   Is this the primary user of the site?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#role-position">
+   Role/position
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#organizations-affiliations">
+   Organizations/Affiliations
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#separate-multiple-entries-with-a-comma-using-the-form-name-org1-url-name-org2-url">
+   Separate multiple entries with a comma, using the form:
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     [
+    </span>
+    <span class="pre">
+     {name="Org1",
+    </span>
+    <span class="pre">
+     url=""},
+    </span>
+    <span class="pre">
+     {name="Org2",
+    </span>
+    <span class="pre">
+     url=""}
+    </span>
+    <span class="pre">
+     ]
+    </span>
+   </code>
+   .
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#short-bio-displayed-in-user-profile-at-end-of-posts">
+   Short bio (displayed in user profile at end of posts)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enter-email-to-display-gravatar-if-gravatar-enabled-in-config">
+   Enter email to display Gravatar (if Gravatar enabled in Config)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-academic-interests-or-hobbies">
+   List (academic) interests or hobbies
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#organizational-groups-that-you-belong-to-for-people-widget">
+   Organizational groups that you belong to (for People widget)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-this-to-or-comment-out-if-you-are-not-using-people-widget">
+   Set this to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     []
+    </span>
+   </code>
+   or comment out if you are not using People widget.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-qualifications-such-as-academic-degrees">
+   List qualifications (such as academic degrees)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#social-academic-networking">
+   Social/Academic Networking
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-available-icons-see-https-sourcethemes-com-academic-docs-widgets-icons">
+   For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-an-email-link-use-fas-icon-pack-envelope-icon-and-a-link-in-the">
+   For an email link, use “fas” icon pack, “envelope” icon, and a link in the
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#form-mailto-your-email-example-com-or-contact-for-contact-widget">
+   form “mailto:your-email@example.com” or “#contact” for contact widget.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#icon-twitter">
+   icon = “twitter”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#icon-pack-fab">
+   icon_pack = “fab”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#link-https-twitter-com-georgecushen">
+   link = “https://twitter.com/GeorgeCushen”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#icon-github">
+   icon = “github”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   icon_pack = “fab”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#link-https-github-com-gcushen">
+   link = “https://github.com/gcushen”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#link-to-a-pdf-of-your-resume-cv-from-the-about-widget">
+   Link to a PDF of your resume/CV from the About widget.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-enable-copy-your-resume-cv-to-static-files-cv-pdf-and-uncomment-the-lines-below">
+   To enable, copy your resume/CV to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     static/files/cv.pdf
+    </span>
+   </code>
+   and uncomment the lines below.
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Display name</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Display name
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#username-this-should-match-the-folder-name">
+   Username (this should match the folder name)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#is-this-the-primary-user-of-the-site">
+   Is this the primary user of the site?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#role-position">
+   Role/position
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#organizations-affiliations">
+   Organizations/Affiliations
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#separate-multiple-entries-with-a-comma-using-the-form-name-org1-url-name-org2-url">
+   Separate multiple entries with a comma, using the form:
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     [
+    </span>
+    <span class="pre">
+     {name="Org1",
+    </span>
+    <span class="pre">
+     url=""},
+    </span>
+    <span class="pre">
+     {name="Org2",
+    </span>
+    <span class="pre">
+     url=""}
+    </span>
+    <span class="pre">
+     ]
+    </span>
+   </code>
+   .
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#short-bio-displayed-in-user-profile-at-end-of-posts">
+   Short bio (displayed in user profile at end of posts)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enter-email-to-display-gravatar-if-gravatar-enabled-in-config">
+   Enter email to display Gravatar (if Gravatar enabled in Config)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-academic-interests-or-hobbies">
+   List (academic) interests or hobbies
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#organizational-groups-that-you-belong-to-for-people-widget">
+   Organizational groups that you belong to (for People widget)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-this-to-or-comment-out-if-you-are-not-using-people-widget">
+   Set this to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     []
+    </span>
+   </code>
+   or comment out if you are not using People widget.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-qualifications-such-as-academic-degrees">
+   List qualifications (such as academic degrees)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#social-academic-networking">
+   Social/Academic Networking
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-available-icons-see-https-sourcethemes-com-academic-docs-widgets-icons">
+   For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-an-email-link-use-fas-icon-pack-envelope-icon-and-a-link-in-the">
+   For an email link, use “fas” icon pack, “envelope” icon, and a link in the
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#form-mailto-your-email-example-com-or-contact-for-contact-widget">
+   form “mailto:your-email@example.com” or “#contact” for contact widget.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#icon-twitter">
+   icon = “twitter”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#icon-pack-fab">
+   icon_pack = “fab”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#link-https-twitter-com-georgecushen">
+   link = “https://twitter.com/GeorgeCushen”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#icon-github">
+   icon = “github”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   icon_pack = “fab”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#link-https-github-com-gcushen">
+   link = “https://github.com/gcushen”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#link-to-a-pdf-of-your-resume-cv-from-the-about-widget">
+   Link to a PDF of your resume/CV from the About widget.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-enable-copy-your-resume-cv-to-static-files-cv-pdf-and-uncomment-the-lines-below">
+   To enable, copy your resume/CV to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     static/files/cv.pdf
+    </span>
+   </code>
+   and uncomment the lines below.
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="display-name">
+<h1>Display name<a class="headerlink" href="#display-name" title="Permalink to this headline">¶</a></h1>
+<p>name = “Kai-Chih Tseng”</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="username-this-should-match-the-folder-name">
+<h1>Username (this should match the folder name)<a class="headerlink" href="#username-this-should-match-the-folder-name" title="Permalink to this headline">¶</a></h1>
+<p>authors = [“admin”]</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="is-this-the-primary-user-of-the-site">
+<h1>Is this the primary user of the site?<a class="headerlink" href="#is-this-the-primary-user-of-the-site" title="Permalink to this headline">¶</a></h1>
+<p>superuser = true</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="role-position">
+<h1>Role/position<a class="headerlink" href="#role-position" title="Permalink to this headline">¶</a></h1>
+<p>role = “Postdoctoral Researcher”</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="organizations-affiliations">
+<h1>Organizations/Affiliations<a class="headerlink" href="#organizations-affiliations" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="separate-multiple-entries-with-a-comma-using-the-form-name-org1-url-name-org2-url">
+<h1>Separate multiple entries with a comma, using the form: <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">{name=&quot;Org1&quot;,</span> <span class="pre">url=&quot;&quot;},</span> <span class="pre">{name=&quot;Org2&quot;,</span> <span class="pre">url=&quot;&quot;}</span> <span class="pre">]</span></code>.<a class="headerlink" href="#separate-multiple-entries-with-a-comma-using-the-form-name-org1-url-name-org2-url" title="Permalink to this headline">¶</a></h1>
+<p>organizations = [ { name = “NOAA/Geophysical Fluid Dynamics Laboratory”, url = “<a class="reference external" href="https://www.gfdl.noaa.gov/">https://www.gfdl.noaa.gov/</a>” }, { name = “Princeton University”, url = “<a class="reference external" href="https://aos.princeton.edu/">https://aos.princeton.edu/</a>” } ]</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="short-bio-displayed-in-user-profile-at-end-of-posts">
+<h1>Short bio (displayed in user profile at end of posts)<a class="headerlink" href="#short-bio-displayed-in-user-profile-at-end-of-posts" title="Permalink to this headline">¶</a></h1>
+<p>bio = “My research interests include tropical-extratropical teleconnections and MJO dynamics”</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="enter-email-to-display-gravatar-if-gravatar-enabled-in-config">
+<h1>Enter email to display Gravatar (if Gravatar enabled in Config)<a class="headerlink" href="#enter-email-to-display-gravatar-if-gravatar-enabled-in-config" title="Permalink to this headline">¶</a></h1>
+<p>email = “<a class="reference external" href="mailto:kaichiht&#37;&#52;&#48;princeton&#46;edu">kaichiht<span>&#64;</span>princeton<span>&#46;</span>edu</a>”</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="list-academic-interests-or-hobbies">
+<h1>List (academic) interests or hobbies<a class="headerlink" href="#list-academic-interests-or-hobbies" title="Permalink to this headline">¶</a></h1>
+<p>interests = [
+“Tropical-extratropical teleconnections”,
+“MJO and tropical dynamics”,
+“Predictability and inverse modeling”,
+“Machine Learning”
+]</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="organizational-groups-that-you-belong-to-for-people-widget">
+<h1>Organizational groups that you belong to (for People widget)<a class="headerlink" href="#organizational-groups-that-you-belong-to-for-people-widget" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="set-this-to-or-comment-out-if-you-are-not-using-people-widget">
+<h1>Set this to <code class="docutils literal notranslate"><span class="pre">[]</span></code> or comment out if you are not using People widget.<a class="headerlink" href="#set-this-to-or-comment-out-if-you-are-not-using-people-widget" title="Permalink to this headline">¶</a></h1>
+<p>user_groups = [“Researchers”, “Visitors”]</p>
+<p>[[education.courses]]
+course = “PostDoc in Atmospheric and Oceanic Scinece”
+institution = “Princeton University”
+year = “19-“</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="list-qualifications-such-as-academic-degrees">
+<h1>List qualifications (such as academic degrees)<a class="headerlink" href="#list-qualifications-such-as-academic-degrees" title="Permalink to this headline">¶</a></h1>
+<p>[[education.courses]]
+course = “PhD in Atmospheric Science”
+institution = “Colorado State University”
+year = “16-19”</p>
+<p>[[education.courses]]
+course = “BS and MS in Atmospheric Science”
+institution = “National Taiwan University “
+year = “08-14”</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="social-academic-networking">
+<h1>Social/Academic Networking<a class="headerlink" href="#social-academic-networking" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="for-available-icons-see-https-sourcethemes-com-academic-docs-widgets-icons">
+<h1>For available icons, see: <a class="reference external" href="https://sourcethemes.com/academic/docs/widgets/#icons">https://sourcethemes.com/academic/docs/widgets/#icons</a><a class="headerlink" href="#for-available-icons-see-https-sourcethemes-com-academic-docs-widgets-icons" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="for-an-email-link-use-fas-icon-pack-envelope-icon-and-a-link-in-the">
+<h1>For an email link, use “fas” icon pack, “envelope” icon, and a link in the<a class="headerlink" href="#for-an-email-link-use-fas-icon-pack-envelope-icon-and-a-link-in-the" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="form-mailto-your-email-example-com-or-contact-for-contact-widget">
+<h1>form “<a class="reference external" href="mailto:your-email&#37;&#52;&#48;example&#46;com">mailto:your-email<span>&#64;</span>example<span>&#46;</span>com</a>” or “#contact” for contact widget.<a class="headerlink" href="#form-mailto-your-email-example-com-or-contact-for-contact-widget" title="Permalink to this headline">¶</a></h1>
+<p>[[social]]
+icon = “envelope”
+icon_pack = “fas”
+link = “<a class="reference external" href="mailto:kaichiht&#37;&#52;&#48;princeton&#46;edu">mailto:kaichiht<span>&#64;</span>princeton<span>&#46;</span>edu</a>”  # For a direct email link, use “<a class="reference external" href="mailto:kaichiht&#37;&#52;&#48;princeton&#46;edu">mailto:kaichiht<span>&#64;</span>princeton<span>&#46;</span>edu</a>”.</p>
+<p>#[[social]]</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="icon-twitter">
+<h1>icon = “twitter”<a class="headerlink" href="#icon-twitter" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="icon-pack-fab">
+<h1>icon_pack = “fab”<a class="headerlink" href="#icon-pack-fab" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="link-https-twitter-com-georgecushen">
+<h1>link = “<a class="reference external" href="https://twitter.com/GeorgeCushen">https://twitter.com/GeorgeCushen</a>”<a class="headerlink" href="#link-https-twitter-com-georgecushen" title="Permalink to this headline">¶</a></h1>
+<p>[[social]]
+icon = “google-scholar”
+icon_pack = “ai”
+link = “<a class="reference external" href="https://scholar.google.com/citations?user=QlDGBkQAAAAJ&amp;hl=en">https://scholar.google.com/citations?user=QlDGBkQAAAAJ&amp;hl=en</a>”</p>
+<p>#[[social]]</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="icon-github">
+<h1>icon = “github”<a class="headerlink" href="#icon-github" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>icon_pack = “fab”<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="link-https-github-com-gcushen">
+<h1>link = “<a class="reference external" href="https://github.com/gcushen">https://github.com/gcushen</a>”<a class="headerlink" href="#link-https-github-com-gcushen" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="link-to-a-pdf-of-your-resume-cv-from-the-about-widget">
+<h1>Link to a PDF of your resume/CV from the About widget.<a class="headerlink" href="#link-to-a-pdf-of-your-resume-cv-from-the-about-widget" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="to-enable-copy-your-resume-cv-to-static-files-cv-pdf-and-uncomment-the-lines-below">
+<h1>To enable, copy your resume/CV to <code class="docutils literal notranslate"><span class="pre">static/files/cv.pdf</span></code> and uncomment the lines below.<a class="headerlink" href="#to-enable-copy-your-resume-cv-to-static-files-cv-pdf-and-uncomment-the-lines-below" title="Permalink to this headline">¶</a></h1>
+<p>[[social]]
+icon = “cv”
+icon_pack = “ai”
+link = “<a class="reference external" href="https://www.dropbox.com/s/i7y2iaqqd3i0zv7/cv.pdf?dl=0">https://www.dropbox.com/s/i7y2iaqqd3i0zv7/cv.pdf?dl=0</a>”</p>
+<p>I am a postdoctoal researcher at NOAA/GFDL and Princeton University working with Dr. Nat Johnson. Currently, my research interests are the dynamics of tropical-extratropical teleconnections and its applications on prediction skills. I am also interested in numerical modeling (e.g. barotropic model, ENSO intermediate model and cumulus parameterizations), artificial intelligence (e.g. Neural Networks and Deep Learning) and statistical method. Detailed information can be referred to my “Publications”.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/author/admin"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kai-Chih Tseng<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

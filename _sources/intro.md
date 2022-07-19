@@ -30,15 +30,16 @@ __Part I: Lecturing__
 	* Single Scale
 	* Multi-scale interations
 	* HW3: Lorenz 96 model (calculating the Layapynov exponent) (15%)
-* Week 5: __The connection between statistical mechanics and ensemble forecasts I: theory__
-	* Introduction to Liouville equation 
-	* Liouville equation as a function of initial state vs current state 
-	* Solution to Liouville equation
+* {ref}`week5` 
+	* Introduction to Liouville equation
+	* Jacobian Matrix and Determinant  
 	* Connections between Liouville equation and ensemble forecasts
-* Week 6: __The connection between statistical mechanics and ensemble forecasts II: applications__
+* {ref}`week6` 
+	* Liouville equation as a function of initial state vs current state 
 	* Liouville equation in 1st-order ODE case
 	* Liouville equation in Lorenz 63 model
 	* Liouville equation and Singular Value Decomposition
+	* Solution to Liouville equation
 	* Challengs of applying Liouville Equation to weather forecast
 	* HW4: Derivation of Liouville equation + 1st-order ODE case simulation (15%)
 * Week 7: __The stability theory__
@@ -54,7 +55,7 @@ __Part I: Lecturing__
 	* Average Predictability Time
 	* Predictable Components
 	* HW5: Identifying the predictable components in full-physics operational forecast systems (20%)
-* Week 10: __Future projection problems__
+* Week 10: __Future projection problems (Nobel Prize Problem)__
 	* Initial value problems vs boundary value problems
 	* Generalized stability and Predictable Components in a non-linear/boundary value problem
 	* Hasselmann (1993) Optimal fingerprints for the detection of time-dependent climate change

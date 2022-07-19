@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 2: Predictability source in atmosphere &#8212; Chaos and Predictability</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Chaos and Predictability</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Syllabus
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week1/week1.html">
+   Week 1: Predictability of Weather and Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week2/week2.html">
+   Week 2: Predictability source in atmosphere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week3/week3.html">
+   Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week5/week5.html">
+   Week 5: The connection between statistical mechanics and ensemble forecast I: Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week6/week6.html">
+   Week 6: The connection between statistical mechanics and ensemble forecast I: Applications
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chaos_and_predictability/week2/week2.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2Fchaos_and_predictability/week2/week2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-origins-of-predictability-scale-separation-and-balanced-dynamics">
+   The origins of predictability (Scale Separation) and balanced dynamics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atmospheric-blocking">
+   Atmospheric Blocking
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#teleconnections">
+   Teleconnections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 2: Predictability source in atmosphere</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-origins-of-predictability-scale-separation-and-balanced-dynamics">
+   The origins of predictability (Scale Separation) and balanced dynamics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atmospheric-blocking">
+   Atmospheric Blocking
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#teleconnections">
+   Teleconnections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="week-2-predictability-source-in-atmosphere">
+<span id="week2"></span><h1>Week 2: Predictability source in atmosphere<a class="headerlink" href="#week-2-predictability-source-in-atmosphere" title="Permalink to this headline">¶</a></h1>
+<p>In this week, we will talk about the potential predictability source in the atmosphere. Before we dig right in, let’s quickly recap what we learned last week. We know the predictability is defined as “when” we can no longer differentiate the forecast distributions and the climatological distribution (i.e., <a class="reference internal" href="../../week1/week1.html#equation-eq1">(1)</a>). We also know the error growth, which can be formulated as <span class="math notranslate nohighlight">\(\mathrm{exp} \int_{t_0}^{t} \frac{dF}{d\mathbf{X}} dt'\)</span> <a class="reference internal" href="../../week1/week1.html#equation-eq5">(5)</a>, strongly depends on where the integration starts and where it has been through (just like our life!). Thus, the most predictable components are usually those components with the longest memory (i.e., <span class="math notranslate nohighlight">\(\int_{t_0}^{t} \frac{dF}{d\mathbf{X}} dt'\)</span> is small).</p>
+<div class="section" id="the-origins-of-predictability-scale-separation-and-balanced-dynamics">
+<h2>The origins of predictability (Scale Separation) and balanced dynamics<a class="headerlink" href="#the-origins-of-predictability-scale-separation-and-balanced-dynamics" title="Permalink to this headline">¶</a></h2>
+<p><br />
+In a dynamical system, we can use scale analysis to identify the phenomenon with the longest memory and our Earth atmosphere is no exception. The atmosphere can be described by the equations of motion of a fluid.</p>
+<div class="math notranslate nohighlight" id="equation-eq8">
+<span class="eqno">()<a class="headerlink" href="#equation-eq8" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\frac{D \mathbf{u}}{Dt}&amp;=-\frac{\nabla p}{\rho}+\nu\nabla^{2}\mathbf{u}+\mathbf{F} \\
+\frac{D\rho}{Dt}&amp;=0 \\
+\frac{D\theta}{Dt}&amp;=\frac{1}{c_p}(\frac{\theta}{T})\dot{Q} \\
+\end{align*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> is momentum in vector form, <span class="math notranslate nohighlight">\(p\)</span> is pressure, <span class="math notranslate nohighlight">\(\rho\)</span> is density, <span class="math notranslate nohighlight">\(\nu\)</span> is the kinematic viscosity and <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is the external forces such as gravity. The second equation is the mass conservation, which will show up again in the later section when we talk about the ensemble forecast. The third equation is the thermodynamics equation, where <span class="math notranslate nohighlight">\(\theta\)</span> is the potential temperature, <span class="math notranslate nohighlight">\(c_p\)</span> is the heat capacity of air at a constant pressure, and <span class="math notranslate nohighlight">\(\dot{Q}\)</span> is the diabatic process. The first equation of <a class="reference internal" href="../../week2/week2.html#equation-eq8">(8)</a> is so-called Navier-Stokes equation. If we drop the viscosity term, it is called Euler equation. With a few steps of assumptions (i.e., no acoustic wave, hydrostatic and geostrophic balances and beta plane, see Vallis Ch 5.4 for detailed derivations), we can further simplify the model to a single-variable prognostic equation, which describes the time evolution of Rossby wave <a class="reference internal" href="../../week2/week2.html#equation-eq9">(9)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq9">
+<span class="eqno">()<a class="headerlink" href="#equation-eq9" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\frac{\partial \zeta}{\partial t}+(\mathbf{u_g}\cdot\nabla\zeta)+v_g\beta &amp;=-f_o\nabla\cdot u_a \\
+\frac{Db'}{Dt}+N^2\omega &amp;=0
+\end{align*}\end{split}\]</div>
+<p>The first equation of <a class="reference internal" href="../../week2/week2.html#equation-eq9">(9)</a> is quasi-geostrophic vorticity equation, where <span class="math notranslate nohighlight">\(\zeta=\nabla\times\mathbf{u}\)</span>, <span class="math notranslate nohighlight">\(v_g\)</span> is the meridional component of the geostrophic wind, <span class="math notranslate nohighlight">\(f_o\)</span> is the Coriolis acceleration at the reference latitude, <span class="math notranslate nohighlight">\(\beta\)</span> is the meridional gradient of Coriolis acceleration <span class="math notranslate nohighlight">\(\frac{df}{dy}\)</span> and <span class="math notranslate nohighlight">\(\nabla\cdot \mathbf{u_a}\)</span> is the convergence/divergence of ageostrophic wind. The second equation is the thermodynamics equation with the hydrostatic assumption. We drop the diabatic term for simplification. From the last equation of <a class="reference internal" href="../../week2/week2.html#equation-eq9">(9)</a>, we can easily find that the adiabatic cooling/heating by vertical motion (<span class="math notranslate nohighlight">\(N^2\omega\)</span>) is always balanced by the horizontal temperature advection (<span class="math notranslate nohighlight">\(\mathbf{u_g}\cdot\nabla b'\)</span>).</p>
+<p>By combining the two equations in <a class="reference internal" href="../../week2/week2.html#equation-eq9">(9)</a> with continuity equation, we can have quasi-geostrophic potential vorticity equation (QG-PV).</p>
+<div class="math notranslate nohighlight" id="equation-eq10">
+<span class="eqno">()<a class="headerlink" href="#equation-eq10" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+\frac{Dq}{Dt} &amp;=0
+\end{align*}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight" id="equation-eq11">
+<span class="eqno">()<a class="headerlink" href="#equation-eq11" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+\frac{D}{Dt}(\nabla^2\psi+\beta y+\frac{\partial }{\partial z}(\frac{f^2}{N^2}\frac{\partial\psi}{\partial z})) &amp;=0
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\nabla^2\psi =\zeta\)</span> and <span class="math notranslate nohighlight">\(\nabla^2\psi =\frac{1}{f}\nabla^2\phi\)</span>. The QG-PV equation can also be derived by using Kelvin circulation theorem.</p>
+<p>The reason why we can implement these physical assumptions (no acoustic wave, hydrostatic and geostrophic balances) is that the corresponding phenomena have relatively short characteristic timescales (decorrelation time) compared to the timescales of weather (or the Rossby wave). For example, a normal acoustic wave can travel a few hundred meters to a few kilometers before its amplitude decays to the e-folding scale and the whole process only happens within a few seconds. For a gravity wave, it can travel over 100 kilometers to a few thousand kilometers before reaching the e-folding scales. However, the gravity wave speed can be much higher than the Rossby wave, which enables it to travel across the world within a few days. One should notice that the gravity wave is non-dispersive. This indicates that all gravity waves travel in a similar speed regardless of the wave length. The Rossby wave, on the other hand, is a dispersive wave and thus its timescales depends on the wave length. Due to the earth rotation, only a small portion of energy can be converted to the eddy kinetic energy, while most of the energy is trapped in the zonal mean structure <span id="id1">[<a class="reference internal" href="../../week2/week2.html#id14">Lor55</a>]</span>. In the regions away from tropics, the so-called “eddy” is dominated by the Rossby wave dynamics <a class="reference internal" href="../../week2/week2.html#equation-eq10">(10)</a>. In (dry) Rossby wave dynamics, the only prognostic variable is PV while other fields (e.g., horizontal wind and vertical motion) can be diagnosed by giving the PV field. Because of this 1-on-1 relation among wind, stream function and PV field, the Rossby wave dynamics is also called balanced dynamics. “Balance” implies that the phenomena with timescales shorter than Rossby wave have reached a dynamical equilibrium state and thus their time tendency can be omitted.</p>
+<p>By observing the <a class="reference internal" href="../../week2/week2.html#equation-eq11">(11)</a>, one can find there are two components in PV, the barotropic vorticity (<span class="math notranslate nohighlight">\(\nabla^2\psi+\beta\)</span>, i.e., vorticity in a single layer or vorticity over different layers with the same sign) and baroclinic vorticity (<span class="math notranslate nohighlight">\(\frac{\partial }{\partial z}(\frac{f^2}{N^2}\frac{\partial\psi}{\partial z})\)</span>, i.e., vorticity difference in vertical direction). Thus, for the growth of PV, there are two different pathways, either through the generation of barotropic component or through the generation of baroclinic component. While both processes can happen at the same time, one is usually more dominant than the other and which one is more important depends on the regions of interest. In most cases, the mid-latitude frontal geneses (weather scales) are associated with the baroclinic instability, where the counter-propagating wave over different vertical layers advected by the vertical wind shear leads to the growth of baroclinic components <a class="reference internal" href="../../week2/week2.html#fig4"><span class="std std-ref">FIG4</span></a>.</p>
+<div class="figure align-default" id="fig4">
+<img alt="../../_images/FIG4.png" src="../../_images/FIG4.png" />
+<p class="caption"><span class="caption-text">A schematic diagram showing how the counter-propagating waves over different vertical layers amplify each other. When t=0, the upper-level trough is delayed the lower-level trough by more than 0.25 wave length. However, due to the existence of vertical wind shear, the upper-level trough propagates faster than the lower level trough. In addition, we also know the geopotential height above the near-surface cold advection will decrease with time according to the hydrostatic balance. Thus, when the upper-level trough is spatially collocated with the near surface cold advection, it will be strengthened by the cold advection. This vertical coupling process can increase the amplitude PV, where vertical wind shear and counter-propagating waves are necessary criteria for baroclinic instability.</span><a class="headerlink" href="#fig4" title="Permalink to this image">¶</a></p>
+</div>
+<p>The other key process for the growth of PV is the barotropic instability. In barotropic instability, the counter-propagating wave happens in meridional direction rather than the vertical direction. Thus, the necessary condition for barotropic instability is the horizontal wind shear. Both barotropic and baroclinic instabilities will lead to the exponential growth of PV anomaly, i.e., <span class="math notranslate nohighlight">\(\frac{Dq'}{Dt}\sim \mathrm{exp}(\sigma t)\)</span>, where <span class="math notranslate nohighlight">\(\sigma\)</span> is the growth rate of this system.</p>
+<p>Now, some of you might have noticed the connection between <a class="reference internal" href="../../week2/week2.html#equation-eq10">(10)</a> and <a class="reference internal" href="../../week1/week1.html#equation-eq5">(5)</a>. If we linearize the QG-PV equation by assuming <span class="math notranslate nohighlight">\(\mathbf{\bar{u}}\approx U_m\)</span>, i.e., the mean flow is dominated by the zonal mean wind, we will find the growth of PV perturbation strongly depends on the existence of wind shear. We will walk through the whole derivation in the homework assignment by using Philips two-layer model.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here are a few useful physical connections between the first and the second laws of thermodynamics equation, where potential temperature is the key ingredient. From the first law of thermodynamics equation, we know there are two ways to change the internal energy, either through “heat” or “work” <a class="reference internal" href="../../week2/week2.html#equation-eq12">(12)</a></p>
+<div class="math notranslate nohighlight" id="equation-eq12">
+<span class="eqno">()<a class="headerlink" href="#equation-eq12" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+dU &amp;=\dot{Q}-Pd\alpha
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(dU=c_v dT\)</span>. By adopting <span class="math notranslate nohighlight">\(dP\alpha=Pd\alpha+\alpha dP\)</span> and <span class="math notranslate nohighlight">\(P\alpha=RT\)</span>, we can rewrite <a class="reference internal" href="../../week2/week2.html#equation-eq12">(12)</a> to</p>
+<div class="math notranslate nohighlight" id="equation-eq13">
+<span class="eqno">()<a class="headerlink" href="#equation-eq13" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+\dot{Q} &amp;=(c_v+R)dT-\alpha dP
+\end{align*}\]</div>
+<p>Then, divide the whole equation by <span class="math notranslate nohighlight">\(T\)</span> and adopt the ideal gas law, we can find what left on the l.h.s is entropy <span class="math notranslate nohighlight">\(\dot{Q}/T\)</span> and on the r.h.s. is <span class="math notranslate nohighlight">\(c_pdT/T-RdP/p\)</span>, which is the definition of potential temperature. Thus, the conservation of potential temperature is mathematically identical to the conservation of entropy.</p>
+<p>From <a class="reference internal" href="../../week2/week2.html#equation-eq8">(8)</a> to <a class="reference internal" href="../../week2/week2.html#equation-eq9">(9)</a>, we can simply use the definition of buoyancy, i.e., <span class="math notranslate nohighlight">\(b'=-\frac{\rho'}{\bar{\rho_0}}g=\frac{\theta'}{\bar{\theta}}g\)</span> and the hydrostatic approximation (i.e., <span class="math notranslate nohighlight">\(b_0=-g\rho_0\)</span> You will need to finish the last step in the homework assignment) to get the hydrostatic thermodynamics equation.</p>
+</div>
+</div>
+<div class="section" id="atmospheric-blocking">
+<h2>Atmospheric Blocking<a class="headerlink" href="#atmospheric-blocking" title="Permalink to this headline">¶</a></h2>
+<p><br />
+A key process that can provide additional predictability is the occurrence of atmospheric blocking. Blocking is a process where the negative PV anomaly cuts off from its adjacent ridge and forms a region with closed PV contour. Different from the elongated feature of trough and ridge, the shape of blocking is relatively round. Due to the inverse cascade of large-scale kinetic energy (more concentrated to the large-scale feature), a round PV is less likely to dissipate until either it is eroded by diabatic process or move back into low PV regions. Thus blocking usually sustains longer than an elongated PV feature.
+<br />
+<br />
+While blocking is an important predictability source, it is still an unsolved problem. To the best of our knowledge, there are a few processes such as wave activity and teleconnection can change the occurrence frequency of blocking <span id="id2">[<a class="reference internal" href="../../week2/week2.html#id11">HMB16</a>]</span>. In numerical experiments, the models with higher spatial resolution tend to simulate more reasonable blocking frequency suggesting the importance of upscale cascade of small-scale wave energy. There are a few interesting mechanisms proposed by Dr. Nakamura at U Chicago, who used a traffic jam model to describe the potential mechanisms of atmospheric blocking. <span id="id3">[<a class="reference internal" href="../../week2/week2.html#id16">NH18</a>]</span></p>
+</div>
+<div class="section" id="teleconnections">
+<h2>Teleconnections<a class="headerlink" href="#teleconnections" title="Permalink to this headline">¶</a></h2>
+<p><br />
+While the discussion above focuses on the internal dynamics of PV, the external forcing can play important roles for timescales longer than 2 weeks. In equation <a class="reference internal" href="../../week2/week2.html#equation-eq9">(9)</a>, we omit the external forcing. Thus, the vertical motion-induced adiabatic cooling/warming is always balanced by the horizontal temperature advection. However, with the existence of diabatic term, the balance can change. Here, we provide two different cases to demonstrate how the timescales of external forcing determines the predictability of mid-latitude weather.</p>
+<p>In the first case, the characteristic timescales of <span class="math notranslate nohighlight">\(\dot{Q}\)</span> in <a class="reference internal" href="../../week2/week2.html#equation-eq8">(8)</a> is much shorter or comparable to the timescales of Rossby wave <a class="reference internal" href="../../week2/week2.html#equation-eq14">(14)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq14">
+<span class="eqno">()<a class="headerlink" href="#equation-eq14" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\dot{Q} &amp;\sim \mathrm{exp}(\sigma t) \\ 
+\forall &amp;\sigma&gt; 1/14 (1/days) 
+\end{align*}\end{split}\]</div>
+<p>In this case, the balance happens within horizontal temperature advection, vertical motion and external forcing. From a climate perspective, the external forcing is dominated by the radiative forcing. Thus, this balance is also called “radiative-advective-convective equilibrium” (RACE). In general, the whole process of RACE (instability adjustment) happens within 2 weeks. For longer timescales, we can only have their equilibrium statistics (i.e., given any two components, we can derive the third).
+<br />
+<br />
+The second case is that the characteristic timescales of <span class="math notranslate nohighlight">\(\dot{Q}\)</span> in <a class="reference internal" href="../../week2/week2.html#equation-eq8">(8)</a> is much longer than the Rossby wave timescales. In this case, the internal dynamics of PV can be considered as a dissipative process, which is always balanced by the external forcing <a class="reference internal" href="../../week2/week2.html#equation-eq15">(15)</a> (also see <span id="id4">[<a class="reference internal" href="../../week2/week2.html#id10">HK81</a>]</span> for details).</p>
+<div class="math notranslate nohighlight" id="equation-eq15">
+<span class="eqno">()<a class="headerlink" href="#equation-eq15" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\dot{Q} &amp;\sim \mathrm{exp}(\sigma t) \\ 
+\forall &amp;\sigma&lt; 1/14 (1/days) \\
+\mathbf{u}\cdot\nabla q -\epsilon q+F(\dot{Q}) &amp;= 0  
+\end{align*}\end{split}\]</div>
+<p>One classic example is the tropical-convection forced tropical-extratropical teleconnection. The large-scale tropical convection such as Madden-Julian oscillation or El Ni~no Southern oscillation (ENSO) can generate large-scale divergence in the upper troposphere. The divergence can perturb the extratropical storm tracks and generate stationary Rossby wave propagating to the extratropical regions. In this case, timescales of forced response is determined by the timescales of forcing rather than the timescales of internal dynamics. Therefore, the predictability of a forced system can be much longer than the one purely determined by the internal dynamics since the external forcings are usually characterized by longer life cycles (e.g., the life cycle of MJO is about 20-90 days and ENSO is about 2-7 years). One prevailing research field is looking for the “forecast opportunity” from subseasonal to longer timescales and the so-called “forecast opportunity” indicates the “external forcing”.
+<br />
+<br />
+The animation below is an example of tropical-extratropical teleconnection in a barotropic model, where we force the model with a constant divergence forcing (i.e., <span class="math notranslate nohighlight">\(\sigma\sim 0\)</span>). We can find in the later period of integration, the forced response gradually reach a equilibrium state. Similar large-scale patterns can also be found over the extratropical regions if we take the monthly average of 500hPa geopotential height.</p>
+<div class="figure align-default" id="fig5">
+<img alt="../../_images/solid_body_rotation.gif" src="../../_images/solid_body_rotation.gif" />
+<p class="caption"><span class="caption-text">An example of tropical-extratropical teleconnection in a barotropic model. The model is forced by a constant divergence flow (dashed line). The shading shows the vorticity field.</span><a class="headerlink" href="#fig5" title="Permalink to this image">¶</a></p>
+</div>
+<p>\</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Tropical-extratropical teleconection was first discovered by Bjerknes (1969) <span id="id5">[<a class="reference internal" href="../../week2/week2.html#id8">Bje69</a>]</span> (although he didn’t spell it out). Then theory was mature around 1980s <span id="id6">[<a class="reference internal" href="../../week2/week2.html#id10">HK81</a>]</span>, where Sir Brian Hoskins used primitive equation model to investigate the underpinning dynamics. The name of “Rossby wave source” was also established from Sir Brian Hoskins’ work.</p>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id7"></span></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chaos_and_predictability/week2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kai-Chih Tseng<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

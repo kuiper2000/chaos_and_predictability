@@ -1,0 +1,653 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero widget. &#8212; Chaos and Predictability</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Chaos and Predictability</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Syllabus
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week1/week1.html">
+   Week 1: Predictability of Weather and Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week2/week2.html">
+   Week 2: Predictability source in atmosphere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week3/week3.html">
+   Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week5/week5.html">
+   Week 5: The connection between statistical mechanics and ensemble forecast I: Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../week6/week6.html">
+   Week 6: The connection between statistical mechanics and ensemble forecast I: Applications
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/home/hero.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2Fcontent/home/hero.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Hero widget.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hero-image-optional-enter-filename-of-an-image-in-the-static-img-folder">
+   Hero image (optional). Enter filename of an image in the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     static/img/
+    </span>
+   </code>
+   folder.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apply-a-background-color-gradient-or-image">
+   Apply a background color, gradient, or image.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uncomment-by-removing-an-option-to-apply-it">
+   Uncomment (by removing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     #
+    </span>
+   </code>
+   ) an option to apply it.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choose-a-light-or-dark-text-color-by-setting-text-color-light">
+   Choose a light or dark text color by setting
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     text_color_light
+    </span>
+   </code>
+   .
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#any-html-color-name-or-hex-value-is-valid">
+   Any HTML color name or Hex value is valid.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background-color">
+   Background color.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#color-navy">
+   color = “navy”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background-gradient">
+   Background gradient.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background-image">
+   Background image.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-color-true-light-or-false-dark">
+   Text color (true=light or false=dark).
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#call-to-action-links-optional">
+   Call to action links (optional).
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#display-link-s-by-specifying-a-url-and-label-below-icon-is-optional-for-cta">
+   Display link(s) by specifying a URL and label below. Icon is optional for
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     [cta]
+    </span>
+   </code>
+   .
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remove-a-link-note-by-deleting-a-cta-note-block">
+   Remove a link/note by deleting a cta/note block.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#url-post-getting-started">
+   url = “post/getting-started/”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#label-get-started">
+   label = “Get Started”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#icon-pack-fas">
+   icon_pack = “fas”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#icon-download">
+   icon = “download”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#url-https-sourcethemes-com-academic">
+   url = “https://sourcethemes.com/academic/”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#label-view-documentation">
+   label = “View Documentation”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note-an-optional-note-to-show-underneath-the-links">
+   Note. An optional note to show underneath the links.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#label-a-id-academic-release-href-https-sourcethemes-com-academic-updates-data-repo-gcushen-hugo-academic-latest-release-v-a">
+   label = ‘
+   <a data-repo="gcushen/hugo-academic" href="https://sourcethemes.com/academic/updates" id="academic-release">
+    Latest release
+    <!-- V -->
+   </a>
+   ’
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Hero widget.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Hero widget.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hero-image-optional-enter-filename-of-an-image-in-the-static-img-folder">
+   Hero image (optional). Enter filename of an image in the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     static/img/
+    </span>
+   </code>
+   folder.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apply-a-background-color-gradient-or-image">
+   Apply a background color, gradient, or image.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uncomment-by-removing-an-option-to-apply-it">
+   Uncomment (by removing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     #
+    </span>
+   </code>
+   ) an option to apply it.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choose-a-light-or-dark-text-color-by-setting-text-color-light">
+   Choose a light or dark text color by setting
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     text_color_light
+    </span>
+   </code>
+   .
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#any-html-color-name-or-hex-value-is-valid">
+   Any HTML color name or Hex value is valid.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background-color">
+   Background color.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#color-navy">
+   color = “navy”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background-gradient">
+   Background gradient.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background-image">
+   Background image.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-color-true-light-or-false-dark">
+   Text color (true=light or false=dark).
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#call-to-action-links-optional">
+   Call to action links (optional).
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#display-link-s-by-specifying-a-url-and-label-below-icon-is-optional-for-cta">
+   Display link(s) by specifying a URL and label below. Icon is optional for
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     [cta]
+    </span>
+   </code>
+   .
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remove-a-link-note-by-deleting-a-cta-note-block">
+   Remove a link/note by deleting a cta/note block.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#url-post-getting-started">
+   url = “post/getting-started/”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#label-get-started">
+   label = “Get Started”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#icon-pack-fas">
+   icon_pack = “fas”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#icon-download">
+   icon = “download”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#url-https-sourcethemes-com-academic">
+   url = “https://sourcethemes.com/academic/”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#label-view-documentation">
+   label = “View Documentation”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note-an-optional-note-to-show-underneath-the-links">
+   Note. An optional note to show underneath the links.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#label-a-id-academic-release-href-https-sourcethemes-com-academic-updates-data-repo-gcushen-hugo-academic-latest-release-v-a">
+   label = ‘
+   <a data-repo="gcushen/hugo-academic" href="https://sourcethemes.com/academic/updates" id="academic-release">
+    Latest release
+    <!-- V -->
+   </a>
+   ’
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="hero-widget">
+<h1>Hero widget.<a class="headerlink" href="#hero-widget" title="Permalink to this headline">¶</a></h1>
+<p>widget = “hero”  # Do not modify this line!
+active = true  # Activate this widget? true/false
+weight = 10  # Order that this section will appear.</p>
+<p>title = “Climate and Geophysical Fluid Dynamics”</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="hero-image-optional-enter-filename-of-an-image-in-the-static-img-folder">
+<h1>Hero image (optional). Enter filename of an image in the <code class="docutils literal notranslate"><span class="pre">static/img/</span></code> folder.<a class="headerlink" href="#hero-image-optional-enter-filename-of-an-image-in-the-static-img-folder" title="Permalink to this headline">¶</a></h1>
+<p>hero_media = “”</p>
+<p>[design.background]</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="apply-a-background-color-gradient-or-image">
+<h1>Apply a background color, gradient, or image.<a class="headerlink" href="#apply-a-background-color-gradient-or-image" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="uncomment-by-removing-an-option-to-apply-it">
+<h1>Uncomment (by removing <code class="docutils literal notranslate"><span class="pre">#</span></code>) an option to apply it.<a class="headerlink" href="#uncomment-by-removing-an-option-to-apply-it" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="choose-a-light-or-dark-text-color-by-setting-text-color-light">
+<h1>Choose a light or dark text color by setting <code class="docutils literal notranslate"><span class="pre">text_color_light</span></code>.<a class="headerlink" href="#choose-a-light-or-dark-text-color-by-setting-text-color-light" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="any-html-color-name-or-hex-value-is-valid">
+<h1>Any HTML color name or Hex value is valid.<a class="headerlink" href="#any-html-color-name-or-hex-value-is-valid" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="background-color">
+<h1>Background color.<a class="headerlink" href="#background-color" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="color-navy">
+<h1>color = “navy”<a class="headerlink" href="#color-navy" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="background-gradient">
+<h1>Background gradient.<a class="headerlink" href="#background-gradient" title="Permalink to this headline">¶</a></h1>
+<p>#gradient_start = “#4bb4e3”
+#gradient_end = “#2b94c3”</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="background-image">
+<h1>Background image.<a class="headerlink" href="#background-image" title="Permalink to this headline">¶</a></h1>
+<p>image = “IMG_1019.jpg”  # Name of image in <code class="docutils literal notranslate"><span class="pre">static/img/</span></code>.
+image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="text-color-true-light-or-false-dark">
+<h1>Text color (true=light or false=dark).<a class="headerlink" href="#text-color-true-light-or-false-dark" title="Permalink to this headline">¶</a></h1>
+<p>text_color_light = true</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="call-to-action-links-optional">
+<h1>Call to action links (optional).<a class="headerlink" href="#call-to-action-links-optional" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="display-link-s-by-specifying-a-url-and-label-below-icon-is-optional-for-cta">
+<h1>Display link(s) by specifying a URL and label below. Icon is optional for <code class="docutils literal notranslate"><span class="pre">[cta]</span></code>.<a class="headerlink" href="#display-link-s-by-specifying-a-url-and-label-below-icon-is-optional-for-cta" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="remove-a-link-note-by-deleting-a-cta-note-block">
+<h1>Remove a link/note by deleting a cta/note block.<a class="headerlink" href="#remove-a-link-note-by-deleting-a-cta-note-block" title="Permalink to this headline">¶</a></h1>
+<p>[cta]</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="url-post-getting-started">
+<h1>url = “post/getting-started/”<a class="headerlink" href="#url-post-getting-started" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="label-get-started">
+<h1>label = “Get Started”<a class="headerlink" href="#label-get-started" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="icon-pack-fas">
+<h1>icon_pack = “fas”<a class="headerlink" href="#icon-pack-fas" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="icon-download">
+<h1>icon = “download”<a class="headerlink" href="#icon-download" title="Permalink to this headline">¶</a></h1>
+<p>[cta_alt]</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="url-https-sourcethemes-com-academic">
+<h1>url = “<a class="reference external" href="https://sourcethemes.com/academic/">https://sourcethemes.com/academic/</a>”<a class="headerlink" href="#url-https-sourcethemes-com-academic" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="label-view-documentation">
+<h1>label = “View Documentation”<a class="headerlink" href="#label-view-documentation" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="note-an-optional-note-to-show-underneath-the-links">
+<h1>Note. An optional note to show underneath the links.<a class="headerlink" href="#note-an-optional-note-to-show-underneath-the-links" title="Permalink to this headline">¶</a></h1>
+<p>#[cta_note]</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="label-a-id-academic-release-href-https-sourcethemes-com-academic-updates-data-repo-gcushen-hugo-academic-latest-release-v-a">
+<h1>label = ‘<a id="academic-release" href="https://sourcethemes.com/academic/updates" data-repo="gcushen/hugo-academic">Latest release <!-- V --></a>’<a class="headerlink" href="#label-a-id-academic-release-href-https-sourcethemes-com-academic-updates-data-repo-gcushen-hugo-academic-latest-release-v-a" title="Permalink to this headline">¶</a></h1>
+<p>#<span style="text-shadow: none;"><a class="github-button" href="https://github.com/gcushen/hugo-academic" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span></p>
+<p>‘</p>
+<p>“The purpose of computation is insight, not numbers.”
+― Richard Hamming</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/home"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kai-Chih Tseng<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
