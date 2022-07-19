@@ -12,7 +12,7 @@ One should notice that we have a very strong assumption here, which is the conti
 :::
 
 ## Jacobian Matrix and determinant
-Before diving right in the Liouville equation, we will start with something simple, which will enable us to better understand the physical meaning behind. Two major ingredients in Liouville equation are (1) Jacobian matrix and (2) determinant. 
+Before diving right in the LE, we will start with something simple, which will enable us to better understand the physical meaning behind. Two major ingredients in LE are (1) Jacobian matrix and (2) determinant. 
 
 Mathematically, Jacobian matrix represents mapping one matrix to the other with a simple linear transformation. For example, when we manage to convert Polar coordinate to Cartesian coordinate, we can use the following formula, 
 
@@ -32,7 +32,7 @@ r\mathrm{cos}(\theta)  \\
 r\mathrm{sin}(\theta)   
 \end{bmatrix}
 ```  
-However, if the transformation is too complicated, we might want to find an easier way to approach the problem. One way to do that is through a simple linear transformation. So... how does it work? Let's start from a nonlinear function $y=f(x)$, which maps $x$ to $y$ or $f(x)$. If we only focus on a small range (let's say...centering around $p$) and assume a linear function $T(x)$ can well approximate the more complicated function $f(x)$, i.e., $T(x) = Ax+b$. This will give us 
+However, if the transformation is too complicated, we might want to find an easier way to approach the problem. One way to do that is through a simple linear transformation. So... how does it work? Let's start from a nonlinear function $y=f(x)$, which maps $x$ to $y$ or $f(x)$. If we only focus on a small range (let's say...centering around $p$) and assume a linear function $T(x)$ (i.e., $T(x) = Ax+b$) can well approximate the more complicated function $f(x)$. This will give us 
 
 ```{math}
 :label: eq31
@@ -135,7 +135,7 @@ $\mathrm{det}{(\begin{bmatrix}
 0 & 2 
 \end{bmatrix})}$
 
-Now, both ingredients are ready, the only question left is what is the connection among Jacobian matrix, determinant and Liouville equation? We can take a look of the example below. If today, we would like to convert a vector $\begin{bmatrix}
+Now, both ingredients are ready, the only question left is what is the connection among Jacobian matrix, determinant and LE? We can take a look of the example below. If today, we would like to convert a vector $\begin{bmatrix}
 u  \\
 v 
 \end{bmatrix}$ to a vector $\begin{bmatrix}
@@ -209,7 +209,7 @@ from {eq}`eq42`, we can easily observe that the area spanned by unit vector has 
 
 ## Connections between Liouville equation and ensemble forecasts
 
-OK, now we know the mathematical meaning (geometric meaning) of a Jacobian matrix and determinant. To further understand the their roles in Liouville equation, let's first take a what Joseph Liouville found in 1838. For a dynamical system with third order differential terms  
+OK, now we know the mathematical meaning (geometric meaning) of a Jacobian matrix and determinant. To further understand the their roles in LE, let's first take a what Joseph Liouville found in 1838. For a dynamical system with third order differential terms  
 
 ```{math}
 :label: eq43
@@ -269,12 +269,12 @@ we further integrate both sides over the entire phase space. One can find that t
 this also gives us $\frac{\partial }{\partial t} \int\mathrm{ln}\rho dx^{''}$ = 0 (note that we swap the order of integration and $\frac{\partial }{\partial t}$ since both of them are linear operators). {eq}`eq49` is so-called the "conservation of information". In [information theory](https://en.wikipedia.org/wiki/Entropy_(information_theory)#Definition), the definition of "information" is very similar to the left-hand-side of {eq}`eq49`, where the information provided by $i$th element is $\mathrm{ln}\rho(x_{i})$.
 
 
-Now, we can imagine how powerful {eq}`eq47` is since it forecasts the entire probability density function. Different from the traditional probabilistic forecast method, which estimates the ensemble spread by generating tens of hundreds of ensemble simulations, the Liouville equation is a more powerful tool. However, there is no free meal. Implementing Liouville equation in real operational forecast is extremely challenging since we need to find the analytical solution of a dynamical system first (i.e., {eq}`eq44`) and then calculate its derivative over all possible dimensions (i.e., the right-hand-side of {eq}`eq47`). This is only possible when the dynamical system is simple enough. 
+Now, we can imagine how powerful {eq}`eq47` is since it forecasts the entire probability density function. Different from the traditional probabilistic forecast method, which estimates the ensemble spread by generating tens of hundreds of ensemble simulations, LE is a more powerful tool. However, there is no free meal. Implementing LE in real operational forecast is extremely challenging since we need to find the analytical solution of a dynamical system first (i.e., {eq}`eq44`) and then calculate its derivative over all possible dimensions (i.e., the right-hand-side of {eq}`eq47`). This is only possible when the dynamical system is simple enough. 
 
 
-Next week, we will walk through a few cases where we can analytical implement the Liouville equation in the forecast of the PDF. 
+Next week, we will walk through a few cases where we can analytical implement LE in the forecast of the PDF. 
 :::{note}
-The Nobel prize winner, Roger Penrose (Penrose (1989)), who was also Stephan Hawkins' Ph.D., committee, referred to Liouville equation as a very beautiful formula since it describes that the volume of any region of phase spaces must remain the same. Penrose also proposed that a black hole can destroy information (i.e., $\rho$ in {eq}`eq47` is not conserved) and thus the statistical mechanics might break down at the space-time singularity. 
+The Nobel prize winner, Roger Penrose (Penrose (1989)), who was also Stephan Hawkins' Ph.D., committee, referred to LE as a very beautiful formula since it describes that the volume of any region of phase spaces must remain the same. Penrose also proposed that a black hole can destroy information (i.e., $\rho$ in {eq}`eq47` is not conserved) and thus the statistical mechanics might break down at the space-time singularity. 
 
 
 In addition to his achievement in theoretical physics, Penrose is also an artist who is famous for his 3D Penrose tiling. An award-winning app (mobile game), [monument valley](https://en.wikipedia.org/wiki/Monument_Valley_(video_game)) is inspired by his arts. NYC has a National Museum of Mathematics where you can find some of Penrose's work.  
