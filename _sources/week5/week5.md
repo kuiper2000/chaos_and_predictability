@@ -260,24 +260,24 @@ Let's take a look what {eq}`eq47` tells us. First, {eq}`eq44` describes how the 
 :label: eq48
 \frac{\partial \mathrm{ln}\rho}{\partial t}=\frac{\partial \mathbf{\Phi}}{\partial x^{''}}
 ```
-we further integrate both sides over the entire phase space. Note that $\frac{\partial \mathbf{\Phi}}{\partial x^{''}}$ is a potential function suggesting its integration over the whole domain will be 0. Thus, {eq}`eq48` is also equivalent to 
+we further integrate both sides over the entire phase space. One can find that the integration of right-hand-side of {eq}`eq49` is always 0 (why?). Thus, {eq}`eq48` is also equivalent to 
 
 ```{math}
 :label: eq49
 \int\frac{\partial \mathrm{ln}\rho}{\partial t}dx^{''}=\int\frac{\partial \mathbf{\Phi}}{\partial x^{''}} dx^{''}=0
 ```
-One can find that the integration of right-hand-side of {eq}`eq49` is always 0, which also gives us $\frac{\partial }{\partial t} \int\mathrm{ln}\rho dx^{''}$ (by swapping the linear operator). This is so-called the "conservation of information". In [information theory](https://en.wikipedia.org/wiki/Entropy_(information_theory)#Definition), the definition of "information" is very similar to the left-hand-side of {eq}`eq49`, where the information provided by $i$th element is $\mathrm{ln}\rho(x_{i})$.
+this also gives us $\frac{\partial }{\partial t} \int\mathrm{ln}\rho dx^{''}$ = 0 (note that we swap the order of integration and $\frac{\partial }{\partial t}$ since both of them are linear operators). {eq}`eq49` is so-called the "conservation of information". In [information theory](https://en.wikipedia.org/wiki/Entropy_(information_theory)#Definition), the definition of "information" is very similar to the left-hand-side of {eq}`eq49`, where the information provided by $i$th element is $\mathrm{ln}\rho(x_{i})$.
 
 
-Now, we can imagine how powerful {eq}`eq47` is since it forecasts} the entire probability density. Different from the traditional method, which estimates the ensemble spread by generating tens of hundreds of ensemble simulations, the Liouville equation is a more powerful tool. However, there is no free meal. Implementing Liouville equation in real operational forecast is extremely challenging since we need to find the analytical solution of a dynamical system first (i.e., {eq}`eq44`) and then calculate its derivative over all possible dimensions (i.e., the right-hand-side of {eq}`eq47`). This is only possible when the dynamical system is simple enough. 
+Now, we can imagine how powerful {eq}`eq47` is since it forecasts the entire probability density function. Different from the traditional probabilistic forecast method, which estimates the ensemble spread by generating tens of hundreds of ensemble simulations, the Liouville equation is a more powerful tool. However, there is no free meal. Implementing Liouville equation in real operational forecast is extremely challenging since we need to find the analytical solution of a dynamical system first (i.e., {eq}`eq44`) and then calculate its derivative over all possible dimensions (i.e., the right-hand-side of {eq}`eq47`). This is only possible when the dynamical system is simple enough. 
 
 
 Next week, we will walk through a few cases where we can analytical implement the Liouville equation in the forecast of the PDF. 
 :::{note}
-The Nobel prize winner, Roger Penrose (Penrose (1989)), who is also Stephan Hawkins' Ph.D., committee, referred to Liouville equation as a very beautiful formula since it describes that the volume of any region of phase spaces must remain the same. Penrose also proposed that a black hole can destroy information (i.e., $\rho$ in {eq}`eq47` is not conserved) and thus the statistical mechanics might break down at the space-time singularity. 
+The Nobel prize winner, Roger Penrose (Penrose (1989)), who was also Stephan Hawkins' Ph.D., committee, referred to Liouville equation as a very beautiful formula since it describes that the volume of any region of phase spaces must remain the same. Penrose also proposed that a black hole can destroy information (i.e., $\rho$ in {eq}`eq47` is not conserved) and thus the statistical mechanics might break down at the space-time singularity. 
 
 
-In addition to his achievement in theoretical physics, Penrose is also an artist who is famous for his 3D Penrose tiling. An award-winning app (mobile game), [monument valley](https://en.wikipedia.org/wiki/Monument_Valley_(video_game)) is inspired by his arts. NYC has a National Mathematics Museum where you can find some of Penrose's work.  
+In addition to his achievement in theoretical physics, Penrose is also an artist who is famous for his 3D Penrose tiling. An award-winning app (mobile game), [monument valley](https://en.wikipedia.org/wiki/Monument_Valley_(video_game)) is inspired by his arts. NYC has a National Museum of Mathematics where you can find some of Penrose's work.  
 :::
 
 ```{figure} https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/RogerPenroseTileTAMU2010.jpg/220px-RogerPenroseTileTAMU2010.jpg
