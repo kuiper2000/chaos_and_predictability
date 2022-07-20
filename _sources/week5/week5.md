@@ -113,7 +113,7 @@ Jacobian matrix is widely used in Geoscience and Geophysical Fluid Dynamics. One
 While pattern effect (or patching method) is a useful tool to identify the key regions responsible for global warming, its linear assumption is usually dubbed because the change in global temperature by CO2 forcing is not necessary small. Thus, there is a growing community turning their focus on the nonlinear effect of equilibrium climate sensitivity as well as it's local maximum (i.e., when global temperature is warm enough, the positive feedback from CO2 will get weaker (bell-like curve)) 
 :::
 
-The other key ingredient we need to learn is "determinant". Determinant evaluates how much the area spanned by the eigen basis has changed after the linear transformation. For example, in week 1, we have used the following case as an example, 
+The other key ingredient we need to learn is "determinant". Determinant evaluates how much the area spanned by the eigen basis has changed after the linear transformation. For example, in week 1, we have used the following example, 
 
 ```{math}
 :label: eq39
@@ -129,13 +129,13 @@ The other key ingredient we need to learn is "determinant". Determinant evaluate
 0 & 1 
 \end{bmatrix}. 
 ```  
-where the original basis, $[1,0]$ and $[0,1]$ (x-axis and y-axis respectively), is moved to $[1,0]$ and $[0,2]$ after transformation. We can easily find that the area originally spanned by $[1,0]$ and $[0,1]$ has grown twice bigger (from 1 $\rightarrow$ 4). The change in area size is equivalent to the determinant of the linear operator. i.e., 
+where the original basis, $[1,0]$ and $[0,1]$ (x-axis and y-axis respectively), is moved to $[1,0]$ and $[0,2]$ after transformation. We can easily find that the area originally spanned by $[1,0]$ and $[0,1]$ has grown twice bigger (from 1 $\rightarrow$ 2). The change in area size is equivalent to the determinant of the linear operator. i.e., 
 $\mathrm{det}{(\begin{bmatrix}
 1 & 0 \\
 0 & 2 
 \end{bmatrix})}$
 
-Now, both ingredients are ready, the only question left is what is the connection among Jacobian matrix, determinant and LE? We can take a look of the example below. If today, we would like to convert a vector $\begin{bmatrix}
+Now, both ingredients are ready, the only question left is what is the connection among Jacobian matrix, determinant, and LE? We can take a look of the example below. If today, we would like to convert a vector $\begin{bmatrix}
 u  \\
 v 
 \end{bmatrix}$ to a vector $\begin{bmatrix}
@@ -233,7 +233,7 @@ the determinant of this Jacobian matrix can be written as
 
 ```{math}
 :label: eq46
-\rho(a,b,c,t)  
+\alpha(a,b,c,t)  
 =||\mathrm{det}
 \begin{bmatrix}
 \frac{\partial x}{\partial a}      & \frac{\partial x}{\partial b} & \frac{\partial x}{\partial c} \\
@@ -245,7 +245,7 @@ the determinant of this Jacobian matrix can be written as
 He then proved that 
 ```{math}
 :label: eq47
-\frac{\partial \rho}{\partial t}=\rho\frac{\partial \mathbf{\Phi}}{\partial x^{''}}
+\frac{\partial \alpha}{\partial t}=\alpha\frac{\partial \mathbf{\Phi}}{\partial x^{''}}
 ```
 :::{note}
 {eq}`eq47` can be proved by using the chain rule i.e., 
@@ -255,18 +255,20 @@ $\frac{\partial x^{'''}}{\partial a}=\frac{\partial P}{\partial a}
 
 Let's take a look what {eq}`eq47` tells us. First, {eq}`eq44` describes how the dynamical system gonna evolve with time. If $x$ represents the forecast uncertainty or forecast error (i.e., the distance between any given ensemble member to the ensemble mean), then {eq}`eq44` is a "prognostic equation of model uncertainty". Second, the determinant tells us the how the volume spanned by eigen basis changes after the linear transformation. Physically, the volume spanned by different ensemble members is so-called ensemble spread. Thus, {eq}`eq47` is a "prognostic equation for ensemble spread" (i.e., forecast the entire PDF). In addition, it also tells us the time tendency of ensemble spread is only related to the highest-order differentiation i.e., $\frac{\partial }{\partial x^{'''}}$.  
 
-{eq}`eq47` also has some very interesting applications in the information theory. If we rewrite {eq}`eq47` by dividing both side with $\rho$, we can have
+{eq}`eq47` also has some very interesting applications in the information theory. If we rewrite {eq}`eq47` by dividing both side with $\alpha$, we can have
 ```{math}
 :label: eq48
-\frac{\partial \mathrm{ln}\rho}{\partial t}=\frac{\partial \mathbf{\Phi}}{\partial x^{''}}
+\frac{\partial \mathrm{ln}\alpha}{\partial t}=\frac{\partial \mathbf{\Phi}}{\partial x^{''}}
 ```
 we further integrate both sides over the entire phase space. One can find that the integration of right-hand-side of {eq}`eq49` is always 0 (why?). Thus, {eq}`eq48` is also equivalent to 
 
 ```{math}
 :label: eq49
-\int\frac{\partial \mathrm{ln}\rho}{\partial t}dx^{''}=\int\frac{\partial \mathbf{\Phi}}{\partial x^{''}} dx^{''}=0
+\int\frac{\partial \mathrm{ln}\alpha}{\partial t}dx^{''}=\int\frac{\partial \mathbf{\Phi}}{\partial x^{''}} dx^{''}=0
 ```
-this also gives us $\frac{\partial }{\partial t} \int\mathrm{ln}\rho dx^{''}$ = 0 (note that we swap the order of integration and $\frac{\partial }{\partial t}$ since both of them are linear operators). {eq}`eq49` is so-called the "conservation of information". In [information theory](https://en.wikipedia.org/wiki/Entropy_(information_theory)#Definition), the definition of "information" is very similar to the left-hand-side of {eq}`eq49`, where the information provided by $i$th element is $\mathrm{ln}\rho(x_{i})$.
+this also gives us $\frac{\partial }{\partial t} \int\mathrm{ln}\alpha dx^{''}$ = 0 (note that we swap the order of integration and $\frac{\partial }{\partial t}$ since both of them are linear operators). {eq}`eq49` is so-called the "conservation of information". In [information theory](https://en.wikipedia.org/wiki/Entropy_(information_theory)#Definition), the definition of "information" is very similar to the left-hand-side of {eq}`eq49`, where the information provided by $i$th element is $\mathrm{ln}\alpha(x_{i})$.
+
+An alternative way to represent is using the probability density function, where the density is defined as $\rho=\frac{1}{\alpha}$ (bigger ensemble spread, we are less likely to have more members at a fixed volume). Thus, a more widely used definition of information is $-\mathrm{ln}\rho(x_{i})$
 
 
 Now, we can imagine how powerful {eq}`eq47` is since it forecasts the entire probability density function. Different from the traditional probabilistic forecast method, which estimates the ensemble spread by generating tens of hundreds of ensemble simulations, LE is a more powerful tool. However, there is no free meal. Implementing LE in real operational forecast is extremely challenging since we need to find the analytical solution of a dynamical system first (i.e., {eq}`eq44`) and then calculate its derivative over all possible dimensions (i.e., the right-hand-side of {eq}`eq47`). This is only possible when the dynamical system is simple enough. 
@@ -274,7 +276,7 @@ Now, we can imagine how powerful {eq}`eq47` is since it forecasts the entire pro
 
 Next week, we will walk through a few cases where we can analytical implement LE in the forecast of the PDF. 
 :::{note}
-The Nobel prize winner, Roger Penrose (Penrose (1989)), who was also Stephan Hawkins' Ph.D., committee, referred to LE as a very beautiful formula since it describes that the volume of any region of phase spaces must remain the same. Penrose also proposed that a black hole can destroy information (i.e., $\rho$ in {eq}`eq47` is not conserved) and thus the statistical mechanics might break down at the space-time singularity. 
+The Nobel prize winner, Roger Penrose (Penrose (1989)), who was also Stephan Hawkins' Ph.D., committee, referred to LE as a very beautiful formula since it describes that the volume of any region of phase spaces must remain the same. Penrose also proposed that a black hole can destroy information (i.e., $\alpha$ in {eq}`eq47` is not conserved) and thus the statistical mechanics might break down at the space-time singularity. 
 
 
 In addition to his achievement in theoretical physics, Penrose is also an artist who is famous for his 3D Penrose tiling. An award-winning app (mobile game), [monument valley](https://en.wikipedia.org/wiki/Monument_Valley_(video_game)) is inspired by his arts. NYC has a National Museum of Mathematics where you can find some of Penrose's work.  

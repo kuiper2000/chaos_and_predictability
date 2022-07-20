@@ -216,8 +216,13 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#connections-between-liouville-equation-and-ensemble-forecasts">
-   Connections between Liouville equation and ensemble forecasts
+  <a class="reference internal nav-link" href="#connections-between-liouville-equation-le-and-ensemble-forecasts">
+   Connections between Liouville equation (LE) and ensemble forecasts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solution-of-the-liouville-equation">
+   Solution of the Liouville equation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -251,8 +256,13 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#connections-between-liouville-equation-and-ensemble-forecasts">
-   Connections between Liouville equation and ensemble forecasts
+  <a class="reference internal nav-link" href="#connections-between-liouville-equation-le-and-ensemble-forecasts">
+   Connections between Liouville equation (LE) and ensemble forecasts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solution-of-the-liouville-equation">
+   Solution of the Liouville equation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -276,22 +286,22 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="week-6-the-connection-between-statistical-mechanics-and-ensemble-forecast-i-applications">
 <span id="week6"></span><h1>Week 6: The connection between statistical mechanics and ensemble forecast I: Applications<a class="headerlink" href="#week-6-the-connection-between-statistical-mechanics-and-ensemble-forecast-i-applications" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="connections-between-liouville-equation-and-ensemble-forecasts">
-<h2>Connections between Liouville equation and ensemble forecasts<a class="headerlink" href="#connections-between-liouville-equation-and-ensemble-forecasts" title="Permalink to this headline">¶</a></h2>
-<p>Last week, we learned the physical meaning of Jacobian matrix, determinant and Liouville equation. This week, we will walk through a few of their applications. Before we introduce the examples, we need to know there are two equivalent formulas of Liouville equation: (1) initial state-based Liouville equation and (2) current state-based Liouville equation. One easy way to distinguish these two is looking at how <a class="reference internal" href="../week5/week5.html#equation-eq44">(44)</a> is defined.</p>
+<div class="section" id="connections-between-liouville-equation-le-and-ensemble-forecasts">
+<h2>Connections between Liouville equation (LE) and ensemble forecasts<a class="headerlink" href="#connections-between-liouville-equation-le-and-ensemble-forecasts" title="Permalink to this headline">¶</a></h2>
+<p>Last week, we learned the physical meaning of Jacobian matrix, determinant and LE. This week, we will walk through a few of their applications. Before we introduce the examples, we need to know there are two equivalent formulas of LE: (1) initial state-based LE and (2) current state-based LE. One easy way to distinguish these two is looking at how <a class="reference internal" href="../week5/week5.html#equation-eq44">(44)</a> is defined.</p>
 <p>First, let’s consider a dynamical system only with first-order derivative.</p>
 <div class="math notranslate nohighlight" id="equation-eq50">
 <span class="eqno">(50)<a class="headerlink" href="#equation-eq50" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathbf{\dot{X}} = \mathbf{\Phi}(\mathbf{X},t)
 \end{align}\]</div>
-<p>In the initial state-based method, the Liouville equation is only a function of initial state and time. Physically, we can know how a dynamical system evolves with time as long as we know its initial states and time for integration. i.e.,</p>
+<p>In the initial state-based method, the LE is only a function of initial state and time. Physically, we can know how a dynamical system evolves with time as long as we know its initial states and time for integration. i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq51">
 <span class="eqno">(51)<a class="headerlink" href="#equation-eq51" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathbf{X} = \mathbf{X}(\mathbf{\Xi},t)
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Xi\)</span> is the initial state and <span class="math notranslate nohighlight">\(t\)</span> represent the number of time steps we integrate forward. Then the determinant of the Jacobian matrix, which exerts on the initial condition can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq52">
-<span class="eqno">(52)<a class="headerlink" href="#equation-eq52" title="Permalink to this equation">¶</a></span>\[\rho (\mathbf{\Xi},t) = \mathrm{det}(\frac{\partial \mathbf{X}}{\partial \mathbf{\Xi}})\]</div>
+<span class="eqno">(52)<a class="headerlink" href="#equation-eq52" title="Permalink to this equation">¶</a></span>\[\alpha (\mathbf{\Xi},t) = \mathrm{det}(\frac{\partial \mathbf{X}}{\partial \mathbf{\Xi}})\]</div>
 <p>While the dynamical system is deterministic, we can also find an 1-on-1 bijection between <span class="math notranslate nohighlight">\(\mathbf{\Xi}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> at a given t. i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq53">
 <span class="eqno">(53)<a class="headerlink" href="#equation-eq53" title="Permalink to this equation">¶</a></span>\[\begin{align}
@@ -299,14 +309,11 @@
 \end{align}\]</div>
 <p>The existence of 1-on-1 bijection enables us to rewrite <a class="reference internal" href="#equation-eq53">(53)</a> i.e., represent <span class="math notranslate nohighlight">\(\mathrm{\Xi}\)</span> with <span class="math notranslate nohighlight">\(\mathrm{X}\)</span></p>
 <div class="math notranslate nohighlight" id="equation-eq54">
-<span class="eqno">(54)<a class="headerlink" href="#equation-eq54" title="Permalink to this equation">¶</a></span>\[(\frac{\partial }{\partial t} + \sum_{i}\Phi_i(\mathbf{X},t)\frac{\partial}{\partial \mathbf{X}})\rho = \rho(\mathrm{X},t)\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathbf{X}}\]</div>
-<p>compare <a class="reference internal" href="#equation-eq54">(54)</a> to the Liouville equation as a function of initial state (similar to <a class="reference internal" href="../week5/week5.html#equation-eq47">(47)</a>)</p>
+<span class="eqno">(54)<a class="headerlink" href="#equation-eq54" title="Permalink to this equation">¶</a></span>\[(\frac{\partial }{\partial t} + \sum_{i}\Phi_i(\mathbf{X},t)\frac{\partial}{\partial \mathbf{X}})\alpha = \alpha(\mathrm{X},t)\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathbf{X}}\]</div>
+<p>compare <a class="reference internal" href="#equation-eq54">(54)</a> to the LE as a function of initial state (similar to <a class="reference internal" href="../week5/week5.html#equation-eq47">(47)</a>)</p>
 <div class="math notranslate nohighlight" id="equation-eq55">
-<span class="eqno">(55)<a class="headerlink" href="#equation-eq55" title="Permalink to this equation">¶</a></span>\[\frac{\partial \rho}{\partial t}  = \rho(\mathrm{\Xi},t)\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi})}}\]</div>
+<span class="eqno">(55)<a class="headerlink" href="#equation-eq55" title="Permalink to this equation">¶</a></span>\[\frac{\partial \alpha}{\partial t}  = \alpha(\mathrm{\Xi},t)\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi})}}\]</div>
 <p>By observing <a class="reference internal" href="#equation-eq54">(54)</a> and <a class="reference internal" href="#equation-eq55">(55)</a>, it’s not hard to find their analogs in equations of fluid dynamics. <a class="reference internal" href="#equation-eq54">(54)</a> is similar to so-called Eluerian form (i.e., observing the system at a fixed point), while <a class="reference internal" href="#equation-eq55">(55)</a> is similar to Lagrangian form (i.e, observers following the particle). This is also the reason why it’s called “particle flow”.</p>
-</div>
-<div class="section" id="liouville-equation-in-1st-order-ode-case">
-<h2>Liouville equation in 1st-order ODE case<a class="headerlink" href="#liouville-equation-in-1st-order-ode-case" title="Permalink to this headline">¶</a></h2>
 <p>To illustrative the mathematical equivalence between <a class="reference internal" href="#equation-eq54">(54)</a> and <a class="reference internal" href="#equation-eq55">(55)</a>, we use a Riccati equation (i.e., equation with form of <span class="math notranslate nohighlight">\(x^{'}=P(t)x^2+Q(t)x+R(t)\)</span>) to demonstrate</p>
 <div class="math notranslate nohighlight" id="equation-eq56">
 <span class="eqno">(56)<a class="headerlink" href="#equation-eq56" title="Permalink to this equation">¶</a></span>\[\dot{X} = -X^2\]</div>
@@ -318,10 +325,34 @@
 <span class="eqno">(58)<a class="headerlink" href="#equation-eq58" title="Permalink to this equation">¶</a></span>\[\Xi = \frac{X}{1-X t}\]</div>
 <p>The Jacobian as a function of initial state can be written as,</p>
 <div class="math notranslate nohighlight" id="equation-eq59">
-<span class="eqno">(59)<a class="headerlink" href="#equation-eq59" title="Permalink to this equation">¶</a></span>\[\rho(\Xi,t) = \frac{\partial X}{\partial \Xi} = \frac{1}{(1+t\Xi)^{2}} \]</div>
+<span class="eqno">(59)<a class="headerlink" href="#equation-eq59" title="Permalink to this equation">¶</a></span>\[\alpha(\Xi,t) = \frac{\partial X}{\partial \Xi} = \frac{1}{(1+t\Xi)^{2}} \]</div>
 <p>and the Jacobian as a function of current state can be written as,</p>
 <div class="math notranslate nohighlight" id="equation-eq60">
-<span class="eqno">(60)<a class="headerlink" href="#equation-eq60" title="Permalink to this equation">¶</a></span>\[\rho(X,t) = \frac{\partial X}{\partial \Xi} = \frac{1}{(1+t\frac{X}{1-X t})^{2}} = (1-tX)^2 \]</div>
+<span class="eqno">(60)<a class="headerlink" href="#equation-eq60" title="Permalink to this equation">¶</a></span>\[\alpha(X,t) = \frac{\partial X}{\partial \Xi} = \frac{1}{(1+t\frac{X}{1-X t})^{2}} = (1-tX)^2 \]</div>
+<p>Now, let’s substitute <span class="math notranslate nohighlight">\(\alpha(\Xi,t)\)</span> in <a class="reference internal" href="#equation-eq54">(54)</a> with <a class="reference internal" href="#equation-eq59">(59)</a> and <span class="math notranslate nohighlight">\(\alpha(X,t)\)</span> in <a class="reference internal" href="#equation-eq55">(55)</a> with <a class="reference internal" href="#equation-eq60">(60)</a>, which will give us</p>
+<div class="math notranslate nohighlight" id="equation-eq61">
+<span class="eqno">(61)<a class="headerlink" href="#equation-eq61" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\frac{\partial \alpha}{\partial t}  = \alpha(\mathrm{\Xi},t)\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi})}} = \frac{1}{(1+t\Xi)^{2}} (-2) (\frac{\Xi}{1+\Xi t}) &amp; = -2 X (\Xi,t) \alpha(\Xi,t) \\
+(\frac{\partial }{\partial t} + \sum_{i}\Phi_i(\mathbf{X},t)\frac{\partial}{\partial \mathbf{X}})\alpha &amp;= -2 X (1-tX)^2  
+\end{align}\end{split}\]</div>
+<p>We can replace the right-hand-side of the second equation in <a class="reference internal" href="#equation-eq61">(61)</a> with <a class="reference internal" href="#equation-eq57">(57)</a>. Then we can find the first and second equations are mathematically equivalent.</p>
+</div>
+<div class="section" id="solution-of-the-liouville-equation">
+<h2>Solution of the Liouville equation<a class="headerlink" href="#solution-of-the-liouville-equation" title="Permalink to this headline">¶</a></h2>
+<p>Different from finding the solution of a dynamical system, the analytical solution of LE is relatively simple and interpretable. We can divide both side of <a class="reference internal" href="#equation-eq57">(57)</a> by <span class="math notranslate nohighlight">\(\alpha\)</span> and integrate over <span class="math notranslate nohighlight">\(t\)</span> dimension, which gives us,</p>
+<div class="math notranslate nohighlight" id="equation-eq62">
+<span class="eqno">(62)<a class="headerlink" href="#equation-eq62" title="Permalink to this equation">¶</a></span>\[\int \frac{\partial \mathrm{ln}(\alpha)}{\partial t} dt = \int_{t'=0}^{t=\tau}\frac{\partial \mathbf{\Phi}(\mathbf{X},t')}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi},t')}} dt'\]</div>
+<p>which further leads to</p>
+<div class="math notranslate nohighlight" id="equation-eq63">
+<span class="eqno">(64)<a class="headerlink" href="#equation-eq63" title="Permalink to this equation">¶</a></span>\[\alpha(\mathbf{X},\tau) = \alpha(\mathbf{\Xi},0) \mathrm{exp}(\int_{t'=0}^{t=\tau}\frac{\partial \mathbf{\Phi}(\mathbf{X},t')}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi},t')}} dt')\]</div>
+<p>or (in terms of ensemble density)</p>
+<div class="math notranslate nohighlight" id="equation-eq63">
+<span class="eqno">(64)<a class="headerlink" href="#equation-eq63" title="Permalink to this equation">¶</a></span>\[\rho(\mathbf{X},\tau) = \rho(\mathbf{\Xi},0) \mathrm{exp}(-\int_{t'=0}^{t=\tau}\frac{\partial \mathbf{\Phi}(\mathbf{X},t')}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi},t')}} dt')\]</div>
+<p>If we still remember what we leaned in <a class="reference external" href="https://kuiper2000.github.io/chaos_and_predictability/week1/week1.html#week1">week1</a>, <a class="reference internal" href="#equation-eq63">(64)</a> and <a class="reference internal" href="../week1/week1.html#equation-eq6">(6)</a> have exact the same formula. The only difference is, we leverage Taylor expansion to linearize the dynamical system while this week (and last week), we use Jacobian matrix to map the initial states to the final states.</p>
+</div>
+<div class="section" id="liouville-equation-in-1st-order-ode-case">
+<h2>Liouville equation in 1st-order ODE case<a class="headerlink" href="#liouville-equation-in-1st-order-ode-case" title="Permalink to this headline">¶</a></h2>
+<p>Here we use a simple ODE along with a python code showing how</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>

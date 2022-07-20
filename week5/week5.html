@@ -368,7 +368,7 @@ r\mathrm{sin}(\theta)
 <p class="admonition-title">Note</p>
 <p>While pattern effect (or patching method) is a useful tool to identify the key regions responsible for global warming, its linear assumption is usually dubbed because the change in global temperature by CO2 forcing is not necessary small. Thus, there is a growing community turning their focus on the nonlinear effect of equilibrium climate sensitivity as well as it’s local maximum (i.e., when global temperature is warm enough, the positive feedback from CO2 will get weaker (bell-like curve))</p>
 </div>
-<p>The other key ingredient we need to learn is “determinant”. Determinant evaluates how much the area spanned by the eigen basis has changed after the linear transformation. For example, in week 1, we have used the following case as an example,</p>
+<p>The other key ingredient we need to learn is “determinant”. Determinant evaluates how much the area spanned by the eigen basis has changed after the linear transformation. For example, in week 1, we have used the following example,</p>
 <div class="math notranslate nohighlight" id="equation-eq39">
 <span class="eqno">(39)<a class="headerlink" href="#equation-eq39" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
 1 &amp; 0 \\
@@ -381,12 +381,12 @@ r\mathrm{sin}(\theta)
 1 &amp; 0 \\
 0 &amp; 1 
 \end{bmatrix}. \end{split}\]</div>
-<p>where the original basis, <span class="math notranslate nohighlight">\([1,0]\)</span> and <span class="math notranslate nohighlight">\([0,1]\)</span> (x-axis and y-axis respectively), is moved to <span class="math notranslate nohighlight">\([1,0]\)</span> and <span class="math notranslate nohighlight">\([0,2]\)</span> after transformation. We can easily find that the area originally spanned by <span class="math notranslate nohighlight">\([1,0]\)</span> and <span class="math notranslate nohighlight">\([0,1]\)</span> has grown twice bigger (from 1 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 4). The change in area size is equivalent to the determinant of the linear operator. i.e.,
+<p>where the original basis, <span class="math notranslate nohighlight">\([1,0]\)</span> and <span class="math notranslate nohighlight">\([0,1]\)</span> (x-axis and y-axis respectively), is moved to <span class="math notranslate nohighlight">\([1,0]\)</span> and <span class="math notranslate nohighlight">\([0,2]\)</span> after transformation. We can easily find that the area originally spanned by <span class="math notranslate nohighlight">\([1,0]\)</span> and <span class="math notranslate nohighlight">\([0,1]\)</span> has grown twice bigger (from 1 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 2). The change in area size is equivalent to the determinant of the linear operator. i.e.,
 <span class="math notranslate nohighlight">\(\mathrm{det}{(\begin{bmatrix}
 1 &amp; 0 \\
 0 &amp; 2 
 \end{bmatrix})}\)</span></p>
-<p>Now, both ingredients are ready, the only question left is what is the connection among Jacobian matrix, determinant and LE? We can take a look of the example below. If today, we would like to convert a vector <span class="math notranslate nohighlight">\(\begin{bmatrix}
+<p>Now, both ingredients are ready, the only question left is what is the connection among Jacobian matrix, determinant, and LE? We can take a look of the example below. If today, we would like to convert a vector <span class="math notranslate nohighlight">\(\begin{bmatrix}
 u  \\
 v 
 \end{bmatrix}\)</span> to a vector <span class="math notranslate nohighlight">\(\begin{bmatrix}
@@ -461,7 +461,7 @@ He further defined a Jacobian matrix, which maps the initial state to the final 
 <span class="eqno">(45)<a class="headerlink" href="#equation-eq45" title="Permalink to this equation">¶</a></span>\[x(t=n_t,...) = J(a,b,c)x(t=0,a,b,c)\]</div>
 <p>the determinant of this Jacobian matrix can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq46">
-<span class="eqno">(46)<a class="headerlink" href="#equation-eq46" title="Permalink to this equation">¶</a></span>\[\begin{split}\rho(a,b,c,t)  
+<span class="eqno">(46)<a class="headerlink" href="#equation-eq46" title="Permalink to this equation">¶</a></span>\[\begin{split}\alpha(a,b,c,t)  
 =||\mathrm{det}
 \begin{bmatrix}
 \frac{\partial x}{\partial a}      &amp; \frac{\partial x}{\partial b} &amp; \frac{\partial x}{\partial c} \\
@@ -470,7 +470,7 @@ He further defined a Jacobian matrix, which maps the initial state to the final 
 \end{bmatrix} ||\end{split}\]</div>
 <p>He then proved that</p>
 <div class="math notranslate nohighlight" id="equation-eq47">
-<span class="eqno">(47)<a class="headerlink" href="#equation-eq47" title="Permalink to this equation">¶</a></span>\[\frac{\partial \rho}{\partial t}=\rho\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\]</div>
+<span class="eqno">(47)<a class="headerlink" href="#equation-eq47" title="Permalink to this equation">¶</a></span>\[\frac{\partial \alpha}{\partial t}=\alpha\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="#equation-eq47">(47)</a> can be proved by using the chain rule i.e.,
@@ -478,18 +478,19 @@ He further defined a Jacobian matrix, which maps the initial state to the final 
 = \frac{\partial P}{\partial x}\frac{\partial x}{\partial a} + \frac{\partial P}{\partial x^{''}}\frac{\partial x^{''}}{\partial a}+\frac{\partial P}{\partial x^{'''}}\frac{\partial x^{'''}}{\partial a}\)</span>  (HW)</p>
 </div>
 <p>Let’s take a look what <a class="reference internal" href="#equation-eq47">(47)</a> tells us. First, <a class="reference internal" href="#equation-eq44">(44)</a> describes how the dynamical system gonna evolve with time. If <span class="math notranslate nohighlight">\(x\)</span> represents the forecast uncertainty or forecast error (i.e., the distance between any given ensemble member to the ensemble mean), then <a class="reference internal" href="#equation-eq44">(44)</a> is a “prognostic equation of model uncertainty”. Second, the determinant tells us the how the volume spanned by eigen basis changes after the linear transformation. Physically, the volume spanned by different ensemble members is so-called ensemble spread. Thus, <a class="reference internal" href="#equation-eq47">(47)</a> is a “prognostic equation for ensemble spread” (i.e., forecast the entire PDF). In addition, it also tells us the time tendency of ensemble spread is only related to the highest-order differentiation i.e., <span class="math notranslate nohighlight">\(\frac{\partial }{\partial x^{'''}}\)</span>.</p>
-<p><a class="reference internal" href="#equation-eq47">(47)</a> also has some very interesting applications in the information theory. If we rewrite <a class="reference internal" href="#equation-eq47">(47)</a> by dividing both side with <span class="math notranslate nohighlight">\(\rho\)</span>, we can have</p>
+<p><a class="reference internal" href="#equation-eq47">(47)</a> also has some very interesting applications in the information theory. If we rewrite <a class="reference internal" href="#equation-eq47">(47)</a> by dividing both side with <span class="math notranslate nohighlight">\(\alpha\)</span>, we can have</p>
 <div class="math notranslate nohighlight" id="equation-eq48">
-<span class="eqno">(48)<a class="headerlink" href="#equation-eq48" title="Permalink to this equation">¶</a></span>\[\frac{\partial \mathrm{ln}\rho}{\partial t}=\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\]</div>
+<span class="eqno">(48)<a class="headerlink" href="#equation-eq48" title="Permalink to this equation">¶</a></span>\[\frac{\partial \mathrm{ln}\alpha}{\partial t}=\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\]</div>
 <p>we further integrate both sides over the entire phase space. One can find that the integration of right-hand-side of <a class="reference internal" href="#equation-eq49">(49)</a> is always 0 (why?). Thus, <a class="reference internal" href="#equation-eq48">(48)</a> is also equivalent to</p>
 <div class="math notranslate nohighlight" id="equation-eq49">
-<span class="eqno">(49)<a class="headerlink" href="#equation-eq49" title="Permalink to this equation">¶</a></span>\[\int\frac{\partial \mathrm{ln}\rho}{\partial t}dx^{''}=\int\frac{\partial \mathbf{\Phi}}{\partial x^{''}} dx^{''}=0\]</div>
-<p>this also gives us <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t} \int\mathrm{ln}\rho dx^{''}\)</span> = 0 (note that we swap the order of integration and <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t}\)</span> since both of them are linear operators). <a class="reference internal" href="#equation-eq49">(49)</a> is so-called the “conservation of information”. In <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)#Definition">information theory</a>, the definition of “information” is very similar to the left-hand-side of <a class="reference internal" href="#equation-eq49">(49)</a>, where the information provided by <span class="math notranslate nohighlight">\(i\)</span>th element is <span class="math notranslate nohighlight">\(\mathrm{ln}\rho(x_{i})\)</span>.</p>
+<span class="eqno">(49)<a class="headerlink" href="#equation-eq49" title="Permalink to this equation">¶</a></span>\[\int\frac{\partial \mathrm{ln}\alpha}{\partial t}dx^{''}=\int\frac{\partial \mathbf{\Phi}}{\partial x^{''}} dx^{''}=0\]</div>
+<p>this also gives us <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t} \int\mathrm{ln}\alpha dx^{''}\)</span> = 0 (note that we swap the order of integration and <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t}\)</span> since both of them are linear operators). <a class="reference internal" href="#equation-eq49">(49)</a> is so-called the “conservation of information”. In <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)#Definition">information theory</a>, the definition of “information” is very similar to the left-hand-side of <a class="reference internal" href="#equation-eq49">(49)</a>, where the information provided by <span class="math notranslate nohighlight">\(i\)</span>th element is <span class="math notranslate nohighlight">\(\mathrm{ln}\alpha(x_{i})\)</span>.</p>
+<p>An alternative way to represent is using the probability density function, where the density is defined as <span class="math notranslate nohighlight">\(\rho=\frac{1}{\alpha}\)</span> (bigger ensemble spread, we are less likely to have more members at a fixed volume). Thus, a more widely used definition of information is <span class="math notranslate nohighlight">\(-\mathrm{ln}\rho(x_{i})\)</span></p>
 <p>Now, we can imagine how powerful <a class="reference internal" href="#equation-eq47">(47)</a> is since it forecasts the entire probability density function. Different from the traditional probabilistic forecast method, which estimates the ensemble spread by generating tens of hundreds of ensemble simulations, LE is a more powerful tool. However, there is no free meal. Implementing LE in real operational forecast is extremely challenging since we need to find the analytical solution of a dynamical system first (i.e., <a class="reference internal" href="#equation-eq44">(44)</a>) and then calculate its derivative over all possible dimensions (i.e., the right-hand-side of <a class="reference internal" href="#equation-eq47">(47)</a>). This is only possible when the dynamical system is simple enough.</p>
 <p>Next week, we will walk through a few cases where we can analytical implement LE in the forecast of the PDF.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Nobel prize winner, Roger Penrose (Penrose (1989)), who was also Stephan Hawkins’ Ph.D., committee, referred to LE as a very beautiful formula since it describes that the volume of any region of phase spaces must remain the same. Penrose also proposed that a black hole can destroy information (i.e., <span class="math notranslate nohighlight">\(\rho\)</span> in <a class="reference internal" href="#equation-eq47">(47)</a> is not conserved) and thus the statistical mechanics might break down at the space-time singularity.</p>
+<p>The Nobel prize winner, Roger Penrose (Penrose (1989)), who was also Stephan Hawkins’ Ph.D., committee, referred to LE as a very beautiful formula since it describes that the volume of any region of phase spaces must remain the same. Penrose also proposed that a black hole can destroy information (i.e., <span class="math notranslate nohighlight">\(\alpha\)</span> in <a class="reference internal" href="#equation-eq47">(47)</a> is not conserved) and thus the statistical mechanics might break down at the space-time singularity.</p>
 <p>In addition to his achievement in theoretical physics, Penrose is also an artist who is famous for his 3D Penrose tiling. An award-winning app (mobile game), <a class="reference external" href="https://en.wikipedia.org/wiki/Monument_Valley_(video_game)">monument valley</a> is inspired by his arts. NYC has a National Museum of Mathematics where you can find some of Penrose’s work.</p>
 </div>
 <div class="figure align-default" id="fig12">
