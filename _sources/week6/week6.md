@@ -102,7 +102,7 @@ which further leads to
 \alpha(\mathbf{X},\tau) = \alpha(\mathbf{\Xi},0) \mathrm{exp}(\int_{t'=0}^{t=\tau}\frac{\partial \mathbf{\Phi}(\mathbf{X},t')}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi},t')}} dt')
 ```
 
-or (in terms of ensemble density)
+or in density form 
 
 ```{math}
 :label: eq63
@@ -113,7 +113,15 @@ If we still remember what we leaned in [week1](https://kuiper2000.github.io/chao
 
 ## Liouville equation in 1st-order ODE case
 
-Here we use a simple ODE along with a python code showing how 
+Here we use a simple ODE along with a python code showing how to implement LE in a forecast problem. 
+
+```{math}
+:label: eq64
+\frac{d}{dt} x = x-x^2
+```
+
+Before we solve this ODE, we can take a look of its dynamical behavior. From {eq}`eq64`, one can easily find that it has three equilibrium point: -1, 0 ,1. At these three equilibrium points, $\frac{d}{dt}$ equals 0, indicating there is no acceleration. However, among these points, two of them are stable equilibrium points and the other is unstable equilibrium point. 
+
 
 
 

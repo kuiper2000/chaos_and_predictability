@@ -345,14 +345,17 @@
 <p>which further leads to</p>
 <div class="math notranslate nohighlight" id="equation-eq63">
 <span class="eqno">(64)<a class="headerlink" href="#equation-eq63" title="Permalink to this equation">¶</a></span>\[\alpha(\mathbf{X},\tau) = \alpha(\mathbf{\Xi},0) \mathrm{exp}(\int_{t'=0}^{t=\tau}\frac{\partial \mathbf{\Phi}(\mathbf{X},t')}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi},t')}} dt')\]</div>
-<p>or (in terms of ensemble density)</p>
+<p>or in density form</p>
 <div class="math notranslate nohighlight" id="equation-eq63">
 <span class="eqno">(64)<a class="headerlink" href="#equation-eq63" title="Permalink to this equation">¶</a></span>\[\rho(\mathbf{X},\tau) = \rho(\mathbf{\Xi},0) \mathrm{exp}(-\int_{t'=0}^{t=\tau}\frac{\partial \mathbf{\Phi}(\mathbf{X},t')}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi},t')}} dt')\]</div>
 <p>If we still remember what we leaned in <a class="reference external" href="https://kuiper2000.github.io/chaos_and_predictability/week1/week1.html#week1">week1</a>, <a class="reference internal" href="#equation-eq63">(64)</a> and <a class="reference internal" href="../week1/week1.html#equation-eq6">(6)</a> have exact the same formula. The only difference is, we leverage Taylor expansion to linearize the dynamical system while this week (and last week), we use Jacobian matrix to map the initial states to the final states.</p>
 </div>
 <div class="section" id="liouville-equation-in-1st-order-ode-case">
 <h2>Liouville equation in 1st-order ODE case<a class="headerlink" href="#liouville-equation-in-1st-order-ode-case" title="Permalink to this headline">¶</a></h2>
-<p>Here we use a simple ODE along with a python code showing how</p>
+<p>Here we use a simple ODE along with a python code showing how to implement LE in a forecast problem.</p>
+<div class="math notranslate nohighlight" id="equation-eq64">
+<span class="eqno">(65)<a class="headerlink" href="#equation-eq64" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt} x = x-x^2\]</div>
+<p>Before we solve this ODE, we can take a look of its dynamical behavior. From <a class="reference internal" href="#equation-eq64">(65)</a>, one can easily find that it has three equilibrium point: -1, 0 ,1. At these three equilibrium points, <span class="math notranslate nohighlight">\(\frac{d}{dt}\)</span> equals 0, indicating there is no acceleration. However, among these points, two of them are stable equilibrium points and the other is unstable equilibrium point.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
