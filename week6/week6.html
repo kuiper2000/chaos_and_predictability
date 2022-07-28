@@ -231,6 +231,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#liouville-equation-in-lorenz-63-model-lorenz-84-model-as-hw">
+   Liouville equation in Lorenz 63 model (Lorenz 84 model as HW)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -271,6 +276,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#liouville-equation-in-lorenz-63-model-lorenz-84-model-as-hw">
+   Liouville equation in Lorenz 63 model (Lorenz 84 model as HW)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -289,7 +299,7 @@
 <div class="section" id="connections-between-liouville-equation-le-and-ensemble-forecasts">
 <h2>Connections between Liouville equation (LE) and ensemble forecasts<a class="headerlink" href="#connections-between-liouville-equation-le-and-ensemble-forecasts" title="Permalink to this headline">¶</a></h2>
 <p>Last week, we learned the physical meaning of Jacobian matrix, determinant and LE. This week, we will walk through a few of their applications. Before we introduce the examples, we need to know there are two equivalent formulas of LE: (1) initial state-based LE and (2) current state-based LE. One easy way to distinguish these two is looking at how <a class="reference internal" href="../week5/week5.html#equation-eq44">(44)</a> is defined.</p>
-<p>First, let’s consider a dynamical system only with first-order derivative.</p>
+<p>First, let’s consider a dynamical system with first-order derivative.</p>
 <div class="math notranslate nohighlight" id="equation-eq50">
 <span class="eqno">(50)<a class="headerlink" href="#equation-eq50" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathbf{\dot{X}} = \mathbf{\Phi}(\mathbf{X},t)
@@ -309,10 +319,10 @@
 \end{align}\]</div>
 <p>The existence of 1-on-1 bijection enables us to rewrite <a class="reference internal" href="#equation-eq53">(53)</a> i.e., represent <span class="math notranslate nohighlight">\(\mathrm{\Xi}\)</span> with <span class="math notranslate nohighlight">\(\mathrm{X}\)</span></p>
 <div class="math notranslate nohighlight" id="equation-eq54">
-<span class="eqno">(54)<a class="headerlink" href="#equation-eq54" title="Permalink to this equation">¶</a></span>\[(\frac{\partial }{\partial t} + \sum_{i}\Phi_i(\mathbf{X},t)\frac{\partial}{\partial \mathbf{X}})\alpha = \alpha(\mathrm{X},t)\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathbf{X}}\]</div>
+<span class="eqno">(54)<a class="headerlink" href="#equation-eq54" title="Permalink to this equation">¶</a></span>\[(\frac{\partial }{\partial t} + \sum_{i}\Phi_i(\mathbf{X},t)\frac{\partial}{\partial \mathbf{X}})\alpha = \alpha(\mathrm{X},t)\sum_{i}\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathrm{X_i}}\]</div>
 <p>compare <a class="reference internal" href="#equation-eq54">(54)</a> to the LE as a function of initial state (similar to <a class="reference internal" href="../week5/week5.html#equation-eq47">(47)</a>)</p>
 <div class="math notranslate nohighlight" id="equation-eq55">
-<span class="eqno">(55)<a class="headerlink" href="#equation-eq55" title="Permalink to this equation">¶</a></span>\[\frac{\partial \alpha}{\partial t}  = \alpha(\mathrm{\Xi},t)\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi})}}\]</div>
+<span class="eqno">(55)<a class="headerlink" href="#equation-eq55" title="Permalink to this equation">¶</a></span>\[\frac{\partial \alpha}{\partial t}  = \alpha(\mathrm{\Xi},t)\sum_{i}\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathrm{X_i}}\vert_{\mathbf{X(\mathbf{\Xi})}}\]</div>
 <p>By observing <a class="reference internal" href="#equation-eq54">(54)</a> and <a class="reference internal" href="#equation-eq55">(55)</a>, it’s not hard to find their analogs in equations of fluid dynamics. <a class="reference internal" href="#equation-eq54">(54)</a> is similar to so-called Eluerian form (i.e., observing the system at a fixed point), while <a class="reference internal" href="#equation-eq55">(55)</a> is similar to Lagrangian form (i.e, observers following the particle). This is also the reason why it’s called “particle flow”.</p>
 <p>To illustrative the mathematical equivalence between <a class="reference internal" href="#equation-eq54">(54)</a> and <a class="reference internal" href="#equation-eq55">(55)</a>, we use a Riccati equation (i.e., equation with form of <span class="math notranslate nohighlight">\(x^{'}=P(t)x^2+Q(t)x+R(t)\)</span>) to demonstrate</p>
 <div class="math notranslate nohighlight" id="equation-eq56">
@@ -336,6 +346,11 @@
 (\frac{\partial }{\partial t} + \sum_{i}\Phi_i(\mathbf{X},t)\frac{\partial}{\partial \mathbf{X}})\alpha &amp;= -2 X (1-tX)^2  
 \end{align}\end{split}\]</div>
 <p>We can replace the right-hand-side of the second equation in <a class="reference internal" href="#equation-eq61">(61)</a> with <a class="reference internal" href="#equation-eq57">(57)</a>. Then we can find the first and second equations are mathematically equivalent.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#equation-eq51">(51)</a> leads to a very interesting debate in science, “Laplace demon theory”. Laplace demon theory describes that if there is an intellect who knows the “specific location of every element particle in the universe”, it will know the past as well as the future of the entire universe given <a class="reference internal" href="#equation-eq51">(51)</a> is deterministic. For example, every decision made by you and me can be considered as result of chemical reaction (i.e., the moving of electrons) in your brain. However, the discovery of uncertainty principle in 1927 protects us from having such demon.</p>
+<p>In weather forecast, there is always some uncertainty since we can never have infinite small-scale observation.</p>
+</div>
 </div>
 <div class="section" id="solution-of-the-liouville-equation">
 <h2>Solution of the Liouville equation<a class="headerlink" href="#solution-of-the-liouville-equation" title="Permalink to this headline">¶</a></h2>
@@ -344,18 +359,105 @@
 <span class="eqno">(62)<a class="headerlink" href="#equation-eq62" title="Permalink to this equation">¶</a></span>\[\int \frac{\partial \mathrm{ln}(\alpha)}{\partial t} dt = \int_{t'=0}^{t=\tau}\frac{\partial \mathbf{\Phi}(\mathbf{X},t')}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi},t')}} dt'\]</div>
 <p>which further leads to</p>
 <div class="math notranslate nohighlight" id="equation-eq63">
-<span class="eqno">(64)<a class="headerlink" href="#equation-eq63" title="Permalink to this equation">¶</a></span>\[\alpha(\mathbf{X},\tau) = \alpha(\mathbf{\Xi},0) \mathrm{exp}(\int_{t'=0}^{t=\tau}\frac{\partial \mathbf{\Phi}(\mathbf{X},t')}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi},t')}} dt')\]</div>
+<span class="eqno">(63)<a class="headerlink" href="#equation-eq63" title="Permalink to this equation">¶</a></span>\[\alpha(\mathbf{X},\tau) = \alpha(\mathbf{\Xi},0) \mathrm{exp}(\int_{t'=0}^{t=\tau}\frac{\partial \mathbf{\Phi}(\mathbf{X},t')}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi},t')}} dt')\]</div>
 <p>or in density form</p>
-<div class="math notranslate nohighlight" id="equation-eq63">
-<span class="eqno">(64)<a class="headerlink" href="#equation-eq63" title="Permalink to this equation">¶</a></span>\[\rho(\mathbf{X},\tau) = \rho(\mathbf{\Xi},0) \mathrm{exp}(-\int_{t'=0}^{t=\tau}\frac{\partial \mathbf{\Phi}(\mathbf{X},t')}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi},t')}} dt')\]</div>
-<p>If we still remember what we leaned in <a class="reference external" href="https://kuiper2000.github.io/chaos_and_predictability/week1/week1.html#week1">week1</a>, <a class="reference internal" href="#equation-eq63">(64)</a> and <a class="reference internal" href="../week1/week1.html#equation-eq6">(6)</a> have exact the same formula. The only difference is, we leverage Taylor expansion to linearize the dynamical system while this week (and last week), we use Jacobian matrix to map the initial states to the final states.</p>
+<div class="math notranslate nohighlight" id="equation-eq64">
+<span class="eqno">(64)<a class="headerlink" href="#equation-eq64" title="Permalink to this equation">¶</a></span>\[\rho(\mathbf{X},\tau) = \rho(\mathbf{\Xi},0) \mathrm{exp}(-\int_{t'=0}^{t=\tau}\frac{\partial \mathbf{\Phi}(\mathbf{X},t')}{\partial \mathbf{X}}\vert_{\mathbf{X(\mathbf{\Xi},t')}} dt')\]</div>
+<p>If we still remember what we leaned in <a class="reference external" href="https://kuiper2000.github.io/chaos_and_predictability/week1/week1.html#week1">week1</a>, <a class="reference internal" href="#equation-eq63">(63)</a> and <a class="reference internal" href="../week1/week1.html#equation-eq6">(6)</a> have exact the same formula. The only difference is, we leverage Taylor expansion to linearize the dynamical system while this week (and last week), we use Jacobian matrix to map the initial states to the final states.</p>
 </div>
 <div class="section" id="liouville-equation-in-1st-order-ode-case">
 <h2>Liouville equation in 1st-order ODE case<a class="headerlink" href="#liouville-equation-in-1st-order-ode-case" title="Permalink to this headline">¶</a></h2>
 <p>Here we use a simple ODE along with a python code showing how to implement LE in a forecast problem.</p>
-<div class="math notranslate nohighlight" id="equation-eq64">
-<span class="eqno">(65)<a class="headerlink" href="#equation-eq64" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt} x = x-x^2\]</div>
-<p>Before we solve this ODE, we can take a look of its dynamical behavior. From <a class="reference internal" href="#equation-eq64">(65)</a>, one can easily find that it has three equilibrium point: -1, 0 ,1. At these three equilibrium points, <span class="math notranslate nohighlight">\(\frac{d}{dt}\)</span> equals 0, indicating there is no acceleration. However, among these points, two of them are stable equilibrium points and the other is unstable equilibrium point.</p>
+<div class="math notranslate nohighlight" id="equation-eq65">
+<span class="eqno">(65)<a class="headerlink" href="#equation-eq65" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt} x = x-x^3\]</div>
+<p>Before we solve this ODE, we can take a look of its dynamical behavior. From <a class="reference internal" href="#equation-eq64">(64)</a>, one can easily find that it has three equilibrium point: -1, 0 ,1. At these three equilibrium points, <span class="math notranslate nohighlight">\(\frac{d}{dt}\)</span> equals 0, indicating there is no acceleration. However, among these points, two of them are stable equilibrium points and the other one is unstable equilibrium point.</p>
+<p>The analytical solution of <a class="reference internal" href="#equation-eq64">(64)</a> can be written as (brainstorming…)</p>
+<div class="math notranslate nohighlight" id="equation-eq66">
+<span class="eqno">(66)<a class="headerlink" href="#equation-eq66" title="Permalink to this equation">¶</a></span>\[x(\Xi,t) = \Xi\mathrm{e}^{t} (1-\Xi^2+\Xi^2\mathrm{e}^{2t})^{-\frac{1}{2}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Xi\)</span> is the initial state and <span class="math notranslate nohighlight">\(t\)</span> is the time for integration. We can test if <a class="reference internal" href="#equation-eq56">(56)</a> is the solution of the differential equation <a class="reference internal" href="#equation-eq64">(64)</a> by substitute <span class="math notranslate nohighlight">\(t\)</span> with <span class="math notranslate nohighlight">\(\infty\)</span>, which give us <span class="math notranslate nohighlight">\(x(\Xi,t) \rightarrow \pm 1\)</span>. This is consistent with the analytical analysis.</p>
+<p>On the other hand, <a class="reference internal" href="#equation-eq64">(64)</a> also leads to</p>
+<div class="math notranslate nohighlight" id="equation-eq67">
+<span class="eqno">(67)<a class="headerlink" href="#equation-eq67" title="Permalink to this equation">¶</a></span>\[\frac{\partial \mathrm{\Phi}(x,t)}{\partial x} = 1-3x^{2}\]</div>
+<p>.
+by substituting <a class="reference internal" href="#equation-eq67">(67)</a> into <a class="reference internal" href="#equation-eq64">(64)</a>, we can have</p>
+<div class="math notranslate nohighlight" id="equation-eq68">
+<span class="eqno">(69)<a class="headerlink" href="#equation-eq68" title="Permalink to this equation">¶</a></span>\[\rho(\mathbf{x},\tau) = \rho(\mathbf{\Xi},0) \mathrm{exp}(-\int_{t'=0}^{t=\tau} \{ 1-3(x \{ \Xi[x,t],t^{'} \})^{2} \}  dt')\]</div>
+<p>Now, we can compare the probabilistic forecast generated by LE as well as the traditional forecast method. For the LE-based method, we can use numerical integration to approach the analytical solution:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">PDF</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">std</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">rho</span>  <span class="o">=</span> <span class="n">PDF</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">std</span><span class="p">)</span>
+
+<span class="c1"># x = location, rho = density in given location, n_step = number of time step, t_size = size of each step </span>
+<span class="k">def</span> <span class="nf">LE_method</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span><span class="n">n_step</span><span class="p">,</span><span class="n">t_size</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_step</span><span class="p">):</span> <span class="c1"># forward for 1 time steps</span>
+        <span class="n">xi</span>   <span class="o">=</span> <span class="n">x</span>
+        <span class="n">xint</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">t_size</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">tp</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">t_size</span><span class="o">/</span><span class="p">(</span><span class="n">t_size</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span>
+            <span class="n">x</span>  <span class="o">=</span> <span class="n">xi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">tp</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">xi</span><span class="o">*</span><span class="n">xi</span><span class="o">+</span><span class="n">xi</span><span class="o">*</span><span class="n">xi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">tp</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">c</span>  <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
+            <span class="n">xint</span> <span class="o">+=</span> <span class="n">c</span>
+        <span class="n">rho</span>  <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">xint</span><span class="o">*</span><span class="n">t_size</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="n">rho</span>  <span class="o">=</span> <span class="n">rho</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span><span class="n">rho</span>
+</pre></div>
+</div>
+<p>For traditional method, we initialized model with 10000 normally distributed random points and integrate them forward in time. The comparison is shown below.</p>
+<div class="figure align-default" id="fig13">
+<img alt="../_images/Liouville_vs_traditional.png" src="../_images/Liouville_vs_traditional.png" />
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The intercomparison between traditional probabilistic forecast method (bar) vs LE-based method.</span><a class="headerlink" href="#fig13" title="Permalink to this image">¶</a></p>
+</div>
+<p>The LE-based method only used 200 data points (for the purpose of visualization) while the traditional method took 10000 scenarios to get similar answers, suggesting the LE-based method is 50 times more efficient than the traditional ensemble forecast method.</p>
+</div>
+<div class="section" id="liouville-equation-in-lorenz-63-model-lorenz-84-model-as-hw">
+<h2>Liouville equation in Lorenz 63 model (Lorenz 84 model as HW)<a class="headerlink" href="#liouville-equation-in-lorenz-63-model-lorenz-84-model-as-hw" title="Permalink to this headline">¶</a></h2>
+<p>We can also apply LE-based method to much higher dimension, such as Lorenz 84 model. Lorenz 84 model is a more complicated version of Lorenz 63 model (, which is also a simplification of 2D convection problem).</p>
+<div class="math notranslate nohighlight" id="equation-eq68">
+<span class="eqno">(69)<a class="headerlink" href="#equation-eq68" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\dot{X} &amp;= -\sigma X+ \sigma Y \\
+\dot{Y} &amp;= -XZ+ rX- Y \\
+\dot{Z} &amp;= XY- bZ \\
+\end{align*}\end{split}\]</div>
+<p>or in a matrix form</p>
+<div class="math notranslate nohighlight" id="equation-eq69">
+<span class="eqno">(70)<a class="headerlink" href="#equation-eq69" title="Permalink to this equation">¶</a></span>\[\mathbf{\dot{X}} = f(\mathbf{\dot{X}})\]</div>
+<p>To apply the LE-based method to the Lorenz 63 model, we first linearize the equation to simplify the problem given that the error growth rate is only the sum of its diagonal elements. (we will talk about the off-diagonal element in the chapters of generalized instability problem).</p>
+<div class="math notranslate nohighlight" id="equation-eq70">
+<span class="eqno">(72)<a class="headerlink" href="#equation-eq70" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}
+\dot{X} \\
+\dot{Y} \\
+\dot{Z} \\
+\end{bmatrix} = 
+\begin{bmatrix}
+-\sigma &amp; \sigma &amp; 0 \\
+-\bar{Z}+r &amp; -1 &amp; \bar{X} \\
+\bar{Y} &amp; \bar{X}  &amp; -b
+\end{bmatrix}
+\begin{bmatrix}
+X' \\
+Y' \\
+X' \\
+\end{bmatrix}\end{split}\]</div>
+<p>and the corresponding <span class="math notranslate nohighlight">\(\sum_{i}\frac{\partial \Phi_i(\mathbf{X},t)}{\partial \mathbf{X}}\)</span> is</p>
+<div class="math notranslate nohighlight" id="equation-eq70">
+<span class="eqno">(72)<a class="headerlink" href="#equation-eq70" title="Permalink to this equation">¶</a></span>\[\sum_{i}\frac{\partial \Phi_i(\mathbf{X},t)}{\partial \mathbf{X}} = -\sigma -1 -b\]</div>
+<p>Interestingly, we can find the error growth (i.e., decaying of <span class="math notranslate nohighlight">\(\rho\)</span>) is independent of location and this seems counter-intuitive? Lorenz 63 system is well-designed model, where each component has a constant error growth rate. However, it doesn’t mean the PDF will stay Gaussian given that each member are moving around within a nonlinear system. Physically, ensemble members are something like particles carrying different amount of electric charges (probability density). Thus, even each member has similar shape of PDF (Gaussian), their superimposition in phase space are not necessary Gaussian.</p>
+<p>The animation below shows the LE-based method of probabilistic forecast for Lorenz 63 model. We can find that the system goes through a stage of linear error growth first (stretching along y-axis). At the later stage, we can find the regions with higher probability are concentrated around two attractors. This feature is generally consistent with our finding.</p>
+<div class="figure align-default" id="fig14">
+<img alt="../_images/Lorenz_LE.gif" src="../_images/Lorenz_LE.gif" />
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Using LE-based method of generating probabilistic forecast in Lorenz 63 model.</span><a class="headerlink" href="#fig14" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the homework assignment, you will practice how to apply the LE-based method to Lorenz 84 model (<a class="reference internal" href="#equation-eq71">(73)</a>). Different from the Lorenz 63 model, the convergence/divergence of <span class="math notranslate nohighlight">\(\Phi_i(\mathbf{X},t)\)</span> is state-dependent (a function of location). This indicates that the probability density carried by each member might experience nonlinear decaying/growth when it is moving around the dynamical system.</p>
+<div class="math notranslate nohighlight" id="equation-eq71">
+<span class="eqno">(73)<a class="headerlink" href="#equation-eq71" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+\dot{X} &amp;= -Y^{2}-Z^{2}-aX+aF \\
+\dot{Y} &amp;= XY-bXZ-Y+G \\
+\dot{Z} &amp;= bXY+XZ-Z \\
+\end{align*}\end{split}\]</div>
+</div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>

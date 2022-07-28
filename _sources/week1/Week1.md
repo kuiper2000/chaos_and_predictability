@@ -1,14 +1,14 @@
 (week1)=
 # Week 1: Predictability of Weather and Climate
 
-In this section, we will walk through a few fundamental concepts of predictability, including how does it connect to statistics, differential equations and linear algebra. You will find out the definition of predictability is relatively straightforward. 
+In this week, we will walk through a few fundamental concepts of predictability, including how does it connect to statistics, differential equations and linear algebra. You will find out the definition of predictability is relatively straightforward. 
 
 ## Climatological distribution and forecast distribution
 \
 When we say something (let's say $x(t)$) is predictable, that means we can somewhat track its time evolution. However, in most cases, our confidence about what $x(t)$ should be will decrease with the increase of forecast lead time (defined as the time difference between initial state and the final state). Thus, it is physically more reasonable to use a probability density function (PDF $p(x(t))$) to describe $x(t)$ since we are talking about how "confident" we are. 
 \
 \
-Now, let's imagine two very extreme cases. The first case is $t\rightarrow 0$. In this case, we are very certain what $x(t)$ should be because it is literally the current states or so-called _nowcasting_. Thus, it's not hard to find $p(x(0))$ should be narrow and almost like a delta function ([FIG1](FIG1), solid line). The second case is that $t\rightarrow \infty$. In this case, we don't have any confidence. Thus, the best way to estimate $x(t)$ is by randomly sampling from its historical values (Fig. 1, dashed line, a.k.a. guessing). Thus, from $t=0$ to $t\rightarrow \infty$, we can see $p(x(t))$ is evolving from one PDF to the other. Here we give these two distribution different names. For the one which we use to describe how confident we are is called _forecast distribution_ and the one when forecast lead time approaches infinity is called _climatological distribution_ (also called "population" in statistics). 
+Now, let's consider two very extreme cases. The first case is $t\rightarrow 0$. In this case, we are very certain what $x(t)$ should be because it is literally the current states or so-called _observation_. Thus, it's not hard to find $p(x(0))$ is narrow and is almost like a delta function ([FIG1](FIG1), solid line). The second case is when $t\rightarrow \infty$. In this case, we don't have any confidence. Thus, the best way to estimate $x(t)$ is by randomly sampling from its historical values (Fig. 1, dashed line, a.k.a. guessing). Thus, from $t=0$ to $t\rightarrow \infty$, we can see $p(x(t))$ is evolving from one PDF to the other. Here we give these two distribution different names. For the one which we use to describe how confident we are is called _forecast distribution_ and the one when forecast lead time approaches infinity is called _climatological distribution_ (also called "population" in statistics). 
 
 ```{figure} FIG1.png
 ---
