@@ -250,7 +250,7 @@ Using LE-based method of generating probabilistic forecast in Lorenz 63 model.
 
 
 :::{note}
-In the homework assignment, you will practice how to apply the LE-based method to Lorenz 84 model ({eq}`eq71`). Different from the Lorenz 63 model, the convergence/divergence of $\Phi_i(\mathbf{X},t)$ is state-dependent (a function of location). This indicates that the probability density carried by each member might experience nonlinear decaying/growth when it is moving around the dynamical system.  
+In the homework assignment, you will practice how to apply the LE-based method to Lorenz 84 model ({eq}`eq71`). Different from the Lorenz 63 model, the convergence/divergence of $\Phi_i(\mathbf{X},t)$ is state-dependent (a function of location). This indicates that the probability density carried by each member might experience nonlinear decaying/growth when it is moving around inside the dynamical system.  
 
 ```{math}
 :label: eq71
