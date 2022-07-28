@@ -225,7 +225,7 @@ To apply the LE-based method to the Lorenz 63 model, we first linearize the equa
 \begin{bmatrix}
 X' \\
 Y' \\
-X' \\
+Z' \\
 \end{bmatrix}
 ```  
 
