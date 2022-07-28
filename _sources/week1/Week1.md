@@ -31,7 +31,7 @@ Another interesting thing you might have noticed...when we talk about predictabi
 
 ## State-dependent predictability and mathematical assumptions
 \
-One interesting fact about predictability is that there is no universal value. You might think...OK that sounds weird and counter-intuitive. For example, we know for typical numerical weather forecast, we will say the predictability limit is around 10 days to 2 weeks. After that, we can no longer trust the model output. However, we will soon realize "10 days to 2 weeks" is only _rule of thumb_. In some cases, we can even struggle with the low prediction confidence at a forecast lead time of 3 days! Sounds crazy right? Here, let me use the famous Lorenz 63 model to demonstrate what it means. 
+One interesting fact about predictability is that there is no universal value. You might think...OK that sounds weird and counter-intuitive. For example, we know for typical numerical weather forecast, we will say the predictability limit is around 10 days to 2 weeks. After that, we can no longer trust the model output. However, we will soon realize "10 days to 2 weeks" is only _rule of thumb_. In some cases, we can even struggle with the low prediction confidence at a forecast lead time of 3 days! Sounds crazy right? Here, let me use the famous Lorenz 63 model to demonstrate what I means. 
 
 :::{note}
 Lorenz 63 model {cite}`lorenz1963deterministic` can be considered as the minimalist model for studying chaos and predictability and it only contains 3 prognostic variables. Indeed, to generate chaotic behavior, the minimum size of independent variables is 3. Smaller than 3, we won't have chaotic behavior in a dynamical system. We will cover more details about Lorenz model in week 3. 

@@ -1,5 +1,5 @@
 (week6)=
-# Week 6: The connection between statistical mechanics and ensemble forecast I: Applications
+# Week 6: The connection between statistical mechanics and ensemble forecast II: Applications
 
 ## Connections between Liouville equation (LE) and ensemble forecasts
 Last week, we learned the physical meaning of Jacobian matrix, determinant and LE. This week, we will walk through a few of their applications. Before we introduce the examples, we need to know there are two equivalent formulas of LE: (1) initial state-based LE and (2) current state-based LE. One easy way to distinguish these two is looking at how {eq}`eq44` is defined. 
