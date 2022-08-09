@@ -29,19 +29,19 @@ __Part I: Lecturing__
 	* The physical and mathematical background
 	* Single Scale
 	* Multi-scale interations
-	* HW3: Lorenz 96 model (calculating the Layapynov exponent) (15%)
+	* HW3: Lorenz 96 model (calculating the Layapynov exponent) (10%)
 * {ref}`week5` 
 	* Introduction to Liouville equation
 	* Jacobian Matrix and Determinant  
 	* Connections between Liouville equation and ensemble forecasts
 * {ref}`week6` 
 	* Liouville equation as a function of initial state vs current state 
+	* Solution to Liouville equation
 	* Liouville equation in 1st-order ODE case
 	* Liouville equation in Lorenz 63 model
-	* Liouville equation and Singular Value Decomposition
-	* Solution to Liouville equation
 	* Challengs of applying Liouville Equation to weather forecast
-	* HW4: Derivation of Liouville equation + 1st-order ODE case simulation (15%)
+	* Liouville equation and Singular Value Decomposition
+	* HW4: Derivation of Liouville equation + LE in 1st-order ODE and Lorenz 84 model (20%)
 * Week 7: __The stability theory__
 	* von Neumann method
 	* Energy Method

@@ -31,21 +31,21 @@ While the dynamical system is deterministic, we can also find an 1-on-1 bijectio
 \mathbf{\Xi} = \mathbf{\Xi}(\mathbf{X},t)
 \end{align}
 ```
-The existence of 1-on-1 bijection enables us to rewrite {eq}`eq53` i.e., represent $\mathrm{\Xi}$ with $\mathrm{X}$ 
+The existence of 1-on-1 bijection enables us to rewrite the prognostic equation of $\alpha$ ({eq}`eq47`) i.e., replace $\mathrm{\Xi}$ with $\mathrm{X}$
 ```{math}
 :label: eq54
 (\frac{\partial }{\partial t} + \sum_{i}\Phi_i(\mathbf{X},t)\frac{\partial}{\partial \mathbf{X}})\alpha = \alpha(\mathrm{X},t)\sum_{i}\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathrm{X_i}}
 ```
-compare {eq}`eq54` to the LE as a function of initial state (similar to {eq}`eq47`)
+compare {eq}`eq54` to the initial state-based LE  (similar to {eq}`eq47`)
 
 ```{math}
 :label: eq55
 \frac{\partial \alpha}{\partial t}  = \alpha(\mathrm{\Xi},t)\sum_{i}\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathrm{X_i}}\vert_{\mathbf{X(\mathbf{\Xi})}}
 ```
-By observing {eq}`eq54` and {eq}`eq55`, it's not hard to find their analogs in equations of fluid dynamics. {eq}`eq54` is similar to so-called Eluerian form (i.e., observing the system at a fixed point), while {eq}`eq55` is similar to Lagrangian form (i.e, observers following the particle). This is also the reason why it's called "particle flow". 
+By observing {eq}`eq54` and {eq}`eq55`, it's not hard to find their analogies in equations of fluid dynamics. {eq}`eq54` is similar to so-called Eluerian form (i.e., observing the system at a fixed point), while {eq}`eq55` is similar to Lagrangian form (i.e, observers following the particle). This is also the reason why it's called "particle flow". 
 
 
-To illustrative the mathematical equivalence between {eq}`eq54` and {eq}`eq55`, we use a Riccati equation (i.e., equation with form of $x^{'}=P(t)x^2+Q(t)x+R(t)$) to demonstrate 
+To illustrative the mathematical equivalence between {eq}`eq54` and {eq}`eq55`, we use a Riccati equation (i.e., equation with form of $x^{'}=P(t)x^2+Q(t)x+R(t)$) to test {eq}`eq54` and {eq}`eq55`
 ```{math}
 :label: eq56
 \dot{X} = -X^2
@@ -262,11 +262,11 @@ In the homework assignment, you will practice how to apply the LE-based method t
 ```
 :::
 
+## Challengs of applying Liouville Equation to weather forecast
 
+One can find LE is a powerful tool for generating the probabilistic forecast. However, one fundamental problem of implementing LE to a dynamical system is that the ultra-high dimension of weather forecast model makes finding the analytical solution impossible. 
 
-
-
-
+Given the existing challenge of applying LE to a weather forecast model. Singular Value decomposition (or mathematically equivalent to Principal component analysis) was introduced to the field of data assimilation to subtract the dominant information in a data set. Mathematically, it find a few orthogonal components, which maximize the observed variance. Thus, after we apply to SVD to a given data, we can efficiently compress the data and reduce the data dimension. We will cover more details in the following few weeks.  
 
 
 

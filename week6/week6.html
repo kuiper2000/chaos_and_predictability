@@ -236,6 +236,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#challengs-of-applying-liouville-equation-to-weather-forecast">
+   Challengs of applying Liouville Equation to weather forecast
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -281,6 +286,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#challengs-of-applying-liouville-equation-to-weather-forecast">
+   Challengs of applying Liouville Equation to weather forecast
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -317,14 +327,14 @@
 <span class="eqno">(53)<a class="headerlink" href="#equation-eq53" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \mathbf{\Xi} = \mathbf{\Xi}(\mathbf{X},t)
 \end{align}\]</div>
-<p>The existence of 1-on-1 bijection enables us to rewrite <a class="reference internal" href="#equation-eq53">(53)</a> i.e., represent <span class="math notranslate nohighlight">\(\mathrm{\Xi}\)</span> with <span class="math notranslate nohighlight">\(\mathrm{X}\)</span></p>
+<p>The existence of 1-on-1 bijection enables us to rewrite the prognostic equation of <span class="math notranslate nohighlight">\(\alpha\)</span> (<a class="reference internal" href="../week5/week5.html#equation-eq47">(47)</a>) i.e., replace <span class="math notranslate nohighlight">\(\mathrm{\Xi}\)</span> with <span class="math notranslate nohighlight">\(\mathrm{X}\)</span></p>
 <div class="math notranslate nohighlight" id="equation-eq54">
 <span class="eqno">(54)<a class="headerlink" href="#equation-eq54" title="Permalink to this equation">¶</a></span>\[(\frac{\partial }{\partial t} + \sum_{i}\Phi_i(\mathbf{X},t)\frac{\partial}{\partial \mathbf{X}})\alpha = \alpha(\mathrm{X},t)\sum_{i}\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathrm{X_i}}\]</div>
-<p>compare <a class="reference internal" href="#equation-eq54">(54)</a> to the LE as a function of initial state (similar to <a class="reference internal" href="../week5/week5.html#equation-eq47">(47)</a>)</p>
+<p>compare <a class="reference internal" href="#equation-eq54">(54)</a> to the initial state-based LE  (similar to <a class="reference internal" href="../week5/week5.html#equation-eq47">(47)</a>)</p>
 <div class="math notranslate nohighlight" id="equation-eq55">
 <span class="eqno">(55)<a class="headerlink" href="#equation-eq55" title="Permalink to this equation">¶</a></span>\[\frac{\partial \alpha}{\partial t}  = \alpha(\mathrm{\Xi},t)\sum_{i}\frac{\partial \mathbf{\Phi}(\mathbf{X},t)}{\partial \mathrm{X_i}}\vert_{\mathbf{X(\mathbf{\Xi})}}\]</div>
-<p>By observing <a class="reference internal" href="#equation-eq54">(54)</a> and <a class="reference internal" href="#equation-eq55">(55)</a>, it’s not hard to find their analogs in equations of fluid dynamics. <a class="reference internal" href="#equation-eq54">(54)</a> is similar to so-called Eluerian form (i.e., observing the system at a fixed point), while <a class="reference internal" href="#equation-eq55">(55)</a> is similar to Lagrangian form (i.e, observers following the particle). This is also the reason why it’s called “particle flow”.</p>
-<p>To illustrative the mathematical equivalence between <a class="reference internal" href="#equation-eq54">(54)</a> and <a class="reference internal" href="#equation-eq55">(55)</a>, we use a Riccati equation (i.e., equation with form of <span class="math notranslate nohighlight">\(x^{'}=P(t)x^2+Q(t)x+R(t)\)</span>) to demonstrate</p>
+<p>By observing <a class="reference internal" href="#equation-eq54">(54)</a> and <a class="reference internal" href="#equation-eq55">(55)</a>, it’s not hard to find their analogies in equations of fluid dynamics. <a class="reference internal" href="#equation-eq54">(54)</a> is similar to so-called Eluerian form (i.e., observing the system at a fixed point), while <a class="reference internal" href="#equation-eq55">(55)</a> is similar to Lagrangian form (i.e, observers following the particle). This is also the reason why it’s called “particle flow”.</p>
+<p>To illustrative the mathematical equivalence between <a class="reference internal" href="#equation-eq54">(54)</a> and <a class="reference internal" href="#equation-eq55">(55)</a>, we use a Riccati equation (i.e., equation with form of <span class="math notranslate nohighlight">\(x^{'}=P(t)x^2+Q(t)x+R(t)\)</span>) to test <a class="reference internal" href="#equation-eq54">(54)</a> and <a class="reference internal" href="#equation-eq55">(55)</a></p>
 <div class="math notranslate nohighlight" id="equation-eq56">
 <span class="eqno">(56)<a class="headerlink" href="#equation-eq56" title="Permalink to this equation">¶</a></span>\[\dot{X} = -X^2\]</div>
 <p>the analytical solution is</p>
@@ -458,6 +468,11 @@ Z' \\
 \dot{Z} &amp;= bXY+XZ-Z \\
 \end{align*}\end{split}\]</div>
 </div>
+</div>
+<div class="section" id="challengs-of-applying-liouville-equation-to-weather-forecast">
+<h2>Challengs of applying Liouville Equation to weather forecast<a class="headerlink" href="#challengs-of-applying-liouville-equation-to-weather-forecast" title="Permalink to this headline">¶</a></h2>
+<p>One can find LE is a powerful tool for generating the probabilistic forecast. However, one fundamental problem of implementing LE to a dynamical system is that the ultra-high dimension of weather forecast model makes finding the analytical solution impossible.</p>
+<p>Given the existing challenge of applying LE to a weather forecast model. Singular Value decomposition (or mathematically equivalent to Principal component analysis) was introduced to the field of data assimilation to subtract the dominant information in a data set. Mathematically, it find a few orthogonal components, which maximize the observed variance. Thus, after we apply to SVD to a given data, we can efficiently compress the data and reduce the data dimension. We will cover more details in the following few weeks.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
