@@ -53,6 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Week 6: The connection between statistical mechanics and ensemble forecast II: Applications" href="../week6/week6.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,7 +97,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week1/week1.html">
    Week 1: Predictability of Weather and Climate
@@ -125,6 +126,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../week6/week6.html">
    Week 6: The connection between statistical mechanics and ensemble forecast II: Applications
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 7: The stability theory
   </a>
  </li>
 </ul>
@@ -209,6 +215,34 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#direct-method">
+   Direct Method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#energy-method">
+   Energy Method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#von-neumann-method">
+   von Neumann Method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability-in-geophysical-fluid-dynamics">
+   Stability in Geophysical Fluid Dynamics
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -221,6 +255,34 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#direct-method">
+   Direct Method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#energy-method">
+   Energy Method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#von-neumann-method">
+   von Neumann Method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability-in-geophysical-fluid-dynamics">
+   Stability in Geophysical Fluid Dynamics
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -229,7 +291,186 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="week-7-the-stability-theory">
 <span id="week7"></span><h1>Week 7: The stability theory<a class="headerlink" href="#week-7-the-stability-theory" title="Permalink to this headline">¶</a></h1>
-<p>In week 6, we learn how to estimate the time evolution of PDF. We can easily find that the analytical solution of LE (i.e., {eq} <code class="docutils literal notranslate"><span class="pre">eq64</span></code>) follows a form of exponential function, where the integral inside the exponent represents the state-dependent error growth rate. For example, if the integral is negative, indicating the volume (density) spanned by ensemble members will increase (decrease) with time at that given location. Thus, it’s pretty much like a stability problem we usually deal with at the traditional geophysical fluid dynamics. For example, in mid-latitude, some regions with strong meridional temperature gradient (vertical wind shear), we can see frontal genesis. These regions have very strong baroclinicity and thus a small disturbance can easily grow. In atmospheric dynamics, we can estimate the Eady growth rate, which is defined as <span class="math notranslate nohighlight">\(0.31\frac{f_0}{NH}\Delta U\)</span> (where <span class="math notranslate nohighlight">\(f_0\)</span> is planetary Coriolis Force, <span class="math notranslate nohighlight">\(NH\)</span> is the square of Brunt-Vaisala frequency and <span class="math notranslate nohighlight">\(\Delta U\)</span> is the vertical wind shear).</p>
+<p>In week 6, we learn how to estimate the time evolution of PDF. We can easily find that the analytical solution of LE (i.e., <a class="reference internal" href="../week6/week6.html#equation-eq64">(64)</a>) follows a form of exponential function, where the integral inside the exponent represents the state-dependent error growth rate. For example, if the integral is negative, indicating the volume (density) spanned by ensemble members will increase (decrease) with time at that given location. Thus, it’s pretty much like a stability problem we usually deal with at the traditional geophysical fluid dynamics. For example, in mid-latitude, some regions with strong meridional temperature gradient (vertical wind shear), we can see frontal genesis. These regions have very strong baroclinicity and thus a small disturbance can easily grow. In atmospheric dynamics, we can calculate so-called Eady growth rate, (<a class="reference internal" href="#equation-eq74">(74)</a>,where <span class="math notranslate nohighlight">\(f_0\)</span> is planetary Coriolis Force, <span class="math notranslate nohighlight">\(NH\)</span> is Brunt-Vaisala frequency times equivalent depth (i.e., restoring force by buoyancy) and <span class="math notranslate nohighlight">\(\Delta U\)</span> is the vertical wind shear) to estimate the environment favoring the baroclinicity.</p>
+<div class="math notranslate nohighlight" id="equation-eq74">
+<span class="eqno">(74)<a class="headerlink" href="#equation-eq74" title="Permalink to this equation">¶</a></span>\[\sigma = 0.31\frac{f_0}{NH}\Delta U\]</div>
+<p><a class="reference internal" href="#equation-eq74">(74)</a> is a convenient formula for estimating if an environment is bariclinic unstable. However, there are many different kinds of instability and thus a more general framework is required to quantify if an error in initial states will grow with time. In this week, we will introduce three traditional methods (1) Direct method, (2) Energy method, and (3) von Neumann method. All of these methods are widely used in numerical and dynamical system analyses. If any of them indicates instability, the system is either numerically or physically unstable. (One should notice that the system can be physically stable but numerically unstable). Here we use a very simple 1D-advection model to demonstrate how to apply three different methods to analyze the stability in a given system.</p>
+<div class="figure align-default" id="fig15">
+<img alt="../_images/1D_advection.png" src="../_images/1D_advection.png" />
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">An example of a one-dimensional grid, with uniform grid spacing <span class="math notranslate nohighlight">\(\Delta x\)</span>. The grid points are denoted by the integer index j. Half-integer grid points can also be defined, as shown by the x at j+<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>.</span><a class="headerlink" href="#fig15" title="Permalink to this image">¶</a></p>
+</div>
+<p>We first start with grid spacing. <a class="reference internal" href="#fig15"><span class="std std-ref">FIG15</span></a> is schematic diagram of 1D grid (sometimes we use mesh or lattice). Since each grid is equally spaced, we can define a function <span class="math notranslate nohighlight">\(f(x_j)=f(j\Delta x)\)</span>, which further leads to three different definitions of finite difference: (1) For forward difference at point <span class="math notranslate nohighlight">\(j\)</span>, we have <span class="math notranslate nohighlight">\(\frac{f(x_{j+1})-f(x_{j})}{\Delta x}\)</span>, (2) for backward difference at point <span class="math notranslate nohighlight">\(j\)</span>, we have <span class="math notranslate nohighlight">\(\frac{f(x_{j})-f(x_{j-1})}{\Delta x}\)</span> and (3) for central difference at point <span class="math notranslate nohighlight">\(j\)</span>, we have <span class="math notranslate nohighlight">\(\frac{f(x_{j+1})-f(x_{j-1})}{\Delta x}\)</span>.</p>
+<p>Now, we can take a look of the 1D-advection model.</p>
+<div class="math notranslate nohighlight" id="equation-eq75">
+<span class="eqno">(75)<a class="headerlink" href="#equation-eq75" title="Permalink to this equation">¶</a></span>\[\frac{\partial A}{\partial t} + c (\frac{\partial A}{\partial x})= 0   \]</div>
+<p>with an initial condition</p>
+<div class="math notranslate nohighlight" id="equation-eq76">
+<span class="eqno">(76)<a class="headerlink" href="#equation-eq76" title="Permalink to this equation">¶</a></span>\[A(x,0) = F(x) \]</div>
+<p>Physically, <a class="reference internal" href="#equation-eq75">(75)</a> carries <span class="math notranslate nohighlight">\(A_{j}^{n}\)</span> at a position of a particle with a constant speed <span class="math notranslate nohighlight">\(c\)</span>. We interpret <span class="math notranslate nohighlight">\(A_{j}^{n}\)</span> as a conserved property of the particle. To find the analytical solution, we can assume <span class="math notranslate nohighlight">\(\xi \equiv x-ct\)</span> and thus <span class="math notranslate nohighlight">\((\frac{\partial x}{\partial t})=c\)</span> (with constant <span class="math notranslate nohighlight">\(\xi\)</span>). Using the chain rule, we further find that</p>
+<div class="math notranslate nohighlight" id="equation-eq77">
+<span class="eqno">(77)<a class="headerlink" href="#equation-eq77" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+(\frac{\partial A}{\partial x})_{\xi} 
+&amp;= (\frac{\partial A}{\partial x})_t+(\frac{\partial A}{\partial t})(\frac{\partial t}{\partial x})  \\
+&amp;= (\frac{\partial A}{\partial x})_t+(\frac{\partial A}{\partial t})(\frac{1}{c})  \\ 
+&amp; = 0
+\end{align*}\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq78">
+<span class="eqno">(78)<a class="headerlink" href="#equation-eq78" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align*}
+(\frac{\partial A}{\partial t})_{\xi} 
+&amp;= (\frac{\partial A}{\partial t})_x+(\frac{\partial A}{\partial x})(\frac{\partial x}{\partial t})  \\ 
+&amp;= (\frac{\partial A}{\partial t})_x+(\frac{\partial A}{\partial x})c \\
+&amp; = 0
+\end{align*}\end{split}\]</div>
+<p><a class="reference internal" href="#equation-eq77">(77)</a> and <a class="reference internal" href="#equation-eq78">(78)</a> suggest that <span class="math notranslate nohighlight">\(A\)</span> will conserve as long as it stay on the characteristic line <span class="math notranslate nohighlight">\(\xi\)</span>. Thus, <span class="math notranslate nohighlight">\(\xi\)</span> is an analytical solution of <a class="reference internal" href="#equation-eq75">(75)</a> (i.e., <span class="math notranslate nohighlight">\(A=f(\xi)\)</span>). Now let’s consider using a numerical way to solve <a class="reference internal" href="#equation-eq75">(75)</a>, which can be written as the form below,</p>
+<div class="math notranslate nohighlight" id="equation-eq79">
+<span class="eqno">(79)<a class="headerlink" href="#equation-eq79" title="Permalink to this equation">¶</a></span>\[\frac{A^{n+1}_{j}-A^{n}_{j}}{\Delta t} + c (\frac{A^{n}_{j}-A^{n}_{j-1}}{\Delta x})= 0   \]</div>
+<p>Here we use forward difference quotient for time and backward difference for space. We can easily find that what determines the time tendency is the information from <em>upstream</em> (i.e., information is only from one side, i.e., <span class="math notranslate nohighlight">\(A_{j-1}^{n}\)</span>, and has no dependence on the other side, i.e., <span class="math notranslate nohighlight">\(A_{j+1}^{n}\)</span>). Let <span class="math notranslate nohighlight">\(A(x_j,t_n)\)</span> to be exact solution at the point <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(A(j\Delta x, n \Delta t)\)</span> is the numerically solved solution. In general, <span class="math notranslate nohighlight">\(A(x_j,t_n) \neq A(j\Delta x, n \Delta t)\)</span> in most cases (but we definitely hope they are the same ;) ). Next, we will examine if <a class="reference internal" href="#equation-eq79">(79)</a> is numerically stable.</p>
+<p>First, we introduce something called <em>truncation error</em>. For <a class="reference internal" href="#equation-eq75">(75)</a>, if we use the exact solution <span class="math notranslate nohighlight">\(A(x_j,t_n)\)</span>, the right hand side of equation will be 0. However, when a discrete form is used, the right hand side of <a class="reference internal" href="#equation-eq80">(80)</a> won’t be 0 for most cases i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq80">
+<span class="eqno">(80)<a class="headerlink" href="#equation-eq80" title="Permalink to this equation">¶</a></span>\[\frac{A^{(n+1)\Delta t}_{j\Delta x}-A^{n\Delta t}_{j\Delta x}}{\Delta t} + c (\frac{A^{n\Delta t}_{j\Delta x}-A^{n\Delta t}_{(j-1)\Delta x}}{\Delta x})= \epsilon   \]</div>
+<p>and applying Taylor expansion, we know.</p>
+<div class="math notranslate nohighlight" id="equation-eq81">
+<span class="eqno">(81)<a class="headerlink" href="#equation-eq81" title="Permalink to this equation">¶</a></span>\[\epsilon = (\frac{1}{2!}\Delta t \frac{\partial^2 A}{\partial t^2}+\ldots)+c(-\frac{1}{2!}\Delta x\frac{\partial ^2 A}{\partial x^2}+\ldots)  \]</div>
+<p>We say this is a first order scheme given that the <span class="math notranslate nohighlight">\(\epsilon\)</span> is a function of second and higher order. To reduce the <em>truncation error</em>, we can select <span class="math notranslate nohighlight">\(\Delta x\)</span> as small as possible.</p>
+<div class="section" id="direct-method">
+<h2>Direct Method<a class="headerlink" href="#direct-method" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the truncation error which estimates how accurate a numerical differential equation is, we also have <em>discretization error</em>, which estimates how accurate the answer of a differential equation is. However, a decrease in the truncation error does not necessarily ensure a decrease in the discretization error. Discretization error is the difference between the exact solution, <span class="math notranslate nohighlight">\(A_{j}^{n}\)</span> and discretized solution <span class="math notranslate nohighlight">\(A_{j\Delta x}^{n\Delta t}\)</span>. An easy way to visualize the difference between analytical solution and the discretized solutions is using so-called <em>domain of dependence</em>. i.e., plot the discretized solution as a function of <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<div class="figure align-default" id="fig16">
+<img alt="../_images/domain_dependence.png" src="../_images/domain_dependence.png" />
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">A schematic diagram of domain dependence. The shading regions show where the “domain of dependence” is for <code class="xref eq docutils literal notranslate"><span class="pre">79</span></code>. Shading regions are where eq. 79 depends.</span><a class="headerlink" href="#fig16" title="Permalink to this image">¶</a></p>
+</div>
+<p>The shading regions in <a class="reference internal" href="#fig16"><span class="std std-ref">FIG16</span></a> show where the numerical solution should fall in order to get smaller discretization error. If today, the integration starts at a point of <span class="math notranslate nohighlight">\(A(x_0,0)\)</span> where <span class="math notranslate nohighlight">\(x_0&lt;0\)</span> as indicated by the thin line in <a class="reference internal" href="#fig16"><span class="std std-ref">FIG16</span></a>. We can find that the discretization error will never decrease as long as <span class="math notranslate nohighlight">\(\frac{\Delta x}{\Delta t\)</span>}$ is a constant.</p>
+<p>To understand what happens here, we can leverage the analytical solution of <a class="reference internal" href="#equation-eq75">(75)</a>. For the numerical simulation starts from <span class="math notranslate nohighlight">\(A(x_0,0)\)</span>, its characteristic line is <span class="math notranslate nohighlight">\(\Delta x-c\Delta t=x_0\)</span>. Rearranging the equation, it gives us <span class="math notranslate nohighlight">\((1-\frac{x_0}{\Delta x})=c\frac{\Delta t}{\Delta x}\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq82">
+<span class="eqno">(82)<a class="headerlink" href="#equation-eq82" title="Permalink to this equation">¶</a></span>\[(1-\frac{\Delta t}{\Delta x})=c\frac{\Delta t}{\Delta x}\]</div>
+<p>We can easily find, if the discretized solution is identical to the analytical solution, then the second term on the left hand side of <a class="reference internal" href="#equation-eq82">(82)</a> will be 0. Therefore, the second term on the left hand side can be considered as the <em>discretization error</em>, which measure the difference between analytical and numerical solutions. In other words, when <span class="math notranslate nohighlight">\(c\frac{\Delta t}{\Delta x}=1\)</span>, we are certain that <span class="math notranslate nohighlight">\(x_0\)</span> is 0. Obviously, <span class="math notranslate nohighlight">\(c\frac{\Delta t}{\Delta x}\)</span> is an important parameter for quantifying how close the two solutions (numerical and analytical) are. This parameter is called CFL criteria, named after three great mathematicians: Courant, Friedrichs and Levy.</p>
+<p>An alternative way to interpret <a class="reference internal" href="#equation-eq82">(82)</a> is through “interpolation and extrapolation”. For example, we can rewrite the upstream scheme as</p>
+<div class="math notranslate nohighlight" id="equation-eq83">
+<span class="eqno">(83)<a class="headerlink" href="#equation-eq83" title="Permalink to this equation">¶</a></span>\[A^{n+1}_{j} = (1-\mu) A^{n}_{j} + \mu A^{n}_{j-1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> equals <span class="math notranslate nohighlight">\(c\frac{\Delta t}{\Delta x}\)</span>. From the schematic diagram below, we can know the solution in the next time step will always be bounded within <span class="math notranslate nohighlight">\(A_{j}^{n}\)</span> and <span class="math notranslate nohighlight">\(A_{j-1}^{n}\)</span> if <span class="math notranslate nohighlight">\(\mu\)</span> is smaller than 1 and bigger than 0. Thus, even in the worst scenario, the signals will be smoothed out rather than exploding.</p>
+<div class="figure align-default" id="fig17">
+<img alt="../_images/interprolation_extrapolation.png" src="../_images/interprolation_extrapolation.png" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">A schematic diagram of “interpolation vs extrapolation”</span><a class="headerlink" href="#fig17" title="Permalink to this image">¶</a></p>
+</div>
+<p>We can rewrite <a class="reference internal" href="#equation-eq83">(83)</a> in an absolute form and the following conclusion also holds if <span class="math notranslate nohighlight">\(0\geq\mu \geq 1\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq84">
+<span class="eqno">(84)<a class="headerlink" href="#equation-eq84" title="Permalink to this equation">¶</a></span>\[|A^{n+1}_{j}| \leq (1-\mu) |A^{n}_{j}| + \mu |A^{n}_{j-1}|\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq85">
+<span class="eqno">(85)<a class="headerlink" href="#equation-eq85" title="Permalink to this equation">¶</a></span>\[\mathrm{max}_{(j)} |A^{n+1}_{j}| \leq (1-\mu) \mathrm{max}_{(j)}|A^{n}_{j}| + \mu \mathrm{max}_{(j)}|A^{n}_{j-1}|\]</div>
+<p>The second line of <a class="reference internal" href="#equation-eq85">(85)</a> follows because of <span class="math notranslate nohighlight">\(\mathrm{max}|A_{j}^{n}| = \mathrm{max}|A_{j-1}^{n}|\)</span>. By inspecting <a class="reference internal" href="#equation-eq85">(85)</a>, we can again find that the necessary criteria for a numerically stable scheme is</p>
+<div class="math notranslate nohighlight" id="equation-eq86">
+<span class="eqno">(86)<a class="headerlink" href="#equation-eq86" title="Permalink to this equation">¶</a></span>\[0\leq \mu \leq 1\]</div>
+<p>This approach gives us a direct measurement of the instability in a numerical scheme or any phenomenon of interest. It’s called <em>direct method</em>.</p>
+</div>
+<div class="section" id="energy-method">
+<h2>Energy Method<a class="headerlink" href="#energy-method" title="Permalink to this headline">¶</a></h2>
+<p>The second approach is so-called <em>energy method</em>. Mathematically, we can repeat the same exercise to acquire the same conclusion. I will leave it to the readers to derive the formula. Details can be found in homework instruction.</p>
+</div>
+<div class="section" id="von-neumann-method">
+<h2>von Neumann Method<a class="headerlink" href="#von-neumann-method" title="Permalink to this headline">¶</a></h2>
+<p>In this part, we will walk through another very powerful tool for testing instability, which is called von Neumann method (named after a Hungarian mathematician, John von Neumann). Let’s return to <a class="reference internal" href="#equation-eq75">(75)</a> and assume the domain size is infinite for simplicity. This will lead to a wave solution</p>
+<div class="math notranslate nohighlight" id="equation-eq87">
+<span class="eqno">(87)<a class="headerlink" href="#equation-eq87" title="Permalink to this equation">¶</a></span>\[A(x,t) = \mathrm{Re}[\hat{A}(t)e^{ikx}]\]</div>
+<p>where <span class="math notranslate nohighlight">\(|\hat{A}|\)</span> is the wave amplitude. Here we consider a simple wave number for convenience but we can replace the right hand side of <a class="reference internal" href="#equation-eq87">(87)</a> with a summation over different wave numbers. Substituting <a class="reference internal" href="#equation-eq87">(87)</a> into <a class="reference internal" href="#equation-eq75">(75)</a>, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq88">
+<span class="eqno">(88)<a class="headerlink" href="#equation-eq88" title="Permalink to this equation">¶</a></span>\[\frac{d \hat{A(t)}}{dt} + ikc \hat{A(t)} = 0\]</div>
+<p>and the corresponding solution is</p>
+<div class="math notranslate nohighlight" id="equation-eq89">
+<span class="eqno">(89)<a class="headerlink" href="#equation-eq89" title="Permalink to this equation">¶</a></span>\[\hat{A}(t) = \hat{A(0)}e^{-ikct}  \]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{A(0)}\)</span> is the initial states. We can substitute this “time-only” part back to <a class="reference internal" href="#equation-eq87">(87)</a> to derive the whole solution (i.e., with both space and time structure).</p>
+<div class="math notranslate nohighlight" id="equation-eq90">
+<span class="eqno">(90)<a class="headerlink" href="#equation-eq90" title="Permalink to this equation">¶</a></span>\[A(x,t) = \mathrm{Re}[\hat{A}(0)e^{ikx-ct}]\]</div>
+<p>For a finite difference problem, we can assume that the solution has a form of</p>
+<div class="math notranslate nohighlight" id="equation-eq91">
+<span class="eqno">(91)<a class="headerlink" href="#equation-eq91" title="Permalink to this equation">¶</a></span>\[A^{n}_{j} = \mathrm{Re}[\hat{A}^{n}e^{ikj\Delta x}]\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{A}^{n}\)</span> is the amplitude of wave <span class="math notranslate nohighlight">\(e^{ikj\Delta x}\)</span> at the nth time step. One should notice that <span class="math notranslate nohighlight">\(\hat{A}^{n}\)</span> can be an imaginary number, which determines both the phase angle and amplitude of a wave at a given moment.</p>
+<p>Now we can define an amplification factor, which measures the growth of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq92">
+<span class="eqno">(92)<a class="headerlink" href="#equation-eq92" title="Permalink to this equation">¶</a></span>\[\hat{A}^{n+1} \equiv \lambda \hat{A}^{n}\]</div>
+<p>For the analytical solution of <a class="reference internal" href="#equation-eq75">(75)</a>, the amplification factor is <span class="math notranslate nohighlight">\(\lambda = e^{ikct}\)</span>. This implies that for the exact advection problem with a single wave number, <span class="math notranslate nohighlight">\(\lambda = 1\)</span>, i.e., the signal won’t amplify or decay.</p>
+<p>The question is: <em>what is amplification factor in discrete form?</em> (i.e., numerical solution). For <a class="reference internal" href="#equation-eq93">(93)</a>, the amplification factor is equivalent to</p>
+<div class="math notranslate nohighlight" id="equation-eq93">
+<span class="eqno">(93)<a class="headerlink" href="#equation-eq93" title="Permalink to this equation">¶</a></span>\[\hat{A}(t+\Delta t) \equiv e^{ikc\Delta t}\hat{A}(t) \]</div>
+<p>If we start from <span class="math notranslate nohighlight">\(t=0\)</span>, the numerical solution can be written as a form of amplification factor.</p>
+<div class="math notranslate nohighlight" id="equation-eq94">
+<span class="eqno">(94)<a class="headerlink" href="#equation-eq94" title="Permalink to this equation">¶</a></span>\[\hat{A}^{n+1} \equiv \hat{A}^{t=0} \lambda^n\]</div>
+<p>therefore, the requirement for model not to blow up is <span class="math notranslate nohighlight">\(|\lambda|\leq 1\)</span>. To explicitly derive the discrete form of amplification factor, we can substitute <a class="reference internal" href="#equation-eq92">(92)</a> back to <a class="reference internal" href="#equation-eq79">(79)</a> and have</p>
+<div class="math notranslate nohighlight" id="equation-eq95">
+<span class="eqno">(95)<a class="headerlink" href="#equation-eq95" title="Permalink to this equation">¶</a></span>\[\frac{\hat{A}^{n+1}-\hat{A}^{n}}{\Delta t}+(\frac{1-e^{-ik\Delta x}}{\Delta x})c\hat{A}^{n} = 0 \]</div>
+<p>we can find that <span class="math notranslate nohighlight">\(\hat{A}^{n+1}=(1+\frac{1-e^{-ik\Delta x}\Delta t}{\Delta x})c\hat{A}^{n}\)</span>. Comparing with the <a class="reference internal" href="#equation-eq88">(88)</a>, it is found <span class="math notranslate nohighlight">\(\frac{1-e^{-ik\Delta x}}{\Delta x}c\)</span> taking place of <span class="math notranslate nohighlight">\(ikc\)</span>. To prove this point, we can force <span class="math notranslate nohighlight">\(\Delta x \rightarrow 0\)</span> and therefore <span class="math notranslate nohighlight">\(\frac{1-e^{-ik\Delta x}}{\Delta x}c \sim ikc\)</span>.</p>
+<p>If we use the definition of <a class="reference internal" href="#equation-eq92">(92)</a> and <a class="reference internal" href="#equation-eq95">(95)</a>, we can find</p>
+<div class="math notranslate nohighlight" id="equation-eq96">
+<span class="eqno">(96)<a class="headerlink" href="#equation-eq96" title="Permalink to this equation">¶</a></span>\[\lambda = 1-\mu (1-\mathrm{cos} k\Delta x+i\mathrm{sin} k\Delta x)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the CFL. <a class="reference internal" href="#equation-eq95">(95)</a> is what we are looking for. However, it’s in a complex form. Thus, we multiply <a class="reference internal" href="#equation-eq95">(95)</a> by its complex conjugate to derive the variance of <a class="reference internal" href="#equation-eq95">(95)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq97">
+<span class="eqno">(97)<a class="headerlink" href="#equation-eq97" title="Permalink to this equation">¶</a></span>\[|\lambda^{2}| = 1+2\mu(\mu-1)(1-\mathrm{cos(k\Delta x)})\]</div>
+<p>Obviously, the amplification factor is also a function of wave number. Physically this make senses because when we say that a signal grows, not only its amplitude but also its phase angle should be considered. For example, when a vector rotates from <span class="math notranslate nohighlight">\([1,0]\)</span> to <span class="math notranslate nohighlight">\([\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}]\)</span>, the y component increases but the overall amplitude (i.e., <span class="math notranslate nohighlight">\(x^{2}+y^{2}\)</span>) doesn’t change. Different wave numbers correspond to different rotation rate. We will cover more details in the next section when we talk about the nonmodal system.</p>
+</div>
+<div class="section" id="stability-in-geophysical-fluid-dynamics">
+<h2>Stability in Geophysical Fluid Dynamics<a class="headerlink" href="#stability-in-geophysical-fluid-dynamics" title="Permalink to this headline">¶</a></h2>
+<p>The stability theory has been widely applied to different fields. What we learn above is one application in numerical modeling. Here, we leverage barotropic instability for demonstrating how to apply those tools to GFD problems.</p>
+<p>Let’s setup our question first. Imagine there is a 2D barotropic flow, which is bounded in meridional direction and periodic in zonal direction. Around the center of domain, we prescribe a background flow (i.e., <a class="reference internal" href="#fig18"><span class="std std-ref">FIG18</span></a>), which is positive <span class="math notranslate nohighlight">\(\bar{U}\)</span> when <span class="math notranslate nohighlight">\(y&gt;L\)</span> and is negative <span class="math notranslate nohighlight">\(\bar{U}\)</span> when <span class="math notranslate nohighlight">\(y&lt;-L\)</span>. In addition, no zonal structure of background flow is given for simplification.</p>
+<div class="figure align-default" id="fig18">
+<img alt="../_images/Shear_instability.png" src="../_images/Shear_instability.png" />
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">A schematic diagram of prescribed background flow for shear instability.</span><a class="headerlink" href="#fig18" title="Permalink to this image">¶</a></p>
+</div>
+<p>The corresponding governing equations can be written as:</p>
+<div class="math notranslate nohighlight" id="equation-eq98">
+<span class="eqno">(98)<a class="headerlink" href="#equation-eq98" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\frac{\partial u}{\partial t} +\bar{U}\frac{\partial u}{\partial x}+v\frac{\partial \bar{U}}{\partial y} &amp;= \frac{1}{\rho_0}\frac{\partial p}{\partial x} \\
+\frac{\partial v}{\partial t} + \bar{U}\frac{\partial v}{\partial x} &amp;=-\frac{1}{\rho_0}\frac{\partial p}{\partial y} \\
+\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y} &amp;= 0 
+\end{align}\end{split}\]</div>
+<p>Consider solutions of the form</p>
+<div class="math notranslate nohighlight" id="equation-eq99">
+<span class="eqno">(99)<a class="headerlink" href="#equation-eq99" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+u = \tilde{u}(y)e^{ik(x-ct)} \\
+v = \tilde{v}(y)e^{ik(x-ct)} \\
+p = \tilde{p}(y)e^{ik(x-ct)} \\
+\end{align}\end{split}\]</div>
+<p>where c is a complex. Substitute into <a class="reference internal" href="#equation-eq98">(98)</a> gives</p>
+<div class="math notranslate nohighlight" id="equation-eq100">
+<span class="eqno">(100)<a class="headerlink" href="#equation-eq100" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+ik(\bar{U}-c)\tilde{u}+\bar{U}_y\tilde{v} &amp;= -\alpha_0 ik\tilde{p} \\
+ik(\bar{U}-c)\tilde{v} &amp;= -\alpha_0 \tilde{p}_y \\
+ik\tilde{u} + \tilde{v}_y &amp; = 0
+\end{align}\end{split}\]</div>
+<p>by cross-differentiating, we can eliminate <span class="math notranslate nohighlight">\(\tilde{p}\)</span> and <span class="math notranslate nohighlight">\(\tilde{u}\)</span> and have a single O.D.E. in <span class="math notranslate nohighlight">\(\tilde{v}\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq101">
+<span class="eqno">(101)<a class="headerlink" href="#equation-eq101" title="Permalink to this equation">¶</a></span>\[\tilde{v}_{yy}-\tilde{v}(k^2+\frac{\bar{U}_{yy}}{\bar{U}-c}) = 0\]</div>
+<p>The general solution for y structure of metidional wind is</p>
+<div class="math notranslate nohighlight" id="equation-eq102">
+<span class="eqno">(102)<a class="headerlink" href="#equation-eq102" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\tilde{v} &amp; = Ae^{-\alpha y}            &amp;\; \mathrm{if} \; L\geq y  \\
+\tilde{v} &amp; = Be^{-\alpha y}+Ce^{\alpha y}   &amp;\; \mathrm{if} \; -L\geq y \geq L \\
+\tilde{v} &amp; = Fe^{\alpha y}             &amp;\; \mathrm{if} \; y\geq -L 
+\end{align}\end{split}\]</div>
+<p>Now, we need some boundary conditions to solve A,B, and F in <span class="math notranslate nohighlight">\(\tilde{v}\)</span>. Consider <span class="math notranslate nohighlight">\(\tilde{v}=0\)</span> when <span class="math notranslate nohighlight">\(y\rightarrow \pm \infty\)</span>. We also need some other conditions to solve the O.D.E. given that the background flow is not differentiable at <span class="math notranslate nohighlight">\(y=\pm L\)</span>. The first one is the continuity of pressure (because we can dig a hole in fluid). That gives us</p>
+<div class="math notranslate nohighlight" id="equation-eq103">
+<span class="eqno">(103)<a class="headerlink" href="#equation-eq103" title="Permalink to this equation">¶</a></span>\[[(\bar{U}-c)\frac{d \tilde{v}}{dy}-\bar{U}_y\tilde{v}]^{y^{+}_{0}}_{y^{-}_{0}} = 0\]</div>
+<p>Also, the displace of fluid should be continuous. i.e., <span class="math notranslate nohighlight">\(\tilde{v}\equiv\frac{d}{dt}\delta y\)</span> where <span class="math notranslate nohighlight">\(\delta y\)</span> is the displacement.</p>
+<div class="math notranslate nohighlight" id="equation-eq104">
+<span class="eqno">(104)<a class="headerlink" href="#equation-eq104" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\tilde{v} &amp; \equiv\frac{d}{dt}\delta y  \\
+&amp; = (\frac{\partial }{\partial t}+\bar{U}\frac{\partial}{\partial x})\delta y \\
+&amp; = (-ikc+ik\bar{U})\delta y
+\end{align}\end{split}\]</div>
+<p>because <span class="math notranslate nohighlight">\(\bar{U}\)</span> is continuous over the entire domain and <span class="math notranslate nohighlight">\(\delta y\)</span> is continuous, that implies <span class="math notranslate nohighlight">\(\tilde{v}\)</span> is also continuous. Thus, <a class="reference internal" href="#equation-eq104">(104)</a> will reduce to</p>
+<div class="math notranslate nohighlight" id="equation-eq105">
+<span class="eqno">(105)<a class="headerlink" href="#equation-eq105" title="Permalink to this equation">¶</a></span>\[\begin{split}Ae^{-\alpha L}=Be^{-\alpha L}+Ce^{\alpha L} \\
+Fe^{-\alpha L}=Be^{\alpha L}+Ce^{-\alpha L}\end{split}\]</div>
+<p>Also, apply the jump condition in <a class="reference internal" href="#equation-eq104">(104)</a>, we can have another two equations</p>
+<div class="math notranslate nohighlight" id="equation-eq106">
+<span class="eqno">(106)<a class="headerlink" href="#equation-eq106" title="Permalink to this equation">¶</a></span>\[\begin{split}-\alpha A[(\bar{U}-c)]e^{-\alpha L}=[-\alpha B(\bar{U}-c)-\frac{\partial \bar{U}}{\partial y}]e^{-\alpha L}+[\alpha C(\bar{U}-c)-\frac{\partial \bar{U}}{\partial y}]e^{\alpha L} \\
+\alpha F[(\bar{U}-c)]e^{-\alpha L}=[-\alpha B(\bar{U}-c)-\frac{\partial \bar{U}}{\partial y}]e^{\alpha L}+[\alpha C(\bar{U}-c)-\frac{\partial \bar{U}}{\partial y}] e^{-\alpha L} \end{split}\]</div>
+<p>Four equations with four unknowns. For nontrivial solution (i.e., <span class="math notranslate nohighlight">\(A,B,C,F\neq 0\)</span>), we can find the following dispersion relationship.</p>
+<div class="math notranslate nohighlight" id="equation-eq107">
+<span class="eqno">(107)<a class="headerlink" href="#equation-eq107" title="Permalink to this equation">¶</a></span>\[(\frac{L\alpha c}{\bar{U}})^2= (L\alpha-1)^{2}-2e^{\alpha L}\]</div>
+<p>Ok, after so many steps of derivation, you might wonder where is the stability analysis. If you still remember von Neumann method, we first assume a wave solution and then examine if the solution will grow or not to determine the key parameters. That’s exactly what we are doing for this shear stability analysis!</p>
+<p>Similarly, we can apply energy method to derive the necessary criteria for shear stability and I will leave it to readers to derive (hint: multiply <a class="reference internal" href="#equation-eq103">(103)</a> by <span class="math notranslate nohighlight">\(\tilde{v}'\)</span>, which is the complex conjugate of <span class="math notranslate nohighlight">\(\tilde{v}\)</span>).</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -256,7 +497,14 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../week6/week6.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 6: The connection between statistical mechanics and ensemble forecast II: Applications</p>
+        </div>
+    </a>
 </div>
             
         </div>

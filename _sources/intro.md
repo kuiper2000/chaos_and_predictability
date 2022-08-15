@@ -42,7 +42,8 @@ __Part I: Lecturing__
 	* Challengs of applying Liouville Equation to weather forecast
 	* Liouville equation and Singular Value Decomposition
 	* HW4: Derivation of Liouville equation + LE in 1st-order ODE and Lorenz 84 model (20%)
-* Week 7: __The stability theory__
+* {ref}`week7`
+    * Direct Method
 	* von Neumann method
 	* Energy Method
 	* Stability in Geophysical Fluid Dynamics (Shear instability and Eady problem)
