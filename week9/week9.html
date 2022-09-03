@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 9: Predictability through the lens of Information Theory &#8212; Chaos and Predictability</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Week 8: The generalized stability theory" href="../week8/week8.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Chaos and Predictability</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Syllabus
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/week1.html">
+   Week 1: Predictability of Weather and Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week2/week2.html">
+   Week 2: Predictability source in atmosphere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week3/week3.html">
+   Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week5/week5.html">
+   Week 5: The connection between statistical mechanics and ensemble forecast I: Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week6/week6.html">
+   Week 6: The connection between statistical mechanics and ensemble forecast II: Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week7/week7.html">
+   Week 7: The stability theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week8/week8.html">
+   Week 8: The generalized stability theory
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 9: Predictability through the lens of Information Theory
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/week9/week9.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2Fweek9/week9.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#perfect-model-experiments">
+   Perfect model experiments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shannon-entropy-and-predictability-components">
+   Shannon Entropy and Predictability Components
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-predictability-time">
+   Average Predictability Time
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 9: Predictability through the lens of Information Theory</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#perfect-model-experiments">
+   Perfect model experiments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shannon-entropy-and-predictability-components">
+   Shannon Entropy and Predictability Components
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#average-predictability-time">
+   Average Predictability Time
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="week-9-predictability-through-the-lens-of-information-theory">
+<span id="week9"></span><h1>Week 9: Predictability through the lens of Information Theory<a class="headerlink" href="#week-9-predictability-through-the-lens-of-information-theory" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="perfect-model-experiments">
+<h2>Perfect model experiments<a class="headerlink" href="#perfect-model-experiments" title="Permalink to this headline">¶</a></h2>
+<p>Information theory plays a central role in the field of <em>predictability</em> (and probably the most essential one in our entire class). Our goal today is to leverage information theory for finding the most predictable feature in a dynamical system. but first, let’s briefly walk through some game rules.</p>
+<p>In week 1, we learn that the definition of <em>predictability</em> is that: given a forecast PDF (probability density function) and a climatological PDF, if we can no longer tell the difference between the two, we reach so-called predictability limit. However, there are many ways of testing the difference between two PDFs, the question is…can we reach any agreement on the definition of <em>predictability</em>? The answer is yes …as long as two a prior assumptions are satisfied.</p>
+<ul class="simple">
+<li><p>The minimum predictability is invariant through linear transformation.</p></li>
+<li><p>The first two moments are the most important metrics for estimating predictability while higher moments are not considered</p></li>
+</ul>
+<p>When both criterion are satisfied, it’s called Markov process. i.e., the future state only depends on the current state and the past doesn’t influence the future. Mathematically, it can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq120">
+<span class="eqno">(120)<a class="headerlink" href="#equation-eq120" title="Permalink to this equation">¶</a></span>\[\mathbf{x}_{t+\tau}=\alpha\mathbf{x}_{t}+\mathbf{\epsilon} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{x_{t+\tau}}\)</span> is the future state, <span class="math notranslate nohighlight">\(\mathbf{x_{t}}\)</span> is the current state and <span class="math notranslate nohighlight">\(\mathbf{\epsilon}\)</span> is the random white noise. <span class="math notranslate nohighlight">\(\alpha\)</span> is the memory passing from current time step to the next time step. An alternative way of writing <a class="reference internal" href="#equation-eq120">(120)</a> is using a conditional PDF.</p>
+<div class="math notranslate nohighlight" id="equation-eq121">
+<span class="eqno">(121)<a class="headerlink" href="#equation-eq121" title="Permalink to this equation">¶</a></span>\[p(\mathbf{x}_{t+\tau}|\mathbf{x}_{t}) \]</div>
+<p>where <a class="reference internal" href="#equation-eq121">(121)</a> is read as “given the PDF of x at <span class="math notranslate nohighlight">\(t\)</span>, the PDF of x at <span class="math notranslate nohighlight">\(t+\tau\)</span>”. <a class="reference internal" href="#equation-eq121">(121)</a> is also called <em>transition probability</em>. We know that the initial states change discontinuously when we observe the state. For example, the summer temperature around 2pm at National Taiwan University is around <span class="math notranslate nohighlight">\(35\pm3\)</span> Celsius from the climatological data. However, as long as we have observation at a given moment, the probability instantaneously change to 100<span class="math notranslate nohighlight">\(\%\)</span>. The new distribution of <span class="math notranslate nohighlight">\(\mathbf{x_{t}}\)</span> is defined as <span class="math notranslate nohighlight">\(p(\mathbf{x_{t}}|\mathbf{\theta_t}) \)</span> and named as <em>analysis probability</em>.</p>
+<p>To reduce the notation burden, variables at the initial time, verification time and observation will be represented as</p>
+<div class="math notranslate nohighlight" id="equation-eq122">
+<span class="eqno">(122)<a class="headerlink" href="#equation-eq122" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\mathbf{x}_{t+\tau} &amp; \equiv \mathbf{v} \\
+\mathbf{x}_{t} &amp; \equiv \mathbf{i}  \\
+\mathbf{\theta}_{t} &amp; \equiv \mathbf{\theta} \\
+\end{align}\end{split}\]</div>
+<p>With <a class="reference internal" href="#equation-eq122">(122)</a>, the analysis probability is written as <span class="math notranslate nohighlight">\(p(\mathbf{i}|\mathbf{\theta})\)</span> and transition probability is written as <span class="math notranslate nohighlight">\(p(\mathbf{v}|\mathbf{i})\)</span>. The assumption that transition probability is known exactly (<a class="reference internal" href="#equation-eq121">(121)</a>) is called perfect model experiment. For simplification, we adopt the perfect model assumption for the later analysis.</p>
+<p>We then define <em>forecast distribution</em> as</p>
+<div class="math notranslate nohighlight" id="equation-eq123">
+<span class="eqno">(123)<a class="headerlink" href="#equation-eq123" title="Permalink to this equation">¶</a></span>\[p(\mathbf{v}|\mathbf{\theta}) = \int p(\mathbf{v}|\mathbf{i}) p(\mathbf{i}|\mathbf{\theta}) di\]</div>
+<p>Physically, <a class="reference internal" href="#equation-eq123">(123)</a> says that if the system is predictable (i.e., initial state and final state remain a certain relation), we can have the final state PDF by integrating over all possible initial conditions. <a class="reference internal" href="#equation-eq123">(123)</a> holds from the theorem of compound probability, given that <span class="math notranslate nohighlight">\(p(\mathbf{v}|\mathbf{i},\mathbf{\theta}) = p(\mathbf{v}|i)\)</span> i.e., given the observation won’t perturb the system significantly. In practice, the ensemble forecast is generated by repeatedly sampling data from the analysis distribution and computing the transition probability conditioned on drawn <span class="math notranslate nohighlight">\(i\)</span>. The mean of forecast probability is signal and the spread of forecast probability is noise.</p>
+<p>For the reference state, we define a climatological distribution, where the specific observation is missing</p>
+<div class="math notranslate nohighlight" id="equation-eq124">
+<span class="eqno">(124)<a class="headerlink" href="#equation-eq124" title="Permalink to this equation">¶</a></span>\[p(\mathbf{v}) = \int p(\mathbf{v}|\mathbf{\theta}) p(\mathbf{\theta}) d\mathbf{\theta}\]</div>
+<p>One should notice that the climatological distribution should depends on time. For example, climatologically, we know the mid-night temperature is always lower than the afternoon temperature. or we know the winter temperature is on-average lower than the summer temperature.</p>
+<p>Some studies (and most cases) have chosen the saturated forecast PDF (i.e., <span class="math notranslate nohighlight">\(p(\mathbf{v}|\mathbf{\theta})\)</span>) as the climatological PDF. This is a good choice in most cases but it can be a terrible choice at certain circumstance. For example, if a given dynamical system is a damped linear function, the saturated PDF will be a delta function, which obvious is not ideal given that we want to better approximate the forecast uncertainty at the longest lead time.</p>
+</div>
+<div class="section" id="shannon-entropy-and-predictability-components">
+<h2>Shannon Entropy and Predictability Components<a class="headerlink" href="#shannon-entropy-and-predictability-components" title="Permalink to this headline">¶</a></h2>
+<p>Now we have all the necessary ingredients to define predictability (forecast probability and climatology probability). To quantify the predictability, we still need some metrics. Usually, we define the predictability limit as the moment when <span class="math notranslate nohighlight">\(p(\mathbf{v})\)</span> and <span class="math notranslate nohighlight">\(p(\mathbf{v}|\mathbf{\theta})\)</span> are not statistically different from each other. In other words, when <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> has no connection, we hit the predictability limit.</p>
+<p>Traditionally, we can compare two PDFs and estimate if their <em>mean</em> are significantly different from each other by calculating the t-scores. The t-score/z-score contains the information of both <em>mean</em> and <em>standard deviations</em>. However, the use of t or z-score doesn’t tell us how different the two PDFs are and doesn’t include the conservation of probability density (unless the two PDFs are Gaussian as we assumed at the very beginning). Therefore, we will try something more general here.</p>
+<p>Recall that the Liouville equation (<a class="reference internal" href="../week6/week6.html#equation-eq64">(64)</a>) predicts the time evolution of PDF. If we rewrite <a class="reference internal" href="../week6/week6.html#equation-eq64">(64)</a>, we can have</p>
+<div class="math notranslate nohighlight" id="equation-eq125">
+<span class="eqno">(125)<a class="headerlink" href="#equation-eq125" title="Permalink to this equation">¶</a></span>\[-\frac{d \mathrm{ln}(\rho)}{dt}=\frac{\partial \mathbf{\Phi}}{\partial \mathbf{x}}\]</div>
+<p>integrating over the entire domain, the right hand side of <a class="reference internal" href="#equation-eq125">(125)</a> will vanish, suggesting the conservation of probability density or <em>information</em>. The question is how to physically interpret the left hand side of <a class="reference internal" href="#equation-eq125">(125)</a>?</p>
+<p>Here are a few examples…
+If today, we cast a six-sided dice, as long as we know outcome of one side (let’s say…it’s 1), the probability for the rest are determined (i.e., 5 other sides have 0 probability). On the other hand, if we only have 2-sided coin, when we know the outcome of one side, we determine the outcome of the other side at the same time. From these two examples, we can find that the six-sided dice provides more information as long as the result of one certain side is determined. On the other hand, the probability of knowing the outcome of a single side in six-sided dice is also lower. Combining both quantities, Claude Shannon introduced <em>Shannon entropy</em> in 1948, which is defined as the <em>expected value of information</em>.</p>
+<div class="math notranslate nohighlight" id="equation-eq126">
+<span class="eqno">(126)<a class="headerlink" href="#equation-eq126" title="Permalink to this equation">¶</a></span>\[H(\mathbf{x}) = -\int p(\mathbf{x}) \mathrm{log} [p(\mathbf{x})] d\mathbf{x} \]</div>
+<p>The first term in the integral is the probability of a given scenario and the second term in the integral is <em>how much information is carried by each scenario</em>. We can find that the conservation of <a class="reference internal" href="#equation-eq125">(125)</a> is equivalent to the conservation of the second term inside the integral. In computational science, we mostly use binary information (i.e., 1 or 0) to transmit data. Thus for a unit size data/information, the corresponding Shannon entropy is defined as <span class="math notranslate nohighlight">\(\int\frac{1}{2}\mathrm{log_b} 2\)</span>. When <span class="math notranslate nohighlight">\(b=2\)</span>, the integral equals 1, which is the widely used unit in computational science, <em>bit</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When Claude Shannon proposed using <a class="reference internal" href="#equation-eq126">(126)</a> to quantify the dispersion of a PDF, he consulted John von Neumann about how to name this metric. von Neumann told him that using <em>entropy</em> is a good idea because similar concepts have been used in statistical mathematics and people don’t really know what entropy is.</p>
+</div>
+<p>Because the unlikely event carries more information, the corresponding entropy is lower. It’s like buying a lottery ticket. If someone tells certain combination of number can help win the lottery you might want to buy that given combination and rather not to invest your money on other combinations. <em>Knowing this information</em> is equivalent <em>the probability changes when we have observation</em>. The change in the prize (because you expected you might get the money) reflects the change in the term <span class="math notranslate nohighlight">\(\mathrm{log} [p(\mathbf{x})]\)</span>. Similar to thermodynamics, the entropy will increase with the increase of forecast lead time and the process is irreversible. Here we use the following formula to describe the increase of <em>entropy</em></p>
+<div class="math notranslate nohighlight" id="equation-eq127">
+<span class="eqno">(127)<a class="headerlink" href="#equation-eq127" title="Permalink to this equation">¶</a></span>\[P_\theta = H(\mathbf{v})- H_\theta(\mathbf{v}|\mathbf{\theta})\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq128">
+<span class="eqno">(128)<a class="headerlink" href="#equation-eq128" title="Permalink to this equation">¶</a></span>\[H_\theta(\mathbf{v}|\mathbf{\theta}) = -\int p(\mathbf{v}|\mathbf{\theta}) \mathrm{log} [p(\mathbf{v}|\mathbf{\theta})] d \mathbf{v}\]</div>
+<p>is the entropy of forecast distribution. The quantity of <span class="math notranslate nohighlight">\(P_{\theta}\)</span> is predictive information, which measures how much room we still have before we hit the predictability limit. In general, <span class="math notranslate nohighlight">\(P_\theta\)</span> various with time through its dependence on <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>An alternative metric for estimating the difference between two PDFs is Kullback-Leible distance, which is define as</p>
+<div class="math notranslate nohighlight" id="equation-eq129">
+<span class="eqno">(129)<a class="headerlink" href="#equation-eq129" title="Permalink to this equation">¶</a></span>\[R_\theta = \int p(\mathbf{v}|\mathbf{\theta}) \mathrm{log}(\frac{p(\mathbf{v}|\mathbf{\theta})}{p(\mathbf{v})}) dv\]</div>
+<p>Technically, Kullback-Leible distance is not really a distance but it still measures how different the two PDFs are. One key element of Kullback-Leible distance is the second term inside the integral, which is the ratio between two PDFs. Therefore, Kullback-Leible distance is also called relative entropy. For a Markov problem, the relative entropy decreases monotonically.</p>
+<p>Remarkably, the predictive information and relative entropy are invariant with respective to linear and nonlinear transformation of the states. This allows us to combine variables with different unit into a single measure of predictability without introducing weighting factors since such factors cannot affect final values. Relative entropy has the additional property of being invariant to nonlinear,invertible transformations of the state. Another remarkable point is that if we integrate both metrics over <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span>, we can have exactly the same values. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq130">
+<span class="eqno">(130)<a class="headerlink" href="#equation-eq130" title="Permalink to this equation">¶</a></span>\[M = \int P_\theta d\theta = \int R_\theta d\theta\]</div>
+<p>that means the estimated predictability limit will be the same regardless of which metric is used here.
+We can take a detailed look of the first part of <a class="reference internal" href="#equation-eq130">(130)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq131">
+<span class="eqno">(132)<a class="headerlink" href="#equation-eq131" title="Permalink to this equation">¶</a></span>\[M = \int P_\theta d\theta = \int H(\mathbf{v})- H_\theta(\mathbf{v}|\mathbf{\theta}) d\theta = H(\mathbf{v})- H(\mathbf{v}|\mathbf{\theta})\]</div>
+<p>where <span class="math notranslate nohighlight">\(H(\mathbf{v}|\mathbf{\theta})\)</span> is conditional entropy. <a class="reference internal" href="#equation-eq130">(130)</a> and <a class="reference internal" href="#equation-eq131">(132)</a> rigorously states that the predictability can be stated in two different ways: (1) the difference between the forecast and climatological distribution and (2) the statistical dependence between <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span>. Because when <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span> loss their statistical connection, <span class="math notranslate nohighlight">\(H(\mathbf{v}|\mathbf{\theta})\)</span> will reduce to <span class="math notranslate nohighlight">\(H(\mathbf{v})\)</span> and the difference between <span class="math notranslate nohighlight">\(H(\mathbf{v})\)</span> and <span class="math notranslate nohighlight">\(H_\theta(\mathbf{v}|\mathbf{\theta})\)</span> vanish.</p>
+<p>To simplify the story, here we only focus on the normal distribution. The climatological distribution, observation and forecast distribution are then defined as</p>
+<div class="math notranslate nohighlight" id="equation-eq131">
+<span class="eqno">(132)<a class="headerlink" href="#equation-eq131" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+p(\mathbf{v}) &amp; = \mathcal{N}(\mu_\mathbf{v},\Sigma_\mathbf{v}) \\ 
+p(\mathbf{\theta}) &amp; = \mathcal{N}(\mu_\mathbf{\theta},\Sigma_\mathbf{\theta}) \\
+p(\mathbf{v|\theta}) &amp; = \mathcal{N}(\mu_\mathbf{v|\theta},\Sigma_\mathbf{v|\theta}) \\
+\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the mean and <span class="math notranslate nohighlight">\(\Sigma\)</span> is the variance. Since the metrics we used allow us to apply the linear transformation, we can easily standardize the distribution and thus <a class="reference internal" href="#equation-eq131">(132)</a> can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq132">
+<span class="eqno">(133)<a class="headerlink" href="#equation-eq132" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+p(\mathbf{v}) &amp; = \mathcal{N}(\mu_\mathbf{v},\sigma_\mathbf{v}^2) \\ 
+p(\mathbf{\theta}) &amp; = \mathcal{N}(\mu_\mathbf{\theta},\sigma_\mathbf{\theta}^2) \\
+p(\mathbf{v|\theta}) &amp; = \mathcal{N}(\mu_\mathbf{v|\theta},\sigma_\mathbf{v|\theta}^2) \\
+\end{align}\end{split}\]</div>
+<p>Now we will formulate a single equation, which reconciles the concepts over different metrics and can be used to calculated predictability.</p>
+<p>But…first, let’s take a look of the old-school method. Traditionally, the measure of predictability is based on the mean square difference between the forecast and the truth. In a perfect model, truth is chosen from a randomly sampled ensemble (it’s like multi universes!). Let <span class="math notranslate nohighlight">\(\epsilon\)</span> to be difference between two randomly chosen scenarios, <span class="math notranslate nohighlight">\(\mathbf{f_1}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{f_2}\)</span> (one forecast and one truth). Then the mean square error is defined as,</p>
+<div class="math notranslate nohighlight" id="equation-eq133">
+<span class="eqno">(134)<a class="headerlink" href="#equation-eq133" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\mathrm{MSE} &amp; = \overline{||\epsilon||^2} = \overline{||\mathbf{f_1}-\mathbf{f_2}||^2} = \overline{||(\mathbf{f_1}-\mathbf{\mu})-(\mathbf{f_2}-\mathbf{\mu})||^2} \\
+&amp; = \overline{||(\mathbf{f_1}-\mathbf{\mu})||^2}+\overline{||(\mathbf{f_2}-\mathbf{\mu})||^2} = 2\mathrm{Tr}[\Sigma_{\mathbf{v}|\mathbf{\theta}}]
+\end{align}\end{split}\]</div>
+<p>As discussed previously, the measure of predictability quantify the degree to which the forecast and the climatological distribution are different. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq134">
+<span class="eqno">(135)<a class="headerlink" href="#equation-eq134" title="Permalink to this equation">¶</a></span>\[\Delta_\theta = \frac{\overline{||\epsilon||^2}}{||\mathbf{v}-\mathbf{\mu}||^2} = \frac{2\mathrm{Tr}[\Sigma_{\mathbf{v}|\mathbf{\theta}}]}{2\mathrm{Tr}[\Sigma_{\mathbf{v}}]}\]</div>
+<p>The above metric has some limitations. First, the results depends on the chosen coordinate, which is used to represent the dynamical system. Second, if the chosen variable is not representative enough, it fails to tell the difference between forecast and the climatological PDFs. However, later we gonna show that with certain linear transformation, the traditional method and the information theory-based method can give us the same result.</p>
+<p>For information theory based method, if we assume there is a basis (spatial structure), <span class="math notranslate nohighlight">\(\mathbf{q}\)</span>, which can maximum the signals on forecast lead time. Then the <em>mean</em> and <em>variance</em> of that basis’s time series can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq135">
+<span class="eqno">(137)<a class="headerlink" href="#equation-eq135" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\mu_v &amp;= \mathbf{q}^{T}\mathbf{\mu}_v  \\ 
+\sigma_v^{2} &amp;= \mathbf{q}^{T}\mathbf{\sigma}_v^{2}\mathbf{q} \\
+\mu_{v|\theta} &amp;= \mathbf{q}^{T}\mathbf{\mu}_{v|\theta}  \\ 
+\sigma_{v|\theta}^{2} &amp;= \mathbf{q}^{T}\mathbf{\sigma}_{v|\theta}^{2}\mathbf{q} \\
+\end{align}\end{split}\]</div>
+<p>Then the metrics we used previously can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq135">
+<span class="eqno">(137)<a class="headerlink" href="#equation-eq135" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+P_\theta &amp; = -\mathrm{log} (\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}) \\
+R_\theta &amp; = -\mathrm{log} (\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}})+\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}-1+\frac{(\mu_{v|\theta}-\mu_v)^{2}}{\sigma_v^{2}} \\
+M &amp; = -&lt;\mathrm{log} (\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}})&gt; \\
+\Delta_\theta &amp; = \frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}
+\end{align}\end{split}\]</div>
+<p>We can find that across four different metrics, they are all controlled by one single parameter: <span class="math notranslate nohighlight">\(\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}\)</span>. Given that the variable is whitened (standardized, or long-term variance = 1), <span class="math notranslate nohighlight">\(\sigma_{v}^{2}\)</span> will be 1. Thus, the only term that determines predictability is the whitened covariance matrix of forecast distribution (i.e., <span class="math notranslate nohighlight">\(\sigma_{v|\theta}^{2}\)</span>). At this point, it’s not hard to find the importance of (i.e., <span class="math notranslate nohighlight">\(\sigma_{v|\theta}^{2}\)</span>).</p>
+<p>It’s not hard to find, for all four equations, if we can find a pattern that minimizes <span class="math notranslate nohighlight">\(\sigma_{v|\theta}^{2}\)</span>, it will be the most predictable pattern. The above question is equivalent to solving an eigen value problem. The eigen vector with the smallest eigen value is the pattern having the longest predictability. i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq136">
+<span class="eqno">(138)<a class="headerlink" href="#equation-eq136" title="Permalink to this equation">¶</a></span>\[\mathbf{\sigma}_{v|\theta}^{2}\mathbf{\Phi} = \lambda \mathbf{\Phi}\]</div>
+</div>
+<div class="section" id="average-predictability-time">
+<h2>Average Predictability Time<a class="headerlink" href="#average-predictability-time" title="Permalink to this headline">¶</a></h2>
+<p>From <a class="reference internal" href="#equation-eq135">(137)</a>, we know that <span class="math notranslate nohighlight">\(\mathbf{\sigma_{v|\theta}}^{2}\)</span> will approach 1 as <span class="math notranslate nohighlight">\(\tau\)</span> approaches <span class="math notranslate nohighlight">\(\infty\)</span>. Because when forecast lead time is long enough, the forecast error will approach the variance of the climatological distribution.</p>
+<p>In addition, in a Gaussian process, the forecast signal decay exponentially with the increase of lead time i.e.,
+<span class="math notranslate nohighlight">\(\mu_{v|\theta}=\mathbf{q}^{T}\mathbf{\mu_{v|\theta}} = \mu_{v|\theta,t=0}\mathrm{e}^{A\tau}\)</span>, where <span class="math notranslate nohighlight">\(\mu_{v|\theta,t=0}\)</span> is ensemble mean at <span class="math notranslate nohighlight">\(\tau=0\)</span>.</p>
+<p>Combining <span class="math notranslate nohighlight">\(\mu_{v|\theta}=\mu_{v|\theta,t=0}\mathrm{e}^{A\tau}\)</span> and the definition of <span class="math notranslate nohighlight">\(\mathbf{\sigma_{v|\theta}}^{2}\)</span>, we can have</p>
+<div class="math notranslate nohighlight" id="equation-eq137">
+<span class="eqno">(139)<a class="headerlink" href="#equation-eq137" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+\mathbf{\sigma}_{v|\theta}^{2} &amp; = &lt;(v|\theta-\mu_{v|\theta})^2&gt; \\
+&amp; = &lt;(v|\theta-\mu_{v|\theta,\tau=0}\mathrm{e}^{A\tau})^2&gt;  \\
+&amp; = &lt;\mathrm{e}^{2A\tau} (v|\theta_{\tau=0}-\mu_{v|\theta,t=0})^2&gt; + \mathrm{e}^{2A\tau}\int_{s=0}^{s=\tau}\int_{s'=0}^{s'=\tau} \mathrm{e}^{-As} \epsilon(s)\epsilon(s') \mathrm{e}^{-As'} dsds' \\
+&amp; = \mathrm{e}^{2A\tau} \mathbf{\sigma}_{v|\theta,\tau=0}^{2} + \mathrm{e}^{2A\tau} \int_{s=0}^{\tau} \mathrm{e}^{-2As} ds \\
+&amp; = \mathrm{e}^{2A\tau} \mathbf{\sigma}_{v|\theta,\tau=0}^{2} -\frac{1-\mathrm{e}^{2a\tau}}{2a}\sigma_{\epsilon}^2 \\
+&amp; = \frac{1-\mathrm{e}^{-2||a||\tau}}{2||a||}\sigma_{\epsilon}^2
+\end{align}\end{split}\]</div>
+<p>if we specify <span class="math notranslate nohighlight">\(\mathbf{\sigma_{v|\theta,\tau=0}}^{2}=0\)</span> and <span class="math notranslate nohighlight">\(a&lt;0\)</span> (holds for red noise problem), we find that <span class="math notranslate nohighlight">\(\mathbf{\sigma_{v|\theta}}^{2} = \frac{1-\mathrm{e}^{-2||a||\tau}}{2||a||}\sigma_{\epsilon}^2\)</span>. Thus, <span class="math notranslate nohighlight">\(||a||\)</span> tells how far we still can leverage <span class="math notranslate nohighlight">\(v|\theta\)</span> to inform the future states.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the homework assignment, you will use the ECMWF reforecast data to find the predictable components and the corresponding average predictability time. Do you find what pattern shows up over the Pacific- North America regions?</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../week8/week8.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 8: The generalized stability theory</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kai-Chih Tseng<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

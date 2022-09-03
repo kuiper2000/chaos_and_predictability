@@ -47,16 +47,16 @@ __Part I: Lecturing__
 	* von Neumann method
 	* Energy Method
 	* Stability in Geophysical Fluid Dynamics (Shear instability and Eady problem)
-* Week 8: __The generalized stability theory__
+* {ref}`week8`
 	* Generalized stability theorem
 	* Modal vs non-modal systems
     * Reduced-dimension problems
-* Week 9: __Information theory__
-	* The connection between Layapunov exponent and perfect model experiments
-	* Average Predictability Time
+* {ref}`week9`
+	* Perfect model experiments
+	* Shannon Entropy and Average Predictability Time
 	* Predictable Components
 	* HW5: Identifying the predictable components in full-physics operational forecast systems (20%)
-* Week 10: __Future projection problems (Nobel Prize Problem)__
+* Week 10: __Future projection problems (Suppelmentary information: Nobel Prize Problem)__
 	* Initial value problems vs boundary value problems
 	* Generalized stability and Predictable Components in a non-linear/boundary value problem
 	* Hasselmann (1993) Optimal fingerprints for the detection of time-dependent climate change

@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 8: The generalized stability theory &#8212; Chaos and Predictability</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 9: Predictability through the lens of Information Theory" href="../week9/week9.html" />
+    <link rel="prev" title="Week 7: The stability theory" href="../week7/week7.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Chaos and Predictability</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Syllabus
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/week1.html">
+   Week 1: Predictability of Weather and Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week2/week2.html">
+   Week 2: Predictability source in atmosphere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week3/week3.html">
+   Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/week4.html">
+   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week5/week5.html">
+   Week 5: The connection between statistical mechanics and ensemble forecast I: Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week6/week6.html">
+   Week 6: The connection between statistical mechanics and ensemble forecast II: Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week7/week7.html">
+   Week 7: The stability theory
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 8: The generalized stability theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week9/week9.html">
+   Week 9: Predictability through the lens of Information Theory
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/week8/week8.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2Fweek8/week8.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modal-vs-non-modal">
+   Modal vs non-modal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples-of-generalized-stability-problem">
+   Examples of generalized stability problem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-i">
+     Case I
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-ii">
+     Case II
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-application-in-data-assimilation">
+   The application in data assimilation
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 8: The generalized stability theory</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modal-vs-non-modal">
+   Modal vs non-modal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples-of-generalized-stability-problem">
+   Examples of generalized stability problem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-i">
+     Case I
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-ii">
+     Case II
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-application-in-data-assimilation">
+   The application in data assimilation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="week-8-the-generalized-stability-theory">
+<span id="week8"></span><h1>Week 8: The generalized stability theory<a class="headerlink" href="#week-8-the-generalized-stability-theory" title="Permalink to this headline">¶</a></h1>
+<p>In week 7, we learn how to analyze the stability in a numerical scheme and GFD problem. However, there are a few unique cases where the unstable environment doesn’t exist but we still see the growth of unstable mode. You might wonder how is that possible? Atmospheric scientists also found this feature around late 1990s, thus they turned their attention to so-called non-modal system. We will get into more details later; but now, let me quickly recap some concepts we learned over the past few weeks which will be the key ingredients in today’s discussion.</p>
+<ul class="simple">
+<li><p>Lyapunov exponent (von Neumann Method in numerical modeling)</p></li>
+<li><p>Dynamical system</p></li>
+<li><p>initial uncertainty</p></li>
+</ul>
+<p>We know the weather is intrinsically unpredictable due to the imperfect model physics. However, even in the case where we don’t consider those uncertainties (i.e., the governing equation is deterministic and perfect), we still can’t accurately measure the initial states. <em>Lyapunov exponent</em> is an useful metric for quantifying how the small uncertainties at the initial states grows. Referring back to <a class="reference internal" href="../week1/week1.html#equation-eq3">(3)</a> in week 1 (also <a class="reference internal" href="#equation-eq108">(108)</a> here), the variables in a certain dynamical system are specified by finite dimensional state vector <span class="math notranslate nohighlight">\(x\)</span> evolving according to the deterministic equations <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq108">
+<span class="eqno">(108)<a class="headerlink" href="#equation-eq108" title="Permalink to this equation">¶</a></span>\[\frac{d \mathbf{y}}{dt}=\mathbf{f}(\mathbf{y}(t))\]</div>
+<p>considering that we initialized the model around the point <span class="math notranslate nohighlight">\(y(t)\)</span> and with sufficiently small error <span class="math notranslate nohighlight">\(\delta y= x\)</span>, we can somewhat approximate the model with a linear tangent function.</p>
+<div class="math notranslate nohighlight" id="equation-eq109">
+<span class="eqno">(109)<a class="headerlink" href="#equation-eq109" title="Permalink to this equation">¶</a></span>\[\frac{d \mathbf{x}}{dt}=\mathbf{A(t)}\mathbf{x}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A(t)\)</span> is the linearized function of <span class="math notranslate nohighlight">\(f(t)\)</span> or so-called Jacobian matrix (if you still remember finding a Jacobian matrix is equivalent to <em>using a linear tangent function to approximate nonlinear dynamics</em>). The matrix <span class="math notranslate nohighlight">\(A(t)\)</span> is usually time dependent and its realizations do not commute in most cases (i.e., <span class="math notranslate nohighlight">\(\mathbf{A(t_1)}\mathbf{A(t_2)}\neq \mathbf{A(t_2)}\mathbf{A(t_1)}\)</span>). Therefore, the error growth cannot be determined from the analysis of the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(\mathbf{A(t)}\)</span> because when we swap the order of <span class="math notranslate nohighlight">\(\mathbf{A(t)}\)</span>, we can have a totally different matrix. This is so-called non-modal system. The generalized instability theory is developed to solve the non-model problem and focuses on <em>propagator operator</em>, which is a matrix mapping the initial error <span class="math notranslate nohighlight">\(\mathbf{x(0)}\)</span> to the error at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq110">
+<span class="eqno">(110)<a class="headerlink" href="#equation-eq110" title="Permalink to this equation">¶</a></span>\[\mathbf{x(t)} = \Phi (t,0)\mathbf{x(0)}\]</div>
+<p>Once <span class="math notranslate nohighlight">\(\mathbf{A(t)}\)</span> is available, <span class="math notranslate nohighlight">\(\Phi (t,0)\)</span> in <a class="reference internal" href="#equation-eq110">(110)</a> is readily calculated and can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq111">
+<span class="eqno">(111)<a class="headerlink" href="#equation-eq111" title="Permalink to this equation">¶</a></span>\[\Phi (t,0) = \prod _{i=1}^{t} e^{A(i\tau)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A(i\tau) = A(t_i)\)</span>. If <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is autonomous (time independent), then the propagator is simply the matrix exponential i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq112">
+<span class="eqno">(112)<a class="headerlink" href="#equation-eq112" title="Permalink to this equation">¶</a></span>\[\Phi (t,0) = e^{At}\]</div>
+<p>The deterministic error growth is bounded by the optimal growth over the interval [0,t]</p>
+<div class="math notranslate nohighlight" id="equation-eq113">
+<span class="eqno">(113)<a class="headerlink" href="#equation-eq113" title="Permalink to this equation">¶</a></span>\[||\Phi (t,0)|| \equiv \mathrm{max}_{\mathbf{x(t_0)}}\frac{||\mathbf{x(t)}||}{||\mathbf{x(0)}||}\]</div>
+<p>The choice here is based on the absolute amplitude. We can also choose an Euclidean norm, i.e., using the growth of total variance/energy to define the growth of signals <span class="math notranslate nohighlight">\(||\mathbf{x(t)}||^2\)</span>.</p>
+<p>If we choose an Euclidean norm, <a class="reference internal" href="#equation-eq113">(113)</a> can be written as,</p>
+<div class="math notranslate nohighlight" id="equation-eq114">
+<span class="eqno">(114)<a class="headerlink" href="#equation-eq114" title="Permalink to this equation">¶</a></span>\[\mathbf{\Phi (t,0)}^{T}\mathbf{\Phi (t,0)} \equiv \frac{\mathbf{x(t)}^{T}\mathbf{x(t)}}{\mathbf{x(0)}^{T}\mathbf{x(0)}} = \frac{[e^{\mathbf{A}t}\mathbf{x(0)}]^T[e^{\mathbf{A}t}\mathbf{x(0)}]}{\mathbf{x(0)}^{T}\mathbf{x(0)}} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{\Phi (t,0)}^{T}\mathbf{\Phi (t,0)}\)</span> indicates how much the signals have amplified. For <a class="reference internal" href="#equation-eq114">(114)</a>, if we can find a matrix, <span class="math notranslate nohighlight">\(v\)</span>, which gives us <span class="math notranslate nohighlight">\([e^{\mathbf{A}t}]^{T}[e^{\mathbf{A}t}]v_i = \lambda_iv_i\)</span>, where <span class="math notranslate nohighlight">\(\lambda_i\)</span> is a constant, then <a class="reference internal" href="#equation-eq114">(114)</a> will reduce to</p>
+<div class="math notranslate nohighlight" id="equation-eq115">
+<span class="eqno">(115)<a class="headerlink" href="#equation-eq115" title="Permalink to this equation">¶</a></span>\[\mathbf{\Phi (t,0)}^{T}\mathbf{\Phi (t,0)} v_i \equiv \lambda_i v_i\]</div>
+<p>We also know that <span class="math notranslate nohighlight">\(\mathbf{\Phi (t,0)}^T\mathbf{\Phi (t,0)} = e^{2At}\)</span>. Thus, <a class="reference internal" href="#equation-eq115">(115)</a> is equivalent to finding the eigen value of <span class="math notranslate nohighlight">\(A\)</span> (i.e., <span class="math notranslate nohighlight">\(\lambda_{A,i}\)</span>, which is a diagonal matrix) and calculating the exponential of <span class="math notranslate nohighlight">\(\lambda_{A,i}\)</span> matrix. The real part of <span class="math notranslate nohighlight">\(\lambda_{A,i}\)</span> represents growth rate and the imaginary part represents the oscillatory component. This is in general consistent with the traditional stability analysis (von Neumann method).</p>
+<div class="section" id="modal-vs-non-modal">
+<h2>Modal vs non-modal<a class="headerlink" href="#modal-vs-non-modal" title="Permalink to this headline">¶</a></h2>
+<p>One key ingredient in generalized stability theory is non-modal system. Physically, <em>modal</em> is defined as that <em>eigen vectors of <span class="math notranslate nohighlight">\(x^Tx\)</span>(or EOF mode in climate science) capture all necessary dynamics regardless of time</em>. However, modal dynamics can’t capture the transient growth of the error, which is important for weather prediction and initiation of the low-frequency variability (so-called stochastic forcing).</p>
+<p>To demonstrate the difference between modal and non-modal system, we repeat the same exercise in <a class="reference internal" href="#equation-eq115">(115)</a> but apply the eigen value decomposition to A instead this time</p>
+<div class="math notranslate nohighlight" id="equation-eq116">
+<span class="eqno">(116)<a class="headerlink" href="#equation-eq116" title="Permalink to this equation">¶</a></span>\[e^{2At} = e^{2S\lambda_{A}S^{-1}t}\]</div>
+<p><span class="math notranslate nohighlight">\(\lambda_{A}\)</span> is an diagonal matrix, which contains the eigen value of <span class="math notranslate nohighlight">\(A\)</span> along the diagonal direction and <span class="math notranslate nohighlight">\(S\)</span> is the eigen vector. In general, <span class="math notranslate nohighlight">\(\lambda_{A}\)</span> is negative in its real part and is arranged in an order from the largest to the smallest (slow- to fast-decaying mode). A negative <span class="math notranslate nohighlight">\(\lambda_{A}\)</span> indicating the memory from initial states will gradually decay with the increase of forecast lead time.</p>
+<p>Given a small t (because we are focusing the transient time scales), we know <span class="math notranslate nohighlight">\(e^{2S\lambda_{A}S^{-1}t}=||S e^{\lambda_{A}t}S^{-1}||^{2} \leq ||S||^2||S^{-1}||^2 e^{2\lambda_{A}t}\leq ||S||^2||S^{-1}||^2 e^{2\lambda_{A,\mathrm{max}}t}\)</span> . Thus, <span class="math notranslate nohighlight">\(||S||^2||S^{-1}||^2 \)</span> determines the upper-bound of <span class="math notranslate nohighlight">\(e^{2S\lambda_{A}S^{-1}t}\)</span>. For the lower bound, we know <span class="math notranslate nohighlight">\(e^{2\lambda_{A,min}t} \leq e^{2At}\)</span>, i.e., <span class="math notranslate nohighlight">\(e^{2At}\)</span> cannot decay faster than the fastest decaying mode. Combining both condition gives us:</p>
+<div class="math notranslate nohighlight" id="equation-eq117">
+<span class="eqno">(117)<a class="headerlink" href="#equation-eq117" title="Permalink to this equation">¶</a></span>\[e^{2\lambda_{A,min}t} \leq e^{2At} \leq ||S||^2||S^{-1}||^2 e^{2\lambda_{A,\mathrm{max}}t}\]</div>
+<p>if <span class="math notranslate nohighlight">\(||S||^2||S^{-1}||^2 = 1\)</span> and <span class="math notranslate nohighlight">\(\lambda_{A,max}=\lambda_{A,min}\)</span>, suggests that all three terms in the inequality of <a class="reference internal" href="#equation-eq117">(117)</a> are the same and the dynamics of <span class="math notranslate nohighlight">\(f\)</span> is governed by the mode dynamics (linearly stable) and there is no significant difference between any two unstable mode. In this case, we can consider that all of the eigen modes have reached a statistical equilibrium state and their transient interaction doesn’t influence the dynamics of interest. This is the case when we talk about <em>how the weather signals are represented in a climate change problem</em>. Because in a climate change time scales (&gt;10 yrs), all the weather signals have already reached an equilibrium states.</p>
+<p>However, this is not the case when the time scales of interest is much shorter i.e., hourly to seasonal time scales. In these time scales, <span class="math notranslate nohighlight">\(||S||^2||S^{-1}||^2 e^{2\lambda_{A,\mathrm{max}}t} &gt;&gt; 1\)</span> indicates we can still observe some instability caused by non-modal process. For example, if today we have two eigen modes, <span class="math notranslate nohighlight">\(\phi_1\)</span> and <span class="math notranslate nohighlight">\(\phi_2\)</span>. The phenomenon of interest is their linear combination, let say <span class="math notranslate nohighlight">\(\phi_1-\phi_2\)</span>. Given the fact that <span class="math notranslate nohighlight">\(\phi_1\)</span> decays much slower than <span class="math notranslate nohighlight">\(\phi_2\)</span>, we can find that the amplitude of <span class="math notranslate nohighlight">\(\phi_1-\phi_2\)</span> grows with time even both <span class="math notranslate nohighlight">\(\phi_1\)</span> and <span class="math notranslate nohighlight">\(\phi_2\)</span> are getting smaller and smaller. (see <a class="reference internal" href="#fig19"><span class="std std-ref">FIG19</span></a>)</p>
+<div class="figure align-default" id="fig19">
+<img alt="../_images/non_modal_growth.png" src="../_images/non_modal_growth.png" />
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">An example of non-modal growth of signals at finite time.</span><a class="headerlink" href="#fig19" title="Permalink to this image">¶</a></p>
+</div>
+<p>The question is what kind of phenomenon is most likely to experience non-modal growth. From <a class="reference internal" href="#equation-eq117">(117)</a>, we know that the eigen vector <span class="math notranslate nohighlight">\(v_i\)</span>, who has the largest <span class="math notranslate nohighlight">\(\lambda\)</span>, will experience the most significant error growth. One should notice that the <span class="math notranslate nohighlight">\(v_i\)</span> is different from the eigen modes of state vector. The former quantifies the <em>most unstable signal/initial state</em> while the later quantifies <em>the mode which explains the most variance</em>. There is one unique case that these two are identical, I will let the readers think about what is that? (HW).</p>
+</div>
+<div class="section" id="examples-of-generalized-stability-problem">
+<h2>Examples of generalized stability problem<a class="headerlink" href="#examples-of-generalized-stability-problem" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="case-i">
+<h3>Case I<a class="headerlink" href="#case-i" title="Permalink to this headline">¶</a></h3>
+<p>Here we use two examples to demonstrate the finite amplitude of error growth lead by the non-modal dynamics.</p>
+<div class="math notranslate nohighlight" id="equation-eq118">
+<span class="eqno">(118)<a class="headerlink" href="#equation-eq118" title="Permalink to this equation">¶</a></span>\[\begin{split}e^{At_i} = 
+\begin{bmatrix}
+0.9 &amp; 0.3 \\
+0   &amp; 0.9 
+\end{bmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is autonomous. In this case, we can find the diagonal elements are 0.9 indicating that <span class="math notranslate nohighlight">\(A\)</span> is negative and the signal will decay with the increase of forecast lead. However, if we we choose the right initial state, the initial error can still experience significant growth.</p>
+<p>In the following figure, we plot the ratio of variance (<span class="math notranslate nohighlight">\(||e^{2At}||\)</span>) between the initial and the final states as a function of time. Blue curve shows the most unstable case and the red curve shows the result when <span class="math notranslate nohighlight">\([1,0]\)</span> is used as the initial state.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#s = np.random.normal(0, 0.1, 1000)</span>
+<span class="n">dim</span>      <span class="o">=</span> <span class="mi">100</span>
+<span class="n">growth1</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">dim</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">growth2</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">dim</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">a</span>        <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.9</span><span class="p">,</span><span class="mf">0.3</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.9</span><span class="p">]])</span>
+<span class="n">x_0</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="k">for</span> <span class="n">tau</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">dim</span><span class="p">):</span>
+    <span class="n">G_tau</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">matrix_power</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">tau</span><span class="p">)</span>
+    <span class="n">x_tau</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">G_tau</span><span class="p">,</span><span class="n">x_0</span><span class="p">)</span>
+    <span class="n">h</span>        <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">G_tau</span><span class="p">)</span><span class="o">.</span><span class="n">getH</span><span class="p">(),</span><span class="n">G_tau</span><span class="p">)</span>
+    <span class="n">w</span><span class="p">,</span><span class="n">v</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">growth1</span><span class="p">[</span><span class="n">tau</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    <span class="n">growth2</span><span class="p">[</span><span class="n">tau</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">x_tau</span><span class="p">),</span><span class="n">x_tau</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">x_0</span><span class="p">),</span><span class="n">x_0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">growth1</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Nonmodal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">growth2</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Modal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="fig20">
+<img alt="../_images/optimal_growth.png" src="../_images/optimal_growth.png" />
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">The error growth in the optimal case (blue) and using [1,0] as initial state (red)</span><a class="headerlink" href="#fig20" title="Permalink to this image">¶</a></p>
+</div>
+<p>In <a class="reference internal" href="#fig20"><span class="std std-ref">FIG20</span></a>, we can find that both blue and red curves gradually decay to 0 when t is big enough. However, the blue curve shows transient growth when <span class="math notranslate nohighlight">\(t=15\)</span>.</p>
+</div>
+<div class="section" id="case-ii">
+<h3>Case II<a class="headerlink" href="#case-ii" title="Permalink to this headline">¶</a></h3>
+<p>I the second case, we choose two stable linear operators <a class="reference internal" href="#equation-eq119">(119)</a> but we swap them regularly.</p>
+<div class="math notranslate nohighlight" id="equation-eq119">
+<span class="eqno">(119)<a class="headerlink" href="#equation-eq119" title="Permalink to this equation">¶</a></span>\[\begin{split}A=\begin{bmatrix}
+0 &amp; 1 \\
+-\omega_{1,2}   &amp; 0 
+\end{bmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega_1 = 1/2\)</span> and <span class="math notranslate nohighlight">\(\omega_1 = 3\)</span>. In the case where there is only one operator, the system trajectory lies on a constant energy surface. However, if we swap the linear operator for every <span class="math notranslate nohighlight">\(T=\frac{\pi}{2\omega_1}\)</span> and <span class="math notranslate nohighlight">\(T=\frac{\pi}{2\omega_2}\)</span>, we can find the amplitude grows exponentially.</p>
+<div class="figure align-default" id="fig21">
+<img alt="../_images/error_growth.png" src="../_images/error_growth.png" />
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Red curve shows the case where we swap the linear operators for every quarter period.</span><a class="headerlink" href="#fig21" title="Permalink to this image">¶</a></p>
+</div>
+<p>This feature has very important applications. In mid-latitude regions, the environment is usually <em>not</em> baroclinicly unstable. However, we still observe many baroclinic waves. <span id="id1">[]</span> (also see Ch5 in <span id="id2">[<a class="reference internal" href="../intro.html#id12">PH06</a>]</span>) provides a very clean explanation. According to week 2, we know that one necessary criteria of baroclinic instability is the change of sign in background PV gradient. This can lead to counter-propagating baroclinic Rossby wave. However, in an environment where PV gradient never change sign, can we still have counter-propagating wave? The answer is yes.</p>
+<p>Similar to <a class="reference internal" href="#fig19"><span class="std std-ref">FIG19</span></a>, if there are two modes to construct a barolcinic wave. One decays faster and has shorter period than the other. Their linear combination can lead to the transient growth of the wave signals. If the transient growth over different <span class="math notranslate nohighlight">\(t\)</span> can be accumulated, we can see asymptotically unstable waves.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># define RK4 </span>
+<span class="k">def</span> <span class="nf">rk4</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">t0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">tn</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    
+    <span class="c1"># Calculating step size</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">tn</span><span class="o">-</span><span class="n">t0</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+    
+    <span class="c1">#print(&#39;\n--------SOLUTION--------&#39;)</span>
+    <span class="c1">#print(&#39;-------------------------&#39;)    </span>
+    <span class="c1">#print(&#39;x0\ty0\tyn&#39;)</span>
+    <span class="c1">#print(&#39;-------------------------&#39;)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">k1</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">y0</span><span class="p">))</span>
+        <span class="n">k2</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">L</span><span class="p">,(</span><span class="n">y0</span><span class="o">+</span><span class="n">k1</span><span class="o">/</span><span class="mi">2</span><span class="p">)))</span>
+        <span class="n">k3</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">L</span><span class="p">,(</span><span class="n">y0</span><span class="o">+</span><span class="n">k2</span><span class="o">/</span><span class="mi">2</span><span class="p">)))</span>
+        <span class="n">k4</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">L</span><span class="p">,(</span><span class="n">y0</span><span class="o">+</span><span class="n">k3</span><span class="p">)))</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k3</span><span class="o">+</span><span class="n">k4</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span>
+        <span class="n">yn</span> <span class="o">=</span> <span class="n">y0</span> <span class="o">+</span> <span class="n">k</span>
+        <span class="c1">#print(&#39;%.4f\t%.4f\t%.4f&#39;% (x0,y0,yn) )</span>
+        <span class="c1">#print(&#39;-------------------------&#39;)</span>
+        <span class="n">y0</span> <span class="o">=</span> <span class="n">yn</span>
+        <span class="c1">#print(y0)</span>
+        <span class="n">t0</span> <span class="o">=</span> <span class="n">t0</span><span class="o">+</span><span class="n">h</span>
+    <span class="k">return</span> <span class="n">yn</span>
+
+<span class="c1"># see Ch5 of Palmer and Hagedorn 2008 for more details: https://www.cambridge.org/core/books/predictability-of-weather-and-climate/9A8E7E0A16BC8BA928243F46ED192FE6 </span>
+<span class="c1"># using RK4 for numerical integration</span>
+<span class="n">omega1</span>  <span class="o">=</span> <span class="mi">3</span>
+<span class="n">omega2</span>  <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">A1</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="n">omega1</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">A2</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="n">omega2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">v</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">record</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1000</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">record</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">v</span><span class="p">,[</span><span class="mi">2</span><span class="p">,])</span>
+<span class="n">record2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">t</span>       <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count</span>   <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="c1"># swapping linear operator for every quarterly period</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="n">A</span><span class="o">=</span><span class="n">A1</span>
+      <span class="n">omega</span><span class="o">=</span><span class="n">omega1</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="n">A</span><span class="o">=</span><span class="n">A2</span>
+      <span class="n">omega</span><span class="o">=</span><span class="n">omega2</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+      <span class="n">A</span><span class="o">=</span><span class="n">A1</span>
+      <span class="n">omega</span><span class="o">=</span><span class="n">omega1</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+      <span class="n">A</span><span class="o">=</span><span class="n">A2</span>
+      <span class="n">omega</span><span class="o">=</span><span class="n">omega2</span>
+    <span class="n">v_template</span>       <span class="o">=</span> <span class="n">v</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">999</span><span class="p">):</span> <span class="c1"># fixed operator</span>
+        <span class="n">t_index</span>          <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="n">v_new</span>            <span class="o">=</span> <span class="n">rk4</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">t_index</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">v_template</span><span class="p">,</span><span class="n">t_index</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">record2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,:]</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">v_new</span><span class="p">,[</span><span class="mi">2</span><span class="p">,])</span>
+        <span class="n">v_template</span>       <span class="o">=</span> <span class="n">v_new</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span> <span class="c1"># swapping linear operators </span>
+        <span class="n">t_index</span>         <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">omega</span><span class="p">),</span><span class="mi">101</span><span class="p">)</span>
+        <span class="n">v_new</span>           <span class="o">=</span> <span class="n">rk4</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">t_index</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">v</span><span class="p">,</span><span class="n">t_index</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">record</span><span class="p">[</span><span class="n">count</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">v_new</span><span class="p">,[</span><span class="mi">2</span><span class="p">,])</span>
+        <span class="n">count</span>           <span class="o">=</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">v</span>               <span class="o">=</span> <span class="n">v_new</span>
+
+
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">record2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">110</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">record2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">110</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">record2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">700</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">record2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">700</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">record2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">110</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">record2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">110</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">record2</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">650</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">record2</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">650</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">record</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span><span class="mi">40</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span><span class="mi">40</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">18.5</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-application-in-data-assimilation">
+<h2>The application in data assimilation<a class="headerlink" href="#the-application-in-data-assimilation" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./week8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../week7/week7.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week 7: The stability theory</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../week9/week9.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 9: Predictability through the lens of Information Theory</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kai-Chih Tseng<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
