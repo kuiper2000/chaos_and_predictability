@@ -165,8 +165,8 @@ def LE_method(x,rho,n_step,t_size):
     for count in range(n_step): # forward for 1 time steps
         xi   = x
         xint = 0
-        for i in np.arange(0,t_size*1000,1):
-            tp = i*t_size/(t_size*1000)
+        for i in np.arange(0,1000,1):
+            tp = i*t_size/1000
             x  = xi*np.exp(tp)*(1-xi*xi+xi*xi*np.exp(2*tp))**(-1/2)
             c  = 1-3*x*x
             xint += c
