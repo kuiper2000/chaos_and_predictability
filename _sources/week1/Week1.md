@@ -63,6 +63,20 @@ name: FIG3
 The final states' probability density function of three ensemble forecast shown in Fig. 2
 ```
 
+:::{admonition} Run this yourself — no installation required
+:class: tip
+The two figures above are reproduced in a live notebook that runs **entirely in your browser**: no Python installation, no account, nothing to download. Press the button below, then run the cells with **Shift+Enter** and change whatever you like — the lead time, the size of the initial perturbation, or the parameters $\rho$, $\sigma$ and $\beta$.
+
+```{notebooklite} lorenz63_explore.ipynb
+:width: 100%
+:height: 700px
+:prompt: Launch the interactive Lorenz 63 notebook
+:prompt_color: "#d9e6f2"
+```
+
+The first launch takes a few seconds while Python is downloaded into the browser; after that everything runs locally on your own machine.
+:::
+
 The take-home message from [FIG2](FIG2) and [FIG3](FIG3) is that predictability is a function of the state, not a universal number. With that in mind it becomes much easier to see why even the most experienced forecasters and the most advanced NWP systems sometimes struggle — so be kind to them.
 
 A few points are worth keeping in mind. First, we have considered only the uncertainty in the initial state, and have ignored uncertainty in the model structure (whether the model itself is correct) and rounding error. This _perfect model assumption_ is one of the most important assumptions in this entire course — and arguably in the entire field — because it gives us the _upper limit_ of predictability. It also tells us that as long as there is any infinitesimal error in the initial state, a predictability limit is inevitable. Second, _predictability_ has no meaning unless ensemble simulations are used, since its definition rests on how quickly one ensemble member diverges from another. Third, rejecting the null hypothesis in {eq}`eq1` requires choosing a significance level, which leaves room for manipulation: one could always adopt a lenient level (say $10\%$) in order to claim that the predictability limit has not yet been reached. Stating clearly which threshold is used for the test is therefore essential.

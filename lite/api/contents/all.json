@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-09-05T17:07:32.029719Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-09-05T17:06:07.988314Z",
+      "mimetype": null,
+      "name": "lorenz63_explore.ipynb",
+      "path": "lorenz63_explore.ipynb",
+      "size": 9854,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2026-09-05T17:07:32.029327Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-09-05T17:07:32.029327Z",
+  "mimetype": null,
+  "name": "",
+  "path": "",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

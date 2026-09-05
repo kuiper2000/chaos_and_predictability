@@ -80,7 +80,6 @@ Collecting dedalus
  \
 ----- stdout -----
  done
------ stdout -----
 [?25hCollecting docopt (from dedalus)
   Using cached docopt-0.6.2-py2.py3-none-any.whl
 Requirement already satisfied: h5py>=3.0.0 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from dedalus) (3.16.0)
@@ -89,13 +88,13 @@ Requirement already satisfied: mpi4py>=2.0.0 in /Users/Shared/miniconda3/envs/cl
 Collecting numexpr (from dedalus)
   Using cached numexpr-2.14.2-cp314-cp314-macosx_11_0_arm64.whl.metadata (9.0 kB)
 Requirement already satisfied: numpy>=1.20.0 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from dedalus) (2.5.2)
+----- stdout -----
 Collecting py (from dedalus)
   Using cached py-1.11.0-py2.py3-none-any.whl.metadata (2.8 kB)
 Requirement already satisfied: pytest in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from dedalus) (9.0.3)
 Collecting pytest-benchmark (from dedalus)
   Using cached pytest_benchmark-5.3.0-py3-none-any.whl.metadata (31 kB)
 Collecting pytest-cov (from dedalus)
------ stdout -----
   Using cached pytest_cov-7.1.0-py3-none-any.whl.metadata (32 kB)
 Collecting pytest-xdist (from dedalus)
   Using cached pytest_xdist-3.8.0-py3-none-any.whl.metadata (3.0 kB)
@@ -129,7 +128,6 @@ Using cached pytest_cov-7.1.0-py3-none-any.whl (22 kB)
 Using cached coverage-7.16.0-cp314-cp314-macosx_11_0_arm64.whl (223 kB)
 Using cached pytest_xdist-3.8.0-py3-none-any.whl (46 kB)
 Using cached execnet-2.1.2-py3-none-any.whl (40 kB)
------ stdout -----
 Building wheels for collected packages: dedalus
 ----- stdout -----
   Building wheel for dedalus (pyproject.toml) ... [?25l-
@@ -137,7 +135,6 @@ Building wheels for collected packages: dedalus
  \
 ----- stdout -----
  error
------ stdout -----
   [1;31merror[0m: [1msubprocess-exited-with-error[0m
   
   [31m×[0m [32mBuilding wheel for dedalus [0m[1;32m([0m[32mpyproject.toml[0m[1;32m)[0m did not run successfully.
@@ -258,9 +255,9 @@ Building wheels for collected packages: dedalus
   [31m   [0m copying dedalus/examples.tar.gz -> build/lib.macosx-12.1-arm64-cpython-314/dedalus
   [31m   [0m running build_ext
   [31m   [0m building 'dedalus.core.transposes' extension
-  [31m   [0m clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/claude_code/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/claude_code/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-b0qx41qt/overlay/lib/python3.14/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-b0qx41qt/overlay/lib/python3.14/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/claude_code/include/python3.14 -c dedalus/core/transposes.c -o build/temp.macosx-12.1-arm64-cpython-314/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
+  [31m   [0m clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/claude_code/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/claude_code/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-yq_9p6g4/overlay/lib/python3.14/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-yq_9p6g4/overlay/lib/python3.14/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/claude_code/include/python3.14 -c dedalus/core/transposes.c -o build/temp.macosx-12.1-arm64-cpython-314/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
   [31m   [0m clang: error: unsupported option '-fopenmp'
-  [31m   [0m error: Command '['clang', '-fno-strict-overflow', '-Wsign-compare', '-Wunreachable-code', '-DNDEBUG', '-O2', '-Wall', '-fPIC', '-O2', '-isystem', '/Users/Shared/miniconda3/envs/claude_code/include', '-arch', 'arm64', '-fPIC', '-O2', '-isystem', '/Users/Shared/miniconda3/envs/claude_code/include', '-arch', 'arm64', '-I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-b0qx41qt/overlay/lib/python3.14/site-packages/numpy/_core/include', '-I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-b0qx41qt/overlay/lib/python3.14/site-packages/mpi4py/include', '-I/usr/lib/x86_64-linux-gnu/openmpi/include', '-Idedalus/libraries/fftw/', '-I/usr/include', '-I/Users/Shared/miniconda3/envs/claude_code/include/python3.14', '-c', 'dedalus/core/transposes.c', '-o', 'build/temp.macosx-12.1-arm64-cpython-314/dedalus/core/transposes.o', '-DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION', '-Wno-unused-function', '-fopenmp']' returned non-zero exit status 1.
+  [31m   [0m error: Command '['clang', '-fno-strict-overflow', '-Wsign-compare', '-Wunreachable-code', '-DNDEBUG', '-O2', '-Wall', '-fPIC', '-O2', '-isystem', '/Users/Shared/miniconda3/envs/claude_code/include', '-arch', 'arm64', '-fPIC', '-O2', '-isystem', '/Users/Shared/miniconda3/envs/claude_code/include', '-arch', 'arm64', '-I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-yq_9p6g4/overlay/lib/python3.14/site-packages/numpy/_core/include', '-I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-yq_9p6g4/overlay/lib/python3.14/site-packages/mpi4py/include', '-I/usr/lib/x86_64-linux-gnu/openmpi/include', '-Idedalus/libraries/fftw/', '-I/usr/include', '-I/Users/Shared/miniconda3/envs/claude_code/include/python3.14', '-c', 'dedalus/core/transposes.c', '-o', 'build/temp.macosx-12.1-arm64-cpython-314/dedalus/core/transposes.o', '-DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION', '-Wno-unused-function', '-fopenmp']' returned non-zero exit status 1.
   [31m   [0m [31m[end of output][0m
   
   [1;35mnote[0m: This error originates from a subprocess, and is likely not a problem with pip.

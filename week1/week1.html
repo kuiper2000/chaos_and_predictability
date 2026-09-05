@@ -36,6 +36,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyterlite_sphinx.css?v=8ee2c72c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -50,6 +52,7 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/jupyterlite_sphinx.js?v=96e329c5"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -412,7 +415,7 @@
 <p>One striking fact about predictability is that it has no universal value. That may sound strange, even counter-intuitive, at first. After all, for typical numerical weather prediction we usually quote a predictability limit of roughly 10 days to 2 weeks, beyond which the model output can no longer be trusted. But “10 days to 2 weeks” is only a <em>rule of thumb</em>. In some situations we can already be struggling with low forecast confidence at a lead time of 3 days. To see how that comes about, let us turn to the famous Lorenz 63 model.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Lorenz 63 model <span id="id1">[<a class="reference internal" href="../week3/week3.html#id13" title="Edward N Lorenz. Deterministic nonperiodic flow. Journal of atmospheric sciences, 20(2):130–141, 1963.">Lor63</a>]</span> is arguably the minimalist model for studying chaos and predictability: it contains only three prognostic variables. Three is in fact the minimum — a dynamical system with fewer than three independent variables cannot produce chaotic behaviour. We will return to the Lorenz model in Week 3.</p>
+<p>The Lorenz 63 model <span id="id1">[<a class="reference internal" href="#id9" title="Edward N Lorenz. Deterministic nonperiodic flow. Journal of atmospheric sciences, 20(2):130–141, 1963.">Lor63</a>]</span> is arguably the minimalist model for studying chaos and predictability: it contains only three prognostic variables. Three is in fact the minimum — a dynamical system with fewer than three independent variables cannot produce chaotic behaviour. We will return to the Lorenz model in Week 3.</p>
 </div>
 <div class="math notranslate nohighlight" id="equation-eq2">
 <span class="eqno">(2)<a class="headerlink" href="#equation-eq2" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
@@ -434,6 +437,28 @@
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">The final states’ probability density function of three ensemble forecast shown in Fig. 2</span><a class="headerlink" href="#fig3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<div class="tip admonition">
+<p class="admonition-title">Run this yourself — no installation required</p>
+<p>The two figures above are reproduced in a live notebook that runs <strong>entirely in your browser</strong>: no Python installation, no account, nothing to download. Press the button below, then run the cells with <strong>Shift+Enter</strong> and change whatever you like — the lead time, the size of the initial perturbation, or the parameters <span class="math notranslate nohighlight">\(\rho\)</span>, <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+
+                <div
+                    class="jupyterlite_sphinx_iframe_container"
+                    style="width: 100%; height: 700px;"
+                    onclick="window.jupyterliteShowIframe(
+                        'f3d8268c-a3be-41f9-9a96-34e457b46e97',
+                        window.jupyterliteConcatSearchParams('../lite/tree/../notebooks/index.html?path=lorenz63_explore.ipynb', false)
+                    )"
+                >
+                    <div
+                        id=f3d8268c-a3be-41f9-9a96-34e457b46e97
+                        class="jupyterlite_sphinx_try_it_button jupyterlite_sphinx_try_it_button_unclicked"
+                        style="background-color: #d9e6f2;"
+                    >
+                    Launch the interactive Lorenz 63 notebook
+                    </div>
+                </div>
+            <p>The first launch takes a few seconds while Python is downloaded into the browser; after that everything runs locally on your own machine.</p>
+</div>
 <p>The take-home message from <a class="reference internal" href="#fig2"><span class="std std-ref">FIG2</span></a> and <a class="reference internal" href="#fig3"><span class="std std-ref">FIG3</span></a> is that predictability is a function of the state, not a universal number. With that in mind it becomes much easier to see why even the most experienced forecasters and the most advanced NWP systems sometimes struggle — so be kind to them.</p>
 <p>A few points are worth keeping in mind. First, we have considered only the uncertainty in the initial state, and have ignored uncertainty in the model structure (whether the model itself is correct) and rounding error. This <em>perfect model assumption</em> is one of the most important assumptions in this entire course — and arguably in the entire field — because it gives us the <em>upper limit</em> of predictability. It also tells us that as long as there is any infinitesimal error in the initial state, a predictability limit is inevitable. Second, <em>predictability</em> has no meaning unless ensemble simulations are used, since its definition rests on how quickly one ensemble member diverges from another. Third, rejecting the null hypothesis in <a class="reference internal" href="#equation-eq1">(1)</a> requires choosing a significance level, which leaves room for manipulation: one could always adopt a lenient level (say <span class="math notranslate nohighlight">\(10\%\)</span>) in order to claim that the predictability limit has not yet been reached. Stating clearly which threshold is used for the test is therefore essential.</p>
 </section>
@@ -445,7 +470,7 @@
 <p>The last source is rounding error. Compared with the first two, rounding error has by far the smallest impact on weather and climate prediction. Indeed, we can sometimes make a deliberate trade-off, tolerating some rounding error in exchange for reduced computational cost. This is possible precisely because the uncertainties from observations and model physics are so much larger (<span class="math notranslate nohighlight">\(&gt;\mathcal{O}(5)\)</span>) than the uncertainty introduced by rounding. More details can be found in <span id="id2">[<a class="reference internal" href="#id6" title="Sam Hatfield, Andrew McRae, Tim Palmer, and Peter Düben. Single-precision in the tangent-linear and adjoint models of incremental 4d-var. Monthly Weather Review, 148(4):1541–1552, 2020.">HMPDuben20</a>]</span>, and on the lead author Sam Hatfield’s website (<a class="reference external" href="https://samhatfield.co.uk/">link</a>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Lorenz 96 <span id="id3">[<a class="reference internal" href="../week3/week3.html#id14" title="Edward N Lorenz. Predictability: a problem partly solved. In Proc. Seminar on predictability, volume 1. 1996.">Lor96</a>]</span> is one of the simplest models that attempts to address the underpinning theory of subgrid-scale processes. We will discuss it in more detail in Week 4.</p>
+<p>Lorenz 96 <span id="id3">[<a class="reference internal" href="#id10" title="Edward N Lorenz. Predictability: a problem partly solved. In Proc. Seminar on predictability, volume 1. 1996.">Lor96</a>]</span> is one of the simplest models that attempts to address the underpinning theory of subgrid-scale processes. We will discuss it in more detail in Week 4.</p>
 </div>
 </section>
 <section id="introduction-to-ensemble-forecast-in-weather-and-climate">

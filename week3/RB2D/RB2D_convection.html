@@ -36,6 +36,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=8ee2c72c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -50,6 +52,7 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=96e329c5"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -464,9 +467,7 @@
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hCollecting docopt (from dedalus)
+?25hCollecting docopt (from dedalus)
   Using cached docopt-0.6.2-py2.py3-none-any.whl
 Requirement already satisfied: h5py&gt;=3.0.0 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from dedalus) (3.16.0)
 Requirement already satisfied: matplotlib&gt;=3.7.0 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from dedalus) (3.11.0)
@@ -474,15 +475,15 @@ Requirement already satisfied: mpi4py&gt;=2.0.0 in /Users/Shared/miniconda3/envs
 Collecting numexpr (from dedalus)
   Using cached numexpr-2.14.2-cp314-cp314-macosx_11_0_arm64.whl.metadata (9.0 kB)
 Requirement already satisfied: numpy&gt;=1.20.0 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from dedalus) (2.5.2)
-Collecting py (from dedalus)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting py (from dedalus)
   Using cached py-1.11.0-py2.py3-none-any.whl.metadata (2.8 kB)
 Requirement already satisfied: pytest in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from dedalus) (9.0.3)
 Collecting pytest-benchmark (from dedalus)
   Using cached pytest_benchmark-5.3.0-py3-none-any.whl.metadata (31 kB)
 Collecting pytest-cov (from dedalus)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached pytest_cov-7.1.0-py3-none-any.whl.metadata (32 kB)
+  Using cached pytest_cov-7.1.0-py3-none-any.whl.metadata (32 kB)
 Collecting pytest-xdist (from dedalus)
   Using cached pytest_xdist-3.8.0-py3-none-any.whl.metadata (3.0 kB)
 Requirement already satisfied: scipy&gt;=1.4.0 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from dedalus) (1.18.0)
@@ -516,9 +517,7 @@ Using cached pytest_cov-7.1.0-py3-none-any.whl (22 kB)
 Using cached coverage-7.16.0-cp314-cp314-macosx_11_0_arm64.whl (223 kB)
 Using cached pytest_xdist-3.8.0-py3-none-any.whl (46 kB)
 Using cached execnet-2.1.2-py3-none-any.whl (40 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Building wheels for collected packages: dedalus
+Building wheels for collected packages: dedalus
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for dedalus (pyproject.toml) ... ?25l-
@@ -528,9 +527,7 @@ Using cached execnet-2.1.2-py3-none-any.whl (40 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> error
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  <span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
   
   <span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Building wheel for dedalus </span><span class=" -Color -Color-Bold -Color-Bold-Green">(</span><span class=" -Color -Color-Green">pyproject.toml</span><span class=" -Color -Color-Bold -Color-Bold-Green">)</span> did not run successfully.
   <span class=" -Color -Color-Red">│</span> exit code: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
@@ -650,9 +647,9 @@ Using cached execnet-2.1.2-py3-none-any.whl (40 kB)
   <span class=" -Color -Color-Red">   </span> copying dedalus/examples.tar.gz -&gt; build/lib.macosx-12.1-arm64-cpython-314/dedalus
   <span class=" -Color -Color-Red">   </span> running build_ext
   <span class=" -Color -Color-Red">   </span> building &#39;dedalus.core.transposes&#39; extension
-  <span class=" -Color -Color-Red">   </span> clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/claude_code/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/claude_code/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-b0qx41qt/overlay/lib/python3.14/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-b0qx41qt/overlay/lib/python3.14/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/claude_code/include/python3.14 -c dedalus/core/transposes.c -o build/temp.macosx-12.1-arm64-cpython-314/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
+  <span class=" -Color -Color-Red">   </span> clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/claude_code/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/claude_code/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-yq_9p6g4/overlay/lib/python3.14/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-yq_9p6g4/overlay/lib/python3.14/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/claude_code/include/python3.14 -c dedalus/core/transposes.c -o build/temp.macosx-12.1-arm64-cpython-314/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
   <span class=" -Color -Color-Red">   </span> clang: error: unsupported option &#39;-fopenmp&#39;
-  <span class=" -Color -Color-Red">   </span> error: Command &#39;[&#39;clang&#39;, &#39;-fno-strict-overflow&#39;, &#39;-Wsign-compare&#39;, &#39;-Wunreachable-code&#39;, &#39;-DNDEBUG&#39;, &#39;-O2&#39;, &#39;-Wall&#39;, &#39;-fPIC&#39;, &#39;-O2&#39;, &#39;-isystem&#39;, &#39;/Users/Shared/miniconda3/envs/claude_code/include&#39;, &#39;-arch&#39;, &#39;arm64&#39;, &#39;-fPIC&#39;, &#39;-O2&#39;, &#39;-isystem&#39;, &#39;/Users/Shared/miniconda3/envs/claude_code/include&#39;, &#39;-arch&#39;, &#39;arm64&#39;, &#39;-I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-b0qx41qt/overlay/lib/python3.14/site-packages/numpy/_core/include&#39;, &#39;-I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-b0qx41qt/overlay/lib/python3.14/site-packages/mpi4py/include&#39;, &#39;-I/usr/lib/x86_64-linux-gnu/openmpi/include&#39;, &#39;-Idedalus/libraries/fftw/&#39;, &#39;-I/usr/include&#39;, &#39;-I/Users/Shared/miniconda3/envs/claude_code/include/python3.14&#39;, &#39;-c&#39;, &#39;dedalus/core/transposes.c&#39;, &#39;-o&#39;, &#39;build/temp.macosx-12.1-arm64-cpython-314/dedalus/core/transposes.o&#39;, &#39;-DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION&#39;, &#39;-Wno-unused-function&#39;, &#39;-fopenmp&#39;]&#39; returned non-zero exit status 1.
+  <span class=" -Color -Color-Red">   </span> error: Command &#39;[&#39;clang&#39;, &#39;-fno-strict-overflow&#39;, &#39;-Wsign-compare&#39;, &#39;-Wunreachable-code&#39;, &#39;-DNDEBUG&#39;, &#39;-O2&#39;, &#39;-Wall&#39;, &#39;-fPIC&#39;, &#39;-O2&#39;, &#39;-isystem&#39;, &#39;/Users/Shared/miniconda3/envs/claude_code/include&#39;, &#39;-arch&#39;, &#39;arm64&#39;, &#39;-fPIC&#39;, &#39;-O2&#39;, &#39;-isystem&#39;, &#39;/Users/Shared/miniconda3/envs/claude_code/include&#39;, &#39;-arch&#39;, &#39;arm64&#39;, &#39;-I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-yq_9p6g4/overlay/lib/python3.14/site-packages/numpy/_core/include&#39;, &#39;-I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-yq_9p6g4/overlay/lib/python3.14/site-packages/mpi4py/include&#39;, &#39;-I/usr/lib/x86_64-linux-gnu/openmpi/include&#39;, &#39;-Idedalus/libraries/fftw/&#39;, &#39;-I/usr/include&#39;, &#39;-I/Users/Shared/miniconda3/envs/claude_code/include/python3.14&#39;, &#39;-c&#39;, &#39;dedalus/core/transposes.c&#39;, &#39;-o&#39;, &#39;build/temp.macosx-12.1-arm64-cpython-314/dedalus/core/transposes.o&#39;, &#39;-DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION&#39;, &#39;-Wno-unused-function&#39;, &#39;-fopenmp&#39;]&#39; returned non-zero exit status 1.
   <span class=" -Color -Color-Red">   </span> <span class=" -Color -Color-Red">[end of output]</span>
   
   <span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
