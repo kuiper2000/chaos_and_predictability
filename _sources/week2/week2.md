@@ -135,6 +135,10 @@ An example of tropical-extratropical teleconnection in a barotropic model. The m
 Tropical-extratropical teleconection was first discovered by Bjerknes (1969) {cite}`bjerknes1969atmospheric` (although he didn't spell it out). Then theory was mature around 1980s {cite}`hoskins1981steady`, where Sir Brian Hoskins used primitive equation model to investigate the underpinning dynamics. The name of "Rossby wave source" was also established from Sir Brian Hoskins' work. 
 :::
 
+
+
+
+
 ## References
 ```{bibliography} ../references.bib
 :filter: docname in docnames

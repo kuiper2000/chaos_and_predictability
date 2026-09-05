@@ -1,248 +1,374 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>&lt;no title&gt; &#8212; Chaos and Predictability</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'week3/RB2D/Spherical_shallow_water';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <dialog id="pst-search-dialog">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
         
       
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Chaos and Predictability</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Chaos and Predictability - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Chaos and Predictability - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Syllabus
+                </a>
+            </li>
+        </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
-   Syllabus
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../week1/week1.html">
-   Week 1: Predictability of Weather and Climate
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../week2/week2.html">
-   Week 2: Predictability source in atmosphere
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week3.html">
-   Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../week4/week4.html">
-   Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../week5/week5.html">
-   Week 5: The connection between statistical mechanics and ensemble forecast I: Theory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../week6/week6.html">
-   Week 6: The connection between statistical mechanics and ensemble forecast II: Applications
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../week7/week7.html">
-   Week 7: The stability theory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../week8/week8.html">
-   Week 8: The generalized stability theory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../week9/week9.html">
-   Week 9: Predictability through the lens of Information Theory
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../week1/week1.html">Week 1: Predictability of Weather and Climate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week2/week2.html">Week 2: Predictability source in atmosphere</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week3.html">Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week4/week4.html">Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week5/week5.html">Week 5: The connection between statistical mechanics and ensemble forecast I: Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week6/week6.html">Week 6: The connection between statistical mechanics and ensemble forecast II: Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week7/week7.html">Week 7: The stability theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week8/week8.html">Week 8: The generalized stability theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week9/week9.html">Week 9: Predictability through the lens of Information Theory</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/week3/RB2D/Spherical_shallow_water.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/kuiper2000/chaos_and_predictability"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2Fweek3/RB2D/Spherical_shallow_water.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/kuiper2000/chaos_and_predictability" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2Fweek3/RB2D/Spherical_shallow_water.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/kuiper2000/chaos_and_predictability/master?urlpath=tree/docs/week3/RB2D/Spherical_shallow_water.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/week3/RB2D/Spherical_shallow_water.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="simple visible nav section-nav flex-column">
 </ul>
 
@@ -250,156 +376,156 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Dedalus script simulating the viscous shallow water equations on a sphere. This</span>
-<span class="sd">script demonstrates solving an initial value problem on the sphere. It can be</span>
-<span class="sd">ran serially or in parallel, and uses the built-in analysis framework to save</span>
-<span class="sd">data snapshots to HDF5 files. The `plot_sphere.py` script can be used to produce</span>
-<span class="sd">plots from the saved data. The simulation should a few cpu-minutes to run.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Install FFTW</span>
+<span class="o">!</span>apt-get<span class="w"> </span>install<span class="w"> </span>libfftw3-dev
+<span class="o">!</span>apt-get<span class="w"> </span>install<span class="w"> </span>libfftw3-mpi-dev
 
-<span class="sd">The script implements the test case of a barotropically unstable mid-latitude</span>
-<span class="sd">jet from Galewsky et al. 2004 (https://doi.org/10.3402/tellusa.v56i5.14436).</span>
-<span class="sd">The initial height field balanced the imposed jet is solved with an LBVP.</span>
-<span class="sd">A perturbation is then added and the solution is evolved as an IVP.</span>
+<span class="c1"># Step 2: Set paths for Dedalus installation</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MPI_INCLUDE_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/x86_64-linux-gnu/openmpi/include&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MPI_LIBRARY_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/x86_64-linux-gnu&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;FFTW_INCLUDE_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/include&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;FFTW_LIBRARY_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/x86_64-linux-gnu&quot;</span>
 
-<span class="sd">To run and plot using e.g. 4 processes:</span>
-<span class="sd">    $ mpiexec -n 4 python3 shallow_water.py</span>
-<span class="sd">    $ mpiexec -n 4 python3 plot_sphere.py snapshots/*.h5</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># Step 3: Install Dedalus using pip</span>
+<span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>--no-cache<span class="w"> </span>http://github.com/dedalusproject/dedalus/zipball/master/
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">dedalus.public</span> <span class="k">as</span> <span class="nn">d3</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-
-
-<span class="c1"># Simulation units</span>
-<span class="n">meter</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">6.37122e6</span>
-<span class="n">hour</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">second</span> <span class="o">=</span> <span class="n">hour</span> <span class="o">/</span> <span class="mi">3600</span>
-
-<span class="c1"># Parameters</span>
-<span class="n">Nphi</span> <span class="o">=</span> <span class="mi">256</span>
-<span class="n">Ntheta</span> <span class="o">=</span> <span class="mi">128</span>
-<span class="n">dealias</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">R</span> <span class="o">=</span> <span class="mf">6.37122e6</span> <span class="o">*</span> <span class="n">meter</span>
-<span class="n">Omega</span> <span class="o">=</span> <span class="mf">7.292e-5</span> <span class="o">/</span> <span class="n">second</span>
-<span class="n">nu</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">*</span> <span class="n">meter</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">second</span> <span class="o">/</span> <span class="mi">32</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># Hyperdiffusion matched at ell=32</span>
-<span class="n">g</span> <span class="o">=</span> <span class="mf">9.80616</span> <span class="o">*</span> <span class="n">meter</span> <span class="o">/</span> <span class="n">second</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">H</span> <span class="o">=</span> <span class="mf">1e4</span> <span class="o">*</span> <span class="n">meter</span>
-<span class="n">timestep</span> <span class="o">=</span> <span class="mi">600</span> <span class="o">*</span> <span class="n">second</span>
-<span class="n">stop_sim_time</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">*</span> <span class="n">hour</span>
-<span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span>
-
-<span class="c1"># Bases</span>
-<span class="n">coords</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">S2Coordinates</span><span class="p">(</span><span class="s1">&#39;phi&#39;</span><span class="p">,</span> <span class="s1">&#39;theta&#39;</span><span class="p">)</span>
-<span class="n">dist</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">Distributor</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-<span class="n">basis</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">SphereBasis</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="p">(</span><span class="n">Nphi</span><span class="p">,</span> <span class="n">Ntheta</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="n">R</span><span class="p">,</span> <span class="n">dealias</span><span class="o">=</span><span class="n">dealias</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-
-<span class="c1"># Fields</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">VectorField</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
-<span class="n">h</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
-
-<span class="c1"># Substitutions</span>
-<span class="n">zcross</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">A</span><span class="p">:</span> <span class="n">d3</span><span class="o">.</span><span class="n">MulCosine</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
-
-<span class="c1"># Initial conditions: zonal jet</span>
-<span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">local_grids</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">theta</span> <span class="o">+</span> <span class="mi">0</span><span class="o">*</span><span class="n">phi</span>
-<span class="n">umax</span> <span class="o">=</span> <span class="mi">80</span> <span class="o">*</span> <span class="n">meter</span> <span class="o">/</span> <span class="n">second</span>
-<span class="n">lat0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">7</span>
-<span class="n">lat1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">lat0</span>
-<span class="n">en</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span> <span class="o">/</span> <span class="p">(</span><span class="n">lat1</span> <span class="o">-</span> <span class="n">lat0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">jet</span> <span class="o">=</span> <span class="p">(</span><span class="n">lat0</span> <span class="o">&lt;=</span> <span class="n">lat</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">lat</span> <span class="o">&lt;=</span> <span class="n">lat1</span><span class="p">)</span>
-<span class="n">u_jet</span> <span class="o">=</span> <span class="n">umax</span> <span class="o">/</span> <span class="n">en</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">jet</span><span class="p">]</span> <span class="o">-</span> <span class="n">lat0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">jet</span><span class="p">]</span> <span class="o">-</span> <span class="n">lat1</span><span class="p">))</span>
-<span class="n">u</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">jet</span><span class="p">]</span>  <span class="o">=</span> <span class="n">u_jet</span>
-
-<span class="c1"># Initial conditions: balanced height</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
-<span class="n">problem</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">LBVP</span><span class="p">([</span><span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">],</span> <span class="n">namespace</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
-<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;g*lap(h) + c = - div(dot(u, grad(u)) + 2*Omega*zcross(u))&quot;</span><span class="p">)</span>
-<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;ave(h) = 0&quot;</span><span class="p">)</span>
-<span class="n">solver</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">build_solver</span><span class="p">()</span>
-<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
-
-<span class="c1"># Initial conditions: perturbation</span>
-<span class="n">lat2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span>
-<span class="n">hpert</span> <span class="o">=</span> <span class="mi">120</span> <span class="o">*</span> <span class="n">meter</span>
-<span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span>
-<span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">15</span>
-<span class="n">h</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">hpert</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">phi</span><span class="o">/</span><span class="n">alpha</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">lat2</span><span class="o">-</span><span class="n">lat</span><span class="p">)</span><span class="o">/</span><span class="n">beta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="c1"># Problem</span>
-<span class="n">problem</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">IVP</span><span class="p">([</span><span class="n">u</span><span class="p">,</span> <span class="n">h</span><span class="p">],</span> <span class="n">namespace</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
-<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;dt(u) + nu*lap(lap(u)) + g*grad(h) + 2*Omega*zcross(u) = - dot(u, grad(u))&quot;</span><span class="p">)</span>
-<span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;dt(h) + nu*lap(lap(h)) + H*div(u) = - div(h*u)&quot;</span><span class="p">)</span>
-
-
-<span class="c1"># Solver</span>
-<span class="n">solver</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">build_solver</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">RK222</span><span class="p">)</span>
-<span class="n">solver</span><span class="o">.</span><span class="n">stop_sim_time</span> <span class="o">=</span> <span class="n">stop_sim_time</span>
-
-<span class="c1"># Analysis</span>
-<span class="n">snapshots</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">evaluator</span><span class="o">.</span><span class="n">add_file_handler</span><span class="p">(</span><span class="s1">&#39;snapshots&#39;</span><span class="p">,</span> <span class="n">sim_dt</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="n">hour</span><span class="p">,</span> <span class="n">max_writes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">snapshots</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">)</span>
-<span class="n">snapshots</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="o">-</span><span class="n">d3</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">u</span><span class="p">)),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;vorticity&#39;</span><span class="p">)</span>
-
-<span class="c1"># Main loop</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Starting main loop&#39;</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">solver</span><span class="o">.</span><span class="n">proceed</span><span class="p">:</span>
-        <span class="n">solver</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">iteration</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Iteration=</span><span class="si">%i</span><span class="s1">, Time=</span><span class="si">%e</span><span class="s1">, dt=</span><span class="si">%e</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">iteration</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">sim_time</span><span class="p">,</span> <span class="n">timestep</span><span class="p">))</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Exception raised, triggering end of main loop.&#39;</span><span class="p">)</span>
-    <span class="k">raise</span>
-<span class="k">finally</span><span class="p">:</span>
-    <span class="n">solver</span><span class="o">.</span><span class="n">log_stats</span><span class="p">()</span>
+<span class="c1">#!pip3 install dedalus3</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zsh:1: command not found: apt-get
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zsh:1: command not found: apt-get
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="sd"> Dedalus script simulating the viscous shallow water equations on a sphere. This</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> script demonstrates solving an initial value problem on the sphere. It can be</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="sd">     $ mpiexec -n 4 python3 plot_sphere.py snapshots/*.h5</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">---&gt; </span><span class="mi">19</span> <span class="kn">import</span> <span class="nn">dedalus.public</span> <span class="k">as</span> <span class="nn">d3</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">import</span> <span class="nn">logging</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">File</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Shared</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">_core</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">23</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">23</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">multiarray</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;dedalus&#39;
+<span class="n">File</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Shared</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">_core</span><span class="o">/</span><span class="n">multiarray</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">overrides</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_multiarray_umath</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Shared</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">_core</span><span class="o">/</span><span class="n">overrides</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.._utils._inspect</span><span class="w"> </span><span class="kn">import</span> <span class="n">getargspec</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numpy._core._multiarray_umath</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">add_docstring</span><span class="p">,</span>  <span class="n">_get_implementing_args</span><span class="p">,</span> <span class="n">_ArrayFunctionDispatcher</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">ARRAY_FUNCTIONS</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="ne">ImportError</span>: dlopen(/Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages/numpy/_core/_multiarray_umath.cpython-39-darwin.so, 0x0002): Library not loaded: @rpath/libgfortran.5.dylib
+  <span class="n">Referenced</span> <span class="n">from</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">CAA510D4</span><span class="o">-</span><span class="mi">816</span><span class="n">A</span><span class="o">-</span><span class="mf">34E5</span><span class="o">-</span><span class="mi">9021</span><span class="o">-</span><span class="mi">485</span><span class="n">EF5D56159</span><span class="o">&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Shared</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libopenblas</span><span class="mf">.0</span><span class="o">.</span><span class="n">dylib</span>
+  <span class="n">Reason</span><span class="p">:</span> <span class="n">tried</span><span class="p">:</span> <span class="s1">&#39;/Users/Shared/miniconda3/envs/jupyterbook/lib/libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">duplicate</span> <span class="n">LC_RPATH</span> <span class="s1">&#39;@loader_path&#39;</span><span class="p">),</span> <span class="s1">&#39;/Users/Shared/miniconda3/envs/jupyterbook/lib/libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">duplicate</span> <span class="n">LC_RPATH</span> <span class="s1">&#39;@loader_path&#39;</span><span class="p">),</span> <span class="s1">&#39;/Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages/numpy/_core/../../../../libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">duplicate</span> <span class="n">LC_RPATH</span> <span class="s1">&#39;@loader_path&#39;</span><span class="p">),</span> <span class="s1">&#39;/Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages/numpy/_core/../../../../libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">duplicate</span> <span class="n">LC_RPATH</span> <span class="s1">&#39;@loader_path&#39;</span><span class="p">),</span> <span class="s1">&#39;/Users/Shared/miniconda3/envs/jupyterbook/bin/../lib/libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">duplicate</span> <span class="n">LC_RPATH</span> <span class="s1">&#39;@loader_path&#39;</span><span class="p">),</span> <span class="s1">&#39;/Users/Shared/miniconda3/envs/jupyterbook/bin/../lib/libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">duplicate</span> <span class="n">LC_RPATH</span> <span class="s1">&#39;@loader_path&#39;</span><span class="p">),</span> <span class="s1">&#39;/usr/local/lib/libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">no</span> <span class="n">such</span> <span class="n">file</span><span class="p">),</span> <span class="s1">&#39;/usr/lib/libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">no</span> <span class="n">such</span> <span class="n">file</span><span class="p">,</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dyld</span> <span class="n">cache</span><span class="p">)</span>
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">File</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Shared</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">114</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">114</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">numpy.__config__</span><span class="w"> </span><span class="kn">import</span> <span class="n">show</span> <span class="k">as</span> <span class="n">show_config</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Shared</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">__config__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numpy._core._multiarray_umath</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">__cpu_features__</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">__cpu_baseline__</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">__cpu_dispatch__</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;show&quot;</span><span class="p">]</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Shared</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">_core</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">49</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span><span class="s2"> IMPORTANT: PLEASE READ THIS FOR ADVICE ON HOW TO SOLVE THIS ISSUE!</span>
+<span class="s2">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span><span class="s2"> &quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="n">__version__</span><span class="p">,</span> <span class="n">exc</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">49</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="k">finally</span><span class="p">:</span>
+
+<span class="ne">ImportError</span>: 
+
+<span class="ne">IMPORTANT</span>: PLEASE READ THIS FOR ADVICE ON HOW TO SOLVE THIS ISSUE!
+
+<span class="n">Importing</span> <span class="n">the</span> <span class="n">numpy</span> <span class="n">C</span><span class="o">-</span><span class="n">extensions</span> <span class="n">failed</span><span class="o">.</span> <span class="n">This</span> <span class="n">error</span> <span class="n">can</span> <span class="n">happen</span> <span class="k">for</span>
+<span class="n">many</span> <span class="n">reasons</span><span class="p">,</span> <span class="n">often</span> <span class="n">due</span> <span class="n">to</span> <span class="n">issues</span> <span class="k">with</span> <span class="n">your</span> <span class="n">setup</span> <span class="ow">or</span> <span class="n">how</span> <span class="n">NumPy</span> <span class="n">was</span>
+<span class="n">installed</span><span class="o">.</span>
+
+<span class="n">We</span> <span class="n">have</span> <span class="n">compiled</span> <span class="n">some</span> <span class="n">common</span> <span class="n">reasons</span> <span class="ow">and</span> <span class="n">troubleshooting</span> <span class="n">tips</span> <span class="n">at</span><span class="p">:</span>
+
+    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">numpy</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">devdocs</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">troubleshooting</span><span class="o">-</span><span class="n">importerror</span><span class="o">.</span><span class="n">html</span>
+
+<span class="n">Please</span> <span class="n">note</span> <span class="ow">and</span> <span class="n">check</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span>
+
+  <span class="o">*</span> <span class="n">The</span> <span class="n">Python</span> <span class="n">version</span> <span class="ow">is</span><span class="p">:</span> <span class="n">Python3</span><span class="mf">.9</span> <span class="kn">from</span><span class="w"> </span><span class="s2">&quot;/Users/Shared/miniconda3/envs/jupyterbook/bin/python&quot;</span>
+  <span class="o">*</span> <span class="n">The</span> <span class="n">NumPy</span> <span class="n">version</span> <span class="ow">is</span><span class="p">:</span> <span class="s2">&quot;2.0.2&quot;</span>
+
+<span class="ow">and</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">that</span> <span class="n">they</span> <span class="n">are</span> <span class="n">the</span> <span class="n">versions</span> <span class="n">you</span> <span class="n">expect</span><span class="o">.</span>
+<span class="n">Please</span> <span class="n">carefully</span> <span class="n">study</span> <span class="n">the</span> <span class="n">documentation</span> <span class="n">linked</span> <span class="n">above</span> <span class="k">for</span> <span class="n">further</span> <span class="n">help</span><span class="o">.</span>
+
+<span class="n">Original</span> <span class="n">error</span> <span class="n">was</span><span class="p">:</span> <span class="n">dlopen</span><span class="p">(</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Shared</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">_core</span><span class="o">/</span><span class="n">_multiarray_umath</span><span class="o">.</span><span class="n">cpython</span><span class="o">-</span><span class="mi">39</span><span class="o">-</span><span class="n">darwin</span><span class="o">.</span><span class="n">so</span><span class="p">,</span> <span class="mh">0x0002</span><span class="p">):</span> <span class="n">Library</span> <span class="ow">not</span> <span class="n">loaded</span><span class="p">:</span> <span class="nd">@rpath</span><span class="o">/</span><span class="n">libgfortran</span><span class="mf">.5</span><span class="o">.</span><span class="n">dylib</span>
+  <span class="n">Referenced</span> <span class="n">from</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">CAA510D4</span><span class="o">-</span><span class="mi">816</span><span class="n">A</span><span class="o">-</span><span class="mf">34E5</span><span class="o">-</span><span class="mi">9021</span><span class="o">-</span><span class="mi">485</span><span class="n">EF5D56159</span><span class="o">&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Shared</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libopenblas</span><span class="mf">.0</span><span class="o">.</span><span class="n">dylib</span>
+  <span class="n">Reason</span><span class="p">:</span> <span class="n">tried</span><span class="p">:</span> <span class="s1">&#39;/Users/Shared/miniconda3/envs/jupyterbook/lib/libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">duplicate</span> <span class="n">LC_RPATH</span> <span class="s1">&#39;@loader_path&#39;</span><span class="p">),</span> <span class="s1">&#39;/Users/Shared/miniconda3/envs/jupyterbook/lib/libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">duplicate</span> <span class="n">LC_RPATH</span> <span class="s1">&#39;@loader_path&#39;</span><span class="p">),</span> <span class="s1">&#39;/Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages/numpy/_core/../../../../libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">duplicate</span> <span class="n">LC_RPATH</span> <span class="s1">&#39;@loader_path&#39;</span><span class="p">),</span> <span class="s1">&#39;/Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages/numpy/_core/../../../../libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">duplicate</span> <span class="n">LC_RPATH</span> <span class="s1">&#39;@loader_path&#39;</span><span class="p">),</span> <span class="s1">&#39;/Users/Shared/miniconda3/envs/jupyterbook/bin/../lib/libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">duplicate</span> <span class="n">LC_RPATH</span> <span class="s1">&#39;@loader_path&#39;</span><span class="p">),</span> <span class="s1">&#39;/Users/Shared/miniconda3/envs/jupyterbook/bin/../lib/libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">duplicate</span> <span class="n">LC_RPATH</span> <span class="s1">&#39;@loader_path&#39;</span><span class="p">),</span> <span class="s1">&#39;/usr/local/lib/libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">no</span> <span class="n">such</span> <span class="n">file</span><span class="p">),</span> <span class="s1">&#39;/usr/lib/libgfortran.5.dylib&#39;</span> <span class="p">(</span><span class="n">no</span> <span class="n">such</span> <span class="n">file</span><span class="p">,</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dyld</span> <span class="n">cache</span><span class="p">)</span>
+
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Step 2: Set paths for Dedalus installation</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MPI_INCLUDE_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/x86_64-linux-gnu/openmpi/include&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MPI_LIBRARY_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/x86_64-linux-gnu&quot;</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Shared</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">159</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span> <span class="kn">from</span><span class="w"> </span><span class="nn">packaging.version</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span> <span class="k">as</span> <span class="n">parse_version</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="c1"># cbook must import matplotlib only within function</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span> <span class="c1"># definitions, so it is safe to import from it here.</span>
+<span class="ne">--&gt; </span><span class="mi">159</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">_version</span><span class="p">,</span> <span class="n">cbook</span><span class="p">,</span> <span class="n">_docstring</span><span class="p">,</span> <span class="n">rcsetup</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.cbook</span><span class="w"> </span><span class="kn">import</span> <span class="n">sanitize_sequence</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib._api</span><span class="w"> </span><span class="kn">import</span> <span class="n">MatplotlibDeprecationWarning</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Shared</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">cbook</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">24</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">import</span><span class="w"> </span><span class="nn">types</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">import</span><span class="w"> </span><span class="nn">weakref</span>
+<span class="ne">---&gt; </span><span class="mi">24</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">numpy.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">VisibleDeprecationWarning</span>  <span class="c1"># numpy &gt;= 1.25</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">Shared</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">119</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Error importing numpy: you should not try to import numpy from</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span><span class="s2">     its source directory; please exit the numpy source tree, and relaunch</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span><span class="s2">     your python interpreter from there.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">119</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_core</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._core</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="n">False_</span><span class="p">,</span> <span class="n">ScalarType</span><span class="p">,</span> <span class="n">True_</span><span class="p">,</span> <span class="n">_get_promotion_state</span><span class="p">,</span> <span class="n">_no_nep50_warning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="n">_set_promotion_state</span><span class="p">,</span> <span class="nb">abs</span><span class="p">,</span> <span class="n">absolute</span><span class="p">,</span> <span class="n">acos</span><span class="p">,</span> <span class="n">acosh</span><span class="p">,</span> <span class="n">add</span><span class="p">,</span> <span class="nb">all</span><span class="p">,</span> <span class="n">allclose</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">169</span>     <span class="n">where</span><span class="p">,</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">zeros_like</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span> <span class="p">)</span>
+
+<span class="ne">ImportError</span>: Error importing numpy: you should not try to import numpy from
+        <span class="n">its</span> <span class="n">source</span> <span class="n">directory</span><span class="p">;</span> <span class="n">please</span> <span class="n">exit</span> <span class="n">the</span> <span class="n">numpy</span> <span class="n">source</span> <span class="n">tree</span><span class="p">,</span> <span class="ow">and</span> <span class="n">relaunch</span>
+        <span class="n">your</span> <span class="n">python</span> <span class="n">interpreter</span> <span class="kn">from</span><span class="w"> </span><span class="nn">there.</span>
 </pre></div>
 </div>
 </div>
@@ -423,9 +549,9 @@
 <span class="sd">    $ mpiexec -n 4 python3 plot_sphere.py snapshots/*.h5</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">dedalus.public</span> <span class="k">as</span> <span class="nn">d3</span>
-<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dedalus.public</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">d3</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
@@ -455,12 +581,9 @@
 <span class="c1"># Fields</span>
 <span class="n">u</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">VectorField</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
 <span class="n">h</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
-<span class="n">tan_theta</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;tan_theta&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
-<span class="n">zonal_unit</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">VectorField</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;zonal_unit&#39;</span><span class="p">,</span> <span class="n">bases</span><span class="o">=</span><span class="n">basis</span><span class="p">)</span>
 
 <span class="c1"># Substitutions</span>
 <span class="n">zcross</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">A</span><span class="p">:</span> <span class="n">d3</span><span class="o">.</span><span class="n">MulCosine</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
-<span class="c1">#tan    = np.tan(lat)</span>
 
 <span class="c1"># Initial conditions: zonal jet</span>
 <span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">local_grids</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span>
@@ -472,9 +595,6 @@
 <span class="n">jet</span> <span class="o">=</span> <span class="p">(</span><span class="n">lat0</span> <span class="o">&lt;=</span> <span class="n">lat</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">lat</span> <span class="o">&lt;=</span> <span class="n">lat1</span><span class="p">)</span>
 <span class="n">u_jet</span> <span class="o">=</span> <span class="n">umax</span> <span class="o">/</span> <span class="n">en</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">jet</span><span class="p">]</span> <span class="o">-</span> <span class="n">lat0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">jet</span><span class="p">]</span> <span class="o">-</span> <span class="n">lat1</span><span class="p">))</span>
 <span class="n">u</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">jet</span><span class="p">]</span>  <span class="o">=</span> <span class="n">u_jet</span>
-<span class="n">tan_theta</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
-<span class="n">zonal_unit</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">zonal_unit</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1"># Initial conditions: balanced height</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
@@ -495,6 +615,7 @@
 <span class="n">problem</span> <span class="o">=</span> <span class="n">d3</span><span class="o">.</span><span class="n">IVP</span><span class="p">([</span><span class="n">u</span><span class="p">,</span> <span class="n">h</span><span class="p">],</span> <span class="n">namespace</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
 <span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;dt(u) + nu*lap(lap(u)) + g*grad(h) + 2*Omega*zcross(u) = - dot(u, grad(u))&quot;</span><span class="p">)</span>
 <span class="n">problem</span><span class="o">.</span><span class="n">add_equation</span><span class="p">(</span><span class="s2">&quot;dt(h) + nu*lap(lap(h)) + H*div(u) = - div(h*u)&quot;</span><span class="p">)</span>
+
 
 <span class="c1"># Solver</span>
 <span class="n">solver</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">build_solver</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">RK222</span><span class="p">)</span>
@@ -521,24 +642,1194 @@
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:dedalus:Threading has not been disabled. This may massively degrade Dedalus performance.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:54,135 dedalus 0/1 WARNING :: Threading has not been disabled. This may massively degrade Dedalus performance.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:dedalus:We strongly suggest setting the &quot;OMP_NUM_THREADS&quot; environment variable to &quot;1&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:54,140 dedalus 0/1 WARNING :: We strongly suggest setting the &quot;OMP_NUM_THREADS&quot; environment variable to &quot;1&quot;.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:h5py._conv:Creating converter from 7 to 5
+DEBUG:h5py._conv:Creating converter from 5 to 7
+DEBUG:h5py._conv:Creating converter from 7 to 5
+DEBUG:h5py._conv:Creating converter from 5 to 7
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:54,386 numexpr.utils 0/1 INFO :: NumExpr defaulting to 8 threads.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:distributor:Mesh: []
+DEBUG:transforms:Building FFTW FFT plan for (dtype, gshape, axis) = (&lt;class &#39;numpy.float64&#39;&gt;, (2, 256, 128), 1)
+DEBUG:problems:Adding equation 0
+DEBUG:problems:  LHS: 19.947173947846725*Lap(h) + C(c)
+DEBUG:problems:  RHS: -1*Div(u@Grad(u) + 0.525024*MulCos(Skew(u)))
+DEBUG:problems:  condition: True
+DEBUG:problems:  L: 19.947173947846725*Lap(h) + C(c)
+DEBUG:problems:  F: -1*Div(u@Grad(u) + 0.525024*MulCos(Skew(u)))
+DEBUG:problems:Adding equation 1
+DEBUG:problems:  LHS: Average(h)
+DEBUG:problems:  RHS: 0
+DEBUG:problems:  condition: True
+DEBUG:problems:  L: Average(h)
+DEBUG:problems:  F: &lt;Field 139986645193184&gt;
+DEBUG:solvers:Beginning LBVP instantiation
+DEBUG:solvers:Finished LBVP instantiation
+INFO:subsystems:Building subproblem matrices 1/127 (~1%) Elapsed: 0s, Remaining: 2s, Rate: 6.1e+01/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:57,210 subsystems 0/1 INFO :: Building subproblem matrices 1/127 (~1%) Elapsed: 0s, Remaining: 2s, Rate: 6.1e+01/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 13/127 (~10%) Elapsed: 0s, Remaining: 1s, Rate: 1.2e+02/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:57,298 subsystems 0/1 INFO :: Building subproblem matrices 13/127 (~10%) Elapsed: 0s, Remaining: 1s, Rate: 1.2e+02/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 26/127 (~20%) Elapsed: 0s, Remaining: 1s, Rate: 1.4e+02/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:57,383 subsystems 0/1 INFO :: Building subproblem matrices 26/127 (~20%) Elapsed: 0s, Remaining: 1s, Rate: 1.4e+02/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 39/127 (~31%) Elapsed: 0s, Remaining: 1s, Rate: 1.4e+02/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:57,463 subsystems 0/1 INFO :: Building subproblem matrices 39/127 (~31%) Elapsed: 0s, Remaining: 1s, Rate: 1.4e+02/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 52/127 (~41%) Elapsed: 0s, Remaining: 1s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:57,543 subsystems 0/1 INFO :: Building subproblem matrices 52/127 (~41%) Elapsed: 0s, Remaining: 1s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 65/127 (~51%) Elapsed: 0s, Remaining: 0s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:57,628 subsystems 0/1 INFO :: Building subproblem matrices 65/127 (~51%) Elapsed: 0s, Remaining: 0s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 78/127 (~61%) Elapsed: 1s, Remaining: 0s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:57,708 subsystems 0/1 INFO :: Building subproblem matrices 78/127 (~61%) Elapsed: 1s, Remaining: 0s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 91/127 (~72%) Elapsed: 1s, Remaining: 0s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:57,789 subsystems 0/1 INFO :: Building subproblem matrices 91/127 (~72%) Elapsed: 1s, Remaining: 0s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 104/127 (~82%) Elapsed: 1s, Remaining: 0s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:57,870 subsystems 0/1 INFO :: Building subproblem matrices 104/127 (~82%) Elapsed: 1s, Remaining: 0s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 117/127 (~92%) Elapsed: 1s, Remaining: 0s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:57,952 subsystems 0/1 INFO :: Building subproblem matrices 117/127 (~92%) Elapsed: 1s, Remaining: 0s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 127/127 (~100%) Elapsed: 1s, Remaining: 0s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:47:58,015 subsystems 0/1 INFO :: Building subproblem matrices 127/127 (~100%) Elapsed: 1s, Remaining: 0s, Rate: 1.5e+02/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:transforms:Building FFTW FFT plan for (dtype, gshape, axis) = (&lt;class &#39;numpy.float64&#39;&gt;, (2, 384, 192), 1)
+DEBUG:transforms:Building FFTW FFT plan for (dtype, gshape, axis) = (&lt;class &#39;numpy.float64&#39;&gt;, (2, 2, 384, 192), 2)
+DEBUG:transforms:Building FFTW FFT plan for (dtype, gshape, axis) = (&lt;class &#39;numpy.float64&#39;&gt;, (256, 128), 0)
+DEBUG:problems:Adding equation 0
+DEBUG:problems:  LHS: dt(u) + 8.66078666025207e-09*Lap(Lap(u)) + 19.947173947846725*Grad(h) + 0.525024*MulCos(Skew(u))
+DEBUG:problems:  RHS: -1*u@Grad(u)
+DEBUG:problems:  condition: True
+DEBUG:problems:  M: u
+DEBUG:problems:  L: 8.66078666025207e-09*Lap(Lap(u)) + 19.947173947846725*Grad(h) + 0.525024*MulCos(Skew(u))
+DEBUG:problems:  F: -1*u@Grad(u)
+DEBUG:problems:Adding equation 1
+DEBUG:problems:  LHS: dt(h) + 8.66078666025207e-09*Lap(Lap(h)) + 0.001569558106610665*Div(u)
+DEBUG:problems:  RHS: -1*Div(h*u)
+DEBUG:problems:  condition: True
+DEBUG:problems:  M: h
+DEBUG:problems:  L: 8.66078666025207e-09*Lap(Lap(h)) + 0.001569558106610665*Div(u)
+DEBUG:problems:  F: -1*Div(h*u)
+DEBUG:solvers:Beginning IVP instantiation
+INFO:subsystems:Building subproblem matrices 1/127 (~1%) Elapsed: 0s, Remaining: 7s, Rate: 1.7e+01/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:07,669 subsystems 0/1 INFO :: Building subproblem matrices 1/127 (~1%) Elapsed: 0s, Remaining: 7s, Rate: 1.7e+01/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 13/127 (~10%) Elapsed: 0s, Remaining: 2s, Rate: 4.7e+01/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:07,889 subsystems 0/1 INFO :: Building subproblem matrices 13/127 (~10%) Elapsed: 0s, Remaining: 2s, Rate: 4.7e+01/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 26/127 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 5.0e+01/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:08,131 subsystems 0/1 INFO :: Building subproblem matrices 26/127 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 5.0e+01/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 39/127 (~31%) Elapsed: 1s, Remaining: 2s, Rate: 5.1e+01/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:08,378 subsystems 0/1 INFO :: Building subproblem matrices 39/127 (~31%) Elapsed: 1s, Remaining: 2s, Rate: 5.1e+01/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 52/127 (~41%) Elapsed: 1s, Remaining: 1s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:08,619 subsystems 0/1 INFO :: Building subproblem matrices 52/127 (~41%) Elapsed: 1s, Remaining: 1s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 65/127 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:08,869 subsystems 0/1 INFO :: Building subproblem matrices 65/127 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 78/127 (~61%) Elapsed: 1s, Remaining: 1s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:09,109 subsystems 0/1 INFO :: Building subproblem matrices 78/127 (~61%) Elapsed: 1s, Remaining: 1s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 91/127 (~72%) Elapsed: 2s, Remaining: 1s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:09,356 subsystems 0/1 INFO :: Building subproblem matrices 91/127 (~72%) Elapsed: 2s, Remaining: 1s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 104/127 (~82%) Elapsed: 2s, Remaining: 0s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:09,595 subsystems 0/1 INFO :: Building subproblem matrices 104/127 (~82%) Elapsed: 2s, Remaining: 0s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 117/127 (~92%) Elapsed: 2s, Remaining: 0s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:09,849 subsystems 0/1 INFO :: Building subproblem matrices 117/127 (~92%) Elapsed: 2s, Remaining: 0s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:subsystems:Building subproblem matrices 127/127 (~100%) Elapsed: 2s, Remaining: 0s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:10,037 subsystems 0/1 INFO :: Building subproblem matrices 127/127 (~100%) Elapsed: 2s, Remaining: 0s, Rate: 5.2e+01/s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:solvers:Finished IVP instantiation
+INFO:__main__:Starting main loop
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:10,050 __main__ 0/1 INFO :: Starting main loop
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:transforms:Building FFTW FFT plan for (dtype, gshape, axis) = (&lt;class &#39;numpy.float64&#39;&gt;, (384, 192), 0)
+DEBUG:h5py._conv:Creating converter from 5 to 3
+INFO:__main__:Iteration=1, Time=1.666667e-01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:12,430 __main__ 0/1 INFO :: Iteration=1, Time=1.666667e-01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=11, Time=1.833333e+00, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:14,938 __main__ 0/1 INFO :: Iteration=11, Time=1.833333e+00, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=21, Time=3.500000e+00, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:17,420 __main__ 0/1 INFO :: Iteration=21, Time=3.500000e+00, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=31, Time=5.166667e+00, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:19,752 __main__ 0/1 INFO :: Iteration=31, Time=5.166667e+00, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=41, Time=6.833333e+00, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:22,072 __main__ 0/1 INFO :: Iteration=41, Time=6.833333e+00, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=51, Time=8.500000e+00, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:24,440 __main__ 0/1 INFO :: Iteration=51, Time=8.500000e+00, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=61, Time=1.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:27,012 __main__ 0/1 INFO :: Iteration=61, Time=1.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=71, Time=1.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:29,538 __main__ 0/1 INFO :: Iteration=71, Time=1.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=81, Time=1.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:31,891 __main__ 0/1 INFO :: Iteration=81, Time=1.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=91, Time=1.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:34,240 __main__ 0/1 INFO :: Iteration=91, Time=1.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=101, Time=1.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:36,603 __main__ 0/1 INFO :: Iteration=101, Time=1.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=111, Time=1.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:39,004 __main__ 0/1 INFO :: Iteration=111, Time=1.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=121, Time=2.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:41,634 __main__ 0/1 INFO :: Iteration=121, Time=2.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=131, Time=2.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:43,960 __main__ 0/1 INFO :: Iteration=131, Time=2.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=141, Time=2.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:46,272 __main__ 0/1 INFO :: Iteration=141, Time=2.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=151, Time=2.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:48,599 __main__ 0/1 INFO :: Iteration=151, Time=2.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=161, Time=2.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:50,886 __main__ 0/1 INFO :: Iteration=161, Time=2.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=171, Time=2.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:53,491 __main__ 0/1 INFO :: Iteration=171, Time=2.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=181, Time=3.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:56,051 __main__ 0/1 INFO :: Iteration=181, Time=3.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=191, Time=3.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:48:58,374 __main__ 0/1 INFO :: Iteration=191, Time=3.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=201, Time=3.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:00,716 __main__ 0/1 INFO :: Iteration=201, Time=3.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=211, Time=3.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:03,045 __main__ 0/1 INFO :: Iteration=211, Time=3.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=221, Time=3.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:05,417 __main__ 0/1 INFO :: Iteration=221, Time=3.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=231, Time=3.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:07,820 __main__ 0/1 INFO :: Iteration=231, Time=3.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=241, Time=4.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:10,272 __main__ 0/1 INFO :: Iteration=241, Time=4.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=251, Time=4.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:12,630 __main__ 0/1 INFO :: Iteration=251, Time=4.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=261, Time=4.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:15,008 __main__ 0/1 INFO :: Iteration=261, Time=4.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=271, Time=4.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:17,382 __main__ 0/1 INFO :: Iteration=271, Time=4.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=281, Time=4.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:19,811 __main__ 0/1 INFO :: Iteration=281, Time=4.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=291, Time=4.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:22,215 __main__ 0/1 INFO :: Iteration=291, Time=4.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=301, Time=5.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:24,741 __main__ 0/1 INFO :: Iteration=301, Time=5.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=311, Time=5.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:27,037 __main__ 0/1 INFO :: Iteration=311, Time=5.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=321, Time=5.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:29,365 __main__ 0/1 INFO :: Iteration=321, Time=5.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=331, Time=5.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:31,750 __main__ 0/1 INFO :: Iteration=331, Time=5.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=341, Time=5.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:34,265 __main__ 0/1 INFO :: Iteration=341, Time=5.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=351, Time=5.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:36,607 __main__ 0/1 INFO :: Iteration=351, Time=5.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=361, Time=6.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:39,075 __main__ 0/1 INFO :: Iteration=361, Time=6.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=371, Time=6.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:41,393 __main__ 0/1 INFO :: Iteration=371, Time=6.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=381, Time=6.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:43,727 __main__ 0/1 INFO :: Iteration=381, Time=6.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=391, Time=6.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:46,420 __main__ 0/1 INFO :: Iteration=391, Time=6.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=401, Time=6.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:48,807 __main__ 0/1 INFO :: Iteration=401, Time=6.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=411, Time=6.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:51,123 __main__ 0/1 INFO :: Iteration=411, Time=6.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=421, Time=7.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:53,589 __main__ 0/1 INFO :: Iteration=421, Time=7.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=431, Time=7.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:55,951 __main__ 0/1 INFO :: Iteration=431, Time=7.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=441, Time=7.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:49:58,497 __main__ 0/1 INFO :: Iteration=441, Time=7.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=451, Time=7.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:01,026 __main__ 0/1 INFO :: Iteration=451, Time=7.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=461, Time=7.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:03,392 __main__ 0/1 INFO :: Iteration=461, Time=7.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=471, Time=7.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:05,749 __main__ 0/1 INFO :: Iteration=471, Time=7.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=481, Time=8.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:08,220 __main__ 0/1 INFO :: Iteration=481, Time=8.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=491, Time=8.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:10,687 __main__ 0/1 INFO :: Iteration=491, Time=8.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=501, Time=8.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:13,090 __main__ 0/1 INFO :: Iteration=501, Time=8.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=511, Time=8.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:15,439 __main__ 0/1 INFO :: Iteration=511, Time=8.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=521, Time=8.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:17,781 __main__ 0/1 INFO :: Iteration=521, Time=8.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=531, Time=8.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:20,153 __main__ 0/1 INFO :: Iteration=531, Time=8.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=541, Time=9.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:22,661 __main__ 0/1 INFO :: Iteration=541, Time=9.016667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=551, Time=9.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:25,136 __main__ 0/1 INFO :: Iteration=551, Time=9.183333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=561, Time=9.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:27,513 __main__ 0/1 INFO :: Iteration=561, Time=9.350000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=571, Time=9.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:29,874 __main__ 0/1 INFO :: Iteration=571, Time=9.516667e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=581, Time=9.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:32,194 __main__ 0/1 INFO :: Iteration=581, Time=9.683333e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=591, Time=9.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:34,526 __main__ 0/1 INFO :: Iteration=591, Time=9.850000e+01, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=601, Time=1.001667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:37,058 __main__ 0/1 INFO :: Iteration=601, Time=1.001667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=611, Time=1.018333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:39,525 __main__ 0/1 INFO :: Iteration=611, Time=1.018333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=621, Time=1.035000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:41,873 __main__ 0/1 INFO :: Iteration=621, Time=1.035000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=631, Time=1.051667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:44,203 __main__ 0/1 INFO :: Iteration=631, Time=1.051667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=641, Time=1.068333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:46,496 __main__ 0/1 INFO :: Iteration=641, Time=1.068333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=651, Time=1.085000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:48,876 __main__ 0/1 INFO :: Iteration=651, Time=1.085000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=661, Time=1.101667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:51,559 __main__ 0/1 INFO :: Iteration=661, Time=1.101667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=671, Time=1.118333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:53,917 __main__ 0/1 INFO :: Iteration=671, Time=1.118333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=681, Time=1.135000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:56,247 __main__ 0/1 INFO :: Iteration=681, Time=1.135000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=691, Time=1.151667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:50:58,603 __main__ 0/1 INFO :: Iteration=691, Time=1.151667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=701, Time=1.168333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:00,947 __main__ 0/1 INFO :: Iteration=701, Time=1.168333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=711, Time=1.185000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:03,364 __main__ 0/1 INFO :: Iteration=711, Time=1.185000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=721, Time=1.201667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:05,862 __main__ 0/1 INFO :: Iteration=721, Time=1.201667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=731, Time=1.218333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:08,189 __main__ 0/1 INFO :: Iteration=731, Time=1.218333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=741, Time=1.235000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:10,517 __main__ 0/1 INFO :: Iteration=741, Time=1.235000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=751, Time=1.251667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:12,865 __main__ 0/1 INFO :: Iteration=751, Time=1.251667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=761, Time=1.268333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:15,252 __main__ 0/1 INFO :: Iteration=761, Time=1.268333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=771, Time=1.285000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:17,743 __main__ 0/1 INFO :: Iteration=771, Time=1.285000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=781, Time=1.301667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:20,216 __main__ 0/1 INFO :: Iteration=781, Time=1.301667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=791, Time=1.318333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:22,538 __main__ 0/1 INFO :: Iteration=791, Time=1.318333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=801, Time=1.335000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:24,907 __main__ 0/1 INFO :: Iteration=801, Time=1.335000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=811, Time=1.351667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:27,212 __main__ 0/1 INFO :: Iteration=811, Time=1.351667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=821, Time=1.368333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:29,921 __main__ 0/1 INFO :: Iteration=821, Time=1.368333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=831, Time=1.385000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:32,326 __main__ 0/1 INFO :: Iteration=831, Time=1.385000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=841, Time=1.401667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:34,818 __main__ 0/1 INFO :: Iteration=841, Time=1.401667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=851, Time=1.418333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:37,171 __main__ 0/1 INFO :: Iteration=851, Time=1.418333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=861, Time=1.435000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:39,536 __main__ 0/1 INFO :: Iteration=861, Time=1.435000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=871, Time=1.451667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:42,074 __main__ 0/1 INFO :: Iteration=871, Time=1.451667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=881, Time=1.468333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:44,642 __main__ 0/1 INFO :: Iteration=881, Time=1.468333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=891, Time=1.485000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:47,014 __main__ 0/1 INFO :: Iteration=891, Time=1.485000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=901, Time=1.501667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:49,624 __main__ 0/1 INFO :: Iteration=901, Time=1.501667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=911, Time=1.518333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:51,979 __main__ 0/1 INFO :: Iteration=911, Time=1.518333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=921, Time=1.535000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:54,418 __main__ 0/1 INFO :: Iteration=921, Time=1.535000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=931, Time=1.551667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:56,906 __main__ 0/1 INFO :: Iteration=931, Time=1.551667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=941, Time=1.568333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:51:59,216 __main__ 0/1 INFO :: Iteration=941, Time=1.568333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=951, Time=1.585000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:01,556 __main__ 0/1 INFO :: Iteration=951, Time=1.585000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=961, Time=1.601667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:04,073 __main__ 0/1 INFO :: Iteration=961, Time=1.601667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=971, Time=1.618333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:06,415 __main__ 0/1 INFO :: Iteration=971, Time=1.618333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=981, Time=1.635000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:08,803 __main__ 0/1 INFO :: Iteration=981, Time=1.635000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=991, Time=1.651667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:11,217 __main__ 0/1 INFO :: Iteration=991, Time=1.651667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1001, Time=1.668333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:13,605 __main__ 0/1 INFO :: Iteration=1001, Time=1.668333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1011, Time=1.685000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:15,927 __main__ 0/1 INFO :: Iteration=1011, Time=1.685000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1021, Time=1.701667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:18,432 __main__ 0/1 INFO :: Iteration=1021, Time=1.701667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1031, Time=1.718333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:20,908 __main__ 0/1 INFO :: Iteration=1031, Time=1.718333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1041, Time=1.735000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:23,367 __main__ 0/1 INFO :: Iteration=1041, Time=1.735000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1051, Time=1.751667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:25,697 __main__ 0/1 INFO :: Iteration=1051, Time=1.751667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1061, Time=1.768333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:27,997 __main__ 0/1 INFO :: Iteration=1061, Time=1.768333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1071, Time=1.785000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:30,330 __main__ 0/1 INFO :: Iteration=1071, Time=1.785000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1081, Time=1.801667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:32,804 __main__ 0/1 INFO :: Iteration=1081, Time=1.801667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1091, Time=1.818333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:35,241 __main__ 0/1 INFO :: Iteration=1091, Time=1.818333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1101, Time=1.835000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:37,601 __main__ 0/1 INFO :: Iteration=1101, Time=1.835000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1111, Time=1.851667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:39,954 __main__ 0/1 INFO :: Iteration=1111, Time=1.851667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1121, Time=1.868333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:42,289 __main__ 0/1 INFO :: Iteration=1121, Time=1.868333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1131, Time=1.885000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:44,637 __main__ 0/1 INFO :: Iteration=1131, Time=1.885000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1141, Time=1.901667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:47,185 __main__ 0/1 INFO :: Iteration=1141, Time=1.901667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1151, Time=1.918333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:49,598 __main__ 0/1 INFO :: Iteration=1151, Time=1.918333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1161, Time=1.935000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:51,953 __main__ 0/1 INFO :: Iteration=1161, Time=1.935000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1171, Time=1.951667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:54,335 __main__ 0/1 INFO :: Iteration=1171, Time=1.951667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1181, Time=1.968333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:56,661 __main__ 0/1 INFO :: Iteration=1181, Time=1.968333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1191, Time=1.985000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:52:59,160 __main__ 0/1 INFO :: Iteration=1191, Time=1.985000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1201, Time=2.001667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:01,903 __main__ 0/1 INFO :: Iteration=1201, Time=2.001667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1211, Time=2.018333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:04,224 __main__ 0/1 INFO :: Iteration=1211, Time=2.018333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1221, Time=2.035000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:06,556 __main__ 0/1 INFO :: Iteration=1221, Time=2.035000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1231, Time=2.051667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:08,917 __main__ 0/1 INFO :: Iteration=1231, Time=2.051667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1241, Time=2.068333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:11,273 __main__ 0/1 INFO :: Iteration=1241, Time=2.068333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1251, Time=2.085000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:13,762 __main__ 0/1 INFO :: Iteration=1251, Time=2.085000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1261, Time=2.101667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:16,218 __main__ 0/1 INFO :: Iteration=1261, Time=2.101667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1271, Time=2.118333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:18,535 __main__ 0/1 INFO :: Iteration=1271, Time=2.118333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1281, Time=2.135000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:20,849 __main__ 0/1 INFO :: Iteration=1281, Time=2.135000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1291, Time=2.151667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:23,209 __main__ 0/1 INFO :: Iteration=1291, Time=2.151667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1301, Time=2.168333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:25,619 __main__ 0/1 INFO :: Iteration=1301, Time=2.168333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1311, Time=2.185000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:28,102 __main__ 0/1 INFO :: Iteration=1311, Time=2.185000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1321, Time=2.201667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:30,583 __main__ 0/1 INFO :: Iteration=1321, Time=2.201667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1331, Time=2.218333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:32,935 __main__ 0/1 INFO :: Iteration=1331, Time=2.218333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1341, Time=2.235000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:35,274 __main__ 0/1 INFO :: Iteration=1341, Time=2.235000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1351, Time=2.251667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:37,641 __main__ 0/1 INFO :: Iteration=1351, Time=2.251667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1361, Time=2.268333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:40,194 __main__ 0/1 INFO :: Iteration=1361, Time=2.268333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1371, Time=2.285000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:42,575 __main__ 0/1 INFO :: Iteration=1371, Time=2.285000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1381, Time=2.301667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:45,068 __main__ 0/1 INFO :: Iteration=1381, Time=2.301667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1391, Time=2.318333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:47,430 __main__ 0/1 INFO :: Iteration=1391, Time=2.318333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1401, Time=2.335000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:49,828 __main__ 0/1 INFO :: Iteration=1401, Time=2.335000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1411, Time=2.351667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:52,443 __main__ 0/1 INFO :: Iteration=1411, Time=2.351667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1421, Time=2.368333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:54,863 __main__ 0/1 INFO :: Iteration=1421, Time=2.368333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1431, Time=2.385000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:57,182 __main__ 0/1 INFO :: Iteration=1431, Time=2.385000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1441, Time=2.401667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:53:59,624 __main__ 0/1 INFO :: Iteration=1441, Time=2.401667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1451, Time=2.418333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:01,944 __main__ 0/1 INFO :: Iteration=1451, Time=2.418333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1461, Time=2.435000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:04,320 __main__ 0/1 INFO :: Iteration=1461, Time=2.435000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1471, Time=2.451667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:06,837 __main__ 0/1 INFO :: Iteration=1471, Time=2.451667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1481, Time=2.468333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:09,146 __main__ 0/1 INFO :: Iteration=1481, Time=2.468333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1491, Time=2.485000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:11,479 __main__ 0/1 INFO :: Iteration=1491, Time=2.485000e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1501, Time=2.501667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:13,983 __main__ 0/1 INFO :: Iteration=1501, Time=2.501667e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:__main__:Iteration=1511, Time=2.518333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:16,354 __main__ 0/1 INFO :: Iteration=1511, Time=2.518333e+02, dt=1.666667e-01
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR:__main__:Exception raised, triggering end of main loop.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:18,835 __main__ 0/1 ERROR :: Exception raised, triggering end of main loop.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:solvers:Final iteration: 1520
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:18,839 solvers 0/1 INFO :: Final iteration: 1520
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:solvers:Final sim time: 253.38214886979657
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:18,844 solvers 0/1 INFO :: Final sim time: 253.38214886979657
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:solvers:Setup time (init - iter 0): 4.052 sec
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:18,847 solvers 0/1 INFO :: Setup time (init - iter 0): 4.052 sec
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:solvers:Warmup time (iter 0-10): 2.949 sec
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:18,851 solvers 0/1 INFO :: Warmup time (iter 0-10): 2.949 sec
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:solvers:Run time (iter 10-end): 364.2 sec
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:18,853 solvers 0/1 INFO :: Run time (iter 10-end): 364.2 sec
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:solvers:CPU time (iter 10-end): 0.1012 cpu-hr
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:18,856 solvers 0/1 INFO :: CPU time (iter 10-end): 0.1012 cpu-hr
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:solvers:Speed: 4.043e+05 mode-stages/cpu-sec
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-07-02 09:54:18,858 solvers 0/1 INFO :: Speed: 4.043e+05 mode-stages/cpu-sec
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-1-29fc9d3aa0ab&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> 
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">---&gt; </span><span class="mi">19</span> <span class="kn">import</span> <span class="nn">dedalus.public</span> <span class="k">as</span> <span class="nn">d3</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">import</span> <span class="nn">logging</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-500f38dac2a7&gt;</span> in <span class="ni">&lt;cell line: 96&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Starting main loop&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">while</span> <span class="n">solver</span><span class="o">.</span><span class="n">proceed</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">99</span>         <span class="n">solver</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>         <span class="k">if</span> <span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">iteration</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Iteration=</span><span class="si">%i</span><span class="s1">, Time=</span><span class="si">%e</span><span class="s1">, dt=</span><span class="si">%e</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">iteration</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">sim_time</span><span class="p">,</span> <span class="n">timestep</span><span class="p">))</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;dedalus&#39;
+<span class="nn">/usr/local/lib/python3.10/dist-packages/dedalus/core/solvers.py</span> in <span class="ni">step</span><span class="nt">(self, dt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">654</span>             <span class="bp">self</span><span class="o">.</span><span class="n">warmup_time</span> <span class="o">=</span> <span class="n">wall_time</span>
+<span class="g g-Whitespace">    </span><span class="mi">655</span>         <span class="c1"># Advance using timestepper</span>
+<span class="ne">--&gt; </span><span class="mi">656</span>         <span class="bp">self</span><span class="o">.</span><span class="n">timestepper</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">wall_time</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">657</span>         <span class="c1"># Update iteration</span>
+<span class="g g-Whitespace">    </span><span class="mi">658</span>         <span class="bp">self</span><span class="o">.</span><span class="n">iteration</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NOTE</span>: If your import is failing due to a missing package, you can
-<span class="n">manually</span> <span class="n">install</span> <span class="n">dependencies</span> <span class="n">using</span> <span class="n">either</span> <span class="o">!</span>pip or !apt.
+<span class="nn">/usr/local/lib/python3.10/dist-packages/dedalus/core/timesteppers.py</span> in <span class="ni">step</span><span class="nt">(self, dt, wall_time)</span>
+<span class="g g-Whitespace">    </span><span class="mi">627</span>                 <span class="c1"># Slice out valid subdata, skipping invalid components</span>
+<span class="g g-Whitespace">    </span><span class="mi">628</span>                 <span class="n">spRHS</span> <span class="o">=</span> <span class="n">RHS</span><span class="o">.</span><span class="n">get_subdata</span><span class="p">(</span><span class="n">sp</span><span class="p">)[:</span><span class="n">sp</span><span class="o">.</span><span class="n">LHS</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="ne">--&gt; </span><span class="mi">629</span>                 <span class="n">spX</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">LHS_solvers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">spRHS</span><span class="p">)</span>  <span class="c1"># CREATES TEMPORARY</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span>                 <span class="c1"># Make output buffer including invalid components for scatter</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span>                 <span class="n">spX2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">sp</span><span class="o">.</span><span class="n">pre_right</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">subsystems</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">spX</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>  <span class="c1"># CREATES TEMPORARY</span>
 
-<span class="n">To</span> <span class="n">view</span> <span class="n">examples</span> <span class="n">of</span> <span class="n">installing</span> <span class="n">some</span> <span class="n">common</span> <span class="n">dependencies</span><span class="p">,</span> <span class="n">click</span> <span class="n">the</span>
-<span class="s2">&quot;Open Examples&quot;</span> <span class="n">button</span> <span class="n">below</span><span class="o">.</span>
-<span class="gt">---------------------------------------------------------------------------</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/dedalus/libraries/matsolvers.py</span> in <span class="ni">solve</span><span class="nt">(self, vector)</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span>                             <span class="n">options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span> 
+<span class="ne">--&gt; </span><span class="mi">145</span>     <span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vector</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">146</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">LU</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">trans</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span> 
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -563,18 +1854,18 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Install FFTW</span>
-<span class="o">!</span>apt-get install libfftw3-dev
-<span class="o">!</span>apt-get install libfftw3-mpi-dev
+<span class="o">!</span>apt-get<span class="w"> </span>install<span class="w"> </span>libfftw3-dev
+<span class="o">!</span>apt-get<span class="w"> </span>install<span class="w"> </span>libfftw3-mpi-dev
 
 <span class="c1"># Step 2: Set paths for Dedalus installation</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MPI_INCLUDE_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/x86_64-linux-gnu/openmpi/include&quot;</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MPI_LIBRARY_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/x86_64-linux-gnu&quot;</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;FFTW_INCLUDE_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/include&quot;</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;FFTW_LIBRARY_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/x86_64-linux-gnu&quot;</span>
 
 <span class="c1"># Step 3: Install Dedalus using pip</span>
-<span class="o">!</span>pip3 install --no-cache http://github.com/dedalusproject/dedalus/zipball/d3/
+<span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>--no-cache<span class="w"> </span>http://github.com/dedalusproject/dedalus/zipball/d3/
 </pre></div>
 </div>
 </div>
@@ -928,26 +2219,23 @@ Successfully installed coverage-6.3.2 dedalus-3.0.0a0 mpi4py-3.1.3 py-cpuinfo-8.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!mv /content/snapshots /content/drive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/snapshots</span>
 <span class="c1">#!pip uninstall dedalus</span>
-<span class="o">!</span>pip3 install --no-cache http://github.com/dedalusproject/dedalus/zipball/d3/
+<span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>--no-cache<span class="w"> </span>http://github.com/dedalusproject/dedalus/zipball/d3/
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting http://github.com/dedalusproject/dedalus/zipball/d3/
-  Downloading http://github.com/dedalusproject/dedalus/zipball/d3/
-     - 23.3 MB 798 kB/s
-?25h  Installing build dependencies ... ?25l?25hdone
-  Getting requirements to build wheel ... ?25l?25herror
-<span class=" -Color -Color-Yellow">WARNING: Discarding http://github.com/dedalusproject/dedalus/zipball/d3/. Command errored out with exit status 1: /usr/bin/python3 /usr/local/lib/python3.7/dist-packages/pip/_vendor/pep517/in_process/_in_process.py get_requires_for_build_wheel /tmp/tmpdclesyj7 Check the logs for full command output.</span>
-<span class=" -Color -Color-Red">ERROR: Command errored out with exit status 1: /usr/bin/python3 /usr/local/lib/python3.7/dist-packages/pip/_vendor/pep517/in_process/_in_process.py get_requires_for_build_wheel /tmp/tmpdclesyj7 Check the logs for full command output.</span>
+<span class=" -Color -Color-Red">  ERROR: HTTP error 404 while getting http://github.com/dedalusproject/dedalus/zipball/d3/</span>
+<span class=" -Color -Color-Red">ERROR: Could not install requirement http://github.com/dedalusproject/dedalus/zipball/d3/ because of HTTP error 404 Client Error: Not Found for url: https://codeload.github.com/DedalusProject/dedalus/legacy.zip/d3 for URL http://github.com/dedalusproject/dedalus/zipball/d3/</span>
+
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for plotting </span>
-<span class="o">!</span>pip install dedalus
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for plotting</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>dedalus
 </pre></div>
 </div>
 </div>
@@ -1008,7 +2296,7 @@ Successfully installed dedalus-2.2006
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/gdrive&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1021,7 +2309,7 @@ Successfully installed dedalus-2.2006
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls /content/drive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/snapshots/snapshots_s*.h5
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>/content/drive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/snapshots/snapshots_s*.h5
 </pre></div>
 </div>
 </div>
@@ -1068,17 +2356,17 @@ Successfully installed dedalus-2.2006
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mv /content/drive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/snapshots /content/snapshots 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mv<span class="w"> </span>/content/drive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/snapshots<span class="w"> </span>/content/snapshots
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
-<span class="kn">import</span> <span class="nn">dedalus.public</span> <span class="k">as</span> <span class="nn">de</span>
-<span class="kn">from</span> <span class="nn">dedalus.extras</span> <span class="kn">import</span> <span class="n">flow_tools</span>
-<span class="kn">from</span> <span class="nn">dedalus.tools</span> <span class="kn">import</span> <span class="n">post</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dedalus.public</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">de</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dedalus.extras</span><span class="w"> </span><span class="kn">import</span> <span class="n">flow_tools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dedalus.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">post</span>
 <span class="c1">#Merging analysis files</span>
 <span class="n">post</span><span class="o">.</span><span class="n">merge_process_files</span><span class="p">(</span><span class="s2">&quot;snapshots&quot;</span><span class="p">,</span> <span class="n">cleanup</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">set_paths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;snapshots&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;snapshots_s*.h5&quot;</span><span class="p">))</span>
@@ -1111,7 +2399,7 @@ Successfully installed dedalus-2.2006
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_s2_coord_vertices</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">build_s2_coord_vertices</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
     <span class="n">phi</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
     <span class="n">phi_vert</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">phi</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">]])</span>
     <span class="n">phi_vert</span> <span class="o">-=</span> <span class="n">phi_vert</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span>
@@ -1120,8 +2408,8 @@ Successfully installed dedalus-2.2006
     <span class="n">theta_vert</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">],</span> <span class="n">theta_mid</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">phi_vert</span><span class="p">,</span> <span class="n">theta_vert</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s1">&#39;ij&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Save plot of specified tasks for given range of analysis writes.&quot;&quot;&quot;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save plot of specified tasks for given range of analysis writes.&quot;&quot;&quot;</span>
     <span class="c1"># Plot settings</span>
     <span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;vorticity&#39;</span>
     <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">RdBu_r</span>
@@ -1167,8 +2455,8 @@ Successfully installed dedalus-2.2006
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>rm list.txt
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>rm<span class="w"> </span>list.txt
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">37</span><span class="p">):</span>
     <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;ls /content/drive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/snapshots/snapshots_s&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.h5 &gt;&gt; list.txt&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1182,7 +2470,7 @@ Successfully installed dedalus-2.2006
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mkdir /content/drive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/figures
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mkdir<span class="w"> </span>/content/drive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/figures
 </pre></div>
 </div>
 </div>
@@ -1240,13 +2528,13 @@ Successfully installed dedalus-2.2006
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">h5py</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
 
 
-<span class="k">def</span> <span class="nf">build_s2_coord_vertices</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">build_s2_coord_vertices</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
     <span class="n">phi</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
     <span class="n">phi_vert</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">phi</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">]])</span>
     <span class="n">phi_vert</span> <span class="o">-=</span> <span class="n">phi_vert</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span>
@@ -1302,8 +2590,8 @@ Successfully installed dedalus-2.2006
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
 
 <span class="c1"># filepaths</span>
 <span class="n">fp_in</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/website-hugo/chaos_and_predictability/week3/RB2D/2D_shallow_water_output/figures/*.png&quot;</span>
@@ -1336,7 +2624,7 @@ Successfully installed dedalus-2.2006
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eq_eval</span><span class="p">(</span><span class="n">eq_str</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">eq_eval</span><span class="p">(</span><span class="n">eq_str</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span> <span class="k">for</span> <span class="n">expr</span> <span class="ow">in</span> <span class="n">split_equation</span><span class="p">(</span><span class="n">eq_str</span><span class="p">)]</span>
 </pre></div>
 </div>
@@ -1355,7 +2643,7 @@ Successfully installed dedalus-2.2006
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">eq_eval</span><span class="p">(</span><span class="s2">&quot;u = 0&quot;</span><span class="p">)</span>
 
 <span class="nn">&lt;ipython-input-1-78d4b9596683&gt;</span> in <span class="ni">eq_eval</span><span class="nt">(eq_str)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">eq_eval</span><span class="p">(</span><span class="n">eq_str</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">eq_eval</span><span class="p">(</span><span class="n">eq_str</span><span class="p">):</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="p">[</span><span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span> <span class="k">for</span> <span class="n">expr</span> <span class="ow">in</span> <span class="n">split_equation</span><span class="p">(</span><span class="n">eq_str</span><span class="p">)]</span>
 
 <span class="ne">NameError</span>: name &#39;split_equation&#39; is not defined
@@ -1376,7 +2664,7 @@ Successfully installed dedalus-2.2006
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./week3/RB2D"
         },
         predefinedOutput: true
@@ -1384,30 +2672,86 @@ Successfully installed dedalus-2.2006
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
+          </div>
+          <footer class="bd-footer-content">
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Kai-Chih Tseng<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
-
-
-      </div>
-    </div>
+<div class="bd-footer-content__inner container">
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kai-Chih Tseng
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
