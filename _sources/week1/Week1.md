@@ -63,18 +63,13 @@ name: FIG3
 The final states' probability density function of three ensemble forecast shown in Fig. 2
 ```
 
-:::{admonition} Run this yourself — no installation required
+:::{admonition} Run this yourself in Google Colab
 :class: tip
-The two figures above are reproduced in a live notebook that runs **entirely in your browser**: no Python installation, no account, nothing to download. Press the button below, then run the cells with **Shift+Enter** and change whatever you like — the lead time, the size of the initial perturbation, or the parameters $\rho$, $\sigma$ and $\beta$.
+Both figures above are reproduced in a companion notebook that you can open and run with one click — no installation required, just a Google account:
 
-```{notebooklite} lorenz63_explore.ipynb
-:width: 100%
-:height: 700px
-:prompt: Launch the interactive Lorenz 63 notebook
-:prompt_color: "#d9e6f2"
-```
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kuiper2000/chaos_and_predictability/blob/master/week1/lorenz63_explore.ipynb)
 
-The first launch takes a few seconds while Python is downloaded into the browser; after that everything runs locally on your own machine.
+The notebook uses only `numpy` and `matplotlib`, both of which Colab already provides, so nothing needs to be installed. Run the cells with **Shift+Enter**, then start changing things: the forecast lead time, the size of the initial perturbation, or the parameters $\rho$, $\sigma$ and $\beta$. The exercises at the end of the notebook suggest where to begin.
 :::
 
 The take-home message from [FIG2](FIG2) and [FIG3](FIG3) is that predictability is a function of the state, not a universal number. With that in mind it becomes much easier to see why even the most experienced forecasters and the most advanced NWP systems sometimes struggle — so be kind to them.
