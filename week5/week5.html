@@ -407,7 +407,7 @@ were focusing on the intrinsic predictability limit (i.e., the upper limit of pr
 <p>Before diving right in the LE, we will start with something simple, which will enable us to better understand the physical meaning behind. Two major ingredients in LE are (1) Jacobian matrix and (2) determinant.</p>
 <p>Mathematically, Jacobian matrix represents mapping one matrix to the other with a simple linear transformation. For example, when we manage to convert Polar coordinate to Cartesian coordinate, we can use the following formula,</p>
 <div class="math notranslate nohighlight" id="equation-eq30">
-<span class="eqno">(30)<a class="headerlink" href="#equation-eq30" title="Link to this equation">#</a></span>\[\begin{split}\begin{bmatrix}
+<span class="eqno">(40)<a class="headerlink" href="#equation-eq30" title="Link to this equation">#</a></span>\[\begin{split}\begin{bmatrix}
 x  \\
 y   
 \end{bmatrix} = 
@@ -422,23 +422,23 @@ r\mathrm{sin}(\theta)
 \end{bmatrix}\end{split}\]</div>
 <p>However, if the transformation is too complicated, we might want to find an easier way to approach the problem. One way to do that is through a simple linear transformation. So… how does it work? Let’s start from a nonlinear function <span class="math notranslate nohighlight">\(y=f(x)\)</span>, which maps <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> or <span class="math notranslate nohighlight">\(f(x)\)</span>. If we only focus on a small range (let’s say…centering around <span class="math notranslate nohighlight">\(p\)</span>) and assume a linear function <span class="math notranslate nohighlight">\(T(x)\)</span> (i.e., <span class="math notranslate nohighlight">\(T(x) = Ax+b\)</span>) can well approximate the more complicated function <span class="math notranslate nohighlight">\(f(x)\)</span>. This will give us</p>
 <div class="math notranslate nohighlight" id="equation-eq31">
-<span class="eqno">(31)<a class="headerlink" href="#equation-eq31" title="Link to this equation">#</a></span>\[T(x) = f(x) =Ax+b\]</div>
+<span class="eqno">(41)<a class="headerlink" href="#equation-eq31" title="Link to this equation">#</a></span>\[T(x) = f(x) =Ax+b\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight" id="equation-eq32">
-<span class="eqno">(32)<a class="headerlink" href="#equation-eq32" title="Link to this equation">#</a></span>\[T(x) = A(x-p)+f(p)\]</div>
+<span class="eqno">(42)<a class="headerlink" href="#equation-eq32" title="Link to this equation">#</a></span>\[T(x) = A(x-p)+f(p)\]</div>
 <p>One way to test if the linear assumption holds is by examining whether the <span class="math notranslate nohighlight">\(f(x)\)</span> will approach <span class="math notranslate nohighlight">\(T(x)\)</span> when <span class="math notranslate nohighlight">\(x\rightarrow p\)</span>, i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq33">
-<span class="eqno">(33)<a class="headerlink" href="#equation-eq33" title="Link to this equation">#</a></span>\[\mathbf{lim}_{x\rightarrow p} \frac{f(x)-T(p)-A(x-p)}{||x-p||} = 0\]</div>
-<p><a class="reference internal" href="#equation-eq33">(33)</a> can be read as “if the difference between <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(T(x)\)</span> is well approximated by linear function <span class="math notranslate nohighlight">\(A(x-p)\)</span> and differentiable at point <span class="math notranslate nohighlight">\(p\)</span>”.</p>
-<p>Now, we can extend the formula in <a class="reference internal" href="#equation-eq33">(33)</a> to higher dimensions. Let’s first assume that <span class="math notranslate nohighlight">\(x\)</span> has matrix form <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> with <span class="math notranslate nohighlight">\(n\)</span> dimensions. In addition, we introduce another matrix <span class="math notranslate nohighlight">\(\mathbf{e}=[e_1,e_2,e_3...,e_j,...e_n]\)</span>, which is an n-dimension basis. We further assume that <span class="math notranslate nohighlight">\(\mathbf{e}=0\)</span> except that its <span class="math notranslate nohighlight">\(j\)</span>th element equals 1 (i.e.,<span class="math notranslate nohighlight">\(e_{j}=1\)</span>) and include a small (nearly 0) constant, <span class="math notranslate nohighlight">\(h\)</span>. If <span class="math notranslate nohighlight">\(f(x)\)</span> is differentiable at any given dimension, then we can rewrite <a class="reference internal" href="#equation-eq33">(33)</a> as</p>
+<span class="eqno">(43)<a class="headerlink" href="#equation-eq33" title="Link to this equation">#</a></span>\[\mathbf{lim}_{x\rightarrow p} \frac{f(x)-T(p)-A(x-p)}{||x-p||} = 0\]</div>
+<p><a class="reference internal" href="#equation-eq33">(43)</a> can be read as “if the difference between <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(T(x)\)</span> is well approximated by linear function <span class="math notranslate nohighlight">\(A(x-p)\)</span> and differentiable at point <span class="math notranslate nohighlight">\(p\)</span>”.</p>
+<p>Now, we can extend the formula in <a class="reference internal" href="#equation-eq33">(43)</a> to higher dimensions. Let’s first assume that <span class="math notranslate nohighlight">\(x\)</span> has matrix form <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> with <span class="math notranslate nohighlight">\(n\)</span> dimensions. In addition, we introduce another matrix <span class="math notranslate nohighlight">\(\mathbf{e}=[e_1,e_2,e_3...,e_j,...e_n]\)</span>, which is an n-dimension basis. We further assume that <span class="math notranslate nohighlight">\(\mathbf{e}=0\)</span> except that its <span class="math notranslate nohighlight">\(j\)</span>th element equals 1 (i.e.,<span class="math notranslate nohighlight">\(e_{j}=1\)</span>) and include a small (nearly 0) constant, <span class="math notranslate nohighlight">\(h\)</span>. If <span class="math notranslate nohighlight">\(f(x)\)</span> is differentiable at any given dimension, then we can rewrite <a class="reference internal" href="#equation-eq33">(43)</a> as</p>
 <div class="math notranslate nohighlight" id="equation-eq34">
-<span class="eqno">(34)<a class="headerlink" href="#equation-eq34" title="Link to this equation">#</a></span>\[\mathbf{lim}_{\mathbf{x}\rightarrow \mathbf{p}} \frac{f(\mathbf{p}+h\mathbf{e_j})-f(\mathbf{p})-A(h \mathbf{e}_j)}{||h\mathbf{e}_j||} = 0\]</div>
-<p>and because <span class="math notranslate nohighlight">\(A(h \mathbf{e_j})\)</span> = <span class="math notranslate nohighlight">\(hA(\mathbf{e_j})\)</span>. <a class="reference internal" href="#equation-eq34">(34)</a> will lead to</p>
+<span class="eqno">(44)<a class="headerlink" href="#equation-eq34" title="Link to this equation">#</a></span>\[\mathbf{lim}_{\mathbf{x}\rightarrow \mathbf{p}} \frac{f(\mathbf{p}+h\mathbf{e_j})-f(\mathbf{p})-A(h \mathbf{e}_j)}{||h\mathbf{e}_j||} = 0\]</div>
+<p>and because <span class="math notranslate nohighlight">\(A(h \mathbf{e_j})\)</span> = <span class="math notranslate nohighlight">\(hA(\mathbf{e_j})\)</span>. <a class="reference internal" href="#equation-eq34">(44)</a> will lead to</p>
 <div class="math notranslate nohighlight" id="equation-eq35">
-<span class="eqno">(35)<a class="headerlink" href="#equation-eq35" title="Link to this equation">#</a></span>\[\mathbf{lim}_{h\rightarrow 0} \frac{f(\mathbf{p}+h\mathbf{e_j})-f(\mathbf{p})}{||h\mathbf{e}_j||} =A \mathbf{e}_j\]</div>
-<p>On the left-hand-side of <a class="reference internal" href="#equation-eq35">(35)</a> is the partial derivative of <span class="math notranslate nohighlight">\(f\)</span> at point <span class="math notranslate nohighlight">\(\mathbf{p}\)</span>. Therefore, taking the derivative at <span class="math notranslate nohighlight">\(j\)</span>th dimension can be written as…</p>
+<span class="eqno">(45)<a class="headerlink" href="#equation-eq35" title="Link to this equation">#</a></span>\[\mathbf{lim}_{h\rightarrow 0} \frac{f(\mathbf{p}+h\mathbf{e_j})-f(\mathbf{p})}{||h\mathbf{e}_j||} =A \mathbf{e}_j\]</div>
+<p>On the left-hand-side of <a class="reference internal" href="#equation-eq35">(45)</a> is the partial derivative of <span class="math notranslate nohighlight">\(f\)</span> at point <span class="math notranslate nohighlight">\(\mathbf{p}\)</span>. Therefore, taking the derivative at <span class="math notranslate nohighlight">\(j\)</span>th dimension can be written as…</p>
 <div class="math notranslate nohighlight" id="equation-eq36">
-<span class="eqno">(36)<a class="headerlink" href="#equation-eq36" title="Link to this equation">#</a></span>\[\begin{split}\frac{\partial f}{\partial x_j} = 
+<span class="eqno">(46)<a class="headerlink" href="#equation-eq36" title="Link to this equation">#</a></span>\[\begin{split}\frac{\partial f}{\partial x_j} = 
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_j}  \\
 \frac{\partial f_2}{\partial x_j}  \\
@@ -448,7 +448,7 @@ r\mathrm{sin}(\theta)
 \end{bmatrix}\end{split}\]</div>
 <p>The full <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> matrix can be derived by taking the partial derivative of every component in <span class="math notranslate nohighlight">\(f\)</span>, i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq37">
-<span class="eqno">(37)<a class="headerlink" href="#equation-eq37" title="Link to this equation">#</a></span>\[\begin{split}\mathbf{A} = 
+<span class="eqno">(47)<a class="headerlink" href="#equation-eq37" title="Link to this equation">#</a></span>\[\begin{split}\mathbf{A} = 
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_1} &amp; \frac{\partial f_1}{\partial x_2} &amp; \cdots  &amp; \frac{\partial f_1}{\partial x_j} \\
 \frac{\partial f_2}{\partial x_1} &amp; \frac{\partial f_2}{\partial x_2} &amp; \cdots  &amp; \frac{\partial f_2}{\partial x_j}  \\
@@ -458,7 +458,7 @@ r\mathrm{sin}(\theta)
 \end{bmatrix}\end{split}\]</div>
 <p>Now, we can go back to our original question: converting the polar coordinate to Cartesian coordinate. We can find the <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> matrix for this problem is</p>
 <div class="math notranslate nohighlight" id="equation-eq38">
-<span class="eqno">(38)<a class="headerlink" href="#equation-eq38" title="Link to this equation">#</a></span>\[\begin{split}\mathbf{A} = 
+<span class="eqno">(48)<a class="headerlink" href="#equation-eq38" title="Link to this equation">#</a></span>\[\begin{split}\mathbf{A} = 
 \begin{bmatrix}
 \frac{\partial r\mathrm{cos}(\theta)}{\partial r}  &amp; \frac{\partial  r\mathrm{cos}(\theta)}{\partial \theta}\\
 \frac{\partial r\mathrm{sin}(\theta)}{\partial r}  &amp; \frac{\partial  r\mathrm{sin}(\theta)}{\partial \theta}
@@ -475,7 +475,7 @@ r\mathrm{sin}(\theta)
 </div>
 <p>The other key ingredient we need to learn is “determinant”. Determinant evaluates how much the area spanned by the eigen basis has changed after the linear transformation. For example, in week 1, we have used the following example,</p>
 <div class="math notranslate nohighlight" id="equation-eq39">
-<span class="eqno">(39)<a class="headerlink" href="#equation-eq39" title="Link to this equation">#</a></span>\[\begin{split}\begin{bmatrix}
+<span class="eqno">(49)<a class="headerlink" href="#equation-eq39" title="Link to this equation">#</a></span>\[\begin{split}\begin{bmatrix}
 1 &amp; 0 \\
 0 &amp; 2 
 \end{bmatrix} =
@@ -500,7 +500,7 @@ y
 \end{bmatrix}\)</span>
 the corresponding linear transformation can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq40">
-<span class="eqno">(40)<a class="headerlink" href="#equation-eq40" title="Link to this equation">#</a></span>\[\begin{split}\begin{bmatrix}
+<span class="eqno">(50)<a class="headerlink" href="#equation-eq40" title="Link to this equation">#</a></span>\[\begin{split}\begin{bmatrix}
 x  \\
 y  
 \end{bmatrix} =
@@ -513,7 +513,7 @@ v
 \end{bmatrix}. \end{split}\]</div>
 <p>if we are using <span class="math notranslate nohighlight">\(du\)</span> and <span class="math notranslate nohighlight">\(dv\)</span> to represent the unit vectors in the original coordinate, then the unit vector in the final coordinates will be…</p>
 <div class="math notranslate nohighlight" id="equation-eq41">
-<span class="eqno">(41)<a class="headerlink" href="#equation-eq41" title="Link to this equation">#</a></span>\[\begin{split}\begin{bmatrix}
+<span class="eqno">(51)<a class="headerlink" href="#equation-eq41" title="Link to this equation">#</a></span>\[\begin{split}\begin{bmatrix}
 dx  \\
 dy  
 \end{bmatrix} =
@@ -526,7 +526,7 @@ dv
 \end{bmatrix}. \end{split}\]</div>
 <p>for the area spanned by <span class="math notranslate nohighlight">\(dx\)</span> and <span class="math notranslate nohighlight">\(dy\)</span> in the final coordinate, it can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq42">
-<span class="eqno">(42)<a class="headerlink" href="#equation-eq42" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
+<span class="eqno">(52)<a class="headerlink" href="#equation-eq42" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
 &amp; dxdy 
 \\
 &amp; =||\mathrm{det}\begin{bmatrix}
@@ -550,23 +550,23 @@ dx &amp; 0 \\
 &amp;=
 ||\mathrm{det} J(u,v)||dudv
 \end{align*}\end{split}\]</div>
-<p>from <a class="reference internal" href="#equation-eq42">(42)</a>, we can easily observe that the area spanned by unit vector has expanded (shrunk) by a factor of <span class="math notranslate nohighlight">\(||\mathrm{det}J(u,v)||\)</span>.</p>
+<p>from <a class="reference internal" href="#equation-eq42">(52)</a>, we can easily observe that the area spanned by unit vector has expanded (shrunk) by a factor of <span class="math notranslate nohighlight">\(||\mathrm{det}J(u,v)||\)</span>.</p>
 </section>
 <section id="connections-between-liouville-equation-and-ensemble-forecasts">
 <h2>Connections between Liouville equation and ensemble forecasts<a class="headerlink" href="#connections-between-liouville-equation-and-ensemble-forecasts" title="Link to this heading">#</a></h2>
 <p>OK, now we know the mathematical meaning (geometric meaning) of a Jacobian matrix and determinant. To further understand the their roles in LE, let’s first take a what Joseph Liouville found in 1838. For a dynamical system with third order differential terms</p>
 <div class="math notranslate nohighlight" id="equation-eq43">
-<span class="eqno">(43)<a class="headerlink" href="#equation-eq43" title="Link to this equation">#</a></span>\[x^{'''}=\mathbf{\Phi}(t,x,x^{''},x^{'''})\]</div>
+<span class="eqno">(53)<a class="headerlink" href="#equation-eq43" title="Link to this equation">#</a></span>\[x^{'''}=\mathbf{\Phi}(t,x,x^{''},x^{'''})\]</div>
 <p>he subsequently assumed that the solution has a form of</p>
 <div class="math notranslate nohighlight" id="equation-eq44">
-<span class="eqno">(44)<a class="headerlink" href="#equation-eq44" title="Link to this equation">#</a></span>\[x = x(t,a,b,c)\]</div>
+<span class="eqno">(54)<a class="headerlink" href="#equation-eq44" title="Link to this equation">#</a></span>\[x = x(t,a,b,c)\]</div>
 <p>where a, b and c are the initial state of this system.
 He further defined a Jacobian matrix, which maps the initial state to the final state, i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq45">
-<span class="eqno">(45)<a class="headerlink" href="#equation-eq45" title="Link to this equation">#</a></span>\[x(t=n_t,...) = J(a,b,c)x(t=0,a,b,c)\]</div>
+<span class="eqno">(55)<a class="headerlink" href="#equation-eq45" title="Link to this equation">#</a></span>\[x(t=n_t,...) = J(a,b,c)x(t=0,a,b,c)\]</div>
 <p>the determinant of this Jacobian matrix can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq46">
-<span class="eqno">(46)<a class="headerlink" href="#equation-eq46" title="Link to this equation">#</a></span>\[\begin{split}\alpha(a,b,c,t)  
+<span class="eqno">(56)<a class="headerlink" href="#equation-eq46" title="Link to this equation">#</a></span>\[\begin{split}\alpha(a,b,c,t)  
 =||\mathrm{det}
 \begin{bmatrix}
 \frac{\partial x}{\partial a}      &amp; \frac{\partial x}{\partial b} &amp; \frac{\partial x}{\partial c} \\
@@ -575,27 +575,27 @@ He further defined a Jacobian matrix, which maps the initial state to the final 
 \end{bmatrix} ||\end{split}\]</div>
 <p>He then proved that</p>
 <div class="math notranslate nohighlight" id="equation-eq47">
-<span class="eqno">(47)<a class="headerlink" href="#equation-eq47" title="Link to this equation">#</a></span>\[\frac{\partial \alpha}{\partial t}=\alpha\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\]</div>
+<span class="eqno">(57)<a class="headerlink" href="#equation-eq47" title="Link to this equation">#</a></span>\[\frac{\partial \alpha}{\partial t}=\alpha\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><a class="reference internal" href="#equation-eq47">(47)</a> can be proved by using the chain rule i.e.,
+<p><a class="reference internal" href="#equation-eq47">(57)</a> can be proved by using the chain rule i.e.,
 <span class="math notranslate nohighlight">\(\frac{\partial x^{'''}}{\partial a}=\frac{\partial P}{\partial a} 
 = \frac{\partial P}{\partial x}\frac{\partial x}{\partial a} + \frac{\partial P}{\partial x^{''}}\frac{\partial x^{''}}{\partial a}+\frac{\partial P}{\partial x^{'''}}\frac{\partial x^{'''}}{\partial a}\)</span>  (HW)</p>
 </div>
-<p>Let’s take a look what <a class="reference internal" href="#equation-eq47">(47)</a> tells us. First, <a class="reference internal" href="#equation-eq44">(44)</a> describes how the dynamical system gonna evolve with time. If <span class="math notranslate nohighlight">\(x\)</span> represents the forecast uncertainty or forecast error (i.e., the distance between any given ensemble member to the ensemble mean), then <a class="reference internal" href="#equation-eq44">(44)</a> is a “prognostic equation of model uncertainty”. Second, the determinant tells us the how the volume spanned by eigen basis changes after the linear transformation. Physically, the volume spanned by different ensemble members is so-called ensemble spread. Thus, <a class="reference internal" href="#equation-eq47">(47)</a> is a “prognostic equation for ensemble spread” (i.e., forecast the entire PDF). In addition, it also tells us the time tendency of ensemble spread is only related to the highest-order differentiation i.e., <span class="math notranslate nohighlight">\(\frac{\partial }{\partial x^{'''}}\)</span>.</p>
-<p><a class="reference internal" href="#equation-eq47">(47)</a> also has some very interesting applications in the information theory. If we rewrite <a class="reference internal" href="#equation-eq47">(47)</a> by dividing both side with <span class="math notranslate nohighlight">\(\alpha\)</span>, we can have</p>
+<p>Let’s take a look what <a class="reference internal" href="#equation-eq47">(57)</a> tells us. First, <a class="reference internal" href="#equation-eq44">(54)</a> describes how the dynamical system gonna evolve with time. If <span class="math notranslate nohighlight">\(x\)</span> represents the forecast uncertainty or forecast error (i.e., the distance between any given ensemble member to the ensemble mean), then <a class="reference internal" href="#equation-eq44">(54)</a> is a “prognostic equation of model uncertainty”. Second, the determinant tells us the how the volume spanned by eigen basis changes after the linear transformation. Physically, the volume spanned by different ensemble members is so-called ensemble spread. Thus, <a class="reference internal" href="#equation-eq47">(57)</a> is a “prognostic equation for ensemble spread” (i.e., forecast the entire PDF). In addition, it also tells us the time tendency of ensemble spread is only related to the highest-order differentiation i.e., <span class="math notranslate nohighlight">\(\frac{\partial }{\partial x^{'''}}\)</span>.</p>
+<p><a class="reference internal" href="#equation-eq47">(57)</a> also has some very interesting applications in the information theory. If we rewrite <a class="reference internal" href="#equation-eq47">(57)</a> by dividing both side with <span class="math notranslate nohighlight">\(\alpha\)</span>, we can have</p>
 <div class="math notranslate nohighlight" id="equation-eq48">
-<span class="eqno">(48)<a class="headerlink" href="#equation-eq48" title="Link to this equation">#</a></span>\[\frac{\partial \mathrm{ln}\alpha}{\partial t}=\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\]</div>
-<p>we further integrate both sides over the entire phase space. One can find that the integration of right-hand-side of <a class="reference internal" href="#equation-eq49">(49)</a> is always 0 (why?). Thus, <a class="reference internal" href="#equation-eq48">(48)</a> is also equivalent to</p>
+<span class="eqno">(58)<a class="headerlink" href="#equation-eq48" title="Link to this equation">#</a></span>\[\frac{\partial \mathrm{ln}\alpha}{\partial t}=\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\]</div>
+<p>we further integrate both sides over the entire phase space. One can find that the integration of right-hand-side of <a class="reference internal" href="#equation-eq49">(59)</a> is always 0 (why?). Thus, <a class="reference internal" href="#equation-eq48">(58)</a> is also equivalent to</p>
 <div class="math notranslate nohighlight" id="equation-eq49">
-<span class="eqno">(49)<a class="headerlink" href="#equation-eq49" title="Link to this equation">#</a></span>\[\int\frac{\partial \mathrm{ln}\alpha}{\partial t}dx^{''}=\int\frac{\partial \mathbf{\Phi}}{\partial x^{''}} dx^{''}=0\]</div>
-<p>this also gives us <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t} \int\mathrm{ln}\alpha dx^{''}\)</span> = 0 (note that we swap the order of integration and <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t}\)</span> since both of them are linear operators). <a class="reference internal" href="#equation-eq49">(49)</a> is so-called the “conservation of information”. In <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)#Definition">information theory</a>, the definition of “information” is very similar to the left-hand-side of <a class="reference internal" href="#equation-eq49">(49)</a>, where the information provided by <span class="math notranslate nohighlight">\(i\)</span>th element is <span class="math notranslate nohighlight">\(\mathrm{ln}\alpha(x_{i})\)</span>.</p>
-<p>An alternative way to write <a class="reference internal" href="#equation-eq49">(49)</a> is using the density form, where the density is defined as <span class="math notranslate nohighlight">\(\rho=\frac{1}{\alpha}\)</span> (bigger ensemble spread, less likely to have observe members at a fixed volume). Thus, a more widely used definition of information is <span class="math notranslate nohighlight">\(-\mathrm{ln}\rho(x_{i})\)</span>.</p>
-<p>Now, we can imagine how powerful <a class="reference internal" href="#equation-eq47">(47)</a> is since it forecasts the entire probability density function. Different from the traditional probabilistic forecast method, which estimates the ensemble spread by generating tens of hundreds of ensemble simulations, LE is a more powerful tool. However, there is no free meal. Implementing LE in real operational forecast is extremely challenging since we need to find the analytical solution of a dynamical system first (i.e., <a class="reference internal" href="#equation-eq44">(44)</a>) and then calculate its derivative over all possible dimensions (i.e., the right-hand-side of <a class="reference internal" href="#equation-eq47">(47)</a>). This is only possible when the dynamical system is simple enough.</p>
+<span class="eqno">(59)<a class="headerlink" href="#equation-eq49" title="Link to this equation">#</a></span>\[\int\frac{\partial \mathrm{ln}\alpha}{\partial t}dx^{''}=\int\frac{\partial \mathbf{\Phi}}{\partial x^{''}} dx^{''}=0\]</div>
+<p>this also gives us <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t} \int\mathrm{ln}\alpha dx^{''}\)</span> = 0 (note that we swap the order of integration and <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t}\)</span> since both of them are linear operators). <a class="reference internal" href="#equation-eq49">(59)</a> is so-called the “conservation of information”. In <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)#Definition">information theory</a>, the definition of “information” is very similar to the left-hand-side of <a class="reference internal" href="#equation-eq49">(59)</a>, where the information provided by <span class="math notranslate nohighlight">\(i\)</span>th element is <span class="math notranslate nohighlight">\(\mathrm{ln}\alpha(x_{i})\)</span>.</p>
+<p>An alternative way to write <a class="reference internal" href="#equation-eq49">(59)</a> is using the density form, where the density is defined as <span class="math notranslate nohighlight">\(\rho=\frac{1}{\alpha}\)</span> (bigger ensemble spread, less likely to have observe members at a fixed volume). Thus, a more widely used definition of information is <span class="math notranslate nohighlight">\(-\mathrm{ln}\rho(x_{i})\)</span>.</p>
+<p>Now, we can imagine how powerful <a class="reference internal" href="#equation-eq47">(57)</a> is since it forecasts the entire probability density function. Different from the traditional probabilistic forecast method, which estimates the ensemble spread by generating tens of hundreds of ensemble simulations, LE is a more powerful tool. However, there is no free meal. Implementing LE in real operational forecast is extremely challenging since we need to find the analytical solution of a dynamical system first (i.e., <a class="reference internal" href="#equation-eq44">(54)</a>) and then calculate its derivative over all possible dimensions (i.e., the right-hand-side of <a class="reference internal" href="#equation-eq47">(57)</a>). This is only possible when the dynamical system is simple enough.</p>
 <p>Next week, we will walk through a few cases where we can analytical implement LE in the forecast of the PDF.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Nobel prize winner, Roger Penrose (Penrose (1989)), who was also Stephan Hawkins’ Ph.D., committee, referred to LE as a very beautiful formula since it describes that the volume of any region of phase spaces must remain the same. Penrose also proposed that a black hole can destroy information (i.e., <span class="math notranslate nohighlight">\(\alpha\)</span> in <a class="reference internal" href="#equation-eq47">(47)</a> is not conserved) and thus the statistical mechanics might break down at the space-time singularity.</p>
+<p>The Nobel prize winner, Roger Penrose (Penrose (1989)), who was also Stephan Hawkins’ Ph.D., committee, referred to LE as a very beautiful formula since it describes that the volume of any region of phase spaces must remain the same. Penrose also proposed that a black hole can destroy information (i.e., <span class="math notranslate nohighlight">\(\alpha\)</span> in <a class="reference internal" href="#equation-eq47">(57)</a> is not conserved) and thus the statistical mechanics might break down at the space-time singularity.</p>
 <p>In addition to his achievement in theoretical physics, Penrose is also an artist who is famous for his 3D Penrose tiling. An award-winning app (mobile game), <a class="reference external" href="https://en.wikipedia.org/wiki/Monument_Valley_(video_game)">monument valley</a> is inspired by his arts. NYC has a National Museum of Mathematics where you can find some of Penrose’s work.</p>
 </div>
 <figure class="align-default" id="fig12">

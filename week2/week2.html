@@ -375,7 +375,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-origins-of-predictability-scale-separation-and-balanced-dynamics">The origins of predictability (Scale Separation) and balanced dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-origins-of-predictability-scale-separation-and-balanced-dynamics">The origins of predictability (Scale Separation) and balanced dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-necessary-condition-for-instability">The necessary condition for instability</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atmospheric-blocking">Atmospheric Blocking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teleconnections">Teleconnections</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
@@ -430,22 +433,97 @@ In a dynamical system, we can use scale analysis to identify the phenomenon with
 </figcaption>
 </figure>
 <p>The other key process for the growth of PV is the barotropic instability. In barotropic instability, the counter-propagating wave happens in meridional direction rather than the vertical direction. Thus, the necessary condition for barotropic instability is the horizontal wind shear. Both barotropic and baroclinic instabilities will lead to the exponential growth of PV anomaly, i.e., <span class="math notranslate nohighlight">\(\frac{Dq'}{Dt}\sim \mathrm{exp}(\sigma t)\)</span>, where <span class="math notranslate nohighlight">\(\sigma\)</span> is the growth rate of this system.</p>
-<p>Now, some of you might have noticed the connection between <a class="reference internal" href="#equation-eq10">(10)</a> and <a class="reference internal" href="../week1/week1.html#equation-eq5">(5)</a>. If we linearize the QG-PV equation by assuming <span class="math notranslate nohighlight">\(\mathbf{\bar{u}}\approx U_m\)</span>, i.e., the mean flow is dominated by the zonal mean wind, we will find the growth of PV perturbation strongly depends on the existence of wind shear. We will walk through the whole derivation in the homework assignment by using Philips two-layer model.</p>
+<p>Now, some of you might have noticed the connection between <a class="reference internal" href="#equation-eq10">(10)</a> and <a class="reference internal" href="../week1/week1.html#equation-eq5">(5)</a>. If we linearize the QG-PV equation by assuming <span class="math notranslate nohighlight">\(\mathbf{\bar{u}}\approx U_m\)</span>, i.e., the mean flow is dominated by the zonal mean wind, we will find the growth of PV perturbation strongly depends on the existence of wind shear. Let us make this statement precise, because “where can errors grow at all?” is exactly the question a forecaster is asking.</p>
+<section id="the-necessary-condition-for-instability">
+<h3>The necessary condition for instability<a class="headerlink" href="#the-necessary-condition-for-instability" title="Link to this heading">#</a></h3>
+<p><br />
+Barotropic and baroclinic instabilities look like two different pictures (meridional versus vertical counter-propagating waves), but they are two faces of the same statement about the <strong>sign of the background PV gradient</strong>. Consider a zonally uniform basic state <span class="math notranslate nohighlight">\(\mathbf{u}=U(y,z)\mathbf{i}\)</span> in thermal wind balance, with streamfunction <span class="math notranslate nohighlight">\(\Psi\)</span> such that <span class="math notranslate nohighlight">\(U=-\partial\Psi/\partial y\)</span>. Its QG-PV follows directly from <a class="reference internal" href="#equation-eq11">(11)</a>,</p>
+<div class="math notranslate nohighlight" id="equation-eq-q">
+<span class="eqno">(12)<a class="headerlink" href="#equation-eq-q" title="Link to this equation">#</a></span>\[\begin{align*}
+Q &amp;= \beta y-\frac{\partial U}{\partial y}+\frac{\partial}{\partial z}\left(\frac{f_o^2}{N^2}\frac{\partial \Psi}{\partial z}\right)
+\end{align*}\]</div>
+<p>and its meridional gradient is</p>
+<div class="math notranslate nohighlight" id="equation-eq-qy">
+<span class="eqno">(13)<a class="headerlink" href="#equation-eq-qy" title="Link to this equation">#</a></span>\[\begin{align*}
+\frac{\partial Q}{\partial y} &amp;= \beta-\underbrace{\frac{\partial^2 U}{\partial y^2}}_{\text{horizontal shear}}-\underbrace{\frac{\partial}{\partial z}\left(\frac{f_o^2}{N^2}\frac{\partial U}{\partial z}\right)}_{\text{vertical shear}}
+\end{align*}\]</div>
+<p>The two shear terms are precisely the barotropic and baroclinic contributions we identified in <a class="reference internal" href="#equation-eq11">(11)</a>. Keep this in mind: everything below is a constraint on the sign of <a class="reference internal" href="#equation-eq-qy">(13)</a>.</p>
+<p>Now decompose the flow into a basic state plus a small perturbation, <span class="math notranslate nohighlight">\(q=Q+q'\)</span> and <span class="math notranslate nohighlight">\(\psi=\Psi+\psi'\)</span>, and retain only terms linear in the perturbation. This is nothing other than the tangent linear model of <a class="reference internal" href="../week1/week1.html#equation-eq5">(5)</a>, with <span class="math notranslate nohighlight">\(\frac{dF}{d\mathbf{X}}\)</span> evaluated on the basic state:</p>
+<div class="math notranslate nohighlight" id="equation-eq-lin">
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq-lin" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
+\frac{\partial q'}{\partial t}+U\frac{\partial q'}{\partial x}+v'\frac{\partial Q}{\partial y} &amp;=0, \qquad 0&lt;z&lt;H \\
+q' &amp;=\nabla^2\psi'+\frac{\partial}{\partial z}\left(F\frac{\partial \psi'}{\partial z}\right), \qquad F\equiv \frac{f_o^2}{N^2}
+\end{align*}\end{split}\]</div>
+<p>Note that the only way the basic state enters the perturbation dynamics is through advection by <span class="math notranslate nohighlight">\(U\)</span> and through <span class="math notranslate nohighlight">\(\partial Q/\partial y\)</span>. The interior equation must be closed by a thermodynamic equation at the two horizontal boundaries (the ground and the tropopause), where <span class="math notranslate nohighlight">\(\omega=0\)</span> and the second equation of <a class="reference internal" href="#equation-eq9">(9)</a> becomes a pure advection equation for buoyancy,</p>
+<div class="math notranslate nohighlight" id="equation-eq-bc">
+<span class="eqno">(15)<a class="headerlink" href="#equation-eq-bc" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
+\frac{\partial b'}{\partial t}+U\frac{\partial b'}{\partial x}+v'\frac{\partial B}{\partial y} &amp;=0, \qquad z=0,H \\
+b'=f_o\frac{\partial \psi'}{\partial z}, \qquad \frac{\partial B}{\partial y} &amp;=-f_o\frac{\partial U}{\partial z}
+\end{align*}\end{split}\]</div>
+<p>where the last relation is just thermal wind: a vertical shear at the boundary <em>is</em> a meridional temperature gradient at the boundary.</p>
+<p>Because the coefficients depend on <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> but not on <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(t\)</span>, we can look for normal-mode solutions <span class="math notranslate nohighlight">\(\psi'(x,y,z,t)=\mathrm{Re}\left[\tilde{\psi}(y,z)e^{ik(x-ct)}\right]\)</span> with a complex phase speed <span class="math notranslate nohighlight">\(c=c_r+ic_i\)</span>. The perturbation then behaves as <span class="math notranslate nohighlight">\(e^{ik(x-c_rt)}e^{kc_it}\)</span>, i.e. a wave propagating at <span class="math notranslate nohighlight">\(c_r\)</span> whose amplitude grows as <span class="math notranslate nohighlight">\(\mathrm{exp}(\sigma t)\)</span> with <span class="math notranslate nohighlight">\(\sigma=kc_i\)</span>. <strong>The question “is the atmosphere unstable?” is therefore the question “can <span class="math notranslate nohighlight">\(c_i\)</span> be non-zero?”</strong> Substituting into <a class="reference internal" href="#equation-eq-lin">(14)</a> and <a class="reference internal" href="#equation-eq-bc">(15)</a> gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-nm">
+<span class="eqno">(16)<a class="headerlink" href="#equation-eq-nm" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
+(U-c)\left(\tilde{\psi}_{yy}+(F\tilde{\psi}_z)_z-k^2\tilde{\psi}\right)+Q_y\tilde{\psi} &amp;=0, \qquad 0&lt;z&lt;H \\
+(U-c)\tilde{\psi}_z-U_z\tilde{\psi} &amp;=0, \qquad z=0,H
+\end{align*}\end{split}\]</div>
+<p>We cannot solve this for a general <span class="math notranslate nohighlight">\(U(y,z)\)</span>, but we do not need to: we only want to know when <span class="math notranslate nohighlight">\(c_i\neq0\)</span> is <em>possible</em>. Multiply the first equation of <a class="reference internal" href="#equation-eq-nm">(16)</a> by <span class="math notranslate nohighlight">\(\tilde{\psi}^*\)</span> and integrate over the domain. Integrating by parts in <span class="math notranslate nohighlight">\(y\)</span>, assuming <span class="math notranslate nohighlight">\(\tilde{\psi}=0\)</span> at the meridional walls (or that they are quiescent latitudes),</p>
+<div class="math notranslate nohighlight" id="equation-eq-ibpy">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eq-ibpy" title="Link to this equation">#</a></span>\[\begin{align*}
+\int_{y_1}^{y_2}\tilde{\psi}^*\tilde{\psi}_{yy}\,dy &amp;= \left[\tilde{\psi}^*\tilde{\psi}_y\right]_{y_1}^{y_2}-\int_{y_1}^{y_2}|\tilde{\psi}_y|^2dy=-\int_{y_1}^{y_2}|\tilde{\psi}_y|^2dy
+\end{align*}\]</div>
+<p>and in <span class="math notranslate nohighlight">\(z\)</span>, where the boundary term does <strong>not</strong> vanish but is instead replaced using the second equation of <a class="reference internal" href="#equation-eq-nm">(16)</a>,</p>
+<div class="math notranslate nohighlight" id="equation-eq-ibpz">
+<span class="eqno">(18)<a class="headerlink" href="#equation-eq-ibpz" title="Link to this equation">#</a></span>\[\begin{align*}
+\int_0^H\tilde{\psi}^*(F\tilde{\psi}_z)_z\,dz &amp;= \left[F\tilde{\psi}^*\tilde{\psi}_z\right]_0^H-\int_0^H F|\tilde{\psi}_z|^2dz = \left[\frac{FU_z|\tilde{\psi}|^2}{U-c}\right]_0^H-\int_0^H F|\tilde{\psi}_z|^2dz
+\end{align*}\]</div>
+<p>Collecting the terms,</p>
+<div class="math notranslate nohighlight" id="equation-eq-quad">
+<span class="eqno">(19)<a class="headerlink" href="#equation-eq-quad" title="Link to this equation">#</a></span>\[\begin{align*}
+\int_0^H\int_{y_1}^{y_2}\left[|\tilde{\psi}_y|^2+F|\tilde{\psi}_z|^2+k^2|\tilde{\psi}|^2\right]dy\,dz-\int_{y_1}^{y_2}\left\{\int_0^H\frac{Q_y}{U-c}|\tilde{\psi}|^2dz+\left[\frac{FU_z|\tilde{\psi}|^2}{U-c}\right]_0^H\right\}dy &amp;=0
+\end{align*}\]</div>
+<p>The first line is real and positive definite, so it carries no information about <span class="math notranslate nohighlight">\(c_i\)</span>; the imaginary part of the second line must vanish all by itself. Using <span class="math notranslate nohighlight">\(\frac{1}{U-c}=\frac{U-c^*}{|U-c|^2}\)</span>, whose imaginary part is <span class="math notranslate nohighlight">\(c_i/|U-c|^2\)</span>, we obtain</p>
+<div class="math notranslate nohighlight" id="equation-eq-imag">
+<span class="eqno">(20)<a class="headerlink" href="#equation-eq-imag" title="Link to this equation">#</a></span>\[\begin{align*}
+-c_i\int_{y_1}^{y_2}\left\{\int_0^H\frac{Q_y}{|U-c|^2}|\tilde{\psi}|^2dz+\left[\frac{FU_z|\tilde{\psi}|^2}{|U-c|^2}\right]_0^H\right\}dy &amp;=0
+\end{align*}\]</div>
+<p>Here is the punchline. If the flow is to be unstable, <span class="math notranslate nohighlight">\(c_i\neq0\)</span>, and therefore the integral itself must vanish:</p>
+<div class="math notranslate nohighlight" id="equation-eq-csp">
+<span class="eqno">(21)<a class="headerlink" href="#equation-eq-csp" title="Link to this equation">#</a></span>\[\begin{align*}
+\int_{y_1}^{y_2}\left\{\int_0^H\frac{Q_y}{|U-c|^2}|\tilde{\psi}|^2dz+\frac{F U_z|\tilde{\psi}|^2}{|U-c|^2}\bigg\rvert_{z=H}-\frac{F U_z|\tilde{\psi}|^2}{|U-c|^2}\bigg\rvert_{z=0}\right\}dy &amp;=0
+\end{align*}\]</div>
+<p>Every weight <span class="math notranslate nohighlight">\(|\tilde{\psi}|^2/|U-c|^2\)</span> in <a class="reference internal" href="#equation-eq-csp">(21)</a> is positive. A sum of positive-weighted terms can only cancel if the terms do not all have the same sign. This is the <strong>Charney-Stern-Pedlosky (CSP) necessary condition for instability</strong>: at least one of the following must hold,</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(Q_y\)</span> changes sign somewhere in the interior;</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q_y\)</span> has the opposite sign to <span class="math notranslate nohighlight">\(U_z\)</span> at the upper boundary <span class="math notranslate nohighlight">\(z=H\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q_y\)</span> has the same sign as <span class="math notranslate nohighlight">\(U_z\)</span> at the lower boundary <span class="math notranslate nohighlight">\(z=0\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(U_z\)</span> has the same sign at the upper and lower boundaries (a distinct condition from 2 and 3 when <span class="math notranslate nohighlight">\(Q_y=0\)</span>).</p></li>
+</ol>
+<p>Let us read these conditions physically, because they map one-to-one onto the two instabilities discussed above.</p>
+<p><strong>Barotropic instability.</strong> Drop all vertical structure, so the <span class="math notranslate nohighlight">\(F\)</span> terms disappear and <a class="reference internal" href="#equation-eq-csp">(21)</a> collapses to <span class="math notranslate nohighlight">\(\int Q_y|\tilde{\psi}|^2/|U-c|^2dy=0\)</span> with <span class="math notranslate nohighlight">\(Q_y=\beta-\partial^2U/\partial y^2\)</span>. Instability therefore requires <span class="math notranslate nohighlight">\(\beta-\partial^2 U/\partial y^2\)</span> to change sign somewhere in the domain, which is the <strong>Rayleigh-Kuo criterion</strong>. With <span class="math notranslate nohighlight">\(\beta=0\)</span> this is Rayleigh’s classical inflection point theorem: the jet profile must possess an inflection point. This is the precise version of the loose statement that “horizontal wind shear is the necessary condition for barotropic instability” – it is not the shear itself but the <em>curvature</em> of the shear, measured against <span class="math notranslate nohighlight">\(\beta\)</span>, that matters. A jet that is too broad, or a <span class="math notranslate nohighlight">\(\beta\)</span> that is too large, is stable no matter how strong the wind is.</p>
+<p><strong>Baroclinic instability.</strong> In the Earth’s mid-latitude troposphere, <span class="math notranslate nohighlight">\(Q_y\)</span> in the interior is usually dominated by <span class="math notranslate nohighlight">\(\beta\)</span> and is positive nearly everywhere, so condition 1 is typically <em>not</em> satisfied. Instead, instability is normally achieved through condition 3: the surface westerly shear <span class="math notranslate nohighlight">\(U_z(0)&gt;0\)</span> has the same sign as the interior <span class="math notranslate nohighlight">\(Q_y&gt;0\)</span>. By thermal wind, <span class="math notranslate nohighlight">\(U_z(0)&gt;0\)</span> means an equatorward-decreasing surface temperature, i.e. the pole-to-equator temperature gradient maintained by differential solar heating. The mid-latitude atmosphere is thus baroclinically unstable <em>by construction</em> – radiative forcing continuously restores the very gradient that the instability consumes.</p>
+<p>The role of the boundary term is easier to see with Bretherton’s trick: a buoyancy gradient at a rigid boundary is dynamically equivalent to a delta-function sheet of interior PV gradient just inside the boundary, with sign opposite to <span class="math notranslate nohighlight">\(U_z\)</span> there. Conditions 2-4 are then all just special cases of condition 1 – <strong>the PV gradient must change sign somewhere in the domain, boundaries included.</strong> Two regions of opposite-signed PV gradient can each support a Rossby wave, and those two waves propagate in opposite directions relative to the local flow. That is exactly the counter-propagating wave pair sketched in <a class="reference internal" href="#fig4"><span class="std std-ref">FIG4</span></a>: the vertical shear allows them to become phase-locked at a favourable relative phase, and once locked, each wave reinforces the other and both grow.</p>
+<p>Two caveats worth stating clearly. First, these are <strong>necessary, not sufficient</strong>, conditions: flows exist that satisfy the criterion yet remain stable to infinitesimal perturbations. Second, the criterion says nothing about <em>how fast</em> the growth is. For that we need the actual eigenvalue problem <a class="reference internal" href="#equation-eq-nm">(16)</a>, which we will solve in the homework assignment using the Philips two-layer model – the discrete two-level version of the analysis above, in which the sign change of <span class="math notranslate nohighlight">\(Q_y\)</span> becomes a simple threshold on the vertical shear. A useful rule of thumb from the continuous (Eady) problem is the maximum growth rate <span class="math notranslate nohighlight">\(\sigma_{E}\approx0.31\frac{f}{N}\left|\frac{\partial U}{\partial z}\right|\)</span>, which for typical mid-latitude values gives an e-folding time of roughly one to two days.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Here are a few useful physical connections between the first and the second laws of thermodynamics equation, where potential temperature is the key ingredient. From the first law of thermodynamics equation, we know there are two ways to change the internal energy, either through “heat” or “work” <a class="reference internal" href="#equation-eq12">(12)</a></p>
+<p><strong>Why a stability criterion is a predictability statement.</strong> <a class="reference internal" href="#equation-eq-lin">(14)</a> is the tangent linear model, so the CSP condition is precisely a statement about the spectrum of <span class="math notranslate nohighlight">\(\frac{dF}{d\mathbf{X}}\)</span> in <a class="reference internal" href="../week1/week1.html#equation-eq5">(5)</a>. Where the criterion is violated, the linear operator has no growing normal mode and small initial errors cannot amplify exponentially; where it is satisfied, any initial error with a projection onto the unstable mode grows as <span class="math notranslate nohighlight">\(\mathrm{exp}(kc_it)\)</span>. This is why the initial (roughly 0-3 day) error growth in a global forecast is not distributed uniformly over the globe but is concentrated in the baroclinic zones – storm track entrance regions, strong surface temperature gradients, strong upper-level jets. It is also why the Eady growth rate is used operationally as a cheap diagnostic of “where should we put more observations today?”, and why singular vectors and bred vectors, which we will meet when we discuss ensemble forecasting, systematically pick out these same regions.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here are a few useful physical connections between the first and the second laws of thermodynamics equation, where potential temperature is the key ingredient. From the first law of thermodynamics equation, we know there are two ways to change the internal energy, either through “heat” or “work” <a class="reference internal" href="#equation-eq12">(22)</a></p>
 <div class="math notranslate nohighlight" id="equation-eq12">
-<span class="eqno">(12)<a class="headerlink" href="#equation-eq12" title="Link to this equation">#</a></span>\[\begin{align*}
+<span class="eqno">(22)<a class="headerlink" href="#equation-eq12" title="Link to this equation">#</a></span>\[\begin{align*}
 dU &amp;=\dot{Q}-Pd\alpha
 \end{align*}\]</div>
-<p>where <span class="math notranslate nohighlight">\(dU=c_v dT\)</span>. By adopting <span class="math notranslate nohighlight">\(dP\alpha=Pd\alpha+\alpha dP\)</span> and <span class="math notranslate nohighlight">\(P\alpha=RT\)</span>, we can rewrite <a class="reference internal" href="#equation-eq12">(12)</a> to</p>
+<p>where <span class="math notranslate nohighlight">\(dU=c_v dT\)</span>. By adopting <span class="math notranslate nohighlight">\(dP\alpha=Pd\alpha+\alpha dP\)</span> and <span class="math notranslate nohighlight">\(P\alpha=RT\)</span>, we can rewrite <a class="reference internal" href="#equation-eq12">(22)</a> to</p>
 <div class="math notranslate nohighlight" id="equation-eq13">
-<span class="eqno">(13)<a class="headerlink" href="#equation-eq13" title="Link to this equation">#</a></span>\[\begin{align*}
+<span class="eqno">(23)<a class="headerlink" href="#equation-eq13" title="Link to this equation">#</a></span>\[\begin{align*}
 \dot{Q} &amp;=(c_v+R)dT-\alpha dP
 \end{align*}\]</div>
 <p>Then, divide the whole equation by <span class="math notranslate nohighlight">\(T\)</span> and adopt the ideal gas law, we can find what left on the l.h.s is entropy <span class="math notranslate nohighlight">\(\dot{Q}/T\)</span> and on the r.h.s. is <span class="math notranslate nohighlight">\(c_pdT/T-RdP/p\)</span>, which is the definition of potential temperature. Thus, the conservation of potential temperature is mathematically identical to the conservation of entropy.</p>
 <p>From <a class="reference internal" href="#equation-eq8">(8)</a> to <a class="reference internal" href="#equation-eq9">(9)</a>, we can simply use the definition of buoyancy, i.e., <span class="math notranslate nohighlight">\(b'=-\frac{\rho'}{\bar{\rho_0}}g=\frac{\theta'}{\bar{\theta}}g\)</span> and the hydrostatic approximation (i.e., <span class="math notranslate nohighlight">\(b_0=-g\rho_0\)</span> You will need to finish the last step in the homework assignment) to get the hydrostatic thermodynamics equation.</p>
 </div>
+</section>
 </section>
 <section id="atmospheric-blocking">
 <h2>Atmospheric Blocking<a class="headerlink" href="#atmospheric-blocking" title="Link to this heading">#</a></h2>
@@ -459,18 +537,18 @@ While blocking is an important predictability source, it is still an unsolved pr
 <h2>Teleconnections<a class="headerlink" href="#teleconnections" title="Link to this heading">#</a></h2>
 <p><br />
 While the discussion above focuses on the internal dynamics of PV, the external forcing can play important roles for timescales longer than 2 weeks. In equation <a class="reference internal" href="#equation-eq9">(9)</a>, we omit the external forcing. Thus, the vertical motion-induced adiabatic cooling/warming is always balanced by the horizontal temperature advection. However, with the existence of diabatic term, the balance can change. Here, we provide two different cases to demonstrate how the timescales of external forcing determines the predictability of mid-latitude weather.</p>
-<p>In the first case, the characteristic timescales of <span class="math notranslate nohighlight">\(\dot{Q}\)</span> in <a class="reference internal" href="#equation-eq8">(8)</a> is much shorter or comparable to the timescales of Rossby wave <a class="reference internal" href="#equation-eq14">(14)</a>.</p>
+<p>In the first case, the characteristic timescales of <span class="math notranslate nohighlight">\(\dot{Q}\)</span> in <a class="reference internal" href="#equation-eq8">(8)</a> is much shorter or comparable to the timescales of Rossby wave <a class="reference internal" href="#equation-eq14">(24)</a>.</p>
 <div class="math notranslate nohighlight" id="equation-eq14">
-<span class="eqno">(14)<a class="headerlink" href="#equation-eq14" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
+<span class="eqno">(24)<a class="headerlink" href="#equation-eq14" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
 \dot{Q} &amp;\sim \mathrm{exp}(\sigma t) \\ 
 \forall &amp;\sigma&gt; 1/14 (1/days) 
 \end{align*}\end{split}\]</div>
 <p>In this case, the balance happens within horizontal temperature advection, vertical motion and external forcing. From a climate perspective, the external forcing is dominated by the radiative forcing. Thus, this balance is also called “radiative-advective-convective equilibrium” (RACE). In general, the whole process of RACE (instability adjustment) happens within 2 weeks. For longer timescales, we can only have their equilibrium statistics (i.e., given any two components, we can derive the third).
 <br />
 <br />
-The second case is that the characteristic timescales of <span class="math notranslate nohighlight">\(\dot{Q}\)</span> in <a class="reference internal" href="#equation-eq8">(8)</a> is much longer than the Rossby wave timescales. In this case, the internal dynamics of PV can be considered as a dissipative process, which is always balanced by the external forcing <a class="reference internal" href="#equation-eq15">(15)</a> (also see <span id="id4">[<a class="reference internal" href="#id10" title="Brian J Hoskins and David J Karoly. The steady linear response of a spherical atmosphere to thermal and orographic forcing. Journal of the Atmospheric Sciences, 38(6):1179–1196, 1981.">HK81</a>]</span> for details).</p>
+The second case is that the characteristic timescales of <span class="math notranslate nohighlight">\(\dot{Q}\)</span> in <a class="reference internal" href="#equation-eq8">(8)</a> is much longer than the Rossby wave timescales. In this case, the internal dynamics of PV can be considered as a dissipative process, which is always balanced by the external forcing <a class="reference internal" href="#equation-eq15">(25)</a> (also see <span id="id4">[<a class="reference internal" href="#id10" title="Brian J Hoskins and David J Karoly. The steady linear response of a spherical atmosphere to thermal and orographic forcing. Journal of the Atmospheric Sciences, 38(6):1179–1196, 1981.">HK81</a>]</span> for details).</p>
 <div class="math notranslate nohighlight" id="equation-eq15">
-<span class="eqno">(15)<a class="headerlink" href="#equation-eq15" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
+<span class="eqno">(25)<a class="headerlink" href="#equation-eq15" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
 \dot{Q} &amp;\sim \mathrm{exp}(\sigma t) \\ 
 \forall &amp;\sigma&lt; 1/14 (1/days) \\
 \mathbf{u}\cdot\nabla q -\epsilon q+F(\dot{Q}) &amp;= 0  
@@ -586,7 +664,10 @@ The animation below is an example of tropical-extratropical teleconnection in a 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-origins-of-predictability-scale-separation-and-balanced-dynamics">The origins of predictability (Scale Separation) and balanced dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-origins-of-predictability-scale-separation-and-balanced-dynamics">The origins of predictability (Scale Separation) and balanced dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-necessary-condition-for-instability">The necessary condition for instability</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atmospheric-blocking">Atmospheric Blocking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teleconnections">Teleconnections</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>

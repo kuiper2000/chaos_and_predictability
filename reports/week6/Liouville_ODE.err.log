@@ -30,7 +30,6 @@ import time
 
 ----- stdout -----
 Requirement already satisfied: netcdf4 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (1.7.4)
------ stdout -----
 Requirement already satisfied: cftime in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from netcdf4) (1.6.5)
 Requirement already satisfied: certifi in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from netcdf4) (2026.7.22)
 Requirement already satisfied: numpy>=1.21.2 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from netcdf4) (2.5.2)

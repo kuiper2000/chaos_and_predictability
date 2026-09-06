@@ -54,6 +54,7 @@ zsh:1: command not found: apt-get
 zsh:1: command not found: apt-get
 ----- stdout -----
 Collecting dedalus
+----- stdout -----
   Using cached dedalus-3.0.5.tar.gz (248 kB)
 ----- stdout -----
   Installing build dependencies ... [?25l-
@@ -83,6 +84,7 @@ Collecting dedalus
  done
 ----- stdout -----
 [?25hCollecting docopt (from dedalus)
+----- stdout -----
   Using cached docopt-0.6.2-py2.py3-none-any.whl
 Requirement already satisfied: h5py>=3.0.0 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from dedalus) (3.16.0)
 Requirement already satisfied: matplotlib>=3.7.0 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from dedalus) (3.11.0)
@@ -91,13 +93,13 @@ Requirement already satisfied: mpi4py>=2.0.0 in /Users/Shared/miniconda3/envs/cl
 Collecting numexpr (from dedalus)
   Using cached numexpr-2.14.2-cp314-cp314-macosx_11_0_arm64.whl.metadata (9.0 kB)
 Requirement already satisfied: numpy>=1.20.0 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from dedalus) (2.5.2)
------ stdout -----
 Collecting py (from dedalus)
+----- stdout -----
   Using cached py-1.11.0-py2.py3-none-any.whl.metadata (2.8 kB)
 Requirement already satisfied: pytest in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from dedalus) (9.0.3)
------ stdout -----
 Collecting pytest-benchmark (from dedalus)
   Using cached pytest_benchmark-5.3.0-py3-none-any.whl.metadata (31 kB)
+----- stdout -----
 Collecting pytest-cov (from dedalus)
   Using cached pytest_cov-7.1.0-py3-none-any.whl.metadata (32 kB)
 ----- stdout -----
@@ -113,13 +115,12 @@ Requirement already satisfied: packaging>=20.0 in /Users/Shared/miniconda3/envs/
 Requirement already satisfied: pillow>=9 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from matplotlib>=3.7.0->dedalus) (12.3.0)
 Requirement already satisfied: pyparsing>=3 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from matplotlib>=3.7.0->dedalus) (3.3.2)
 Requirement already satisfied: python-dateutil>=2.7 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from matplotlib>=3.7.0->dedalus) (2.9.0.post0)
------ stdout -----
 Requirement already satisfied: six>=1.5 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from python-dateutil>=2.7->matplotlib>=3.7.0->dedalus) (1.17.0)
 Requirement already satisfied: iniconfig>=1.0.1 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from pytest->dedalus) (2.3.0)
 Requirement already satisfied: pluggy<2,>=1.5 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from pytest->dedalus) (1.6.0)
 Requirement already satisfied: pygments>=2.7.2 in /Users/Shared/miniconda3/envs/claude_code/lib/python3.14/site-packages (from pytest->dedalus) (2.20.0)
-Collecting py-cpuinfo2>=10.1 (from pytest-benchmark->dedalus)
 ----- stdout -----
+Collecting py-cpuinfo2>=10.1 (from pytest-benchmark->dedalus)
   Using cached py_cpuinfo2-10.1.1-py3-none-any.whl.metadata (7.5 kB)
 ----- stdout -----
 Collecting coverage>=7.10.6 (from coverage[toml]>=7.10.6->pytest-cov->dedalus)
@@ -142,8 +143,9 @@ Building wheels for collected packages: dedalus
 ----- stdout -----
  \
 ----- stdout -----
- error
+ |
 ----- stdout -----
+ error
   [1;31merror[0m: [1msubprocess-exited-with-error[0m
   
   [31m×[0m [32mBuilding wheel for dedalus [0m[1;32m([0m[32mpyproject.toml[0m[1;32m)[0m did not run successfully.
@@ -264,9 +266,9 @@ Building wheels for collected packages: dedalus
   [31m   [0m copying dedalus/examples.tar.gz -> build/lib.macosx-12.1-arm64-cpython-314/dedalus
   [31m   [0m running build_ext
   [31m   [0m building 'dedalus.core.transposes' extension
-  [31m   [0m clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/claude_code/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/claude_code/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-pdn5er2f/overlay/lib/python3.14/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-pdn5er2f/overlay/lib/python3.14/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/claude_code/include/python3.14 -c dedalus/core/transposes.c -o build/temp.macosx-12.1-arm64-cpython-314/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
+  [31m   [0m clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/claude_code/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/claude_code/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-97hmu_b_/overlay/lib/python3.14/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-97hmu_b_/overlay/lib/python3.14/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/claude_code/include/python3.14 -c dedalus/core/transposes.c -o build/temp.macosx-12.1-arm64-cpython-314/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
   [31m   [0m clang: error: unsupported option '-fopenmp'
-  [31m   [0m error: Command '['clang', '-fno-strict-overflow', '-Wsign-compare', '-Wunreachable-code', '-DNDEBUG', '-O2', '-Wall', '-fPIC', '-O2', '-isystem', '/Users/Shared/miniconda3/envs/claude_code/include', '-arch', 'arm64', '-fPIC', '-O2', '-isystem', '/Users/Shared/miniconda3/envs/claude_code/include', '-arch', 'arm64', '-I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-pdn5er2f/overlay/lib/python3.14/site-packages/numpy/_core/include', '-I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-pdn5er2f/overlay/lib/python3.14/site-packages/mpi4py/include', '-I/usr/lib/x86_64-linux-gnu/openmpi/include', '-Idedalus/libraries/fftw/', '-I/usr/include', '-I/Users/Shared/miniconda3/envs/claude_code/include/python3.14', '-c', 'dedalus/core/transposes.c', '-o', 'build/temp.macosx-12.1-arm64-cpython-314/dedalus/core/transposes.o', '-DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION', '-Wno-unused-function', '-fopenmp']' returned non-zero exit status 1.
+  [31m   [0m error: Command '['clang', '-fno-strict-overflow', '-Wsign-compare', '-Wunreachable-code', '-DNDEBUG', '-O2', '-Wall', '-fPIC', '-O2', '-isystem', '/Users/Shared/miniconda3/envs/claude_code/include', '-arch', 'arm64', '-fPIC', '-O2', '-isystem', '/Users/Shared/miniconda3/envs/claude_code/include', '-arch', 'arm64', '-I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-97hmu_b_/overlay/lib/python3.14/site-packages/numpy/_core/include', '-I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-97hmu_b_/overlay/lib/python3.14/site-packages/mpi4py/include', '-I/usr/lib/x86_64-linux-gnu/openmpi/include', '-Idedalus/libraries/fftw/', '-I/usr/include', '-I/Users/Shared/miniconda3/envs/claude_code/include/python3.14', '-c', 'dedalus/core/transposes.c', '-o', 'build/temp.macosx-12.1-arm64-cpython-314/dedalus/core/transposes.o', '-DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION', '-Wno-unused-function', '-fopenmp']' returned non-zero exit status 1.
   [31m   [0m [31m[end of output][0m
   
   [1;35mnote[0m: This error originates from a subprocess, and is likely not a problem with pip.
