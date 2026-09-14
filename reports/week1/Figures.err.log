@@ -30,8 +30,8 @@ from scipy import interpolate
 from scipy import signal
 import os
 
-from google.colab import drive
-drive.mount('/content/drive')
+# from google.colab import drive
+# drive.mount('/content/drive')
 ------------------
 
 

@@ -49,6 +49,79 @@ or
 ```
 where $\nabla^2\psi =\zeta$ and $\nabla^2\psi =\frac{1}{f}\nabla^2\phi$. The QG-PV equation can also be derived by using Kelvin circulation theorem.   
 
+:::{admonition} Derivation: from the primitive equations to QG-PV (click to expand)
+:class: dropdown
+
+Write $w$ for the vertical velocity (the $\omega$ of {eq}`eq9`) and work in Boussinesq form, so that {eq}`eq8` has already been filtered of acoustic waves. The single small parameter is the Rossby number
+
+```{math}
+\mathrm{Ro}=\frac{U}{f_o L}\sim 0.1
+```
+
+for mid-latitude synoptic scales ($U\sim10\ \mathrm{m\,s^{-1}}$, $L\sim10^{6}\ \mathrm{m}$, $f_o\sim10^{-4}\ \mathrm{s^{-1}}$), together with $\beta L/f_o\sim\mathrm{Ro}$ and $H/L\ll1$ (hydrostatic).
+
+**1. Leading order: geostrophy defines a streamfunction.** At $O(\mathrm{Ro}^0)$ the momentum equation of {eq}`eq8` collapses to $f_o\mathbf{k}\times\mathbf{u}_g=-\nabla\phi$, so that with $\psi\equiv\phi/f_o$
+
+```{math}
+\mathbf{u}_g=\mathbf{k}\times\nabla\psi,\qquad u_g=-\frac{\partial\psi}{\partial y},\quad v_g=\frac{\partial\psi}{\partial x},\qquad \zeta=\nabla^2\psi
+```
+
+The geostrophic wind is horizontally non-divergent, $\nabla\cdot\mathbf{u}_g=0$. *All* of the divergence therefore lives in the ageostrophic residual $\mathbf{u}_a=\mathbf{u}-\mathbf{u}_g$, which is one order of $\mathrm{Ro}$ smaller.
+
+**2. Next order: the vorticity equation.** Taking $\mathbf{k}\cdot\nabla\times$ of the momentum equation and keeping terms through $O(\mathrm{Ro})$ — tilting and solenoidal terms are higher order — gives the first equation of {eq}`eq9`,
+
+```{math}
+\frac{\partial\zeta}{\partial t}+\mathbf{u}_g\cdot\nabla\zeta+\beta v_g=-f_o\nabla\cdot\mathbf{u}_a
+```
+
+Note the asymmetry that makes QG work: vorticity is *advected* only by the geostrophic flow, but *stretched* only by the ageostrophic flow.
+
+**3. Continuity removes the ageostrophic divergence.** Mass conservation, the second equation of {eq}`eq8`, becomes $\nabla\cdot\mathbf{u}+\partial w/\partial z=0$. Since $\nabla\cdot\mathbf{u}_g=0$ we have $\nabla\cdot\mathbf{u}_a=-\partial w/\partial z$, and the vorticity equation turns into a statement about vortex stretching:
+
+```{math}
+\frac{\partial\zeta}{\partial t}+\mathbf{u}_g\cdot\nabla\zeta+\beta v_g=f_o\frac{\partial w}{\partial z}
+```
+
+**4. Thermodynamics supplies $w$.** With $\frac{D_g}{Dt}\equiv\frac{\partial}{\partial t}+\mathbf{u}_g\cdot\nabla$, the second equation of {eq}`eq9` is solved for the vertical velocity,
+
+```{math}
+w=-\frac{1}{N^2}\frac{D_g b'}{Dt},\qquad b'=f_o\frac{\partial\psi}{\partial z}
+```
+
+where $b'=f_o\psi_z$ is hydrostatic balance combined with geostrophy — that is, thermal wind. This is the step that couples the vorticity and temperature fields: *the vertical motion is whatever is required to keep the flow in thermal-wind balance.*
+
+**5. Substitute, and commute the vertical derivative.** Because $f_o^2/N^2$ is a function of $z$ alone, it passes through $D_g/Dt$, giving
+
+```{math}
+f_o\frac{\partial w}{\partial z}=-\frac{\partial}{\partial z}\left[\frac{D_g}{Dt}\left(\frac{f_o^2}{N^2}\frac{\partial\psi}{\partial z}\right)\right]
+```
+
+The $\partial/\partial z$ may be moved *inside* the material derivative because the error term vanishes identically. For any $A$,
+
+```{math}
+\frac{\partial}{\partial z}\left(\frac{D_g A}{Dt}\right)=\frac{D_g}{Dt}\frac{\partial A}{\partial z}+\frac{\partial\mathbf{u}_g}{\partial z}\cdot\nabla A
+```
+
+and here $A\propto\psi_z\propto b'$, so the last term is proportional to
+
+```{math}
+\frac{\partial\mathbf{u}_g}{\partial z}\cdot\nabla b'=\frac{1}{f_o}\left(-\frac{\partial b'}{\partial y}\frac{\partial b'}{\partial x}+\frac{\partial b'}{\partial x}\frac{\partial b'}{\partial y}\right)=0
+```
+
+because thermal wind, $\frac{\partial\mathbf{u}_g}{\partial z}=\frac{1}{f_o}\mathbf{k}\times\nabla b'$, makes the vertical shear everywhere *perpendicular* to the buoyancy gradient. This exact cancellation is what allows QG to be written as a single conservation law rather than a coupled pair.
+
+**6. Collect.** Using $\beta v_g=\frac{D_g}{Dt}(\beta y)$ and gathering every term under one material derivative,
+
+```{math}
+\frac{D_g}{Dt}\Bigg[\underbrace{\nabla^2\psi}_{\text{relative}}+\underbrace{\beta y}_{\text{planetary}}+\underbrace{\frac{\partial}{\partial z}\left(\frac{f_o^2}{N^2}\frac{\partial\psi}{\partial z}\right)}_{\text{stretching}}\Bigg]=0
+```
+
+which is {eq}`eq11`, and hence {eq}`eq10` with $q$ the bracketed quantity. The first two terms are the barotropic contribution and the third the baroclinic one, exactly as identified in the discussion of {eq}`eq11` below.
+
+Two remarks worth carrying forward. First, the advecting velocity is the *geostrophic* one, which is itself diagnosed from $q$ by inverting the elliptic operator in the bracket — this is the "1-on-1 relation" that makes the dynamics *balanced*. Second, in anelastic rather than Boussinesq form the stretching term becomes $\frac{1}{\rho_0}\frac{\partial}{\partial z}\left(\rho_0\frac{f_o^2}{N^2}\frac{\partial\psi}{\partial z}\right)$; nothing else changes.
+:::
+
+
 The reason why we can implement these physical assumptions (no acoustic wave, hydrostatic and geostrophic balances) is that the corresponding phenomena have relatively short characteristic timescales (decorrelation time) compared to the timescales of weather (or the Rossby wave). For example, a normal acoustic wave can travel a few hundred meters to a few kilometers before its amplitude decays to the e-folding scale and the whole process only happens within a few seconds. For a gravity wave, it can travel over 100 kilometers to a few thousand kilometers before reaching the e-folding scales. However, the gravity wave speed can be much higher than the Rossby wave, which enables it to travel across the world within a few days. One should notice that the gravity wave is non-dispersive. This indicates that all gravity waves travel in a similar speed regardless of the wave length. The Rossby wave, on the other hand, is a dispersive wave and thus its timescales depends on the wave length. Due to the earth rotation, only a small portion of energy can be converted to the eddy kinetic energy, while most of the energy is trapped in the zonal mean structure {cite}`lorenz1955available`. In the regions away from tropics, the so-called "eddy" is dominated by the Rossby wave dynamics {eq}`eq10`. In (dry) Rossby wave dynamics, the only prognostic variable is PV while other fields (e.g., horizontal wind and vertical motion) can be diagnosed by giving the PV field. Because of this 1-on-1 relation among wind, stream function and PV field, the Rossby wave dynamics is also called balanced dynamics. "Balance" implies that the phenomena with timescales shorter than Rossby wave have reached a dynamical equilibrium state and thus their time tendency can be omitted.     
 
 By observing the {eq}`eq11`, one can find there are two components in PV, the barotropic vorticity ($\nabla^2\psi+\beta$, i.e., vorticity in a single layer or vorticity over different layers with the same sign) and baroclinic vorticity ($\frac{\partial }{\partial z}(\frac{f^2}{N^2}\frac{\partial\psi}{\partial z})$, i.e., vorticity difference in vertical direction). Thus, for the growth of PV, there are two different pathways, either through the generation of barotropic component or through the generation of baroclinic component. While both processes can happen at the same time, one is usually more dominant than the other and which one is more important depends on the regions of interest. In most cases, the mid-latitude frontal geneses (weather scales) are associated with the baroclinic instability, where the counter-propagating wave over different vertical layers advected by the vertical wind shear leads to the growth of baroclinic components [FIG4](FIG4).  

@@ -402,8 +402,8 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
-<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<span class="c1"># from google.colab import drive</span>
+<span class="c1"># drive.mount(&#39;/content/drive&#39;)</span>
 </pre></div>
 </div>
 </div>
@@ -526,16 +526,25 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;the value of x&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">f</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">10.5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span> <span class="s2">&quot;/content/drive/MyDrive/website-hugo/chaos_and_predictability/week1/FIG1.png&quot;</span><span class="p">)</span>
+<span class="c1"># f.savefig( &quot;/content/drive/MyDrive/website-hugo/chaos_and_predictability/week1/FIG1.png&quot;)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `kdeplot` (an axes-level function for kernel density plots).
-  warnings.warn(msg, FutureWarning)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/ipykernel_25552/1907618308.py:9: UserWarning: 
+
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
+
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `kdeplot` (an axes-level function for kernel density plots).
+
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
+
+  sns.distplot(random.normal(size=30000), kde_kws={&#39;linestyle&#39;:&#39;--&#39;},hist=False, label=&#39;Climatological PDF&#39;,color=&#39;k&#39;)
 </pre></div>
 </div>
-<img alt="../_images/5169c78df46e3c1accca45607b5db465d7fec23e477a81d25530a22daaacb342.png" src="../_images/5169c78df46e3c1accca45607b5db465d7fec23e477a81d25530a22daaacb342.png" />
+<img alt="../_images/bce8afcc0b0cc3b344194c3e6c4e749902a783afd949fd6468c9a18c9553f65d.png" src="../_images/bce8afcc0b0cc3b344194c3e6c4e749902a783afd949fd6468c9a18c9553f65d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -619,10 +628,10 @@ Enter number of steps:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f51f0c3a950&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x372bb1a90&gt;]
 </pre></div>
 </div>
-<img alt="../_images/40129a264e0397d5974df98fab175fdb69cf7e4a8adcb63439a4050ba7aa6514.png" src="../_images/40129a264e0397d5974df98fab175fdb69cf7e4a8adcb63439a4050ba7aa6514.png" />
+<img alt="../_images/1921ebc89a4aaa2834298eca717c891925318305de771caa9d97b95cd52f0b5d.png" src="../_images/1921ebc89a4aaa2834298eca717c891925318305de771caa9d97b95cd52f0b5d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -645,7 +654,7 @@ Enter number of steps:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.029147957326795586
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.029147957326795586)
 </pre></div>
 </div>
 </div>
