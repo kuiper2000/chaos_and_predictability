@@ -562,12 +562,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0ec097290d0e094d0e2839a682de17a69f91c5b63d5c07a18adc62d3e2fc1f5f.png" src="../_images/0ec097290d0e094d0e2839a682de17a69f91c5b63d5c07a18adc62d3e2fc1f5f.png" />
+<img alt="../_images/9cf12cc28a06228579508001322f6f922b17f00dffcd8c5e26a8d1d2dc3e1a41.png" src="../_images/9cf12cc28a06228579508001322f6f922b17f00dffcd8c5e26a8d1d2dc3e1a41.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_red</span>    <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_red</span>    <span class="o">=</span> <span class="mi">0</span>
 <span class="n">z_ref</span>    <span class="o">=</span> <span class="mi">10</span>
 <span class="n">distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">lorenz_x</span> <span class="o">-</span> <span class="n">x_red</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">lorenz_z</span> <span class="o">-</span> <span class="n">z_ref</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">lorenz_y</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">posi</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">distance</span><span class="o">&lt;</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">((</span><span class="n">lorenz_x</span> <span class="o">-</span> <span class="n">x_red</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">lorenz_z</span> <span class="o">-</span> <span class="n">z_ref</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">lorenz_y</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)))</span>
@@ -584,7 +584,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ac26d3644b05b34e2b5915639cb2859936c422a02056b1e05086fb47c60939fa.png" src="../_images/ac26d3644b05b34e2b5915639cb2859936c422a02056b1e05086fb47c60939fa.png" />
+<img alt="../_images/51ed496cb595ea59fa30ed0330b0ca3a44c9d19a6bf405c32a24c5126ace282e.png" src="../_images/51ed496cb595ea59fa30ed0330b0ca3a44c9d19a6bf405c32a24c5126ace282e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -602,22 +602,23 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cord_t0</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span><span class="n">cord_t0</span><span class="p">[</span><span class="mi">2</span><span class="p">,:],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cord_t1</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span><span class="n">cord_t1</span><span class="p">[</span><span class="mi">2</span><span class="p">,:],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">cord_t0</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">cord_t0</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">cord_t0</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">cord_t0</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="o">-</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">mode</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">cord_t0</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">cord_t0</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">mode</span><span class="p">],</span> <span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="n">mode</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">cord_t0</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">cord_t0</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="o">-</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">mode</span><span class="p">],</span> <span class="o">-</span><span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="n">mode</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.9618545  1.22698357 0.67673019]
-[[-0.4379771  -0.46034668  0.05519796]
- [-0.73340226 -0.54351223  0.03815081]
- [-0.51990113 -0.70190839  0.99774631]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2.34992696+0.j 0.84081311+0.j 0.7677174 +0.j]
+[[-0.46734538+0.j -0.02282755+0.j  0.18313957+0.j]
+ [-0.88403487+0.j -0.01811337+0.j  0.12782377+0.j]
+ [ 0.00840476+0.j -0.99957531+0.j -0.9747415 +0.j]]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.quiver.Quiver at 0x7e0d2b97f020&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.quiver.Quiver at 0x30abc4410&gt;
 </pre></div>
 </div>
-<img alt="../_images/fca53a40cd39561f5834cdfb1465a4bf164f124e45dae54a3bf11d4b7e2d1348.png" src="../_images/fca53a40cd39561f5834cdfb1465a4bf164f124e45dae54a3bf11d4b7e2d1348.png" />
+<img alt="../_images/75965532c24cc9948d9029f9f8ef008e56c18ae74a42823c988c1a1d708ce2f4.png" src="../_images/75965532c24cc9948d9029f9f8ef008e56c18ae74a42823c988c1a1d708ce2f4.png" />
 </div>
 </div>
 <div class="cell docutils container">

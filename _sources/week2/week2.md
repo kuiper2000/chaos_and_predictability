@@ -317,11 +317,11 @@ One classic example is the tropical-convection forced tropical-extratropical tel
 \
 The animation below is an example of tropical-extratropical teleconnection in a barotropic model, where we force the model with a constant divergence forcing (i.e., $\sigma\sim 0$). We can find in the later period of integration, the forced response gradually reach a equilibrium state. Similar large-scale patterns can also be found over the extratropical regions if we take the monthly average of 500hPa geopotential height. 
 
-```{figure} solid_body_rotation.gif
+```{figure} Picture1.gif
 ---
 name: FIG5
 ---
-An example of tropical-extratropical teleconnection in a barotropic model. The model is forced by a constant divergence flow (dashed line). The shading shows the vorticity field. 
+An example of tropical-extratropical teleconnection in a barotropic model. The model is forced by a constant divergence flow (orange contour).  
 ```
 \
 :::{note}
