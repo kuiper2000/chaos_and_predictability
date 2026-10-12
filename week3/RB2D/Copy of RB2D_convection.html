@@ -529,21 +529,21 @@ Requirement already satisfied: tomli&gt;=1 in /Users/Shared/miniconda3/envs/jupy
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting execnet&gt;=2.1 (from pytest-xdist-&gt;dedalus)
   Using cached execnet-2.1.2-py3-none-any.whl.metadata (2.9 kB)
 Requirement already satisfied: pandas&gt;=2.0 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from xarray-&gt;dedalus) (2.2.3)
+Requirement already satisfied: zipp&gt;=3.1.0 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.7.0-&gt;dedalus) (3.21.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.1.0 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.7.0-&gt;dedalus) (3.21.0)
-Requirement already satisfied: pytz&gt;=2020.1 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pandas&gt;=2.0-&gt;xarray-&gt;dedalus) (2024.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pandas&gt;=2.0-&gt;xarray-&gt;dedalus) (2024.1)
 Requirement already satisfied: tzdata&gt;=2022.7 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pandas&gt;=2.0-&gt;xarray-&gt;dedalus) (2025.1)
 Requirement already satisfied: six&gt;=1.5 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&gt;=3.7.0-&gt;dedalus) (1.17.0)
 Using cached h5py-3.14.0-cp39-cp39-macosx_11_0_arm64.whl (2.8 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using cached mpi4py-4.1.2-cp39-cp39-macosx_11_0_arm64.whl (1.4 MB)
+Using cached mpi4py-4.1.2-cp39-cp39-macosx_11_0_arm64.whl (1.4 MB)
 Using cached numexpr-2.10.2-cp39-cp39-macosx_11_0_arm64.whl (134 kB)
 Using cached py-1.11.0-py2.py3-none-any.whl (98 kB)
 Using cached pytest_benchmark-5.2.3-py3-none-any.whl (45 kB)
 Using cached pytest_cov-7.1.0-py3-none-any.whl (22 kB)
-Using cached pytest_xdist-3.8.0-py3-none-any.whl (46 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using cached pytest_xdist-3.8.0-py3-none-any.whl (46 kB)
 Using cached xarray-2024.7.0-py3-none-any.whl (1.2 MB)
 Using cached coverage-7.10.7-cp39-cp39-macosx_11_0_arm64.whl (218 kB)
 Using cached execnet-2.1.2-py3-none-any.whl (40 kB)
@@ -558,9 +558,7 @@ Building wheels for collected packages: dedalus
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> error
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  <span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
   
   <span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Building wheel for dedalus </span><span class=" -Color -Color-Bold -Color-Bold-Green">(</span><span class=" -Color -Color-Green">pyproject.toml</span><span class=" -Color -Color-Bold -Color-Bold-Green">)</span> did not run successfully.
   <span class=" -Color -Color-Red">│</span> exit code: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
@@ -680,7 +678,7 @@ Building wheels for collected packages: dedalus
   <span class=" -Color -Color-Red">   </span> running build_ext
   <span class=" -Color -Color-Red">   </span> building &#39;dedalus.core.transposes&#39; extension
   <span class=" -Color -Color-Red">   </span> creating build/temp.macosx-11.0-arm64-cpython-39/dedalus/core
-  <span class=" -Color -Color-Red">   </span> clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-4w17a9p4/overlay/lib/python3.9/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-4w17a9p4/overlay/lib/python3.9/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/jupyterbook/include/python3.9 -c dedalus/core/transposes.c -o build/temp.macosx-11.0-arm64-cpython-39/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
+  <span class=" -Color -Color-Red">   </span> clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-q1e6nggx/overlay/lib/python3.9/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-q1e6nggx/overlay/lib/python3.9/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/jupyterbook/include/python3.9 -c dedalus/core/transposes.c -o build/temp.macosx-11.0-arm64-cpython-39/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
   <span class=" -Color -Color-Red">   </span> clang: error: unsupported option &#39;-fopenmp&#39;
   <span class=" -Color -Color-Red">   </span> error: command &#39;/usr/bin/clang&#39; failed with exit code 1
   <span class=" -Color -Color-Red">   </span> <span class=" -Color -Color-Red">[end of output]</span>
@@ -688,7 +686,9 @@ Building wheels for collected packages: dedalus
   <span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
 <span class=" -Color -Color-Red">  ERROR: Failed building wheel for dedalus</span>
 ?25hFailed to build dedalus
-<span class=" -Color -Color-Red">ERROR: Failed to build installable wheels for some pyproject.toml based projects (dedalus)</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">ERROR: Failed to build installable wheels for some pyproject.toml based projects (dedalus)</span>
 
 </pre></div>
 </div>

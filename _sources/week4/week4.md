@@ -15,7 +15,18 @@ The formula of Lorenz 96 model {eq}`eq25` is a set of prognostic equations which
 \end{align*}
 ```  
 
-One can easily find that two nonlinear terms, $-X_{i-1}X_{i-2}$ and $X_{i-1}X_{i+1}$ lead to the chaotic features in Lorenz 96 model while the last two terms on the right hand side are linear damping and constant forcing respectively. The first two terms represent the nonlinear advection of $X_i$ from one grid to another. We can prove that the total energy is conserved when forcing $F$ and damping $-X_{i}$ are absent and domain is periodic (i.e., $X_{i-K}=X_{i+K}$). (HW) 
+One can easily find that two nonlinear terms, $-X_{i-1}X_{i-2}$ and $X_{i-1}X_{i+1}$ lead to the chaotic features in Lorenz 96 model while the last two terms on the right hand side are linear damping and constant forcing respectively. The first two terms represent the nonlinear advection of $X_i$ from one grid to another. The reason becomes clearer once the two terms are grouped together,
+
+```{math}
+:label: eq-adv
+\begin{align*}
+-X_{i-1}X_{i-2}+X_{i-1}X_{i+1}=X_{i-1}\big(X_{i+1}-X_{i-2}\big),
+\end{align*}
+```  
+
+which has the structure of $-u\frac{\partial u}{\partial x}$: an amplitude multiplying a spatial difference of its neighbours, i.e., a field advected by a "velocity" that is the field itself. Compare it with a centred finite difference of the advection term in Burgers' equation, $-X_{i}\frac{X_{i+1}-X_{i-1}}{2\Delta x}$. Lorenz simply shifted the advecting factor from $i$ to $i-1$ and widened the stencil so that the difference is taken between $i+1$ and $i-2$. That shift is not cosmetic: it is exactly what makes the discrete operator conserve energy. We can prove that the total energy is conserved when forcing $F$ and damping $-X_{i}$ are absent and domain is periodic (i.e., $X_{i-K}=X_{i+K}$). (HW) 
+
+It is worth stressing that {eq}`eq25` is not a discretisation of any particular partial differential equation. The index offsets were chosen so that the quadratic term conserves $\sum_i X_i^2$ and so that the resulting waves propagate, not by deriving them from $u\partial_x u$; the asymmetric stencil in fact has no $\Delta x \rightarrow 0$ continuum limit. "Representing advection" here means that the term carries the defining properties of advection -- quadratic in the state, energy conserving, and wave propagating -- rather than that it consistently approximates any advection operator. 
 
 The figure below shows a simulation from Lorenz 96 model with $F$ = 8 and $K$=100. We can clearly observe nonlinear wave propagating in both directions after the system is fully established. 
 
@@ -26,6 +37,30 @@ name: FIG7
 ---
 An example of LR 96 model. The initial condition is spatially autocorrelated with $r=0.9$ and $\epsilon=\mathcal{N}(\mu=0,\sigma^{2}=0.01)$ (random white noise). 
 ```
+
+:::{admonition} Side note: where do the waves in [FIG7](FIG7) come from?
+:class: tip, dropdown
+
+The uniform state $X_i=F$ is an exact steady solution of {eq}`eq25`. Writing $X_i=F+x_i$ and keeping only the linear terms,
+
+```{math}
+:label: eq-lin96
+\begin{align*}
+\frac{dx_n}{dt}=F\big(x_{n+1}-x_{n-2}\big)-x_n .
+\end{align*}
+```  
+
+Notice what has happened to the advection term: it has collapsed into *linear advection of the perturbation by the basic state*, with a "wind speed" proportional to $F$. This is the cleanest sense in which the quadratic term "is" advection. Substituting a wave $x_n \propto e^{i\kappa n+\sigma t}$ with $\kappa=2\pi m /K$,
+
+```{math}
+:label: eq-disp
+\begin{align*}
+\sigma(\kappa)=\underbrace{F\big(\cos\kappa-\cos 2\kappa\big)-1}_{\text{growth}}+\;i\,\underbrace{F\big(\sin\kappa+\sin 2\kappa\big)}_{\text{propagation}} .
+\end{align*}
+```  
+
+The imaginary part is non-zero, so the modes travel (phase speed $c=-\mathrm{Im}\,\sigma/\kappa$) instead of merely growing in place -- these are the propagating waves in [FIG7](FIG7). The growth rate is largest where $\cos\kappa-\cos2\kappa$ is maximised, i.e. at $\cos\kappa=\frac{1}{4}$, $\kappa\approx1.318$, where the bracket equals $\frac{9}{8}$. Two predictions follow immediately: the uniform state loses stability once $F>\frac{8}{9}$, and the preferred wave has a wavelength of $2\pi/\kappa\approx4.8$ grid points, i.e. $K\kappa/2\pi\approx21$ waves around the ring for $K=100$. Both are what the simulation gives.
+:::
 
 
 ## Single scale
@@ -59,7 +94,74 @@ In 1966, the numerical modeling of the complete global circulation was just leav
 
 ## Multi-scale interactions 
 
-In real atmosphere, the nonlinear interaction usually involved the energy cascade over different scales. Thus, Lorenz proposed another model, which involves the interaction between two scales. 
+In real atmosphere, the nonlinear interaction usually involved the energy cascade over different scales. It is tempting to assume that the one-dimensional model in {eq}`eq25` cannot cascade at all, but that is not the case. Because the advection term is *quadratic*, it couples triads of wavenumbers and does move energy across scales, exactly as Burgers' equation does in one dimension. What the single-scale model lacks is **scale separation**, not scale interaction: its only dissipation is $-X_i$, which damps every wavenumber at the same rate, unlike a viscosity $\sim-\nu\kappa^2$ that acts only on small scales. There is therefore no inertial range and no distinct fast, small-scale regime for the energy to cascade into. For this reason Lorenz proposed another model, which involves the interaction between two scales. 
+
+:::{admonition} Side note: why one dimension still cascades -- one quadratic invariant versus two
+:class: tip, dropdown
+
+The statement "advection cannot cascade energy" is true only for *linear* advection, and the statement "one dimension cannot cascade" is a garbled version of a statement about *invariants*. Both are worth doing carefully, because the argument is short and completely explicit.
+
+**1. Linear advection really cannot cascade.** For $\partial_t u+c\,\partial_x u=0$ with prescribed constant $c$, the Fourier modes decouple completely, $\hat u_\kappa(t)=\hat u_\kappa(0)e^{-ic\kappa t}$, so every $|\hat u_\kappa|^2$ is conserved *individually*. The spectrum is frozen and only the phases rotate. Nothing about the cascade survives the loss of the nonlinearity.
+
+**2. A quadratic nonlinearity means triad interactions.** Expanding $X_n=\sum_\kappa \hat X_\kappa e^{i\kappa n}$ on the periodic ring, the advection term in {eq}`eq25` becomes
+
+```{math}
+:label: eq-triad
+\begin{align*}
+\left.\frac{d\hat X_k}{dt}\right|_{\mathrm{nl}}=\sum_{p+q=k}\Gamma(p,q)\,\hat X_p\hat X_q ,
+\qquad
+2\Gamma(p,q)=e^{i(q-p)}+e^{i(p-q)}-e^{i(r-q)}-e^{i(r-p)} ,
+\end{align*}
+```  
+
+with $r \equiv -(p+q)$ and $\Gamma$ symmetric in its arguments. Mode $k$ is driven only by *pairs* of modes summing to $k$: a **triad**. This convolution is the entire cascade mechanism, and it exists in any number of dimensions.
+
+**3. Energy is conserved triad by triad.** Summing {eq}`eq-triad` cyclically over a triad $p+q+r=0$, each of the six exponentials appears once with a plus sign and once with a minus sign, so
+
+```{math}
+:label: eq-detailed
+\begin{align*}
+\Gamma(p,q)+\Gamma(q,r)+\Gamma(r,p)=0 .
+\end{align*}
+```  
+
+This is the spectral counterpart of the telescoping cancellation in the homework, and it is stronger: energy is conserved not merely in total but *within every individual triad*. Nonlinearity therefore only redistributes $E_\kappa \equiv |\hat X_\kappa|^2$ among scales, never creates it -- which is precisely what makes it a cascade rather than a source. It also means the direction of the cascade can be settled one triad at a time.
+
+**4. The counting argument.** Suppose a system conserves $n$ independent quadratic invariants. Translational symmetry forces each of them to be spectrally diagonal, $Q^{(j)}=\sum_\kappa w^{(j)}_\kappa E_\kappa$ for some weights $w^{(j)}_\kappa=w^{(j)}_{-\kappa}$. A triad exchange is described by three numbers $(\delta E_1,\delta E_2,\delta E_3)$ subject to $n$ linear constraints, leaving $3-n$ degrees of freedom:
+
+- $n=1$ (energy only -- Lorenz 96, Burgers, three-dimensional turbulence): two degrees of freedom. Conservation alone does **not** fix the signs of $\delta E_1$ and $\delta E_3$.
+- $n=2$ (energy *and* enstrophy -- two-dimensional turbulence): one degree of freedom. The exchange is determined up to a single amplitude, and the signs are *forced*.
+
+That single number, not the dimension of the domain, is what makes two-dimensional turbulence exceptional.
+
+**5. The case $n=2$ (Fjortoft's argument).** In two dimensions $Z=\sum_\kappa \kappa^2 E_\kappa$ is also conserved, i.e. $w=\{1,\kappa^2\}$. Take $k_1<k_2<k_3$ and remove an amount $\epsilon$ from the middle mode, $\delta E_2=-\epsilon$. The two constraints then have a *unique* solution,
+
+```{math}
+:label: eq-fjortoft
+\begin{align*}
+\delta E_1=\epsilon\,\frac{k_3^2-k_2^2}{k_3^2-k_1^2}>0 ,
+\qquad
+\delta E_3=\epsilon\,\frac{k_2^2-k_1^2}{k_3^2-k_1^2}>0 .
+\end{align*}
+```  
+
+Both are positive: the energy has no choice but to spread to *both* neighbours. The interesting part is how it splits. Taking $(k_1,k_2,k_3)=(k,2k,3k)$, the energy divides $5/8$ to the large scale against $3/8$ to the small scale, whereas the enstrophy divides $5/32$ to the large scale against $27/32$ to the small scale. Energy preferentially goes up-scale while enstrophy preferentially goes down-scale. Equivalently, and more sharply: with viscosity, $\dot E=-2\nu Z$ and $\dot Z=-2\nu P$ where $P=\sum_\kappa \kappa^4 E_\kappa$. As $\nu\rightarrow 0$ the enstrophy stays bounded so $\nu Z\rightarrow 0$ and energy dissipation vanishes, while the palinstrophy diverges so $\nu P$ stays finite. The mean-square wavenumber of the energy then obeys $\frac{d}{dt}(Z/E)\simeq \dot Z/E<0$: the energy *must* migrate to larger scales. Conservation alone forbids two-dimensional flow from dumping its energy at small scales.
+
+**6. The case $n=1$.** With two degrees of freedom left, conservation says nothing about direction, so the direction is set by statistical mechanics instead. The inviscid, spectrally truncated system preserves phase-space volume (for {eq}`eq25` one checks directly that $\sum_i \partial \dot X_i/\partial X_i=0$, since $\dot X_i$ does not contain $X_i$) and conserves only $E$, so its equilibrium is the Gibbs measure $\propto e^{-\alpha E}$ -- that is, **equipartition**, with $\langle E_\kappa\rangle$ the same for every retained mode. On the ring the modes are uniformly spaced in $\kappa$, so equipartition places half of the energy in the top octave $\kappa>\kappa_{\max}/2$. Any state peaked at large scale is thus far from equilibrium in the direction of a flux towards high $\kappa$, which is the forward cascade. In two dimensions the same reasoning fails, because the equilibrium measure must carry both invariants, $\langle E_\kappa\rangle\propto(\alpha+\beta\kappa^2)^{-1}$, which can instead condense at the lowest $\kappa$.
+
+**7. Does Lorenz 96 hide a second quadratic invariant?** No. A candidate $Q=\sum_\kappa w_\kappa E_\kappa$ is conserved for arbitrary states only if, for every triad $p+q+r=0$,
+
+```{math}
+:label: eq-wcond
+\begin{align*}
+w_r\,\Gamma(p,q)+w_p\,\Gamma(q,r)+w_q\,\Gamma(r,p)=0 .
+\end{align*}
+```  
+
+Already the degenerate triad $(\kappa,\kappa,-2\kappa)$ is decisive. There $\Gamma(\kappa,\kappa)=1-e^{-3i\kappa}$ and $\Gamma(\kappa,-2\kappa)=\Gamma(-2\kappa,\kappa)=\tfrac12\big(e^{-3i\kappa}-1\big)$, so {eq}`eq-wcond` collapses to $\big(1-e^{-3i\kappa}\big)\big(w_{2\kappa}-w_\kappa\big)=0$, forcing $w_{2\kappa}=w_\kappa$ whenever $3\kappa\not\equiv0 \pmod{2\pi}$. Imposing the remaining triads leaves a solution space of dimension exactly one, namely $w_\kappa=\mathrm{const}$: energy itself. (For comparison, the same test applied to the two-dimensional equations admits $w_\kappa=\kappa^2$ as well, which is enstrophy.)
+
+**So:** Lorenz 96 conserves exactly one quadratic invariant, its advection term couples triads, and its cascade is forward -- the same situation as Burgers' equation and as three-dimensional turbulence. What it cannot do is sustain an inertial range, which is the gap that {eq}`eq27` fills.
+:::
 
 
 ```{math}
