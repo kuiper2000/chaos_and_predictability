@@ -498,20 +498,18 @@ v
 x  \\
 y 
 \end{bmatrix}\)</span>
-the corresponding linear transformation can be written as</p>
+the coordinate map can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq40">
 <span class="eqno">(60)<a class="headerlink" href="#equation-eq40" title="Link to this equation">#</a></span>\[\begin{split}\begin{bmatrix}
 x  \\
 y  
 \end{bmatrix} =
 \begin{bmatrix}
-\frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\
-\frac{\partial y}{\partial u} &amp; \frac{\partial x}{\partial v} 
-\end{bmatrix} \begin{bmatrix}
-u  \\
-v  
+X(u,v) \\
+Y(u,v)
 \end{bmatrix}. \end{split}\]</div>
-<p>if we are using <span class="math notranslate nohighlight">\(du\)</span> and <span class="math notranslate nohighlight">\(dv\)</span> to represent the unit vectors in the original coordinate, then the unit vector in the final coordinates will be…</p>
+<p>Note that we cannot simply replace the right-hand-side of <a class="reference internal" href="#equation-eq40">(60)</a> by <span class="math notranslate nohighlight">\(\mathbf{J}\begin{bmatrix} u \\ v \end{bmatrix}\)</span>. The Jacobian matrix is a <em>local linearization</em>, so it maps <strong>differentials</strong>, not the coordinates themselves. (A quick sanity check with <a class="reference internal" href="#equation-eq30">(50)</a> and <a class="reference internal" href="#equation-eq38">(58)</a>: <span class="math notranslate nohighlight">\(\mathbf{J}[r,\theta]^{T} = [r\mathrm{cos}\theta - r\theta \mathrm{sin}\theta,\ r\mathrm{sin}\theta + r\theta \mathrm{cos}\theta]^{T}\)</span>, which is clearly not <span class="math notranslate nohighlight">\([r\mathrm{cos}\theta,\ r\mathrm{sin}\theta]^{T}\)</span>.)</p>
+<p>What the Jacobian does give us is the relation between infinitesimal displacements. If we use <span class="math notranslate nohighlight">\(du\)</span> and <span class="math notranslate nohighlight">\(dv\)</span> to represent an infinitesimal displacement in the original coordinate, then the corresponding displacement in the final coordinate is obtained by differentiating <a class="reference internal" href="#equation-eq40">(60)</a>, i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq41">
 <span class="eqno">(61)<a class="headerlink" href="#equation-eq41" title="Link to this equation">#</a></span>\[\begin{split}\begin{bmatrix}
 dx  \\
@@ -519,44 +517,37 @@ dy
 \end{bmatrix} =
 \begin{bmatrix}
 \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\
-\frac{\partial y}{\partial u} &amp; \frac{\partial x}{\partial v} 
+\frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v} 
 \end{bmatrix} \begin{bmatrix}
 du  \\
 dv  
 \end{bmatrix}. \end{split}\]</div>
-<p>for the area spanned by <span class="math notranslate nohighlight">\(dx\)</span> and <span class="math notranslate nohighlight">\(dy\)</span> in the final coordinate, it can be written as</p>
+<p>Now consider the infinitesimal box in the original coordinate whose two edges are <span class="math notranslate nohighlight">\((du,0)\)</span> and <span class="math notranslate nohighlight">\((0,dv)\)</span>. Applying <a class="reference internal" href="#equation-eq41">(61)</a> to each edge separately, the two edges of its image are the two columns below, and the area they span in the final coordinate is</p>
 <div class="math notranslate nohighlight" id="equation-eq42">
 <span class="eqno">(62)<a class="headerlink" href="#equation-eq42" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
-&amp; dxdy 
-\\
-&amp; =||\mathrm{det}\begin{bmatrix}
-dx &amp; 0 \\
-0  &amp; dy  
-\end{bmatrix}|| 
-\\
-&amp;= ||\mathrm{det}
+dxdy &amp;= \left|\mathrm{det}
 \begin{bmatrix}
 \frac{\partial x}{\partial u}du &amp; \frac{\partial x}{\partial v}dv \\
-\frac{\partial y}{\partial u}du &amp; \frac{\partial x}{\partial v}dv 
-\end{bmatrix} || 
+\frac{\partial y}{\partial u}du &amp; \frac{\partial y}{\partial v}dv 
+\end{bmatrix} \right| 
 \\
 &amp;= 
-||\mathrm{det}
+\left|\mathrm{det}
 \begin{bmatrix}
 \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\
-\frac{\partial y}{\partial u} &amp; \frac{\partial x}{\partial v} 
-\end{bmatrix} || dudv
+\frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v} 
+\end{bmatrix} \right| dudv
 \\
 &amp;=
-||\mathrm{det} J(u,v)||dudv
+|\mathrm{det} J(u,v)|dudv
 \end{align*}\end{split}\]</div>
-<p>from <a class="reference internal" href="#equation-eq42">(62)</a>, we can easily observe that the area spanned by unit vector has expanded (shrunk) by a factor of <span class="math notranslate nohighlight">\(||\mathrm{det}J(u,v)||\)</span>.</p>
+<p>where the second line comes from factoring <span class="math notranslate nohighlight">\(du\)</span> out of the first column and <span class="math notranslate nohighlight">\(dv\)</span> out of the second. From <a class="reference internal" href="#equation-eq42">(62)</a>, we can easily observe that the area spanned by the infinitesimal displacements has expanded (shrunk) by a factor of <span class="math notranslate nohighlight">\(|\mathrm{det}J(u,v)|\)</span>.</p>
 </section>
 <section id="connections-between-liouville-equation-and-ensemble-forecasts">
 <h2>Connections between Liouville equation and ensemble forecasts<a class="headerlink" href="#connections-between-liouville-equation-and-ensemble-forecasts" title="Link to this heading">#</a></h2>
 <p>OK, now we know the mathematical meaning (geometric meaning) of a Jacobian matrix and determinant. To further understand the their roles in LE, let’s first take a what Joseph Liouville found in 1838. For a dynamical system with third order differential terms</p>
 <div class="math notranslate nohighlight" id="equation-eq43">
-<span class="eqno">(63)<a class="headerlink" href="#equation-eq43" title="Link to this equation">#</a></span>\[x^{'''}=\mathbf{\Phi}(t,x,x^{''},x^{'''})\]</div>
+<span class="eqno">(63)<a class="headerlink" href="#equation-eq43" title="Link to this equation">#</a></span>\[x^{'''}=\mathbf{\Phi}(t,x,x^{'},x^{''})\]</div>
 <p>he subsequently assumed that the solution has a form of</p>
 <div class="math notranslate nohighlight" id="equation-eq44">
 <span class="eqno">(64)<a class="headerlink" href="#equation-eq44" title="Link to this equation">#</a></span>\[x = x(t,a,b,c)\]</div>
@@ -567,26 +558,26 @@ He further defined a Jacobian matrix, which maps the initial state to the final 
 <p>the determinant of this Jacobian matrix can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq46">
 <span class="eqno">(66)<a class="headerlink" href="#equation-eq46" title="Link to this equation">#</a></span>\[\begin{split}\alpha(a,b,c,t)  
-=||\mathrm{det}
+=\left|\mathrm{det}
 \begin{bmatrix}
 \frac{\partial x}{\partial a}      &amp; \frac{\partial x}{\partial b} &amp; \frac{\partial x}{\partial c} \\
 \frac{\partial x^{'}}{\partial a}  &amp; \frac{\partial x^{'}}{\partial b} &amp; \frac{\partial x^{'}}{\partial c} \\  
 \frac{\partial x^{''}}{\partial a} &amp; \frac{\partial x^{''}}{\partial b} &amp; \frac{\partial x^{''}}{\partial c}
-\end{bmatrix} ||\end{split}\]</div>
+\end{bmatrix} \right|\end{split}\]</div>
 <p>He then proved that</p>
 <div class="math notranslate nohighlight" id="equation-eq47">
 <span class="eqno">(67)<a class="headerlink" href="#equation-eq47" title="Link to this equation">#</a></span>\[\frac{\partial \alpha}{\partial t}=\alpha\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="#equation-eq47">(67)</a> can be proved by using the chain rule i.e.,
-<span class="math notranslate nohighlight">\(\frac{\partial x^{'''}}{\partial a}=\frac{\partial P}{\partial a} 
-= \frac{\partial P}{\partial x}\frac{\partial x}{\partial a} + \frac{\partial P}{\partial x^{''}}\frac{\partial x^{''}}{\partial a}+\frac{\partial P}{\partial x^{'''}}\frac{\partial x^{'''}}{\partial a}\)</span>  (HW)</p>
+<span class="math notranslate nohighlight">\(\frac{\partial x^{'''}}{\partial a}=\frac{\partial \mathbf{\Phi}}{\partial a} 
+= \frac{\partial \mathbf{\Phi}}{\partial x}\frac{\partial x}{\partial a} + \frac{\partial \mathbf{\Phi}}{\partial x^{'}}\frac{\partial x^{'}}{\partial a}+\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\frac{\partial x^{''}}{\partial a}\)</span>  (HW)</p>
 </div>
-<p>Let’s take a look what <a class="reference internal" href="#equation-eq47">(67)</a> tells us. First, <a class="reference internal" href="#equation-eq44">(64)</a> describes how the dynamical system gonna evolve with time. If <span class="math notranslate nohighlight">\(x\)</span> represents the forecast uncertainty or forecast error (i.e., the distance between any given ensemble member to the ensemble mean), then <a class="reference internal" href="#equation-eq44">(64)</a> is a “prognostic equation of model uncertainty”. Second, the determinant tells us the how the volume spanned by eigen basis changes after the linear transformation. Physically, the volume spanned by different ensemble members is so-called ensemble spread. Thus, <a class="reference internal" href="#equation-eq47">(67)</a> is a “prognostic equation for ensemble spread” (i.e., forecast the entire PDF). In addition, it also tells us the time tendency of ensemble spread is only related to the highest-order differentiation i.e., <span class="math notranslate nohighlight">\(\frac{\partial }{\partial x^{'''}}\)</span>.</p>
+<p>Let’s take a look what <a class="reference internal" href="#equation-eq47">(67)</a> tells us. First, <a class="reference internal" href="#equation-eq44">(64)</a> describes how the dynamical system gonna evolve with time. If <span class="math notranslate nohighlight">\(x\)</span> represents the forecast uncertainty or forecast error (i.e., the distance between any given ensemble member to the ensemble mean), then <a class="reference internal" href="#equation-eq44">(64)</a> is a “prognostic equation of model uncertainty”. Second, the determinant tells us the how the volume spanned by eigen basis changes after the linear transformation. Physically, the volume spanned by different ensemble members is so-called ensemble spread. Thus, <a class="reference internal" href="#equation-eq47">(67)</a> is a “prognostic equation for ensemble spread” (i.e., forecast the entire PDF). In addition, it also tells us the time tendency of ensemble spread is only related to the highest-order derivative appearing in <span class="math notranslate nohighlight">\(\mathbf{\Phi}\)</span>, i.e., <span class="math notranslate nohighlight">\(\frac{\partial }{\partial x^{''}}\)</span>.</p>
 <p><a class="reference internal" href="#equation-eq47">(67)</a> also has some very interesting applications in the information theory. If we rewrite <a class="reference internal" href="#equation-eq47">(67)</a> by dividing both side with <span class="math notranslate nohighlight">\(\alpha\)</span>, we can have</p>
 <div class="math notranslate nohighlight" id="equation-eq48">
 <span class="eqno">(68)<a class="headerlink" href="#equation-eq48" title="Link to this equation">#</a></span>\[\frac{\partial \mathrm{ln}\alpha}{\partial t}=\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\]</div>
-<p>we further integrate both sides over the entire phase space. One can find that the integration of right-hand-side of <a class="reference internal" href="#equation-eq49">(69)</a> is always 0 (why?). Thus, <a class="reference internal" href="#equation-eq48">(68)</a> is also equivalent to</p>
+<p>we further integrate both sides over the entire phase space. One can find that the integration of right-hand-side of <a class="reference internal" href="#equation-eq48">(68)</a> is always 0 (why?). Thus, <a class="reference internal" href="#equation-eq48">(68)</a> is also equivalent to</p>
 <div class="math notranslate nohighlight" id="equation-eq49">
 <span class="eqno">(69)<a class="headerlink" href="#equation-eq49" title="Link to this equation">#</a></span>\[\int\frac{\partial \mathrm{ln}\alpha}{\partial t}dx^{''}=\int\frac{\partial \mathbf{\Phi}}{\partial x^{''}} dx^{''}=0\]</div>
 <p>this also gives us <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t} \int\mathrm{ln}\alpha dx^{''}\)</span> = 0 (note that we swap the order of integration and <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t}\)</span> since both of them are linear operators). <a class="reference internal" href="#equation-eq49">(69)</a> is so-called the “conservation of information”. In <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)#Definition">information theory</a>, the definition of “information” is very similar to the left-hand-side of <a class="reference internal" href="#equation-eq49">(69)</a>, where the information provided by <span class="math notranslate nohighlight">\(i\)</span>th element is <span class="math notranslate nohighlight">\(\mathrm{ln}\alpha(x_{i})\)</span>.</p>

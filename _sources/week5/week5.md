@@ -142,7 +142,7 @@ v
 x  \\
 y 
 \end{bmatrix}$
-the corresponding linear transformation can be written as
+the coordinate map can be written as
 
 ```{math}
 :label: eq40
@@ -151,15 +151,14 @@ x  \\
 y  
 \end{bmatrix} =
 \begin{bmatrix}
-\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
-\frac{\partial y}{\partial u} & \frac{\partial x}{\partial v} 
-\end{bmatrix} \begin{bmatrix}
-u  \\
-v  
+X(u,v) \\
+Y(u,v)
 \end{bmatrix}. 
 ```  
 
-if we are using $du$ and $dv$ to represent the unit vectors in the original coordinate, then the unit vector in the final coordinates will be... 
+Note that we cannot simply replace the right-hand-side of {eq}`eq40` by $\mathbf{J}\begin{bmatrix} u \\ v \end{bmatrix}$. The Jacobian matrix is a *local linearization*, so it maps **differentials**, not the coordinates themselves. (A quick sanity check with {eq}`eq30` and {eq}`eq38`: $\mathbf{J}[r,\theta]^{T} = [r\mathrm{cos}\theta - r\theta \mathrm{sin}\theta,\ r\mathrm{sin}\theta + r\theta \mathrm{cos}\theta]^{T}$, which is clearly not $[r\mathrm{cos}\theta,\ r\mathrm{sin}\theta]^{T}$.)
+
+What the Jacobian does give us is the relation between infinitesimal displacements. If we use $du$ and $dv$ to represent an infinitesimal displacement in the original coordinate, then the corresponding displacement in the final coordinate is obtained by differentiating {eq}`eq40`, i.e., 
 
 ```{math}
 :label: eq41
@@ -169,43 +168,37 @@ dy
 \end{bmatrix} =
 \begin{bmatrix}
 \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
-\frac{\partial y}{\partial u} & \frac{\partial x}{\partial v} 
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} 
 \end{bmatrix} \begin{bmatrix}
 du  \\
 dv  
 \end{bmatrix}. 
 ```  
 
-for the area spanned by $dx$ and $dy$ in the final coordinate, it can be written as
+Now consider the infinitesimal box in the original coordinate whose two edges are $(du,0)$ and $(0,dv)$. Applying {eq}`eq41` to each edge separately, the two edges of its image are the two columns below, and the area they span in the final coordinate is
+
 ```{math}
 :label: eq42
 \begin{align*}
-& dxdy 
-\\
-& =||\mathrm{det}\begin{bmatrix}
-dx & 0 \\
-0  & dy  
-\end{bmatrix}|| 
-\\
-&= ||\mathrm{det}
+dxdy &= \left|\mathrm{det}
 \begin{bmatrix}
 \frac{\partial x}{\partial u}du & \frac{\partial x}{\partial v}dv \\
-\frac{\partial y}{\partial u}du & \frac{\partial x}{\partial v}dv 
-\end{bmatrix} || 
+\frac{\partial y}{\partial u}du & \frac{\partial y}{\partial v}dv 
+\end{bmatrix} \right| 
 \\
 &= 
-||\mathrm{det}
+\left|\mathrm{det}
 \begin{bmatrix}
 \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
-\frac{\partial y}{\partial u} & \frac{\partial x}{\partial v} 
-\end{bmatrix} || dudv
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} 
+\end{bmatrix} \right| dudv
 \\
 &=
-||\mathrm{det} J(u,v)||dudv
+|\mathrm{det} J(u,v)|dudv
 \end{align*}
 
 ```   
-from {eq}`eq42`, we can easily observe that the area spanned by unit vector has expanded (shrunk) by a factor of $||\mathrm{det}J(u,v)||$. 
+where the second line comes from factoring $du$ out of the first column and $dv$ out of the second. From {eq}`eq42`, we can easily observe that the area spanned by the infinitesimal displacements has expanded (shrunk) by a factor of $|\mathrm{det}J(u,v)|$. 
 
 ## Connections between Liouville equation and ensemble forecasts
 
@@ -213,7 +206,7 @@ OK, now we know the mathematical meaning (geometric meaning) of a Jacobian matri
 
 ```{math}
 :label: eq43
-x^{'''}=\mathbf{\Phi}(t,x,x^{''},x^{'''})
+x^{'''}=\mathbf{\Phi}(t,x,x^{'},x^{''})
 ```  
 
 he subsequently assumed that the solution has a form of  
@@ -234,12 +227,12 @@ the determinant of this Jacobian matrix can be written as
 ```{math}
 :label: eq46
 \alpha(a,b,c,t)  
-=||\mathrm{det}
+=\left|\mathrm{det}
 \begin{bmatrix}
 \frac{\partial x}{\partial a}      & \frac{\partial x}{\partial b} & \frac{\partial x}{\partial c} \\
 \frac{\partial x^{'}}{\partial a}  & \frac{\partial x^{'}}{\partial b} & \frac{\partial x^{'}}{\partial c} \\  
 \frac{\partial x^{''}}{\partial a} & \frac{\partial x^{''}}{\partial b} & \frac{\partial x^{''}}{\partial c}
-\end{bmatrix} ||
+\end{bmatrix} \right|
 ```
 
 He then proved that 
@@ -249,18 +242,18 @@ He then proved that
 ```
 :::{note}
 {eq}`eq47` can be proved by using the chain rule i.e., 
-$\frac{\partial x^{'''}}{\partial a}=\frac{\partial P}{\partial a} 
-= \frac{\partial P}{\partial x}\frac{\partial x}{\partial a} + \frac{\partial P}{\partial x^{''}}\frac{\partial x^{''}}{\partial a}+\frac{\partial P}{\partial x^{'''}}\frac{\partial x^{'''}}{\partial a}$  (HW)
+$\frac{\partial x^{'''}}{\partial a}=\frac{\partial \mathbf{\Phi}}{\partial a} 
+= \frac{\partial \mathbf{\Phi}}{\partial x}\frac{\partial x}{\partial a} + \frac{\partial \mathbf{\Phi}}{\partial x^{'}}\frac{\partial x^{'}}{\partial a}+\frac{\partial \mathbf{\Phi}}{\partial x^{''}}\frac{\partial x^{''}}{\partial a}$  (HW)
 :::
 
-Let's take a look what {eq}`eq47` tells us. First, {eq}`eq44` describes how the dynamical system gonna evolve with time. If $x$ represents the forecast uncertainty or forecast error (i.e., the distance between any given ensemble member to the ensemble mean), then {eq}`eq44` is a "prognostic equation of model uncertainty". Second, the determinant tells us the how the volume spanned by eigen basis changes after the linear transformation. Physically, the volume spanned by different ensemble members is so-called ensemble spread. Thus, {eq}`eq47` is a "prognostic equation for ensemble spread" (i.e., forecast the entire PDF). In addition, it also tells us the time tendency of ensemble spread is only related to the highest-order differentiation i.e., $\frac{\partial }{\partial x^{'''}}$.  
+Let's take a look what {eq}`eq47` tells us. First, {eq}`eq44` describes how the dynamical system gonna evolve with time. If $x$ represents the forecast uncertainty or forecast error (i.e., the distance between any given ensemble member to the ensemble mean), then {eq}`eq44` is a "prognostic equation of model uncertainty". Second, the determinant tells us the how the volume spanned by eigen basis changes after the linear transformation. Physically, the volume spanned by different ensemble members is so-called ensemble spread. Thus, {eq}`eq47` is a "prognostic equation for ensemble spread" (i.e., forecast the entire PDF). In addition, it also tells us the time tendency of ensemble spread is only related to the highest-order derivative appearing in $\mathbf{\Phi}$, i.e., $\frac{\partial }{\partial x^{''}}$.  
 
 {eq}`eq47` also has some very interesting applications in the information theory. If we rewrite {eq}`eq47` by dividing both side with $\alpha$, we can have
 ```{math}
 :label: eq48
 \frac{\partial \mathrm{ln}\alpha}{\partial t}=\frac{\partial \mathbf{\Phi}}{\partial x^{''}}
 ```
-we further integrate both sides over the entire phase space. One can find that the integration of right-hand-side of {eq}`eq49` is always 0 (why?). Thus, {eq}`eq48` is also equivalent to 
+we further integrate both sides over the entire phase space. One can find that the integration of right-hand-side of {eq}`eq48` is always 0 (why?). Thus, {eq}`eq48` is also equivalent to 
 
 ```{math}
 :label: eq49
