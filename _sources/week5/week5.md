@@ -175,7 +175,7 @@ dv
 \end{bmatrix}. 
 ```  
 
-Now consider the infinitesimal box in the original coordinate whose two edges are $(du,0)$ and $(0,dv)$. Applying {eq}`eq41` to each edge separately, the two edges of its image are the two columns below, and the area they span in the final coordinate is
+Now consider the infinitesimal box in the original coordinate whose two edges are $(du,0)$ and $(0,dv)$ (see [FIG_jacobian](FIG_jacobian)). Applying {eq}`eq41` to each edge separately, the two edges of its image are the two columns below, and the area they span in the final coordinate is
 
 ```{math}
 :label: eq42
@@ -199,6 +199,15 @@ dxdy &= \left|\mathrm{det}
 
 ```   
 where the second line comes from factoring $du$ out of the first column and $dv$ out of the second. From {eq}`eq42`, we can easily observe that the area spanned by the infinitesimal displacements has expanded (shrunk) by a factor of $|\mathrm{det}J(u,v)|$. 
+
+```{figure} jacobian_area.png
+---
+name: FIG_jacobian
+width: 100%
+---
+The geometric meaning of {eq}`eq42`. The rectangle in the original coordinate is spanned by the two edges $(du,0)$ (blue) and $(0,dv)$ (orange). Each edge is mapped by $J(u,v)$ onto the corresponding **column** of the Jacobian matrix, scaled by $du$ or $dv$. Note that the image is in general a *parallelogram*, not a rectangle: the map stretches, rotates **and shears** the box, so the two image edges are no longer perpendicular. This is exactly why the area must be computed with a determinant rather than by multiplying two side lengths. Both panels are drawn on the same scale, so the growth in area is the factor $|\mathrm{det}J|$ itself (here $|\mathrm{det}J|=1.82$). The dotted box in the right panel marks the original rectangle, for comparison. (The box is drawn at an exaggerated size; in {eq}`eq42` it is infinitesimal.)
+```
+
 
 ## Connections between Liouville equation and ensemble forecasts
 

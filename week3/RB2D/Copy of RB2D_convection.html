@@ -483,7 +483,9 @@ Requirement already satisfied: numpy&gt;=1.20.0 in /Users/Shared/miniconda3/envs
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting py (from dedalus)
   Using cached py-1.11.0-py2.py3-none-any.whl.metadata (2.8 kB)
 Requirement already satisfied: pytest in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from dedalus) (8.3.5)
-Collecting pytest-benchmark (from dedalus)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pytest-benchmark (from dedalus)
   Using cached pytest_benchmark-5.2.3-py3-none-any.whl.metadata (29 kB)
 </pre></div>
 </div>
@@ -498,9 +500,7 @@ Requirement already satisfied: scipy&gt;=1.4.0 in /Users/Shared/miniconda3/envs/
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting xarray (from dedalus)
   Using cached xarray-2024.7.0-py3-none-any.whl.metadata (11 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: contourpy&gt;=1.0.1 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from matplotlib&gt;=3.7.0-&gt;dedalus) (1.3.0)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from matplotlib&gt;=3.7.0-&gt;dedalus) (1.3.0)
 Requirement already satisfied: cycler&gt;=0.10 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from matplotlib&gt;=3.7.0-&gt;dedalus) (0.12.1)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from matplotlib&gt;=3.7.0-&gt;dedalus) (4.56.0)
 Requirement already satisfied: kiwisolver&gt;=1.3.1 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from matplotlib&gt;=3.7.0-&gt;dedalus) (1.4.7)
@@ -547,9 +547,6 @@ Building wheels for collected packages: dedalus
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for dedalus (pyproject.toml) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> error
@@ -673,7 +670,7 @@ Building wheels for collected packages: dedalus
   <span class=" -Color -Color-Red">   </span> running build_ext
   <span class=" -Color -Color-Red">   </span> building &#39;dedalus.core.transposes&#39; extension
   <span class=" -Color -Color-Red">   </span> creating build/temp.macosx-11.0-arm64-cpython-39/dedalus/core
-  <span class=" -Color -Color-Red">   </span> clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-a8zgtrx4/overlay/lib/python3.9/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-a8zgtrx4/overlay/lib/python3.9/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/jupyterbook/include/python3.9 -c dedalus/core/transposes.c -o build/temp.macosx-11.0-arm64-cpython-39/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
+  <span class=" -Color -Color-Red">   </span> clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-nzx938go/overlay/lib/python3.9/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-nzx938go/overlay/lib/python3.9/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/jupyterbook/include/python3.9 -c dedalus/core/transposes.c -o build/temp.macosx-11.0-arm64-cpython-39/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
   <span class=" -Color -Color-Red">   </span> clang: error: unsupported option &#39;-fopenmp&#39;
   <span class=" -Color -Color-Red">   </span> error: command &#39;/usr/bin/clang&#39; failed with exit code 1
   <span class=" -Color -Color-Red">   </span> <span class=" -Color -Color-Red">[end of output]</span>

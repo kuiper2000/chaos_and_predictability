@@ -399,7 +399,7 @@
 <figure class="align-default" id="fig15">
 <img alt="../_images/1D_advection.png" src="../_images/1D_advection.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">An example of a one-dimensional grid, with uniform grid spacing <span class="math notranslate nohighlight">\(\Delta x\)</span>. The grid points are denoted by the integer index j. Half-integer grid points can also be defined, as shown by the x at j+<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>.</span><a class="headerlink" href="#fig15" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">An example of a one-dimensional grid, with uniform grid spacing <span class="math notranslate nohighlight">\(\Delta x\)</span>. The grid points are denoted by the integer index j. Half-integer grid points can also be defined, as shown by the x at j+<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>.</span><a class="headerlink" href="#fig15" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We first start with grid spacing. <a class="reference internal" href="#fig15"><span class="std std-ref">FIG15</span></a> is schematic diagram of 1D grid (sometimes we use mesh or lattice). Since each grid is equally spaced, we can define a function <span class="math notranslate nohighlight">\(f(x_j)=f(j\Delta x)\)</span>, which further leads to three different definitions of finite difference: (1) For forward difference at point <span class="math notranslate nohighlight">\(j\)</span>, we have <span class="math notranslate nohighlight">\(\frac{f(x_{j+1})-f(x_{j})}{\Delta x}\)</span>, (2) for backward difference at point <span class="math notranslate nohighlight">\(j\)</span>, we have <span class="math notranslate nohighlight">\(\frac{f(x_{j})-f(x_{j-1})}{\Delta x}\)</span> and (3) for central difference at point <span class="math notranslate nohighlight">\(j\)</span>, we have <span class="math notranslate nohighlight">\(\frac{f(x_{j+1})-f(x_{j-1})}{\Delta x}\)</span>.</p>
@@ -442,7 +442,7 @@
 <figure class="align-default" id="fig16">
 <img alt="../_images/domain_dependence.png" src="../_images/domain_dependence.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">A schematic diagram of domain dependence. The shading regions show where the “domain of dependence” is for <code class="xref eq docutils literal notranslate"><span class="pre">79</span></code>. Shading regions are where eq. 79 depends.</span><a class="headerlink" href="#fig16" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">A schematic diagram of domain dependence. The shading regions show where the “domain of dependence” is for <code class="xref eq docutils literal notranslate"><span class="pre">79</span></code>. Shading regions are where eq. 79 depends.</span><a class="headerlink" href="#fig16" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The shading regions in <a class="reference internal" href="#fig16"><span class="std std-ref">FIG16</span></a> show where the numerical solution should fall in order to get smaller discretization error. If today, the integration starts at a point of <span class="math notranslate nohighlight">\(A(x_0,0)\)</span> where <span class="math notranslate nohighlight">\(x_0&lt;0\)</span> as indicated by the thin line in <a class="reference internal" href="#fig16"><span class="std std-ref">FIG16</span></a>. We can find that the discretization error will never decrease as long as <span class="math notranslate nohighlight">\(\frac{\Delta x}{\Delta t\)</span>}$ is a constant.</p>
@@ -457,7 +457,7 @@
 <figure class="align-default" id="fig17">
 <img alt="../_images/interprolation_extrapolation.png" src="../_images/interprolation_extrapolation.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">A schematic diagram of “interpolation vs extrapolation”</span><a class="headerlink" href="#fig17" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">A schematic diagram of “interpolation vs extrapolation”</span><a class="headerlink" href="#fig17" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We can rewrite <a class="reference internal" href="#equation-eq83">(103)</a> in an absolute form and the following conclusion also holds if <span class="math notranslate nohighlight">\(0\geq\mu \geq 1\)</span></p>
@@ -522,7 +522,7 @@
 <figure class="align-default" id="fig18">
 <img alt="../_images/Shear_instability.png" src="../_images/Shear_instability.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">A schematic diagram of prescribed background flow for shear instability.</span><a class="headerlink" href="#fig18" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">A schematic diagram of prescribed background flow for shear instability.</span><a class="headerlink" href="#fig18" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The corresponding governing equations can be written as:</p>

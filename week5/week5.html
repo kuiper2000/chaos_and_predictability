@@ -522,7 +522,7 @@ dy
 du  \\
 dv  
 \end{bmatrix}. \end{split}\]</div>
-<p>Now consider the infinitesimal box in the original coordinate whose two edges are <span class="math notranslate nohighlight">\((du,0)\)</span> and <span class="math notranslate nohighlight">\((0,dv)\)</span>. Applying <a class="reference internal" href="#equation-eq41">(61)</a> to each edge separately, the two edges of its image are the two columns below, and the area they span in the final coordinate is</p>
+<p>Now consider the infinitesimal box in the original coordinate whose two edges are <span class="math notranslate nohighlight">\((du,0)\)</span> and <span class="math notranslate nohighlight">\((0,dv)\)</span> (see <a class="reference internal" href="#fig-jacobian"><span class="std std-ref">FIG_jacobian</span></a>). Applying <a class="reference internal" href="#equation-eq41">(61)</a> to each edge separately, the two edges of its image are the two columns below, and the area they span in the final coordinate is</p>
 <div class="math notranslate nohighlight" id="equation-eq42">
 <span class="eqno">(62)<a class="headerlink" href="#equation-eq42" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
 dxdy &amp;= \left|\mathrm{det}
@@ -542,6 +542,13 @@ dxdy &amp;= \left|\mathrm{det}
 |\mathrm{det} J(u,v)|dudv
 \end{align*}\end{split}\]</div>
 <p>where the second line comes from factoring <span class="math notranslate nohighlight">\(du\)</span> out of the first column and <span class="math notranslate nohighlight">\(dv\)</span> out of the second. From <a class="reference internal" href="#equation-eq42">(62)</a>, we can easily observe that the area spanned by the infinitesimal displacements has expanded (shrunk) by a factor of <span class="math notranslate nohighlight">\(|\mathrm{det}J(u,v)|\)</span>.</p>
+<figure class="align-default" id="fig-jacobian">
+<a class="reference internal image-reference" href="../_images/jacobian_area.png"><img alt="../_images/jacobian_area.png" src="../_images/jacobian_area.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">The geometric meaning of <a class="reference internal" href="#equation-eq42">(62)</a>. The rectangle in the original coordinate is spanned by the two edges <span class="math notranslate nohighlight">\((du,0)\)</span> (blue) and <span class="math notranslate nohighlight">\((0,dv)\)</span> (orange). Each edge is mapped by <span class="math notranslate nohighlight">\(J(u,v)\)</span> onto the corresponding <strong>column</strong> of the Jacobian matrix, scaled by <span class="math notranslate nohighlight">\(du\)</span> or <span class="math notranslate nohighlight">\(dv\)</span>. Note that the image is in general a <em>parallelogram</em>, not a rectangle: the map stretches, rotates <strong>and shears</strong> the box, so the two image edges are no longer perpendicular. This is exactly why the area must be computed with a determinant rather than by multiplying two side lengths. Both panels are drawn on the same scale, so the growth in area is the factor <span class="math notranslate nohighlight">\(|\mathrm{det}J|\)</span> itself (here <span class="math notranslate nohighlight">\(|\mathrm{det}J|=1.82\)</span>). The dotted box in the right panel marks the original rectangle, for comparison. (The box is drawn at an exaggerated size; in <a class="reference internal" href="#equation-eq42">(62)</a> it is infinitesimal.)</span><a class="headerlink" href="#fig-jacobian" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="connections-between-liouville-equation-and-ensemble-forecasts">
 <h2>Connections between Liouville equation and ensemble forecasts<a class="headerlink" href="#connections-between-liouville-equation-and-ensemble-forecasts" title="Link to this heading">#</a></h2>
@@ -592,7 +599,7 @@ He further defined a Jacobian matrix, which maps the initial state to the final 
 <figure class="align-default" id="fig12">
 <img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/RogerPenroseTileTAMU2010.jpg/220px-RogerPenroseTileTAMU2010.jpg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/RogerPenroseTileTAMU2010.jpg/220px-RogerPenroseTileTAMU2010.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Roger Penrose and Penrose tiling</span><a class="headerlink" href="#fig12" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Roger Penrose and Penrose tiling</span><a class="headerlink" href="#fig12" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
