@@ -130,9 +130,9 @@ Collecting execnet>=2.1 (from pytest-xdist->dedalus)
   Using cached execnet-2.1.2-py3-none-any.whl.metadata (2.9 kB)
 Requirement already satisfied: pandas>=2.0 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from xarray->dedalus) (2.2.3)
 Requirement already satisfied: zipp>=3.1.0 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from importlib-resources>=3.2.0->matplotlib>=3.7.0->dedalus) (3.21.0)
+----- stdout -----
 Requirement already satisfied: pytz>=2020.1 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pandas>=2.0->xarray->dedalus) (2024.1)
 Requirement already satisfied: tzdata>=2022.7 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pandas>=2.0->xarray->dedalus) (2025.1)
------ stdout -----
 Requirement already satisfied: six>=1.5 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from python-dateutil>=2.7->matplotlib>=3.7.0->dedalus) (1.17.0)
 Using cached h5py-3.14.0-cp39-cp39-macosx_11_0_arm64.whl (2.8 MB)
 Using cached mpi4py-4.1.2-cp39-cp39-macosx_11_0_arm64.whl (1.4 MB)
@@ -143,11 +143,14 @@ Using cached pytest_cov-7.1.0-py3-none-any.whl (22 kB)
 Using cached pytest_xdist-3.8.0-py3-none-any.whl (46 kB)
 Using cached xarray-2024.7.0-py3-none-any.whl (1.2 MB)
 Using cached coverage-7.10.7-cp39-cp39-macosx_11_0_arm64.whl (218 kB)
+----- stdout -----
 Using cached execnet-2.1.2-py3-none-any.whl (40 kB)
 Using cached py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
 Building wheels for collected packages: dedalus
 ----- stdout -----
   Building wheel for dedalus (pyproject.toml) ... [?25l-
+----- stdout -----
+ \
 ----- stdout -----
  error
   [1;31merror[0m: [1msubprocess-exited-with-error[0m
@@ -263,14 +266,16 @@ Building wheels for collected packages: dedalus
   [31m   [0m copying dedalus/libraries/dedalus_sphere/spin_operators.py -> build/lib.macosx-11.0-arm64-cpython-39/dedalus/libraries/dedalus_sphere
   [31m   [0m copying dedalus/libraries/dedalus_sphere/sphere.py -> build/lib.macosx-11.0-arm64-cpython-39/dedalus/libraries/dedalus_sphere
   [31m   [0m copying dedalus/libraries/dedalus_sphere/annulus.py -> build/lib.macosx-11.0-arm64-cpython-39/dedalus/libraries/dedalus_sphere
-  [31m   [0m creating build/lib.macosx-11.0-arm64-cpython-39/dedalus/libraries/fftw
+  [31m   [0m creating build/lib.macosx-11.0-arm64-cpython-39/dedalus/libraries/fftw
   [31m   [0m copying dedalus/libraries/fftw/__init__.py -> build/lib.macosx-11.0-arm64-cpython-39/dedalus/libraries/fftw
   [31m   [0m copying dedalus/dedalus.cfg -> build/lib.macosx-11.0-arm64-cpython-39/dedalus
   [31m   [0m copying dedalus/examples.tar.gz -> build/lib.macosx-11.0-arm64-cpython-39/dedalus
   [31m   [0m running build_ext
   [31m   [0m building 'dedalus.core.transposes' extension
   [31m   [0m creating build/temp.macosx-11.0-arm64-cpython-39/dedalus/core
-  [31m   [0m clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-nzx938go/overlay/lib/python3.9/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-nzx938go/overlay/lib/python3.9/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/jupyterbook/include/python3.9 -c dedalus/core/transposes.c -o build/temp.macosx-11.0-arm64-cpython-39/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
+  [31m   [0m clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-88_hslku/overlay/lib/python3.9/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-88_hslku/overlay/lib/python3.9/site-packages/mpi4py/include
+----- stdout -----
+ -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/jupyterbook/include/python3.9 -c dedalus/core/transposes.c -o build/temp.macosx-11.0-arm64-cpython-39/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
   [31m   [0m clang: error: unsupported option '-fopenmp'
   [31m   [0m error: command '/usr/bin/clang' failed with exit code 1
   [31m   [0m [31m[end of output][0m
@@ -278,6 +283,7 @@ Building wheels for collected packages: dedalus
   [1;35mnote[0m: This error originates from a subprocess, and is likely not a problem with pip.
 [31m  ERROR: Failed building wheel for dedalus[0m[31m
 [0m[?25hFailed to build dedalus
+----- stdout -----
 [31mERROR: Failed to build installable wheels for some pyproject.toml based projects (dedalus)[0m[31m
 [0m
 ------------------
