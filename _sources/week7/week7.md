@@ -34,14 +34,15 @@ with an initial condition
 A(x,0) = F(x) 
 ``` 
 
-Physically, {eq}`eq75` carries $A_{j}^{n}$ at a position of a particle with a constant speed $c$. We interpret $A_{j}^{n}$ as a conserved property of the particle. To find the analytical solution, we can assume $\xi \equiv x-ct$ and thus $(\frac{\partial x}{\partial t})=c$ (with constant $\xi$). Using the chain rule, we further find that 
+Physically, {eq}`eq75` carries $A_{j}^{n}$ at a position of a particle with a constant speed $c$. We interpret $A_{j}^{n}$ as a conserved property of the particle. To find the analytical solution, we can assume $\xi \equiv x-ct$. A line of constant $\xi$ is then a particle trajectory: holding $\xi$ fixed and differentiating gives $dx-cdt=0$, i.e., $(\frac{\partial x}{\partial t})_{\xi}=c$ and equivalently $(\frac{\partial t}{\partial x})_{\xi}=\frac{1}{c}$. Using the chain rule, we further find that 
 
 ```{math}
 :label: eq77
 \begin{align*}
 (\frac{\partial A}{\partial x})_{\xi} 
-&= (\frac{\partial A}{\partial x})_t+(\frac{\partial A}{\partial t})(\frac{\partial t}{\partial x})  \\
-&= (\frac{\partial A}{\partial x})_t+(\frac{\partial A}{\partial t})(\frac{1}{c})  \\ 
+&= (\frac{\partial A}{\partial x})_t(\frac{\partial x}{\partial x})_{\xi}+(\frac{\partial A}{\partial t})_x(\frac{\partial t}{\partial x})_{\xi}  \\
+&= (\frac{\partial A}{\partial x})_t+(\frac{\partial A}{\partial t})_x(\frac{1}{c})  \\ 
+&= \frac{1}{c}\left[(\frac{\partial A}{\partial t})_x+c(\frac{\partial A}{\partial x})_t\right] \\
 & = 0
 \end{align*}
 ``` 
@@ -52,11 +53,13 @@ and
 :label: eq78
 \begin{align*}
 (\frac{\partial A}{\partial t})_{\xi} 
-&= (\frac{\partial A}{\partial t})_x+(\frac{\partial A}{\partial x})(\frac{\partial x}{\partial t})  \\ 
-&= (\frac{\partial A}{\partial t})_x+(\frac{\partial A}{\partial x})c \\
+&= (\frac{\partial A}{\partial t})_x(\frac{\partial t}{\partial t})_{\xi}+(\frac{\partial A}{\partial x})_t(\frac{\partial x}{\partial t})_{\xi}  \\ 
+&= (\frac{\partial A}{\partial t})_x+(\frac{\partial A}{\partial x})_t c \\
 & = 0
 \end{align*}
 ``` 
+
+Note that everything up to the second line of {eq}`eq77` and {eq}`eq78` is pure calculus; it holds for any field $A(x,t)$. The physics only enters in the last line, where the bracketed expression is recognized as the left hand side of {eq}`eq75` and is therefore zero. Note also that the two results are not independent: because $dx=cdt$ along a characteristic, {eq}`eq77` is simply {eq}`eq78` divided by $c$ (assuming $c \neq 0$).
 
 {eq}`eq77` and {eq}`eq78` suggest that $A$ will conserve as long as it stay on the characteristic line $\xi$. Thus, $\xi$ is an analytical solution of {eq}`eq75` (i.e., $A=f(\xi)$). Now let's consider using a numerical way to solve {eq}`eq75`, which can be written as the form below,
 

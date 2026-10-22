@@ -76,8 +76,8 @@ Collecting dedalus
 [?25h  Preparing metadata (pyproject.toml) ... [?25l-
 ----- stdout -----
  done
-[?25hCollecting docopt (from dedalus)
 ----- stdout -----
+[?25hCollecting docopt (from dedalus)
   Using cached docopt-0.6.2-py2.py3-none-any.whl
 ----- stdout -----
 Collecting h5py>=3.0.0 (from dedalus)
@@ -90,11 +90,10 @@ Collecting mpi4py>=2.0.0 (from dedalus)
 Collecting numexpr (from dedalus)
   Using cached numexpr-2.10.2-cp39-cp39-macosx_11_0_arm64.whl.metadata (8.1 kB)
 Requirement already satisfied: numpy>=1.20.0 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from dedalus) (2.0.2)
------ stdout -----
 Collecting py (from dedalus)
+----- stdout -----
   Using cached py-1.11.0-py2.py3-none-any.whl.metadata (2.8 kB)
 Requirement already satisfied: pytest in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from dedalus) (8.3.5)
------ stdout -----
 Collecting pytest-benchmark (from dedalus)
   Using cached pytest_benchmark-5.2.3-py3-none-any.whl.metadata (29 kB)
 ----- stdout -----
@@ -116,11 +115,11 @@ Requirement already satisfied: pillow>=8 in /Users/Shared/miniconda3/envs/jupyte
 Requirement already satisfied: pyparsing>=2.3.1 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from matplotlib>=3.7.0->dedalus) (3.2.1)
 Requirement already satisfied: python-dateutil>=2.7 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from matplotlib>=3.7.0->dedalus) (2.9.0.post0)
 Requirement already satisfied: importlib-resources>=3.2.0 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from matplotlib>=3.7.0->dedalus) (6.5.2)
+----- stdout -----
 Requirement already satisfied: exceptiongroup>=1.0.0rc8 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pytest->dedalus) (1.2.2)
 Requirement already satisfied: iniconfig in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pytest->dedalus) (2.0.0)
 Requirement already satisfied: pluggy<2,>=1.5 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pytest->dedalus) (1.5.0)
 Requirement already satisfied: tomli>=1 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pytest->dedalus) (2.2.1)
------ stdout -----
 Collecting py-cpuinfo (from pytest-benchmark->dedalus)
   Using cached py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
 ----- stdout -----
@@ -130,8 +129,8 @@ Collecting coverage>=7.10.6 (from coverage[toml]>=7.10.6->pytest-cov->dedalus)
 Collecting execnet>=2.1 (from pytest-xdist->dedalus)
   Using cached execnet-2.1.2-py3-none-any.whl.metadata (2.9 kB)
 Requirement already satisfied: pandas>=2.0 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from xarray->dedalus) (2.2.3)
------ stdout -----
 Requirement already satisfied: zipp>=3.1.0 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from importlib-resources>=3.2.0->matplotlib>=3.7.0->dedalus) (3.21.0)
+----- stdout -----
 Requirement already satisfied: pytz>=2020.1 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pandas>=2.0->xarray->dedalus) (2024.1)
 Requirement already satisfied: tzdata>=2022.7 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pandas>=2.0->xarray->dedalus) (2025.1)
 Requirement already satisfied: six>=1.5 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from python-dateutil>=2.7->matplotlib>=3.7.0->dedalus) (1.17.0)
@@ -143,7 +142,6 @@ Using cached pytest_benchmark-5.2.3-py3-none-any.whl (45 kB)
 Using cached pytest_cov-7.1.0-py3-none-any.whl (22 kB)
 Using cached pytest_xdist-3.8.0-py3-none-any.whl (46 kB)
 Using cached xarray-2024.7.0-py3-none-any.whl (1.2 MB)
------ stdout -----
 Using cached coverage-7.10.7-cp39-cp39-macosx_11_0_arm64.whl (218 kB)
 Using cached execnet-2.1.2-py3-none-any.whl (40 kB)
 Using cached py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
@@ -272,7 +270,7 @@ Building wheels for collected packages: dedalus
   [31m   [0m running build_ext
   [31m   [0m building 'dedalus.core.transposes' extension
   [31m   [0m creating build/temp.macosx-11.0-arm64-cpython-39/dedalus/core
-  [31m   [0m clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-cg_irszt/overlay/lib/python3.9/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-cg_irszt/overlay/lib/python3.9/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/jupyterbook/include/python3.9 -c dedalus/core/transposes.c -o build/temp.macosx-11.0-arm64-cpython-39/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
+  [31m   [0m clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-8o2mnik6/overlay/lib/python3.9/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-8o2mnik6/overlay/lib/python3.9/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/jupyterbook/include/python3.9 -c dedalus/core/transposes.c -o build/temp.macosx-11.0-arm64-cpython-39/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
   [31m   [0m clang: error: unsupported option '-fopenmp'
   [31m   [0m error: command '/usr/bin/clang' failed with exit code 1
   [31m   [0m [31m[end of output][0m

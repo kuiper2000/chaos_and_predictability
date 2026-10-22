@@ -447,6 +447,9 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
 </pre></div>
 </div>
@@ -460,9 +463,7 @@
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hCollecting docopt (from dedalus)
+?25hCollecting docopt (from dedalus)
   Using cached docopt-0.6.2-py2.py3-none-any.whl
 </pre></div>
 </div>
@@ -527,10 +528,10 @@ Requirement already satisfied: tomli&gt;=1 in /Users/Shared/miniconda3/envs/jupy
   Using cached execnet-2.1.2-py3-none-any.whl.metadata (2.9 kB)
 Requirement already satisfied: pandas&gt;=2.0 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from xarray-&gt;dedalus) (2.2.3)
 Requirement already satisfied: zipp&gt;=3.1.0 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib&gt;=3.7.0-&gt;dedalus) (3.21.0)
+Requirement already satisfied: pytz&gt;=2020.1 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pandas&gt;=2.0-&gt;xarray-&gt;dedalus) (2024.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pandas&gt;=2.0-&gt;xarray-&gt;dedalus) (2024.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pandas&gt;=2.0-&gt;xarray-&gt;dedalus) (2025.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tzdata&gt;=2022.7 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from pandas&gt;=2.0-&gt;xarray-&gt;dedalus) (2025.1)
 Requirement already satisfied: six&gt;=1.5 in /Users/Shared/miniconda3/envs/jupyterbook/lib/python3.9/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&gt;=3.7.0-&gt;dedalus) (1.17.0)
 Using cached h5py-3.14.0-cp39-cp39-macosx_11_0_arm64.whl (2.8 MB)
 Using cached mpi4py-4.1.2-cp39-cp39-macosx_11_0_arm64.whl (1.4 MB)
@@ -541,9 +542,7 @@ Using cached pytest_cov-7.1.0-py3-none-any.whl (22 kB)
 Using cached pytest_xdist-3.8.0-py3-none-any.whl (46 kB)
 Using cached xarray-2024.7.0-py3-none-any.whl (1.2 MB)
 Using cached coverage-7.10.7-cp39-cp39-macosx_11_0_arm64.whl (218 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using cached execnet-2.1.2-py3-none-any.whl (40 kB)
+Using cached execnet-2.1.2-py3-none-any.whl (40 kB)
 Using cached py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
 Building wheels for collected packages: dedalus
 </pre></div>
@@ -669,17 +668,13 @@ Building wheels for collected packages: dedalus
   <span class=" -Color -Color-Red">   </span> copying dedalus/libraries/dedalus_sphere/sphere.py -&gt; build/lib.macosx-11.0-arm64-cpython-39/dedalus/libraries/dedalus_sphere
   <span class=" -Color -Color-Red">   </span> copying dedalus/libraries/dedalus_sphere/annulus.py -&gt; build/lib.macosx-11.0-arm64-cpython-39/dedalus/libraries/dedalus_sphere
   <span class=" -Color -Color-Red">   </span> creating build/lib.macosx-11.0-arm64-cpython-39/dedalus/libraries/fftw
-
   <span class=" -Color -Color-Red">   </span> copying dedalus/libraries/fftw/__init__.py -&gt; build/lib.macosx-11.0-arm64-cpython-39/dedalus/libraries/fftw
   <span class=" -Color -Color-Red">   </span> copying dedalus/dedalus.cfg -&gt; build/lib.macosx-11.0-arm64-cpython-39/dedalus
   <span class=" -Color -Color-Red">   </span> copying dedalus/examples.tar.gz -&gt; build/lib.macosx-11.0-arm64-cpython-39/dedalus
   <span class=" -Color -Color-Red">   </span> running build_ext
   <span class=" -Color -Color-Red">   </span> building &#39;dedalus.core.transposes&#39; extension
   <span class=" -Color -Color-Red">   </span> creating build/temp.macosx-11.0-arm64-cpython-39/dedalus/core
-  <span class=" -Color -Color-Red">   </span> clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-88_hslku/overlay/lib/python3.9/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-88_hslku/overlay/lib/python3.9/site-packages/mpi4py/include
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/jupyterbook/include/python3.9 -c dedalus/core/transposes.c -o build/temp.macosx-11.0-arm64-cpython-39/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
+  <span class=" -Color -Color-Red">   </span> clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -fPIC -O2 -isystem /Users/Shared/miniconda3/envs/jupyterbook/include -arch arm64 -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-u9mwlvk1/overlay/lib/python3.9/site-packages/numpy/_core/include -I/private/var/folders/x1/nb2x5h5j08b2xx8xkc64r43m0000gn/T/pip-build-env-u9mwlvk1/overlay/lib/python3.9/site-packages/mpi4py/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -Idedalus/libraries/fftw/ -I/usr/include -I/Users/Shared/miniconda3/envs/jupyterbook/include/python3.9 -c dedalus/core/transposes.c -o build/temp.macosx-11.0-arm64-cpython-39/dedalus/core/transposes.o -DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION -Wno-unused-function -fopenmp
   <span class=" -Color -Color-Red">   </span> clang: error: unsupported option &#39;-fopenmp&#39;
   <span class=" -Color -Color-Red">   </span> error: command &#39;/usr/bin/clang&#39; failed with exit code 1
   <span class=" -Color -Color-Red">   </span> <span class=" -Color -Color-Red">[end of output]</span>
@@ -687,9 +682,7 @@ Building wheels for collected packages: dedalus
   <span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
 <span class=" -Color -Color-Red">  ERROR: Failed building wheel for dedalus</span>
 ?25hFailed to build dedalus
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">ERROR: Failed to build installable wheels for some pyproject.toml based projects (dedalus)</span>
+<span class=" -Color -Color-Red">ERROR: Failed to build installable wheels for some pyproject.toml based projects (dedalus)</span>
 
 </pre></div>
 </div>

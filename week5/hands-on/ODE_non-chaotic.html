@@ -675,11 +675,11 @@ Snapshot times: 0.00, 0.10, 0.20, 0.30, 0.40
 <span class="c1"># ============================================================</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">f_y</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;dy/dt = y - y^3.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y</span><span class="o">**</span><span class="mi">3</span>
+    <span class="k">return</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y</span><span class="o">**</span><span class="mi">4</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">f_W</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">W</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Liouville: dW/dt = -W * div(f) = -W*(1 - 3y^2).&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="o">-</span><span class="n">W</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="mf">3.0</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">W</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="mf">4.0</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">rk4_step_yW</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Joint RK4 for the pair (y, W).&quot;&quot;&quot;</span>
@@ -787,8 +787,18 @@ Snapshot times: 0.00, 0.10, 0.20, 0.30, 0.40
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f8016108fde762a8eacc992d01e1a14483fc8bdf4a81fde587e86dcbd00f7d74.png" src="../../_images/f8016108fde762a8eacc992d01e1a14483fc8bdf4a81fde587e86dcbd00f7d74.png" />
-<img alt="../../_images/90d5697803ee648acd429f95f858688a428d061ed21cc46e8612f0e3b453e38b.png" src="../../_images/90d5697803ee648acd429f95f858688a428d061ed21cc46e8612f0e3b453e38b.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_568/97777770.py:10: RuntimeWarning: overflow encountered in scalar power
+  return y - y**4
+/tmp/ipykernel_568/97777770.py:14: RuntimeWarning: overflow encountered in scalar multiply
+  return -W * (1.0 - 4.0*y**3)
+/tmp/ipykernel_568/97777770.py:41: RuntimeWarning: invalid value encountered in scalar add
+  W_next = W + (dt/6)*(k1_W + 2*k2_W + 2*k3_W + k4_W)
+/tmp/ipykernel_568/97777770.py:14: RuntimeWarning: overflow encountered in scalar power
+  return -W * (1.0 - 4.0*y**3)
+</pre></div>
+</div>
+<img alt="../../_images/5792f1fc60dc70273297512c8bcbf6658c6ddd851888b7e046443ca94047173c.png" src="../../_images/5792f1fc60dc70273297512c8bcbf6658c6ddd851888b7e046443ca94047173c.png" />
+<img alt="../../_images/4dcf68790476364d70f23b118802139217193feb6b250ec2cbd43f18c59b5e0b.png" src="../../_images/4dcf68790476364d70f23b118802139217193feb6b250ec2cbd43f18c59b5e0b.png" />
 </div>
 </div>
 

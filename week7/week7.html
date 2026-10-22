@@ -409,22 +409,24 @@
 <p>with an initial condition</p>
 <div class="math notranslate nohighlight" id="equation-eq76">
 <span class="eqno">(96)<a class="headerlink" href="#equation-eq76" title="Link to this equation">#</a></span>\[A(x,0) = F(x) \]</div>
-<p>Physically, <a class="reference internal" href="#equation-eq75">(95)</a> carries <span class="math notranslate nohighlight">\(A_{j}^{n}\)</span> at a position of a particle with a constant speed <span class="math notranslate nohighlight">\(c\)</span>. We interpret <span class="math notranslate nohighlight">\(A_{j}^{n}\)</span> as a conserved property of the particle. To find the analytical solution, we can assume <span class="math notranslate nohighlight">\(\xi \equiv x-ct\)</span> and thus <span class="math notranslate nohighlight">\((\frac{\partial x}{\partial t})=c\)</span> (with constant <span class="math notranslate nohighlight">\(\xi\)</span>). Using the chain rule, we further find that</p>
+<p>Physically, <a class="reference internal" href="#equation-eq75">(95)</a> carries <span class="math notranslate nohighlight">\(A_{j}^{n}\)</span> at a position of a particle with a constant speed <span class="math notranslate nohighlight">\(c\)</span>. We interpret <span class="math notranslate nohighlight">\(A_{j}^{n}\)</span> as a conserved property of the particle. To find the analytical solution, we can assume <span class="math notranslate nohighlight">\(\xi \equiv x-ct\)</span>. A line of constant <span class="math notranslate nohighlight">\(\xi\)</span> is then a particle trajectory: holding <span class="math notranslate nohighlight">\(\xi\)</span> fixed and differentiating gives <span class="math notranslate nohighlight">\(dx-cdt=0\)</span>, i.e., <span class="math notranslate nohighlight">\((\frac{\partial x}{\partial t})_{\xi}=c\)</span> and equivalently <span class="math notranslate nohighlight">\((\frac{\partial t}{\partial x})_{\xi}=\frac{1}{c}\)</span>. Using the chain rule, we further find that</p>
 <div class="math notranslate nohighlight" id="equation-eq77">
 <span class="eqno">(97)<a class="headerlink" href="#equation-eq77" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
 (\frac{\partial A}{\partial x})_{\xi} 
-&amp;= (\frac{\partial A}{\partial x})_t+(\frac{\partial A}{\partial t})(\frac{\partial t}{\partial x})  \\
-&amp;= (\frac{\partial A}{\partial x})_t+(\frac{\partial A}{\partial t})(\frac{1}{c})  \\ 
+&amp;= (\frac{\partial A}{\partial x})_t(\frac{\partial x}{\partial x})_{\xi}+(\frac{\partial A}{\partial t})_x(\frac{\partial t}{\partial x})_{\xi}  \\
+&amp;= (\frac{\partial A}{\partial x})_t+(\frac{\partial A}{\partial t})_x(\frac{1}{c})  \\ 
+&amp;= \frac{1}{c}\left[(\frac{\partial A}{\partial t})_x+c(\frac{\partial A}{\partial x})_t\right] \\
 &amp; = 0
 \end{align*}\end{split}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eq78">
 <span class="eqno">(98)<a class="headerlink" href="#equation-eq78" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
 (\frac{\partial A}{\partial t})_{\xi} 
-&amp;= (\frac{\partial A}{\partial t})_x+(\frac{\partial A}{\partial x})(\frac{\partial x}{\partial t})  \\ 
-&amp;= (\frac{\partial A}{\partial t})_x+(\frac{\partial A}{\partial x})c \\
+&amp;= (\frac{\partial A}{\partial t})_x(\frac{\partial t}{\partial t})_{\xi}+(\frac{\partial A}{\partial x})_t(\frac{\partial x}{\partial t})_{\xi}  \\ 
+&amp;= (\frac{\partial A}{\partial t})_x+(\frac{\partial A}{\partial x})_t c \\
 &amp; = 0
 \end{align*}\end{split}\]</div>
+<p>Note that everything up to the second line of <a class="reference internal" href="#equation-eq77">(97)</a> and <a class="reference internal" href="#equation-eq78">(98)</a> is pure calculus; it holds for any field <span class="math notranslate nohighlight">\(A(x,t)\)</span>. The physics only enters in the last line, where the bracketed expression is recognized as the left hand side of <a class="reference internal" href="#equation-eq75">(95)</a> and is therefore zero. Note also that the two results are not independent: because <span class="math notranslate nohighlight">\(dx=cdt\)</span> along a characteristic, <a class="reference internal" href="#equation-eq77">(97)</a> is simply <a class="reference internal" href="#equation-eq78">(98)</a> divided by <span class="math notranslate nohighlight">\(c\)</span> (assuming <span class="math notranslate nohighlight">\(c \neq 0\)</span>).</p>
 <p><a class="reference internal" href="#equation-eq77">(97)</a> and <a class="reference internal" href="#equation-eq78">(98)</a> suggest that <span class="math notranslate nohighlight">\(A\)</span> will conserve as long as it stay on the characteristic line <span class="math notranslate nohighlight">\(\xi\)</span>. Thus, <span class="math notranslate nohighlight">\(\xi\)</span> is an analytical solution of <a class="reference internal" href="#equation-eq75">(95)</a> (i.e., <span class="math notranslate nohighlight">\(A=f(\xi)\)</span>). Now let’s consider using a numerical way to solve <a class="reference internal" href="#equation-eq75">(95)</a>, which can be written as the form below,</p>
 <div class="math notranslate nohighlight" id="equation-eq79">
 <span class="eqno">(99)<a class="headerlink" href="#equation-eq79" title="Link to this equation">#</a></span>\[\frac{A^{n+1}_{j}-A^{n}_{j}}{\Delta t} + c (\frac{A^{n}_{j}-A^{n}_{j-1}}{\Delta x})= 0   \]</div>
