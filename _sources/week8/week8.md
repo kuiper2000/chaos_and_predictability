@@ -7,75 +7,75 @@ In week 7, we learn how to analyze the stability in a numerical scheme and GFD p
 * Dynamical system
 * initial uncertainty 
 
-We know the weather is intrinsically unpredictable due to the imperfect model physics. However, even in the case where we don't consider those uncertainties (i.e., the governing equation is deterministic and perfect), we still can't accurately measure the initial states. _Lyapunov exponent_ is an useful metric for quantifying how the small uncertainties at the initial states grows. Referring back to {eq}`eq3` in week 1 (also {eq}`eq108` here), the variables in a certain dynamical system are specified by finite dimensional state vector $x$ evolving according to the deterministic equations $f$. 
+We know the weather is intrinsically unpredictable due to the imperfect model physics. However, even in the case where we don't consider those uncertainties (i.e., the governing equation is deterministic and perfect), we still can't accurately measure the initial states. _Lyapunov exponent_ is an useful metric for quantifying how the small uncertainties at the initial states grows. Referring back to {eq}`eq3` in week 1 (also {eq}`eq118` here), the variables in a certain dynamical system are specified by finite dimensional state vector $x$ evolving according to the deterministic equations $f$. 
 
 ```{math}
-:label: eq108
+:label: eq118
 \frac{d \mathbf{y}}{dt}=\mathbf{f}(\mathbf{y}(t))
 ```
 
 considering that we initialized the model around the point $y(t)$ and with sufficiently small error $\delta y= x$, we can somewhat approximate the model with a linear tangent function.  
 
 ```{math}
-:label: eq109
+:label: eq119
 \frac{d \mathbf{x}}{dt}=\mathbf{A(t)}\mathbf{x}
 ```
 
 where $A(t)$ is the linearized function of $f(t)$ or so-called Jacobian matrix (if you still remember finding a Jacobian matrix is equivalent to _using a linear tangent function to approximate nonlinear dynamics_). The matrix $A(t)$ is usually time dependent and its realizations do not commute in most cases (i.e., $\mathbf{A(t_1)}\mathbf{A(t_2)}\neq \mathbf{A(t_2)}\mathbf{A(t_1)}$). Therefore, the error growth cannot be determined from the analysis of the eigenvalues and eigenvectors of $\mathbf{A(t)}$ because when we swap the order of $\mathbf{A(t)}$, we can have a totally different matrix. This is so-called non-modal system. The generalized instability theory is developed to solve the non-model problem and focuses on _propagator operator_, which is a matrix mapping the initial error $\mathbf{x(0)}$ to the error at time $t$.  
 
 ```{math}
-:label: eq110
+:label: eq120
 \mathbf{x(t)} = \Phi (t,0)\mathbf{x(0)}
 ```
 
-Once $\mathbf{A(t)}$ is available, $\Phi (t,0)$ in {eq}`eq110` is readily calculated and can be written as 
+Once $\mathbf{A(t)}$ is available, $\Phi (t,0)$ in {eq}`eq120` is readily calculated and can be written as 
 
 ```{math}
-:label: eq111
+:label: eq121
 \Phi (t,0) = \prod _{i=1}^{t} e^{A(i\tau)}
 ```
 where $A(i\tau) = A(t_i)$. If $\mathbf{A}$ is autonomous (time independent), then the propagator is simply the matrix exponential i.e.,
 
 ```{math}
-:label: eq112
+:label: eq122
 \Phi (t,0) = e^{At}
 ```
 
 The deterministic error growth is bounded by the optimal growth over the interval [0,t]
 
 ```{math}
-:label: eq113
+:label: eq123
 ||\Phi (t,0)|| \equiv \mathrm{max}_{\mathbf{x(t_0)}}\frac{||\mathbf{x(t)}||}{||\mathbf{x(0)}||}
 ```
 
 The choice here is based on the absolute amplitude. We can also choose an Euclidean norm, i.e., using the growth of total variance/energy to define the growth of signals $||\mathbf{x(t)}||^2$. 
 
-If we choose an Euclidean norm, {eq}`eq113` can be written as,
+If we choose an Euclidean norm, {eq}`eq123` can be written as,
 
 ```{math}
-:label: eq114
+:label: eq124
 \mathbf{\Phi (t,0)}^{T}\mathbf{\Phi (t,0)} \equiv \frac{\mathbf{x(t)}^{T}\mathbf{x(t)}}{\mathbf{x(0)}^{T}\mathbf{x(0)}} = \frac{[e^{\mathbf{A}t}\mathbf{x(0)}]^T[e^{\mathbf{A}t}\mathbf{x(0)}]}{\mathbf{x(0)}^{T}\mathbf{x(0)}} 
 ```
 
-where $\mathbf{\Phi (t,0)}^{T}\mathbf{\Phi (t,0)}$ indicates how much the signals have amplified. For {eq}`eq114`, if we can find a matrix, $v$, which gives us $[e^{\mathbf{A}t}]^{T}[e^{\mathbf{A}t}]v_i = \lambda_iv_i$, where $\lambda_i$ is a constant, then {eq}`eq114` will reduce to 
+where $\mathbf{\Phi (t,0)}^{T}\mathbf{\Phi (t,0)}$ indicates how much the signals have amplified. For {eq}`eq124`, if we can find a matrix, $v$, which gives us $[e^{\mathbf{A}t}]^{T}[e^{\mathbf{A}t}]v_i = \lambda_iv_i$, where $\lambda_i$ is a constant, then {eq}`eq124` will reduce to 
 
 
 ```{math}
-:label: eq115
+:label: eq125
 \mathbf{\Phi (t,0)}^{T}\mathbf{\Phi (t,0)} v_i \equiv \lambda_i v_i
 ```
 
-We also know that $\mathbf{\Phi (t,0)}^T\mathbf{\Phi (t,0)} = e^{2At}$. Thus, {eq}`eq115` is equivalent to finding the eigen value of $A$ (i.e., $\lambda_{A,i}$, which is a diagonal matrix) and calculating the exponential of $\lambda_{A,i}$ matrix. The real part of $\lambda_{A,i}$ represents growth rate and the imaginary part represents the oscillatory component. This is in general consistent with the traditional stability analysis (von Neumann method).   
+We also know that $\mathbf{\Phi (t,0)}^T\mathbf{\Phi (t,0)} = e^{2At}$. Thus, {eq}`eq125` is equivalent to finding the eigen value of $A$ (i.e., $\lambda_{A,i}$, which is a diagonal matrix) and calculating the exponential of $\lambda_{A,i}$ matrix. The real part of $\lambda_{A,i}$ represents growth rate and the imaginary part represents the oscillatory component. This is in general consistent with the traditional stability analysis (von Neumann method).   
 
 
 ## Modal vs non-modal
 
 One key ingredient in generalized stability theory is non-modal system. Physically, _modal_ is defined as that _eigen vectors of $x^Tx$(or EOF mode in climate science) capture all necessary dynamics regardless of time_. However, modal dynamics can't capture the transient growth of the error, which is important for weather prediction and initiation of the low-frequency variability (so-called stochastic forcing).
 
-To demonstrate the difference between modal and non-modal system, we repeat the same exercise in {eq}`eq115` but apply the eigen value decomposition to A instead this time
+To demonstrate the difference between modal and non-modal system, we repeat the same exercise in {eq}`eq125` but apply the eigen value decomposition to A instead this time
 
 ```{math}
-:label: eq116
+:label: eq126
 e^{2At} = e^{2S\lambda_{A}S^{-1}t}
 ```  
 
@@ -84,11 +84,11 @@ $\lambda_{A}$ is an diagonal matrix, which contains the eigen value of $A$ along
 Given a small t (because we are focusing the transient time scales), we know $e^{2S\lambda_{A}S^{-1}t}=||S e^{\lambda_{A}t}S^{-1}||^{2} \leq ||S||^2||S^{-1}||^2 e^{2\lambda_{A}t}\leq ||S||^2||S^{-1}||^2 e^{2\lambda_{A,\mathrm{max}}t}$ . Thus, $||S||^2||S^{-1}||^2 $ determines the upper-bound of $e^{2S\lambda_{A}S^{-1}t}$. For the lower bound, we know $e^{2\lambda_{A,min}t} \leq e^{2At}$, i.e., $e^{2At}$ cannot decay faster than the fastest decaying mode. Combining both condition gives us:
 
 ```{math}
-:label: eq117
+:label: eq127
 e^{2\lambda_{A,min}t} \leq e^{2At} \leq ||S||^2||S^{-1}||^2 e^{2\lambda_{A,\mathrm{max}}t}
 ```  
 
-if $||S||^2||S^{-1}||^2 = 1$ and $\lambda_{A,max}=\lambda_{A,min}$, suggests that all three terms in the inequality of {eq}`eq117` are the same and the dynamics of $f$ is governed by the mode dynamics (linearly stable) and there is no significant difference between any two unstable mode. In this case, we can consider that all of the eigen modes have reached a statistical equilibrium state and their transient interaction doesn't influence the dynamics of interest. This is the case when we talk about _how the weather signals are represented in a climate change problem_. Because in a climate change time scales (>10 yrs), all the weather signals have already reached an equilibrium states. 
+if $||S||^2||S^{-1}||^2 = 1$ and $\lambda_{A,max}=\lambda_{A,min}$, suggests that all three terms in the inequality of {eq}`eq127` are the same and the dynamics of $f$ is governed by the mode dynamics (linearly stable) and there is no significant difference between any two unstable mode. In this case, we can consider that all of the eigen modes have reached a statistical equilibrium state and their transient interaction doesn't influence the dynamics of interest. This is the case when we talk about _how the weather signals are represented in a climate change problem_. Because in a climate change time scales (>10 yrs), all the weather signals have already reached an equilibrium states. 
 
 
 However, this is not the case when the time scales of interest is much shorter i.e., hourly to seasonal time scales. In these time scales, $||S||^2||S^{-1}||^2 e^{2\lambda_{A,\mathrm{max}}t} >> 1$ indicates we can still observe some instability caused by non-modal process. For example, if today we have two eigen modes, $\phi_1$ and $\phi_2$. The phenomenon of interest is their linear combination, let say $\phi_1-\phi_2$. Given the fact that $\phi_1$ decays much slower than $\phi_2$, we can find that the amplitude of $\phi_1-\phi_2$ grows with time even both $\phi_1$ and $\phi_2$ are getting smaller and smaller. (see [FIG19](FIG19))  
@@ -101,7 +101,7 @@ name: FIG19
 An example of non-modal growth of signals at finite time.  
 ```
 
-The question is what kind of phenomenon is most likely to experience non-modal growth. From {eq}`eq117`, we know that the eigen vector $v_i$, who has the largest $\lambda$, will experience the most significant error growth. One should notice that the $v_i$ is different from the eigen modes of state vector. The former quantifies the _most unstable signal/initial state_ while the later quantifies _the mode which explains the most variance_. There is one unique case that these two are identical, I will let the readers think about what is that? (HW).
+The question is what kind of phenomenon is most likely to experience non-modal growth. From {eq}`eq127`, we know that the eigen vector $v_i$, who has the largest $\lambda$, will experience the most significant error growth. One should notice that the $v_i$ is different from the eigen modes of state vector. The former quantifies the _most unstable signal/initial state_ while the later quantifies _the mode which explains the most variance_. There is one unique case that these two are identical, I will let the readers think about what is that? (HW).
 
 
 
@@ -113,7 +113,7 @@ The question is what kind of phenomenon is most likely to experience non-modal g
 Here we use two examples to demonstrate the finite amplitude of error growth lead by the non-modal dynamics. 
 
 ```{math}
-:label: eq118
+:label: eq128
 e^{At_i} = 
 \begin{bmatrix}
 0.9 & 0.3 \\
@@ -159,10 +159,10 @@ In [FIG20](FIG20), we can find that both blue and red curves gradually decay to 
 
 ### Case II
 
-I the second case, we choose two stable linear operators {eq}`eq119` but we swap them regularly.    
+I the second case, we choose two stable linear operators {eq}`eq129` but we swap them regularly.    
 
 ```{math}
-:label: eq119
+:label: eq129
 A=\begin{bmatrix}
 0 & 1 \\
 -\omega_{1,2}   & 0 

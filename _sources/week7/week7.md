@@ -377,37 +377,74 @@ c_i \int \frac{\bar{U}_{yy}}{|\bar{U}-c|^{2}}|\tilde{v}|^{2}dy = 0
 
 Therefore, if the flow is unstable ($c_i \neq 0$), the integral must vanish on its own, which requires $\bar{U}_{yy}$ to **change sign** somewhere in the domain. This is _Rayleigh's inflection point theorem_: an inflection point in the background flow is a necessary (not sufficient) condition for instability. For our profile $\bar{U}_{yy}=\frac{\bar{U}}{L}[\delta(y+L)-\delta(y-L)]$, a pair of delta functions of opposite sign sitting exactly at the two edges of the shear zone, so the criterion is satisfied. Those two delta functions are precisely what the jump conditions {eq}`eq103` and {eq}`eq106` were encoding.
 
-We can squeeze much more out of the same trick. Following Howard, substitute $\tilde{v}=(\bar{U}-c)G$ into {eq}`eq101`, which turns it into the neater form
+We can squeeze much more out of the same trick. Following Howard, substitute $\tilde{v}=(\bar{U}-c)G$ into {eq}`eq101`. Differentiating the substitution twice gives $\tilde{v}_y=\bar{U}_yG+(\bar{U}-c)G_y$ and $\tilde{v}_{yy}=\bar{U}_{yy}G+2\bar{U}_yG_y+(\bar{U}-c)G_{yy}$, while the awkward last term of {eq}`eq101` becomes simply $\frac{\bar{U}_{yy}}{\bar{U}-c}\tilde{v}=\bar{U}_{yy}G$. The two $\bar{U}_{yy}G$ terms therefore cancel exactly, and what is left is
 
 ```{math}
 :label: eq110
-\frac{d}{dy}\left[(\bar{U}-c)^{2}\frac{dG}{dy}\right]-k^{2}(\bar{U}-c)^{2}G = 0
+(\bar{U}-c)G_{yy}+2\bar{U}_{y}G_{y}-k^{2}(\bar{U}-c)G = 0
 ``` 
 
-Now multiply by $G^{*}$ and integrate by parts as before. All that survives is
+Multiplying {eq}`eq110` through by $(\bar{U}-c)$ and noticing that $(\bar{U}-c)^{2}G_{yy}+2(\bar{U}-c)\bar{U}_yG_y$ is exactly $\frac{d}{dy}\left[(\bar{U}-c)^{2}G_y\right]$ puts the problem in the neater, self-adjoint form
 
 ```{math}
 :label: eq111
-\int (\bar{U}-c)^{2} Q \, dy = 0, \qquad Q \equiv |G_y|^{2}+k^{2}|G|^{2}\geq 0
+\frac{d}{dy}\left[(\bar{U}-c)^{2}\frac{dG}{dy}\right]-k^{2}(\bar{U}-c)^{2}G = 0
 ``` 
 
-The weight $Q$ is real and non-negative, which is what makes this so powerful. Since $(\bar{U}-c)^{2}=(\bar{U}-c_r)^{2}-c_i^{2}-2ic_i(\bar{U}-c_r)$, the imaginary part of {eq}`eq111` gives $c_i\int(\bar{U}-c_r)Q\,dy=0$, so for an unstable mode
+Note that the singular denominator of {eq}`eq101` is gone. (For an unstable mode it was never really singular, since $c_i\neq0$ means $\bar{U}-c$ never vanishes, but it is this particular form that makes the next step work.)
+
+Now multiply {eq}`eq111` by $G^{*}$ and integrate by parts as before. The boundary term $\left[(\bar{U}-c)^{2}G^{*}G_y\right]$ vanishes because $\bar{U}$ is constant in the two outer regions, so $G=\tilde{v}/(\bar{U}-c)$ decays along with $\tilde{v}$. All that survives is
 
 ```{math}
 :label: eq112
+\int (\bar{U}-c)^{2} Q \, dy = 0, \qquad Q \equiv |G_y|^{2}+k^{2}|G|^{2}\geq 0
+``` 
+
+The weight $Q$ is real and non-negative, which is what makes this so powerful. Since $(\bar{U}-c)^{2}=(\bar{U}-c_r)^{2}-c_i^{2}-2ic_i(\bar{U}-c_r)$, the imaginary part of {eq}`eq112` gives $c_i\int(\bar{U}-c_r)Q\,dy=0$, so for an unstable mode ($c_i \neq 0$) the integral has to vanish by itself, i.e. $\int \bar{U}Q\,dy = c_r\int Q\,dy$, or
+
+```{math}
+:label: eq113
 c_r = \frac{\int \bar{U}Q \, dy}{\int Q \, dy}
 ``` 
 
 i.e., the phase speed of a growing wave is a **weighted average of the background flow**, and so must lie between $U_{min}$ and $U_{max}$. This has an important physical consequence: there is always some $y_c$ with $\bar{U}(y_c)=c_r$. That location is called the _critical layer_, and it is where the wave exchanges momentum with the mean flow.
 
-The real part of {eq}`eq111` gives $\int[(\bar{U}-c_r)^{2}-c_i^{2}]Q\,dy=0$. Combine it with the observation that $(\bar{U}-U_{min})(U_{max}-\bar{U})\geq 0$ everywhere, so that $\int(\bar{U}-U_{min})(U_{max}-\bar{U})Q\,dy\geq 0$, and after a few lines of algebra all the integrals cancel and we are left with _Howard's semicircle theorem_:
+The real part of {eq}`eq112` gives $\int[(\bar{U}-c_r)^{2}-c_i^{2}]Q\,dy=0$. Expanding the square and using {eq}`eq113` to replace $\int\bar{U}Q\,dy$ by $c_r\int Q\,dy$,
 
 ```{math}
-:label: eq113
+:label: eq114
+\begin{align*}
+0 &= \int \left[\bar{U}^{2}-2c_r\bar{U}+c_r^{2}-c_i^{2}\right]Q\,dy \\
+&= \int \bar{U}^{2}Q\,dy - 2c_r\left(c_r\int Q\,dy\right) + (c_r^{2}-c_i^{2})\int Q\,dy \\
+&= \int \bar{U}^{2}Q\,dy - (c_r^{2}+c_i^{2})\int Q\,dy
+\end{align*}
+``` 
+
+So the two statements we have in hand are that the first and second $Q$-weighted moments of the background flow are pinned to the phase speed: $\int\bar{U}Q\,dy = c_r\int Q\,dy$ and $\int\bar{U}^{2}Q\,dy = |c|^{2}\int Q\,dy$, where $|c|^{2}=c_r^{2}+c_i^{2}$. Nothing else about the flow has been used yet. The one remaining piece of information is simply that $\bar{U}$ is _bounded_: since $U_{min}\leq\bar{U}\leq U_{max}$ everywhere, the product $(\bar{U}-U_{min})(U_{max}-\bar{U})$ is non-negative pointwise, and $Q\geq0$, so its $Q$-weighted integral cannot be negative either. Multiplying the product out,
+
+```{math}
+:label: eq115
+0 \leq \int (\bar{U}-U_{min})(U_{max}-\bar{U})\,Q\,dy = -\int \bar{U}^{2}Q\,dy + (U_{max}+U_{min})\int \bar{U}Q\,dy - U_{max}U_{min}\int Q\,dy
+``` 
+
+Every integral on the right hand side of {eq}`eq115` is now known. Substituting the two moments from {eq}`eq114` and {eq}`eq113`, each term picks up the same common factor $\int Q\,dy$, which is strictly positive (if it were zero, $G$ and hence $\tilde{v}$ would vanish identically), so we may divide it out
+
+```{math}
+:label: eq116
+\begin{align*}
+0 &\leq \left[-(c_r^{2}+c_i^{2})+(U_{max}+U_{min})c_r-U_{max}U_{min}\right]\int Q\,dy \\
+\Longrightarrow \quad c_r^{2}+c_i^{2}-(U_{max}+U_{min})c_r+U_{max}U_{min} &\leq 0
+\end{align*}
+``` 
+
+Finally, complete the square in $c_r$, using $\frac{(U_{max}+U_{min})^{2}}{4}-U_{max}U_{min}=\left(\frac{U_{max}-U_{min}}{2}\right)^{2}$, and we have _Howard's semicircle theorem_:
+
+```{math}
+:label: eq117
 \left(c_r-\frac{U_{max}+U_{min}}{2}\right)^{2}+c_i^{2} \leq \left(\frac{U_{max}-U_{min}}{2}\right)^{2}
 ``` 
 
-In words: for **any** parallel shear flow, the complex phase speed of any unstable mode must lie inside the semicircle in the upper half of the complex $c$ plane whose diameter is the range of the background velocity. We never solved an O.D.E. to get this. In particular the growth rate obeys $kc_i \leq k\frac{U_{max}-U_{min}}{2}$, which is the continuous analogue of the $|\lambda|\leq 1$ requirement from the von Neumann method: a bound on amplification obtained by inspection rather than by integration.
+In words: for **any** parallel shear flow, the complex phase speed of any unstable mode must lie inside the semicircle in the upper half of the complex $c$ plane whose diameter is the range of the background velocity. (It is the upper half because the roots come in conjugate pairs $c_r\pm ic_i$, and the growing one is the one with $c_i>0$.) We never solved an O.D.E. to get this. Tracing the one inequality we used, {eq}`eq115`, backwards also tells us when the bound can be _saturated_: equality requires $(\bar{U}-U_{min})(U_{max}-\bar{U})Q=0$ at every $y$, i.e. all of the disturbance structure $Q$ has to be piled up exactly where $\bar{U}$ attains its extreme values. That is a very stringent requirement, which is why the circle is usually a loose bound, and it is the reason the only mode we will find sitting on the boundary below is the vortex sheet. In particular the growth rate obeys $kc_i \leq k\frac{U_{max}-U_{min}}{2}$, which is the continuous analogue of the $|\lambda|\leq 1$ requirement from the von Neumann method: a bound on amplification obtained by inspection rather than by integration.
 
 Let's check our own answer against it. For the profile in [FIG18](FIG18), $U_{max}=\bar{U}$ and $U_{min}=-\bar{U}$, so the semicircle is centred at $c_r=0$ with radius $\bar{U}$. In the unstable range the right hand side of {eq}`eq107` is negative, $c$ is purely imaginary, and $c_r=0$ sits exactly at the centre of the circle, which is forced by the antisymmetry of $\bar{U}$. The critical layer is then at $y=0$, the middle of the shear zone, which is just where we would expect the wave to feed on the mean flow. The amplitudes from {eq}`eq107` are:
 
