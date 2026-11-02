@@ -65,33 +65,108 @@ where $\mathbf{\Phi (t,0)}^{T}\mathbf{\Phi (t,0)}$ indicates how much the signal
 \mathbf{\Phi (t,0)}^{T}\mathbf{\Phi (t,0)} v_i \equiv \lambda_i v_i
 ```
 
-We also know that $\mathbf{\Phi (t,0)}^T\mathbf{\Phi (t,0)} = e^{2At}$. Thus, {eq}`eq125` is equivalent to finding the eigen value of $A$ (i.e., $\lambda_{A,i}$, which is a diagonal matrix) and calculating the exponential of $\lambda_{A,i}$ matrix. The real part of $\lambda_{A,i}$ represents growth rate and the imaginary part represents the oscillatory component. This is in general consistent with the traditional stability analysis (von Neumann method).   
+So the amplification we are after is an eigenvalue problem for $\mathbf{\Phi}^{T}\mathbf{\Phi}$ — equivalently, the $\lambda_i$ are the **squared singular values** of $\mathbf{\Phi}$, and the largest one is what {eq}`eq123` calls $||\mathbf{\Phi}(t,0)||$.
+
+It is tempting to go one step further and write $\mathbf{\Phi (t,0)}^T\mathbf{\Phi (t,0)} = e^{2\mathbf{A}t}$, which would turn {eq}`eq125` into an ordinary eigenvalue problem for $\mathbf{A}$: find $\lambda_{A,i}$, take the real part as the growth rate and the imaginary part as the oscillation, and recover the traditional stability analysis (von Neumann method). That step is legitimate **only when $\mathbf{A}$ is normal**, and the whole of generalized stability theory lives in the gap that opens when it is not. The next section makes this precise.
+
+```{note}
+$\mathbf{\Phi}^{T}\mathbf{\Phi}=\left(e^{\mathbf{A}t}\right)^{T}e^{\mathbf{A}t}=e^{\mathbf{A}^{T}t}e^{\mathbf{A}t}$, and this collapses to $e^{(\mathbf{A}+\mathbf{A}^{T})t}$ only when $\mathbf{A}$ and $\mathbf{A}^{T}$ commute. Matrix exponentials do not obey $e^{X}e^{Y}=e^{X+Y}$ in general. Keeping singular values and eigenvalues separate is the single most important bookkeeping habit in this chapter.
+```
 
 
 ## Modal vs non-modal
 
 One key ingredient in generalized stability theory is non-modal system. Physically, _modal_ is defined as that _eigen vectors of $x^Tx$(or EOF mode in climate science) capture all necessary dynamics regardless of time_. However, modal dynamics can't capture the transient growth of the error, which is important for weather prediction and initiation of the low-frequency variability (so-called stochastic forcing).
 
-To demonstrate the difference between modal and non-modal system, we repeat the same exercise in {eq}`eq125` but apply the eigen value decomposition to A instead this time
+To demonstrate the difference between modal and non-modal system, we repeat the same exercise in {eq}`eq125` but apply the eigen value decomposition to $\mathbf{A}$ instead this time.
+
+### Modal analysis: eigenvalues and the spectral abscissa
+
+Diagonalize $\mathbf{A}=S\Lambda S^{-1}$, where $\Lambda$ is diagonal and holds the eigenvalues $\lambda_j$, and the columns $s_j$ of $S$ are the eigenvectors. Substituting into the Taylor series of the exponential,
 
 ```{math}
 :label: eq126
-e^{2At} = e^{2S\lambda_{A}S^{-1}t}
-```  
+e^{\mathbf{A}t}=\sum_{n=0}^{\infty}\frac{t^{n}\left(S\Lambda S^{-1}\right)^{n}}{n!}=S\left(\sum_{n=0}^{\infty}\frac{(\Lambda t)^{n}}{n!}\right)S^{-1}=S\,e^{\Lambda t}\,S^{-1}
+```
 
-$\lambda_{A}$ is an diagonal matrix, which contains the eigen value of $A$ along the diagonal direction and $S$ is the eigen vector. In general, $\lambda_{A}$ is negative in its real part and is arranged in an order from the largest to the smallest (slow- to fast-decaying mode). A negative $\lambda_{A}$ indicating the memory from initial states will gradually decay with the increase of forecast lead time. 
+which works because the inner factors telescope: $\left(S\Lambda S^{-1}\right)^{n}=S\Lambda^{n}S^{-1}$.
 
-Given a small t (because we are focusing the transient time scales), we know $e^{2S\lambda_{A}S^{-1}t}=||S e^{\lambda_{A}t}S^{-1}||^{2} \leq ||S||^2||S^{-1}||^2 e^{2\lambda_{A}t}\leq ||S||^2||S^{-1}||^2 e^{2\lambda_{A,\mathrm{max}}t}$ . Thus, $||S||^2||S^{-1}||^2 $ determines the upper-bound of $e^{2S\lambda_{A}S^{-1}t}$. For the lower bound, we know $e^{2\lambda_{A,min}t} \leq e^{2At}$, i.e., $e^{2At}$ cannot decay faster than the fastest decaying mode. Combining both condition gives us:
+Equivalently, change to modal coordinates $\mathbf{y}=S^{-1}\mathbf{x}$. The system decouples into $n$ independent scalar problems, $\dot{\mathbf{y}}=\Lambda\mathbf{y}$, so that $y_j(t)=y_j(0)e^{\lambda_j t}$ and
+
+```{math}
+:label: eq126a
+\mathbf{x}(t)=\sum_{j} y_j(0)\, s_j\, e^{\lambda_j t}
+```
+
+Each mode grows or decays on its own at the rate $\mathrm{Re}\,\lambda_j$, with $\mathrm{Im}\,\lambda_j$ supplying the oscillation. The relevant summary number is the **spectral abscissa**
+
+```{math}
+:label: eq126b
+\alpha(\mathbf{A})=\max_{j}\ \mathrm{Re}\,\lambda_j
+```
+
+*Modal instability* means $\alpha(\mathbf{A})>0$. Note what kind of statement this is: it describes the behaviour as $t\rightarrow\infty$, when the least-stable mode has outlived all the others and dominates the sum in {eq}`eq126a`. It says nothing about what happens on the way there.
+
+### Non-modal analysis: the finite-time amplification
+
+The non-modal question is different: over a *finite* interval, what is the largest energy growth any initial perturbation can achieve?
+
+```{math}
+:label: eq126c
+G(t)=\max_{\mathbf{x}(0)\neq 0}\frac{||\mathbf{x}(t)||^{2}}{||\mathbf{x}(0)||^{2}}=||e^{\mathbf{A}t}||_{2}^{2}=\sigma_{\mathrm{max}}^{2}\left(e^{\mathbf{A}t}\right)
+```
+
+This is {eq}`eq123` and {eq}`eq125` written in the language of the singular value decomposition, and it is a *singular value* problem, not an eigenvalue problem. The payoff is that the SVD hands us the structures as well as the number: the **optimal initial perturbation is the leading right singular vector** of $e^{\mathbf{A}t}$, and the **leading left singular vector is the shape it evolves into**. In the forecasting literature these are the singular vectors used to initialize ensembles.
+
+In general, $\mathrm{Re}\,\lambda_{j}$ is negative and the eigenvalues are ordered from the largest to the smallest (slow- to fast-decaying mode). A negative $\mathrm{Re}\,\lambda_j$ indicates the memory of the initial state will gradually decay with the increase of forecast lead time. The question is what happens before that.
+
+### Bounding the amplification
+
+**Lower bound.** The 2-norm of a matrix is at least its spectral radius, and the eigenvalues of $e^{\mathbf{A}t}$ are $e^{\lambda_j t}$. Hence
+
+```{math}
+:label: eq126d
+||e^{\mathbf{A}t}||_{2}^{2}\ \geq\ \max_{j}\left|e^{\lambda_j t}\right|^{2}=e^{2\alpha t}
+```
+
+```{note}
+The lower bound uses the **largest** real part $\alpha$, not the most negative one. Read physically: a perturbation can never decay faster than the *slowest*-decaying mode, because the projection onto that mode is still there. The "most negative eigenvalue" version of this bound is also true, but it is much weaker and it is the wrong statement to remember.
+```
+
+**Upper bound.** Apply {eq}`eq126` and submultiplicativity of the norm, using $||e^{\Lambda t}||=e^{\alpha t}$ for diagonal $\Lambda$:
+
+```{math}
+:label: eq126e
+||S e^{\Lambda t}S^{-1}||^{2}\ \leq\ ||S||^{2}\,||e^{\Lambda t}||^{2}\,||S^{-1}||^{2}=\kappa(S)^{2}e^{2\alpha t},\qquad \kappa(S)=||S||\,||S^{-1}||
+```
+
+```{note}
+$||S||$ here is the **induced 2-norm** (the largest singular value of $S$), not the determinant. $\kappa(S)$ is the *condition number of the eigenvector matrix* — a measure of how far from orthogonal the eigenvectors are, and the single quantity that controls everything below.
+```
+
+**Combined.** Putting the two together,
 
 ```{math}
 :label: eq127
-e^{2\lambda_{A,min}t} \leq e^{2At} \leq ||S||^2||S^{-1}||^2 e^{2\lambda_{A,\mathrm{max}}t}
-```  
+e^{2\alpha t}\ \leq\ G(t)\ \leq\ \kappa(S)^{2}\,e^{2\alpha t}
+```
 
-if $||S||^2||S^{-1}||^2 = 1$ and $\lambda_{A,max}=\lambda_{A,min}$, suggests that all three terms in the inequality of {eq}`eq127` are the same and the dynamics of $f$ is governed by the mode dynamics (linearly stable) and there is no significant difference between any two unstable mode. In this case, we can consider that all of the eigen modes have reached a statistical equilibrium state and their transient interaction doesn't influence the dynamics of interest. This is the case when we talk about _how the weather signals are represented in a climate change problem_. Because in a climate change time scales (>10 yrs), all the weather signals have already reached an equilibrium states. 
+Both ends of {eq}`eq127` now carry the *same* exponential $e^{2\alpha t}$, and the entire gap between them is the prefactor $\kappa(S)^{2}$. So one number decides whether modal analysis is the whole story.
 
+### Normal vs non-normal operators
 
-However, this is not the case when the time scales of interest is much shorter i.e., hourly to seasonal time scales. In these time scales, $||S||^2||S^{-1}||^2 e^{2\lambda_{A,\mathrm{max}}t} >> 1$ indicates we can still observe some instability caused by non-modal process. For example, if today we have two eigen modes, $\phi_1$ and $\phi_2$. The phenomenon of interest is their linear combination, let say $\phi_1-\phi_2$. Given the fact that $\phi_1$ decays much slower than $\phi_2$, we can find that the amplitude of $\phi_1-\phi_2$ grows with time even both $\phi_1$ and $\phi_2$ are getting smaller and smaller. (see [FIG19](FIG19))  
+**Normal $\mathbf{A}$** ($\mathbf{A}\mathbf{A}^{H}=\mathbf{A}^{H}\mathbf{A}$; a real symmetric matrix is the familiar case). The eigenvectors are orthogonal, so $S$ can be chosen unitary and $\kappa(S)=1$. The two bounds in {eq}`eq127` collapse onto each other:
+
+```{math}
+:label: eq127a
+G(t)=e^{2\alpha t}
+```
+
+Energy evolves monotonically, and the eigenvalues really do tell the whole story. This is the "traditional" case in which modal analysis suffices — and it is the case in which the shortcut $\mathbf{\Phi}^{T}\mathbf{\Phi}=e^{2\mathbf{A}t}$ flagged earlier is legitimate. Physically, we can consider that all of the eigen modes have reached a statistical equilibrium state and their transient interaction doesn't influence the dynamics of interest. This is the situation when we ask _how the weather signals are represented in a climate change problem_: on climate change time scales (>10 yrs), all the weather signals have already reached an equilibrium state.
+
+**Non-normal $\mathbf{A}$.** The eigenvectors are non-orthogonal, $\kappa(S)>1$, possibly $\kappa(S)\gg 1$. Now even when $\alpha<0$ — every single mode decaying, the system *modally stable* — $G(t)$ can climb far above 1 before the eventual decay sets in. This is **transient growth**, or non-modal amplification, and it is what we see on the hourly to seasonal time scales that matter for weather prediction and for the initiation of low-frequency variability (so-called stochastic forcing).
+
+The mechanism is just cancellation being lost. Suppose we have two eigen modes, $\phi_1$ and $\phi_2$, and the phenomenon of interest is their linear combination, say $\phi_1-\phi_2$. If the two are nearly parallel (which is exactly what $\kappa\gg1$ means), representing a small initial state requires two *large*, nearly cancelling coefficients. Given that $\phi_1$ decays more slowly than $\phi_2$, the cancellation degrades, and the amplitude of $\phi_1-\phi_2$ grows with time even though both $\phi_1$ and $\phi_2$ are getting smaller and smaller. (see [FIG19](FIG19))  
 
 
 ```{figure} non_modal_growth.png
@@ -103,10 +178,66 @@ An example of non-modal growth of signals at finite time.
 
 The question is what kind of phenomenon is most likely to experience non-modal growth. From {eq}`eq127`, we know that the eigen vector $v_i$, who has the largest $\lambda$, will experience the most significant error growth. One should notice that the $v_i$ is different from the eigen modes of state vector. The former quantifies the _most unstable signal/initial state_ while the later quantifies _the mode which explains the most variance_. There is one unique case that these two are identical, I will let the readers think about what is that? (HW).
 
+### When does transient growth start?
 
+{eq}`eq127` tells us transient growth is *possible* when $\kappa\gg1$, but not whether it actually happens. For that, differentiate the energy directly:
+
+```{math}
+:label: eq127b
+\frac{d}{dt}||\mathbf{x}||^{2}=\mathbf{x}^{H}\left(\mathbf{A}+\mathbf{A}^{H}\right)\mathbf{x}
+```
+
+so the largest attainable *initial* growth rate is set by the **numerical abscissa**, the largest eigenvalue of the symmetric part of $\mathbf{A}$:
+
+```{math}
+:label: eq127c
+\omega(\mathbf{A})=\lambda_{\mathrm{max}}\!\left(\frac{\mathbf{A}+\mathbf{A}^{H}}{2}\right)
+```
+
+Transient growth occurs when $\omega(\mathbf{A})>0$, and this can happen even when $\alpha(\mathbf{A})<0$. The two abscissas answer two genuinely different questions:
+
+| | criterion | time scale |
+|---|---|---|
+| Modal instability | $\alpha(\mathbf{A})>0$ | $t\rightarrow\infty$ |
+| Non-modal (transient) growth | $\omega(\mathbf{A})>0$, i.e. $G(t)>1$ for some $t$ | finite $t$ |
+
+For normal $\mathbf{A}$, $\omega=\alpha$ and the two notions coincide — which is another way of saying that the distinction we have spent this section building only exists for non-normal operators.
+
+```{note}
+$\cdot^{H}$ denotes the conjugate transpose; for a real matrix it is just the transpose $\cdot^{T}$. The conjugate is needed here because eigenvectors and modal coefficients are complex in general.
+```
 
 
 ## Examples of generalized stability problem
+
+### Case 0: a 2x2 example we can do by hand
+
+Before the numerical cases, here is the smallest example that shows the whole effect analytically. Take
+
+```{math}
+:label: eq127d
+\mathbf{A}=\begin{bmatrix}
+-\epsilon & 1 \\
+0 & -2\epsilon
+\end{bmatrix},\qquad 0<\epsilon\ll 1
+```
+
+* **Eigenvalues:** $-\epsilon$ and $-2\epsilon$. Both negative, so $\alpha=-\epsilon<0$ and the system is *modally stable*. Traditional analysis stops here and reports "stable".
+* **Eigenvectors:** $s_1=(1,0)^{T}$ and $s_2=(1,-\epsilon)^{T}$. As $\epsilon\rightarrow0$ these become nearly parallel, and the condition number blows up as $\kappa\approx 2/\epsilon$.
+* **Propagator:**
+
+```{math}
+:label: eq127e
+e^{\mathbf{A}t}=\begin{bmatrix}
+e^{-\epsilon t} & \dfrac{e^{-\epsilon t}-e^{-2\epsilon t}}{\epsilon} \\[2ex]
+0 & e^{-2\epsilon t}
+\end{bmatrix}
+```
+
+* **Peak amplification:** the off-diagonal term is the interesting one. It peaks at $t^{*}=\ln 2/\epsilon$, where it equals $1/(4\epsilon)$. So the amplitude amplification is $\approx 1/(4\epsilon)$ and the energy amplification $G\approx 1/(16\epsilon^{2})$ — arbitrarily large as $\epsilon\rightarrow0$, **although every mode decays**.
+* **Mechanism:** start from $\mathbf{x}(0)=(0,1)^{T}$. In the eigenbasis this is the difference of two large, nearly cancelling modal components (it has to be — the eigenvectors are nearly parallel, and we are asking for a vector almost perpendicular to both). Because the two components decay at different rates, the cancellation is progressively lost and the perturbation grows temporarily. This is {eq}`eq126a` with $\phi_1-\phi_2$ made concrete.
+
+Notice how badly the eigenvalues mislead here: they predict decay at rate $\epsilon$, while the actual transient gain is $O(\epsilon^{-2})$ in energy. The two statements are both correct and describe different time scales.
 
 ### Case I
 
@@ -182,6 +313,17 @@ Red curve shows the case where we swap the linear operators for every quarter pe
 This feature has very important applications. In mid-latitude regions, the environment is usually _not_ baroclinicly unstable. However, we still observe many baroclinic waves. {cite}`Farrell_and_Ioannou_2001` (also see Ch5 in {cite}`palmer2006predictability`) provides a very clean explanation. According to week 2, we know that one necessary criteria of baroclinic instability is the change of sign in background PV gradient. This can lead to counter-propagating baroclinic Rossby wave. However, in an environment where PV gradient never change sign, can we still have counter-propagating wave? The answer is yes.
 
 Similar to [FIG19](FIG19), if there are two modes to construct a barolcinic wave. One decays faster and has shorter period than the other. Their linear combination can lead to the transient growth of the wave signals. If the transient growth over different $t$ can be accumulated, we can see asymptotically unstable waves.  
+
+### Why this matters beyond the atmosphere
+
+The same argument was worked out first in engineering fluid dynamics, and the evidence there is unusually clean. The linearized Navier-Stokes operator for a shear flow (the Orr-Sommerfeld/Squire system) is strongly non-normal, and the classical modal predictions fail outright:
+
+* **Plane Couette flow** and **pipe flow** are linearly stable at *all* Reynolds numbers — $\alpha<0$ everywhere, so modal analysis says they can never become turbulent.
+* **Plane Poiseuille flow** becomes linearly unstable only at $\mathrm{Re}\approx5772$.
+
+Yet all three transition to turbulence at Reynolds numbers far below those thresholds. The resolution is non-modal growth, through the *lift-up* and *Orr* mechanisms, which give $G_{\mathrm{max}}\sim O(\mathrm{Re}^{2})$. That is enough amplification to push a small disturbance into the nonlinear regime, where the linear analysis no longer applies and the flow never gets the chance to follow its modal fate. It is the same story as [FIG19](FIG19) and Case 0, with $\mathrm{Re}$ playing the role of $1/\epsilon$.
+
+This is why modern stability analysis reports $G(t)$, singular value decompositions and pseudospectra *alongside* the eigenvalues, rather than the eigenvalues alone.
 
 
 

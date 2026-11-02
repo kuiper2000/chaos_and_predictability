@@ -375,10 +375,19 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modal-vs-non-modal">Modal vs non-modal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modal-vs-non-modal">Modal vs non-modal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modal-analysis-eigenvalues-and-the-spectral-abscissa">Modal analysis: eigenvalues and the spectral abscissa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-modal-analysis-the-finite-time-amplification">Non-modal analysis: the finite-time amplification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-the-amplification">Bounding the amplification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-vs-non-normal-operators">Normal vs non-normal operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-transient-growth-start">When does transient growth start?</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-generalized-stability-problem">Examples of generalized stability problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-0-a-2x2-example-we-can-do-by-hand">Case 0: a 2x2 example we can do by hand</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-i">Case I</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-ii">Case II</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-matters-beyond-the-atmosphere">Why this matters beyond the atmosphere</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-application-in-data-assimilation">The application in data assimilation</a></li>
@@ -426,34 +435,141 @@
 <p>where <span class="math notranslate nohighlight">\(\mathbf{\Phi (t,0)}^{T}\mathbf{\Phi (t,0)}\)</span> indicates how much the signals have amplified. For <a class="reference internal" href="#equation-eq124">(144)</a>, if we can find a matrix, <span class="math notranslate nohighlight">\(v\)</span>, which gives us <span class="math notranslate nohighlight">\([e^{\mathbf{A}t}]^{T}[e^{\mathbf{A}t}]v_i = \lambda_iv_i\)</span>, where <span class="math notranslate nohighlight">\(\lambda_i\)</span> is a constant, then <a class="reference internal" href="#equation-eq124">(144)</a> will reduce to</p>
 <div class="math notranslate nohighlight" id="equation-eq125">
 <span class="eqno">(145)<a class="headerlink" href="#equation-eq125" title="Link to this equation">#</a></span>\[\mathbf{\Phi (t,0)}^{T}\mathbf{\Phi (t,0)} v_i \equiv \lambda_i v_i\]</div>
-<p>We also know that <span class="math notranslate nohighlight">\(\mathbf{\Phi (t,0)}^T\mathbf{\Phi (t,0)} = e^{2At}\)</span>. Thus, <a class="reference internal" href="#equation-eq125">(145)</a> is equivalent to finding the eigen value of <span class="math notranslate nohighlight">\(A\)</span> (i.e., <span class="math notranslate nohighlight">\(\lambda_{A,i}\)</span>, which is a diagonal matrix) and calculating the exponential of <span class="math notranslate nohighlight">\(\lambda_{A,i}\)</span> matrix. The real part of <span class="math notranslate nohighlight">\(\lambda_{A,i}\)</span> represents growth rate and the imaginary part represents the oscillatory component. This is in general consistent with the traditional stability analysis (von Neumann method).</p>
+<p>So the amplification we are after is an eigenvalue problem for <span class="math notranslate nohighlight">\(\mathbf{\Phi}^{T}\mathbf{\Phi}\)</span> — equivalently, the <span class="math notranslate nohighlight">\(\lambda_i\)</span> are the <strong>squared singular values</strong> of <span class="math notranslate nohighlight">\(\mathbf{\Phi}\)</span>, and the largest one is what <a class="reference internal" href="#equation-eq123">(143)</a> calls <span class="math notranslate nohighlight">\(||\mathbf{\Phi}(t,0)||\)</span>.</p>
+<p>It is tempting to go one step further and write <span class="math notranslate nohighlight">\(\mathbf{\Phi (t,0)}^T\mathbf{\Phi (t,0)} = e^{2\mathbf{A}t}\)</span>, which would turn <a class="reference internal" href="#equation-eq125">(145)</a> into an ordinary eigenvalue problem for <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>: find <span class="math notranslate nohighlight">\(\lambda_{A,i}\)</span>, take the real part as the growth rate and the imaginary part as the oscillation, and recover the traditional stability analysis (von Neumann method). That step is legitimate <strong>only when <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is normal</strong>, and the whole of generalized stability theory lives in the gap that opens when it is not. The next section makes this precise.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{\Phi}^{T}\mathbf{\Phi}=\left(e^{\mathbf{A}t}\right)^{T}e^{\mathbf{A}t}=e^{\mathbf{A}^{T}t}e^{\mathbf{A}t}\)</span>, and this collapses to <span class="math notranslate nohighlight">\(e^{(\mathbf{A}+\mathbf{A}^{T})t}\)</span> only when <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{A}^{T}\)</span> commute. Matrix exponentials do not obey <span class="math notranslate nohighlight">\(e^{X}e^{Y}=e^{X+Y}\)</span> in general. Keeping singular values and eigenvalues separate is the single most important bookkeeping habit in this chapter.</p>
+</div>
 <section id="modal-vs-non-modal">
 <h2>Modal vs non-modal<a class="headerlink" href="#modal-vs-non-modal" title="Link to this heading">#</a></h2>
 <p>One key ingredient in generalized stability theory is non-modal system. Physically, <em>modal</em> is defined as that <em>eigen vectors of <span class="math notranslate nohighlight">\(x^Tx\)</span>(or EOF mode in climate science) capture all necessary dynamics regardless of time</em>. However, modal dynamics can’t capture the transient growth of the error, which is important for weather prediction and initiation of the low-frequency variability (so-called stochastic forcing).</p>
-<p>To demonstrate the difference between modal and non-modal system, we repeat the same exercise in <a class="reference internal" href="#equation-eq125">(145)</a> but apply the eigen value decomposition to A instead this time</p>
+<p>To demonstrate the difference between modal and non-modal system, we repeat the same exercise in <a class="reference internal" href="#equation-eq125">(145)</a> but apply the eigen value decomposition to <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> instead this time.</p>
+<section id="modal-analysis-eigenvalues-and-the-spectral-abscissa">
+<h3>Modal analysis: eigenvalues and the spectral abscissa<a class="headerlink" href="#modal-analysis-eigenvalues-and-the-spectral-abscissa" title="Link to this heading">#</a></h3>
+<p>Diagonalize <span class="math notranslate nohighlight">\(\mathbf{A}=S\Lambda S^{-1}\)</span>, where <span class="math notranslate nohighlight">\(\Lambda\)</span> is diagonal and holds the eigenvalues <span class="math notranslate nohighlight">\(\lambda_j\)</span>, and the columns <span class="math notranslate nohighlight">\(s_j\)</span> of <span class="math notranslate nohighlight">\(S\)</span> are the eigenvectors. Substituting into the Taylor series of the exponential,</p>
 <div class="math notranslate nohighlight" id="equation-eq126">
-<span class="eqno">(146)<a class="headerlink" href="#equation-eq126" title="Link to this equation">#</a></span>\[e^{2At} = e^{2S\lambda_{A}S^{-1}t}\]</div>
-<p><span class="math notranslate nohighlight">\(\lambda_{A}\)</span> is an diagonal matrix, which contains the eigen value of <span class="math notranslate nohighlight">\(A\)</span> along the diagonal direction and <span class="math notranslate nohighlight">\(S\)</span> is the eigen vector. In general, <span class="math notranslate nohighlight">\(\lambda_{A}\)</span> is negative in its real part and is arranged in an order from the largest to the smallest (slow- to fast-decaying mode). A negative <span class="math notranslate nohighlight">\(\lambda_{A}\)</span> indicating the memory from initial states will gradually decay with the increase of forecast lead time.</p>
-<p>Given a small t (because we are focusing the transient time scales), we know <span class="math notranslate nohighlight">\(e^{2S\lambda_{A}S^{-1}t}=||S e^{\lambda_{A}t}S^{-1}||^{2} \leq ||S||^2||S^{-1}||^2 e^{2\lambda_{A}t}\leq ||S||^2||S^{-1}||^2 e^{2\lambda_{A,\mathrm{max}}t}\)</span> . Thus, <span class="math notranslate nohighlight">\(||S||^2||S^{-1}||^2 \)</span> determines the upper-bound of <span class="math notranslate nohighlight">\(e^{2S\lambda_{A}S^{-1}t}\)</span>. For the lower bound, we know <span class="math notranslate nohighlight">\(e^{2\lambda_{A,min}t} \leq e^{2At}\)</span>, i.e., <span class="math notranslate nohighlight">\(e^{2At}\)</span> cannot decay faster than the fastest decaying mode. Combining both condition gives us:</p>
+<span class="eqno">(146)<a class="headerlink" href="#equation-eq126" title="Link to this equation">#</a></span>\[e^{\mathbf{A}t}=\sum_{n=0}^{\infty}\frac{t^{n}\left(S\Lambda S^{-1}\right)^{n}}{n!}=S\left(\sum_{n=0}^{\infty}\frac{(\Lambda t)^{n}}{n!}\right)S^{-1}=S\,e^{\Lambda t}\,S^{-1}\]</div>
+<p>which works because the inner factors telescope: <span class="math notranslate nohighlight">\(\left(S\Lambda S^{-1}\right)^{n}=S\Lambda^{n}S^{-1}\)</span>.</p>
+<p>Equivalently, change to modal coordinates <span class="math notranslate nohighlight">\(\mathbf{y}=S^{-1}\mathbf{x}\)</span>. The system decouples into <span class="math notranslate nohighlight">\(n\)</span> independent scalar problems, <span class="math notranslate nohighlight">\(\dot{\mathbf{y}}=\Lambda\mathbf{y}\)</span>, so that <span class="math notranslate nohighlight">\(y_j(t)=y_j(0)e^{\lambda_j t}\)</span> and</p>
+<div class="math notranslate nohighlight" id="equation-eq126a">
+<span class="eqno">(147)<a class="headerlink" href="#equation-eq126a" title="Link to this equation">#</a></span>\[\mathbf{x}(t)=\sum_{j} y_j(0)\, s_j\, e^{\lambda_j t}\]</div>
+<p>Each mode grows or decays on its own at the rate <span class="math notranslate nohighlight">\(\mathrm{Re}\,\lambda_j\)</span>, with <span class="math notranslate nohighlight">\(\mathrm{Im}\,\lambda_j\)</span> supplying the oscillation. The relevant summary number is the <strong>spectral abscissa</strong></p>
+<div class="math notranslate nohighlight" id="equation-eq126b">
+<span class="eqno">(148)<a class="headerlink" href="#equation-eq126b" title="Link to this equation">#</a></span>\[\alpha(\mathbf{A})=\max_{j}\ \mathrm{Re}\,\lambda_j\]</div>
+<p><em>Modal instability</em> means <span class="math notranslate nohighlight">\(\alpha(\mathbf{A})&gt;0\)</span>. Note what kind of statement this is: it describes the behaviour as <span class="math notranslate nohighlight">\(t\rightarrow\infty\)</span>, when the least-stable mode has outlived all the others and dominates the sum in <a class="reference internal" href="#equation-eq126a">(147)</a>. It says nothing about what happens on the way there.</p>
+</section>
+<section id="non-modal-analysis-the-finite-time-amplification">
+<h3>Non-modal analysis: the finite-time amplification<a class="headerlink" href="#non-modal-analysis-the-finite-time-amplification" title="Link to this heading">#</a></h3>
+<p>The non-modal question is different: over a <em>finite</em> interval, what is the largest energy growth any initial perturbation can achieve?</p>
+<div class="math notranslate nohighlight" id="equation-eq126c">
+<span class="eqno">(149)<a class="headerlink" href="#equation-eq126c" title="Link to this equation">#</a></span>\[G(t)=\max_{\mathbf{x}(0)\neq 0}\frac{||\mathbf{x}(t)||^{2}}{||\mathbf{x}(0)||^{2}}=||e^{\mathbf{A}t}||_{2}^{2}=\sigma_{\mathrm{max}}^{2}\left(e^{\mathbf{A}t}\right)\]</div>
+<p>This is <a class="reference internal" href="#equation-eq123">(143)</a> and <a class="reference internal" href="#equation-eq125">(145)</a> written in the language of the singular value decomposition, and it is a <em>singular value</em> problem, not an eigenvalue problem. The payoff is that the SVD hands us the structures as well as the number: the <strong>optimal initial perturbation is the leading right singular vector</strong> of <span class="math notranslate nohighlight">\(e^{\mathbf{A}t}\)</span>, and the <strong>leading left singular vector is the shape it evolves into</strong>. In the forecasting literature these are the singular vectors used to initialize ensembles.</p>
+<p>In general, <span class="math notranslate nohighlight">\(\mathrm{Re}\,\lambda_{j}\)</span> is negative and the eigenvalues are ordered from the largest to the smallest (slow- to fast-decaying mode). A negative <span class="math notranslate nohighlight">\(\mathrm{Re}\,\lambda_j\)</span> indicates the memory of the initial state will gradually decay with the increase of forecast lead time. The question is what happens before that.</p>
+</section>
+<section id="bounding-the-amplification">
+<h3>Bounding the amplification<a class="headerlink" href="#bounding-the-amplification" title="Link to this heading">#</a></h3>
+<p><strong>Lower bound.</strong> The 2-norm of a matrix is at least its spectral radius, and the eigenvalues of <span class="math notranslate nohighlight">\(e^{\mathbf{A}t}\)</span> are <span class="math notranslate nohighlight">\(e^{\lambda_j t}\)</span>. Hence</p>
+<div class="math notranslate nohighlight" id="equation-eq126d">
+<span class="eqno">(150)<a class="headerlink" href="#equation-eq126d" title="Link to this equation">#</a></span>\[||e^{\mathbf{A}t}||_{2}^{2}\ \geq\ \max_{j}\left|e^{\lambda_j t}\right|^{2}=e^{2\alpha t}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The lower bound uses the <strong>largest</strong> real part <span class="math notranslate nohighlight">\(\alpha\)</span>, not the most negative one. Read physically: a perturbation can never decay faster than the <em>slowest</em>-decaying mode, because the projection onto that mode is still there. The “most negative eigenvalue” version of this bound is also true, but it is much weaker and it is the wrong statement to remember.</p>
+</div>
+<p><strong>Upper bound.</strong> Apply <a class="reference internal" href="#equation-eq126">(146)</a> and submultiplicativity of the norm, using <span class="math notranslate nohighlight">\(||e^{\Lambda t}||=e^{\alpha t}\)</span> for diagonal <span class="math notranslate nohighlight">\(\Lambda\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eq126e">
+<span class="eqno">(151)<a class="headerlink" href="#equation-eq126e" title="Link to this equation">#</a></span>\[||S e^{\Lambda t}S^{-1}||^{2}\ \leq\ ||S||^{2}\,||e^{\Lambda t}||^{2}\,||S^{-1}||^{2}=\kappa(S)^{2}e^{2\alpha t},\qquad \kappa(S)=||S||\,||S^{-1}||\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(||S||\)</span> here is the <strong>induced 2-norm</strong> (the largest singular value of <span class="math notranslate nohighlight">\(S\)</span>), not the determinant. <span class="math notranslate nohighlight">\(\kappa(S)\)</span> is the <em>condition number of the eigenvector matrix</em> — a measure of how far from orthogonal the eigenvectors are, and the single quantity that controls everything below.</p>
+</div>
+<p><strong>Combined.</strong> Putting the two together,</p>
 <div class="math notranslate nohighlight" id="equation-eq127">
-<span class="eqno">(147)<a class="headerlink" href="#equation-eq127" title="Link to this equation">#</a></span>\[e^{2\lambda_{A,min}t} \leq e^{2At} \leq ||S||^2||S^{-1}||^2 e^{2\lambda_{A,\mathrm{max}}t}\]</div>
-<p>if <span class="math notranslate nohighlight">\(||S||^2||S^{-1}||^2 = 1\)</span> and <span class="math notranslate nohighlight">\(\lambda_{A,max}=\lambda_{A,min}\)</span>, suggests that all three terms in the inequality of <a class="reference internal" href="#equation-eq127">(147)</a> are the same and the dynamics of <span class="math notranslate nohighlight">\(f\)</span> is governed by the mode dynamics (linearly stable) and there is no significant difference between any two unstable mode. In this case, we can consider that all of the eigen modes have reached a statistical equilibrium state and their transient interaction doesn’t influence the dynamics of interest. This is the case when we talk about <em>how the weather signals are represented in a climate change problem</em>. Because in a climate change time scales (&gt;10 yrs), all the weather signals have already reached an equilibrium states.</p>
-<p>However, this is not the case when the time scales of interest is much shorter i.e., hourly to seasonal time scales. In these time scales, <span class="math notranslate nohighlight">\(||S||^2||S^{-1}||^2 e^{2\lambda_{A,\mathrm{max}}t} &gt;&gt; 1\)</span> indicates we can still observe some instability caused by non-modal process. For example, if today we have two eigen modes, <span class="math notranslate nohighlight">\(\phi_1\)</span> and <span class="math notranslate nohighlight">\(\phi_2\)</span>. The phenomenon of interest is their linear combination, let say <span class="math notranslate nohighlight">\(\phi_1-\phi_2\)</span>. Given the fact that <span class="math notranslate nohighlight">\(\phi_1\)</span> decays much slower than <span class="math notranslate nohighlight">\(\phi_2\)</span>, we can find that the amplitude of <span class="math notranslate nohighlight">\(\phi_1-\phi_2\)</span> grows with time even both <span class="math notranslate nohighlight">\(\phi_1\)</span> and <span class="math notranslate nohighlight">\(\phi_2\)</span> are getting smaller and smaller. (see <a class="reference internal" href="#fig19"><span class="std std-ref">FIG19</span></a>)</p>
+<span class="eqno">(152)<a class="headerlink" href="#equation-eq127" title="Link to this equation">#</a></span>\[e^{2\alpha t}\ \leq\ G(t)\ \leq\ \kappa(S)^{2}\,e^{2\alpha t}\]</div>
+<p>Both ends of <a class="reference internal" href="#equation-eq127">(152)</a> now carry the <em>same</em> exponential <span class="math notranslate nohighlight">\(e^{2\alpha t}\)</span>, and the entire gap between them is the prefactor <span class="math notranslate nohighlight">\(\kappa(S)^{2}\)</span>. So one number decides whether modal analysis is the whole story.</p>
+</section>
+<section id="normal-vs-non-normal-operators">
+<h3>Normal vs non-normal operators<a class="headerlink" href="#normal-vs-non-normal-operators" title="Link to this heading">#</a></h3>
+<p><strong>Normal <span class="math notranslate nohighlight">\(\mathbf{A}\)</span></strong> (<span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{A}^{H}=\mathbf{A}^{H}\mathbf{A}\)</span>; a real symmetric matrix is the familiar case). The eigenvectors are orthogonal, so <span class="math notranslate nohighlight">\(S\)</span> can be chosen unitary and <span class="math notranslate nohighlight">\(\kappa(S)=1\)</span>. The two bounds in <a class="reference internal" href="#equation-eq127">(152)</a> collapse onto each other:</p>
+<div class="math notranslate nohighlight" id="equation-eq127a">
+<span class="eqno">(153)<a class="headerlink" href="#equation-eq127a" title="Link to this equation">#</a></span>\[G(t)=e^{2\alpha t}\]</div>
+<p>Energy evolves monotonically, and the eigenvalues really do tell the whole story. This is the “traditional” case in which modal analysis suffices — and it is the case in which the shortcut <span class="math notranslate nohighlight">\(\mathbf{\Phi}^{T}\mathbf{\Phi}=e^{2\mathbf{A}t}\)</span> flagged earlier is legitimate. Physically, we can consider that all of the eigen modes have reached a statistical equilibrium state and their transient interaction doesn’t influence the dynamics of interest. This is the situation when we ask <em>how the weather signals are represented in a climate change problem</em>: on climate change time scales (&gt;10 yrs), all the weather signals have already reached an equilibrium state.</p>
+<p><strong>Non-normal <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</strong> The eigenvectors are non-orthogonal, <span class="math notranslate nohighlight">\(\kappa(S)&gt;1\)</span>, possibly <span class="math notranslate nohighlight">\(\kappa(S)\gg 1\)</span>. Now even when <span class="math notranslate nohighlight">\(\alpha&lt;0\)</span> — every single mode decaying, the system <em>modally stable</em> — <span class="math notranslate nohighlight">\(G(t)\)</span> can climb far above 1 before the eventual decay sets in. This is <strong>transient growth</strong>, or non-modal amplification, and it is what we see on the hourly to seasonal time scales that matter for weather prediction and for the initiation of low-frequency variability (so-called stochastic forcing).</p>
+<p>The mechanism is just cancellation being lost. Suppose we have two eigen modes, <span class="math notranslate nohighlight">\(\phi_1\)</span> and <span class="math notranslate nohighlight">\(\phi_2\)</span>, and the phenomenon of interest is their linear combination, say <span class="math notranslate nohighlight">\(\phi_1-\phi_2\)</span>. If the two are nearly parallel (which is exactly what <span class="math notranslate nohighlight">\(\kappa\gg1\)</span> means), representing a small initial state requires two <em>large</em>, nearly cancelling coefficients. Given that <span class="math notranslate nohighlight">\(\phi_1\)</span> decays more slowly than <span class="math notranslate nohighlight">\(\phi_2\)</span>, the cancellation degrades, and the amplitude of <span class="math notranslate nohighlight">\(\phi_1-\phi_2\)</span> grows with time even though both <span class="math notranslate nohighlight">\(\phi_1\)</span> and <span class="math notranslate nohighlight">\(\phi_2\)</span> are getting smaller and smaller. (see <a class="reference internal" href="#fig19"><span class="std std-ref">FIG19</span></a>)</p>
 <figure class="align-default" id="fig19">
 <img alt="../_images/non_modal_growth.png" src="../_images/non_modal_growth.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 20 </span><span class="caption-text">An example of non-modal growth of signals at finite time.</span><a class="headerlink" href="#fig19" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The question is what kind of phenomenon is most likely to experience non-modal growth. From <a class="reference internal" href="#equation-eq127">(147)</a>, we know that the eigen vector <span class="math notranslate nohighlight">\(v_i\)</span>, who has the largest <span class="math notranslate nohighlight">\(\lambda\)</span>, will experience the most significant error growth. One should notice that the <span class="math notranslate nohighlight">\(v_i\)</span> is different from the eigen modes of state vector. The former quantifies the <em>most unstable signal/initial state</em> while the later quantifies <em>the mode which explains the most variance</em>. There is one unique case that these two are identical, I will let the readers think about what is that? (HW).</p>
+<p>The question is what kind of phenomenon is most likely to experience non-modal growth. From <a class="reference internal" href="#equation-eq127">(152)</a>, we know that the eigen vector <span class="math notranslate nohighlight">\(v_i\)</span>, who has the largest <span class="math notranslate nohighlight">\(\lambda\)</span>, will experience the most significant error growth. One should notice that the <span class="math notranslate nohighlight">\(v_i\)</span> is different from the eigen modes of state vector. The former quantifies the <em>most unstable signal/initial state</em> while the later quantifies <em>the mode which explains the most variance</em>. There is one unique case that these two are identical, I will let the readers think about what is that? (HW).</p>
+</section>
+<section id="when-does-transient-growth-start">
+<h3>When does transient growth start?<a class="headerlink" href="#when-does-transient-growth-start" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="#equation-eq127">(152)</a> tells us transient growth is <em>possible</em> when <span class="math notranslate nohighlight">\(\kappa\gg1\)</span>, but not whether it actually happens. For that, differentiate the energy directly:</p>
+<div class="math notranslate nohighlight" id="equation-eq127b">
+<span class="eqno">(154)<a class="headerlink" href="#equation-eq127b" title="Link to this equation">#</a></span>\[\frac{d}{dt}||\mathbf{x}||^{2}=\mathbf{x}^{H}\left(\mathbf{A}+\mathbf{A}^{H}\right)\mathbf{x}\]</div>
+<p>so the largest attainable <em>initial</em> growth rate is set by the <strong>numerical abscissa</strong>, the largest eigenvalue of the symmetric part of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eq127c">
+<span class="eqno">(155)<a class="headerlink" href="#equation-eq127c" title="Link to this equation">#</a></span>\[\omega(\mathbf{A})=\lambda_{\mathrm{max}}\!\left(\frac{\mathbf{A}+\mathbf{A}^{H}}{2}\right)\]</div>
+<p>Transient growth occurs when <span class="math notranslate nohighlight">\(\omega(\mathbf{A})&gt;0\)</span>, and this can happen even when <span class="math notranslate nohighlight">\(\alpha(\mathbf{A})&lt;0\)</span>. The two abscissas answer two genuinely different questions:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>criterion</p></th>
+<th class="head"><p>time scale</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Modal instability</p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha(\mathbf{A})&gt;0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(t\rightarrow\infty\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-modal (transient) growth</p></td>
+<td><p><span class="math notranslate nohighlight">\(\omega(\mathbf{A})&gt;0\)</span>, i.e. <span class="math notranslate nohighlight">\(G(t)&gt;1\)</span> for some <span class="math notranslate nohighlight">\(t\)</span></p></td>
+<td><p>finite <span class="math notranslate nohighlight">\(t\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For normal <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, <span class="math notranslate nohighlight">\(\omega=\alpha\)</span> and the two notions coincide — which is another way of saying that the distinction we have spent this section building only exists for non-normal operators.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(\cdot^{H}\)</span> denotes the conjugate transpose; for a real matrix it is just the transpose <span class="math notranslate nohighlight">\(\cdot^{T}\)</span>. The conjugate is needed here because eigenvectors and modal coefficients are complex in general.</p>
+</div>
+</section>
 </section>
 <section id="examples-of-generalized-stability-problem">
 <h2>Examples of generalized stability problem<a class="headerlink" href="#examples-of-generalized-stability-problem" title="Link to this heading">#</a></h2>
+<section id="case-0-a-2x2-example-we-can-do-by-hand">
+<h3>Case 0: a 2x2 example we can do by hand<a class="headerlink" href="#case-0-a-2x2-example-we-can-do-by-hand" title="Link to this heading">#</a></h3>
+<p>Before the numerical cases, here is the smallest example that shows the whole effect analytically. Take</p>
+<div class="math notranslate nohighlight" id="equation-eq127d">
+<span class="eqno">(156)<a class="headerlink" href="#equation-eq127d" title="Link to this equation">#</a></span>\[\begin{split}\mathbf{A}=\begin{bmatrix}
+-\epsilon &amp; 1 \\
+0 &amp; -2\epsilon
+\end{bmatrix},\qquad 0&lt;\epsilon\ll 1\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>Eigenvalues:</strong> <span class="math notranslate nohighlight">\(-\epsilon\)</span> and <span class="math notranslate nohighlight">\(-2\epsilon\)</span>. Both negative, so <span class="math notranslate nohighlight">\(\alpha=-\epsilon&lt;0\)</span> and the system is <em>modally stable</em>. Traditional analysis stops here and reports “stable”.</p></li>
+<li><p><strong>Eigenvectors:</strong> <span class="math notranslate nohighlight">\(s_1=(1,0)^{T}\)</span> and <span class="math notranslate nohighlight">\(s_2=(1,-\epsilon)^{T}\)</span>. As <span class="math notranslate nohighlight">\(\epsilon\rightarrow0\)</span> these become nearly parallel, and the condition number blows up as <span class="math notranslate nohighlight">\(\kappa\approx 2/\epsilon\)</span>.</p></li>
+<li><p><strong>Propagator:</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-eq127e">
+<span class="eqno">(157)<a class="headerlink" href="#equation-eq127e" title="Link to this equation">#</a></span>\[\begin{split}e^{\mathbf{A}t}=\begin{bmatrix}
+e^{-\epsilon t} &amp; \dfrac{e^{-\epsilon t}-e^{-2\epsilon t}}{\epsilon} \\[2ex]
+0 &amp; e^{-2\epsilon t}
+\end{bmatrix}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>Peak amplification:</strong> the off-diagonal term is the interesting one. It peaks at <span class="math notranslate nohighlight">\(t^{*}=\ln 2/\epsilon\)</span>, where it equals <span class="math notranslate nohighlight">\(1/(4\epsilon)\)</span>. So the amplitude amplification is <span class="math notranslate nohighlight">\(\approx 1/(4\epsilon)\)</span> and the energy amplification <span class="math notranslate nohighlight">\(G\approx 1/(16\epsilon^{2})\)</span> — arbitrarily large as <span class="math notranslate nohighlight">\(\epsilon\rightarrow0\)</span>, <strong>although every mode decays</strong>.</p></li>
+<li><p><strong>Mechanism:</strong> start from <span class="math notranslate nohighlight">\(\mathbf{x}(0)=(0,1)^{T}\)</span>. In the eigenbasis this is the difference of two large, nearly cancelling modal components (it has to be — the eigenvectors are nearly parallel, and we are asking for a vector almost perpendicular to both). Because the two components decay at different rates, the cancellation is progressively lost and the perturbation grows temporarily. This is <a class="reference internal" href="#equation-eq126a">(147)</a> with <span class="math notranslate nohighlight">\(\phi_1-\phi_2\)</span> made concrete.</p></li>
+</ul>
+<p>Notice how badly the eigenvalues mislead here: they predict decay at rate <span class="math notranslate nohighlight">\(\epsilon\)</span>, while the actual transient gain is <span class="math notranslate nohighlight">\(O(\epsilon^{-2})\)</span> in energy. The two statements are both correct and describe different time scales.</p>
+</section>
 <section id="case-i">
 <h3>Case I<a class="headerlink" href="#case-i" title="Link to this heading">#</a></h3>
 <p>Here we use two examples to demonstrate the finite amplitude of error growth lead by the non-modal dynamics.</p>
 <div class="math notranslate nohighlight" id="equation-eq128">
-<span class="eqno">(148)<a class="headerlink" href="#equation-eq128" title="Link to this equation">#</a></span>\[\begin{split}e^{At_i} = 
+<span class="eqno">(158)<a class="headerlink" href="#equation-eq128" title="Link to this equation">#</a></span>\[\begin{split}e^{At_i} = 
 \begin{bmatrix}
 0.9 &amp; 0.3 \\
 0   &amp; 0.9 
@@ -490,9 +606,9 @@
 </section>
 <section id="case-ii">
 <h3>Case II<a class="headerlink" href="#case-ii" title="Link to this heading">#</a></h3>
-<p>I the second case, we choose two stable linear operators <a class="reference internal" href="#equation-eq129">(149)</a> but we swap them regularly.</p>
+<p>I the second case, we choose two stable linear operators <a class="reference internal" href="#equation-eq129">(159)</a> but we swap them regularly.</p>
 <div class="math notranslate nohighlight" id="equation-eq129">
-<span class="eqno">(149)<a class="headerlink" href="#equation-eq129" title="Link to this equation">#</a></span>\[\begin{split}A=\begin{bmatrix}
+<span class="eqno">(159)<a class="headerlink" href="#equation-eq129" title="Link to this equation">#</a></span>\[\begin{split}A=\begin{bmatrix}
 0 &amp; 1 \\
 -\omega_{1,2}   &amp; 0 
 \end{bmatrix}\end{split}\]</div>
@@ -505,6 +621,16 @@
 </figure>
 <p>This feature has very important applications. In mid-latitude regions, the environment is usually <em>not</em> baroclinicly unstable. However, we still observe many baroclinic waves. <span id="id1">[]</span> (also see Ch5 in <span id="id2">[<a class="reference internal" href="../intro.html#id12" title="Tim Palmer and Renate Hagedorn. Predictability of weather and climate. Cambridge University Press, 2006.">PH06</a>]</span>) provides a very clean explanation. According to week 2, we know that one necessary criteria of baroclinic instability is the change of sign in background PV gradient. This can lead to counter-propagating baroclinic Rossby wave. However, in an environment where PV gradient never change sign, can we still have counter-propagating wave? The answer is yes.</p>
 <p>Similar to <a class="reference internal" href="#fig19"><span class="std std-ref">FIG19</span></a>, if there are two modes to construct a barolcinic wave. One decays faster and has shorter period than the other. Their linear combination can lead to the transient growth of the wave signals. If the transient growth over different <span class="math notranslate nohighlight">\(t\)</span> can be accumulated, we can see asymptotically unstable waves.</p>
+</section>
+<section id="why-this-matters-beyond-the-atmosphere">
+<h3>Why this matters beyond the atmosphere<a class="headerlink" href="#why-this-matters-beyond-the-atmosphere" title="Link to this heading">#</a></h3>
+<p>The same argument was worked out first in engineering fluid dynamics, and the evidence there is unusually clean. The linearized Navier-Stokes operator for a shear flow (the Orr-Sommerfeld/Squire system) is strongly non-normal, and the classical modal predictions fail outright:</p>
+<ul class="simple">
+<li><p><strong>Plane Couette flow</strong> and <strong>pipe flow</strong> are linearly stable at <em>all</em> Reynolds numbers — <span class="math notranslate nohighlight">\(\alpha&lt;0\)</span> everywhere, so modal analysis says they can never become turbulent.</p></li>
+<li><p><strong>Plane Poiseuille flow</strong> becomes linearly unstable only at <span class="math notranslate nohighlight">\(\mathrm{Re}\approx5772\)</span>.</p></li>
+</ul>
+<p>Yet all three transition to turbulence at Reynolds numbers far below those thresholds. The resolution is non-modal growth, through the <em>lift-up</em> and <em>Orr</em> mechanisms, which give <span class="math notranslate nohighlight">\(G_{\mathrm{max}}\sim O(\mathrm{Re}^{2})\)</span>. That is enough amplification to push a small disturbance into the nonlinear regime, where the linear analysis no longer applies and the flow never gets the chance to follow its modal fate. It is the same story as <a class="reference internal" href="#fig19"><span class="std std-ref">FIG19</span></a> and Case 0, with <span class="math notranslate nohighlight">\(\mathrm{Re}\)</span> playing the role of <span class="math notranslate nohighlight">\(1/\epsilon\)</span>.</p>
+<p>This is why modern stability analysis reports <span class="math notranslate nohighlight">\(G(t)\)</span>, singular value decompositions and pseudospectra <em>alongside</em> the eigenvalues, rather than the eigenvalues alone.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 
@@ -657,10 +783,19 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modal-vs-non-modal">Modal vs non-modal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modal-vs-non-modal">Modal vs non-modal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modal-analysis-eigenvalues-and-the-spectral-abscissa">Modal analysis: eigenvalues and the spectral abscissa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-modal-analysis-the-finite-time-amplification">Non-modal analysis: the finite-time amplification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-the-amplification">Bounding the amplification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-vs-non-normal-operators">Normal vs non-normal operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-transient-growth-start">When does transient growth start?</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-generalized-stability-problem">Examples of generalized stability problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-0-a-2x2-example-we-can-do-by-hand">Case 0: a 2x2 example we can do by hand</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-i">Case I</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-ii">Case II</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-matters-beyond-the-atmosphere">Why this matters beyond the atmosphere</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-application-in-data-assimilation">The application in data assimilation</a></li>
