@@ -22,7 +22,8 @@ import matplotlib.pyplot as plt
 dim      = 100
 growth1  = np.zeros((dim,1))
 growth2  = np.zeros((dim,1))
-a        = np.array([[0.9,0.4],[0.,0.9]])
+a        = np.array([[0.9,0.1
+                     ],[0.,0.9]])
 x_0      = np.array([[1],[0]])
 for tau in range(dim):
     G_tau    = np.linalg.matrix_power(a, tau)

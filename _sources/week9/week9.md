@@ -4,26 +4,32 @@
 Information theory plays a central role in the field of _predictability_ (and probably the most essential one in our entire class). Our goal today is to leverage information theory for finding the most predictable feature in a dynamical system. but first, let's briefly walk through some game rules. 
 
 
-In week 1, we learn that the definition of _predictability_ is that: given a forecast PDF (probability density function) and a climatological PDF, if we can no longer tell the difference between the two, we reach so-called predictability limit. However, there are many ways of testing the difference between two PDFs, the question is...can we reach any agreement on the definition of _predictability_? The answer is yes ...as long as two a prior assumptions are satisfied. 
+In week 1, we learn that the definition of _predictability_ is that: given a forecast PDF (probability density function) and a climatological PDF, if we can no longer tell the difference between the two, we reach so-called predictability limit. However, there are many ways of testing the difference between two PDFs, the question is...can we reach any agreement on the definition of _predictability_? The answer is yes ...as long as we agree on two a priori requirements for whatever measure we choose. 
 
-* The minimum predictability is invariant through linear transformation. 
-* The first two moments are the most important metrics for estimating predictability while higher moments are not considered 
+* The measure of predictability is invariant under invertible linear transformations of the state. 
+* The first two moments are the most important metrics for estimating predictability while higher moments are not considered. 
 
-When both criterion are satisfied, it's called Markov process. i.e., the future state only depends on the current state and the past doesn't influence the future. Mathematically, it can be written as 
+Note that these two requirements are demands we place on the _measure_; they say nothing about the _dynamics_. We need a separate assumption about the system itself, and the simplest useful one is that the system is a **Markov process**, i.e., the future state only depends on the current state and the past doesn't influence the future,
+
+```{math}
+p(\mathbf{x}_{t+\tau}|\mathbf{x}_{t},\mathbf{x}_{t-1},\cdots) = p(\mathbf{x}_{t+\tau}|\mathbf{x}_{t})
+```   
+
+If we further assume the process is linear and Gaussian, it can be written as 
 
 ```{math}
 :label: eq130
 \mathbf{x}_{t+\tau}=\alpha\mathbf{x}_{t}+\mathbf{\epsilon} 
 ```   
 
-where $\mathbf{x_{t+\tau}}$ is the future state, $\mathbf{x_{t}}$ is the current state and $\mathbf{\epsilon}$ is the random white noise. $\alpha$ is the memory passing from current time step to the next time step. An alternative way of writing {eq}`eq130` is using a conditional PDF. 
+where $\mathbf{x_{t+\tau}}$ is the future state, $\mathbf{x_{t}}$ is the current state and $\mathbf{\epsilon}$ is the random white noise. $\alpha$ is the memory passing from current time step to the next time step. Two conditions are implied: $\mathbf{\epsilon}$ must be independent of $\mathbf{x}_t$, and $|\alpha|<1$ is required for the process to be stationary (otherwise the variance grows without bound and no climatological distribution exists). An alternative way of writing {eq}`eq130` is using a conditional PDF. 
 
 ```{math}
 :label: eq131
 p(\mathbf{x}_{t+\tau}|\mathbf{x}_{t}) 
 ```   
 
-where {eq}`eq131` is read as "given the PDF of x at $t$, the PDF of x at $t+\tau$". {eq}`eq131` is also called _transition probability_. We know that the initial states change discontinuously when we observe the state. For example, the summer temperature around 2pm at National Taiwan University is around $35\pm3$ Celsius from the climatological data. However, as long as we have observation at a given moment, the probability instantaneously change to 100$\%$. The new distribution of $\mathbf{x_{t}}$ is defined as $p(\mathbf{x_{t}}|\mathbf{\theta_t}) $ and named as _analysis probability_. 
+where {eq}`eq131` is read as "given the PDF of x at $t$, the PDF of x at $t+\tau$". {eq}`eq131` is also called _transition probability_. We know that the initial states change discontinuously when we observe the state. For example, the summer temperature around 2pm at National Taiwan University is around $35\pm3$ Celsius from the climatological data. However, as soon as we take an observation at a given moment, the distribution collapses onto a much narrower one centered on what we measured. If the observation were perfect, it would collapse all the way to a delta function; in practice observations carry error, so what we are left with is a narrowed but still finite-width distribution. This new distribution of $\mathbf{x_{t}}$ is defined as $p(\mathbf{x_{t}}|\mathbf{\theta_t}) $ and named as _analysis probability_. 
 
 To reduce the notation burden, variables at the initial time, verification time and observation will be represented as 
 
@@ -45,7 +51,14 @@ We then define _forecast distribution_ as
 p(\mathbf{v}|\mathbf{\theta}) = \int p(\mathbf{v}|\mathbf{i}) p(\mathbf{i}|\mathbf{\theta}) di
 ```   
 
-Physically, {eq}`eq133` says that if the system is predictable (i.e., initial state and final state remain a certain relation), we can have the final state PDF by integrating over all possible initial conditions. {eq}`eq133` holds from the theorem of compound probability, given that $p(\mathbf{v}|\mathbf{i},\mathbf{\theta}) = p(\mathbf{v}|i)$ i.e., given the observation won't perturb the system significantly. In practice, the ensemble forecast is generated by repeatedly sampling data from the analysis distribution and computing the transition probability conditioned on drawn $i$. The mean of forecast probability is signal and the spread of forecast probability is noise.  
+Physically, {eq}`eq133` says that we obtain the final state PDF by integrating the transition probability over all possible initial conditions, weighting each initial condition by how likely it is given the observation. {eq}`eq133` (the Chapman--Kolmogorov relation) holds from the theorem of compound probability, given that $p(\mathbf{v}|\mathbf{i},\mathbf{\theta}) = p(\mathbf{v}|\mathbf{i})$ i.e., once the initial state is known, the observation carries no additional information about the future. It is worth emphasizing that this identity holds whether or not the system is predictable; what predictability controls is how _narrow_ the resulting $p(\mathbf{v}|\mathbf{\theta})$ is, not whether the integral is valid. In practice, the ensemble forecast is generated by repeatedly sampling data from the analysis distribution and computing the transition probability conditioned on drawn $i$. The spread of the forecast distribution, $\sigma_{v|\theta}^{2}$, is the _noise_, and the _signal_ is the variance of the ensemble mean across different observations, $\mathrm{Var}_{\theta}(\mu_{v|\theta})$. By the law of total variance the two add up to the climatological variance,
+
+```{math}
+:label: eq133b
+\sigma_{v}^{2} = \underbrace{\mathrm{Var}_{\theta}(\mu_{v|\theta})}_{\mathrm{signal}} + \underbrace{\sigma_{v|\theta}^{2}}_{\mathrm{noise}}
+```   
+
+a decomposition we will put to work later.
 
 
 For the reference state, we define a climatological distribution, where the specific observation is missing 
@@ -54,25 +67,25 @@ For the reference state, we define a climatological distribution, where the spec
 :label: eq134
 p(\mathbf{v}) = \int p(\mathbf{v}|\mathbf{\theta}) p(\mathbf{\theta}) d\mathbf{\theta}
 ```   
-One should notice that the climatological distribution should depends on time. For example, climatologically, we know the mid-night temperature is always lower than the afternoon temperature. or we know the winter temperature is on-average lower than the summer temperature.  
+One should notice that the climatological distribution should depend on time. For example, climatologically, we know the mid-night temperature is always lower than the afternoon temperature. or we know the winter temperature is on-average lower than the summer temperature.  
 
-Some studies (and most cases) have chosen the saturated forecast PDF (i.e., $p(\mathbf{v}|\mathbf{\theta})$) as the climatological PDF. This is a good choice in most cases but it can be a terrible choice at certain circumstance. For example, if a given dynamical system is a damped linear function, the saturated PDF will be a delta function, which obvious is not ideal given that we want to better approximate the forecast uncertainty at the longest lead time.
+Some studies (and most cases) have chosen the saturated forecast PDF (i.e., $p(\mathbf{v}|\mathbf{\theta})$ in the limit $\tau\rightarrow\infty$) as the climatological PDF. This is perfectly legitimate whenever the system is stationary and ergodic. For the damped linear system with stochastic forcing that we use throughout this chapter, the saturated forecast PDF has variance $\sigma_{\epsilon}^{2}/2\|a\|$ and is _exactly_ the climatological PDF. It becomes a terrible choice when the system is non-stationary or non-ergodic. A seasonal cycle or a long-term trend means there is no single $\tau\rightarrow\infty$ limit to converge to, and a system with multiple regimes means a forecast launched inside one regime may never sample the others, so the saturated forecast PDF ends up narrower than the true climatology. (A purely _deterministic_ damped system is the degenerate example: its saturated PDF is a delta function, but so is its climatology, so the two still agree.)
 
 
 ## Shannon Entropy and Predictability Components 
 
 Now we have all the necessary ingredients to define predictability (forecast probability and climatology probability). To quantify the predictability, we still need some metrics. Usually, we define the predictability limit as the moment when $p(\mathbf{v})$ and $p(\mathbf{v}|\mathbf{\theta})$ are not statistically different from each other. In other words, when $\mathbf{\theta}$ and $\mathbf{v}$ has no connection, we hit the predictability limit. 
 
-Traditionally, we can compare two PDFs and estimate if their _mean_ are significantly different from each other by calculating the t-scores. The t-score/z-score contains the information of both _mean_ and _standard deviations_. However, the use of t or z-score doesn't tell us how different the two PDFs are and doesn't include the conservation of probability density (unless the two PDFs are Gaussian as we assumed at the very beginning). Therefore, we will try something more general here. 
+Traditionally, we can compare two PDFs and estimate if their _mean_ are significantly different from each other by calculating the t-scores. The t-score/z-score contains the information of both _mean_ and _standard deviations_. However, the t or z-score only compares means; it doesn't tell us how different the two PDFs are _as distributions_, and it discards everything above the second moment (which is harmless only if both PDFs are Gaussian, as we assumed at the very beginning). Therefore, we will try something more general here. 
 
 Recall that the Liouville equation ({eq}`eq64`) predicts the time evolution of PDF. If we rewrite {eq}`eq64`, we can have 
 
 ```{math}
 :label: eq135
--\frac{d \mathrm{ln}(\rho)}{dt}=\frac{\partial \mathbf{\Phi}}{\partial \mathbf{x}}
+-\frac{d \mathrm{ln}(\rho)}{dt}=\nabla \cdot \mathbf{\Phi} \equiv \frac{\partial \Phi_{j}}{\partial x_{j}}
 ```   
 
-integrating over the entire domain, the right hand side of {eq}`eq135` will vanish, suggesting the conservation of probability density or _information_. The question is how to physically interpret the left hand side of {eq}`eq135`?
+where $d/dt$ is the material derivative following the flow and $\mathbf{\Phi}$ is the phase-space velocity ($d\mathbf{x}/dt = \mathbf{\Phi}$). The right hand side is the divergence of that flow: it measures how fast a phase-space volume element is being stretched or squeezed. So {eq}`eq135` says that the log-density of a parcel of probability changes only because the parcel's volume changes. Probability _mass_ is conserved; the probability _density_ is not. The question is how to physically interpret the left hand side of {eq}`eq135`?
 
 Here are a few examples...
 If today, we cast a six-sided dice, as long as we know outcome of one side (let's say...it's 1), the probability for the rest are determined (i.e., 5 other sides have 0 probability). On the other hand, if we only have 2-sided coin, when we know the outcome of one side, we determine the outcome of the other side at the same time. From these two examples, we can find that the six-sided dice provides more information as long as the result of one certain side is determined. On the other hand, the probability of knowing the outcome of a single side in six-sided dice is also lower. Combining both quantities, Claude Shannon introduced _Shannon entropy_ in 1948, which is defined as the _expected value of information_.
@@ -82,13 +95,26 @@ If today, we cast a six-sided dice, as long as we know outcome of one side (let'
 H(\mathbf{x}) = -\int p(\mathbf{x}) \mathrm{log} [p(\mathbf{x})] d\mathbf{x} 
 ```   
 
-The first term in the integral is the probability of a given scenario and the second term in the integral is _how much information is carried by each scenario_. We can find that the conservation of {eq}`eq135` is equivalent to the conservation of the second term inside the integral. In computational science, we mostly use binary information (i.e., 1 or 0) to transmit data. Thus for a unit size data/information, the corresponding Shannon entropy is defined as $\int\frac{1}{2}\mathrm{log_b} 2$. When $b=2$, the integral equals 1, which is the widely used unit in computational science, _bit_.  
+The first term in the integral is the probability of a given scenario and the second term, $-\mathrm{log}[p(\mathbf{x})]$, is _how much information is carried by that scenario_ (its _self-information_). Entropy is simply the probability-weighted average of the two.
+
+With $H$ in hand we can return to {eq}`eq135`. Multiplying it by $\rho$ and integrating over the whole domain gives the rate of change of entropy,
+
+```{math}
+:label: eq136b
+\frac{dH}{dt} = \int \rho \, (\nabla \cdot \mathbf{\Phi}) \, d\mathbf{x} = \langle \nabla \cdot \mathbf{\Phi} \rangle
+```   
+
+Note the density weighting: what controls $dH/dt$ is the divergence _as sampled by the PDF_, $\langle \nabla \cdot \mathbf{\Phi}\rangle$, not $\int \nabla \cdot \mathbf{\Phi}\, d\mathbf{x}$. For a non-divergent (volume-preserving, e.g. Hamiltonian) flow, $\nabla \cdot \mathbf{\Phi} = 0$ everywhere and the entropy is exactly conserved: reversible deterministic dynamics neither create nor destroy _information_, they only deform the PDF. For a dissipative flow $\nabla \cdot \mathbf{\Phi} < 0$ and the entropy actually _decreases_ as phase-space volume contracts onto the attractor. This is worth pausing on, because it means the entropy growth we associate with the loss of predictability does **not** come from {eq}`eq135` at all. It comes from the stochastic forcing $\mathbf{\epsilon}$ in {eq}`eq130`, which is precisely the piece of the dynamics that the Liouville equation leaves out.
+
+In computational science, we mostly use binary information (i.e., 1 or 0) to transmit data. For a fair two-state variable the sum in {eq}`eq136` has two equal terms, $H = -\sum_{i=1}^{2}\frac{1}{2}\mathrm{log}_{b}\frac{1}{2} = \mathrm{log}_{b}2$. When $b=2$, this equals 1, which is the widely used unit in computational science, _bit_.  
 
 :::{note}
-When Claude Shannon proposed using {eq}`eq136` to quantify the dispersion of a PDF, he consulted John von Neumann about how to name this metric. von Neumann told him that using _entropy_ is a good idea because similar concepts have been used in statistical mathematics and people don't really know what entropy is.   
+When Claude Shannon proposed using {eq}`eq136` to quantify the dispersion of a PDF, he consulted John von Neumann about how to name this metric. von Neumann told him that using _entropy_ is a good idea because similar concepts have been used in statistical mechanics and people don't really know what entropy is.   
 :::
 
-Because the unlikely event carries more information, the corresponding entropy is lower. It's like buying a lottery ticket. If someone tells certain combination of number can help win the lottery you might want to buy that given combination and rather not to invest your money on other combinations. _Knowing this information_ is equivalent _the probability changes when we have observation_. The change in the prize (because you expected you might get the money) reflects the change in the term $\mathrm{log} [p(\mathbf{x})]$. Similar to thermodynamics, the entropy will increase with the increase of forecast lead time and the process is irreversible. Here we use the following formula to describe the increase of _entropy_
+Be careful not to confuse the two pieces of {eq}`eq136`. An unlikely event carries _more_ self-information, $-\mathrm{log}\,p$, but that does not make the entropy lower. Entropy is a property of the entire distribution, and what makes it low is the distribution being sharply peaked (confident), not any individual outcome being rare. It's like buying a lottery ticket. If someone tells you a certain combination of numbers will win, your distribution over outcomes collapses from "every combination equally likely" (high entropy) onto a single combination (zero entropy), and you would put your money on that one rather than spread it over the others. _Knowing this information_ is equivalent to _the probability changing when we have an observation_, and the magnitude of that change is measured by the shift in $-\mathrm{log} [p(\mathbf{x})]$. 
+
+By analogy with thermodynamics we expect the forecast distribution to broaden with lead time until it is indistinguishable from climatology, and the process to be irreversible. Two cautions are in order. First, for a Markov process the quantity _guaranteed_ to be monotone is not the forecast entropy but the relative entropy relative to the stationary distribution, which decreases monotonically (the H-theorem, see {eq}`eq139` below); the forecast entropy itself can decrease if we start an ensemble whose spread is wider than climatology. Second, this irreversibility is a property of the forecast _PDF_, not of the underlying dynamics, which by {eq}`eq135` may be perfectly reversible. To measure how much information we still hold at lead time $\tau$, we define
 
 
 ```{math}
@@ -103,137 +129,182 @@ where
 H_\theta(\mathbf{v}|\mathbf{\theta}) = -\int p(\mathbf{v}|\mathbf{\theta}) \mathrm{log} [p(\mathbf{v}|\mathbf{\theta})] d \mathbf{v}
 ```   
 
-is the entropy of forecast distribution. The quantity of $P_{\theta}$ is predictive information, which measures how much room we still have before we hit the predictability limit. In general, $P_\theta$ various with time through its dependence on $\theta$. 
+is the entropy of forecast distribution. The quantity $P_{\theta}$ is the _predictive information_, which measures how much narrower the forecast distribution is than climatology, i.e. how much room we still have before we hit the predictability limit. It therefore _decreases_ toward zero as the lead time grows. $P_\theta$ depends on two things separately: on the lead time $\tau$, and on which observation $\theta$ we happen to have made. One caveat: $P_\theta \geq 0$ is not guaranteed for an individual $\theta$, since an unlucky observation can leave the forecast broader than climatology. Only the average over $\theta$ ({eq}`eq140` below) is guaranteed to be non-negative. 
 
-An alternative metric for estimating the difference between two PDFs is Kullback-Leible distance, which is define as 
+An alternative metric for estimating the difference between two PDFs is the Kullback--Leibler distance, which is defined as 
 
 ```{math}
 :label: eq139
 R_\theta = \int p(\mathbf{v}|\mathbf{\theta}) \mathrm{log}(\frac{p(\mathbf{v}|\mathbf{\theta})}{p(\mathbf{v})}) dv
 ```   
-Technically, Kullback-Leible distance is not really a distance but it still measures how different the two PDFs are. One key element of Kullback-Leible distance is the second term inside the integral, which is the ratio between two PDFs. Therefore, Kullback-Leible distance is also called relative entropy. For a Markov problem, the relative entropy decreases monotonically. 
+Technically, the Kullback--Leibler distance is not really a distance (it is not symmetric and does not obey the triangle inequality) but it still measures how different the two PDFs are. One key element of the Kullback--Leibler distance is the second term inside the integral, which is the ratio between two PDFs. Therefore, the Kullback--Leibler distance is also called relative entropy. For a Markov process, the relative entropy with respect to the stationary distribution decreases monotonically with lead time, which is the H-theorem mentioned above. 
 
-Remarkably, the predictive information and relative entropy are invariant with respective to linear and nonlinear transformation of the states. This allows us to combine variables with different unit into a single measure of predictability without introducing weighting factors since such factors cannot affect final values. Relative entropy has the additional property of being invariant to nonlinear,invertible transformations of the state. Another remarkable point is that if we integrate both metrics over $\mathbf{\theta}$, we can have exactly the same values. i.e., 
+Remarkably, both the predictive information and the relative entropy are invariant with respect to invertible _linear_ transformations of the state. This allows us to combine variables with different unit into a single measure of predictability without introducing weighting factors since such factors cannot affect final values. Relative entropy has the additional property of being invariant under invertible _nonlinear_ transformations of the state. The reason for the difference is worth spelling out: under a change of variables the differential entropy picks up a Jacobian term $\mathrm{log}|\mathrm{det}\,\mathbf{J}|$, which cancels between $H(\mathbf{v})$ and $H_\theta(\mathbf{v}|\mathbf{\theta})$ in {eq}`eq137` only when $\mathbf{J}$ is constant, i.e. only for linear maps. In {eq}`eq139` the Jacobians cancel inside the ratio $p(\mathbf{v}|\mathbf{\theta})/p(\mathbf{v})$ for _any_ invertible map. (This is also why differential entropy on its own is a slippery quantity: it is not coordinate-invariant and can even be negative, whereas relative entropy is always non-negative and coordinate-free.)
+
+Another remarkable point is that if we average both metrics over $\mathbf{\theta}$, weighted by $p(\mathbf{\theta})$, we get exactly the same value, which is the _mutual information_ between $\mathbf{v}$ and $\mathbf{\theta}$. i.e., 
 
 
 ```{math}
 :label: eq140
-M = \int P_\theta d\theta = \int R_\theta d\theta
+M = \int P_\theta \, p(\mathbf{\theta}) \, d\mathbf{\theta} = \int R_\theta \, p(\mathbf{\theta}) \, d\mathbf{\theta}
 ```
 
-that means the estimated predictability limit will be the same regardless of which metric is used here. 
+that means the estimated predictability limit will be the same regardless of which metric is used here. Note that the weight $p(\mathbf{\theta})$ is essential: without it the two integrals are not averages and the identity below does not go through.
 We can take a detailed look of the first part of {eq}`eq140`. 
 
 
 ```{math}
 :label: eq141
-M = \int P_\theta d\theta = \int H(\mathbf{v})- H_\theta(\mathbf{v}|\mathbf{\theta}) d\theta = H(\mathbf{v})- H(\mathbf{v}|\mathbf{\theta})
+M = \int P_\theta \, p(\mathbf{\theta}) \, d\mathbf{\theta} = \int \left[ H(\mathbf{v})- H_\theta(\mathbf{v}|\mathbf{\theta}) \right] p(\mathbf{\theta}) \, d\mathbf{\theta} = H(\mathbf{v})- H(\mathbf{v}|\mathbf{\theta})
 ```
 
-where $H(\mathbf{v}|\mathbf{\theta})$ is conditional entropy. {eq}`eq140` and {eq}`eq141` rigorously states that the predictability can be stated in two different ways: (1) the difference between the forecast and climatological distribution and (2) the statistical dependence between $\mathbf{v}$ and $\mathbf{\theta}$. Because when $\mathbf{v}$ and $\mathbf{\theta}$ loss their statistical connection, $H(\mathbf{v}|\mathbf{\theta})$ will reduce to $H(\mathbf{v})$ and the difference between $H(\mathbf{v})$ and $H_\theta(\mathbf{v}|\mathbf{\theta})$ vanish. 
+where the first term survives the integral because $\int p(\mathbf{\theta})d\mathbf{\theta}=1$, and $H(\mathbf{v}|\mathbf{\theta}) \equiv \int H_\theta(\mathbf{v}|\mathbf{\theta}) p(\mathbf{\theta}) d\mathbf{\theta}$ is the conditional entropy. {eq}`eq140` and {eq}`eq141` rigorously state that the predictability can be stated in two different ways: (1) the difference between the forecast and climatological distribution and (2) the statistical dependence between $\mathbf{v}$ and $\mathbf{\theta}$. Because when $\mathbf{v}$ and $\mathbf{\theta}$ lose their statistical connection, $H(\mathbf{v}|\mathbf{\theta})$ will reduce to $H(\mathbf{v})$ and the difference between $H(\mathbf{v})$ and $H_\theta(\mathbf{v}|\mathbf{\theta})$ vanishes. 
 
 To simplify the story, here we only focus on the normal distribution. The climatological distribution, observation and forecast distribution are then defined as 
 
 
 ```{math}
-:label: eq141
+:label: eq141b
 \begin{align}
-p(\mathbf{v}) & = \mathcal{N}(\mu_\mathbf{v},\Sigma_\mathbf{v}) \\ 
-p(\mathbf{\theta}) & = \mathcal{N}(\mu_\mathbf{\theta},\Sigma_\mathbf{\theta}) \\
-p(\mathbf{v|\theta}) & = \mathcal{N}(\mu_\mathbf{v|\theta},\Sigma_\mathbf{v|\theta}) \\
+p(\mathbf{v}) & = \mathcal{N}(\mathbf{\mu}_\mathbf{v},\Sigma_\mathbf{v}) \\ 
+p(\mathbf{\theta}) & = \mathcal{N}(\mathbf{\mu}_\mathbf{\theta},\Sigma_\mathbf{\theta}) \\
+p(\mathbf{v|\theta}) & = \mathcal{N}(\mathbf{\mu}_\mathbf{v|\theta},\Sigma_\mathbf{v|\theta}) \\
 \end{align}
 ```
 
-where $\mu$ is the mean and $\Sigma$ is the variance. Since the metrics we used allow us to apply the linear transformation, we can easily standardize the distribution and thus {eq}`eq141` can be written as   
+where $\mathbf{\mu}$ is the mean vector and $\Sigma$ is the covariance matrix. Because our metrics are invariant under invertible linear transformations, we are free to work in whichever linear coordinates are convenient. In particular we may project the state onto a single direction $\mathbf{q}$ (we will choose $\mathbf{q}$ shortly) and whiten it so that the climatological variance is one. The covariance matrices then collapse to scalar variances and {eq}`eq141b` becomes   
 
 
 ```{math}
 :label: eq142
 \begin{align}
-p(\mathbf{v}) & = \mathcal{N}(\mu_\mathbf{v},\sigma_\mathbf{v}^2) \\ 
-p(\mathbf{\theta}) & = \mathcal{N}(\mu_\mathbf{\theta},\sigma_\mathbf{\theta}^2) \\
-p(\mathbf{v|\theta}) & = \mathcal{N}(\mu_\mathbf{v|\theta},\sigma_\mathbf{v|\theta}^2) \\
+p(v) & = \mathcal{N}(\mu_\mathbf{v},\sigma_\mathbf{v}^2) \\ 
+p(\theta) & = \mathcal{N}(\mu_\mathbf{\theta},\sigma_\mathbf{\theta}^2) \\
+p(v|\theta) & = \mathcal{N}(\mu_\mathbf{v|\theta},\sigma_\mathbf{v|\theta}^2) \\
 \end{align}
 ```
 
 Now we will formulate a single equation, which reconciles the concepts over different metrics and can be used to calculated predictability. 
 
-But...first, let's take a look of the old-school method. Traditionally, the measure of predictability is based on the mean square difference between the forecast and the truth. In a perfect model, truth is chosen from a randomly sampled ensemble (it's like multi universes!). Let $\epsilon$ to be difference between two randomly chosen scenarios, $\mathbf{f_1}$ and $\mathbf{f_2}$ (one forecast and one truth). Then the mean square error is defined as,  
+But...first, let's take a look of the old-school method. Traditionally, the measure of predictability is based on the mean square difference between the forecast and the truth. In a perfect model, truth is chosen from a randomly sampled ensemble (it's like multi universes!). Let $\epsilon$ be the difference between two _independently_ drawn members of the forecast distribution, $\mathbf{f_1}$ and $\mathbf{f_2}$ (one forecast and one truth), whose common mean is $\mathbf{\mu} \equiv \mathbf{\mu}_{\mathbf{v}|\mathbf{\theta}}$. Then the mean square error is defined as,  
 
 
 ```{math}
 :label: eq143
 \begin{align}
 \mathrm{MSE} & = \overline{||\epsilon||^2} = \overline{||\mathbf{f_1}-\mathbf{f_2}||^2} = \overline{||(\mathbf{f_1}-\mathbf{\mu})-(\mathbf{f_2}-\mathbf{\mu})||^2} \\
-& = \overline{||(\mathbf{f_1}-\mathbf{\mu})||^2}+\overline{||(\mathbf{f_2}-\mathbf{\mu})||^2} = 2\mathrm{Tr}[\Sigma_{\mathbf{v}|\mathbf{\theta}}]
+& = \overline{||\mathbf{f_1}-\mathbf{\mu}||^2}+\overline{||\mathbf{f_2}-\mathbf{\mu}||^2} - 2\,\overline{(\mathbf{f_1}-\mathbf{\mu})^{T}(\mathbf{f_2}-\mathbf{\mu})} \\
+& = \overline{||\mathbf{f_1}-\mathbf{\mu}||^2}+\overline{||\mathbf{f_2}-\mathbf{\mu}||^2} = 2\mathrm{Tr}[\Sigma_{\mathbf{v}|\mathbf{\theta}}]
 \end{align}
 ```
 
-As discussed previously, the measure of predictability quantify the degree to which the forecast and the climatological distribution are different. i.e., 
+where the cross term drops out precisely because $\mathbf{f_1}$ and $\mathbf{f_2}$ are drawn independently. 
+
+As discussed previously, the measure of predictability quantifies the degree to which the forecast and the climatological distribution are different. We therefore normalize the forecast MSE by the _same_ quantity computed from two independent draws of the climatological distribution, $\mathbf{v_1}$ and $\mathbf{v_2}$, 
 
 ```{math}
 :label: eq144
-\Delta_\theta = \frac{\overline{||\epsilon||^2}}{||\mathbf{v}-\mathbf{\mu}||^2} = \frac{2\mathrm{Tr}[\Sigma_{\mathbf{v}|\mathbf{\theta}}]}{2\mathrm{Tr}[\Sigma_{\mathbf{v}}]}
+\Delta_\theta = \frac{\overline{||\mathbf{f_1}-\mathbf{f_2}||^2}}{\overline{||\mathbf{v_1}-\mathbf{v_2}||^2}} = \frac{2\mathrm{Tr}[\Sigma_{\mathbf{v}|\mathbf{\theta}}]}{2\mathrm{Tr}[\Sigma_{\mathbf{v}}]}
 ```
 
-The above metric has some limitations. First, the results depends on the chosen coordinate, which is used to represent the dynamical system. Second, if the chosen variable is not representative enough, it fails to tell the difference between forecast and the climatological PDFs. However, later we gonna show that with certain linear transformation, the traditional method and the information theory-based method can give us the same result. 
+so that $\Delta_\theta$ runs from $0$ (a perfect forecast) to $1$ (the predictability limit). Note that comparing against $\overline{||\mathbf{v}-\mathbf{\mu}||^2} = \mathrm{Tr}[\Sigma_{\mathbf{v}}]$ instead would be off by a factor of two; the numerator and denominator must be the same kind of object.
 
-For information theory based method, if we assume there is a basis (spatial structure), $\mathbf{q}$, which can maximum the signals on forecast lead time. Then the _mean_ and _variance_ of that basis's time series can be written as 
+The above metric has some limitations. First, the results depend on the chosen coordinate, which is used to represent the dynamical system. Second, if the chosen variable is not representative enough, it fails to tell the difference between forecast and the climatological PDFs. However, later we will show that with a certain linear transformation, the traditional method and the information theory-based method can give us the same result. 
+
+For the information theory based method, suppose there is a basis (spatial structure), $\mathbf{q}$, which maximizes the signal at a given forecast lead time. Then the _mean_ and _variance_ of that basis's time series can be written as 
 
 
 ```{math}
 :label: eq145
 \begin{align}
 \mu_v &= \mathbf{q}^{T}\mathbf{\mu}_v  \\ 
-\sigma_v^{2} &= \mathbf{q}^{T}\mathbf{\sigma}_v^{2}\mathbf{q} \\
+\sigma_v^{2} &= \mathbf{q}^{T}\Sigma_v\mathbf{q} \\
 \mu_{v|\theta} &= \mathbf{q}^{T}\mathbf{\mu}_{v|\theta}  \\ 
-\sigma_{v|\theta}^{2} &= \mathbf{q}^{T}\mathbf{\sigma}_{v|\theta}^{2}\mathbf{q} \\
+\sigma_{v|\theta}^{2} &= \mathbf{q}^{T}\Sigma_{v|\theta}\mathbf{q} \\
 \end{align}
 ```
 
 Then the metrics we used previously can be written as 
 ```{math}
-:label: eq145
+:label: eq145b
 \begin{align}
-P_\theta & = -\mathrm{log} (\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}) \\
-R_\theta & = -\mathrm{log} (\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}})+\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}-1+\frac{(\mu_{v|\theta}-\mu_v)^{2}}{\sigma_v^{2}} \\
-M & = -<\mathrm{log} (\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}})> \\
+P_\theta & = -\frac{1}{2}\mathrm{log} (\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}) \\
+R_\theta & = \frac{1}{2}\left[-\mathrm{log} (\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}})+\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}-1+\frac{(\mu_{v|\theta}-\mu_v)^{2}}{\sigma_v^{2}}\right] \\
+M & = -\frac{1}{2}\left\langle \mathrm{log} (\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}) \right\rangle \\
 \Delta_\theta & = \frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}
 \end{align}
 ```
 
-We can find that across four different metrics, they are all controlled by one single parameter: $\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}$. Given that the variable is whitened (standardized, or long-term variance = 1), $\sigma_{v}^{2}$ will be 1. Thus, the only term that determines predictability is the whitened covariance matrix of forecast distribution (i.e., $\sigma_{v|\theta}^{2}$). At this point, it's not hard to find the importance of (i.e., $\sigma_{v|\theta}^{2}$). 
+The factors of $\frac{1}{2}$ come from the Gaussian entropy $H=\frac{1}{2}\mathrm{log}(2\pi e \sigma^2)$; the $2\pi e$ cancels in every difference, leaving only the variance ratio. It is instructive to verify {eq}`eq140` directly here. Averaging $R_\theta$ over $\theta$ and using the signal--noise decomposition {eq}`eq133b`, we have $\langle(\mu_{v|\theta}-\mu_v)^2\rangle = \sigma_v^2-\sigma_{v|\theta}^2$, so the last three terms inside the bracket become $\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}-1+\frac{\sigma_v^2-\sigma_{v|\theta}^2}{\sigma_v^2}=0$ and $\langle R_\theta \rangle = \langle P_\theta \rangle = M$ exactly, as promised.
+
+We can find that across the four different metrics, they are essentially all controlled by one single parameter: $\frac{\sigma_{v|\theta}^{2}}{\sigma_{v}^{2}}$. (Strictly, $R_\theta$ for a single $\theta$ also contains the signal term $(\mu_{v|\theta}-\mu_v)^2/\sigma_v^2$, but as we just saw that term vanishes on average, so the ranking of patterns is unaffected.) Given that the variable is whitened (standardized, or long-term variance = 1), $\sigma_{v}^{2}$ will be 1. Thus, the only term that determines predictability is the whitened forecast error variance $\sigma_{v|\theta}^{2}$, which is why that single quantity carries all the weight in what follows. 
 
 
-It's not hard to find, for all four equations, if we can find a pattern that minimizes $\sigma_{v|\theta}^{2}$, it will be the most predictable pattern. The above question is equivalent to solving an eigen value problem. The eigen vector with the smallest eigen value is the pattern having the longest predictability. i.e., 
+It's not hard to find, for all four equations, if we can find a pattern that minimizes $\sigma_{v|\theta}^{2}$, it will be the most predictable pattern. What we are minimizing is the Rayleigh quotient
+
+```{math}
+:label: eq145c
+\Delta_\theta(\mathbf{q}) = \frac{\mathbf{q}^{T}\Sigma_{v|\theta}\mathbf{q}}{\mathbf{q}^{T}\Sigma_{v}\mathbf{q}}
+```
+
+whose stationary points solve a _generalized_ eigenvalue problem,
 
 ```{math}
 :label: eq146
-\mathbf{\sigma}_{v|\theta}^{2}\mathbf{\Phi} = \lambda \mathbf{\Phi}
+\Sigma_{v|\theta}\,\mathbf{q} = \lambda \, \Sigma_{v}\,\mathbf{q}
 ```
+
+which collapses to an ordinary eigenvalue problem $\Sigma_{v|\theta}\mathbf{q}=\lambda\mathbf{q}$ once the state has been whitened so that $\Sigma_{v}=\mathbf{I}$. The eigenvector with the smallest eigenvalue is the projection vector giving the longest predictability. 
+
+:::{note}
+Keep in mind that $\mathbf{q}$ is the _filter_ (the weights we apply to the field to extract the predictable time series), not the _pattern_ we plot. The corresponding spatial pattern is obtained by regressing the field onto the time series $\mathbf{q}^{T}\mathbf{x}$. The two coincide only when $\Sigma_{v}=\mathbf{I}$. 
+:::
 
 ## Average Predictability Time
 
-From {eq}`eq145`, we know that $\mathbf{\sigma_{v|\theta}}^{2}$ will approach 1 as $\tau$ approaches $\infty$. Because when forecast lead time is long enough, the forecast error will approach the variance of the climatological distribution. 
+From {eq}`eq145b`, we know that $\sigma_{v|\theta}^{2}$ will approach $\sigma_{v}^{2}$ (i.e. 1 after whitening) as $\tau$ approaches $\infty$. Because when forecast lead time is long enough, the forecast error will approach the variance of the climatological distribution. All four metrics then go to zero, so each of them defines a predictability limit. The awkward part is that "the limit" is whichever lead time we declare the ratio to be close enough to one, which is arbitrary. A cleaner summary is to integrate the entire decay curve, which is the idea behind the _average predictability time_ (APT),
 
-In addition, in a Gaussian process, the forecast signal decay exponentially with the increase of lead time i.e., 
-$\mu_{v|\theta}=\mathbf{q}^{T}\mathbf{\mu_{v|\theta}} = \mu_{v|\theta,t=0}\mathrm{e}^{A\tau}$, where $\mu_{v|\theta,t=0}$ is ensemble mean at $\tau=0$. 
+```{math}
+:label: eq146b
+\mathrm{APT} = 2\int_{0}^{\infty}\left[1-\frac{\sigma_{v|\theta}^{2}(\tau)}{\sigma_{v}^{2}}\right]d\tau
+```
 
-Combining $\mu_{v|\theta}=\mu_{v|\theta,t=0}\mathrm{e}^{A\tau}$ and the definition of $\mathbf{\sigma_{v|\theta}}^{2}$, we can have 
+In addition, for a linear Markov (red noise) process the forecast signal decays exponentially with the increase of lead time, i.e. 
+$\mu_{v|\theta}(\tau)=\mu_{v|\theta}(0)\,\mathrm{e}^{a\tau}$, where $\mu_{v|\theta}(0)$ is the ensemble mean at $\tau=0$. In the multivariate case this scalar form deserves a word of care: projecting the matrix solution gives $\mathbf{q}^{T}\mathrm{e}^{\mathbf{A}\tau}\mathbf{\mu}_{v|\theta}(0)$, which collapses to a single exponential only when $\mathbf{q}$ is an eigenvector of $\mathbf{A}$. To keep things transparent, the rest of this section works with the scalar red-noise case with $a<0$. 
+
+Combining $\mu_{v|\theta}(\tau)=\mu_{v|\theta}(0)\mathrm{e}^{a\tau}$ and the definition of $\sigma_{v|\theta}^{2}$, we can have 
 
 ```{math}
 :label: eq147
 \begin{align}
-\mathbf{\sigma}_{v|\theta}^{2} & = <(v|\theta-\mu_{v|\theta})^2> \\
-& = <(v|\theta-\mu_{v|\theta,\tau=0}\mathrm{e}^{A\tau})^2>  \\
-& = <\mathrm{e}^{2A\tau} (v|\theta_{\tau=0}-\mu_{v|\theta,t=0})^2> + \mathrm{e}^{2A\tau}\int_{s=0}^{s=\tau}\int_{s'=0}^{s'=\tau} \mathrm{e}^{-As} \epsilon(s)\epsilon(s') \mathrm{e}^{-As'} dsds' \\
-& = \mathrm{e}^{2A\tau} \mathbf{\sigma}_{v|\theta,\tau=0}^{2} + \mathrm{e}^{2A\tau} \int_{s=0}^{\tau} \mathrm{e}^{-2As} ds \\
-& = \mathrm{e}^{2A\tau} \mathbf{\sigma}_{v|\theta,\tau=0}^{2} -\frac{1-\mathrm{e}^{2a\tau}}{2a}\sigma_{\epsilon}^2 \\
-& = \frac{1-\mathrm{e}^{-2||a||\tau}}{2||a||}\sigma_{\epsilon}^2
+\sigma_{v|\theta}^{2}(\tau) & = \left\langle \left(v(\tau)-\mu_{v|\theta}(\tau)\right)^2 \right\rangle \\
+& = \left\langle \left( \mathrm{e}^{a\tau}\left[v(0)-\mu_{v|\theta}(0)\right] + \int_{0}^{\tau}\mathrm{e}^{a(\tau-s)}\epsilon(s)\,ds \right)^{2} \right\rangle  \\
+& = \mathrm{e}^{2a\tau}\sigma_{v|\theta,\tau=0}^{2} + \int_{0}^{\tau}\!\!\int_{0}^{\tau} \mathrm{e}^{a(\tau-s)} \langle \epsilon(s)\epsilon(s') \rangle \, \mathrm{e}^{a(\tau-s')} \, ds\,ds' \\
+& = \mathrm{e}^{2a\tau}\sigma_{v|\theta,\tau=0}^{2} + \sigma_{\epsilon}^{2}\,\mathrm{e}^{2a\tau} \int_{0}^{\tau} \mathrm{e}^{-2as}\, ds \\
+& = \mathrm{e}^{2a\tau} \sigma_{v|\theta,\tau=0}^{2} + \frac{\mathrm{e}^{2a\tau}-1}{2a}\sigma_{\epsilon}^2 \\
+& = \mathrm{e}^{-2||a||\tau} \sigma_{v|\theta,\tau=0}^{2} + \frac{1-\mathrm{e}^{-2||a||\tau}}{2||a||}\sigma_{\epsilon}^2
 \end{align}
 ```
 
-if we specify $\mathbf{\sigma_{v|\theta,\tau=0}}^{2}=0$ and $a<0$ (holds for red noise problem), we find that $\mathbf{\sigma_{v|\theta}}^{2} = \frac{1-\mathrm{e}^{-2||a||\tau}}{2||a||}\sigma_{\epsilon}^2$. Thus, $||a||$ tells how far we still can leverage $v|\theta$ to inform the future states.  
+Two steps deserve comment. The cross term between the initial-condition contribution and the noise integral vanishes because the forcing is independent of the initial state, and the double integral collapses to a single one because the forcing is white, $\langle \epsilon(s)\epsilon(s')\rangle = \sigma_{\epsilon}^{2}\delta(s-s')$. The last line simply substitutes $a=-\|a\|$, which holds for the red noise problem. 
+
+If we further specify $\sigma_{v|\theta,\tau=0}^{2}=0$ (a perfectly observed initial state), we find $\sigma_{v|\theta}^{2} = \frac{1-\mathrm{e}^{-2||a||\tau}}{2||a||}\sigma_{\epsilon}^2$. Letting $\tau\rightarrow\infty$ identifies the climatological variance as $\sigma_{v}^{2}=\sigma_{\epsilon}^{2}/2\|a\|$, exactly the saturated forecast variance we claimed earlier. The ratio that governs every metric in {eq}`eq145b` is therefore remarkably simple, 
+
+```{math}
+:label: eq147b
+\frac{\sigma_{v|\theta}^{2}(\tau)}{\sigma_{v}^{2}} = 1-\mathrm{e}^{-2||a||\tau}
+```
+
+and substituting into {eq}`eq146b` gives 
+
+```{math}
+:label: eq147c
+\mathrm{APT} = 2\int_{0}^{\infty}\mathrm{e}^{-2||a||\tau}\,d\tau = \frac{1}{||a||}
+```
+
+So the average predictability time is just the e-folding time of the damping, and $\|a\|$ tells us how far we can still leverage $v|\theta$ to inform the future states. (With an imperfect initial condition, $\sigma_{v|\theta,\tau=0}^{2}>0$, the same calculation gives $\mathrm{APT}=(1-\sigma_{v|\theta,\tau=0}^{2}/\sigma_{v}^{2})/\|a\|$, i.e. a worse analysis buys proportionally less predictability.) 
+
+Finally, note that maximizing APT over the projection vector $\mathbf{q}$ leads to the same kind of generalized eigenvalue problem as {eq}`eq146`, except that the forecast error covariance is now integrated over all lead times rather than evaluated at one. This is what makes APT attractive in practice: it ranks patterns by their predictability across the whole forecast range instead of at a lead time we had to pick by hand.
 
 :::{note}
 In the homework assignment, you will use the ECMWF reforecast data to find the predictable components and the corresponding average predictability time. Do you find what pattern shows up over the Pacific- North America regions?
