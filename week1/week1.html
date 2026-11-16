@@ -183,6 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../week7/week7.html">Week 7: The stability theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../week8/week8.html">Week 8: The generalized stability theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../week9/week9.html">Week 9: Predictability through the lens of Information Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week10/week10.html">Week 10: Climate Change Fingerprints</a></li>
 </ul>
 
     </div>
@@ -415,7 +416,7 @@
 <p>One striking fact about predictability is that it has no universal value. That may sound strange, even counter-intuitive, at first. After all, for typical numerical weather prediction we usually quote a predictability limit of roughly 10 days to 2 weeks, beyond which the model output can no longer be trusted. But “10 days to 2 weeks” is only a <em>rule of thumb</em>. In some situations we can already be struggling with low forecast confidence at a lead time of 3 days. To see how that comes about, let us turn to the famous Lorenz 63 model.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Lorenz 63 model <span id="id1">[<a class="reference internal" href="../week3/week3.html#id13" title="Edward N Lorenz. Deterministic nonperiodic flow. Journal of atmospheric sciences, 20(2):130–141, 1963.">Lor63</a>]</span> is arguably the minimalist model for studying chaos and predictability: it contains only three prognostic variables. Three is in fact the minimum — a dynamical system with fewer than three independent variables cannot produce chaotic behaviour. We will return to the Lorenz model in Week 3.</p>
+<p>The Lorenz 63 model <span id="id1">[<a class="reference internal" href="../week3/week3.html#id21" title="Edward N Lorenz. Deterministic nonperiodic flow. Journal of atmospheric sciences, 20(2):130–141, 1963.">Lor63</a>]</span> is arguably the minimalist model for studying chaos and predictability: it contains only three prognostic variables. Three is in fact the minimum — a dynamical system with fewer than three independent variables cannot produce chaotic behaviour. We will return to the Lorenz model in Week 3.</p>
 </div>
 <div class="math notranslate nohighlight" id="equation-eq2">
 <span class="eqno">(2)<a class="headerlink" href="#equation-eq2" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
@@ -451,10 +452,10 @@
 <p>At the end of the previous section we noted that forecast uncertainty can arise in three different places — or at least that any forecast uncertainty can be attributed to one of the three. In practice they occur simultaneously and are sometimes indistinguishable, but it is useful to examine them one at a time.</p>
 <p>The first is initial-state error, or observational error. In a perfect observing system the spatial and temporal resolution would extend all the way down to the smallest scales (molecular scales). This matters because wherever observations are missing, the upscale growth of initial error from those regions will eventually render the future unpredictable — provided the underlying dynamics is chaotic.</p>
 <p>The second source is imperfect model physics. Specifically, the physical parameterizations used to approximate the bulk effect of subgrid-scale processes (scales smaller than the model grid) are a major source of uncertainty. The details of parameterization belong to another course, so we will only walk through the main idea here. One reason parameterizations are used at all is limited computational power. To predict the evolution of an extratropical storm accurately, for instance, we also need to represent the convection embedded in its frontal structures, because the latent heat released by that convection is not negligible. Explicitly resolving those small-scale thunderstorms, however, is not computationally feasible for synoptic weather forecasting. Most NWP systems therefore use cumulus parameterizations to approximate the bulk effect of convective clouds. The reason this works is that the large-scale environment is usually in quasi-equilibrium with the small-scale convection — that is, coherence exists between them — so the net convective activity can be approximated from large-scale information alone. That quasi-equilibrium, however, holds only in a statistical sense: for a given large-scale state there is a whole distribution of possible subgrid-scale responses rather than a single value. Strictly, then, the subgrid-scale effect should be described by a PDF, i.e. by a <em>stochastic</em> parameterization. Although this seems necessary, it is not what most prevailing NWP systems do. The same problem arises in the other physical parameterizations, not only in the cumulus scheme.</p>
-<p>The last source is rounding error. Compared with the first two, rounding error has by far the smallest impact on weather and climate prediction. Indeed, we can sometimes make a deliberate trade-off, tolerating some rounding error in exchange for reduced computational cost. This is possible precisely because the uncertainties from observations and model physics are so much larger (<span class="math notranslate nohighlight">\(&gt;\mathcal{O}(5)\)</span>) than the uncertainty introduced by rounding. More details can be found in <span id="id2">[<a class="reference internal" href="#id6" title="Sam Hatfield, Andrew McRae, Tim Palmer, and Peter Düben. Single-precision in the tangent-linear and adjoint models of incremental 4d-var. Monthly Weather Review, 148(4):1541–1552, 2020.">HMPDuben20</a>]</span>, and on the lead author Sam Hatfield’s website (<a class="reference external" href="https://samhatfield.co.uk/">link</a>).</p>
+<p>The last source is rounding error. Compared with the first two, rounding error has by far the smallest impact on weather and climate prediction. Indeed, we can sometimes make a deliberate trade-off, tolerating some rounding error in exchange for reduced computational cost. This is possible precisely because the uncertainties from observations and model physics are so much larger (<span class="math notranslate nohighlight">\(&gt;\mathcal{O}(5)\)</span>) than the uncertainty introduced by rounding. More details can be found in <span id="id2">[<a class="reference internal" href="#id14" title="Sam Hatfield, Andrew McRae, Tim Palmer, and Peter Düben. Single-precision in the tangent-linear and adjoint models of incremental 4d-var. Monthly Weather Review, 148(4):1541–1552, 2020.">HMPDuben20</a>]</span>, and on the lead author Sam Hatfield’s website (<a class="reference external" href="https://samhatfield.co.uk/">link</a>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Lorenz 96 <span id="id3">[<a class="reference internal" href="../week3/week3.html#id14" title="Edward N Lorenz. Predictability: a problem partly solved. In Proc. Seminar on predictability, volume 1. 1996.">Lor96</a>]</span> is one of the simplest models that attempts to address the underpinning theory of subgrid-scale processes. We will discuss it in more detail in Week 4.</p>
+<p>Lorenz 96 <span id="id3">[<a class="reference internal" href="../week3/week3.html#id22" title="Edward N Lorenz. Predictability: a problem partly solved. In Proc. Seminar on predictability, volume 1. 1996.">Lor96</a>]</span> is one of the simplest models that attempts to address the underpinning theory of subgrid-scale processes. We will discuss it in more detail in Week 4.</p>
 </div>
 </section>
 <section id="introduction-to-ensemble-forecast-in-weather-and-climate">
@@ -508,15 +509,15 @@
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <div class="docutils container" id="id4">
 <div role="list" class="citation-list">
-<div class="citation" id="id6" role="doc-biblioentry">
+<div class="citation" id="id14" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">HMPDuben20</a><span class="fn-bracket">]</span></span>
 <p>Sam Hatfield, Andrew McRae, Tim Palmer, and Peter Düben. Single-precision in the tangent-linear and adjoint models of incremental 4d-var. <em>Monthly Weather Review</em>, 148(4):1541–1552, 2020.</p>
 </div>
-<div class="citation" id="id9" role="doc-biblioentry">
+<div class="citation" id="id17" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Lor63</a><span class="fn-bracket">]</span></span>
 <p>Edward N Lorenz. Deterministic nonperiodic flow. <em>Journal of atmospheric sciences</em>, 20(2):130–141, 1963.</p>
 </div>
-<div class="citation" id="id10" role="doc-biblioentry">
+<div class="citation" id="id18" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">Lor96</a><span class="fn-bracket">]</span></span>
 <p>Edward N Lorenz. Predictability: a problem partly solved. In <em>Proc. Seminar on predictability</em>, volume 1. 1996.</p>
 </div>

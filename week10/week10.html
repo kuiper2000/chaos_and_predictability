@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Week 10: Climate Change Fingerprints &#8212; Chaos and Predictability</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyterlite_sphinx.css?v=8ee2c72c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/jupyterlite_sphinx.js?v=96e329c5"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'week10/week10';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Week 9: Predictability through the lens of Information Theory" href="../week9/week9.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Chaos and Predictability - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Chaos and Predictability - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Syllabus
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week1/week1.html">Week 1: Predictability of Weather and Climate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week2/week2.html">Week 2: Predictability source in atmosphere</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week3/week3.html">Week 3: The minimalist models for studying chaos and predictability I: Lorenz 63</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week4/week4.html">Week 4: The minimalist models for studying chaos and predictability II: Lorenz 96</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week5/week5.html">Week 5: The connection between statistical mechanics and ensemble forecast I: Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week6/week6.html">Week 6: The connection between statistical mechanics and ensemble forecast II: Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week7/week7.html">Week 7: The stability theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week8/week8.html">Week 8: The generalized stability theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week9/week9.html">Week 9: Predictability through the lens of Information Theory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 10: Climate Change Fingerprints</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/kuiper2000/chaos_and_predictability" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kuiper2000/chaos_and_predictability/issues/new?title=Issue%20on%20page%20%2Fweek10/week10.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/week10/week10.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week 10: Climate Change Fingerprints</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictability-of-the-second-kind">Predictability of the second kind</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-signal-and-what-is-the-noise">What is the signal, and what is the noise?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-forced-pattern-is-not-the-fingerprint">Why the forced pattern is not the fingerprint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#it-is-the-same-eigenvalue-problem-as-last-week">It is the same eigenvalue problem as last week</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-sigma-n-where-the-method-actually-breaks">Estimating <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span>: where the method actually breaks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-and-attribution-as-a-regression">Detection and attribution as a regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separating-the-forced-response-of-different-components">Separating the forced response of different components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-long-do-we-have-to-wait">How long do we have to wait?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="week-10-climate-change-fingerprints">
+<span id="week10"></span><h1>Week 10: Climate Change Fingerprints<a class="headerlink" href="#week-10-climate-change-fingerprints" title="Link to this heading">#</a></h1>
+<section id="predictability-of-the-second-kind">
+<h2>Predictability of the second kind<a class="headerlink" href="#predictability-of-the-second-kind" title="Link to this heading">#</a></h2>
+<p>Everything we did in week 9 was an <em>initial-value</em> problem. We started from an observation <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span>, propagated the analysis distribution forward with the transition probability, and asked how much of that initial information survived to lead time <span class="math notranslate nohighlight">\(\tau\)</span>. The answer was always the same shape: the forecast distribution broadens, the signal decays, and after a few e-folding times of the damping we are left with climatology. Lorenz called this <em>predictability of the first kind</em>.</p>
+<p>This week we ask the opposite question. Suppose we do not care at all about the initial condition — suppose we are willing to wait until every memory of it is gone. Is there anything left to predict? There is, provided the system’s <em>boundary conditions</em> are changing. If we add CO<span class="math notranslate nohighlight">\(_2\)</span> to the atmosphere, the climatological distribution itself moves. Predicting that movement is <em>predictability of the second kind</em>, and it is a completely different kind of problem: the signal does not decay with lead time, it <strong>grows</strong>.</p>
+<p>The practical version of this question is detection and attribution. We have one observed temperature record, which contains both a forced trend and whatever the weather and the ocean happened to be doing. We want to know (i) whether the forced part is there at all, and (ii) if it is, how much of it belongs to greenhouse gases, how much to aerosols, how much to volcanoes and the sun. The machinery that answers this was built by Klaus Hasselmann <span id="id1">[]</span>, and it is called the <strong>fingerprint method</strong>.</p>
+<p>The pleasant surprise of this chapter is that we do not need any new mathematics. The fingerprint method is <a class="reference internal" href="../week9/week9.html#equation-eq146">(181)</a> from last week, read in the other direction. What changes is only the physical meaning of the words <em>signal</em> and <em>noise</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is worth remembering that the same person wrote both halves of this story. Hasselmann’s stochastic climate model <span id="id2">[]</span> is where the red-noise equation <a class="reference internal" href="../week9/week9.html#equation-eq130">(160)</a> that we leaned on all through week 9 comes from: the ocean integrates white weather forcing into red climate variability. Having established what internal variability <em>looks like</em>, he then asked how to find something that is not it. The 2021 Nobel Prize in Physics was for exactly this pair of ideas.</p>
+</div>
+</section>
+<section id="what-is-the-signal-and-what-is-the-noise">
+<h2>What is the signal, and what is the noise?<a class="headerlink" href="#what-is-the-signal-and-what-is-the-noise" title="Link to this heading">#</a></h2>
+<p>Write the climate state as an <span class="math notranslate nohighlight">\(n\)</span>-dimensional vector <span class="math notranslate nohighlight">\(\mathbf{x}(t)\)</span> (grid points, or EOF coefficients, or grid points stacked over several decades — we will come back to that choice). Decompose it as</p>
+<div class="math notranslate nohighlight" id="equation-eq148">
+<span class="eqno">(186)<a class="headerlink" href="#equation-eq148" title="Link to this equation">#</a></span>\[\mathbf{x}(t) = \mathbf{s}(t) + \mathbf{u}(t)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{s}(t)\)</span> is the <strong>forced response</strong>, the part that is a deterministic function of the external forcing, and <span class="math notranslate nohighlight">\(\mathbf{u}(t)\)</span> is <strong>internal variability</strong>, with <span class="math notranslate nohighlight">\(\langle \mathbf{u} \rangle = 0\)</span> and covariance <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span>. There is only one Earth, so we never observe <a class="reference internal" href="#equation-eq148">(186)</a> split into its two pieces. The trick that makes the split operational is the <strong>initial-condition large ensemble</strong> <span id="id3">[]</span>: run the same model, with the same forcing, from <span class="math notranslate nohighlight">\(N\)</span> slightly different initial states. Every member sees the same <span class="math notranslate nohighlight">\(\mathbf{s}(t)\)</span> and draws an independent <span class="math notranslate nohighlight">\(\mathbf{u}_{e}(t)\)</span>, so</p>
+<div class="math notranslate nohighlight" id="equation-eq149">
+<span class="eqno">(187)<a class="headerlink" href="#equation-eq149" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+\hat{\mathbf{s}}(t) &amp; = \frac{1}{N}\sum_{e=1}^{N}\mathbf{x}_{e}(t) \\
+\hat{\mathbf{u}}_{e}(t) &amp; = \mathbf{x}_{e}(t) - \hat{\mathbf{s}}(t)
+\end{align}\end{split}\]</div>
+<p>The ensemble mean estimates the forced response and the departures from it estimate internal variability. <a class="reference internal" href="#fig22"><span class="std std-ref">FIG22</span></a> shows this for the synthetic zonal-mean world we will use throughout this chapter: a polar-amplified warming of <span class="math notranslate nohighlight">\(2.5\)</span> K per century, buried in internal variability that is dominated by a tropically-trapped mode (think ENSO) plus a hemispherically asymmetric mode (think an annular mode) plus a red large-scale background.</p>
+<figure class="align-default" id="fig22">
+<img alt="../_images/signal_noise_ensemble.png" src="../_images/signal_noise_ensemble.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Signal and noise in a <span class="math notranslate nohighlight">\(30\)</span>-member initial-condition large ensemble. (a) The zonal-mean warming at year <span class="math notranslate nohighlight">\(100\)</span> in each member (gray), the ensemble mean (black) and the true forced response (red). (b) The same decomposition in time at <span class="math notranslate nohighlight">\(65^{\circ}\)</span>N. Individual members are useless; the ensemble mean recovers the forced response almost exactly.</span><a class="headerlink" href="#fig22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Compare this with week 9. There, the ensemble was over initial conditions drawn from a single analysis distribution <span class="math notranslate nohighlight">\(p(\mathbf{i}|\mathbf{\theta})\)</span>, the signal was <span class="math notranslate nohighlight">\(\mathrm{Var}_{\theta}(\mu_{v|\theta})\)</span> — the part of the variance explained by knowing <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span> — and the noise was the forecast spread <span class="math notranslate nohighlight">\(\sigma^{2}_{v|\theta}\)</span>. Here the ensemble is over realizations of internal variability under a fixed forcing, the signal is the forced response and the noise is everything else. The bookkeeping, however, is identical. The law of total variance that gave us <a class="reference internal" href="../week9/week9.html#equation-eq133b">(164)</a> gives us</p>
+<div class="math notranslate nohighlight" id="equation-eq150">
+<span class="eqno">(188)<a class="headerlink" href="#equation-eq150" title="Link to this equation">#</a></span>\[\Sigma_{\mathbf{x}} = \underbrace{\Sigma_{S}}_{\mathrm{forced}} + \underbrace{\Sigma_{N}}_{\mathrm{internal}}\]</div>
+<p>One point of care about <a class="reference internal" href="#equation-eq150">(188)</a>. The forced response is deterministic, so it has no covariance of its own in the way <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> does; <span class="math notranslate nohighlight">\(\Sigma_{S}\)</span> means the covariance of <span class="math notranslate nohighlight">\(\mathbf{s}(t)\)</span> taken over the ensemble of forcing histories we are willing to entertain — in practice, over the period of record, which is why the “forced variance” of a field is really a statement about the trend. With that reading, <a class="reference internal" href="#equation-eq150">(188)</a> is just <a class="reference internal" href="../week9/week9.html#equation-eq133b">(164)</a> with <span class="math notranslate nohighlight">\(\theta\)</span> replaced by the forcing, and from here on everything is about the ratio of these two terms.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>week 9 (predictable component)</p></th>
+<th class="head"><p>week 10 (fingerprint)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ensemble over</p></td>
+<td><p>initial states consistent with <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span></p></td>
+<td><p>realizations of internal variability</p></td>
+</tr>
+<tr class="row-odd"><td><p>signal</p></td>
+<td><p>information from the initial condition</p></td>
+<td><p>response to external forcing</p></td>
+</tr>
+<tr class="row-even"><td><p>noise</p></td>
+<td><p>forecast spread <span class="math notranslate nohighlight">\(\Sigma_{v\mid\theta}\)</span></p></td>
+<td><p>internal variability <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>behaviour in time</p></td>
+<td><p>signal <strong>decays</strong>, limit <span class="math notranslate nohighlight">\(\approx\)</span> weeks to seasons</p></td>
+<td><p>signal <strong>grows</strong>, emerges after decades</p></td>
+</tr>
+<tr class="row-even"><td><p>what we extract</p></td>
+<td><p>the most predictable pattern</p></td>
+<td><p>the most detectable pattern</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These two are not really separate problems; they are the two ends of one continuum. A decadal prediction has to do both at once — it needs the ocean initial state (first kind) <em>and</em> the forcing trajectory (second kind). The reason we can treat them separately in this course is the enormous gap in time scale between the two.</p>
+</div>
+</section>
+<section id="why-the-forced-pattern-is-not-the-fingerprint">
+<h2>Why the forced pattern is not the fingerprint<a class="headerlink" href="#why-the-forced-pattern-is-not-the-fingerprint" title="Link to this heading">#</a></h2>
+<p>Suppose we compress the field onto a single number with a weight vector <span class="math notranslate nohighlight">\(\mathbf{q}\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-eq151">
+<span class="eqno">(189)<a class="headerlink" href="#equation-eq151" title="Link to this equation">#</a></span>\[d(t) = \mathbf{q}^{T}\mathbf{x}(t) = \underbrace{\mathbf{q}^{T}\mathbf{s}(t)}_{\mathrm{signal}} + \underbrace{\mathbf{q}^{T}\mathbf{u}(t)}_{\mathrm{noise}}\]</div>
+<p>This scalar <span class="math notranslate nohighlight">\(d(t)\)</span> is the <em>detection variable</em>. Its signal is <span class="math notranslate nohighlight">\(\mathbf{q}^{T}\mathbf{s}\)</span> and the variance of its noise is <span class="math notranslate nohighlight">\(\mathbf{q}^{T}\Sigma_{N}\mathbf{q}\)</span>, so the quantity we care about is</p>
+<div class="math notranslate nohighlight" id="equation-eq152">
+<span class="eqno">(190)<a class="headerlink" href="#equation-eq152" title="Link to this equation">#</a></span>\[\mathrm{SNR}^{2}(\mathbf{q}) = \frac{(\mathbf{q}^{T}\mathbf{s})^{2}}{\mathbf{q}^{T}\Sigma_{N}\mathbf{q}}\]</div>
+<p>which is again a Rayleigh quotient, exactly like <a class="reference internal" href="../week9/week9.html#equation-eq145c">(180)</a>, except that the numerator is now a rank-one form <span class="math notranslate nohighlight">\(\mathbf{q}^{T}\mathbf{s}\mathbf{s}^{T}\mathbf{q}\)</span>.</p>
+<p>The naive thing to do is to set <span class="math notranslate nohighlight">\(\mathbf{q}=\mathbf{s}\)</span>: look for the warming where the warming is. This is what people did before 1979, and it is what we do whenever we use the global-mean temperature as our index. It is not optimal, and the reason is visible in <a class="reference internal" href="#fig23"><span class="std std-ref">FIG23</span></a>a: the forced pattern and the dominant modes of internal variability overlap. Weighting by <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> means loading up on the tropics and on the large-scale hemispheric structures, which are precisely the places where internal variability is loudest.</p>
+<p>To do better, maximize <a class="reference internal" href="#equation-eq152">(190)</a>. Factor the noise covariance as <span class="math notranslate nohighlight">\(\Sigma_{N}=\mathbf{L}\mathbf{L}^{T}\)</span> (Cholesky, or <span class="math notranslate nohighlight">\(\Sigma_N^{1/2}\)</span> — any square root will do) and change variables to <span class="math notranslate nohighlight">\(\mathbf{w}=\mathbf{L}^{T}\mathbf{q}\)</span> and <span class="math notranslate nohighlight">\(\tilde{\mathbf{s}}=\mathbf{L}^{-1}\mathbf{s}\)</span>. Then</p>
+<div class="math notranslate nohighlight" id="equation-eq153">
+<span class="eqno">(191)<a class="headerlink" href="#equation-eq153" title="Link to this equation">#</a></span>\[\mathrm{SNR}^{2} = \frac{(\mathbf{w}^{T}\tilde{\mathbf{s}})^{2}}{\mathbf{w}^{T}\mathbf{w}} \leq \tilde{\mathbf{s}}^{T}\tilde{\mathbf{s}}\]</div>
+<p>by the Cauchy–Schwarz inequality, with equality if and only if <span class="math notranslate nohighlight">\(\mathbf{w}\propto\tilde{\mathbf{s}}\)</span>. Transforming back,</p>
+<div class="math notranslate nohighlight" id="equation-eq154">
+<span class="eqno">(192)<a class="headerlink" href="#equation-eq154" title="Link to this equation">#</a></span>\[\boxed{\;\mathbf{q}_{\star} \propto \Sigma_{N}^{-1}\mathbf{s}\;}\qquad\qquad \mathrm{SNR}^{2}_{\max} = \mathbf{s}^{T}\Sigma_{N}^{-1}\mathbf{s}\]</div>
+<p><a class="reference internal" href="#equation-eq154">(192)</a> is the <strong>optimal fingerprint</strong> <span id="id4">[]</span>. The maximum attainable signal-to-noise ratio is the Mahalanobis length of the forced response, measured in the metric set by internal variability. Note what has happened to the geometry: “how big is the forced response” is now a meaningless question until we say <em>relative to what</em>, and the answer is relative to <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span>.</p>
+<p>It helps to read <a class="reference internal" href="#equation-eq154">(192)</a> in the eigenbasis of the noise, <span class="math notranslate nohighlight">\(\Sigma_{N}=\sum_{j}\lambda_{j}\mathbf{e}_{j}\mathbf{e}_{j}^{T}\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-eq155">
+<span class="eqno">(193)<a class="headerlink" href="#equation-eq155" title="Link to this equation">#</a></span>\[\mathbf{q}_{\star} = \sum_{j}\frac{\mathbf{e}_{j}^{T}\mathbf{s}}{\lambda_{j}}\mathbf{e}_{j}, \qquad\qquad \mathrm{SNR}^{2}_{\max} = \sum_{j}\frac{(\mathbf{e}_{j}^{T}\mathbf{s})^{2}}{\lambda_{j}}\]</div>
+<p>Each noise EOF is an independent channel, each channel contributes its own squared signal-to-noise ratio, and the channels add in quadrature. The weighting <span class="math notranslate nohighlight">\(1/\lambda_{j}\)</span> is the whole story: a <em>small</em> forced response sitting in a <em>quiet</em> corner of phase space is worth more than a large response buried inside ENSO. This is why the optimal fingerprint pattern usually looks nothing like the forced response pattern (<a class="reference internal" href="#fig23"><span class="std std-ref">FIG23</span></a>b) — the filter has thrown weight away from the tropics and onto the smaller scales where the red background noise is weak.</p>
+<figure class="align-default" id="fig23">
+<img alt="../_images/optimal_fingerprint_pattern.png" src="../_images/optimal_fingerprint_pattern.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">(a) The forced response <span class="math notranslate nohighlight">\(\hat{\mathbf{s}}\)</span> (red) together with the two leading EOFs of internal variability. The signal is large exactly where the noise is large. (b) The naive filter <span class="math notranslate nohighlight">\(\mathbf{q}=\hat{\mathbf{s}}\)</span> (dashed) and the optimal filter <span class="math notranslate nohighlight">\(\mathbf{q}=\Sigma_{N}^{-1}\hat{\mathbf{s}}\)</span> (black), here truncated at <span class="math notranslate nohighlight">\(k=12\)</span> noise EOFs. The optimal filter down-weights the tropical peak of the leading noise mode and redistributes weight onto quieter, smaller scales.</span><a class="headerlink" href="#fig23" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In code, the whole method is three lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># s_hat    : (nlat,)        forced response, e.g. trend of the ensemble mean</span>
+<span class="c1"># Sigma_N  : (nlat, nlat)   internal variability covariance</span>
+<span class="n">lam</span><span class="p">,</span> <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">Sigma_N</span><span class="p">)</span>
+<span class="n">lam</span><span class="p">,</span> <span class="n">E</span> <span class="o">=</span> <span class="n">lam</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">E</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                       <span class="c1"># descending</span>
+<span class="n">k</span>      <span class="o">=</span> <span class="mi">12</span>                                          <span class="c1"># truncation (see below)</span>
+<span class="n">q_opt</span>  <span class="o">=</span> <span class="n">E</span><span class="p">[:,</span> <span class="p">:</span><span class="n">k</span><span class="p">]</span> <span class="o">@</span> <span class="p">((</span><span class="n">E</span><span class="p">[:,</span> <span class="p">:</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">s_hat</span><span class="p">)</span> <span class="o">/</span> <span class="n">lam</span><span class="p">[:</span><span class="n">k</span><span class="p">])</span>  <span class="c1"># the optimal fingerprint</span>
+<span class="n">d</span>      <span class="o">=</span> <span class="n">q_opt</span> <span class="o">@</span> <span class="n">obs</span>                                  <span class="c1"># the detection variable</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#fig24"><span class="std std-ref">FIG24</span></a> applies all three filters to the <em>same</em> simulated world. By year <span class="math notranslate nohighlight">\(100\)</span> the expected signal-to-noise ratio is <span class="math notranslate nohighlight">\(2.4\)</span> for the global mean, <span class="math notranslate nohighlight">\(4.1\)</span> for the signal-pattern filter and <span class="math notranslate nohighlight">\(5.0\)</span> for the optimal filter. Because the forced response here grows linearly, those numbers translate directly into expected detection times: the global mean would cross <span class="math notranslate nohighlight">\(2\sigma\)</span> at year <span class="math notranslate nohighlight">\(82\)</span>, the signal-pattern filter at year <span class="math notranslate nohighlight">\(49\)</span>, the optimal fingerprint at year <span class="math notranslate nohighlight">\(40\)</span>. In the single realization plotted, the global mean spends <span class="math notranslate nohighlight">\(60\%\)</span> of the last three decades above the noise band, the signal-pattern filter <span class="math notranslate nohighlight">\(90\%\)</span>, and the optimal filter <span class="math notranslate nohighlight">\(97\%\)</span>. Nothing about the physics changed between the three curves. Only the projection did.</p>
+<figure class="align-default" id="fig24">
+<img alt="../_images/detection_timeseries.png" src="../_images/detection_timeseries.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">The detection variable <span class="math notranslate nohighlight">\(d(t)\)</span> for one realization, normalised by its own internal-variability standard deviation, for three filters. Shading marks <span class="math notranslate nohighlight">\(\pm 2\sigma\)</span> of internal variability. Expected signal-to-noise ratios at year 100: <span class="math notranslate nohighlight">\(2.4\)</span> (global mean), <span class="math notranslate nohighlight">\(4.1\)</span> (signal pattern), <span class="math notranslate nohighlight">\(5.0\)</span> (optimal, truncated at <span class="math notranslate nohighlight">\(k=12\)</span>).</span><a class="headerlink" href="#fig24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> happens to be an eigenvector of <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span>, then <span class="math notranslate nohighlight">\(\Sigma_{N}^{-1}\mathbf{s}\propto\mathbf{s}\)</span> and optimal fingerprinting buys nothing. Equivalently: optimal fingerprinting pays off exactly to the extent that internal variability is <em>not</em> isotropic in the coordinates we chose. For the real climate system it is wildly anisotropic, which is why the method matters.</p>
+</div>
+</section>
+<section id="it-is-the-same-eigenvalue-problem-as-last-week">
+<h2>It is the same eigenvalue problem as last week<a class="headerlink" href="#it-is-the-same-eigenvalue-problem-as-last-week" title="Link to this heading">#</a></h2>
+<p>Stated as an eigenvalue problem, maximizing <a class="reference internal" href="#equation-eq152">(190)</a> is</p>
+<div class="math notranslate nohighlight" id="equation-eq156">
+<span class="eqno">(194)<a class="headerlink" href="#equation-eq156" title="Link to this equation">#</a></span>\[\mathbf{s}\mathbf{s}^{T}\mathbf{q} = \lambda\,\Sigma_{N}\mathbf{q}\]</div>
+<p>a generalized eigenvalue problem with a rank-one left-hand side, so it has exactly one non-zero eigenvalue <span class="math notranslate nohighlight">\(\lambda=\mathbf{s}^{T}\Sigma_{N}^{-1}\mathbf{s}\)</span> with eigenvector <span class="math notranslate nohighlight">\(\Sigma_{N}^{-1}\mathbf{s}\)</span>, which is <a class="reference internal" href="#equation-eq154">(192)</a> again.</p>
+<p>Now compare it with the predictable-component problem <a class="reference internal" href="../week9/week9.html#equation-eq146">(181)</a>, <span class="math notranslate nohighlight">\(\Sigma_{v|\theta}\mathbf{q}=\lambda\Sigma_{v}\mathbf{q}\)</span>, where we wanted the <em>smallest</em> eigenvalue. Identify <span class="math notranslate nohighlight">\(\Sigma_{v|\theta}\)</span> with the unpredictable part <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span> and <span class="math notranslate nohighlight">\(\Sigma_{v}\)</span> with the total <span class="math notranslate nohighlight">\(\Sigma_{\mathbf{x}}\)</span>. Because of <a class="reference internal" href="#equation-eq150">(188)</a>, for any <span class="math notranslate nohighlight">\(\mathbf{q}\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq157">
+<span class="eqno">(195)<a class="headerlink" href="#equation-eq157" title="Link to this equation">#</a></span>\[\frac{\mathbf{q}^{T}\Sigma_{S}\mathbf{q}}{\mathbf{q}^{T}\Sigma_{N}\mathbf{q}} = \frac{1-\Delta(\mathbf{q})}{\Delta(\mathbf{q})} = \frac{1}{\Delta(\mathbf{q})}-1, \qquad \Delta(\mathbf{q}) = \frac{\mathbf{q}^{T}\Sigma_{N}\mathbf{q}}{\mathbf{q}^{T}\Sigma_{\mathbf{x}}\mathbf{q}}\]</div>
+<p>The signal-to-noise ratio is a monotonically decreasing function of <span class="math notranslate nohighlight">\(\Delta\)</span>. <strong>Minimizing <span class="math notranslate nohighlight">\(\Delta\)</span> and maximizing <span class="math notranslate nohighlight">\(S/N\)</span> are the same optimization</strong>, they have the same eigenvectors, and their eigenvalues are related by <span class="math notranslate nohighlight">\(\lambda_{S/N}=1/\lambda_{\Delta}-1\)</span>. The predictable component analysis of week 9 and the optimal fingerprint of week 10 are literally the same linear algebra; what distinguishes them is only which physical process we have decided to call “signal”.</p>
+<p>This also means the information-theoretic metrics of <a class="reference internal" href="../week9/week9.html#equation-eq145b">(179)</a> transfer over unchanged. For a Gaussian detection variable,</p>
+<div class="math notranslate nohighlight" id="equation-eq158">
+<span class="eqno">(196)<a class="headerlink" href="#equation-eq158" title="Link to this equation">#</a></span>\[M = -\frac{1}{2}\mathrm{log}\left(\frac{\sigma^{2}_{N}}{\sigma^{2}_{\mathbf{x}}}\right) = \frac{1}{2}\mathrm{log}\left(1+\frac{S}{N}\right)\]</div>
+<p>which is Shannon’s capacity formula for a Gaussian channel. Read it as: the external forcing is a transmitter, internal variability is the channel noise, and the observed climate record is the received message. <em>Detection</em> is the statement that the channel is carrying more than zero bits, and the optimal fingerprint is the receiver that extracts the most of them. Maximizing signal-to-noise, maximizing mutual information, and minimizing the normalised error variance are three descriptions of one calculation.</p>
+</section>
+<section id="estimating-sigma-n-where-the-method-actually-breaks">
+<h2>Estimating <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span>: where the method actually breaks<a class="headerlink" href="#estimating-sigma-n-where-the-method-actually-breaks" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="#equation-eq154">(192)</a> contains <span class="math notranslate nohighlight">\(\Sigma_{N}^{-1}\)</span>, and that inverse is the hard part. Suppose our state vector has <span class="math notranslate nohighlight">\(n\)</span> components and we estimate <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span> from <span class="math notranslate nohighlight">\(m\)</span> samples — a long control integration, or the pooled ensemble anomalies <span class="math notranslate nohighlight">\(\hat{\mathbf{u}}_{e}\)</span> of <a class="reference internal" href="#equation-eq149">(187)</a>. In climate applications <span class="math notranslate nohighlight">\(n\)</span> is typically thousands (grid points <span class="math notranslate nohighlight">\(\times\)</span> time windows) while the number of <em>effectively independent</em> samples <span class="math notranslate nohighlight">\(m\)</span> is at best hundreds. The sample covariance is then rank-deficient or very nearly so, and its small eigenvalues are both badly estimated and systematically biased low. Since <a class="reference internal" href="#equation-eq155">(193)</a> divides by those very eigenvalues, the filter puts enormous weight on exactly the directions it knows least about.</p>
+<p><a class="reference internal" href="#fig25"><span class="std std-ref">FIG25</span></a> shows what this looks like. The red curve is the signal-to-noise ratio we would <em>report</em> if we used the same noise sample to build the filter and to normalise it. The black curve is what that filter actually achieves against the true covariance. Up to <span class="math notranslate nohighlight">\(k\approx 20\)</span> they agree and both rise steeply: each new EOF adds a genuine channel. Beyond that the apparent SNR keeps climbing — straight through the theoretical ceiling <span class="math notranslate nohighlight">\(\sqrt{\mathbf{s}^{T}\Sigma_{N}^{-1}\mathbf{s}}\)</span>, which should be impossible — while the real skill flattens and then decays. That gap is pure overfitting.</p>
+<figure class="align-default" id="fig25">
+<img alt="../_images/truncation_tradeoff.png" src="../_images/truncation_tradeoff.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Signal-to-noise ratio of the truncated optimal filter as a function of the number of retained noise EOFs <span class="math notranslate nohighlight">\(k\)</span>, with <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span> estimated from <span class="math notranslate nohighlight">\(50\)</span> control years in a <span class="math notranslate nohighlight">\(73\)</span>-dimensional state space. Red: apparent SNR, computed with the same noise sample used to build the filter. Black: actual SNR, verified against the true <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span>. Blue dashed: the theoretical ceiling.</span><a class="headerlink" href="#fig25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Three standard defences:</p>
+<ol class="arabic simple">
+<li><p><strong>Truncate.</strong> Keep only the leading <span class="math notranslate nohighlight">\(k\)</span> noise EOFs, with <span class="math notranslate nohighlight">\(k\)</span> comfortably smaller than <span class="math notranslate nohighlight">\(m\)</span>. This is the classical choice, and the price is that any part of the signal living outside the retained subspace is discarded.</p></li>
+<li><p><strong>Regularise.</strong> Shrink the sample covariance toward a well-conditioned target, <span class="math notranslate nohighlight">\(\tilde{\Sigma}_{N}=(1-\gamma)\hat{\Sigma}_{N}+\gamma\,\mu\mathbf{I}\)</span>, with <span class="math notranslate nohighlight">\(\gamma\)</span> chosen analytically (Ledoit–Wolf). This is regularised optimal fingerprinting <span id="id5">[]</span>, and it avoids having to pick <span class="math notranslate nohighlight">\(k\)</span> by hand.</p></li>
+<li><p><strong>Split the sample.</strong> Use one independent half of the control run to build the fingerprint and the other half to compute the uncertainty of <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> and to run the <strong>residual consistency test</strong> <span id="id6">[]</span>, which asks whether the leftover <span class="math notranslate nohighlight">\(\mathbf{y}-\mathbf{X}\hat{\beta}\)</span> is statistically compatible with the model’s own internal variability. If the model understates low-frequency variability — a real and recurring problem — the test is what catches it, and without it a detection claim is not worth much.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note the asymmetry of the failure mode. Truncating too aggressively costs us statistical power: we might fail to detect something real. Truncating too loosely costs us <em>validity</em>: we report a confident detection that is an artefact of a badly inverted matrix. In detection and attribution the second error is far more expensive, which is why the literature is so conservative about truncation.</p>
+</div>
+</section>
+<section id="detection-and-attribution-as-a-regression">
+<h2>Detection and attribution as a regression<a class="headerlink" href="#detection-and-attribution-as-a-regression" title="Link to this heading">#</a></h2>
+<p>So far there has been one signal. The real problem has several, and Hasselmann’s multi-pattern formulation <span id="id7">[]</span> writes the observations as a regression,</p>
+<div class="math notranslate nohighlight" id="equation-eq159">
+<span class="eqno">(197)<a class="headerlink" href="#equation-eq159" title="Link to this equation">#</a></span>\[\mathbf{y} = \sum_{i=1}^{r}\beta_{i}\mathbf{x}_{i} + \mathbf{u} = \mathbf{X}\mathbf{\beta} + \mathbf{u}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is the observed field, each <span class="math notranslate nohighlight">\(\mathbf{x}_{i}\)</span> is the model-simulated response to one forcing agent (greenhouse gases, anthropogenic aerosols, ozone, land use, volcanoes, solar), and <span class="math notranslate nohighlight">\(\mathbf{u}\sim\mathcal{N}(0,\Sigma_{N})\)</span>. The generalized least-squares estimate is</p>
+<div class="math notranslate nohighlight" id="equation-eq160">
+<span class="eqno">(198)<a class="headerlink" href="#equation-eq160" title="Link to this equation">#</a></span>\[\hat{\mathbf{\beta}} = (\mathbf{X}^{T}\Sigma_{N}^{-1}\mathbf{X})^{-1}\mathbf{X}^{T}\Sigma_{N}^{-1}\mathbf{y}, \qquad \mathrm{Cov}(\hat{\mathbf{\beta}}) = (\mathbf{X}^{T}\Sigma_{N}^{-1}\mathbf{X})^{-1}\]</div>
+<p>and by the Gauss–Markov theorem this is the minimum-variance unbiased linear estimator. For <span class="math notranslate nohighlight">\(r=1\)</span> it collapses to <span class="math notranslate nohighlight">\(\hat{\beta}=\mathbf{s}^{T}\Sigma_{N}^{-1}\mathbf{y}\,/\,\mathbf{s}^{T}\Sigma_{N}^{-1}\mathbf{s}\)</span>, i.e. the optimal fingerprint of <a class="reference internal" href="#equation-eq154">(192)</a> with a particular normalisation. In general, the rows of <span class="math notranslate nohighlight">\((\mathbf{X}^{T}\Sigma_{N}^{-1}\mathbf{X})^{-1}\mathbf{X}^{T}\Sigma_{N}^{-1}\)</span> <em>are</em> the optimal fingerprints: the <span class="math notranslate nohighlight">\(i\)</span>-th row is the filter that responds to <span class="math notranslate nohighlight">\(\mathbf{x}_{i}\)</span> with unit gain while being blind to all the other <span class="math notranslate nohighlight">\(\mathbf{x}_{j}\)</span> and as quiet as possible against <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span>.</p>
+<p>Why estimate scaling factors at all, instead of simply asking whether the pattern is present? Because we trust climate models much more about <em>pattern</em> than about <em>amplitude</em>. A model with too high a climate sensitivity, or too strong an aerosol indirect effect, will still put the warming in roughly the right places. Letting <span class="math notranslate nohighlight">\(\beta_{i}\)</span> float absorbs that amplitude error, and the value of <span class="math notranslate nohighlight">\(\hat{\beta}_{i}\)</span> then becomes an observational constraint on the model. This is the logic behind the standard vocabulary:</p>
+<ul class="simple">
+<li><p><strong>Detection</strong>: <span class="math notranslate nohighlight">\(\beta_{i}\)</span> is significantly greater than zero. The response is present in the record and cannot be explained by internal variability alone.</p></li>
+<li><p><strong>Attribution</strong>: <span class="math notranslate nohighlight">\(\beta_{i}\)</span> is additionally consistent with <span class="math notranslate nohighlight">\(1\)</span> (the model has the right amplitude), the residual consistency test passes, and no other forcing can account for the same structure.</p></li>
+</ul>
+</section>
+<section id="separating-the-forced-response-of-different-components">
+<h2>Separating the forced response of different components<a class="headerlink" href="#separating-the-forced-response-of-different-components" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="#equation-eq160">(198)</a> is where the attribution question gets interesting, because <span class="math notranslate nohighlight">\(\mathrm{Cov}(\hat{\mathbf{\beta}})=(\mathbf{X}^{T}\Sigma_{N}^{-1}\mathbf{X})^{-1}\)</span> says that our ability to separate two forcings has nothing to do with how <em>big</em> their responses are. It depends on how <em>distinguishable</em> they are after prewhitening. Define the Mahalanobis cosine between two response patterns,</p>
+<div class="math notranslate nohighlight" id="equation-eq161">
+<span class="eqno">(199)<a class="headerlink" href="#equation-eq161" title="Link to this equation">#</a></span>\[\cos_{M}(\mathbf{x}_{1},\mathbf{x}_{2}) = \frac{\mathbf{x}_{1}^{T}\Sigma_{N}^{-1}\mathbf{x}_{2}}{\sqrt{(\mathbf{x}_{1}^{T}\Sigma_{N}^{-1}\mathbf{x}_{1})(\mathbf{x}_{2}^{T}\Sigma_{N}^{-1}\mathbf{x}_{2})}}\]</div>
+<p>For two signals, the variance of each scaling factor is inflated relative to the single-signal case by the factor</p>
+<div class="math notranslate nohighlight" id="equation-eq162">
+<span class="eqno">(200)<a class="headerlink" href="#equation-eq162" title="Link to this equation">#</a></span>\[\mathrm{VIF} = \frac{1}{1-\cos_{M}^{2}}\]</div>
+<p>which is finite but unpleasant at <span class="math notranslate nohighlight">\(\cos_{M}=0.9\)</span> (<span class="math notranslate nohighlight">\(\mathrm{VIF}=5.3\)</span>) and catastrophic as <span class="math notranslate nohighlight">\(\cos_{M}\rightarrow1\)</span>. <a class="reference internal" href="#fig26"><span class="std std-ref">FIG26</span></a> makes this concrete. In panel (a) the two forcings have genuinely different meridional structures, <span class="math notranslate nohighlight">\(\cos_{M}=0.90\)</span>; the scaling factors scatter around the truth, and optimal weighting cuts the spread of <span class="math notranslate nohighlight">\(\hat{\beta}_{\mathrm{GHG}}\)</span> almost in half compared with ordinary least squares (<span class="math notranslate nohighlight">\(0.43\)</span> versus <span class="math notranslate nohighlight">\(0.78\)</span>). In panel (b) the second pattern has been made a near-twin of the first, <span class="math notranslate nohighlight">\(\cos_{M}=0.9999\)</span>; the estimates now lie on a knife-edge ridge running along <span class="math notranslate nohighlight">\(\beta_{1}+\beta_{2}=\mathrm{const}\)</span>, with a standard deviation of <span class="math notranslate nohighlight">\(12\)</span>. The <em>sum</em> of the two responses is still perfectly well determined — the data constrain the total warming just fine — but the split between them is meaningless.</p>
+<figure class="align-default" id="fig26">
+<img alt="../_images/attribution_scaling_factors.png" src="../_images/attribution_scaling_factors.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Scaling factors <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> from <span class="math notranslate nohighlight">\(400\)</span> realizations of internal variability, truth marked by the star. (a) Two distinguishable forcing patterns, <span class="math notranslate nohighlight">\(\cos_{M}=0.90\)</span>; red is ordinary least squares, black is optimally weighted. (b) Two nearly collinear patterns, <span class="math notranslate nohighlight">\(\cos_{M}=0.9999\)</span>, optimally weighted — note the axis range. Degeneracy, not noise amplitude, is what destroys attribution.</span><a class="headerlink" href="#fig26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This single fact explains most of the design choices in real detection and attribution studies. If two forcings are hard to tell apart in one coordinate, you enlarge the state vector until they separate:</p>
+<ul class="simple">
+<li><p><strong>Greenhouse gases versus solar.</strong> Both warm the surface, so a surface-only fingerprint is nearly degenerate. Add the vertical dimension and the degeneracy vanishes: more CO<span class="math notranslate nohighlight">\(_2\)</span> warms the troposphere and <em>cools</em> the stratosphere, whereas a brighter sun warms both. This vertical contrast is the cleanest discriminant in the whole subject.</p></li>
+<li><p><strong>Greenhouse gases versus aerosols.</strong> Aerosols are short-lived and emitted regionally, so their response is hemispherically asymmetric and concentrated over and downwind of industrial regions, while the greenhouse response is comparatively smooth and polar-amplified. Equally important, their <em>time histories</em> differ: aerosol forcing rose until the 1970s and then flattened or reversed, while greenhouse forcing accelerated.</p></li>
+<li><p><strong>Volcanic and solar.</strong> These separate most easily in time rather than space — volcanic forcing is episodic with a two-to-three-year decay, solar forcing is quasi-cyclic at eleven years.</p></li>
+<li><p><strong>Land use.</strong> Separates in the diurnal cycle and in regional land–sea contrast rather than in the annual-mean large-scale field.</p></li>
+</ul>
+<p>Hence the standard practice of building the state vector as a <strong>space–time</strong> object: concatenate decadal-mean maps from several successive decades into one long vector. Doing so adds exactly the coordinates in which the forcings differ, raises the Mahalanobis angle between fingerprints, and turns an unanswerable question into an answerable one.</p>
+<p>Two caveats are worth stating explicitly. First, <a class="reference internal" href="#equation-eq159">(197)</a> assumes <strong>additivity</strong>: the response to several forcings together is the sum of the individual responses. For large-scale temperature this holds well; for precipitation, circulation and anything involving aerosol–cloud interaction it is a real approximation, and it is one reason attribution statements for those variables are weaker. Second, the single-forcing responses <span class="math notranslate nohighlight">\(\mathbf{x}_{i}\)</span> themselves come from finite ensembles, so <span class="math notranslate nohighlight">\(\mathrm{Cov}(\hat{\mathbf{x}}_{i})=\Sigma_{N}/N_{i}\)</span>, and a regression with noisy predictors is biased toward zero — classical regression dilution. Correcting it is what total least squares does in this context <span id="id8">[]</span>, and it is why the small single-forcing ensembles (often <span class="math notranslate nohighlight">\(3\)</span> members) are a bigger limitation on attribution than the length of the observational record.</p>
+</section>
+<section id="how-long-do-we-have-to-wait">
+<h2>How long do we have to wait?<a class="headerlink" href="#how-long-do-we-have-to-wait" title="Link to this heading">#</a></h2>
+<p>One last piece of intuition, which follows from <a class="reference internal" href="#equation-eq152">(190)</a> once we remember that <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> grows with time while <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span> does not. Take the simplest case: a linear trend <span class="math notranslate nohighlight">\(b\,t\)</span> observed for <span class="math notranslate nohighlight">\(T\)</span> years against white noise of variance <span class="math notranslate nohighlight">\(\sigma^{2}\)</span>. The least-squares trend estimate has variance <span class="math notranslate nohighlight">\(\approx 12\sigma^{2}/T^{3}\)</span>, so</p>
+<div class="math notranslate nohighlight" id="equation-eq163">
+<span class="eqno">(201)<a class="headerlink" href="#equation-eq163" title="Link to this equation">#</a></span>\[\mathrm{SNR}(T) = \frac{b\,T^{3/2}}{\sigma\sqrt{12}}\]</div>
+<p>and the time to reach a chosen detection threshold scales as <span class="math notranslate nohighlight">\(T_{d}\propto(\sigma/b)^{2/3}\)</span>. Two things follow. First, detection is inevitable: the signal-to-noise ratio grows without bound simply because the forcing keeps accumulating, so “has it been detected yet?” is a question about <span class="math notranslate nohighlight">\(T\)</span>, not about whether the physics is there. Second, the <span class="math notranslate nohighlight">\(2/3\)</span> exponent is brutal. Halving the noise — by a better fingerprint, a better observing system, or a cleverer filter — only shortens the detection time by a factor <span class="math notranslate nohighlight">\(2^{2/3}\approx1.6\)</span>. Waiting is a surprisingly effective strategy, and the historical record shows exactly this: the signal was marginal in the 1980s, detected in the 1990s, and is now so far outside the noise band that the interesting questions have all moved to regional scales and to extremes, where <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span> is much larger and we are back in the 1980s again. (For red noise with decorrelation time <span class="math notranslate nohighlight">\(\tau\)</span>, replace <span class="math notranslate nohighlight">\(\sigma^{2}\)</span> by <span class="math notranslate nohighlight">\(\sim2\tau\sigma^{2}\)</span>; nothing qualitative changes, but <span class="math notranslate nohighlight">\(T_{d}\)</span> grows, which is why getting the low-frequency variability of the control run right matters so much.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the homework assignment you will build the optimal fingerprint for a synthetic warming signal, compare it against the global mean and against the raw signal pattern, and then repeat the exercise with the noise covariance estimated from a short control run to see the overfitting of <a class="reference internal" href="#fig25"><span class="std std-ref">FIG25</span></a> appear in your own numbers. Then try the two-forcing version: how similar do two response patterns have to be before the scaling factors stop meaning anything?</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./week10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../week9/week9.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Week 9: Predictability through the lens of Information Theory</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictability-of-the-second-kind">Predictability of the second kind</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-signal-and-what-is-the-noise">What is the signal, and what is the noise?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-forced-pattern-is-not-the-fingerprint">Why the forced pattern is not the fingerprint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#it-is-the-same-eigenvalue-problem-as-last-week">It is the same eigenvalue problem as last week</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-sigma-n-where-the-method-actually-breaks">Estimating <span class="math notranslate nohighlight">\(\Sigma_{N}\)</span>: where the method actually breaks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-and-attribution-as-a-regression">Detection and attribution as a regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separating-the-forced-response-of-different-components">Separating the forced response of different components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-long-do-we-have-to-wait">How long do we have to wait?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kai-Chih Tseng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
